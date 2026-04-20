@@ -1,0 +1,1291 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MR Solutions — Event Map 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+:root {
+  --black:#090C10; --deep:#0D1117; --card:#111820; --card2:#141D27;
+  --border:#1C2733; --border2:#243040;
+  --gold:#C9933A; --gold-l:#E8B86D; --gold-d:rgba(201,147,58,0.14);
+  --white:#EEE9E2; --muted:#7A8FA6; --muted2:#A0B2C4;
+  --night:#1A0F2E; --night-b:#2D1B6B; --night-a:#7B5CF6;
+  --day:#0D1E10; --day-b:#1B4A20; --day-a:#4CAF65;
+  --blue:#1A6B8A; --blue-l:#2196B5;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--deep);color:var(--white);overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");opacity:.35;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:18px 48px;
+  background:linear-gradient(to bottom,rgba(9,12,16,.97),transparent);backdrop-filter:blur(6px);}
+.nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:14px;letter-spacing:.12em;text-transform:uppercase;}
+.nav-logo span{color:var(--gold);}
+.nav-actions{display:flex;gap:12px;align-items:center;}
+.nav-btn{font-family:'Syne',sans-serif;font-weight:700;font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+  padding:8px 20px;border-radius:2px;cursor:pointer;border:none;transition:.2s;}
+.nav-btn.ghost{background:transparent;color:var(--muted);border:1px solid var(--border);}
+.nav-btn.ghost:hover{color:var(--white);border-color:var(--border2);}
+.nav-btn.solid{background:var(--gold);color:var(--black);}
+.nav-btn.solid:hover{background:var(--gold-l);}
+
+/* HERO */
+#hero{position:relative;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:120px 24px 80px;overflow:hidden;}
+.hero-grid{position:absolute;inset:0;z-index:0;
+  background-image:linear-gradient(rgba(201,147,58,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(201,147,58,.035) 1px,transparent 1px);
+  background-size:56px 56px;mask-image:radial-gradient(ellipse 80% 60% at 50% 50%,black,transparent);}
+.hero-glow{position:absolute;width:700px;height:700px;border-radius:50%;
+  background:radial-gradient(circle,rgba(201,147,58,.07) 0%,transparent 70%);
+  top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;}
+.hero-eyebrow{position:relative;z-index:1;font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);
+  border:1px solid rgba(201,147,58,.3);padding:7px 22px;border-radius:2px;background:rgba(201,147,58,.05);margin-bottom:28px;
+  animation:fadeUp .7s ease both;}
+h1.hero-title{position:relative;z-index:1;font-family:'Bebas Neue',sans-serif;font-size:clamp(68px,11vw,136px);line-height:.9;letter-spacing:.02em;animation:fadeUp .7s .12s ease both;}
+h1.hero-title .l1{display:block;color:var(--white);}
+h1.hero-title .l2{display:block;color:var(--gold);}
+.hero-sub{position:relative;z-index:1;max-width:520px;margin:24px auto 0;font-size:15px;line-height:1.75;color:var(--muted);font-weight:300;animation:fadeUp .7s .24s ease both;}
+.hero-cta{position:relative;z-index:1;margin-top:40px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap;animation:fadeUp .7s .36s ease both;}
+
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:'Syne',sans-serif;font-weight:700;font-size:11px;letter-spacing:.2em;text-transform:uppercase;padding:14px 32px;border-radius:2px;cursor:pointer;border:none;text-decoration:none;transition:all .22s;}
+.btn-gold{background:var(--gold);color:var(--black);}
+.btn-gold:hover{background:var(--gold-l);transform:translateY(-2px);box-shadow:0 8px 28px rgba(201,147,58,.28);}
+.btn-ghost{background:transparent;color:var(--muted2);border:1px solid var(--border2);}
+.btn-ghost:hover{color:var(--white);border-color:var(--gold);transform:translateY(-2px);}
+.btn-night{background:rgba(123,92,246,.15);color:#A78BFA;border:1px solid rgba(123,92,246,.3);}
+.btn-night:hover{background:rgba(123,92,246,.25);transform:translateY(-2px);}
+
+/* STATS */
+.stats-bar{position:relative;z-index:1;display:flex;gap:48px;margin-top:60px;justify-content:center;flex-wrap:wrap;animation:fadeUp .7s .48s ease both;}
+.stat{text-align:center;}
+.stat-num{font-family:'Bebas Neue',sans-serif;font-size:44px;color:var(--gold);line-height:1;}
+.stat-label{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-top:5px;}
+
+/* LEGEND */
+.legend{position:relative;z-index:1;display:flex;gap:24px;margin-top:40px;justify-content:center;flex-wrap:wrap;animation:fadeUp .7s .56s ease both;}
+.leg-item{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--muted);}
+.leg-dot{width:10px;height:10px;border-radius:50%;}
+.leg-dot.day-dot{background:var(--day-a);}
+.leg-dot.night-dot{background:var(--night-a);}
+
+/* MAIN */
+main{position:relative;z-index:1;max-width:1240px;margin:0 auto;padding:80px 48px 120px;}
+
+/* MONTH BLOCK */
+.month-block{margin-bottom:80px;}
+.month-label{font-family:'Bebas Neue',sans-serif;font-size:72px;color:rgba(201,147,58,.08);line-height:1;margin-bottom:-20px;letter-spacing:.04em;}
+.month-header{display:flex;align-items:center;gap:16px;margin-bottom:32px;border-bottom:1px solid var(--border);padding-bottom:20px;}
+.month-name{font-family:'Syne',sans-serif;font-weight:800;font-size:16px;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);}
+.month-count{font-size:11px;color:var(--muted);letter-spacing:.1em;}
+
+/* CONFERENCE CARD */
+.conference-card{background:var(--card);border:1px solid var(--border);border-radius:2px;margin-bottom:16px;overflow:hidden;transition:border-color .3s;}
+.conference-card:hover{border-color:rgba(201,147,58,.35);}
+.conf-header{display:flex;align-items:stretch;}
+.conf-stripe{width:4px;background:var(--day-a);flex-shrink:0;}
+.conf-main{flex:1;padding:24px 28px;display:flex;align-items:center;gap:24px;flex-wrap:wrap;}
+.conf-dates{font-family:'Syne',sans-serif;font-weight:700;font-size:28px;color:var(--white);min-width:80px;line-height:1;}
+.conf-dates .month-short{font-size:12px;font-weight:600;letter-spacing:.1em;color:var(--day-a);display:block;margin-top:2px;}
+.conf-info{flex:1;min-width:200px;}
+.conf-name{font-family:'Syne',sans-serif;font-weight:700;font-size:18px;color:var(--white);margin-bottom:4px;}
+.conf-location{font-size:13px;color:var(--muted);display:flex;align-items:center;gap:6px;}
+.conf-location::before{content:'◎';font-size:10px;color:var(--day-a);}
+.conf-meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;}
+.conf-tag{font-size:10px;letter-spacing:.15em;text-transform:uppercase;padding:4px 10px;border-radius:2px;}
+.tag-public{background:rgba(76,175,101,.1);color:var(--day-a);border:1px solid rgba(76,175,101,.25);}
+.tag-invite{background:rgba(201,147,58,.1);color:var(--gold);border:1px solid rgba(201,147,58,.25);}
+.conf-actions{display:flex;gap:10px;align-items:center;padding:0 24px;flex-shrink:0;}
+.conf-link{font-family:'Syne',sans-serif;font-weight:700;font-size:10px;letter-spacing:.18em;text-transform:uppercase;
+  padding:8px 18px;border-radius:2px;text-decoration:none;transition:.2s;white-space:nowrap;
+  background:rgba(76,175,101,.08);color:var(--day-a);border:1px solid rgba(76,175,101,.2);}
+.conf-link:hover{background:rgba(76,175,101,.18);}
+.conf-toggle{font-family:'Syne',sans-serif;font-weight:700;font-size:10px;letter-spacing:.15em;text-transform:uppercase;
+  padding:8px 16px;border-radius:2px;cursor:pointer;border:none;transition:.2s;white-space:nowrap;
+  background:rgba(123,92,246,.08);color:#A78BFA;border:1px solid rgba(123,92,246,.2);}
+.conf-toggle:hover{background:rgba(123,92,246,.18);}
+
+/* PARALLEL PANEL */
+.parallel-panel{display:none;border-top:1px solid var(--border);}
+.parallel-panel.open{display:block;}
+.parallel-header{padding:20px 28px 0;display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
+.parallel-title{font-family:'Syne',sans-serif;font-weight:700;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#A78BFA;}
+.parallel-subtitle{font-size:12px;color:var(--muted);margin-left:auto;}
+.parallel-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px;padding:16px 28px 24px;}
+.parallel-card{background:var(--night);border:1px solid rgba(123,92,246,.2);border-radius:2px;padding:16px 18px;transition:all .2s;}
+.parallel-card:hover{border-color:rgba(123,92,246,.5);transform:translateY(-2px);}
+.par-day{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#A78BFA;margin-bottom:6px;}
+.par-name{font-family:'Syne',sans-serif;font-weight:700;font-size:14px;color:var(--white);margin-bottom:4px;line-height:1.3;}
+.par-desc{font-size:12px;color:var(--muted);line-height:1.5;}
+.par-access{display:inline-block;margin-top:8px;font-size:9px;letter-spacing:.15em;text-transform:uppercase;padding:3px 8px;border-radius:2px;}
+.par-access.convite{background:rgba(201,147,58,.1);color:var(--gold);border:1px solid rgba(201,147,58,.2);}
+.par-access.aberto{background:rgba(76,175,101,.1);color:var(--day-a);border:1px solid rgba(76,175,101,.2);}
+.par-access.restrito{background:rgba(123,92,246,.1);color:#A78BFA;border:1px solid rgba(123,92,246,.2);}
+.add-parallel-btn{margin:0 28px 24px;width:calc(100% - 56px);background:transparent;border:1px dashed rgba(123,92,246,.3);
+  color:#A78BFA;font-family:'Syne',sans-serif;font-weight:700;font-size:10px;letter-spacing:.2em;text-transform:uppercase;
+  padding:12px;border-radius:2px;cursor:pointer;transition:.2s;display:flex;align-items:center;justify-content:center;gap:8px;}
+.add-parallel-btn:hover{background:rgba(123,92,246,.06);border-color:rgba(123,92,246,.5);}
+
+/* MODAL */
+.modal-overlay{position:fixed;inset:0;z-index:500;background:rgba(9,12,16,.92);backdrop-filter:blur(8px);
+  display:none;align-items:center;justify-content:center;padding:24px;}
+.modal-overlay.open{display:flex;}
+.modal{background:var(--card);border:1px solid var(--border2);border-radius:2px;width:100%;max-width:560px;max-height:90vh;overflow-y:auto;}
+.modal-head{padding:28px 32px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;}
+.modal-title{font-family:'Syne',sans-serif;font-weight:800;font-size:16px;color:var(--white);}
+.modal-title span{color:#A78BFA;}
+.modal-close{background:none;border:none;color:var(--muted);font-size:20px;cursor:pointer;padding:4px;line-height:1;transition:.2s;}
+.modal-close:hover{color:var(--white);}
+.modal-body{padding:28px 32px 20px;}
+.modal-subtitle{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:28px;}
+.field{margin-bottom:20px;}
+.field label{display:block;font-family:'Syne',sans-serif;font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:10px;}
+.field input,.field textarea,.field select{width:100%;background:var(--deep);border:1px solid var(--border2);color:var(--white);
+  padding:12px 16px;font-family:'DM Sans',sans-serif;font-size:14px;border-radius:2px;outline:none;transition:.2s;}
+.field input:focus,.field textarea:focus,.field select:focus{border-color:rgba(123,92,246,.5);}
+.field textarea{resize:vertical;min-height:80px;}
+.field select option{background:var(--card);}
+input::placeholder,textarea::placeholder{color:var(--muted);opacity:.5;}
+.radio-row{display:flex;gap:10px;flex-wrap:wrap;}
+.radio-pill{display:flex;align-items:center;gap:8px;background:var(--deep);border:1px solid var(--border2);
+  padding:10px 16px;border-radius:2px;cursor:pointer;transition:.2s;user-select:none;font-size:13px;color:var(--white);}
+.radio-pill:hover{border-color:rgba(123,92,246,.4);}
+.radio-pill.sel{border-color:#A78BFA;background:rgba(123,92,246,.1);color:#A78BFA;}
+.radio-pill input{display:none;}
+.modal-footer{padding:16px 32px 28px;display:flex;gap:12px;}
+.modal-submit{flex:1;background:var(--night-b);color:#A78BFA;border:1px solid rgba(123,92,246,.4);
+  font-family:'Syne',sans-serif;font-weight:700;font-size:11px;letter-spacing:.2em;text-transform:uppercase;
+  padding:14px;border-radius:2px;cursor:pointer;transition:.2s;}
+.modal-submit:hover{background:var(--night-a);color:var(--white);}
+.modal-cancel{background:transparent;color:var(--muted);border:1px solid var(--border);
+  font-family:'Syne',sans-serif;font-weight:700;font-size:11px;letter-spacing:.2em;text-transform:uppercase;
+  padding:14px 24px;border-radius:2px;cursor:pointer;transition:.2s;}
+.modal-cancel:hover{color:var(--white);}
+.submit-success{display:none;text-align:center;padding:48px 32px;}
+.submit-success .s-icon{font-size:48px;display:block;margin-bottom:16px;}
+.submit-success .s-title{font-family:'Bebas Neue',sans-serif;font-size:36px;color:var(--white);margin-bottom:8px;}
+.submit-success .s-title span{color:#A78BFA;}
+.submit-success .s-sub{font-size:14px;color:var(--muted);}
+
+/* REGISTER */
+#register{background:var(--black);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:100px 48px;}
+.register-inner{max-width:700px;margin:0 auto;text-align:center;}
+.reg-eyebrow{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;}
+.reg-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(40px,6vw,72px);color:var(--white);line-height:.95;margin-bottom:20px;}
+.reg-title span{color:var(--gold);}
+.reg-sub{font-size:15px;color:var(--muted);line-height:1.7;margin-bottom:40px;}
+.reg-form{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;}
+.reg-input{flex:1;min-width:200px;background:var(--card);border:1px solid var(--border2);color:var(--white);
+  padding:14px 18px;font-family:'DM Sans',sans-serif;font-size:14px;border-radius:2px;outline:none;transition:.2s;}
+.reg-input:focus{border-color:rgba(201,147,58,.5);}
+.reg-input::placeholder{color:var(--muted);opacity:.5;}
+
+/* FOOTER */
+footer{border-top:1px solid var(--border);padding:40px 48px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+.foot-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:13px;letter-spacing:.12em;text-transform:uppercase;}
+.foot-logo span{color:var(--gold);}
+.foot-copy{font-size:11px;color:var(--muted);letter-spacing:.08em;}
+
+.conference-card.past-event{opacity:0.62;}
+.conference-card.past-event .conf-stripe{background:var(--muted);}
+.conference-card.past-event .conf-dates{color:var(--muted);}
+.conf-tag.tag-past{background:rgba(122,143,166,.08);color:var(--muted);border:1px solid rgba(122,143,166,.2);}
+.past-month-label{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);
+  background:rgba(122,143,166,.08);border:1px solid rgba(122,143,166,.15);padding:4px 12px;
+  border-radius:2px;margin-left:12px;vertical-align:middle;}
+
+.diag-step{display:none;}.diag-step.active{display:block;}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+
+@media(max-width:768px){
+  nav{padding:16px 20px;}
+  main{padding:60px 20px 80px;}
+  #hero,#register{padding-left:20px;padding-right:20px;}
+  .conf-actions{flex-direction:column;padding:16px 20px;align-items:stretch;}
+  .parallel-grid{grid-template-columns:1fr;}
+  footer{padding:28px 20px;flex-direction:column;text-align:center;}
+  .reg-form{flex-direction:column;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">MR Solutions <span>—</span> Event Map</div>
+  <div class="nav-actions">
+    <button class="nav-btn ghost" onclick="openAddEventModal()">+ Evento do setor</button>
+    <button class="nav-btn ghost" onclick="openAddModal(null)">🌙 Evento noturno</button>
+    <button class="nav-btn solid" onclick="openDiagModal()">Quero diagnóstico</button>
+  </div>
+</nav>
+
+<section id="hero">
+  <!-- Offshore platform background image from Unsplash (free to use) -->
+  <div style="position:absolute;inset:0;z-index:0;overflow:hidden;">
+    <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=1800&q=80&auto=format&fit=crop"
+         alt="Plataforma offshore"
+         style="width:100%;height:100%;object-fit:cover;object-position:center;opacity:0.18;"
+         onerror="this.style.display='none'">
+    <div style="position:absolute;inset:0;background:linear-gradient(to bottom, rgba(9,12,16,0.6) 0%, rgba(13,17,23,0.85) 60%, rgba(13,17,23,1) 100%);"></div>
+  </div>
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-eyebrow">Setor de Energia · Óleo & Gás · 2026</div>
+  <h1 class="hero-title">
+    <span class="l1">MR Solutions</span>
+    <span class="l2">Event Map</span>
+  </h1>
+  <p class="hero-sub">Agenda dupla do setor energético. Onde estar de dia nas feiras e conferências oficiais. O que não perder de noite nos eventos de network que ninguém divulga.</p>
+  <div class="hero-cta">
+    <button class="btn btn-gold" onclick="document.getElementById('calendar-main').scrollIntoView({behavior:'smooth'})">Ver agenda 2026</button>
+    <button class="btn btn-night" onclick="openAddModal(null)">🌙 Adicionar evento noturno</button>
+  </div>
+  <div class="stats-bar">
+    <div class="stat"><div class="stat-num" id="stat-conf">10</div><div class="stat-label">Conferências Oficiais</div></div>
+    <div class="stat"><div class="stat-num" id="stat-night">7</div><div class="stat-label">Eventos Noturnos</div></div>
+    <div class="stat"><div class="stat-num">2x</div><div class="stat-label">Agenda Dia + Noite</div></div>
+  </div>
+  <div class="legend">
+    <div class="leg-item"><div class="leg-dot day-dot"></div> Feira / Conferência (dia)</div>
+    <div class="leg-item"><div class="leg-dot night-dot"></div> Network / Paralelo (noite)</div>
+  </div>
+</section>
+
+<main id="calendar-main">
+  <div id="months-container"></div>
+</main>
+
+<section id="register">
+  <div class="register-inner">
+    <div class="reg-eyebrow">Diagnóstico estratégico · MR Solutions</div>
+    <h2 class="reg-title">Quais eventos fazem<br><span>sentido para você?</span></h2>
+    <p class="reg-sub">Responda algumas perguntas sobre sua empresa e seus objetivos. A MR Solutions entrega um diagnóstico personalizado indicando quais eventos têm mais aderência com o seu perfil, e uma estimativa de investimento real para cada um deles.</p>
+    <button class="btn btn-gold" style="font-size:13px;padding:18px 48px;" onclick="openDiagModal()">Iniciar meu diagnóstico gratuito →</button>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-logo">MR Solutions <span>—</span> Event Map</div>
+  <div class="foot-copy">Inteligência estratégica para o setor de energia · 2026</div>
+</footer>
+
+<!-- MODAL: DIAGNOSTIC -->
+<div class="modal-overlay" id="diag-overlay">
+  <div class="modal" style="max-width:680px;">
+
+    <!-- STEP INDICATOR -->
+    <div id="diag-steps-wrap">
+      <div class="modal-head" style="flex-direction:column;align-items:flex-start;gap:16px;">
+        <div style="display:flex;justify-content:space-between;width:100%;align-items:center;">
+          <div class="modal-title">Diagnóstico <span>Estratégico</span></div>
+          <button class="modal-close" onclick="closeDiagModal()">✕</button>
+        </div>
+        <div style="display:flex;gap:6px;width:100%;align-items:center;" id="diag-progress-bar">
+          <div class="dprog" id="dp1" style="height:3px;flex:1;background:var(--gold);border-radius:2px;transition:.3s;"></div>
+          <div class="dprog" id="dp2" style="height:3px;flex:1;background:var(--border2);border-radius:2px;transition:.3s;"></div>
+          <div class="dprog" id="dp3" style="height:3px;flex:1;background:var(--border2);border-radius:2px;transition:.3s;"></div>
+          <div class="dprog" id="dp4" style="height:3px;flex:1;background:var(--border2);border-radius:2px;transition:.3s;"></div>
+          <span id="diag-step-label" style="font-size:10px;color:var(--muted);letter-spacing:.15em;text-transform:uppercase;white-space:nowrap;margin-left:8px;">Etapa 1 de 4</span>
+        </div>
+      </div>
+
+      <!-- STEP 1: Identificação -->
+      <div class="diag-step active" id="ds1">
+        <div class="modal-body">
+          <p class="modal-subtitle" style="font-size:15px;color:var(--white);font-weight:500;margin-bottom:6px;">Vamos nos conhecer</p>
+          <p class="modal-subtitle">Para entregar um diagnóstico preciso, precisamos entender quem é a sua empresa e com quem estamos falando.</p>
+          <div class="field"><label>Seu nome completo *</label><input type="text" id="d-name" placeholder="Nome completo"></div>
+          <div class="field"><label>Email profissional *</label><input type="email" id="d-email" placeholder="seu@empresa.com"></div>
+          <div class="field"><label>Nome da empresa *</label><input type="text" id="d-company" placeholder="Razão social ou nome fantasia"></div>
+          <div class="field"><label>Segmento da empresa *</label>
+            <div class="radio-row">
+              <label class="radio-pill" onclick="selectPill(this)"><input type="radio" name="d-segment" value="Operadora / E&P">Operadora / E&P</label>
+              <label class="radio-pill" onclick="selectPill(this)"><input type="radio" name="d-segment" value="Prestadora de Serviços">Prestadora de Serviços</label>
+              <label class="radio-pill" onclick="selectPill(this)"><input type="radio" name="d-segment" value="Fornecedora / Supply Chain">Fornecedora / Supply Chain</label>
+              <label class="radio-pill" onclick="selectPill(this)"><input type="radio" name="d-segment" value="Treinamento / Capacitação">Treinamento / Capacitação</label>
+              <label class="radio-pill" onclick="selectPill(this)"><input type="radio" name="d-segment" value="Tecnologia / Inovação">Tecnologia / Inovação</label>
+              <label class="radio-pill" onclick="selectPill(this)"><input type="radio" name="d-segment" value="Consultoria">Consultoria</label>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer"><button class="modal-submit" onclick="diagNext(2)">Continuar →</button></div>
+      </div>
+
+      <!-- STEP 2: Objetivos -->
+      <div class="diag-step" id="ds2">
+        <div class="modal-body">
+          <p class="modal-subtitle" style="font-size:15px;color:var(--white);font-weight:500;margin-bottom:6px;">Qual é a proposta da sua empresa nos eventos?</p>
+          <p class="modal-subtitle">Entender o seu objetivo principal nos ajuda a calcular o retorno esperado e identificar os eventos com maior aderência.</p>
+          <div class="field"><label>Objetivo principal nos eventos *</label>
+            <div class="radio-row">
+              <label class="radio-pill" onclick="selectPill(this)"><input type="radio" name="d-goal" value="Prospecção de clientes">Prospecção de clientes</label>
+              <label class="radio-pill" onclick="selectPill(this)"><input type="radio" name="d-goal" value="Visibilidade de marca">Visibilidade de marca</label>
+              <label class="radio-pill" onclick="selectPill(this)"><input type="radio" name="d-goal" value="Networking com executivos">Networking com executivos</label>
+              <label class="radio-pill" onclick="selectPill(this)"><input type="radio" name="d-goal" value="Lançamento de produto / serviço">Lançamento de produto / serviço</label>
+              <label class="radio-pill" onclick="selectPill(this)"><input type="radio" name="d-goal" value="Fechar parcerias comerciais">Fechar parcerias comerciais</label>
+            </div>
+          </div>
+          <div class="field"><label>Porte da empresa *</label>
+            <div class="radio-row">
+              <label class="radio-pill" onclick="selectPill(this)"><input type="radio" name="d-size" value="MEI / Autônomo">MEI / Autônomo</label>
+              <label class="radio-pill" onclick="selectPill(this)"><input type="radio" name="d-size" value="Pequena (até 50 func.)">Pequena (até 50 func.)</label>
+              <label class="radio-pill" onclick="selectPill(this)"><input type="radio" name="d-size" value="Média (50–500 func.)">Média (50–500 func.)</label>
+              <label class="radio-pill" onclick="selectPill(this)"><input type="radio" name="d-size" value="Grande (500+ func.)">Grande (500+ func.)</label>
+            </div>
+          </div>
+          <div class="field"><label>Já participou de algum evento do setor antes?</label>
+            <div class="radio-row">
+              <label class="radio-pill" onclick="selectPill(this)"><input type="radio" name="d-exp" value="Sim, com regularidade">Sim, com regularidade</label>
+              <label class="radio-pill" onclick="selectPill(this)"><input type="radio" name="d-exp" value="Sim, pontualmente">Sim, pontualmente</label>
+              <label class="radio-pill" onclick="selectPill(this)"><input type="radio" name="d-exp" value="Nunca participou">Nunca participou</label>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="modal-cancel" onclick="diagBack(1)">← Voltar</button>
+          <button class="modal-submit" onclick="diagNext(3)">Continuar →</button>
+        </div>
+      </div>
+
+      <!-- STEP 3: Estratégia e orçamento -->
+      <div class="diag-step" id="ds3">
+        <div class="modal-body">
+          <p class="modal-subtitle" style="font-size:15px;color:var(--white);font-weight:500;margin-bottom:6px;">Estratégia e orçamento</p>
+          <p class="modal-subtitle">Estas respostas são usadas para calibrar a estimativa de investimento e o nível de presença recomendado para cada evento.</p>
+          <div class="field"><label>Qual é a estratégia atual de comunicação da empresa?</label>
+            <div class="radio-row">
+              <label class="radio-pill" onclick="selectPill(this)"><input type="radio" name="d-comm" value="Ainda não temos estratégia definida">Ainda não temos estratégia definida</label>
+              <label class="radio-pill" onclick="selectPill(this)"><input type="radio" name="d-comm" value="Redes sociais próprias">Redes sociais próprias</label>
+              <label class="radio-pill" onclick="selectPill(this)"><input type="radio" name="d-comm" value="Agência / equipe de marketing">Agência / equipe de marketing</label>
+              <label class="radio-pill" onclick="selectPill(this)"><input type="radio" name="d-comm" value="Parcerias com criadores de conteúdo">Parcerias com criadores de conteúdo</label>
+            </div>
+          </div>
+          <div class="field"><label>Orçamento disponível para eventos em 2026 (USD) *</label>
+            <div class="radio-row">
+              <label class="radio-pill" onclick="selectPill(this)"><input type="radio" name="d-budget" value="Até $10.000">Até $10.000</label>
+              <label class="radio-pill" onclick="selectPill(this)"><input type="radio" name="d-budget" value="$10.000 – $30.000">$10k – $30k</label>
+              <label class="radio-pill" onclick="selectPill(this)"><input type="radio" name="d-budget" value="$30.000 – $80.000">$30k – $80k</label>
+              <label class="radio-pill" onclick="selectPill(this)"><input type="radio" name="d-budget" value="Acima de $80.000">Acima de $80k</label>
+            </div>
+          </div>
+          <div class="field"><label>Quais eventos você já tem em vista para 2026?</label>
+            <div id="diag-events-check" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px;"></div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="modal-cancel" onclick="diagBack(2)">← Voltar</button>
+          <button class="modal-submit" onclick="diagNext(4)">Ver meu diagnóstico →</button>
+        </div>
+      </div>
+
+      <!-- STEP 4: RESULTADO -->
+      <div class="diag-step" id="ds4">
+        <div class="modal-body" id="diag-result-body">
+          <!-- Preenchido dinamicamente -->
+        </div>
+        <div class="modal-footer">
+          <button class="modal-cancel" onclick="closeDiagModal()">Fechar</button>
+          <button class="modal-submit" onclick="closeDiagModal()" style="background:var(--gold);color:var(--black);border-color:var(--gold);">✓ Entendido, obrigado!</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- MODAL: ADICIONAR EVENTO DO SETOR -->
+<div class="modal-overlay" id="add-event-overlay">
+  <div class="modal">
+    <div id="add-event-form-wrap">
+      <div class="modal-head">
+        <div class="modal-title">Adicionar <span>evento do setor</span></div>
+        <button class="modal-close" onclick="closeAddEventModal()">✕</button>
+      </div>
+      <div class="modal-body">
+        <p class="modal-subtitle">Conhece uma feira, conferência ou summit do setor de energia que não está no mapa? Adiciona aqui e ajuda a comunidade a ter o calendário mais completo do Brasil.</p>
+        <div class="field"><label>Nome do evento *</label>
+          <input type="text" id="ae-name" placeholder="Ex: Rio Oil & Gas, SPE Brasil, OTC Asia...">
+        </div>
+        <div class="field"><label>Mês *</label>
+          <select id="ae-month">
+            <option value="">Selecione o mês</option>
+            <option>Janeiro</option><option>Fevereiro</option><option>Março</option>
+            <option>Abril</option><option>Maio</option><option>Junho</option>
+            <option>Julho</option><option>Agosto</option><option>Setembro</option>
+            <option>Outubro</option><option>Novembro</option><option>Dezembro</option>
+          </select>
+        </div>
+        <div class="field"><label>Datas (se souber)</label>
+          <input type="text" id="ae-dates" placeholder="Ex: 14 – 16, ou Sem. 3">
+        </div>
+        <div class="field"><label>Local / Cidade *</label>
+          <input type="text" id="ae-location" placeholder="Ex: Rio de Janeiro, RJ — Brasil">
+        </div>
+        <div class="field"><label>Link oficial (se tiver)</label>
+          <input type="text" id="ae-link" placeholder="https://...">
+        </div>
+        <div class="field"><label>Tipo de acesso</label>
+          <div class="radio-row">
+            <label class="radio-pill sel" onclick="selectPill(this)"><input type="radio" name="ae-access" value="public" checked>Acesso Público</label>
+            <label class="radio-pill" onclick="selectPill(this)"><input type="radio" name="ae-access" value="invite">Por Convite</label>
+          </div>
+        </div>
+        <div class="field"><label>Seu nome e empresa (opcional)</label>
+          <input type="text" id="ae-author" placeholder="Quem está enviando">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="modal-cancel" onclick="closeAddEventModal()">Cancelar</button>
+        <button class="modal-submit" style="background:var(--gold);color:var(--black);border-color:var(--gold);" onclick="submitAddEvent()">📅 Enviar evento</button>
+      </div>
+    </div>
+    <div class="submit-success" id="add-event-success">
+      <span class="s-icon">📅</span>
+      <div class="s-title">Evento <span>enviado!</span></div>
+      <p class="s-sub">Obrigado por contribuir com o mapa. Seu evento será adicionado ao calendário após revisão.</p>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL: ADD PARALLEL EVENT -->
+<div class="modal-overlay" id="modal-overlay">
+  <div class="modal">
+    <div id="modal-form-wrap">
+      <div class="modal-head">
+        <div class="modal-title">Adicionar <span>evento paralelo</span></div>
+        <button class="modal-close" onclick="closeModal()">✕</button>
+      </div>
+      <div class="modal-body">
+        <p class="modal-subtitle">Você sabe de um evento de network, jantar, workshop ou festa que vai acontecer durante uma das feiras? Compartilha aqui. A comunidade agradece.</p>
+        <div class="field">
+          <label>Nome do evento *</label>
+          <input type="text" id="m-name" placeholder="Ex: Jantar Brasileiros, Workshop DELP, Festa Camorim...">
+        </div>
+        <div class="field">
+          <label>Durante qual feira acontece? *</label>
+          <select id="m-conference"><option value="">Selecione a feira principal</option></select>
+        </div>
+        <div class="field">
+          <label>Dia e período</label>
+          <input type="text" id="m-day" placeholder="Ex: Sábado 02/05, Segunda 04/05 à noite...">
+        </div>
+        <div class="field">
+          <label>Breve descrição</label>
+          <textarea id="m-desc" placeholder="Quem organiza, qual o formato, o que esperar..."></textarea>
+        </div>
+        <div class="field">
+          <label>Tipo de acesso</label>
+          <div class="radio-row" id="access-radio">
+            <label class="radio-pill sel" onclick="selectPill(this,'access')"><input type="radio" name="access" value="convite" checked>Por Convite</label>
+            <label class="radio-pill" onclick="selectPill(this,'access')"><input type="radio" name="access" value="aberto">Aberto</label>
+            <label class="radio-pill" onclick="selectPill(this,'access')"><input type="radio" name="access" value="restrito">Restrito (empresa)</label>
+          </div>
+        </div>
+        <div class="field">
+          <label>Seu nome (opcional)</label>
+          <input type="text" id="m-author" placeholder="Quem está enviando esta informação">
+        </div>
+        <!-- PASSO 3: campo de presença de empresas -->
+        <div class="field">
+          <label>Quem vai estar lá? (opcional)</label>
+          <input type="text" id="m-attendees" placeholder="Ex: Petrobras, TechnipFMC, SBM Offshore (separe por vírgula)">
+          <div style="font-size:11px;color:var(--muted);margin-top:6px;line-height:1.5;">Informe empresas ou pessoas que você sabe que vão estar neste evento. Ajuda a comunidade a fazer networking antes mesmo de chegar.</div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="modal-cancel" onclick="closeModal()">Cancelar</button>
+        <button class="modal-submit" onclick="submitParallel()">🌙 Enviar para a comunidade</button>
+      </div>
+    </div>
+    <div class="submit-success" id="modal-success">
+      <span class="s-icon">🌙</span>
+      <div class="s-title">Evento <span>adicionado!</span></div>
+      <p class="s-sub">Obrigado por alimentar o mapa. Seu evento já aparece na agenda da comunidade.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+// ─── DADOS ─────────────────────────────────────────────────────────────────
+// Cada conferência tem: id, nome, datas, mês, local, tipo de acesso, link oficial, e lista de eventos paralelos (noite).
+const CONFERENCES = [
+
+  // ── EVENTOS PASSADOS 2026 ─────────────────────────────────────────────────
+  {
+    id:'guyana2026feb',
+    name:'Guyana Energy Conference & Supply Chain Expo',
+    dates:'17 – 19', month:'Fevereiro', monthShort:'FEV', year:2026,
+    location:'Georgetown — Guiana',
+    access:'public', link:'https://www.guyanaenergyconference.com/',
+    past:true,
+    parallel:[]
+  },
+  {
+    id:'macae2026mar',
+    name:'Macaé Energy',
+    dates:'17 – 19', month:'Março', monthShort:'MAR', year:2026,
+    location:'Centro de Convenções Jornalista Roberto Marinho, Macaé, RJ — Brasil',
+    access:'public', link:'https://macaeenergy.com.br/',
+    past:true,
+    parallel:[]
+  },
+  {
+    id:'vitoria2026apr',
+    name:'Vitória PetroShow',
+    dates:'14 – 16', month:'Abril', monthShort:'ABR', year:2026,
+    location:'Centro de Convenções de Vitória, ES — Brasil',
+    access:'public', link:'https://vitoriapetroshow.com.br/',
+    past:true,
+    parallel:[]
+  },
+  {
+    id:'nnlogistica2026apr',
+    name:'NN Logística — Supply Chain & Energia',
+    dates:'Abr · Em andamento', month:'Abril', monthShort:'ABR', year:2026,
+    location:'Brasil',
+    access:'public', link:'https://nnlogistica.com.br/',
+    past:false,
+    parallel:[]
+  },
+
+  // ── MAIO ──────────────────────────────────────────────────────────────────
+  {
+    id:'otc2026',
+    name:'OTC — Offshore Technology Conference',
+    dates:'4 – 7', month:'Maio', monthShort:'MAI', year:2026,
+    location:'NRG Park, Houston, TX — EUA',
+    access:'public', link:'https://2026.otcnet.org/',
+    past:false,
+    parallel:[
+      { day:'Sábado, 2 Mai', name:'Confraria do Vinho', desc:'Reunião informal da comunidade brasileira antes da abertura oficial da OTC. Tradição que antecede a semana maior.', access:'convite' },
+      { day:'Domingo, 3 Mai', name:'Churrasco dos Brasileiros', desc:'Encontro tradicional dos profissionais brasileiros no fim de semana pré-OTC. Alta concentração de executivos e decisores.', access:'convite' },
+      { day:'Segunda, 4 Mai · Noite', name:'Brasil Energy Meeting', desc:'Jantar de networking exclusivo para lideranças do setor energético brasileiro presentes na OTC.', access:'convite' },
+      { day:'Terça, 5 Mai · Noite', name:'Noite de Network FPSO', desc:'Evento de conexão focado no segmento FPSO. Operadoras, afretadores e prestadores de serviço reunidos.', access:'aberto' },
+      { day:'Quarta, 6 Mai · Noite', name:'Festa ABS', desc:'Evento social promovido pela American Bureau of Shipping. Presença de lideranças técnicas e comerciais.', access:'restrito' },
+      { day:'Quarta, 6 Mai · Noite', name:'Workshop DELP', desc:'Sessão técnica e networking. Foco em desenvolvimento e liderança no setor energético.', access:'restrito' },
+      { day:'Quarta, 6 Mai · Noite', name:'Festa Camorim', desc:'Confraternização tradicional da comunidade brasileira na OTC. Um dos eventos mais aguardados de toda a semana.', access:'convite' },
+    ]
+  },
+  {
+    id:'fpso2026',
+    name:'FPSO Expo Brasil — Epicentro Global (4ª Edição)',
+    dates:'19 – 21', month:'Maio', monthShort:'MAI', year:2026,
+    location:'ExpoRio Cidade Nova, Rio de Janeiro, RJ — Brasil',
+    access:'public', link:'https://fpsosexpor.com.br/',
+    past:false,
+    parallel:[]
+  },
+  {
+    id:'bahia2026',
+    name:'Bahia Oil & Gas Energy (BOGE)',
+    dates:'27 – 29', month:'Maio', monthShort:'MAI', year:2026,
+    location:'Centro de Convenções Salvador, BA — Brasil',
+    access:'public', link:'https://www.bahiaoilgasenergy.com.br/',
+    past:false,
+    parallel:[]
+  },
+
+  // ── JUNHO ─────────────────────────────────────────────────────────────────
+  {
+    id:'seogs2026',
+    name:'SEOGS — Suriname Energy, Oil & Gas Summit & Exhibition',
+    dates:'23 – 26', month:'Junho', monthShort:'JUN', year:2026,
+    location:'Paramaribo — Suriname',
+    access:'public', link:'https://suriname-energy.com/',
+    past:false,
+    parallel:[]
+  },
+  {
+    id:'sergipe2026',
+    name:'SEOG.e — Sergipe Oil & Gas & Energy',
+    dates:'29 – 31', month:'Julho', monthShort:'JUL', year:2026,
+    location:'Centro de Convenções AM Malls, Aracaju, SE — Brasil',
+    access:'public', link:'https://sergipeoilgas.com.br/',
+    past:false,
+    parallel:[
+      { day:'28 Jul · Noite', name:'Welcome Drink SOG26', desc:'Recepção de boas-vindas destinada exclusivamente a patrocinadores e parceiros do evento.', access:'convite' },
+      { day:'30 Jul · Noite', name:'Celebra SOG26', desc:'Confraternização com atrações musicais e serviço all inclusive. Um dos destaques sociais do evento.', access:'convite' },
+    ]
+  },
+
+  // ── AGOSTO ────────────────────────────────────────────────────────────────
+  {
+    id:'navalshore2026',
+    name:'Navalshore — Feira da Indústria Marítima (20ª Ed.)',
+    dates:'18 – 20', month:'Agosto', monthShort:'AGO', year:2026,
+    location:'Rio de Janeiro, RJ — Brasil',
+    access:'public', link:'https://www.navalshore.com.br/',
+    past:false,
+    parallel:[]
+  },
+  {
+    id:'ons2026',
+    name:'ONS — Offshore Northern Seas',
+    dates:'24 – 27', month:'Agosto', monthShort:'AGO', year:2026,
+    location:'Stavanger — Noruega',
+    access:'public', link:'https://www.ons.no/',
+    past:false,
+    parallel:[]
+  },
+
+  // ── SETEMBRO ──────────────────────────────────────────────────────────────
+  {
+    id:'roge2026',
+    name:'ROG.e — Festival de Energia do Planeta (IBP)',
+    dates:'21 – 24', month:'Setembro', monthShort:'SET', year:2026,
+    location:'Riocentro, Rio de Janeiro, RJ — Brasil',
+    access:'public', link:'https://roge.energy/',
+    past:false,
+    parallel:[]
+  },
+  {
+    id:'smm2026',
+    name:'SMM — Shipbuilding, Machinery & Marine Technology',
+    dates:'Set · A confirmar', month:'Setembro', monthShort:'SET', year:2026,
+    location:'Hamburgo — Alemanha',
+    access:'public', link:'https://www.smm-hamburg.com/',
+    past:false,
+    parallel:[]
+  },
+
+  // ── NOVEMBRO ──────────────────────────────────────────────────────────────
+  {
+    id:'adipec2026',
+    name:'ADIPEC — Abu Dhabi International Petroleum Exhibition',
+    dates:'9 – 12', month:'Novembro', monthShort:'NOV', year:2026,
+    location:'Abu Dhabi — Emirados Árabes Unidos',
+    access:'public', link:'https://www.adipec.com/',
+    past:false,
+    parallel:[]
+  },
+  {
+    id:'mossoro2026',
+    name:'Mossoró Oil, Gas & Energy',
+    dates:'Nov · Sem. 4', month:'Novembro', monthShort:'NOV', year:2026,
+    location:'Mossoró, RN — Brasil',
+    access:'public', link:'https://www.mossorooilgas.com.br/',
+    past:false,
+    parallel:[]
+  },
+];
+
+// ─── CONSTRUIR CALENDÁRIO ───────────────────────────────────────────────────
+function buildCalendar() {
+  const container = document.getElementById('months-container');
+
+  // Agrupa conferências por mês preservando a ordem
+  const months = [];
+  const byMonth = {};
+  CONFERENCES.forEach(c => {
+    if (!byMonth[c.month]) { byMonth[c.month] = []; months.push(c.month); }
+    byMonth[c.month].push(c);
+  });
+
+  // Meses que já passaram completamente (marcados como passados)
+  const pastMonths = new Set(['Fevereiro','Março','Abril']);
+
+  months.forEach(month => {
+    const confs = byMonth[month];
+    const nightTotal = confs.reduce((a, c) => a + c.parallel.length, 0);
+    const isPastMonth = confs.every(c => c.past);
+
+    const block = document.createElement('div');
+    block.className = 'month-block';
+    block.innerHTML = `
+      <div class="month-label">${month.toUpperCase()}</div>
+      <div class="month-header" id="mh-${month}">
+        <span class="month-name">${month} 2026</span>
+        ${isPastMonth ? '<span class="past-month-label">✓ Realizado</span>' : ''}
+        <span class="month-count" style="margin-left:auto;">${confs.length} evento${confs.length>1?'s':''} · ${nightTotal} noturno${nightTotal!==1?'s':''} mapeado${nightTotal!==1?'s':''}</span>
+      </div>
+      <div id="month-${month}"></div>`;
+    container.appendChild(block);
+    confs.forEach(c => renderConference(c, `month-${month}`));
+  });
+
+  // Popula select do modal com todas as opções
+  const sel = document.getElementById('m-conference');
+  CONFERENCES.forEach(c => {
+    const opt = document.createElement('option');
+    opt.value = c.id;
+    opt.textContent = `${c.name} — ${c.month} ${c.year}`;
+    sel.appendChild(opt);
+  });
+
+  updateStats();
+}
+
+// ─── RENDERIZAR UMA CONFERÊNCIA ─────────────────────────────────────────────
+function renderConference(conf, containerId) {
+  const wrap = document.createElement('div');
+  wrap.className = 'conference-card' + (conf.past ? ' past-event' : '');
+  wrap.id = 'card-' + conf.id;
+
+  const accessTag = conf.past
+    ? '<span class="conf-tag tag-past">✓ Realizado</span>'
+    : conf.access === 'invite'
+      ? '<span class="conf-tag tag-invite">Por Convite</span>'
+      : '<span class="conf-tag tag-public">Acesso Público</span>';
+
+  const linkBtn = conf.link
+    ? `<a class="conf-link" href="${conf.link}" target="_blank" rel="noopener">↗ Site oficial</a>`
+    : '';
+
+  wrap.innerHTML = `
+    <div class="conf-header">
+      <div class="conf-stripe"></div>
+      <div class="conf-main">
+        <div class="conf-dates">${conf.dates}<span class="month-short">${conf.monthShort}</span></div>
+        <div class="conf-info">
+          <div class="conf-name">${conf.name}</div>
+          <div class="conf-location">${conf.location}</div>
+          <div class="conf-meta">${accessTag}</div>
+        </div>
+      </div>
+      <div class="conf-actions">
+        ${linkBtn}
+        <button class="conf-toggle" id="toggle-${conf.id}" onclick="toggleParallel('${conf.id}')">
+          ${nightLabel(conf)}
+        </button>
+      </div>
+    </div>
+    <div class="parallel-panel" id="panel-${conf.id}">
+      <div class="parallel-header">
+        <span class="parallel-title">Agenda noturna & paralela</span>
+        <span class="parallel-subtitle">Eventos na semana desta feira</span>
+      </div>
+      <div class="parallel-grid" id="pgrid-${conf.id}"></div>
+      <button class="add-parallel-btn" onclick="openAddModal('${conf.id}')">
+        + Você sabe de outro evento? Adicione aqui
+      </button>
+    </div>`;
+
+  document.getElementById(containerId).appendChild(wrap);
+  renderParallelCards(conf);
+}
+
+function nightLabel(conf) {
+  const n = conf.parallel.length;
+  return n > 0 ? `🌙 ${n} evento${n>1?'s':''} noturno${n>1?'s':''}` : '🌙 Ver agenda noturna';
+}
+
+// ─── RENDERIZAR CARDS PARALELOS ─────────────────────────────────────────────
+function renderParallelCards(conf) {
+  const grid = document.getElementById('pgrid-' + conf.id);
+  if (!grid) return;
+  grid.innerHTML = '';
+  if (conf.parallel.length === 0) {
+    grid.innerHTML = `<p style="grid-column:1/-1;font-size:13px;color:var(--muted);font-style:italic;padding:8px 0 4px;">
+      Nenhum evento noturno mapeado ainda. Seja o primeiro a contribuir com a comunidade.</p>`;
+    return;
+  }
+  conf.parallel.forEach(p => {
+    const card = document.createElement('div');
+    card.className = 'parallel-card';
+
+    // PASSO 2: calcula se o evento foi adicionado nos últimos 7 dias
+    const isNew = p.addedAt && (Date.now() - p.addedAt) < SEVEN_DAYS_MS;
+    const newTag = isNew
+      ? `<span style="display:inline-block;margin-left:8px;font-size:9px;letter-spacing:.18em;text-transform:uppercase;
+           padding:2px 8px;border-radius:2px;background:rgba(74,222,128,.15);color:#4ADE80;
+           border:1px solid rgba(74,222,128,.3);vertical-align:middle;font-family:'Syne',sans-serif;font-weight:700;">NOVO</span>`
+      : '';
+
+    // PASSO 3: lista de quem vai estar lá
+    const attendeesList = (p.attendees && p.attendees.length > 0)
+      ? `<div style="margin-top:10px;padding-top:10px;border-top:1px solid rgba(123,92,246,.15);">
+           <div style="font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:#A78BFA;margin-bottom:6px;font-family:'Syne',sans-serif;font-weight:700;">Quem vai estar lá</div>
+           <div style="display:flex;flex-wrap:wrap;gap:4px;">
+             ${p.attendees.map(a =>
+               `<span style="font-size:11px;padding:3px 8px;background:rgba(123,92,246,.1);border:1px solid rgba(123,92,246,.2);border-radius:2px;color:var(--muted2);">${a}</span>`
+             ).join('')}
+           </div>
+         </div>`
+      : '';
+
+    card.innerHTML = `
+      <div class="par-day">${p.day}</div>
+      <div class="par-name">${p.name}${newTag}</div>
+      <div class="par-desc">${p.desc}</div>
+      <span class="par-access ${p.access}">${p.access==='convite'?'Por Convite':p.access==='aberto'?'Aberto':'Restrito'}</span>
+      ${attendeesList}`;
+    grid.appendChild(card);
+  });
+}
+
+function toggleParallel(confId) {
+  document.getElementById('panel-' + confId).classList.toggle('open');
+}
+
+// ─── MODAL ──────────────────────────────────────────────────────────────────
+let currentConfId = null;
+
+function openAddModal(confId) {
+  currentConfId = confId;
+  if (confId) document.getElementById('m-conference').value = confId;
+  document.getElementById('modal-form-wrap').style.display = '';
+  document.getElementById('modal-success').style.display = 'none';
+  document.getElementById('modal-overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  document.getElementById('modal-overlay').classList.remove('open');
+  document.body.style.overflow = '';
+  ['m-name','m-day','m-desc','m-author','m-attendees'].forEach(id => { const el = document.getElementById(id); if(el) el.value = ''; });
+  document.querySelectorAll('.radio-pill').forEach((p,i) => p.classList.toggle('sel', i===0));
+}
+
+function selectPill(el) {
+  el.closest('.radio-row').querySelectorAll('.radio-pill').forEach(p => p.classList.remove('sel'));
+  el.classList.add('sel');
+  el.querySelector('input').checked = true;
+}
+
+function submitParallel() {
+  const name = document.getElementById('m-name').value.trim();
+  const confId = document.getElementById('m-conference').value;
+  if (!name || !confId) { showModalError('Preencha ao menos o nome do evento e a feira principal.'); return; }
+
+  const day      = document.getElementById('m-day').value.trim() || 'A confirmar';
+  const desc     = document.getElementById('m-desc').value.trim() || '';
+  const access   = document.querySelector('input[name="access"]:checked')?.value || 'convite';
+  // PASSO 3: captura o campo "quem vai estar lá" (empresas separadas por vírgula)
+  const attendeeRaw = document.getElementById('m-attendees')?.value.trim() || '';
+  const attendees = attendeeRaw ? attendeeRaw.split(',').map(a => a.trim()).filter(Boolean) : [];
+
+  const conf = CONFERENCES.find(c => c.id === confId);
+  if (conf) {
+    // ── DEDUPLICAÇÃO INTELIGENTE ──────────────────────────────────────────────
+    // Normaliza texto: remove acentos, minúsculas, sem pontuação
+    const norm = s => s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9 ]/g,'').replace(/\s+/g,' ').trim();
+
+    // Distância de Levenshtein: mede quantas letras precisariam mudar de uma palavra para outra
+    // Exemplo: "camorim" → "camorins" = distância 1 (adicionou 1 letra)
+    const levenshtein = (a, b) => {
+      const m = a.length, n = b.length;
+      const dp = Array.from({length:m+1}, (_,i) => Array.from({length:n+1}, (_,j) => i===0?j:j===0?i:0));
+      for (let i=1;i<=m;i++) for (let j=1;j<=n;j++)
+        dp[i][j] = a[i-1]===b[j-1] ? dp[i-1][j-1] : 1+Math.min(dp[i-1][j],dp[i][j-1],dp[i-1][j-1]);
+      return dp[m][n];
+    };
+
+    // Similaridade: 0% = totalmente diferente, 100% = idêntico
+    const similarity = (a, b) => {
+      const na = norm(a), nb = norm(b);
+      if (na === nb) return 100;
+      const maxLen = Math.max(na.length, nb.length);
+      if (maxLen === 0) return 100;
+      const lev = levenshtein(na, nb);
+      const levScore = (1 - lev / maxLen) * 100;
+
+      // Verifica também se uma palavra-chave importante aparece em ambos
+      // Ex: "camorim" aparece em "Festa Camorim" e em "Camorim Party" → suspeito
+      const wordsA = na.split(' ').filter(w => w.length > 4);
+      const wordsB = new Set(nb.split(' '));
+      const sharedKeywords = wordsA.filter(w => wordsB.has(w)).length;
+      const keywordScore = sharedKeywords > 0 ? Math.min(sharedKeywords * 40, 80) : 0;
+
+      return Math.max(levScore, keywordScore);
+    };
+
+    // Procura eventos já cadastrados que sejam parecidos (limiar: 70%)
+    const similar = conf.parallel.find(p => similarity(p.name, name) >= 70);
+    if (similar) {
+      showModalError(`Evento parecido já existe: "${similar.name}". Tem certeza que são eventos diferentes?`, true, () => {
+        // Callback: se usuário confirmar, adiciona mesmo assim com timestamp e presença
+        conf.parallel.push({ day, name, desc, access, attendees, addedAt: Date.now() });
+        finishAddParallel(conf);
+      });
+      return;
+    }
+    // PASSO 2: addedAt = timestamp de agora → vai aparecer com tag "NOVO" por 7 dias
+    // PASSO 3: attendees = lista de empresas que o usuário informou que estarão lá
+    conf.parallel.push({ day, name, desc, access, attendees, addedAt: Date.now() });
+    finishAddParallel(conf);
+  }
+}
+
+// Separa o "finalizar adição" para evitar repetição de código
+function finishAddParallel(conf) {
+  renderParallelCards(conf);
+  const toggleBtn = document.getElementById('toggle-' + conf.id);
+  if (toggleBtn) toggleBtn.textContent = nightLabel(conf);
+  document.getElementById('panel-' + conf.id).classList.add('open');
+  updateMonthHeader(conf.month);
+  updateStats();
+  document.getElementById('modal-form-wrap').style.display = 'none';
+  document.getElementById('modal-success').style.display = 'block';
+  setTimeout(closeModal, 2800);
+}
+
+// Exibe erro inline dentro do modal (muito melhor do que alert() do navegador)
+function showModalError(msg, withConfirm, onConfirm) {
+  let el = document.getElementById('modal-inline-error');
+  if (!el) {
+    el = document.createElement('div');
+    el.id = 'modal-inline-error';
+    el.style.cssText = 'margin:0 32px 16px;padding:14px 18px;border-radius:2px;font-size:13px;line-height:1.5;border:1px solid rgba(239,68,68,.35);background:rgba(239,68,68,.08);color:#FCA5A5;';
+    const footer = document.querySelector('#modal-form-wrap .modal-footer');
+    footer.parentNode.insertBefore(el, footer);
+  }
+  if (withConfirm) {
+    el.innerHTML = `⚠ ${msg} <button onclick="document.getElementById('modal-inline-error').style.display='none';(${onConfirm.toString()})()" style="margin-left:12px;background:rgba(239,68,68,.2);border:1px solid rgba(239,68,68,.4);color:#FCA5A5;padding:4px 14px;border-radius:2px;cursor:pointer;font-size:12px;font-family:'Syne',sans-serif;font-weight:700;letter-spacing:.1em;">Adicionar mesmo assim</button>`;
+  } else {
+    el.innerHTML = `⚠ ${msg}`;
+  }
+  el.style.display = 'block';
+  setTimeout(() => { if (el) el.style.display = 'none'; }, 6000);
+}
+
+function updateMonthHeader(month) {
+  const confs = CONFERENCES.filter(c => c.month === month);
+  const total = confs.reduce((a, c) => a + c.parallel.length, 0);
+  const el = document.querySelector(`#mh-${month} .month-count`);
+  if (el) el.textContent = `${confs.length} evento${confs.length>1?'s':''} · ${total} noturno${total!==1?'s':''} mapeado${total!==1?'s':''}`;
+}
+
+function updateStats() {
+  const totalNight = CONFERENCES.reduce((a, c) => a + c.parallel.length, 0);
+  document.getElementById('stat-conf').textContent = CONFERENCES.length;
+  document.getElementById('stat-night').textContent = totalNight;
+}
+
+// ─── DIAGNOSTIC MODAL ────────────────────────────────────────────────────────
+
+function openDiagModal() {
+  // Populate events checklist on step 3 (do it once)
+  const grid = document.getElementById('diag-events-check');
+  if (grid && grid.children.length === 0) {
+    CONFERENCES.forEach(c => {
+      const lbl = document.createElement('label');
+      lbl.className = 'radio-pill';
+      lbl.style.cssText = 'justify-content:flex-start;';
+      lbl.innerHTML = `<input type="checkbox" name="d-events" value="${c.name}">
+        <span style="font-size:12px;">${c.name.split('—')[0].trim()} <span style="color:var(--muted);font-size:11px;">${c.month}</span></span>`;
+      lbl.onclick = function() { this.classList.toggle('sel'); };
+      grid.appendChild(lbl);
+    });
+  }
+  document.getElementById('diag-overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  diagGoStep(1);
+}
+
+function closeDiagModal() {
+  document.getElementById('diag-overlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function diagGoStep(n) {
+  [1,2,3,4].forEach(i => {
+    document.getElementById('ds'+i).classList.toggle('active', i===n);
+    const bar = document.getElementById('dp'+i);
+    if (bar) bar.style.background = i <= n ? 'var(--gold)' : 'var(--border2)';
+  });
+  document.getElementById('diag-step-label').textContent = `Etapa ${n} de 4`;
+}
+
+function diagNext(to) {
+  clearDiagError();
+  if (to === 2) {
+    if (!document.getElementById('d-name').value.trim()) { showDiagError('Informe seu nome completo.'); return; }
+    if (!document.getElementById('d-email').value.trim()) { showDiagError('Informe seu email profissional.'); return; }
+    if (!document.getElementById('d-company').value.trim()) { showDiagError('Informe o nome da empresa.'); return; }
+    if (!document.querySelector('input[name="d-segment"]:checked')) { showDiagError('Selecione o segmento da empresa para continuar.'); return; }
+  }
+  if (to === 3) {
+    if (!document.querySelector('input[name="d-goal"]:checked')) { showDiagError('Selecione seu objetivo principal nos eventos.'); return; }
+    if (!document.querySelector('input[name="d-size"]:checked')) { showDiagError('Selecione o porte da empresa.'); return; }
+  }
+  if (to === 4) {
+    if (!document.querySelector('input[name="d-budget"]:checked')) { showDiagError('Selecione uma faixa de orçamento para gerar o diagnóstico.'); return; }
+    buildDiagnostic();
+  }
+  diagGoStep(to);
+}
+
+function showDiagError(msg) {
+  let el = document.getElementById('diag-inline-error');
+  if (!el) {
+    el = document.createElement('div');
+    el.id = 'diag-inline-error';
+    el.style.cssText = 'margin:0 32px 16px;padding:12px 18px;border-radius:2px;font-size:13px;border:1px solid rgba(239,68,68,.35);background:rgba(239,68,68,.08);color:#FCA5A5;';
+    // Insert before the active step's footer
+    const activeFooter = document.querySelector('.diag-step.active .modal-footer');
+    if (activeFooter) activeFooter.parentNode.insertBefore(el, activeFooter);
+  }
+  el.textContent = '⚠ ' + msg;
+  el.style.display = 'block';
+}
+
+function clearDiagError() {
+  const el = document.getElementById('diag-inline-error');
+  if (el) el.style.display = 'none';
+}
+
+function diagBack(to) { diagGoStep(to); }
+
+// ─── MONTAR DIAGNÓSTICO ───────────────────────────────────────────────────────
+function buildDiagnostic() {
+  const name    = document.getElementById('d-name').value.trim();
+  const company = document.getElementById('d-company').value.trim();
+  const segment = document.querySelector('input[name="d-segment"]:checked')?.value || '';
+  const goal    = document.querySelector('input[name="d-goal"]:checked')?.value || '';
+  const size    = document.querySelector('input[name="d-size"]:checked')?.value || '';
+  const budget  = document.querySelector('input[name="d-budget"]:checked')?.value || '';
+  const comm    = document.querySelector('input[name="d-comm"]:checked')?.value || 'Não informado';
+
+  // Escolhe eventos recomendados com base no segmento
+  const recommendations = getEventRecs(segment, goal);
+
+  // Estima investimento baseado no orçamento declarado e perfil
+  const invest = getInvestmentBreakdown(budget, size, goal);
+
+  const body = document.getElementById('diag-result-body');
+  body.innerHTML = `
+    <div style="background:linear-gradient(135deg,rgba(201,147,58,.08),rgba(26,107,138,.06));border:1px solid rgba(201,147,58,.2);padding:24px;border-radius:2px;margin-bottom:24px;">
+      <div style="font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;">Diagnóstico para</div>
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:32px;color:var(--white);line-height:1;">${company.toUpperCase()}</div>
+      <div style="font-size:12px;color:var(--muted);margin-top:4px;">${segment} · ${goal}</div>
+    </div>
+
+    <div style="margin-bottom:24px;">
+      <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border);">Eventos recomendados</div>
+      ${recommendations.map((r,i) => `
+        <div style="display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--border);align-items:flex-start;">
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:28px;color:var(--gold);min-width:32px;line-height:1;">0${i+1}</div>
+          <div style="flex:1;">
+            <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:14px;color:var(--white);">${r.name}</div>
+            <div style="font-size:12px;color:var(--muted);margin-top:3px;line-height:1.5;">${r.reason}</div>
+          </div>
+          <div style="font-size:11px;font-family:'Syne',sans-serif;font-weight:700;color:var(--gold);background:rgba(201,147,58,.1);border:1px solid rgba(201,147,58,.2);padding:4px 12px;border-radius:2px;white-space:nowrap;">${r.score}% fit</div>
+        </div>`).join('')}
+    </div>
+
+    <div style="margin-bottom:24px;">
+      <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border);">Estimativa de investimento por evento</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px;">
+        ${invest.map(item => `
+          <div style="background:var(--deep);border:1px solid var(--border);padding:18px;border-radius:2px;">
+            <div style="font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;">${item.label}</div>
+            <div style="font-family:'Bebas Neue',sans-serif;font-size:28px;color:var(--white);line-height:1;">${item.value}</div>
+            <div style="font-size:11px;color:var(--muted);margin-top:4px;">${item.desc}</div>
+          </div>`).join('')}
+      </div>
+    </div>
+
+    <div style="background:rgba(26,107,138,.08);border:1px solid rgba(33,150,181,.2);padding:20px 24px;border-radius:2px;">
+      <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:13px;color:var(--white);margin-bottom:8px;">Como a MR Solutions atua junto com <span style="color:var(--gold);">${company}</span></div>
+      <div style="font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:16px;">Produzimos conteúdo antes, durante e depois de cada evento para amplificar sua presença e converter visibilidade em relacionamento comercial. Nossa audiência no setor offshore conecta sua marca com profissionais técnicos e gestores de operações — exatamente o público dos eventos que você precisa estar.</div>
+      <div style="font-size:12px;color:var(--blue-l);">→ Um consultor da MR Solutions entrará em contato com <strong style="color:var(--white);">${name}</strong> em até 48 horas para detalhar a proposta.</div>
+    </div>
+
+    <!-- PASSO 1: Botão de compartilhamento WhatsApp -->
+    <div style="margin-top:20px;padding:20px 24px;background:rgba(37,211,102,.06);border:1px solid rgba(37,211,102,.2);border-radius:2px;">
+      <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:12px;color:#4ADE80;letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px;">📲 Compartilhe seu diagnóstico</div>
+      <div style="font-size:13px;color:var(--muted);margin-bottom:16px;line-height:1.6;">
+        Conhece algum colega que também deveria mapear os eventos certos para a empresa dele? Compartilha o MR Solutions Event Map no WhatsApp.
+      </div>
+      <button onclick="shareWhatsApp('${company}','${segment}','${goal}',${JSON.stringify(recommendations.map(r=>r.name))})"
+        style="display:inline-flex;align-items:center;gap:10px;background:#25D366;color:#000;border:none;padding:12px 24px;border-radius:2px;cursor:pointer;font-family:'Syne',sans-serif;font-weight:700;font-size:11px;letter-spacing:.15em;text-transform:uppercase;transition:.2s;"
+        onmouseover="this.style.background='#1ebe5a'" onmouseout="this.style.background='#25D366'">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.555 4.122 1.528 5.856L.057 23.882l6.186-1.622A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.884 0-3.656-.49-5.197-1.346l-.373-.22-3.873 1.015 1.034-3.773-.242-.389A9.956 9.956 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+        Compartilhar no WhatsApp
+      </button>
+    </div>`;
+}
+
+function getEventRecs(segment, goal) {
+  const all = [
+    { name:'OTC Houston (Mai 4–7)', reason:'Maior evento offshore do mundo. Alta densidade de operadoras, decisores e contratos internacionais.', score:97 },
+    { name:'Brasil FPSO Epicentro Global (Mai)', reason:'Principal hub de decisão para contratos FPSO no Brasil. Concentração de operadoras nacionais e internacionais.', score:94 },
+    { name:'ONS Stavanger (Ago)', reason:'Referência técnica mundial em offshore. Posicionamento como empresa com padrão internacional.', score:89 },
+    { name:'ADIPEC Abu Dhabi (Nov)', reason:'Maior evento de energia do Oriente Médio. Expansão internacional e benchmarking com as melhores práticas globais.', score:85 },
+    { name:'Sergipe Oengás & Energy (Jul)', reason:'Relevante para empresas com foco no mercado nordestino e na bacia de Sergipe-Alagoas.', score:80 },
+  ];
+  if (segment === 'Treinamento / Capacitação') {
+    all[1].reason = 'Alta concentração de profissionais buscando qualificação e certificação offshore.';
+    all[1].score = 96;
+  }
+  if (goal === 'Networking com executivos') {
+    all[0].reason += ' Os eventos noturnos paralelos são onde os contratos realmente acontecem.';
+  }
+  return all.slice(0, 4);
+}
+
+function getInvestmentBreakdown(budget, size, goal) {
+  // Valores base ajustados por porte e objetivo
+  const isSmall = size.includes('MEI') || size.includes('Pequena');
+  const isIntl = goal.includes('Lançamento') || goal.includes('parcerias');
+
+  const inscricao = isSmall ? '$800 – $2.500' : '$2.500 – $8.000';
+  const logistica = isSmall ? '$3.000 – $6.000' : '$8.000 – $20.000';
+  const marketing = isIntl  ? '$10.000 – $30.000' : '$5.000 – $15.000';
+  const presenca  = '$3.500 – $12.000';
+
+  return [
+    { label:'Inscrição / Acesso', value: inscricao, desc:'Por evento, por pessoa' },
+    { label:'Logística & Hospedagem', value: logistica, desc:'Passagem + hotel + deslocamento' },
+    { label:'Marketing & Conteúdo', value: marketing, desc:'Produção antes, durante e pós-evento' },
+    { label:'Presença de Marca (MR Solutions)', value: presenca, desc:'Amplificação com criador de conteúdo especializado' },
+  ];
+}
+
+// ─── PASSO 1: COMPARTILHAMENTO WHATSAPP ─────────────────────────────────────
+function shareWhatsApp(company, segment, goal, eventNames) {
+  const topEvents = eventNames.slice(0, 3).map((n, i) => `  ${i+1}. ${n}`).join('\n');
+  const msg = [
+    `🛢️ *MR Solutions — Event Map 2026*`,
+    ``,
+    `Acabei de gerar o diagnóstico estratégico de eventos para *${company}*:`,
+    ``,
+    `📌 Segmento: ${segment}`,
+    `🎯 Objetivo: ${goal}`,
+    ``,
+    `✅ *Top eventos recomendados:*`,
+    topEvents,
+    ``,
+    `Acesse e gere o diagnóstico da sua empresa também 👇`,
+    `👉 ${window.location.href}`,
+  ].join('\n');
+
+  const encoded = encodeURIComponent(msg);
+  // Tenta abrir o app WhatsApp nativo primeiro; se falhar, abre o WhatsApp Web
+  const waApp  = `whatsapp://send?text=${encoded}`;
+  const waWeb  = `https://web.whatsapp.com/send?text=${encoded}`;
+  const waMobile = `https://api.whatsapp.com/send?text=${encoded}`;
+
+  // Detecta mobile vs desktop
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+  if (isMobile) {
+    window.location.href = waApp;
+    // fallback após 1.5s se o app não abrir
+    setTimeout(() => { window.open(waMobile, '_blank'); }, 1500);
+  } else {
+    window.open(waWeb, '_blank');
+  }
+}
+
+// ─── PASSO 2: TAG "NOVO" NOS EVENTOS PARALELOS ───────────────────────────────
+// Cada evento recebe um timestamp ao ser adicionado.
+// Cards adicionados nos últimos 7 dias ganham uma tag "NOVO" destacada.
+const SEVEN_DAYS_MS = 7 * 24 * 60 * 60 * 1000;
+
+// Quando a plataforma carrega, marca os eventos pré-carregados como "antigos"
+// (timestamp 0 = não exibe tag). Eventos adicionados pela comunidade recebem Date.now().
+CONFERENCES.forEach(conf => {
+  conf.parallel.forEach(p => {
+    if (p.addedAt === undefined) p.addedAt = 0; // pré-carregados não têm tag Novo
+  });
+});
+
+// ─── PASSO 3: CAMPO "QUEM VAI ESTAR LÁ" ─────────────────────────────────────
+// Adiciona campo no modal de evento paralelo para capturar presença de empresas.
+// Armazenado como array de strings em p.attendees.
+
+document.getElementById('modal-overlay').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+
+document.getElementById('add-event-overlay').addEventListener('click', function(e) {
+  if (e.target === this) closeAddEventModal();
+});
+
+// ─── MODAL: ADICIONAR EVENTO DO SETOR ────────────────────────────────────────
+function openAddEventModal() {
+  document.getElementById('add-event-form-wrap').style.display = '';
+  document.getElementById('add-event-success').style.display = 'none';
+  document.getElementById('add-event-overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeAddEventModal() {
+  document.getElementById('add-event-overlay').classList.remove('open');
+  document.body.style.overflow = '';
+  ['ae-name','ae-dates','ae-location','ae-link','ae-author'].forEach(id => {
+    const el = document.getElementById(id); if(el) el.value = '';
+  });
+  const sel = document.getElementById('ae-month');
+  if(sel) sel.value = '';
+}
+
+function submitAddEvent() {
+  const name     = document.getElementById('ae-name').value.trim();
+  const month    = document.getElementById('ae-month').value;
+  const location = document.getElementById('ae-location').value.trim();
+  if (!name || !month || !location) {
+    showAddEventError('Preencha ao menos o nome, o mês e o local do evento.');
+    return;
+  }
+  const dates  = document.getElementById('ae-dates').value.trim() || 'A confirmar';
+  const link   = document.getElementById('ae-link').value.trim() || '';
+  const access = document.querySelector('input[name="ae-access"]:checked')?.value || 'public';
+
+  // Adiciona dinamicamente ao calendário
+  const id = 'user_' + Date.now();
+  const monthShortMap = {
+    'Janeiro':'JAN','Fevereiro':'FEV','Março':'MAR','Abril':'ABR',
+    'Maio':'MAI','Junho':'JUN','Julho':'JUL','Agosto':'AGO',
+    'Setembro':'SET','Outubro':'OUT','Novembro':'NOV','Dezembro':'DEZ'
+  };
+  CONFERENCES.push({
+    id, name, dates, month, monthShort: monthShortMap[month] || month.slice(0,3).toUpperCase(),
+    year:2026, location, access, link, past:false, parallel:[], addedByUser:true
+  });
+
+  // Re-renderiza o bloco do mês ou cria novo se não existir
+  let container = document.getElementById('month-' + month);
+  if (!container) {
+    // Mês ainda não existe, adiciona bloco novo no final
+    const main = document.getElementById('months-container');
+    const block = document.createElement('div');
+    block.className = 'month-block';
+    block.innerHTML = `
+      <div class="month-label">${month.toUpperCase()}</div>
+      <div class="month-header" id="mh-${month}">
+        <span class="month-name">${month} 2026</span>
+        <span class="month-count" style="margin-left:auto;">1 evento · 0 noturnos mapeados</span>
+      </div>
+      <div id="month-${month}"></div>`;
+    main.appendChild(block);
+    container = document.getElementById('month-' + month);
+  }
+  const conf = CONFERENCES[CONFERENCES.length - 1];
+  renderConference(conf, 'month-' + month);
+  updateMonthHeader(month);
+  updateStats();
+
+  document.getElementById('add-event-form-wrap').style.display = 'none';
+  document.getElementById('add-event-success').style.display = 'block';
+  setTimeout(closeAddEventModal, 2800);
+}
+
+function showAddEventError(msg) {
+  let el = document.getElementById('ae-error');
+  if (!el) {
+    el = document.createElement('div');
+    el.id = 'ae-error';
+    el.style.cssText = 'margin:0 32px 16px;padding:12px 18px;border-radius:2px;font-size:13px;border:1px solid rgba(239,68,68,.35);background:rgba(239,68,68,.08);color:#FCA5A5;';
+    const footer = document.querySelector('#add-event-form-wrap .modal-footer');
+    footer.parentNode.insertBefore(el, footer);
+  }
+  el.textContent = '⚠ ' + msg;
+  el.style.display = 'block';
+  setTimeout(() => { el.style.display = 'none'; }, 5000);
+}
+
+document.getElementById('diag-overlay').addEventListener('click', function(e) {
+  if (e.target === this) closeDiagModal();
+});
+
+// ─── INIT ────────────────────────────────────────────────────────────────────
+buildCalendar();
+</script>
+</body>
+</html>
