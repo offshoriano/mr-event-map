@@ -225,14 +225,7 @@ footer{border-top:1px solid var(--border);padding:40px 48px;display:flex;justify
 </nav>
 
 <section id="hero">
-  <!-- Offshore platform background image from Unsplash (free to use) -->
-  <div style="position:absolute;inset:0;z-index:0;overflow:hidden;">
-    <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=1800&q=80&auto=format&fit=crop"
-         alt="Plataforma offshore"
-         style="width:100%;height:100%;object-fit:cover;object-position:center;opacity:0.18;"
-         onerror="this.style.display='none'">
-    <div style="position:absolute;inset:0;background:linear-gradient(to bottom, rgba(9,12,16,0.6) 0%, rgba(13,17,23,0.85) 60%, rgba(13,17,23,1) 100%);"></div>
-  </div>
+  <!-- Canvas animation: offshore scene at night (injected by initHeroAnimation) -->
   <div class="hero-grid"></div>
   <div class="hero-glow"></div>
   <div class="hero-eyebrow">Setor de Energia · Óleo & Gás · 2026</div>
@@ -677,6 +670,7 @@ const CONFERENCES = [
 // ─── CONSTRUIR CALENDÁRIO ───────────────────────────────────────────────────
 function buildCalendar() {
   const container = document.getElementById('months-container');
+  container.innerHTML = '';
 
   // Agrupa conferências por mês preservando a ordem
   const months = [];
@@ -710,6 +704,7 @@ function buildCalendar() {
 
   // Popula select do modal com todas as opções
   const sel = document.getElementById('m-conference');
+  sel.innerHTML = '<option value="">Selecione a feira principal</option>';
   CONFERENCES.forEach(c => {
     const opt = document.createElement('option');
     opt.value = c.id;
@@ -919,6 +914,7 @@ function finishAddParallel(conf) {
   document.getElementById('panel-' + conf.id).classList.add('open');
   updateMonthHeader(conf.month);
   updateStats();
+  saveParallelToApi(conf.id, conf.parallel[conf.parallel.length - 1]);
   document.getElementById('modal-form-wrap').style.display = 'none';
   document.getElementById('modal-success').style.display = 'block';
   setTimeout(closeModal, 2800);
@@ -1260,6 +1256,7 @@ function submitAddEvent() {
   renderConference(conf, 'month-' + month);
   updateMonthHeader(month);
   updateStats();
+  saveConferenceToApi(conf);
 
   document.getElementById('add-event-form-wrap').style.display = 'none';
   document.getElementById('add-event-success').style.display = 'block';
@@ -1284,8 +1281,259 @@ document.getElementById('diag-overlay').addEventListener('click', function(e) {
   if (e.target === this) closeDiagModal();
 });
 
+// ─── API PERSISTENCE ─────────────────────────────────────────────────────────
+const API = 'api/events.php';
+
+async function loadRemoteEvents() {
+  try {
+    const res = await fetch(API);
+    if (!res.ok) return;
+    const data = await res.json();
+    let changed = false;
+
+    if (data.conferences && data.conferences.length > 0) {
+      const ids = new Set(CONFERENCES.map(c => c.id));
+      data.conferences.forEach(c => {
+        if (!ids.has(c.id)) { CONFERENCES.push(c); ids.add(c.id); changed = true; }
+      });
+    }
+
+    if (data.parallels && data.parallels.length > 0) {
+      data.parallels.forEach(p => {
+        const conf = CONFERENCES.find(c => c.id === p.confId);
+        if (conf && !conf.parallel.some(ep => ep.name === p.name && ep.day === p.day)) {
+          const { confId, ...pd } = p;
+          conf.parallel.push(pd);
+          changed = true;
+        }
+      });
+    }
+
+    if (changed) {
+      buildCalendar();
+    }
+  } catch (_) {}
+}
+
+async function saveConferenceToApi(conf) {
+  try {
+    await fetch(API, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        type: 'conference',
+        id: conf.id, name: conf.name, dates: conf.dates,
+        month: conf.month, location: conf.location,
+        access: conf.access, link: conf.link
+      })
+    });
+  } catch (_) {}
+}
+
+async function saveParallelToApi(confId, p) {
+  try {
+    await fetch(API, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        type: 'parallel', confId,
+        day: p.day, name: p.name, desc: p.desc,
+        access: p.access, attendees: p.attendees || []
+      })
+    });
+  } catch (_) {}
+}
+
+// ─── CANVAS: OFFSHORE ANIMATION ──────────────────────────────────────────────
+function initHeroAnimation() {
+  const hero = document.getElementById('hero');
+  const canvas = document.createElement('canvas');
+  canvas.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;';
+  hero.insertBefore(canvas, hero.firstChild);
+  const ctx = canvas.getContext('2d');
+  let W, H, t = 0, stars = [], bubbles = [], waveOff = [];
+
+  const WAVES = [
+    {amp:18,freq:0.006,sp:0.40,yF:0.520,r:15,g:100,b:130,a:0.20},
+    {amp:12,freq:0.009,sp:0.60,yF:0.535,r:20,g: 80,b:120,a:0.17},
+    {amp: 8,freq:0.014,sp:0.90,yF:0.545,r:10,g: 60,b:100,a:0.14},
+    {amp:22,freq:0.004,sp:0.25,yF:0.515,r:25,g:110,b:145,a:0.11},
+    {amp: 5,freq:0.020,sp:1.20,yF:0.555,r:30,g: 90,b:130,a:0.09},
+  ];
+
+  function resize() {
+    W = canvas.width  = hero.offsetWidth;
+    H = canvas.height = hero.offsetHeight;
+    stars   = Array.from({length:160}, () => ({x:Math.random()*W, y:Math.random()*H*0.54, r:Math.random()*1.4+0.2, tw:Math.random()*Math.PI*2, op:Math.random()*0.5+0.1}));
+    bubbles = Array.from({length:50},  () => ({x:Math.random()*W, y:H*0.55+Math.random()*H*0.45, r:Math.random()*2.5+0.5, sp:Math.random()*0.35+0.08, drift:(Math.random()-0.5)*0.4, op:Math.random()*0.22+0.04}));
+    waveOff = WAVES.map(() => Math.random()*Math.PI*2);
+  }
+
+  function draw() {
+    ctx.clearRect(0,0,W,H);
+
+    // Sky
+    const sky = ctx.createLinearGradient(0,0,0,H*0.57);
+    sky.addColorStop(0,'rgba(4,7,14,0.97)');
+    sky.addColorStop(0.55,'rgba(8,18,35,0.88)');
+    sky.addColorStop(1,'rgba(12,35,58,0.5)');
+    ctx.fillStyle = sky; ctx.fillRect(0,0,W,H*0.58);
+
+    // Stars
+    stars.forEach(s => {
+      s.tw += 0.015;
+      ctx.beginPath(); ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
+      ctx.fillStyle = `rgba(220,215,200,${s.op*(0.5+0.5*Math.sin(s.tw))})`;
+      ctx.fill();
+    });
+
+    // Light rays from platform area
+    const pX=W*0.72, pY=H*0.08;
+    for(let i=0;i<4;i++){
+      const ang=-0.25+i*0.18+Math.sin(t*0.15+i)*0.04;
+      const len=H*0.6, ex=pX+Math.sin(ang)*len, ey=pY+Math.cos(ang)*len;
+      const rg=ctx.createLinearGradient(pX,pY,ex,ey);
+      rg.addColorStop(0,'rgba(201,147,58,0)');
+      rg.addColorStop(0.25,`rgba(201,147,58,${0.017+i*0.004})`);
+      rg.addColorStop(1,'rgba(201,147,58,0)');
+      ctx.beginPath(); ctx.moveTo(pX,pY); ctx.lineTo(ex+25,ey); ctx.lineTo(ex-25,ey); ctx.closePath();
+      ctx.fillStyle=rg; ctx.fill();
+    }
+
+    // Horizon glow
+    const hg=ctx.createLinearGradient(0,H*0.46,0,H*0.59);
+    hg.addColorStop(0,'rgba(25,70,110,0.18)'); hg.addColorStop(1,'rgba(10,30,55,0)');
+    ctx.fillStyle=hg; ctx.fillRect(0,H*0.46,W,H*0.13);
+
+    // Ocean background
+    const oc=ctx.createLinearGradient(0,H*0.5,0,H);
+    oc.addColorStop(0,'rgba(8,50,80,0.65)'); oc.addColorStop(0.4,'rgba(5,28,50,0.72)'); oc.addColorStop(1,'rgba(3,14,24,0.92)');
+    ctx.fillStyle=oc; ctx.fillRect(0,H*0.5,W,H*0.5);
+
+    // Underwater shimmer
+    for(let i=0;i<10;i++){
+      const ux=W*0.05+i*W*0.095+Math.sin(t*0.28+i*0.9)*25;
+      const uy=H*0.58+i*12+Math.sin(t*0.35+i)*10;
+      const ug=ctx.createRadialGradient(ux,uy,0,ux,uy,55);
+      ug.addColorStop(0,`rgba(33,140,170,${0.055+Math.sin(t*0.8+i)*0.022})`);
+      ug.addColorStop(1,'rgba(33,140,170,0)');
+      ctx.fillStyle=ug; ctx.fillRect(ux-55,uy-28,110,56);
+    }
+
+    // Bubbles
+    bubbles.forEach(b => {
+      b.y-=b.sp; b.x+=b.drift;
+      if(b.y<H*0.5){b.y=H;b.x=Math.random()*W;}
+      if(b.x<0)b.x=W; if(b.x>W)b.x=0;
+      const fade=(b.y-H*0.5)/(H*0.5);
+      ctx.beginPath(); ctx.arc(b.x,b.y,b.r,0,Math.PI*2);
+      ctx.strokeStyle=`rgba(160,210,240,${b.op*fade})`; ctx.lineWidth=0.5; ctx.stroke();
+    });
+
+    // Waves
+    WAVES.forEach((w,i) => {
+      ctx.beginPath(); ctx.moveTo(0,H);
+      for(let x=0;x<=W;x+=4){
+        const y=H*w.yF+Math.sin(x*w.freq+t*w.sp+waveOff[i])*w.amp+Math.sin(x*w.freq*1.8+t*w.sp*0.55+waveOff[i]+1)*w.amp*0.4;
+        ctx.lineTo(x,y);
+      }
+      ctx.lineTo(W,H); ctx.closePath();
+      ctx.fillStyle=`rgba(${w.r},${w.g},${w.b},${w.a})`; ctx.fill();
+    });
+
+    // Wave surface glints
+    for(let i=0;i<7;i++){
+      const gx=(W*0.12+i*W*0.13+Math.sin(t*0.35+i*1.4)*40)%W;
+      const gy=H*0.522+Math.sin(t*0.45+i*1.1)*6;
+      const gg=ctx.createRadialGradient(gx,gy,0,gx,gy,35);
+      gg.addColorStop(0,`rgba(201,147,58,${0.09+Math.sin(t*1.2+i)*0.04})`);
+      gg.addColorStop(1,'rgba(201,147,58,0)');
+      ctx.fillStyle=gg; ctx.fillRect(gx-35,gy-12,70,24);
+    }
+
+    // Supply vessel (left, gently bobbing)
+    const sX=W*0.13+Math.sin(t*0.12)*6, sY=H*0.516+Math.sin(t*0.20)*2.5;
+    const sS=Math.min(W,H)*0.00065;
+    ctx.save(); ctx.translate(sX,sY); ctx.scale(sS,sS);
+    ctx.fillStyle='rgba(18,28,42,0.82)';
+    ctx.beginPath(); ctx.moveTo(-85,0); ctx.lineTo(-95,22); ctx.lineTo(95,22); ctx.lineTo(105,8); ctx.lineTo(72,0); ctx.closePath(); ctx.fill();
+    ctx.fillStyle='rgba(22,38,58,0.82)';
+    ctx.beginPath(); ctx.rect(-45,-38,65,38); ctx.fill();
+    ctx.fillStyle='rgba(201,147,58,0.28)';
+    ctx.beginPath(); ctx.rect(-3,-78,6,40); ctx.fill();
+    const slg=ctx.createRadialGradient(0,-78,0,0,-78,22);
+    slg.addColorStop(0,`rgba(255,220,120,${0.65+Math.sin(t*2.5)*0.35})`);
+    slg.addColorStop(1,'rgba(255,200,90,0)');
+    ctx.fillStyle=slg; ctx.beginPath(); ctx.arc(0,-78,22,0,Math.PI*2); ctx.fill();
+    ctx.restore();
+
+    // Offshore platform (right)
+    const ppX=W*0.72, ppY=H*0.46, ppS=Math.min(W,H)*0.0011;
+    ctx.save(); ctx.translate(ppX,ppY); ctx.scale(ppS,ppS);
+    ctx.fillStyle='rgba(14,22,34,0.90)';
+    ctx.strokeStyle='rgba(201,147,58,0.12)'; ctx.lineWidth=1/ppS;
+    // Deck
+    ctx.beginPath(); ctx.rect(-85,-18,170,14); ctx.fill(); ctx.stroke();
+    // Legs
+    [-65,-25,25,65].forEach(lx => { ctx.beginPath(); ctx.rect(lx-5,-4,10,85); ctx.fill(); ctx.stroke(); });
+    // Cross braces
+    ctx.strokeStyle='rgba(201,147,58,0.08)'; ctx.lineWidth=1.5/ppS;
+    ctx.beginPath();
+    ctx.moveTo(-65,20); ctx.lineTo(-25,50); ctx.moveTo(-25,20); ctx.lineTo(-65,50);
+    ctx.moveTo(25,20);  ctx.lineTo(65,50);  ctx.moveTo(65,20);  ctx.lineTo(25,50);
+    ctx.stroke();
+    // Helideck
+    ctx.fillStyle='rgba(14,22,34,0.90)'; ctx.strokeStyle='rgba(201,147,58,0.12)'; ctx.lineWidth=1/ppS;
+    ctx.beginPath(); ctx.rect(32,-44,52,8); ctx.fill(); ctx.stroke();
+    ctx.strokeStyle='rgba(201,147,58,0.22)'; ctx.lineWidth=0.8/ppS;
+    ctx.beginPath(); ctx.moveTo(46,-40); ctx.lineTo(46,-33); ctx.moveTo(54,-40); ctx.lineTo(54,-33); ctx.moveTo(46,-37); ctx.lineTo(54,-37); ctx.stroke();
+    // Derrick tower
+    ctx.fillStyle='rgba(14,22,34,0.90)'; ctx.strokeStyle='rgba(201,147,58,0.10)'; ctx.lineWidth=1/ppS;
+    ctx.beginPath(); ctx.moveTo(-12,-18); ctx.lineTo(-28,-125); ctx.lineTo(-8,-125); ctx.lineTo(8,-18); ctx.closePath(); ctx.fill(); ctx.stroke();
+    for(let di=0;di<3;di++){ ctx.beginPath(); ctx.moveTo(-10-di*6,-18-di*35); ctx.lineTo(10+di*6,-18-di*35); ctx.strokeStyle='rgba(201,147,58,0.09)'; ctx.stroke(); }
+    // Flare boom
+    ctx.strokeStyle='rgba(201,147,58,0.18)'; ctx.lineWidth=2.5/ppS;
+    ctx.beginPath(); ctx.moveTo(65,-18); ctx.lineTo(108,-65); ctx.stroke();
+    // Flare flame
+    const fl=0.5+Math.sin(t*9)*0.22+Math.sin(t*13.7)*0.14;
+    const fg=ctx.createRadialGradient(108,-65,0,108,-65,24);
+    fg.addColorStop(0,`rgba(255,185,60,${fl})`); fg.addColorStop(0.4,`rgba(255,90,20,${fl*0.6})`); fg.addColorStop(1,'rgba(255,60,0,0)');
+    ctx.fillStyle=fg; ctx.beginPath(); ctx.arc(108,-65,24,0,Math.PI*2); ctx.fill();
+    for(let si=0;si<3;si++){ const so=(t*0.5+si*0.7)%1; ctx.beginPath(); ctx.arc(108+so*30,-65-so*40,so*12,0,Math.PI*2); ctx.fillStyle=`rgba(70,70,70,${0.06*(1-so)})`; ctx.fill(); }
+    // Crane
+    ctx.strokeStyle='rgba(201,147,58,0.14)'; ctx.lineWidth=2/ppS;
+    ctx.beginPath(); ctx.moveTo(-78,-18); ctx.lineTo(-78,-85); ctx.lineTo(-35,-96); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(-55,-96); ctx.lineTo(-55,-110); ctx.stroke();
+    // Platform lights
+    [[-28,-125],[108,-65],[-78,-85],[58,-44],[85,-18],[-68,65]].forEach(([lx,ly],li) => {
+      const lop=0.5+0.5*Math.sin(t*(3+li*0.7)+lx*0.1);
+      const lg2=ctx.createRadialGradient(lx,ly,0,lx,ly,18);
+      lg2.addColorStop(0,`rgba(255,230,150,${lop*0.9})`); lg2.addColorStop(1,'rgba(255,200,100,0)');
+      ctx.fillStyle=lg2; ctx.beginPath(); ctx.arc(lx,ly,18,0,Math.PI*2); ctx.fill();
+    });
+    ctx.restore();
+
+    // Vignette overlay
+    const ov=ctx.createLinearGradient(0,0,0,H);
+    ov.addColorStop(0,'rgba(13,17,23,0.28)'); ov.addColorStop(0.44,'rgba(13,17,23,0)');
+    ov.addColorStop(0.78,'rgba(13,17,23,0.45)'); ov.addColorStop(1,'rgba(13,17,23,1)');
+    ctx.fillStyle=ov; ctx.fillRect(0,0,W,H);
+
+    t+=0.016;
+    requestAnimationFrame(draw);
+  }
+
+  window.addEventListener('resize', resize);
+  resize();
+  draw();
+}
+
 // ─── INIT ────────────────────────────────────────────────────────────────────
 buildCalendar();
+loadRemoteEvents();
+setInterval(loadRemoteEvents, 60000);
+document.addEventListener('visibilitychange', () => { if (!document.hidden) loadRemoteEvents(); });
+initHeroAnimation();
 </script>
 </body>
 </html>
