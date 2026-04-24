@@ -5,6 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MR Solutions — Event Map 2026</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BBGCSZ37C4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-BBGCSZ37C4');
+</script>
 <style>
 :root {
   --black:#090C10; --deep:#0D1117; --card:#111820; --card2:#141D27;
@@ -505,6 +513,11 @@ footer{border-top:1px solid var(--border);padding:40px 48px;display:flex;justify
 
 <script>
 // ─── DADOS ─────────────────────────────────────────────────────────────────
+// Helper de rastreamento — não quebra se GA4 não carregar
+function track(event, params) {
+  if (typeof gtag === 'function') gtag('event', event, params || {});
+}
+
 // Cada conferência tem: id, nome, datas, mês, local, tipo de acesso, link oficial, e lista de eventos paralelos (noite).
 const CONFERENCES = [
 
@@ -729,7 +742,7 @@ function renderConference(conf, containerId) {
       : '<span class="conf-tag tag-public">Acesso Público</span>';
 
   const linkBtn = conf.link
-    ? `<a class="conf-link" href="${conf.link}" target="_blank" rel="noopener">↗ Site oficial</a>`
+    ? `<a class="conf-link" href="${conf.link}" target="_blank" rel="noopener" onclick="track('site_oficial_click',{conference:'${conf.name.replace(/'/g,'')}',month:'${conf.month}'})">↗ Site oficial</a>`
     : '';
 
   wrap.innerHTML = `
@@ -815,7 +828,13 @@ function renderParallelCards(conf) {
 }
 
 function toggleParallel(confId) {
-  document.getElementById('panel-' + confId).classList.toggle('open');
+  const panel = document.getElementById('panel-' + confId);
+  const opening = !panel.classList.contains('open');
+  panel.classList.toggle('open');
+  if (opening) {
+    const conf = CONFERENCES.find(c => c.id === confId);
+    track('night_panel_open', { conference: conf ? conf.name : confId, month: conf ? conf.month : '' });
+  }
 }
 
 // ─── MODAL ──────────────────────────────────────────────────────────────────
@@ -916,6 +935,7 @@ function finishAddParallel(conf) {
   updateMonthHeader(conf.month);
   updateStats();
   saveParallelToApi(conf.id, conf.parallel[conf.parallel.length - 1]);
+  track('parallel_event_submit', { conference: conf.name, month: conf.month });
   document.getElementById('modal-form-wrap').style.display = 'none';
   document.getElementById('modal-success').style.display = 'block';
   setTimeout(closeModal, 2800);
@@ -972,6 +992,7 @@ function openDiagModal() {
   document.getElementById('diag-overlay').classList.add('open');
   document.body.style.overflow = 'hidden';
   diagGoStep(1);
+  track('diagnostic_start');
 }
 
 function closeDiagModal() {
@@ -1040,6 +1061,7 @@ function buildDiagnostic() {
 
   // Escolhe eventos recomendados com base no segmento
   const recommendations = getEventRecs(segment, goal);
+  track('diagnostic_complete', { segment, goal, size, budget });
 
   // Estima investimento baseado no orçamento declarado e perfil
   const invest = getInvestmentBreakdown(budget, size, goal);
@@ -1158,6 +1180,7 @@ function shareWhatsApp(company, segment, goal, eventNames) {
   const waWeb  = `https://web.whatsapp.com/send?text=${encoded}`;
   const waMobile = `https://api.whatsapp.com/send?text=${encoded}`;
 
+  track('whatsapp_share', { company, segment, goal });
   // Detecta mobile vs desktop
   const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
   if (isMobile) {
@@ -1258,6 +1281,7 @@ function submitAddEvent() {
   updateMonthHeader(month);
   updateStats();
   saveConferenceToApi(conf);
+  track('conference_event_submit', { event_name: conf.name, month: conf.month });
 
   document.getElementById('add-event-form-wrap').style.display = 'none';
   document.getElementById('add-event-success').style.display = 'block';
