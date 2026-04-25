@@ -1181,15 +1181,7 @@ function shareWhatsApp(company, segment, goal, eventNames) {
   const waMobile = `https://api.whatsapp.com/send?text=${encoded}`;
 
   track('whatsapp_share', { company, segment, goal });
-  // Detecta mobile vs desktop
-  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-  if (isMobile) {
-    window.location.href = waApp;
-    // fallback após 1.5s se o app não abrir
-    setTimeout(() => { window.open(waMobile, '_blank'); }, 1500);
-  } else {
-    window.open(waWeb, '_blank');
-  }
+  window.open('https://wa.me/?text=' + encodeURIComponent(msg), '_blank');
 }
 
 // ─── PASSO 2: TAG "NOVO" NOS EVENTOS PARALELOS ───────────────────────────────
