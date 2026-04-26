@@ -18,18 +18,19 @@ if (!is_dir($dataDir)) {
 
 function readData($dataFile) {
     if (!file_exists($dataFile)) {
-        return ['conferences' => [], 'parallels' => []];
+        return ['conferences' => [], 'parallels' => [], 'goers' => []];
     }
     $raw = file_get_contents($dataFile);
     if ($raw === false) {
-        return ['conferences' => [], 'parallels' => []];
+        return ['conferences' => [], 'parallels' => [], 'goers' => []];
     }
     $data = json_decode($raw, true);
     if (!is_array($data)) {
-        return ['conferences' => [], 'parallels' => []];
+        return ['conferences' => [], 'parallels' => [], 'goers' => []];
     }
     if (!isset($data['conferences'])) $data['conferences'] = [];
     if (!isset($data['parallels']))   $data['parallels']   = [];
+    if (!isset($data['goers']))       $data['goers']       = [];
     return $data;
 }
 
@@ -112,10 +113,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $parallel = [
             'confId'    => $confId,
-            'day'       => trim(strip_tags($input['day']    ?? 'A confirmar')),
+            'id'        => trim(strip_tags($input['id']      ?? ('p_' . (time() * 1000)))),
+            'dateIso'   => trim(strip_tags($input['dateIso'] ?? '')),
+            'timeVal'   => trim(strip_tags($input['timeVal'] ?? '')),
+            'day'       => trim(strip_tags($input['day']     ?? 'A confirmar')),
             'name'      => $name,
-            'desc'      => trim(strip_tags($input['desc']   ?? '')),
-            'access'    => trim(strip_tags($input['access'] ?? 'convite')),
+            'desc'      => trim(strip_tags($input['desc']    ?? '')),
+            'access'    => trim(strip_tags($input['access']  ?? 'convite')),
             'attendees' => [],
         ];
 
@@ -142,6 +146,36 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
         echo json_encode(['success' => true, 'event' => $parallel]);
+        exit;
+    }
+
+    // ── Goer (Eu vou!) ────────────────────────────────────────────────────────
+    if ($type === 'goer') {
+        $confId    = trim(strip_tags($input['confId']    ?? ''));
+        $eventKey  = trim(strip_tags($input['eventKey'] ?? ''));
+        $eventType = trim(strip_tags($input['eventType'] ?? ''));
+        $name      = trim(strip_tags($input['name']     ?? ''));
+
+        if ($confId === '' || $name === '') {
+            http_response_code(422);
+            echo json_encode(['error' => 'Missing required fields: confId, name']);
+            exit;
+        }
+
+        $goer = [
+            'eventType' => $eventType,
+            'confId'    => $confId,
+            'eventKey'  => $eventKey,
+            'name'      => $name,
+            'company'   => trim(strip_tags($input['company'] ?? '')),
+            'ts'        => time() * 1000,
+        ];
+
+        if (!isset($data['goers'])) $data['goers'] = [];
+        $data['goers'][] = $goer;
+        writeData($dataFile, $data);
+
+        echo json_encode(['success' => true, 'goer' => $goer]);
         exit;
     }
 
