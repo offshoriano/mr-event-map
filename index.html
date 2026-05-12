@@ -2,1944 +2,1473 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MR Solutions — Event Map 2026</title>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
-<!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-BBGCSZ37C4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-BBGCSZ37C4');
-</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>2ª CIA BM Manhuaçu — Logística Caparaó</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <style>
-:root {
-  --black:#090C10; --deep:#0D1117; --card:#111820; --card2:#141D27;
-  --border:#1C2733; --border2:#243040;
-  --gold:#C9933A; --gold-l:#E8B86D; --gold-d:rgba(201,147,58,0.14);
-  --white:#EEE9E2; --muted:#7A8FA6; --muted2:#A0B2C4;
-  --night:#1A0F2E; --night-b:#2D1B6B; --night-a:#7B5CF6;
-  --day:#0D1E10; --day-b:#1B4A20; --day-a:#4CAF65;
-  --blue:#1A6B8A; --blue-l:#2196B5;
+:root{
+  --bg:#0B0F16; --surface:#13161F; --card:#1A2133; --card2:#1F2840;
+  --border:#263045; --border2:#334060;
+  --red:#DC2626; --red-l:#EF4444; --red-d:rgba(220,38,38,.13);
+  --orange:#EA580C; --orange-d:rgba(234,88,12,.13);
+  --green:#16A34A; --green-l:#22C55E; --green-d:rgba(22,163,74,.13);
+  --yellow:#D97706; --yellow-d:rgba(217,119,6,.13);
+  --blue:#0284C7; --blue-l:#38BDF8; --blue-d:rgba(2,132,199,.13);
+  --purple:#7C3AED; --purple-d:rgba(124,58,237,.13);
+  --text:#E2E8F0; --muted:#64748B; --muted2:#94A3B8;
+  --sidebar:240px;
 }
 *{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
-body{font-family:'DM Sans',sans-serif;background:var(--deep);color:var(--white);overflow-x:hidden;}
-body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
-  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");opacity:.35;}
+html,body{height:100%;overflow:hidden;}
+body{font-family:system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);display:flex;}
 
-/* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:18px 48px;
-  background:linear-gradient(to bottom,rgba(9,12,16,.97),transparent);backdrop-filter:blur(6px);}
-.nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:14px;letter-spacing:.12em;text-transform:uppercase;}
-.nav-logo span{color:var(--gold);}
-.nav-actions{display:flex;gap:12px;align-items:center;}
-.nav-btn{font-family:'Syne',sans-serif;font-weight:700;font-size:11px;letter-spacing:.18em;text-transform:uppercase;
-  padding:8px 20px;border-radius:2px;cursor:pointer;border:none;transition:.2s;}
-.nav-btn.ghost{background:transparent;color:var(--muted);border:1px solid var(--border);}
-.nav-btn.ghost:hover{color:var(--white);border-color:var(--border2);}
-.nav-btn.solid{background:var(--gold);color:var(--black);}
-.nav-btn.solid:hover{background:var(--gold-l);}
-
-/* HERO */
-#hero{position:relative;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:120px 24px 80px;overflow:hidden;}
-.hero-grid{position:absolute;inset:0;z-index:0;
-  background-image:linear-gradient(rgba(201,147,58,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(201,147,58,.035) 1px,transparent 1px);
-  background-size:56px 56px;mask-image:radial-gradient(ellipse 80% 60% at 50% 50%,black,transparent);}
-.hero-glow{position:absolute;width:700px;height:700px;border-radius:50%;
-  background:radial-gradient(circle,rgba(201,147,58,.07) 0%,transparent 70%);
-  top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;}
-.hero-eyebrow{position:relative;z-index:1;font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);
-  border:1px solid rgba(201,147,58,.3);padding:7px 22px;border-radius:2px;background:rgba(201,147,58,.05);margin-bottom:28px;
-  animation:fadeUp .7s ease both;}
-h1.hero-title{position:relative;z-index:1;font-family:'Bebas Neue',sans-serif;font-size:clamp(68px,11vw,136px);line-height:.9;letter-spacing:.02em;animation:fadeUp .7s .12s ease both;}
-h1.hero-title .l1{display:block;color:var(--white);}
-h1.hero-title .l2{display:block;color:var(--gold);}
-.hero-sub{position:relative;z-index:1;max-width:520px;margin:24px auto 0;font-size:15px;line-height:1.75;color:var(--muted);font-weight:300;animation:fadeUp .7s .24s ease both;}
-.hero-cta{position:relative;z-index:1;margin-top:40px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap;animation:fadeUp .7s .36s ease both;}
-
-/* BUTTONS */
-.btn{display:inline-flex;align-items:center;gap:8px;font-family:'Syne',sans-serif;font-weight:700;font-size:11px;letter-spacing:.2em;text-transform:uppercase;padding:14px 32px;border-radius:2px;cursor:pointer;border:none;text-decoration:none;transition:all .22s;}
-.btn-gold{background:var(--gold);color:var(--black);}
-.btn-gold:hover{background:var(--gold-l);transform:translateY(-2px);box-shadow:0 8px 28px rgba(201,147,58,.28);}
-.btn-ghost{background:transparent;color:var(--muted2);border:1px solid var(--border2);}
-.btn-ghost:hover{color:var(--white);border-color:var(--gold);transform:translateY(-2px);}
-.btn-night{background:rgba(123,92,246,.15);color:#A78BFA;border:1px solid rgba(123,92,246,.3);}
-.btn-night:hover{background:rgba(123,92,246,.25);transform:translateY(-2px);}
-
-/* STATS */
-.stats-bar{position:relative;z-index:1;display:flex;gap:48px;margin-top:60px;justify-content:center;flex-wrap:wrap;animation:fadeUp .7s .48s ease both;}
-.stat{text-align:center;}
-.stat-num{font-family:'Bebas Neue',sans-serif;font-size:44px;color:var(--gold);line-height:1;}
-.stat-label{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-top:5px;}
-
-/* LEGEND */
-.legend{position:relative;z-index:1;display:flex;gap:24px;margin-top:40px;justify-content:center;flex-wrap:wrap;animation:fadeUp .7s .56s ease both;}
-.leg-item{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--muted);}
-.leg-dot{width:10px;height:10px;border-radius:50%;}
-.leg-dot.day-dot{background:var(--day-a);}
-.leg-dot.night-dot{background:var(--night-a);}
+/* SIDEBAR */
+.sidebar{width:var(--sidebar);background:var(--surface);border-right:1px solid var(--border);
+  display:flex;flex-direction:column;flex-shrink:0;height:100vh;position:fixed;left:0;top:0;z-index:100;}
+.sb-brand{padding:20px 18px 16px;border-bottom:1px solid var(--border);}
+.sb-unit{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red-l);margin-bottom:2px;}
+.sb-name{font-size:13px;font-weight:600;color:var(--text);line-height:1.3;}
+.sb-sub{font-size:10px;color:var(--muted);margin-top:2px;}
+.sb-sos{margin:12px 14px;background:var(--red-d);border:1px solid var(--red);border-radius:6px;
+  padding:8px 12px;display:flex;align-items:center;gap:8px;}
+.sb-sos-num{font-size:22px;font-weight:800;color:var(--red-l);line-height:1;}
+.sb-sos-lbl{font-size:10px;color:var(--muted2);letter-spacing:.06em;}
+.sb-nav{flex:1;padding:8px 8px;overflow-y:auto;}
+.nav-item{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:6px;cursor:pointer;
+  color:var(--muted2);font-size:13px;font-weight:500;transition:.15s;border:none;background:none;width:100%;text-align:left;
+  position:relative;}
+.nav-item:hover{background:var(--card);color:var(--text);}
+.nav-item.active{background:var(--red-d);color:var(--red-l);}
+.nav-item.active .nav-icon{color:var(--red-l);}
+.nav-icon{font-size:16px;width:20px;text-align:center;flex-shrink:0;}
+.nav-badge{margin-left:auto;background:var(--red);color:#fff;font-size:9px;font-weight:700;
+  padding:2px 6px;border-radius:10px;min-width:18px;text-align:center;}
+.sb-footer{padding:12px 14px;border-top:1px solid var(--border);}
+.sb-version{font-size:10px;color:var(--muted);text-align:center;}
 
 /* MAIN */
-main{position:relative;z-index:1;max-width:1240px;margin:0 auto;padding:80px 48px 120px;}
+.main{margin-left:var(--sidebar);flex:1;height:100vh;overflow-y:auto;display:flex;flex-direction:column;}
 
-/* MONTH BLOCK */
-.month-block{margin-bottom:80px;}
-.month-label{font-family:'Bebas Neue',sans-serif;font-size:72px;color:rgba(201,147,58,.08);line-height:1;margin-bottom:-20px;letter-spacing:.04em;}
-.month-header{display:flex;align-items:center;gap:16px;margin-bottom:32px;border-bottom:1px solid var(--border);padding-bottom:20px;}
-.month-name{font-family:'Syne',sans-serif;font-weight:800;font-size:16px;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);}
-.month-count{font-size:11px;color:var(--muted);letter-spacing:.1em;}
+/* TOPBAR */
+.topbar{background:var(--surface);border-bottom:1px solid var(--border);padding:14px 28px;
+  display:flex;align-items:center;justify-content:space-between;flex-shrink:0;position:sticky;top:0;z-index:50;}
+.topbar-title{font-size:16px;font-weight:700;color:var(--text);}
+.topbar-sub{font-size:11px;color:var(--muted);margin-top:2px;}
+.topbar-actions{display:flex;gap:8px;align-items:center;}
 
-/* CONFERENCE CARD */
-.conference-card{background:var(--card);border:1px solid var(--border);border-radius:2px;margin-bottom:16px;overflow:hidden;transition:border-color .3s;}
-.conference-card:hover{border-color:rgba(201,147,58,.35);}
-.conf-header{display:flex;align-items:stretch;}
-.conf-stripe{width:4px;background:var(--day-a);flex-shrink:0;}
-.conf-main{flex:1;padding:24px 28px;display:flex;align-items:center;gap:24px;flex-wrap:wrap;}
-.conf-dates{font-family:'Syne',sans-serif;font-weight:700;font-size:28px;color:var(--white);min-width:80px;line-height:1;}
-.conf-dates .month-short{font-size:12px;font-weight:600;letter-spacing:.1em;color:var(--day-a);display:block;margin-top:2px;}
-.conf-info{flex:1;min-width:200px;}
-.conf-name{font-family:'Syne',sans-serif;font-weight:700;font-size:18px;color:var(--white);margin-bottom:4px;}
-.conf-location{font-size:13px;color:var(--muted);display:flex;align-items:center;gap:6px;}
-.conf-location::before{content:'◎';font-size:10px;color:var(--day-a);}
-.conf-meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;}
-.conf-tag{font-size:10px;letter-spacing:.15em;text-transform:uppercase;padding:4px 10px;border-radius:2px;}
-.tag-public{background:rgba(76,175,101,.1);color:var(--day-a);border:1px solid rgba(76,175,101,.25);}
-.tag-invite{background:rgba(201,147,58,.1);color:var(--gold);border:1px solid rgba(201,147,58,.25);}
-.conf-actions{display:flex;gap:10px;align-items:center;padding:0 24px;flex-shrink:0;}
-.conf-link{font-family:'Syne',sans-serif;font-weight:700;font-size:10px;letter-spacing:.18em;text-transform:uppercase;
-  padding:8px 18px;border-radius:2px;text-decoration:none;transition:.2s;white-space:nowrap;
-  background:rgba(76,175,101,.08);color:var(--day-a);border:1px solid rgba(76,175,101,.2);}
-.conf-link:hover{background:rgba(76,175,101,.18);}
-.conf-toggle{font-family:'Syne',sans-serif;font-weight:700;font-size:10px;letter-spacing:.15em;text-transform:uppercase;
-  padding:8px 16px;border-radius:2px;cursor:pointer;border:none;transition:.2s;white-space:nowrap;
-  background:rgba(123,92,246,.08);color:#A78BFA;border:1px solid rgba(123,92,246,.2);}
-.conf-toggle:hover{background:rgba(123,92,246,.18);}
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;
+  padding:8px 16px;border-radius:6px;cursor:pointer;border:none;transition:.15s;text-decoration:none;}
+.btn-primary{background:var(--red);color:#fff;}
+.btn-primary:hover{background:var(--red-l);}
+.btn-secondary{background:var(--card);color:var(--muted2);border:1px solid var(--border);}
+.btn-secondary:hover{color:var(--text);border-color:var(--border2);}
+.btn-ghost{background:transparent;color:var(--muted2);}
+.btn-ghost:hover{color:var(--text);background:var(--card);}
+.btn-sm{padding:5px 10px;font-size:11px;}
+.btn-green{background:var(--green);color:#fff;}
+.btn-green:hover{background:var(--green-l);}
+.btn-orange{background:var(--orange);color:#fff;}
+.btn-danger{background:transparent;color:var(--red-l);border:1px solid var(--red);font-size:11px;padding:4px 10px;border-radius:4px;}
+.btn-danger:hover{background:var(--red-d);}
 
-/* PARALLEL PANEL */
-.parallel-panel{display:none;border-top:1px solid var(--border);}
-.parallel-panel.open{display:block;}
-.parallel-header{padding:20px 28px 0;display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
-.parallel-title{font-family:'Syne',sans-serif;font-weight:700;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#A78BFA;}
-.parallel-subtitle{font-size:12px;color:var(--muted);margin-left:auto;}
-.parallel-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px;padding:16px 28px 24px;}
-.parallel-card{background:var(--night);border:1px solid rgba(123,92,246,.2);border-radius:2px;padding:16px 18px;transition:all .2s;}
-.parallel-card:hover{border-color:rgba(123,92,246,.5);transform:translateY(-2px);}
-.par-day{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#A78BFA;margin-bottom:6px;}
-.par-name{font-family:'Syne',sans-serif;font-weight:700;font-size:14px;color:var(--white);margin-bottom:4px;line-height:1.3;}
-.par-desc{font-size:12px;color:var(--muted);line-height:1.5;}
-.par-access{display:inline-block;margin-top:8px;font-size:9px;letter-spacing:.15em;text-transform:uppercase;padding:3px 8px;border-radius:2px;}
-.par-access.convite{background:rgba(201,147,58,.1);color:var(--gold);border:1px solid rgba(201,147,58,.2);}
-.par-access.aberto{background:rgba(76,175,101,.1);color:var(--day-a);border:1px solid rgba(76,175,101,.2);}
-.par-access.restrito{background:rgba(123,92,246,.1);color:#A78BFA;border:1px solid rgba(123,92,246,.2);}
-.add-parallel-btn{margin:0 28px 24px;width:calc(100% - 56px);background:transparent;border:1px dashed rgba(123,92,246,.3);
-  color:#A78BFA;font-family:'Syne',sans-serif;font-weight:700;font-size:10px;letter-spacing:.2em;text-transform:uppercase;
-  padding:12px;border-radius:2px;cursor:pointer;transition:.2s;display:flex;align-items:center;justify-content:center;gap:8px;}
-.add-parallel-btn:hover{background:rgba(123,92,246,.06);border-color:rgba(123,92,246,.5);}
+/* CONTENT */
+.content{flex:1;padding:24px 28px;overflow-y:auto;}
+
+/* SECTION */
+.section{display:none;}
+.section.active{display:block;}
+
+/* CARDS */
+.card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:18px 20px;}
+.card-sm{padding:14px 16px;}
+.grid{display:grid;gap:16px;}
+.grid-4{grid-template-columns:repeat(4,1fr);}
+.grid-3{grid-template-columns:repeat(3,1fr);}
+.grid-2{grid-template-columns:repeat(2,1fr);}
+
+/* STAT CARDS */
+.stat-card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:18px 20px;
+  display:flex;align-items:center;gap:16px;}
+.stat-icon{width:44px;height:44px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
+.stat-icon.red{background:var(--red-d);}
+.stat-icon.green{background:var(--green-d);}
+.stat-icon.yellow{background:var(--yellow-d);}
+.stat-icon.blue{background:var(--blue-d);}
+.stat-icon.orange{background:var(--orange-d);}
+.stat-num{font-size:26px;font-weight:800;color:var(--text);line-height:1;}
+.stat-label{font-size:11px;color:var(--muted);margin-top:2px;}
+.stat-delta{font-size:11px;margin-top:4px;}
+.stat-delta.up{color:var(--green-l);}
+.stat-delta.down{color:var(--red-l);}
+
+/* BADGE */
+.badge{display:inline-flex;align-items:center;gap:4px;font-size:10px;font-weight:700;
+  letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border-radius:4px;}
+.badge-green{background:var(--green-d);color:var(--green-l);border:1px solid rgba(34,197,94,.2);}
+.badge-red{background:var(--red-d);color:var(--red-l);border:1px solid rgba(239,68,68,.2);}
+.badge-yellow{background:var(--yellow-d);color:#FCD34D;border:1px solid rgba(251,191,36,.2);}
+.badge-blue{background:var(--blue-d);color:var(--blue-l);border:1px solid rgba(56,189,248,.2);}
+.badge-orange{background:var(--orange-d);color:#FB923C;border:1px solid rgba(251,146,60,.2);}
+.badge-muted{background:rgba(100,116,139,.12);color:var(--muted2);border:1px solid rgba(100,116,139,.2);}
+
+/* TABLE */
+.table-wrap{overflow-x:auto;border-radius:8px;border:1px solid var(--border);}
+table{width:100%;border-collapse:collapse;}
+th{background:var(--surface);padding:10px 14px;font-size:10px;font-weight:700;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--muted);text-align:left;border-bottom:1px solid var(--border);}
+td{padding:11px 14px;font-size:13px;border-bottom:1px solid var(--border);vertical-align:middle;}
+tr:last-child td{border-bottom:none;}
+tr:hover td{background:rgba(255,255,255,.02);}
+
+/* FORM */
+.form-group{margin-bottom:14px;}
+.form-label{display:block;font-size:11px;font-weight:600;color:var(--muted2);margin-bottom:6px;letter-spacing:.06em;text-transform:uppercase;}
+.form-control{width:100%;background:var(--surface);border:1px solid var(--border2);border-radius:6px;
+  padding:9px 12px;color:var(--text);font-size:13px;transition:.15s;outline:none;}
+.form-control:focus{border-color:var(--red);box-shadow:0 0 0 2px var(--red-d);}
+.form-control option{background:var(--surface);}
+select.form-control{cursor:pointer;}
+textarea.form-control{resize:vertical;min-height:80px;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.form-hint{font-size:10px;color:var(--muted);margin-top:4px;}
 
 /* MODAL */
-.modal-overlay{position:fixed;inset:0;z-index:500;background:rgba(9,12,16,.92);backdrop-filter:blur(8px);
-  display:none;align-items:center;justify-content:center;padding:24px;}
+.modal-overlay{position:fixed;inset:0;z-index:500;background:rgba(0,0,0,.75);
+  display:none;align-items:center;justify-content:center;padding:16px;}
 .modal-overlay.open{display:flex;}
-.modal{background:var(--card);border:1px solid var(--border2);border-radius:2px;width:100%;max-width:560px;max-height:90vh;overflow-y:auto;}
-.modal-head{padding:28px 32px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;}
-.modal-title{font-family:'Syne',sans-serif;font-weight:800;font-size:16px;color:var(--white);}
-.modal-title span{color:#A78BFA;}
-.modal-close{background:none;border:none;color:var(--muted);font-size:20px;cursor:pointer;padding:4px;line-height:1;transition:.2s;}
-.modal-close:hover{color:var(--white);}
-.modal-body{padding:28px 32px 20px;}
-.modal-subtitle{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:28px;}
-.field{margin-bottom:20px;}
-.field label{display:block;font-family:'Syne',sans-serif;font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:10px;}
-.field input,.field textarea,.field select{width:100%;background:var(--deep);border:1px solid var(--border2);color:var(--white);
-  padding:12px 16px;font-family:'DM Sans',sans-serif;font-size:14px;border-radius:2px;outline:none;transition:.2s;}
-.field input:focus,.field textarea:focus,.field select:focus{border-color:rgba(123,92,246,.5);}
-.field textarea{resize:vertical;min-height:80px;}
-.field select option{background:var(--card);}
-input::placeholder,textarea::placeholder{color:var(--muted);opacity:.5;}
-.radio-row{display:flex;gap:10px;flex-wrap:wrap;}
-.radio-pill{display:flex;align-items:center;gap:8px;background:var(--deep);border:1px solid var(--border2);
-  padding:10px 16px;border-radius:2px;cursor:pointer;transition:.2s;user-select:none;font-size:13px;color:var(--white);}
-.radio-pill:hover{border-color:rgba(123,92,246,.4);}
-.radio-pill.sel{border-color:#A78BFA;background:rgba(123,92,246,.1);color:#A78BFA;}
-.radio-pill input{display:none;}
-.modal-footer{padding:16px 32px 28px;display:flex;gap:12px;}
-.modal-submit{flex:1;background:var(--night-b);color:#A78BFA;border:1px solid rgba(123,92,246,.4);
-  font-family:'Syne',sans-serif;font-weight:700;font-size:11px;letter-spacing:.2em;text-transform:uppercase;
-  padding:14px;border-radius:2px;cursor:pointer;transition:.2s;}
-.modal-submit:hover{background:var(--night-a);color:var(--white);}
-.modal-cancel{background:transparent;color:var(--muted);border:1px solid var(--border);
-  font-family:'Syne',sans-serif;font-weight:700;font-size:11px;letter-spacing:.2em;text-transform:uppercase;
-  padding:14px 24px;border-radius:2px;cursor:pointer;transition:.2s;}
-.modal-cancel:hover{color:var(--white);}
-.submit-success{display:none;text-align:center;padding:48px 32px;}
-.submit-success .s-icon{font-size:48px;display:block;margin-bottom:16px;}
-.submit-success .s-title{font-family:'Bebas Neue',sans-serif;font-size:36px;color:var(--white);margin-bottom:8px;}
-.submit-success .s-title span{color:#A78BFA;}
-.submit-success .s-sub{font-size:14px;color:var(--muted);}
+.modal{background:var(--card);border:1px solid var(--border2);border-radius:10px;
+  width:100%;max-width:580px;max-height:90vh;overflow-y:auto;box-shadow:0 24px 60px rgba(0,0,0,.6);}
+.modal-head{padding:20px 24px 16px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;sticky:top;}
+.modal-title{font-size:15px;font-weight:700;}
+.modal-close{background:none;border:none;color:var(--muted);font-size:20px;cursor:pointer;
+  width:30px;height:30px;display:flex;align-items:center;justify-content:center;border-radius:4px;}
+.modal-close:hover{background:var(--border);color:var(--text);}
+.modal-body{padding:20px 24px;}
+.modal-foot{padding:14px 24px 20px;display:flex;gap:8px;justify-content:flex-end;border-top:1px solid var(--border);}
 
-/* REGISTER */
-#register{background:var(--black);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:100px 48px;}
-.register-inner{max-width:700px;margin:0 auto;text-align:center;}
-.reg-eyebrow{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;}
-.reg-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(40px,6vw,72px);color:var(--white);line-height:.95;margin-bottom:20px;}
-.reg-title span{color:var(--gold);}
-.reg-sub{font-size:15px;color:var(--muted);line-height:1.7;margin-bottom:40px;}
-.reg-form{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;}
-.reg-input{flex:1;min-width:200px;background:var(--card);border:1px solid var(--border2);color:var(--white);
-  padding:14px 18px;font-family:'DM Sans',sans-serif;font-size:14px;border-radius:2px;outline:none;transition:.2s;}
-.reg-input:focus{border-color:rgba(201,147,58,.5);}
-.reg-input::placeholder{color:var(--muted);opacity:.5;}
+/* ALERT STRIP */
+.alert-strip{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:6px;margin-bottom:10px;font-size:13px;}
+.alert-strip.danger{background:var(--red-d);border:1px solid rgba(239,68,68,.25);color:var(--red-l);}
+.alert-strip.warning{background:var(--yellow-d);border:1px solid rgba(251,191,36,.25);color:#FCD34D;}
+.alert-strip.info{background:var(--blue-d);border:1px solid rgba(56,189,248,.25);color:var(--blue-l);}
+.alert-close{margin-left:auto;background:none;border:none;color:inherit;cursor:pointer;font-size:16px;opacity:.7;}
+.alert-close:hover{opacity:1;}
 
-/* FOOTER */
-footer{border-top:1px solid var(--border);padding:40px 48px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
-.foot-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:13px;letter-spacing:.12em;text-transform:uppercase;}
-.foot-logo span{color:var(--gold);}
-.foot-copy{font-size:11px;color:var(--muted);letter-spacing:.08em;}
+/* SECTION TITLES */
+.sec-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;}
+.sec-title{font-size:18px;font-weight:700;}
+.sec-sub{font-size:12px;color:var(--muted);margin-top:2px;}
 
-.conference-card.past-event{opacity:0.62;}
-.conference-card.past-event .conf-stripe{background:var(--muted);}
-.conference-card.past-event .conf-dates{color:var(--muted);}
-.conf-tag.tag-past{background:rgba(122,143,166,.08);color:var(--muted);border:1px solid rgba(122,143,166,.2);}
-.past-month-label{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);
-  background:rgba(122,143,166,.08);border:1px solid rgba(122,143,166,.15);padding:4px 12px;
-  border-radius:2px;margin-left:12px;vertical-align:middle;}
+/* TABS */
+.tabs{display:flex;gap:4px;background:var(--surface);padding:4px;border-radius:7px;margin-bottom:20px;width:fit-content;}
+.tab{padding:7px 16px;font-size:12px;font-weight:600;border-radius:5px;cursor:pointer;
+  color:var(--muted2);border:none;background:none;transition:.15s;}
+.tab.active{background:var(--red);color:#fff;}
+.tab:hover:not(.active){background:var(--card);color:var(--text);}
 
-.diag-step{display:none;}.diag-step.active{display:block;}
+/* SEARCH BAR */
+.search-bar{display:flex;gap:8px;margin-bottom:16px;}
+.search-input{flex:1;background:var(--surface);border:1px solid var(--border2);border-radius:6px;
+  padding:8px 12px;color:var(--text);font-size:13px;outline:none;}
+.search-input:focus{border-color:var(--red);}
 
-@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+/* MAP */
+#map{height:100%;width:100%;border-radius:8px;}
+.map-wrap{height:calc(100vh - 140px);border-radius:8px;overflow:hidden;border:1px solid var(--border);}
+.map-controls{display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap;align-items:center;}
 
+/* PROTOCOL ACCORDION */
+.proto-item{border:1px solid var(--border);border-radius:8px;overflow:hidden;margin-bottom:10px;}
+.proto-head{display:flex;align-items:center;gap:14px;padding:16px 18px;cursor:pointer;
+  background:var(--card);transition:.15s;}
+.proto-head:hover{background:var(--card2);}
+.proto-icon{font-size:24px;width:36px;text-align:center;flex-shrink:0;}
+.proto-name{font-size:14px;font-weight:700;flex:1;}
+.proto-count{font-size:11px;color:var(--muted);}
+.proto-arrow{color:var(--muted);transition:.2s;}
+.proto-item.open .proto-arrow{transform:rotate(180deg);}
+.proto-body{display:none;padding:16px 18px;background:var(--surface);border-top:1px solid var(--border);}
+.proto-item.open .proto-body{display:block;}
+.proto-step{display:flex;align-items:flex-start;gap:12px;padding:8px 0;border-bottom:1px solid var(--border);}
+.proto-step:last-child{border-bottom:none;}
+.proto-check{width:20px;height:20px;border-radius:4px;border:2px solid var(--border2);flex-shrink:0;
+  cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.15s;margin-top:1px;}
+.proto-check.done{background:var(--green);border-color:var(--green);}
+.proto-check.done::after{content:'✓';color:#fff;font-size:12px;font-weight:700;}
+.proto-step-text{font-size:13px;line-height:1.5;flex:1;}
+.proto-step.done-step .proto-step-text{text-decoration:line-through;color:var(--muted);}
+.proto-progress{height:4px;background:var(--border);border-radius:2px;margin-top:10px;overflow:hidden;}
+.proto-progress-bar{height:100%;background:var(--green);border-radius:2px;transition:.3s;}
+.proto-reset{margin-top:12px;font-size:11px;color:var(--muted);cursor:pointer;text-decoration:underline;}
+
+/* OCCURRENCE / RESOURCE CARDS */
+.list-item{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:14px 16px;
+  margin-bottom:8px;display:flex;align-items:center;gap:14px;transition:.15s;}
+.list-item:hover{border-color:var(--border2);}
+.list-item-icon{width:36px;height:36px;border-radius:7px;display:flex;align-items:center;
+  justify-content:center;font-size:18px;flex-shrink:0;}
+.list-item-body{flex:1;min-width:0;}
+.list-item-title{font-size:13px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.list-item-sub{font-size:11px;color:var(--muted);margin-top:2px;}
+.list-item-actions{display:flex;gap:6px;flex-shrink:0;}
+
+/* CIVIL DEFENSE */
+.municipality-card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:16px 18px;
+  margin-bottom:10px;}
+.mun-header{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+.mun-icon{width:36px;height:36px;background:var(--blue-d);border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:18px;}
+.mun-name{font-size:14px;font-weight:700;}
+.mun-status{margin-left:auto;}
+.mun-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:12px;}
+.mun-field{display:flex;flex-direction:column;gap:2px;}
+.mun-field-label{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;}
+.mun-field-value{color:var(--text);font-weight:500;}
+.mun-risks{display:flex;gap:4px;flex-wrap:wrap;margin-top:10px;padding-top:10px;border-top:1px solid var(--border);}
+.risk-chip{font-size:10px;padding:2px 8px;border-radius:4px;font-weight:600;}
+
+/* EMPTY STATE */
+.empty{text-align:center;padding:48px 24px;color:var(--muted);}
+.empty-icon{font-size:40px;margin-bottom:12px;opacity:.5;}
+.empty-title{font-size:14px;font-weight:600;color:var(--muted2);margin-bottom:4px;}
+.empty-sub{font-size:12px;}
+
+/* TOAST */
+.toast-wrap{position:fixed;bottom:20px;right:20px;z-index:999;display:flex;flex-direction:column;gap:8px;}
+.toast{background:var(--card2);border:1px solid var(--border2);border-radius:8px;padding:12px 16px;
+  font-size:13px;min-width:240px;display:flex;align-items:center;gap:10px;
+  box-shadow:0 8px 24px rgba(0,0,0,.4);animation:slideIn .2s ease;}
+.toast.success{border-color:rgba(34,197,94,.3);color:var(--green-l);}
+.toast.error{border-color:rgba(239,68,68,.3);color:var(--red-l);}
+@keyframes slideIn{from{transform:translateX(40px);opacity:0;}to{transform:translateX(0);opacity:1;}}
+@keyframes fadeUp{from{transform:translateY(12px);opacity:0;}to{transform:translateY(0);opacity:1;}}
+
+/* DIVIDER */
+.divider{height:1px;background:var(--border);margin:16px 0;}
+
+/* MOBILE */
 @media(max-width:768px){
-  nav{padding:16px 20px;}
-  main{padding:60px 20px 80px;}
-  #hero,#register{padding-left:20px;padding-right:20px;}
-  .conf-actions{flex-direction:column;padding:16px 20px;align-items:stretch;}
-  .parallel-grid{grid-template-columns:1fr;}
-  footer{padding:28px 20px;flex-direction:column;text-align:center;}
-  .reg-form{flex-direction:column;}
+  .sidebar{display:none;}
+  .main{margin-left:0;padding-bottom:60px;}
+  .mob-nav{display:flex!important;}
+  .content{padding:16px;}
+  .grid-4{grid-template-columns:repeat(2,1fr);}
+  .grid-3{grid-template-columns:1fr;}
+  .grid-2{grid-template-columns:1fr;}
+  .form-row{grid-template-columns:1fr;}
+  .topbar{padding:12px 16px;}
+  .map-wrap{height:calc(100vh - 200px);}
+}
+.mob-nav{display:none;position:fixed;bottom:0;left:0;right:0;z-index:100;
+  background:var(--surface);border-top:1px solid var(--border);padding:6px 0 10px;}
+.mob-nav-items{display:flex;justify-content:space-around;}
+.mob-nav-item{display:flex;flex-direction:column;align-items:center;gap:3px;cursor:pointer;
+  padding:6px 12px;border-radius:8px;color:var(--muted);font-size:10px;font-weight:600;border:none;background:none;}
+.mob-nav-item.active{color:var(--red-l);}
+.mob-nav-icon{font-size:20px;}
+
+/* PRINT */
+@media print{
+  .sidebar,.topbar,.topbar-actions,.proto-check,.proto-reset,.btn,.search-bar,.tabs{display:none!important;}
+  .main{margin-left:0;}
+  .section{display:block!important;}
+  body{color:#000;background:#fff;}
 }
 
-/* Date/time picker row */
-.date-time-row{display:flex;gap:8px;}
-.date-time-row input{flex:1;}
-input[type="date"],input[type="time"]{color-scheme:dark;}
-
-/* Eu vou! — conference cards */
-.goer-section{overflow:hidden;max-height:0;transition:max-height .35s ease;}
-.goer-section.open{max-height:400px;border-top:1px solid var(--border);}
-.goer-form{display:flex;gap:8px;flex-wrap:wrap;padding:14px 28px 2px;}
-.goer-form input{flex:1;min-width:110px;background:var(--deep);border:1px solid var(--border2);color:var(--white);
-  padding:9px 13px;font-family:'DM Sans',sans-serif;font-size:13px;border-radius:2px;outline:none;transition:.2s;}
-.goer-form input:focus{border-color:rgba(201,147,58,.4);}
-.goer-form input::placeholder{color:var(--muted);opacity:.5;}
-.goer-submit{font-family:'Syne',sans-serif;font-weight:700;font-size:10px;letter-spacing:.18em;text-transform:uppercase;
-  padding:9px 16px;border-radius:2px;cursor:pointer;border:none;background:var(--gold);color:var(--black);transition:.2s;white-space:nowrap;}
-.goer-submit:hover{background:var(--gold-l);}
-.goer-list{display:flex;flex-wrap:wrap;gap:6px;padding:8px 28px 14px;}
-.goer-chip{display:inline-flex;align-items:center;gap:5px;font-size:11px;padding:4px 10px;
-  background:rgba(201,147,58,.07);border:1px solid rgba(201,147,58,.2);border-radius:2px;color:var(--muted2);}
-.goer-chip strong{color:var(--white);font-weight:600;}
-.conf-attend-btn{font-family:'Syne',sans-serif;font-weight:700;font-size:10px;letter-spacing:.15em;text-transform:uppercase;
-  padding:8px 14px;border-radius:2px;cursor:pointer;border:1px solid rgba(201,147,58,.28);transition:.2s;white-space:nowrap;
-  background:rgba(201,147,58,.06);color:var(--gold-l);}
-.conf-attend-btn:hover,.conf-attend-btn.active{background:rgba(201,147,58,.18);border-color:var(--gold);}
-
-/* Adicionar à agenda — dropdown */
-.agenda-dropdown{position:relative;display:inline-block;}
-.agenda-btn{font-family:'Syne',sans-serif;font-weight:700;font-size:10px;letter-spacing:.12em;text-transform:uppercase;
-  padding:8px 12px;border-radius:2px;cursor:pointer;border:1px solid rgba(122,143,166,.2);transition:.2s;white-space:nowrap;
-  background:rgba(122,143,166,.05);color:var(--muted2);display:inline-flex;align-items:center;gap:4px;}
-.agenda-btn:hover{background:rgba(122,143,166,.12);color:var(--white);}
-.agenda-menu{display:none;position:absolute;right:0;top:calc(100% + 5px);min-width:200px;
-  background:var(--card2);border:1px solid var(--border2);border-radius:2px;z-index:300;overflow:hidden;
-  box-shadow:0 8px 24px rgba(0,0,0,.5);}
-.agenda-dropdown.open .agenda-menu{display:block;}
-.agenda-menu a,.agenda-menu button{display:flex;width:100%;align-items:center;gap:10px;padding:11px 16px;
-  background:none;border:none;border-bottom:1px solid var(--border);color:var(--muted2);
-  font-family:'DM Sans',sans-serif;font-size:12px;cursor:pointer;transition:.15s;text-decoration:none;box-sizing:border-box;}
-.agenda-menu a:last-child,.agenda-menu button:last-child{border-bottom:none;}
-.agenda-menu a:hover,.agenda-menu button:hover{background:rgba(255,255,255,.05);color:var(--white);}
-
-/* Eu vou! — parallel cards */
-.par-goer-wrap{margin-top:10px;padding-top:10px;border-top:1px solid rgba(123,92,246,.15);}
-.par-goer-top{display:flex;align-items:center;gap:6px;flex-wrap:wrap;}
-.par-goer-btn{font-size:9px;letter-spacing:.14em;text-transform:uppercase;padding:4px 9px;border-radius:2px;cursor:pointer;
-  border:1px solid rgba(201,147,58,.28);background:rgba(201,147,58,.06);color:var(--gold-l);
-  font-family:'Syne',sans-serif;font-weight:700;transition:.2s;}
-.par-goer-btn:hover,.par-goer-btn.active{background:rgba(201,147,58,.18);border-color:var(--gold);}
-.par-agenda-wrap{position:relative;display:inline-block;}
-.par-agenda-btn{font-size:9px;letter-spacing:.12em;text-transform:uppercase;padding:4px 8px;border-radius:2px;cursor:pointer;
-  border:1px solid rgba(122,143,166,.2);background:rgba(122,143,166,.05);color:var(--muted2);
-  font-family:'Syne',sans-serif;font-weight:700;transition:.2s;display:inline-flex;align-items:center;gap:3px;}
-.par-agenda-btn:hover{background:rgba(122,143,166,.12);color:var(--white);}
-.par-agenda-menu{display:none;position:absolute;right:0;top:100%;margin-top:4px;min-width:190px;
-  background:var(--card2);border:1px solid var(--border2);border-radius:2px;z-index:300;overflow:hidden;
-  box-shadow:0 8px 24px rgba(0,0,0,.5);}
-.par-agenda-wrap.open .par-agenda-menu{display:block;}
-.par-agenda-menu button{display:flex;width:100%;align-items:center;gap:10px;padding:10px 14px;
-  background:none;border:none;border-bottom:1px solid var(--border);color:var(--muted2);
-  font-family:'DM Sans',sans-serif;font-size:12px;cursor:pointer;transition:.15s;text-align:left;box-sizing:border-box;}
-.par-agenda-menu button:last-child{border-bottom:none;}
-.par-agenda-menu button:hover{background:rgba(255,255,255,.05);color:var(--white);}
-.par-goer-form{display:none;margin-top:8px;gap:6px;flex-wrap:wrap;}
-.par-goer-form.show{display:flex;}
-.par-goer-form input{flex:1;min-width:90px;background:rgba(9,12,16,.8);border:1px solid var(--border2);color:var(--white);
-  padding:7px 10px;font-family:'DM Sans',sans-serif;font-size:12px;border-radius:2px;outline:none;transition:.2s;}
-.par-goer-form input:focus{border-color:rgba(201,147,58,.4);}
-.par-goer-form input::placeholder{color:var(--muted);opacity:.5;}
-.par-goer-sub{font-family:'Syne',sans-serif;font-weight:700;font-size:9px;letter-spacing:.14em;text-transform:uppercase;
-  padding:7px 10px;border-radius:2px;cursor:pointer;border:none;background:var(--gold);color:var(--black);transition:.2s;white-space:nowrap;}
-.par-goer-sub:hover{background:var(--gold-l);}
-.par-goer-list{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px;}
-.par-goer-chip{font-size:10px;padding:3px 8px;background:rgba(201,147,58,.07);border:1px solid rgba(201,147,58,.18);
-  border-radius:2px;color:var(--muted2);}
-.par-goer-chip strong{color:var(--white);font-weight:600;}
+/* LEAFLET CUSTOM */
+.custom-marker{background:var(--red);border:2px solid #fff;border-radius:50%;width:16px;height:16px;}
+.custom-marker.blue{background:var(--blue);}
+.custom-marker.green{background:var(--green);}
+.custom-marker.yellow{background:var(--yellow);}
+.custom-marker.orange{background:var(--orange);}
+.leaflet-popup-content-wrapper{background:var(--card);color:var(--text);border:1px solid var(--border2);border-radius:8px;}
+.leaflet-popup-tip{background:var(--card);}
 </style>
 </head>
 <body>
 
-<nav>
-  <div class="nav-logo">MR Solutions <span>—</span> Event Map</div>
-  <div class="nav-actions">
-    <button class="nav-btn ghost" onclick="openAddEventModal()">+ Evento do setor</button>
-    <button class="nav-btn ghost" onclick="openAddModal(null)">🌙 Evento noturno</button>
-    <button class="nav-btn solid" onclick="openDiagModal()">Quero diagnóstico</button>
+<!-- SIDEBAR -->
+<aside class="sidebar">
+  <div class="sb-brand">
+    <div class="sb-unit">🔥 CBMMG — 2ª CIA BM</div>
+    <div class="sb-name">Manhuaçu / Caparaó</div>
+    <div class="sb-sub">Sistema de Gestão Logística</div>
+  </div>
+  <div class="sb-sos">
+    <div>
+      <div class="sb-sos-num">193</div>
+      <div class="sb-sos-lbl">Bombeiros</div>
+    </div>
+    <div style="border-left:1px solid var(--border);height:32px;margin:0 4px;"></div>
+    <div>
+      <div class="sb-sos-num" style="font-size:18px;">192</div>
+      <div class="sb-sos-lbl">SAMU</div>
+    </div>
+  </div>
+  <nav class="sb-nav">
+    <button class="nav-item active" onclick="showSection('dashboard')">
+      <span class="nav-icon">🏠</span> Dashboard
+    </button>
+    <button class="nav-item" onclick="showSection('mapa')">
+      <span class="nav-icon">🗺️</span> Mapa
+    </button>
+    <button class="nav-item" onclick="showSection('recursos')">
+      <span class="nav-icon">🚒</span> Recursos
+    </button>
+    <button class="nav-item" onclick="showSection('ocorrencias')">
+      <span class="nav-icon">📋</span> Ocorrências
+      <span class="nav-badge" id="nb-oc">0</span>
+    </button>
+    <button class="nav-item" onclick="showSection('defesa')">
+      <span class="nav-icon">🛡️</span> Defesa Civil
+    </button>
+    <button class="nav-item" onclick="showSection('protocolos')">
+      <span class="nav-icon">📖</span> Protocolos
+    </button>
+  </nav>
+  <div class="sb-footer">
+    <div class="sb-version">v1.0 — Região do Caparaó</div>
+  </div>
+</aside>
+
+<!-- MOBILE NAV -->
+<nav class="mob-nav">
+  <div class="mob-nav-items">
+    <button class="mob-nav-item active" onclick="showSection('dashboard')"><span class="mob-nav-icon">🏠</span>Início</button>
+    <button class="mob-nav-item" onclick="showSection('mapa')"><span class="mob-nav-icon">🗺️</span>Mapa</button>
+    <button class="mob-nav-item" onclick="showSection('recursos')"><span class="mob-nav-icon">🚒</span>Recursos</button>
+    <button class="mob-nav-item" onclick="showSection('ocorrencias')"><span class="mob-nav-icon">📋</span>Ocorr.</button>
+    <button class="mob-nav-item" onclick="showSection('protocolos')"><span class="mob-nav-icon">📖</span>Protoc.</button>
   </div>
 </nav>
 
-<section id="hero">
-  <!-- Canvas animation: offshore scene at night (injected by initHeroAnimation) -->
-  <div class="hero-grid"></div>
-  <div class="hero-glow"></div>
-  <div class="hero-eyebrow">Setor de Energia · Óleo & Gás · 2026</div>
-  <h1 class="hero-title">
-    <span class="l1">MR Solutions</span>
-    <span class="l2">Event Map</span>
-  </h1>
-  <p class="hero-sub">Agenda dupla do setor energético. Onde estar de dia nas feiras e conferências oficiais. O que não perder de noite nos eventos de network que ninguém divulga.</p>
-  <div class="hero-cta">
-    <button class="btn btn-gold" onclick="document.getElementById('calendar-main').scrollIntoView({behavior:'smooth'})">Ver agenda 2026</button>
-    <button class="btn btn-night" onclick="openAddModal(null)">🌙 Adicionar evento noturno</button>
+<!-- MAIN -->
+<div class="main">
+
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <div>
+      <div class="topbar-title" id="topbar-title">Dashboard</div>
+      <div class="topbar-sub" id="topbar-sub">Visão geral — 2ª CIA BM Manhuaçu</div>
+    </div>
+    <div class="topbar-actions">
+      <span style="font-size:12px;color:var(--muted)" id="topbar-date"></span>
+      <button class="btn btn-primary btn-sm" id="topbar-action-btn" onclick="topbarAction()">+ Nova Ocorrência</button>
+    </div>
   </div>
-  <div class="stats-bar">
-    <div class="stat"><div class="stat-num" id="stat-conf">10</div><div class="stat-label">Conferências Oficiais</div></div>
-    <div class="stat"><div class="stat-num" id="stat-night">7</div><div class="stat-label">Eventos Noturnos</div></div>
-    <div class="stat"><div class="stat-num">2x</div><div class="stat-label">Agenda Dia + Noite</div></div>
-  </div>
-  <div class="legend">
-    <div class="leg-item"><div class="leg-dot day-dot"></div> Feira / Conferência (dia)</div>
-    <div class="leg-item"><div class="leg-dot night-dot"></div> Network / Paralelo (noite)</div>
-  </div>
-</section>
 
-<main id="calendar-main">
-  <div id="months-container"></div>
-</main>
+  <!-- CONTENT -->
+  <div class="content">
 
-<section id="register">
-  <div class="register-inner">
-    <div class="reg-eyebrow">Diagnóstico estratégico · MR Solutions</div>
-    <h2 class="reg-title">Quais eventos fazem<br><span>sentido para você?</span></h2>
-    <p class="reg-sub">Responda algumas perguntas sobre sua empresa e seus objetivos. A MR Solutions entrega um diagnóstico personalizado indicando quais eventos têm mais aderência com o seu perfil, e uma estimativa de investimento real para cada um deles.</p>
-    <button class="btn btn-gold" style="font-size:13px;padding:18px 48px;" onclick="openDiagModal()">Iniciar meu diagnóstico gratuito →</button>
-  </div>
-</section>
-
-<footer>
-  <div class="foot-logo">MR Solutions <span>—</span> Event Map</div>
-  <div class="foot-copy">Inteligência estratégica para o setor de energia · 2026</div>
-</footer>
-
-<!-- MODAL: DIAGNOSTIC -->
-<div class="modal-overlay" id="diag-overlay">
-  <div class="modal" style="max-width:680px;">
-
-    <!-- STEP INDICATOR -->
-    <div id="diag-steps-wrap">
-      <div class="modal-head" style="flex-direction:column;align-items:flex-start;gap:16px;">
-        <div style="display:flex;justify-content:space-between;width:100%;align-items:center;">
-          <div class="modal-title">Diagnóstico <span>Estratégico</span></div>
-          <button class="modal-close" onclick="closeDiagModal()">✕</button>
-        </div>
-        <div style="display:flex;gap:6px;width:100%;align-items:center;" id="diag-progress-bar">
-          <div class="dprog" id="dp1" style="height:3px;flex:1;background:var(--gold);border-radius:2px;transition:.3s;"></div>
-          <div class="dprog" id="dp2" style="height:3px;flex:1;background:var(--border2);border-radius:2px;transition:.3s;"></div>
-          <div class="dprog" id="dp3" style="height:3px;flex:1;background:var(--border2);border-radius:2px;transition:.3s;"></div>
-          <div class="dprog" id="dp4" style="height:3px;flex:1;background:var(--border2);border-radius:2px;transition:.3s;"></div>
-          <span id="diag-step-label" style="font-size:10px;color:var(--muted);letter-spacing:.15em;text-transform:uppercase;white-space:nowrap;margin-left:8px;">Etapa 1 de 4</span>
-        </div>
-      </div>
-
-      <!-- STEP 1: Identificação -->
-      <div class="diag-step active" id="ds1">
-        <div class="modal-body">
-          <p class="modal-subtitle" style="font-size:15px;color:var(--white);font-weight:500;margin-bottom:6px;">Vamos nos conhecer</p>
-          <p class="modal-subtitle">Para entregar um diagnóstico preciso, precisamos entender quem é a sua empresa e com quem estamos falando.</p>
-          <div class="field"><label>Seu nome completo *</label><input type="text" id="d-name" placeholder="Nome completo"></div>
-          <div class="field"><label>Email profissional *</label><input type="email" id="d-email" placeholder="seu@empresa.com"></div>
-          <div class="field"><label>Nome da empresa *</label><input type="text" id="d-company" placeholder="Razão social ou nome fantasia"></div>
-          <div class="field"><label>Segmento da empresa *</label>
-            <div class="radio-row">
-              <label class="radio-pill" onclick="selectPill(this)"><input type="radio" name="d-segment" value="Operadora / E&P">Operadora / E&P</label>
-              <label class="radio-pill" onclick="selectPill(this)"><input type="radio" name="d-segment" value="Prestadora de Serviços">Prestadora de Serviços</label>
-              <label class="radio-pill" onclick="selectPill(this)"><input type="radio" name="d-segment" value="Fornecedora / Supply Chain">Fornecedora / Supply Chain</label>
-              <label class="radio-pill" onclick="selectPill(this)"><input type="radio" name="d-segment" value="Treinamento / Capacitação">Treinamento / Capacitação</label>
-              <label class="radio-pill" onclick="selectPill(this)"><input type="radio" name="d-segment" value="Tecnologia / Inovação">Tecnologia / Inovação</label>
-              <label class="radio-pill" onclick="selectPill(this)"><input type="radio" name="d-segment" value="Consultoria">Consultoria</label>
-            </div>
+    <!-- ====== DASHBOARD ====== -->
+    <div class="section active" id="section-dashboard">
+      <div id="alerts-container"></div>
+      <div class="grid grid-4" style="margin-bottom:20px;" id="stats-grid"></div>
+      <div class="grid grid-2" style="gap:20px;">
+        <div>
+          <div class="sec-header">
+            <div><div class="sec-title" style="font-size:15px;">Últimas Ocorrências</div></div>
+            <button class="btn btn-ghost btn-sm" onclick="showSection('ocorrencias')">Ver todas →</button>
           </div>
+          <div id="dash-occurrences"></div>
         </div>
-        <div class="modal-footer"><button class="modal-submit" onclick="diagNext(2)">Continuar →</button></div>
-      </div>
-
-      <!-- STEP 2: Objetivos -->
-      <div class="diag-step" id="ds2">
-        <div class="modal-body">
-          <p class="modal-subtitle" style="font-size:15px;color:var(--white);font-weight:500;margin-bottom:6px;">Qual é a proposta da sua empresa nos eventos?</p>
-          <p class="modal-subtitle">Entender o seu objetivo principal nos ajuda a calcular o retorno esperado e identificar os eventos com maior aderência.</p>
-          <div class="field"><label>Objetivo principal nos eventos *</label>
-            <div class="radio-row">
-              <label class="radio-pill" onclick="selectPill(this)"><input type="radio" name="d-goal" value="Prospecção de clientes">Prospecção de clientes</label>
-              <label class="radio-pill" onclick="selectPill(this)"><input type="radio" name="d-goal" value="Visibilidade de marca">Visibilidade de marca</label>
-              <label class="radio-pill" onclick="selectPill(this)"><input type="radio" name="d-goal" value="Networking com executivos">Networking com executivos</label>
-              <label class="radio-pill" onclick="selectPill(this)"><input type="radio" name="d-goal" value="Lançamento de produto / serviço">Lançamento de produto / serviço</label>
-              <label class="radio-pill" onclick="selectPill(this)"><input type="radio" name="d-goal" value="Fechar parcerias comerciais">Fechar parcerias comerciais</label>
-            </div>
+        <div>
+          <div class="sec-header">
+            <div><div class="sec-title" style="font-size:15px;">Status dos Recursos</div></div>
+            <button class="btn btn-ghost btn-sm" onclick="showSection('recursos')">Ver todos →</button>
           </div>
-          <div class="field"><label>Porte da empresa *</label>
-            <div class="radio-row">
-              <label class="radio-pill" onclick="selectPill(this)"><input type="radio" name="d-size" value="MEI / Autônomo">MEI / Autônomo</label>
-              <label class="radio-pill" onclick="selectPill(this)"><input type="radio" name="d-size" value="Pequena (até 50 func.)">Pequena (até 50 func.)</label>
-              <label class="radio-pill" onclick="selectPill(this)"><input type="radio" name="d-size" value="Média (50–500 func.)">Média (50–500 func.)</label>
-              <label class="radio-pill" onclick="selectPill(this)"><input type="radio" name="d-size" value="Grande (500+ func.)">Grande (500+ func.)</label>
-            </div>
-          </div>
-          <div class="field"><label>Já participou de algum evento do setor antes?</label>
-            <div class="radio-row">
-              <label class="radio-pill" onclick="selectPill(this)"><input type="radio" name="d-exp" value="Sim, com regularidade">Sim, com regularidade</label>
-              <label class="radio-pill" onclick="selectPill(this)"><input type="radio" name="d-exp" value="Sim, pontualmente">Sim, pontualmente</label>
-              <label class="radio-pill" onclick="selectPill(this)"><input type="radio" name="d-exp" value="Nunca participou">Nunca participou</label>
-            </div>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button class="modal-cancel" onclick="diagBack(1)">← Voltar</button>
-          <button class="modal-submit" onclick="diagNext(3)">Continuar →</button>
-        </div>
-      </div>
-
-      <!-- STEP 3: Estratégia e orçamento -->
-      <div class="diag-step" id="ds3">
-        <div class="modal-body">
-          <p class="modal-subtitle" style="font-size:15px;color:var(--white);font-weight:500;margin-bottom:6px;">Estratégia e orçamento</p>
-          <p class="modal-subtitle">Estas respostas são usadas para calibrar a estimativa de investimento e o nível de presença recomendado para cada evento.</p>
-          <div class="field"><label>Qual é a estratégia atual de comunicação da empresa?</label>
-            <div class="radio-row">
-              <label class="radio-pill" onclick="selectPill(this)"><input type="radio" name="d-comm" value="Ainda não temos estratégia definida">Ainda não temos estratégia definida</label>
-              <label class="radio-pill" onclick="selectPill(this)"><input type="radio" name="d-comm" value="Redes sociais próprias">Redes sociais próprias</label>
-              <label class="radio-pill" onclick="selectPill(this)"><input type="radio" name="d-comm" value="Agência / equipe de marketing">Agência / equipe de marketing</label>
-              <label class="radio-pill" onclick="selectPill(this)"><input type="radio" name="d-comm" value="Parcerias com criadores de conteúdo">Parcerias com criadores de conteúdo</label>
-            </div>
-          </div>
-          <div class="field"><label>Orçamento disponível para eventos em 2026 (USD) *</label>
-            <div class="radio-row">
-              <label class="radio-pill" onclick="selectPill(this)"><input type="radio" name="d-budget" value="Até $10.000">Até $10.000</label>
-              <label class="radio-pill" onclick="selectPill(this)"><input type="radio" name="d-budget" value="$10.000 – $30.000">$10k – $30k</label>
-              <label class="radio-pill" onclick="selectPill(this)"><input type="radio" name="d-budget" value="$30.000 – $80.000">$30k – $80k</label>
-              <label class="radio-pill" onclick="selectPill(this)"><input type="radio" name="d-budget" value="Acima de $80.000">Acima de $80k</label>
-            </div>
-          </div>
-          <div class="field"><label>Quais eventos você já tem em vista para 2026?</label>
-            <div id="diag-events-check" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px;"></div>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button class="modal-cancel" onclick="diagBack(2)">← Voltar</button>
-          <button class="modal-submit" onclick="diagNext(4)">Ver meu diagnóstico →</button>
-        </div>
-      </div>
-
-      <!-- STEP 4: RESULTADO -->
-      <div class="diag-step" id="ds4">
-        <div class="modal-body" id="diag-result-body">
-          <!-- Preenchido dinamicamente -->
-        </div>
-        <div class="modal-footer">
-          <button class="modal-cancel" onclick="closeDiagModal()">Fechar</button>
-          <button class="modal-submit" onclick="closeDiagModal()" style="background:var(--gold);color:var(--black);border-color:var(--gold);">✓ Entendido, obrigado!</button>
+          <div id="dash-resources"></div>
         </div>
       </div>
     </div>
 
-  </div>
-</div>
-
-<!-- MODAL: ADICIONAR EVENTO DO SETOR -->
-<div class="modal-overlay" id="add-event-overlay">
-  <div class="modal">
-    <div id="add-event-form-wrap">
-      <div class="modal-head">
-        <div class="modal-title">Adicionar <span>evento do setor</span></div>
-        <button class="modal-close" onclick="closeAddEventModal()">✕</button>
+    <!-- ====== MAPA ====== -->
+    <div class="section" id="section-mapa">
+      <div class="map-controls">
+        <span style="font-size:12px;color:var(--muted);">Camadas:</span>
+        <button class="btn btn-sm btn-secondary" id="layer-btn-sedes" onclick="toggleLayer('sedes')">🚒 Sedes</button>
+        <button class="btn btn-sm btn-secondary" id="layer-btn-municipios" onclick="toggleLayer('municipios')">🏙️ Municípios</button>
+        <button class="btn btn-sm btn-secondary" id="layer-btn-risco" onclick="toggleLayer('risco')">⚠️ Risco</button>
+        <button class="btn btn-sm btn-secondary" id="layer-btn-agua" onclick="toggleLayer('agua')">💧 Água</button>
+        <button class="btn btn-sm btn-secondary" id="layer-btn-defesa" onclick="toggleLayer('defesa')">🛡️ Defesa Civil</button>
       </div>
-      <div class="modal-body">
-        <p class="modal-subtitle">Conhece uma feira, conferência ou summit do setor de energia que não está no mapa? Adiciona aqui e ajuda a comunidade a ter o calendário mais completo do Brasil.</p>
-        <div class="field"><label>Nome do evento *</label>
-          <input type="text" id="ae-name" placeholder="Ex: Rio Oil & Gas, SPE Brasil, OTC Asia...">
+      <div class="map-wrap">
+        <div id="map"></div>
+      </div>
+    </div>
+
+    <!-- ====== RECURSOS ====== -->
+    <div class="section" id="section-recursos">
+      <div class="sec-header">
+        <div>
+          <div class="sec-title">Recursos Logísticos</div>
+          <div class="sec-sub" id="res-count-sub">—</div>
         </div>
-        <div class="field"><label>Mês *</label>
-          <select id="ae-month">
-            <option value="">Selecione o mês</option>
-            <option>Janeiro</option><option>Fevereiro</option><option>Março</option>
-            <option>Abril</option><option>Maio</option><option>Junho</option>
-            <option>Julho</option><option>Agosto</option><option>Setembro</option>
-            <option>Outubro</option><option>Novembro</option><option>Dezembro</option>
+        <button class="btn btn-primary" onclick="openModal('resource')">+ Adicionar Recurso</button>
+      </div>
+      <div class="tabs" id="res-tabs">
+        <button class="tab active" onclick="filterResources('todos')">Todos</button>
+        <button class="tab" onclick="filterResources('viatura')">🚒 Viaturas</button>
+        <button class="tab" onclick="filterResources('equipamento')">🔧 Equipamentos</button>
+        <button class="tab" onclick="filterResources('epi')">🪖 EPIs</button>
+        <button class="tab" onclick="filterResources('material')">📦 Materiais</button>
+      </div>
+      <div class="search-bar">
+        <input class="search-input" placeholder="🔍 Buscar recurso..." oninput="renderResources()" id="res-search"/>
+        <select class="form-control" style="width:150px;" onchange="renderResources()" id="res-status-filter">
+          <option value="">Todos status</option>
+          <option value="disponivel">Disponível</option>
+          <option value="operacao">Em operação</option>
+          <option value="manutencao">Manutenção</option>
+          <option value="inativo">Inativo</option>
+        </select>
+      </div>
+      <div id="resources-list"></div>
+    </div>
+
+    <!-- ====== OCORRÊNCIAS ====== -->
+    <div class="section" id="section-ocorrencias">
+      <div class="sec-header">
+        <div>
+          <div class="sec-title">Registro de Ocorrências</div>
+          <div class="sec-sub" id="oc-count-sub">—</div>
+        </div>
+        <div style="display:flex;gap:8px;">
+          <button class="btn btn-secondary btn-sm" onclick="exportOccurrences()">⬇ Exportar CSV</button>
+          <button class="btn btn-primary" onclick="openModal('occurrence')">+ Nova Ocorrência</button>
+        </div>
+      </div>
+      <div class="search-bar">
+        <input class="search-input" placeholder="🔍 Buscar por endereço, tipo, município..." oninput="renderOccurrences()" id="oc-search"/>
+        <select class="form-control" style="width:160px;" onchange="renderOccurrences()" id="oc-type-filter">
+          <option value="">Todos os tipos</option>
+          <option value="INCÊNDIO URBANO">Incêndio Urbano</option>
+          <option value="INCÊNDIO FLORESTAL">Incêndio Florestal</option>
+          <option value="ATV">Acidente de Trânsito</option>
+          <option value="DESLIZAMENTO">Deslizamento</option>
+          <option value="INUNDAÇÃO">Inundação</option>
+          <option value="RESGATE">Resgate/Salvamento</option>
+          <option value="AFOGAMENTO">Afogamento</option>
+          <option value="BUSCA">Busca e Salvamento</option>
+          <option value="OUTRO">Outro</option>
+        </select>
+        <select class="form-control" style="width:140px;" onchange="renderOccurrences()" id="oc-status-filter">
+          <option value="">Todos status</option>
+          <option value="em_andamento">Em andamento</option>
+          <option value="concluida">Concluída</option>
+          <option value="cancelada">Cancelada</option>
+        </select>
+      </div>
+      <div id="occurrences-list"></div>
+    </div>
+
+    <!-- ====== DEFESA CIVIL ====== -->
+    <div class="section" id="section-defesa">
+      <div class="sec-header">
+        <div>
+          <div class="sec-title">Defesa Civil — Área de Articulação</div>
+          <div class="sec-sub">Coordenadorias Municipais de Proteção e Defesa Civil</div>
+        </div>
+        <button class="btn btn-primary" onclick="openModal('alert')">⚠️ Emitir Alerta</button>
+      </div>
+      <div id="def-alerts" style="margin-bottom:16px;"></div>
+      <div id="municipalities-list"></div>
+    </div>
+
+    <!-- ====== PROTOCOLOS ====== -->
+    <div class="section" id="section-protocolos">
+      <div class="sec-header">
+        <div>
+          <div class="sec-title">Protocolos de Resposta</div>
+          <div class="sec-sub">Procedimentos Operacionais Padrão — 2ª CIA BM Manhuaçu</div>
+        </div>
+        <button class="btn btn-secondary btn-sm" onclick="window.print()">🖨️ Imprimir</button>
+      </div>
+      <div id="protocols-list"></div>
+    </div>
+
+  </div><!-- /content -->
+</div><!-- /main -->
+
+<!-- TOAST -->
+<div class="toast-wrap" id="toast-wrap"></div>
+
+<!-- MODAL: RESOURCE -->
+<div class="modal-overlay" id="modal-resource">
+  <div class="modal">
+    <div class="modal-head">
+      <div class="modal-title" id="res-modal-title">Adicionar Recurso</div>
+      <button class="modal-close" onclick="closeModal('resource')">✕</button>
+    </div>
+    <div class="modal-body">
+      <input type="hidden" id="res-id"/>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Categoria</label>
+          <select class="form-control" id="res-category" onchange="updateResTypeOptions()">
+            <option value="viatura">Viatura</option>
+            <option value="equipamento">Equipamento</option>
+            <option value="epi">EPI</option>
+            <option value="material">Material / Consumível</option>
           </select>
         </div>
-        <div class="field"><label>Datas (início e fim)</label>
-          <div class="date-time-row">
-            <input type="date" id="ae-date-start" min="2026-01-01" max="2026-12-31" placeholder="Início">
-            <input type="date" id="ae-date-end" min="2026-01-01" max="2026-12-31" placeholder="Fim">
-          </div>
-        </div>
-        <div class="field"><label>Local / Cidade *</label>
-          <input type="text" id="ae-location" placeholder="Ex: Rio de Janeiro, RJ — Brasil">
-        </div>
-        <div class="field"><label>Link oficial (se tiver)</label>
-          <input type="text" id="ae-link" placeholder="https://...">
-        </div>
-        <div class="field"><label>Tipo de acesso</label>
-          <div class="radio-row">
-            <label class="radio-pill sel" onclick="selectPill(this)"><input type="radio" name="ae-access" value="public" checked>Acesso Público</label>
-            <label class="radio-pill" onclick="selectPill(this)"><input type="radio" name="ae-access" value="invite">Por Convite</label>
-          </div>
-        </div>
-        <div class="field"><label>Seu nome e empresa (opcional)</label>
-          <input type="text" id="ae-author" placeholder="Quem está enviando">
+        <div class="form-group">
+          <label class="form-label">Tipo</label>
+          <select class="form-control" id="res-type"></select>
         </div>
       </div>
-      <div class="modal-footer">
-        <button class="modal-cancel" onclick="closeAddEventModal()">Cancelar</button>
-        <button class="modal-submit" style="background:var(--gold);color:var(--black);border-color:var(--gold);" onclick="submitAddEvent()">📅 Enviar evento</button>
+      <div class="form-group">
+        <label class="form-label">Nome / Identificação</label>
+        <input class="form-control" id="res-name" placeholder="Ex: VCI 01 — Auto Bomba Tanque"/>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Placa / Nº Patrimônio</label>
+          <input class="form-control" id="res-identifier" placeholder="Ex: QRT-1001"/>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Status</label>
+          <select class="form-control" id="res-status">
+            <option value="disponivel">✅ Disponível</option>
+            <option value="operacao">🔄 Em Operação</option>
+            <option value="manutencao">🔧 Manutenção</option>
+            <option value="inativo">⭕ Inativo</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row" id="qty-row" style="display:none;">
+        <div class="form-group">
+          <label class="form-label">Quantidade</label>
+          <input class="form-control" type="number" id="res-quantity" min="0" placeholder="0"/>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Unidade</label>
+          <input class="form-control" id="res-unit" placeholder="Ex: unidades, metros, kits"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Localização</label>
+        <input class="form-control" id="res-location" placeholder="Ex: Sede — Manhuaçu / Almoxarifado"/>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Observações</label>
+        <textarea class="form-control" id="res-notes" placeholder="Capacidade, estado de conservação, última revisão..."></textarea>
       </div>
     </div>
-    <div class="submit-success" id="add-event-success">
-      <span class="s-icon">📅</span>
-      <div class="s-title">Evento <span>enviado!</span></div>
-      <p class="s-sub">Obrigado por contribuir com o mapa. Seu evento será adicionado ao calendário após revisão.</p>
+    <div class="modal-foot">
+      <button class="btn btn-secondary" onclick="closeModal('resource')">Cancelar</button>
+      <button class="btn btn-primary" onclick="saveResource()">Salvar</button>
     </div>
   </div>
 </div>
 
-<!-- MODAL: ADD PARALLEL EVENT -->
-<div class="modal-overlay" id="modal-overlay">
+<!-- MODAL: OCCURRENCE -->
+<div class="modal-overlay" id="modal-occurrence">
   <div class="modal">
-    <div id="modal-form-wrap">
-      <div class="modal-head">
-        <div class="modal-title">Adicionar <span>evento paralelo</span></div>
-        <button class="modal-close" onclick="closeModal()">✕</button>
-      </div>
-      <div class="modal-body">
-        <p class="modal-subtitle">Você sabe de um evento de network, jantar, workshop ou festa que vai acontecer durante uma das feiras? Compartilha aqui. A comunidade agradece.</p>
-        <div class="field">
-          <label>Nome do evento *</label>
-          <input type="text" id="m-name" placeholder="Ex: Jantar Brasileiros, Workshop DELP, Festa Camorim...">
+    <div class="modal-head">
+      <div class="modal-title" id="oc-modal-title">Nova Ocorrência</div>
+      <button class="modal-close" onclick="closeModal('occurrence')">✕</button>
+    </div>
+    <div class="modal-body">
+      <input type="hidden" id="oc-id"/>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Tipo de Ocorrência</label>
+          <select class="form-control" id="oc-type">
+            <option value="INCÊNDIO URBANO">🔥 Incêndio Urbano</option>
+            <option value="INCÊNDIO FLORESTAL">🌲 Incêndio Florestal</option>
+            <option value="ATV">🚗 Acidente de Trânsito c/ Vítimas</option>
+            <option value="DESLIZAMENTO">⛰️ Deslizamento de Terra</option>
+            <option value="INUNDAÇÃO">🌊 Inundação/Enchente</option>
+            <option value="RESGATE">🪢 Resgate/Salvamento</option>
+            <option value="AFOGAMENTO">🏊 Afogamento</option>
+            <option value="BUSCA">🔦 Busca e Salvamento</option>
+            <option value="PRODUTO PERIGOSO">☣️ Produto Perigoso (HAZMAT)</option>
+            <option value="RESGATE EM ALTURA">🧗 Resgate em Altura</option>
+            <option value="ANIMAL PEÇONHENTO">🐍 Animal Peçonhento</option>
+            <option value="OUTRO">📌 Outro</option>
+          </select>
         </div>
-        <div class="field">
-          <label>Durante qual feira acontece? *</label>
-          <select id="m-conference"><option value="">Selecione a feira principal</option></select>
-        </div>
-        <div class="field">
-          <label>Data e horário</label>
-          <div class="date-time-row">
-            <input type="date" id="m-date" min="2026-01-01" max="2026-12-31">
-            <input type="time" id="m-time" placeholder="Horário (opcional)">
-          </div>
-        </div>
-        <div class="field">
-          <label>Breve descrição</label>
-          <textarea id="m-desc" placeholder="Quem organiza, qual o formato, o que esperar..."></textarea>
-        </div>
-        <div class="field">
-          <label>Tipo de acesso</label>
-          <div class="radio-row" id="access-radio">
-            <label class="radio-pill sel" onclick="selectPill(this,'access')"><input type="radio" name="access" value="convite" checked>Por Convite</label>
-            <label class="radio-pill" onclick="selectPill(this,'access')"><input type="radio" name="access" value="aberto">Aberto</label>
-            <label class="radio-pill" onclick="selectPill(this,'access')"><input type="radio" name="access" value="restrito">Restrito (empresa)</label>
-          </div>
-        </div>
-        <div class="field">
-          <label>Seu nome (opcional)</label>
-          <input type="text" id="m-author" placeholder="Quem está enviando esta informação">
-        </div>
-        <!-- PASSO 3: campo de presença de empresas -->
-        <div class="field">
-          <label>Quem vai estar lá? (opcional)</label>
-          <input type="text" id="m-attendees" placeholder="Ex: Petrobras, TechnipFMC, SBM Offshore (separe por vírgula)">
-          <div style="font-size:11px;color:var(--muted);margin-top:6px;line-height:1.5;">Informe empresas ou pessoas que você sabe que vão estar neste evento. Ajuda a comunidade a fazer networking antes mesmo de chegar.</div>
+        <div class="form-group">
+          <label class="form-label">Status</label>
+          <select class="form-control" id="oc-status">
+            <option value="em_andamento">🔄 Em Andamento</option>
+            <option value="concluida">✅ Concluída</option>
+            <option value="cancelada">❌ Cancelada</option>
+          </select>
         </div>
       </div>
-      <div class="modal-footer">
-        <button class="modal-cancel" onclick="closeModal()">Cancelar</button>
-        <button class="modal-submit" onclick="submitParallel()">🌙 Enviar para a comunidade</button>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Data</label>
+          <input class="form-control" type="date" id="oc-date"/>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Hora</label>
+          <input class="form-control" type="time" id="oc-time"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Endereço / Local</label>
+        <input class="form-control" id="oc-address" placeholder="Ex: Rua das Flores, 100 — Centro"/>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Município</label>
+          <select class="form-control" id="oc-municipality">
+            <option value="Manhuaçu">Manhuaçu</option>
+            <option value="Manhumirim">Manhumirim</option>
+            <option value="Alto Jequitibá">Alto Jequitibá</option>
+            <option value="Alto Caparaó">Alto Caparaó</option>
+            <option value="Caparaó">Caparaó</option>
+            <option value="Martins Soares">Martins Soares</option>
+            <option value="Simonésia">Simonésia</option>
+            <option value="Luisburgo">Luisburgo</option>
+            <option value="Santa Margarida">Santa Margarida</option>
+            <option value="Reduto">Reduto</option>
+            <option value="Matipó">Matipó</option>
+            <option value="Chalé">Chalé</option>
+            <option value="Outro">Outro</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Número COBOM</label>
+          <input class="form-control" id="oc-cobom" placeholder="Ex: OC2025/001234"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Viaturas Empregadas</label>
+        <input class="form-control" id="oc-resources" placeholder="Ex: VCI 01, VPR 01"/>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Descrição / Relato</label>
+        <textarea class="form-control" id="oc-desc" rows="3" placeholder="Descreva a ocorrência, ações realizadas, resultado..."></textarea>
       </div>
     </div>
-    <div class="submit-success" id="modal-success">
-      <span class="s-icon">🌙</span>
-      <div class="s-title">Evento <span>adicionado!</span></div>
-      <p class="s-sub">Obrigado por alimentar o mapa. Seu evento já aparece na agenda da comunidade.</p>
+    <div class="modal-foot">
+      <button class="btn btn-secondary" onclick="closeModal('occurrence')">Cancelar</button>
+      <button class="btn btn-primary" onclick="saveOccurrence()">Salvar</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL: ALERT -->
+<div class="modal-overlay" id="modal-alert">
+  <div class="modal" style="max-width:440px;">
+    <div class="modal-head">
+      <div class="modal-title">⚠️ Emitir Alerta de Defesa Civil</div>
+      <button class="modal-close" onclick="closeModal('alert')">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="form-group">
+        <label class="form-label">Nível do Alerta</label>
+        <select class="form-control" id="al-level">
+          <option value="atencao">🟡 Atenção</option>
+          <option value="alerta">🟠 Alerta</option>
+          <option value="emergencia">🔴 Emergência</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Município(s)</label>
+        <input class="form-control" id="al-municipality" placeholder="Ex: Caparaó, Alto Caparaó"/>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Tipo de Risco</label>
+        <select class="form-control" id="al-type">
+          <option value="DESLIZAMENTO">⛰️ Deslizamento de Terra</option>
+          <option value="INUNDAÇÃO">🌊 Inundação/Enchente</option>
+          <option value="INCÊNDIO FLORESTAL">🌲 Incêndio Florestal</option>
+          <option value="TEMPESTADE">⛈️ Tempestade Severa</option>
+          <option value="OUTRO">📌 Outro</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Descrição do Alerta</label>
+        <textarea class="form-control" id="al-desc" rows="3" placeholder="Descreva o risco e as orientações à população..."></textarea>
+      </div>
+    </div>
+    <div class="modal-foot">
+      <button class="btn btn-secondary" onclick="closeModal('alert')">Cancelar</button>
+      <button class="btn btn-orange" onclick="saveAlert()">Emitir Alerta</button>
     </div>
   </div>
 </div>
 
 <script>
-// ─── DADOS ─────────────────────────────────────────────────────────────────
-// Helper de rastreamento — não quebra se GA4 não carregar
-function track(event, params) {
-  if (typeof gtag === 'function') gtag('event', event, params || {});
-}
+// ============================================================
+// STATE & STORAGE
+// ============================================================
+const STORAGE_KEY = '2cia_bm_manhuacu';
 
-// Cada conferência tem: id, nome, datas, mês, local, tipo de acesso, link oficial, e lista de eventos paralelos (noite).
-const CONFERENCES = [
-
-  // ── EVENTOS PASSADOS 2026 ─────────────────────────────────────────────────
-  {
-    id:'guyana2026feb',
-    name:'Guyana Energy Conference & Supply Chain Expo',
-    dates:'17 – 19', month:'Fevereiro', monthShort:'FEV', year:2026,
-    location:'Georgetown — Guiana',
-    access:'public', link:'https://www.guyanaenergyconference.com/',
-    past:true,
-    parallel:[]
-  },
-  {
-    id:'macae2026mar',
-    name:'Macaé Energy',
-    dates:'17 – 19', month:'Março', monthShort:'MAR', year:2026,
-    location:'Centro de Convenções Jornalista Roberto Marinho, Macaé, RJ — Brasil',
-    access:'public', link:'https://macaeenergy.com.br/',
-    past:true,
-    parallel:[]
-  },
-  {
-    id:'vitoria2026apr',
-    name:'Vitória PetroShow',
-    dates:'14 – 16', month:'Abril', monthShort:'ABR', year:2026,
-    location:'Centro de Convenções de Vitória, ES — Brasil',
-    access:'public', link:'https://vitoriapetroshow.com.br/',
-    past:true,
-    parallel:[]
-  },
-  {
-    id:'nnlogistica2026apr',
-    name:'NN Logística — Supply Chain & Energia',
-    dates:'Abr · Em andamento', month:'Abril', monthShort:'ABR', year:2026,
-    location:'Brasil',
-    access:'public', link:'https://nnlogistica.com.br/',
-    past:false,
-    parallel:[]
-  },
-
-  // ── MAIO ──────────────────────────────────────────────────────────────────
-  {
-    id:'otc2026',
-    name:'OTC — Offshore Technology Conference',
-    dates:'4 – 7', month:'Maio', monthShort:'MAI', year:2026,
-    location:'NRG Park, Houston, TX — EUA',
-    access:'public', link:'https://2026.otcnet.org/',
-    past:false,
-    parallel:[
-      { day:'Sábado, 2 Mai', name:'Confraria do Vinho', desc:'Reunião informal da comunidade brasileira antes da abertura oficial da OTC. Tradição que antecede a semana maior.', access:'convite' },
-      { day:'Domingo, 3 Mai', name:'Churrasco dos Brasileiros', desc:'Encontro tradicional dos profissionais brasileiros no fim de semana pré-OTC. Alta concentração de executivos e decisores.', access:'convite' },
-      { day:'Segunda, 4 Mai · Noite', name:'Brasil Energy Meeting', desc:'Jantar de networking exclusivo para lideranças do setor energético brasileiro presentes na OTC.', access:'convite' },
-      { day:'Terça, 5 Mai · Noite', name:'M&O Networking — M&O Partners', desc:'Evento de networking exclusivo patrocinado pelos principais parceiros do setor. A MR Solutions estará presente. Alta concentração de lideranças e decisores da cadeia offshore.', access:'convite' },
-      { day:'Terça, 5 Mai · Noite', name:'LR Networking Reception', desc:'Evento noturno promovido pela Lloyd\'s Register durante a semana da OTC. Networking com profissionais técnicos e comerciais do setor de óleo e gás.', access:'convite' },
-      { day:'Quarta, 6 Mai · Noite', name:'Festa ABS', desc:'Evento social promovido pela American Bureau of Shipping. Presença de lideranças técnicas e comerciais.', access:'restrito' },
-      { day:'Quarta, 6 Mai · Noite', name:'Workshop DELP', desc:'Sessão técnica e networking. Foco em desenvolvimento e liderança no setor energético.', access:'restrito' },
-      { day:'Quarta, 6 Mai · Noite', name:'Festa Camorim', desc:'Confraternização tradicional da comunidade brasileira na OTC. Um dos eventos mais aguardados de toda a semana.', access:'convite' },
-    ]
-  },
-  {
-    id:'fpso2026',
-    name:'FPSO Expo Brasil — Epicentro Global (4ª Edição)',
-    dates:'19 – 21', month:'Maio', monthShort:'MAI', year:2026,
-    location:'ExpoRio Cidade Nova, Rio de Janeiro, RJ — Brasil',
-    access:'public', link:'https://fpsosexpor.com.br/',
-    past:false,
-    parallel:[]
-  },
-  {
-    id:'bahia2026',
-    name:'Bahia Oil & Gas Energy (BOGE)',
-    dates:'27 – 29', month:'Maio', monthShort:'MAI', year:2026,
-    location:'Centro de Convenções Salvador, BA — Brasil',
-    access:'public', link:'https://www.bahiaoilgasenergy.com.br/',
-    past:false,
-    parallel:[]
-  },
-
-  // ── JUNHO ─────────────────────────────────────────────────────────────────
-  {
-    id:'seogs2026',
-    name:'SEOGS — Suriname Energy, Oil & Gas Summit & Exhibition',
-    dates:'23 – 26', month:'Junho', monthShort:'JUN', year:2026,
-    location:'Paramaribo — Suriname',
-    access:'public', link:'https://suriname-energy.com/',
-    past:false,
-    parallel:[]
-  },
-  {
-    id:'sergipe2026',
-    name:'SOG.e — Sergipe Oil & Gas & Energy',
-    dates:'29 – 31', month:'Julho', monthShort:'JUL', year:2026,
-    location:'Centro de Convenções AM Malls, Aracaju, SE — Brasil',
-    access:'public', link:'https://sergipeoilgas.com.br/',
-    past:false,
-    parallel:[
-      { day:'28 Jul · Noite', name:'Welcome Drink SOG26', desc:'Recepção de boas-vindas destinada exclusivamente a patrocinadores e parceiros do evento.', access:'convite' },
-      { day:'30 Jul · Noite', name:'Celebra SOG26', desc:'Confraternização com atrações musicais e serviço all inclusive. Um dos destaques sociais do evento.', access:'convite' },
-    ]
-  },
-
-  // ── AGOSTO ────────────────────────────────────────────────────────────────
-  {
-    id:'navalshore2026',
-    name:'Navalshore — Feira da Indústria Marítima (20ª Ed.)',
-    dates:'18 – 20', month:'Agosto', monthShort:'AGO', year:2026,
-    location:'Rio de Janeiro, RJ — Brasil',
-    access:'public', link:'https://www.navalshore.com.br/',
-    past:false,
-    parallel:[]
-  },
-  {
-    id:'ons2026',
-    name:'ONS — Offshore Northern Seas',
-    dates:'24 – 27', month:'Agosto', monthShort:'AGO', year:2026,
-    location:'Stavanger — Noruega',
-    access:'public', link:'https://www.ons.no/',
-    past:false,
-    parallel:[]
-  },
-
-  // ── SETEMBRO ──────────────────────────────────────────────────────────────
-  {
-    id:'roge2026',
-    name:'ROG.e (IBP)',
-    dates:'21 – 24', month:'Setembro', monthShort:'SET', year:2026,
-    location:'Riocentro, Rio de Janeiro, RJ — Brasil',
-    access:'public', link:'https://roge.energy/',
-    past:false,
-    parallel:[]
-  },
-  {
-    id:'smm2026',
-    name:'SMM — Shipbuilding, Machinery & Marine Technology',
-    dates:'1 – 4', month:'Setembro', monthShort:'SET', year:2026,
-    location:'Hamburgo — Alemanha',
-    access:'public', link:'https://www.smm-hamburg.com/',
-    past:false,
-    parallel:[]
-  },
-
-  // ── NOVEMBRO ──────────────────────────────────────────────────────────────
-  {
-    id:'adipec2026',
-    name:'ADIPEC — Abu Dhabi International Petroleum Exhibition',
-    dates:'9 – 12', month:'Novembro', monthShort:'NOV', year:2026,
-    location:'Abu Dhabi — Emirados Árabes Unidos',
-    access:'public', link:'https://www.adipec.com/',
-    past:false,
-    parallel:[]
-  },
-  {
-    id:'mossoro2026',
-    name:'Mossoró Oil, Gas & Energy',
-    dates:'Nov · Sem. 4', month:'Novembro', monthShort:'NOV', year:2026,
-    location:'Mossoró, RN — Brasil',
-    access:'public', link:'https://www.mossorooilgas.com.br/',
-    past:false,
-    parallel:[]
-  },
+const DEFAULT_RESOURCES = [
+  {id:'r1',category:'viatura',type:'VCI',name:'VCI 01',identifier:'QRT-0001',status:'disponivel',location:'Sede — Manhuaçu',quantity:null,unit:null,notes:'Auto Bomba Tanque 2.000L — Ano 2019'},
+  {id:'r2',category:'viatura',type:'ABT',name:'ABT 01',identifier:'QRT-0002',status:'disponivel',location:'Sede — Manhuaçu',quantity:null,unit:null,notes:'Auto Bomba Tanque 6.000L — Combate a Incêndio Florestal'},
+  {id:'r3',category:'viatura',type:'VPR',name:'VPR 01',identifier:'QRT-0003',status:'disponivel',location:'Sede — Manhuaçu',quantity:null,unit:null,notes:'Viatura de Primeiros Socorros — UTI Móvel'},
+  {id:'r4',category:'viatura',type:'VRU',name:'VRU 01',identifier:'QRT-0004',status:'disponivel',location:'Sede — Manhuaçu',quantity:null,unit:null,notes:'Viatura de Resgate Urbano — Desencarceramento'},
+  {id:'r5',category:'viatura',type:'VCS',name:'VCS 01',identifier:'QRT-0005',status:'manutencao',location:'Oficina Regional',quantity:null,unit:null,notes:'Viatura de Combate a Sinistros — em revisão de freios'},
+  {id:'r6',category:'equipamento',type:'Mangotinho',name:'Mangueiras 45mm',identifier:'EQ-001',status:'disponivel',location:'Almoxarifado — Manhuaçu',quantity:30,unit:'lanços (30m)',notes:'Neoprene, verificadas em Nov/2024'},
+  {id:'r7',category:'equipamento',type:'Ferramenta',name:'Conjunto Desencarceramento Lukas',identifier:'EQ-002',status:'disponivel',location:'VRU 01',quantity:1,unit:'kit completo',notes:'Mandíbulas, cortador, expansor, cilindros'},
+  {id:'r8',category:'equipamento',type:'Escada',name:'Escada Extensível 10m',identifier:'EQ-003',status:'disponivel',location:'Almoxarifado',quantity:2,unit:'unidades',notes:'Alumínio — capacidade 180kg'},
+  {id:'r9',category:'equipamento',type:'Motosserra',name:'Motosserra Husqvarna 572XP',identifier:'EQ-004',status:'disponivel',location:'Almoxarifado',quantity:2,unit:'unidades',notes:'Para corte em operações florestais e resgate'},
+  {id:'r10',category:'epi',type:'Capacete',name:'Capacete Estrutural',identifier:'EPI-001',status:'disponivel',location:'Vestiário',quantity:15,unit:'unidades',notes:'MSA Gallet — em bom estado'},
+  {id:'r11',category:'epi',type:'Roupa de Aproximação',name:'Roupa de Aproximação ao Fogo',identifier:'EPI-002',status:'disponivel',location:'Vestiário',quantity:4,unit:'conjuntos',notes:'Proxitex Radians — verificar prazo revisão'},
+  {id:'r12',category:'epi',type:'Cinto',name:'Cinto Paraquedista c/ Talabarte',identifier:'EPI-003',status:'disponivel',location:'Almoxarifado',quantity:8,unit:'conjuntos',notes:'Para resgate em altura'},
+  {id:'r13',category:'material',type:'Oxigênio',name:'Cilindros de Oxigênio Medicinal',identifier:'MAT-001',status:'disponivel',location:'VPR 01',quantity:6,unit:'cilindros',notes:'3L e 5L — verificar pressão semanalmente'},
+  {id:'r14',category:'material',type:'Primeiros Socorros',name:'Kit de Trauma Avançado',identifier:'MAT-002',status:'disponivel',location:'VPR 01',quantity:2,unit:'kits',notes:'Colar cervical, prancha, DEA, medicamentos'},
 ];
 
-// Assign stable IDs and goer arrays to pre-existing parallel events
-CONFERENCES.forEach(conf => {
-  if (!conf.goers) conf.goers = [];
-  conf.parallel.forEach((p, i) => {
-    if (!p.id) p.id = conf.id + '_p' + i;
-    if (!p.goers) p.goers = [];
-  });
-});
+const DEFAULT_OCCURRENCES = [
+  {id:'o1',type:'ATV',date:'2025-05-10',time:'14:30',address:'MG-111, KM 45 — Serra do Caparaó',municipality:'Alto Caparaó',cobom:'OC2025/004521',resources:'VPR 01, VRU 01',status:'concluida',desc:'Colisão frontal entre veículos com 2 vítimas. Extricação e imobilização realizadas. Vítimas encaminhadas ao HMP Manhuaçu.'},
+  {id:'o2',type:'INCÊNDIO FLORESTAL',date:'2025-05-08',time:'11:15',address:'Zona Rural — Fazenda São João',municipality:'Caparaó',cobom:'OC2025/004498',resources:'ABT 01, VCI 01',status:'concluida',desc:'Incêndio em área de vegetação com aproximadamente 15 hectares afetados. Controle após 4 horas. Acionado IEF-MG.'},
+  {id:'o3',type:'DESLIZAMENTO',date:'2025-05-05',time:'03:20',address:'Rua das Pedras, 220 — Bairro Alto',municipality:'Manhumirim',cobom:'OC2025/004430',resources:'VCI 01, VRU 01, VPR 01',status:'concluida',desc:'Deslizamento de encosta atingiu 2 residências. 8 pessoas resgatadas, 1 vítima fatal. CODECIM acionado. 3 famílias abrigadas.'},
+  {id:'o4',type:'INCÊNDIO URBANO',date:'2025-05-12',time:'08:45',address:'Rua Coronel Antônio, 55 — Centro',municipality:'Manhuaçu',cobom:'OC2025/004600',resources:'VCI 01, ABT 01',status:'em_andamento',desc:'Incêndio em residência térrea. Em andamento no momento do registro.'},
+];
 
-// ─── AGENDA_DATA: lookup table for calendar export ────────────────────────────
-const AGENDA_DATA = {};
-const MONTH_NUM = {Janeiro:1,Fevereiro:2,Março:3,Abril:4,Maio:5,Junho:6,Julho:7,Agosto:8,Setembro:9,Outubro:10,Novembro:11,Dezembro:12};
+const DEFAULT_MUNICIPALITIES = [
+  {id:'m1',name:'Manhuaçu',lat:-20.2603,lng:-42.0285,coordinator:'Cel. (nome a preencher)',phone:'(33) 3321-XXXX',codecim:'Ativa',risks:['DESLIZAMENTO','INUNDAÇÃO'],shelters:['Ginásio Municipal','Escola Estadual Prof. Silva'],notes:'Sede da 2ª CIA. CODECIM integrada.'},
+  {id:'m2',name:'Manhumirim',lat:-20.3587,lng:-41.9690,coordinator:'(a preencher)',phone:'(33) 3341-XXXX',codecim:'Ativa',risks:['DESLIZAMENTO'],shelters:['AABB Manhumirim'],notes:''},
+  {id:'m3',name:'Alto Jequitibá',lat:-20.4342,lng:-41.9660,coordinator:'(a preencher)',phone:'(33) XXXX-XXXX',codecim:'Em implantação',risks:['DESLIZAMENTO','INUNDAÇÃO'],shelters:['Escola Municipal'],notes:''},
+  {id:'m4',name:'Alto Caparaó',lat:-20.5001,lng:-41.9333,coordinator:'(a preencher)',phone:'(33) XXXX-XXXX',codecim:'Ativa',risks:['DESLIZAMENTO','INCÊNDIO FLORESTAL'],shelters:['Parque Nacional do Caparaó — Área de apoio'],notes:'Acesso à Serra. Monitorar PREVFOGO.'},
+  {id:'m5',name:'Caparaó',lat:-20.5167,lng:-41.9167,coordinator:'(a preencher)',phone:'(32) XXXX-XXXX',codecim:'Em implantação',risks:['INCÊNDIO FLORESTAL','DESLIZAMENTO'],shelters:['Escola Estadual Caparaó'],notes:'Município na divisa MG/ES. Pico da Bandeira — área de altitude.'},
+  {id:'m6',name:'Martins Soares',lat:-20.1833,lng:-42.0833,coordinator:'(a preencher)',phone:'(33) XXXX-XXXX',codecim:'Ativa',risks:['DESLIZAMENTO'],shelters:['Igreja Matriz'],notes:''},
+  {id:'m7',name:'Simonésia',lat:-20.1167,lng:-42.0333,coordinator:'(a preencher)',phone:'(33) XXXX-XXXX',codecim:'Ativa',risks:['DESLIZAMENTO','INUNDAÇÃO'],shelters:['Ginásio de Simonésia'],notes:''},
+  {id:'m8',name:'Luisburgo',lat:-20.1333,lng:-41.9333,coordinator:'(a preencher)',phone:'(33) XXXX-XXXX',codecim:'Em implantação',risks:['DESLIZAMENTO'],shelters:['Escola Municipal'],notes:''},
+  {id:'m9',name:'Santa Margarida',lat:-20.3833,lng:-42.2500,coordinator:'(a preencher)',phone:'(33) XXXX-XXXX',codecim:'Ativa',risks:['INUNDAÇÃO'],shelters:['Escola Estadual'],notes:''},
+  {id:'m10',name:'Reduto',lat:-20.6167,lng:-41.9333,coordinator:'(a preencher)',phone:'(33) XXXX-XXXX',codecim:'Em implantação',risks:['DESLIZAMENTO'],shelters:['Igreja Evangélica local'],notes:''},
+  {id:'m11',name:'Matipó',lat:-20.2833,lng:-42.3333,coordinator:'(a preencher)',phone:'(33) XXXX-XXXX',codecim:'Ativa',risks:['INUNDAÇÃO','DESLIZAMENTO'],shelters:['SESI Matipó'],notes:'Rio Matipó — monitorar cheias.'},
+  {id:'m12',name:'Chalé',lat:-20.6167,lng:-41.7167,coordinator:'(a preencher)',phone:'(33) XXXX-XXXX',codecim:'Em implantação',risks:['DESLIZAMENTO'],shelters:['Escola Municipal'],notes:''},
+];
 
-function parseConfDates(conf) {
-  const m = MONTH_NUM[conf.month];
-  if (!m || !conf.year) return null;
-  if (conf.dateIsoStart) {
-    const s = new Date(conf.dateIsoStart + 'T12:00:00');
-    const e = conf.dateIsoEnd ? new Date(conf.dateIsoEnd + 'T12:00:00') : new Date(s);
-    e.setDate(e.getDate() + 1);
-    return { start: s, end: e };
-  }
-  const parts = String(conf.dates || '').replace(/[–—]/g,' ').split(/\s+/).map(d => parseInt(d)).filter(n => !isNaN(n) && n >= 1 && n <= 31);
-  if (!parts.length) return null;
-  const start = new Date(conf.year, m - 1, parts[0]);
-  const end = new Date(conf.year, m - 1, (parts.length > 1 ? parts[parts.length - 1] : parts[0]) + 1);
-  return { start, end };
-}
+const PROTOCOLS = [
+  {id:'p1',icon:'🔥',name:'Incêndio Urbano',color:'var(--red)',steps:[
+    'Confirmar endereço, número de andares e se há pessoas presas',
+    'Despachar: VCI + ABT + VPR ao local',
+    'Comunicar ao Comando Regional (COBOM)',
+    'Ao chegar: avaliar estrutura e risco de colapso antes de entrar',
+    'Isolar perímetro mínimo de 50m e afastar curiosos',
+    'Localizar hidrante mais próximo ou ponto d\'água alternativo',
+    'Estabelecer setor de abastecimento e linha de ataque',
+    'Equipe de busca: verificar se há vítimas em todos os cômodos',
+    'Manter linha de proteção nas expostas (construções vizinhas)',
+    'Nunca entrar sem EPI completo (capacete, luva, bota, máscara)',
+    'Registrar início, recursos empregados e conclusão no COBOM',
+  ]},
+  {id:'p2',icon:'🌲',name:'Incêndio Florestal / Vegetação',color:'var(--green)',steps:[
+    'Obter localização GPS e condições de acesso (estrada/trilha)',
+    'Verificar condições climáticas: vento, temperatura, umidade relativa',
+    'Despachar ABT e acionar brigada voluntária local se disponível',
+    'Contatar IEF-MG e PREVFOGO/IBAMA se em Unidade de Conservação',
+    'Identificar ponto d\'água próximo (córrego, represa, lago)',
+    'Avaliar estratégia: ataque direto (pequeno porte) ou indireto (aceiros)',
+    'Estabelecer ROTA DE FUGA antes de iniciar combate',
+    'Monitorar mudança de vento constantemente — sinal de recuo imediato',
+    'Acionar Defesa Civil se risco de avanço para comunidades',
+    'Nunca combater isolado — mínimo 2 pessoas por equipe',
+    'Coordenar helicóptero se disponível para reconhecimento aéreo',
+    'Após controle: monitorar pontos de calor por no mínimo 2 horas',
+  ]},
+  {id:'p3',icon:'🚗',name:'Acidente de Trânsito c/ Vítimas (ATV)',color:'var(--orange)',steps:[
+    'Confirmar número de veículos e vítimas (triagem preliminar)',
+    'Despachar: VPR + VRU. VCI se houver risco de incêndio/combustível.',
+    'Sinalizar a via: cones, triângulos ou viatura a 150m (rodovia) / 30m (urbano)',
+    'Acionar SAMU (192) para suporte em vítimas graves',
+    'Comunicar PM (190) e PRF (191) se rodovia federal',
+    'Estabilizar veículos com calços e cunhas antes de aproximar vítimas',
+    'Desligar ignição e desconectar bateria quando seguro',
+    'Realizar avaliação primária em TODAS as vítimas: XABCDE',
+    'Imobilizar coluna cervical antes de qualquer movimentação',
+    'Realizar extricação apenas se necessário (vida em risco imediato)',
+    'Classificar vítimas por gravidade (vermelha/amarela/verde/preta)',
+    'Registrar no COBOM: tipo, nº vítimas, gravidade, encaminhamento',
+  ]},
+  {id:'p4',icon:'⛰️',name:'Deslizamento de Terra',color:'var(--yellow)',steps:[
+    'PRIORIDADE: avaliar risco de novos escorregamentos antes de adentrar',
+    'Isolar área de perigo — não entrar sem avaliação geotécnica mínima',
+    'Despachar VRU + VPR. Solicitar VCI se necessário demolição.',
+    'Acionar CODECIM do município imediatamente',
+    'Verificar se há pessoas soterradas: ouvir, bater em superfícies',
+    'Iniciar busca com equipe de cão de salvamento se disponível',
+    'Estabelecer triage avançada de vítimas no ponto de coleta',
+    'Monitorar chuva — suspender operação se nova precipitação intensa',
+    'Contatar CEMADEN para dados de monitoramento da encosta',
+    'Coordenar remoção preventiva de famílias em risco imediato',
+    'Solicitar maquinário pesado à prefeitura se necessário',
+    'Documentar por fotos e registrar no COBOM',
+  ]},
+  {id:'p5',icon:'🌊',name:'Inundação / Enchente',color:'var(--blue)',steps:[
+    'Mapear áreas afetadas e pontos de corte de energia',
+    'Solicitar desligamento de rede elétrica à CEMIG nas áreas alagadas',
+    'Verificar disponibilidade de barcos/embarcações (CBMMG ou Defesa Civil)',
+    'Acionar CODECIM para abertura de abrigos',
+    'Priorizar resgate de idosos, crianças e pessoas com deficiência',
+    'Verificar integridade de pontes e passagens — não cruzar sem avaliação',
+    'Monitorar nível dos rios via IGAM/ANA em tempo real',
+    'Coordenar com SAAE/COPASA sobre risco à captação de água',
+    'Comunicar CEDEC-MG se situação superar capacidade municipal',
+    'Registrar famílias desabrigadas e encaminhar a abrigos',
+    'Após recuo das águas: alertar sobre risco de desabamentos e contaminação',
+  ]},
+  {id:'p6',icon:'🪢',name:'Resgate em Altura',color:'var(--purple)',steps:[
+    'Confirmar altura, acesso e estado da vítima',
+    'Despachar VRU com equipamentos de altura',
+    'Isolar área abaixo do ponto de resgate',
+    'Equipar equipe com cinto paraquedista, talabarte e capacete',
+    'Instalar ponto de ancoragem certificado (mínimo 2 pontos)',
+    'Avaliar estado da vítima: consciente, ferida, capacidade de colaborar',
+    'Aplicar técnica adequada: tirolesa, sistema de polias ou descida direta',
+    'Imobilizar vítima em maca ou tábua de resgate se necessário',
+    'Coordenar descida com no mínimo 3 bombeiros',
+    'Acionar SAMU para avaliação médica ao atingir o solo',
+    'Registrar ocorrência com fotos e descrição técnica',
+  ]},
+  {id:'p7',icon:'🏊',name:'Afogamento / Resgate Aquático',color:'var(--blue)',steps:[
+    'Localizar a vítima com precisão (ponto na margem ou GPS)',
+    'NUNCA entrar na água sem equipamento e treinamento adequado',
+    'Lançar boia, corda ou objeto flutuante primeiro (alcance sem contato)',
+    'Equipe de resgate aquático: colete, faca, luvas, neoprene',
+    'Acionar SAMU (192) imediatamente — risco de PCR em afogados',
+    'Se em PCR: retirar da água e iniciar RCP imediatamente',
+    'Oxigenoterapia assim que a vítima estiver na margem',
+    'Monitorar hipotermia (temperatura corporal)',
+    'Em rios com correnteza: posicionar equipe em V corrente abaixo',
+    'Registrar hora do afogamento e tempo total de submersão',
+  ]},
+  {id:'p8',icon:'🔦',name:'Busca e Salvamento em Área Rural',color:'var(--muted2)',steps:[
+    'Obter última localização conhecida (GPS, ponto de referência)',
+    'Coletar foto e descrição física da vítima (roupa, altura, sinais)',
+    'Dividir área em setores e nomear responsável por cada um',
+    'Utilizar padrão de busca em linha, espiral ou grade conforme terreno',
+    'Manter comunicação rádio constante a cada 15 minutos',
+    'Sinalizar área já vistoriada com fita ou bandeira',
+    'Acionar helicóptero e cão de faro se disponíveis',
+    'Solicitar apoio de PM, Defesa Civil e voluntários locais',
+    'Em serra: verificar trilhas do Parque Nacional do Caparaó com guarda-parque',
+    'Levar mapa topográfico e bússola — GPS pode falhar em altitude',
+    'Establecer ponto de coleta médico antes de encontrar a vítima',
+    'Reportar avanços ao CO a cada hora',
+  ]},
+];
 
-function parseParallelDate(p, conf) {
-  if (p.dateIso) {
-    const d = new Date(p.dateIso + 'T12:00:00');
-    const end = new Date(d); end.setDate(end.getDate() + 1);
-    return { start: d, end };
-  }
-  const moMap = {jan:0,fev:1,mar:2,abr:3,mai:4,jun:5,jul:6,ago:7,set:8,out:9,nov:10,dez:11};
-  const match = (p.day || '').match(/(\d{1,2})\s+([A-Za-z]{3})/i);
-  if (match) {
-    const day = parseInt(match[1]);
-    const moKey = match[2].toLowerCase().slice(0, 3);
-    const mo = moMap[moKey];
-    if (mo !== undefined) {
-      const d = new Date(conf.year || 2026, mo, day);
-      const end = new Date(d); end.setDate(end.getDate() + 1);
-      return { start: d, end };
-    }
-  }
+// ============================================================
+// LOAD / SAVE
+// ============================================================
+function loadState(){
+  try{
+    const raw=localStorage.getItem(STORAGE_KEY);
+    if(raw) return JSON.parse(raw);
+  }catch(e){}
   return null;
 }
-
-function toICalDate(d) {
-  return d.getFullYear() + String(d.getMonth() + 1).padStart(2,'0') + String(d.getDate()).padStart(2,'0');
+function saveState(){
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+}
+function resetToDefault(){
+  if(!confirm('Isso apagará todos os dados inseridos e restaurará os dados de exemplo. Confirmar?')) return;
+  localStorage.removeItem(STORAGE_KEY);
+  location.reload();
 }
 
-function makeGCalLink(title, start, end, location) {
-  const p = new URLSearchParams({
-    action: 'TEMPLATE', text: title,
-    dates: toICalDate(start) + '/' + toICalDate(end),
-    location: location || '',
-    details: 'Evento do setor de óleo & gás. Veja mais em mreventmap.com.br'
+const saved=loadState();
+const state={
+  section:'dashboard',
+  resources: saved?.resources || DEFAULT_RESOURCES,
+  occurrences: saved?.occurrences || DEFAULT_OCCURRENCES,
+  municipalities: saved?.municipalities || DEFAULT_MUNICIPALITIES,
+  alerts: saved?.alerts || [],
+  resFilter: 'todos',
+  checklistProgress: saved?.checklistProgress || {},
+};
+
+// ============================================================
+// NAVIGATION
+// ============================================================
+const SECTION_META={
+  dashboard:{title:'Dashboard',sub:'Visão geral — 2ª CIA BM Manhuaçu',btn:'+ Nova Ocorrência',action:'occurrence'},
+  mapa:{title:'Mapa de Articulação',sub:'Área de cobertura — Região do Caparaó',btn:'',action:null},
+  recursos:{title:'Recursos Logísticos',sub:'Viaturas, equipamentos, EPIs e materiais',btn:'+ Recurso',action:'resource'},
+  ocorrencias:{title:'Registro de Ocorrências',sub:'Histórico e ocorrências ativas',btn:'+ Ocorrência',action:'occurrence'},
+  defesa:{title:'Defesa Civil',sub:'Coordenadorias municipais e alertas',btn:'⚠️ Alerta',action:'alert'},
+  protocolos:{title:'Protocolos de Resposta',sub:'Procedimentos Operacionais Padrão',btn:'🖨️ Imprimir',action:'print'},
+};
+
+function showSection(id){
+  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+  document.getElementById('section-'+id)?.classList.add('active');
+  document.querySelectorAll('.nav-item').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('.mob-nav-item').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll(`[onclick="showSection('${id}')"]`).forEach(b=>b.classList.add('active'));
+  const meta=SECTION_META[id]||{};
+  document.getElementById('topbar-title').textContent=meta.title||id;
+  document.getElementById('topbar-sub').textContent=meta.sub||'';
+  const ab=document.getElementById('topbar-action-btn');
+  if(meta.btn){ab.textContent=meta.btn;ab.style.display='flex';}else{ab.style.display='none';}
+  state.section=id;
+  if(id==='mapa') setTimeout(()=>{ if(MAP) MAP.invalidateSize(); },100);
+  if(id==='dashboard') renderDashboard();
+  if(id==='recursos') renderResources();
+  if(id==='ocorrencias') renderOccurrences();
+  if(id==='defesa') renderDefesa();
+  if(id==='protocolos') renderProtocols();
+}
+
+function topbarAction(){
+  const meta=SECTION_META[state.section];
+  if(!meta?.action) return;
+  if(meta.action==='print'){window.print();return;}
+  openModal(meta.action);
+}
+
+// ============================================================
+// DASHBOARD
+// ============================================================
+function renderDashboard(){
+  const today=new Date().toISOString().slice(0,10);
+  const available=state.resources.filter(r=>r.status==='disponivel').length;
+  const inOp=state.resources.filter(r=>r.status==='operacao').length;
+  const maint=state.resources.filter(r=>r.status==='manutencao').length;
+  const ocToday=state.occurrences.filter(o=>o.date===today).length;
+  const ocActive=state.occurrences.filter(o=>o.status==='em_andamento').length;
+  const alertsActive=state.alerts.filter(a=>a.active).length;
+
+  document.getElementById('stats-grid').innerHTML=`
+    <div class="stat-card"><div class="stat-icon red">🔄</div><div><div class="stat-num">${ocActive}</div><div class="stat-label">Ocorrências Ativas</div></div></div>
+    <div class="stat-card"><div class="stat-icon green">✅</div><div><div class="stat-num">${available}</div><div class="stat-label">Recursos Disponíveis</div></div></div>
+    <div class="stat-card"><div class="stat-icon yellow">🔧</div><div><div class="stat-num">${maint}</div><div class="stat-label">Em Manutenção</div></div></div>
+    <div class="stat-card"><div class="stat-icon orange">⚠️</div><div><div class="stat-num">${alertsActive}</div><div class="stat-label">Alertas Ativos</div></div></div>
+  `;
+  // Alerts strip
+  const ac=document.getElementById('alerts-container');
+  ac.innerHTML='';
+  state.alerts.filter(a=>a.active).forEach(a=>{
+    const lvlClass=a.level==='emergencia'?'danger':a.level==='alerta'?'warning':'info';
+    const lvlLabel=a.level==='emergencia'?'🔴 EMERGÊNCIA':a.level==='alerta'?'🟠 ALERTA':'🟡 ATENÇÃO';
+    ac.innerHTML+=`<div class="alert-strip ${lvlClass}"><strong>${lvlLabel} — ${a.type}:</strong> ${a.municipality} — ${a.desc}<button class="alert-close" onclick="dismissAlert('${a.id}')">✕</button></div>`;
   });
-  return 'https://calendar.google.com/calendar/render?' + p.toString();
+  // Recent occurrences
+  const recent=state.occurrences.slice().sort((a,b)=>b.date.localeCompare(a.date)||b.time.localeCompare(a.time)).slice(0,5);
+  const doc=document.getElementById('dash-occurrences');
+  if(!recent.length){doc.innerHTML=emptyState('📋','Nenhuma ocorrência','Registre a primeira ocorrência.');return;}
+  doc.innerHTML=recent.map(o=>`
+    <div class="list-item">
+      <div class="list-item-icon" style="background:${ocTypeBg(o.type)}">${ocTypeIcon(o.type)}</div>
+      <div class="list-item-body">
+        <div class="list-item-title">${o.type} — ${o.municipality}</div>
+        <div class="list-item-sub">${fmtDate(o.date)} ${o.time} · ${o.address}</div>
+      </div>
+      ${statusBadge(o.status)}
+    </div>`).join('');
+  // Resource status
+  const resList=state.resources.slice(0,6);
+  const dr=document.getElementById('dash-resources');
+  dr.innerHTML=resList.map(r=>`
+    <div class="list-item">
+      <div class="list-item-icon" style="background:${resCatBg(r.category)}">${resCatIcon(r.category)}</div>
+      <div class="list-item-body">
+        <div class="list-item-title">${r.name}</div>
+        <div class="list-item-sub">${r.type} · ${r.location}</div>
+      </div>
+      ${statusBadge(r.status)}
+    </div>`).join('');
+  document.getElementById('nb-oc').textContent=ocActive||'';
+  document.getElementById('nb-oc').style.display=ocActive?'':'none';
 }
 
-function downloadIcal(key, title, start, end, location) {
-  const now = new Date();
-  const stamp = toICalDate(now) + 'T' + String(now.getUTCHours()).padStart(2,'0') + String(now.getUTCMinutes()).padStart(2,'0') + String(now.getUTCSeconds()).padStart(2,'0') + 'Z';
-  const ical = [
-    'BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//MR Solutions Event Map//EN',
-    'BEGIN:VEVENT','UID:' + Date.now() + '@mreventmap.com.br','DTSTAMP:' + stamp,
-    'DTSTART;VALUE=DATE:' + toICalDate(start),'DTEND;VALUE=DATE:' + toICalDate(end),
-    'SUMMARY:' + title,'LOCATION:' + (location || ''),
-    'DESCRIPTION:Evento do setor de óleo & gás. Veja mais em mreventmap.com.br',
-    'END:VEVENT','END:VCALENDAR'
-  ].join('\r\n');
-  const blob = new Blob([ical], { type: 'text/calendar;charset=utf-8' });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url; a.download = key.replace(/[^a-z0-9_-]/gi,'_') + '.ics';
-  document.body.appendChild(a); a.click();
-  setTimeout(() => { document.body.removeChild(a); URL.revokeObjectURL(url); }, 1000);
-  track('agenda_ical', { event_name: title });
+// ============================================================
+// MAP
+// ============================================================
+let MAP=null;
+const mapLayers={sedes:true,municipios:true,risco:true,agua:true,defesa:true};
+const layerGroups={};
+
+function initMap(){
+  if(MAP) return;
+  MAP=L.map('map',{center:[-20.35,-42.05],zoom:10,zoomControl:true});
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',{
+    attribution:'© OpenStreetMap contributors, © CartoDB',maxZoom:18
+  }).addTo(MAP);
+
+  // SEDES layer
+  layerGroups.sedes=L.layerGroup().addTo(MAP);
+  addMarker(layerGroups.sedes,-20.2603,-42.0285,'🚒','Sede — 2ª CIA BM Manhuaçu','2ª Cia BM — Manhuaçu<br>Fone: (33) 3321-XXXX<br>Emergência: 193','red');
+
+  // Municípios layer
+  layerGroups.municipios=L.layerGroup().addTo(MAP);
+  state.municipalities.forEach(m=>{
+    addMarker(layerGroups.municipios,m.lat,m.lng,'🏙️',m.name,`<b>${m.name}</b><br>CODECIM: ${m.codecim}<br>Riscos: ${m.risks.join(', ')}`,null);
+  });
+
+  // Risco layer
+  layerGroups.risco=L.layerGroup().addTo(MAP);
+  const riskZones=[
+    {lat:-20.50,lng:-41.92,label:'Risco Deslizamento — Serra do Caparaó',color:'#D97706'},
+    {lat:-20.28,lng:-42.08,label:'Risco Inundação — Vale do Manhuaçu',color:'#0284C7'},
+    {lat:-20.42,lng:-41.97,label:'Risco Incêndio Florestal — Alto Jequitibá',color:'#DC2626'},
+    {lat:-20.35,lng:-41.98,label:'Risco Deslizamento — Serra do Brigadeiro',color:'#D97706'},
+  ];
+  riskZones.forEach(z=>{
+    L.circle([z.lat,z.lng],{radius:4000,color:z.color,fillColor:z.color,fillOpacity:.12,weight:1.5}).addTo(layerGroups.risco)
+     .bindPopup(`<b>⚠️ ${z.label}</b>`);
+  });
+
+  // Água layer
+  layerGroups.agua=L.layerGroup().addTo(MAP);
+  const waterSources=[
+    {lat:-20.26,lng:-42.05,label:'Rio Manhuaçu — Captação'},
+    {lat:-20.38,lng:-42.01,label:'Represa Municipal — Manhumirim'},
+    {lat:-20.48,lng:-41.94,label:'Córrego Caparaó'},
+    {lat:-20.55,lng:-41.95,label:'Rio Caparaó — Lim. Parque Nacional'},
+  ];
+  waterSources.forEach(w=>{
+    addMarker(layerGroups.agua,w.lat,w.lng,'💧',w.label,`<b>💧 ${w.label}</b><br>Ponto de abastecimento`,'blue');
+  });
+
+  // Defesa Civil layer
+  layerGroups.defesa=L.layerGroup().addTo(MAP);
+  const defPosts=[
+    {lat:-20.2650,lng:-42.0300,label:'CODECIM Manhuaçu — Prefeitura'},
+    {lat:-20.3600,lng:-41.9700,label:'CODECIM Manhumirim'},
+    {lat:-20.5100,lng:-41.9300,label:'CODECIM Alto Caparaó / Caparaó'},
+  ];
+  defPosts.forEach(d=>{
+    addMarker(layerGroups.defesa,d.lat,d.lng,'🛡️',d.label,`<b>🛡️ Defesa Civil</b><br>${d.label}`,'green');
+  });
+
+  // Boundary polygon for coverage area
+  const boundaryCoords=[
+    [-20.05,-42.35],[-20.05,-41.70],[-20.70,-41.70],[-20.70,-42.35]
+  ];
+  L.polygon(boundaryCoords,{color:'#DC2626',weight:1.5,fillColor:'#DC2626',fillOpacity:.04,dashArray:'6 4'})
+   .addTo(MAP).bindPopup('<b>Área de Articulação — 2ª CIA BM Manhuaçu</b>');
 }
 
-function openGCal(key) {
-  const d = AGENDA_DATA[key]; if (!d) return;
-  track('agenda_gcal', { event_name: d.title });
-  window.open(makeGCalLink(d.title, new Date(d.start), new Date(d.end), d.location), '_blank');
+function addMarker(group,lat,lng,emoji,title,popup,colorClass){
+  const icon=L.divIcon({
+    html:`<div style="background:${colorClass==='red'?'#DC2626':colorClass==='blue'?'#0284C7':colorClass==='green'?'#16A34A':'#7C3AED'};
+      border:2px solid rgba(255,255,255,.6);border-radius:50%;width:${colorClass==='red'?'20':'14'}px;height:${colorClass==='red'?'20':'14'}px;
+      display:flex;align-items:center;justify-content:center;font-size:${colorClass==='red'?'11':'8'}px;"></div>`,
+    className:'',iconSize:[colorClass==='red'?20:14,colorClass==='red'?20:14],iconAnchor:[colorClass==='red'?10:7,colorClass==='red'?10:7]
+  });
+  L.marker([lat,lng],{icon,title}).addTo(group).bindPopup(`<div style="font-size:13px;">${popup||title}</div>`);
 }
 
-function downloadIcalById(key) {
-  const d = AGENDA_DATA[key]; if (!d) return;
-  downloadIcal(key, d.title, new Date(d.start), new Date(d.end), d.location);
+function toggleLayer(name){
+  mapLayers[name]=!mapLayers[name];
+  if(mapLayers[name]) layerGroups[name]?.addTo(MAP);
+  else MAP?.removeLayer(layerGroups[name]);
+  const btn=document.getElementById('layer-btn-'+name);
+  if(btn){
+    btn.style.opacity=mapLayers[name]?'1':'0.4';
+    btn.style.borderColor=mapLayers[name]?'var(--red)':'var(--border)';
+  }
 }
 
-function toggleAgendaMenu(id, e) {
-  e.stopPropagation();
-  const el = document.getElementById('agd-' + id);
-  if (!el) return;
-  const was = el.classList.contains('open');
-  document.querySelectorAll('.agenda-dropdown.open,.par-agenda-wrap.open').forEach(x => x.classList.remove('open'));
-  if (!was) el.classList.add('open');
+// ============================================================
+// RESOURCES
+// ============================================================
+const RES_TYPES={
+  viatura:['VCI','ABT','VPR','VRU','VCS','VTR','Motocicleta','Lancha'],
+  equipamento:['Mangotinho','Mangueira','Escada','Ferramenta','Motosserra','Gerador','Iluminação','Comunicação','Mergulho','Outro'],
+  epi:['Capacete','Roupa de Aproximação','Cinto','Bota','Luva','Máscara SCBA','Protetor Auricular','Óculos','Outro'],
+  material:['Oxigênio','Primeiros Socorros','Produto Químico','Combustível','Alimentação','Outro']
+};
+
+function updateResTypeOptions(){
+  const cat=document.getElementById('res-category').value;
+  const sel=document.getElementById('res-type');
+  sel.innerHTML=RES_TYPES[cat].map(t=>`<option value="${t}">${t}</option>`).join('');
+  const qRow=document.getElementById('qty-row');
+  qRow.style.display=(cat==='viatura')?'none':'grid';
 }
 
-function toggleParAgendaMenu(id, e) {
-  e.stopPropagation();
-  const el = document.getElementById('pagd-' + id);
-  if (!el) return;
-  const was = el.classList.contains('open');
-  document.querySelectorAll('.agenda-dropdown.open,.par-agenda-wrap.open').forEach(x => x.classList.remove('open'));
-  if (!was) el.classList.add('open');
+function filterResources(cat){
+  state.resFilter=cat;
+  document.querySelectorAll('#res-tabs .tab').forEach(t=>t.classList.remove('active'));
+  event.target.classList.add('active');
+  renderResources();
 }
 
-// ─── EU VOU! ─────────────────────────────────────────────────────────────────
-function toggleGoer(sectionId) {
-  const el = document.getElementById(sectionId);
-  if (!el) return;
+function renderResources(){
+  const search=document.getElementById('res-search')?.value.toLowerCase()||'';
+  const statusF=document.getElementById('res-status-filter')?.value||'';
+  let list=state.resources;
+  if(state.resFilter!=='todos') list=list.filter(r=>r.category===state.resFilter);
+  if(statusF) list=list.filter(r=>r.status===statusF);
+  if(search) list=list.filter(r=>(r.name+r.type+r.identifier+r.location+r.notes).toLowerCase().includes(search));
+  const sub=document.getElementById('res-count-sub');
+  if(sub) sub.textContent=`${list.length} recurso(s) encontrado(s)`;
+  const el=document.getElementById('resources-list');
+  if(!el) return;
+  if(!list.length){el.innerHTML=emptyState('🔧','Nenhum recurso encontrado','Ajuste os filtros ou cadastre um novo recurso.');return;}
+  el.innerHTML=list.map(r=>`
+    <div class="list-item">
+      <div class="list-item-icon" style="background:${resCatBg(r.category)}">${resCatIcon(r.category)}</div>
+      <div class="list-item-body">
+        <div class="list-item-title">${r.name} <span style="font-size:11px;color:var(--muted);">${r.identifier||''}</span></div>
+        <div class="list-item-sub">${r.type} · ${r.location}${r.quantity?` · ${r.quantity} ${r.unit||''}`:''}</div>
+        ${r.notes?`<div class="list-item-sub" style="margin-top:2px;color:var(--muted2);">${r.notes}</div>`:''}
+      </div>
+      <div class="list-item-actions">
+        ${statusBadge(r.status)}
+        <button class="btn btn-ghost btn-sm" onclick="editResource('${r.id}')">✏️</button>
+        <button class="btn btn-danger" onclick="deleteResource('${r.id}')">✕</button>
+      </div>
+    </div>`).join('');
+}
+
+function openModal(type, id){
+  if(type==='resource'){
+    document.getElementById('res-modal-title').textContent=id?'Editar Recurso':'Adicionar Recurso';
+    document.getElementById('res-id').value=id||'';
+    if(id){
+      const r=state.resources.find(x=>x.id===id);
+      if(r){
+        document.getElementById('res-category').value=r.category;
+        updateResTypeOptions();
+        document.getElementById('res-type').value=r.type;
+        document.getElementById('res-name').value=r.name;
+        document.getElementById('res-identifier').value=r.identifier||'';
+        document.getElementById('res-status').value=r.status;
+        document.getElementById('res-quantity').value=r.quantity||'';
+        document.getElementById('res-unit').value=r.unit||'';
+        document.getElementById('res-location').value=r.location;
+        document.getElementById('res-notes').value=r.notes||'';
+      }
+    }else{
+      document.getElementById('res-category').value='viatura';
+      updateResTypeOptions();
+      ['res-name','res-identifier','res-quantity','res-unit','res-location','res-notes'].forEach(f=>document.getElementById(f).value='');
+      document.getElementById('res-status').value='disponivel';
+    }
+  }
+  if(type==='occurrence'){
+    document.getElementById('oc-modal-title').textContent=id?'Editar Ocorrência':'Nova Ocorrência';
+    document.getElementById('oc-id').value=id||'';
+    if(id){
+      const o=state.occurrences.find(x=>x.id===id);
+      if(o){
+        document.getElementById('oc-type').value=o.type;
+        document.getElementById('oc-status').value=o.status;
+        document.getElementById('oc-date').value=o.date;
+        document.getElementById('oc-time').value=o.time;
+        document.getElementById('oc-address').value=o.address;
+        document.getElementById('oc-municipality').value=o.municipality;
+        document.getElementById('oc-cobom').value=o.cobom||'';
+        document.getElementById('oc-resources').value=o.resources||'';
+        document.getElementById('oc-desc').value=o.desc||'';
+      }
+    }else{
+      const now=new Date();
+      document.getElementById('oc-date').value=now.toISOString().slice(0,10);
+      document.getElementById('oc-time').value=now.toTimeString().slice(0,5);
+      document.getElementById('oc-status').value='em_andamento';
+      ['oc-type','oc-address','oc-municipality','oc-cobom','oc-resources','oc-desc'].forEach(f=>{
+        const el=document.getElementById(f);
+        if(el.tagName==='SELECT') el.selectedIndex=0;
+        else el.value='';
+      });
+    }
+  }
+  if(type==='alert'){
+    ['al-desc','al-municipality'].forEach(f=>document.getElementById(f).value='');
+    document.getElementById('al-level').value='atencao';
+    document.getElementById('al-type').value='DESLIZAMENTO';
+  }
+  document.getElementById('modal-'+type).classList.add('open');
+}
+
+function closeModal(type){ document.getElementById('modal-'+type).classList.remove('open'); }
+
+function editResource(id){ openModal('resource',id); }
+function editOccurrence(id){ openModal('occurrence',id); }
+
+function saveResource(){
+  const id=document.getElementById('res-id').value||uid();
+  const cat=document.getElementById('res-category').value;
+  const obj={
+    id, category:cat, type:document.getElementById('res-type').value,
+    name:document.getElementById('res-name').value.trim(),
+    identifier:document.getElementById('res-identifier').value.trim(),
+    status:document.getElementById('res-status').value,
+    quantity:document.getElementById('res-quantity').value||null,
+    unit:document.getElementById('res-unit').value.trim()||null,
+    location:document.getElementById('res-location').value.trim(),
+    notes:document.getElementById('res-notes').value.trim(),
+    updatedAt:new Date().toISOString()
+  };
+  if(!obj.name){toast('Informe o nome do recurso.','error');return;}
+  const idx=state.resources.findIndex(r=>r.id===id);
+  if(idx>=0) state.resources[idx]=obj; else state.resources.push(obj);
+  saveState();
+  closeModal('resource');
+  renderResources();
+  toast('Recurso salvo com sucesso!','success');
+}
+
+function deleteResource(id){
+  if(!confirm('Remover este recurso?')) return;
+  state.resources=state.resources.filter(r=>r.id!==id);
+  saveState();
+  renderResources();
+  toast('Recurso removido.','success');
+}
+
+// ============================================================
+// OCCURRENCES
+// ============================================================
+function renderOccurrences(){
+  const search=document.getElementById('oc-search')?.value.toLowerCase()||'';
+  const typeF=document.getElementById('oc-type-filter')?.value||'';
+  const statusF=document.getElementById('oc-status-filter')?.value||'';
+  let list=state.occurrences.slice().sort((a,b)=>b.date.localeCompare(a.date)||b.time.localeCompare(a.time));
+  if(typeF) list=list.filter(o=>o.type===typeF);
+  if(statusF) list=list.filter(o=>o.status===statusF);
+  if(search) list=list.filter(o=>(o.address+o.municipality+o.type+o.desc+o.cobom).toLowerCase().includes(search));
+  const sub=document.getElementById('oc-count-sub');
+  if(sub) sub.textContent=`${list.length} ocorrência(s)`;
+  const el=document.getElementById('occurrences-list');
+  if(!el) return;
+  if(!list.length){el.innerHTML=emptyState('📋','Nenhuma ocorrência','Registre a primeira ocorrência.');return;}
+  el.innerHTML=list.map(o=>`
+    <div class="list-item" style="flex-wrap:wrap;gap:10px;">
+      <div class="list-item-icon" style="background:${ocTypeBg(o.type)}">${ocTypeIcon(o.type)}</div>
+      <div class="list-item-body" style="min-width:220px;">
+        <div class="list-item-title">${o.type} — ${o.municipality}</div>
+        <div class="list-item-sub">${fmtDate(o.date)} às ${o.time} · ${o.address}</div>
+        ${o.cobom?`<div class="list-item-sub">COBOM: ${o.cobom}</div>`:''}
+        ${o.resources?`<div class="list-item-sub">Viaturas: ${o.resources}</div>`:''}
+        ${o.desc?`<div class="list-item-sub" style="margin-top:4px;color:var(--muted2);font-size:12px;">${o.desc.slice(0,120)}${o.desc.length>120?'…':''}</div>`:''}
+      </div>
+      <div class="list-item-actions">
+        ${statusBadge(o.status)}
+        <button class="btn btn-ghost btn-sm" onclick="editOccurrence('${o.id}')">✏️</button>
+        <button class="btn btn-danger" onclick="deleteOccurrence('${o.id}')">✕</button>
+      </div>
+    </div>`).join('');
+}
+
+function saveOccurrence(){
+  const id=document.getElementById('oc-id').value||uid();
+  const obj={
+    id, type:document.getElementById('oc-type').value,
+    status:document.getElementById('oc-status').value,
+    date:document.getElementById('oc-date').value,
+    time:document.getElementById('oc-time').value,
+    address:document.getElementById('oc-address').value.trim(),
+    municipality:document.getElementById('oc-municipality').value,
+    cobom:document.getElementById('oc-cobom').value.trim(),
+    resources:document.getElementById('oc-resources').value.trim(),
+    desc:document.getElementById('oc-desc').value.trim(),
+  };
+  if(!obj.address){toast('Informe o endereço/local.','error');return;}
+  const idx=state.occurrences.findIndex(o=>o.id===id);
+  if(idx>=0) state.occurrences[idx]=obj; else state.occurrences.push(obj);
+  saveState();
+  closeModal('occurrence');
+  renderOccurrences();
+  if(state.section==='dashboard') renderDashboard();
+  toast('Ocorrência salva!','success');
+}
+
+function deleteOccurrence(id){
+  if(!confirm('Remover esta ocorrência?')) return;
+  state.occurrences=state.occurrences.filter(o=>o.id!==id);
+  saveState();
+  renderOccurrences();
+  toast('Ocorrência removida.','success');
+}
+
+function exportOccurrences(){
+  const headers=['ID','Tipo','Data','Hora','Endereço','Município','Status','COBOM','Viaturas','Descrição'];
+  const rows=state.occurrences.map(o=>[o.id,o.type,o.date,o.time,o.address,o.municipality,o.status,o.cobom||'',o.resources||'',o.desc||''].map(v=>`"${String(v).replace(/"/g,'""')}"`).join(','));
+  const csv=[headers.join(','),...rows].join('\n');
+  const blob=new Blob([csv],{type:'text/csv;charset=utf-8;'});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a');a.href=url;a.download='ocorrencias_2cia_bm_manhuacu.csv';a.click();
+  URL.revokeObjectURL(url);
+  toast('CSV exportado!','success');
+}
+
+// ============================================================
+// DEFESA CIVIL
+// ============================================================
+const RISK_COLORS={'DESLIZAMENTO':'badge-yellow','INUNDAÇÃO':'badge-blue','INCÊNDIO FLORESTAL':'badge-red','TEMPESTADE':'badge-muted'};
+
+function renderDefesa(){
+  const ad=document.getElementById('def-alerts');
+  const activeAlerts=state.alerts.filter(a=>a.active);
+  if(ad){
+    ad.innerHTML=activeAlerts.length?activeAlerts.map(a=>{
+      const lvl=a.level==='emergencia'?'danger':a.level==='alerta'?'warning':'info';
+      const lbl=a.level==='emergencia'?'🔴 EMERGÊNCIA':a.level==='alerta'?'🟠 ALERTA':'🟡 ATENÇÃO';
+      return `<div class="alert-strip ${lvl}"><strong>${lbl} — ${a.type}:</strong> ${a.municipality} — ${a.desc}<button class="alert-close" onclick="dismissAlert('${a.id}')">✕</button></div>`;
+    }).join(''):'<div style="font-size:13px;color:var(--muted);margin-bottom:12px;">Nenhum alerta ativo no momento.</div>';
+  }
+  const el=document.getElementById('municipalities-list');
+  if(!el) return;
+  el.innerHTML=state.municipalities.map(m=>`
+    <div class="municipality-card">
+      <div class="mun-header">
+        <div class="mun-icon">🏙️</div>
+        <div>
+          <div class="mun-name">${m.name}</div>
+          <div style="font-size:11px;color:var(--muted);">Lat ${m.lat.toFixed(4)} · Lng ${m.lng.toFixed(4)}</div>
+        </div>
+        <div class="mun-status">
+          <span class="badge ${m.codecim==='Ativa'?'badge-green':'badge-yellow'}">${m.codecim}</span>
+        </div>
+      </div>
+      <div class="mun-grid">
+        <div class="mun-field"><div class="mun-field-label">Coordenador</div><div class="mun-field-value">${m.coordinator}</div></div>
+        <div class="mun-field"><div class="mun-field-label">Telefone CODECIM</div><div class="mun-field-value">${m.phone}</div></div>
+        <div class="mun-field"><div class="mun-field-label">Abrigos / Pontos de Apoio</div><div class="mun-field-value">${m.shelters.join('; ')||'—'}</div></div>
+        <div class="mun-field"><div class="mun-field-label">Obs.</div><div class="mun-field-value">${m.notes||'—'}</div></div>
+      </div>
+      <div class="mun-risks">
+        <span style="font-size:11px;color:var(--muted);margin-right:4px;">Riscos:</span>
+        ${m.risks.map(r=>`<span class="risk-chip ${RISK_COLORS[r]||'badge-muted'}">${r}</span>`).join('')}
+      </div>
+    </div>`).join('');
+}
+
+function saveAlert(){
+  const obj={
+    id:uid(), level:document.getElementById('al-level').value,
+    municipality:document.getElementById('al-municipality').value.trim(),
+    type:document.getElementById('al-type').value,
+    desc:document.getElementById('al-desc').value.trim(),
+    active:true, createdAt:new Date().toISOString()
+  };
+  if(!obj.municipality||!obj.desc){toast('Preencha todos os campos.','error');return;}
+  state.alerts.push(obj);
+  saveState();
+  closeModal('alert');
+  renderDefesa();
+  renderDashboard();
+  toast('Alerta emitido!','success');
+}
+
+function dismissAlert(id){
+  const al=state.alerts.find(a=>a.id===id);
+  if(al) al.active=false;
+  saveState();
+  renderDefesa();
+  renderDashboard();
+  toast('Alerta encerrado.','success');
+}
+
+// ============================================================
+// PROTOCOLS
+// ============================================================
+function renderProtocols(){
+  const el=document.getElementById('protocols-list');
+  if(!el) return;
+  el.innerHTML=PROTOCOLS.map(p=>{
+    const prog=state.checklistProgress[p.id]||{};
+    const done=p.steps.filter((_,i)=>prog[i]).length;
+    const pct=Math.round(done/p.steps.length*100);
+    return `<div class="proto-item" id="proto-${p.id}">
+      <div class="proto-head" onclick="toggleProto('${p.id}')">
+        <div class="proto-icon">${p.icon}</div>
+        <div><div class="proto-name">${p.name}</div>
+          <div class="proto-count">${p.steps.length} etapas${done>0?` · ${done}/${p.steps.length} concluídas`:''}</div>
+          ${done>0?`<div class="proto-progress" style="width:120px;margin-top:4px;"><div class="proto-progress-bar" style="width:${pct}%"></div></div>`:''}
+        </div>
+        <div style="margin-left:auto;display:flex;align-items:center;gap:8px;">
+          ${done>0?`<span class="badge badge-green">${pct}%</span>`:''}
+          <div class="proto-arrow">▼</div>
+        </div>
+      </div>
+      <div class="proto-body">
+        ${p.steps.map((step,i)=>`
+          <div class="proto-step${prog[i]?' done-step':''}" id="step-${p.id}-${i}">
+            <div class="proto-check${prog[i]?' done':''}" onclick="toggleStep('${p.id}',${i})"></div>
+            <div class="proto-step-text"><strong>${i+1}.</strong> ${step}</div>
+          </div>`).join('')}
+        <span class="proto-reset" onclick="resetProtocol('${p.id}')">↺ Reiniciar checklist</span>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function toggleProto(id){
+  const el=document.getElementById('proto-'+id);
   el.classList.toggle('open');
 }
 
-function submitGoer(confId, sectionKey) {
-  const nameEl = document.getElementById('gname-' + sectionKey);
-  const compEl = document.getElementById('gcomp-' + sectionKey);
-  const name = (nameEl?.value || '').trim();
-  if (!name) { if (nameEl) nameEl.focus(); return; }
-  const company = (compEl?.value || '').trim();
-  const goer = { name, company, ts: Date.now() };
-  const conf = CONFERENCES.find(c => c.id === confId);
-  if (conf) {
-    conf.goers = conf.goers || [];
-    conf.goers.push(goer);
-    renderGoers(sectionKey, conf.goers);
-  }
-  if (nameEl) nameEl.value = '';
-  if (compEl) compEl.value = '';
-  fetch(API, { method:'POST', headers:{'Content-Type':'application/json'},
-    body: JSON.stringify({ type:'goer', eventType:'conference', confId, eventKey:'conf-'+confId, name, company }) }).catch(()=>{});
-  track('eu_vou', { eventType:'conference', confId });
+function toggleStep(protoId, stepIdx){
+  if(!state.checklistProgress[protoId]) state.checklistProgress[protoId]={};
+  state.checklistProgress[protoId][stepIdx]=!state.checklistProgress[protoId][stepIdx];
+  saveState();
+  renderProtocols();
+  const el=document.getElementById('proto-'+protoId);
+  if(el) el.classList.add('open');
 }
 
-function renderGoers(sectionKey, goers) {
-  const listEl = document.getElementById('goer-list-' + sectionKey);
-  const cntEl  = document.getElementById('goer-cnt-' + sectionKey);
-  if (listEl) listEl.innerHTML = goers.map(g =>
-    `<span class="goer-chip">✓ <strong>${g.name}</strong>${g.company ? ' · ' + g.company : ''}</span>`
-  ).join('');
-  if (cntEl) cntEl.textContent = goers.length ? '(' + goers.length + ')' : '';
+function resetProtocol(id){
+  delete state.checklistProgress[id];
+  saveState();
+  renderProtocols();
+  const el=document.getElementById('proto-'+id);
+  if(el) el.classList.add('open');
 }
 
-function toggleParGoer(pId) {
-  const form = document.getElementById('par-goer-form-' + pId);
-  const btn  = document.getElementById('par-goer-btn-' + pId);
-  if (!form) return;
-  form.classList.toggle('show');
-  if (btn) btn.classList.toggle('active');
-  if (form.classList.contains('show')) {
-    const inp = document.getElementById('par-gname-' + pId);
-    if (inp) inp.focus();
-  }
+// ============================================================
+// UTILITIES
+// ============================================================
+function uid(){ return Date.now().toString(36)+Math.random().toString(36).slice(2); }
+
+function fmtDate(d){
+  if(!d) return '';
+  const [y,m,day]=d.split('-');
+  return `${day}/${m}/${y}`;
 }
 
-function submitParGoer(confId, pId) {
-  const nameEl = document.getElementById('par-gname-' + pId);
-  const compEl = document.getElementById('par-gcomp-' + pId);
-  const name = (nameEl?.value || '').trim();
-  if (!name) { if (nameEl) nameEl.focus(); return; }
-  const company = (compEl?.value || '').trim();
-  const goer = { name, company, ts: Date.now() };
-  const conf = CONFERENCES.find(c => c.id === confId);
-  if (conf) {
-    const p = conf.parallel.find(pp => pp.id === pId);
-    if (p) {
-      p.goers = p.goers || [];
-      p.goers.push(goer);
-      renderParGoers(pId, p.goers);
-      const btn = document.getElementById('par-goer-btn-' + pId);
-      if (btn) { btn.classList.remove('active'); btn.textContent = '✓ Eu vou! (' + p.goers.length + ')'; }
-    }
-  }
-  if (nameEl) nameEl.value = '';
-  if (compEl) compEl.value = '';
-  const form = document.getElementById('par-goer-form-' + pId);
-  if (form) form.classList.remove('show');
-  fetch(API, { method:'POST', headers:{'Content-Type':'application/json'},
-    body: JSON.stringify({ type:'goer', eventType:'parallel', confId, eventKey:pId, name, company }) }).catch(()=>{});
-  track('eu_vou', { eventType:'parallel', confId });
+function emptyState(icon,title,sub){
+  return `<div class="empty"><div class="empty-icon">${icon}</div><div class="empty-title">${title}</div><div class="empty-sub">${sub}</div></div>`;
 }
 
-function renderParGoers(pId, goers) {
-  const listEl = document.getElementById('par-goer-list-' + pId);
-  if (!listEl) return;
-  listEl.innerHTML = goers.map(g =>
-    `<span class="par-goer-chip">✓ <strong>${g.name}</strong>${g.company ? ' · ' + g.company : ''}</span>`
-  ).join('');
+function statusBadge(status){
+  const map={disponivel:['badge-green','✅ Disponível'],operacao:['badge-orange','🔄 Em Operação'],
+    manutencao:['badge-yellow','🔧 Manutenção'],inativo:['badge-muted','⭕ Inativo'],
+    em_andamento:['badge-red','🔄 Em Andamento'],concluida:['badge-green','✅ Concluída'],cancelada:['badge-muted','❌ Cancelada']};
+  const [cls,lbl]=map[status]||['badge-muted',status];
+  return `<span class="badge ${cls}">${lbl}</span>`;
 }
 
-// ─── CONSTRUIR CALENDÁRIO ───────────────────────────────────────────────────
-function buildCalendar() {
-  const container = document.getElementById('months-container');
-  container.innerHTML = '';
+const OC_ICONS={'INCÊNDIO URBANO':'🔥','INCÊNDIO FLORESTAL':'🌲','ATV':'🚗','DESLIZAMENTO':'⛰️','INUNDAÇÃO':'🌊','RESGATE':'🪢','AFOGAMENTO':'🏊','BUSCA':'🔦','PRODUTO PERIGOSO':'☣️','RESGATE EM ALTURA':'🧗','ANIMAL PEÇONHENTO':'🐍','OUTRO':'📌'};
+const OC_BG={'INCÊNDIO URBANO':'var(--red-d)','INCÊNDIO FLORESTAL':'var(--green-d)','ATV':'var(--orange-d)','DESLIZAMENTO':'var(--yellow-d)','INUNDAÇÃO':'var(--blue-d)','RESGATE':'var(--purple-d)'};
+function ocTypeIcon(t){ return OC_ICONS[t]||'📌'; }
+function ocTypeBg(t){ return OC_BG[t]||'rgba(100,116,139,.12)'; }
 
-  // Agrupa conferências por mês preservando a ordem
-  const months = [];
-  const byMonth = {};
-  CONFERENCES.forEach(c => {
-    if (!byMonth[c.month]) { byMonth[c.month] = []; months.push(c.month); }
-    byMonth[c.month].push(c);
-  });
+function resCatIcon(c){ return {viatura:'🚒',equipamento:'🔧',epi:'🪖',material:'📦'}[c]||'📦'; }
+function resCatBg(c){ return {viatura:'var(--red-d)',equipamento:'var(--blue-d)',epi:'var(--yellow-d)',material:'var(--green-d)'}[c]||'rgba(100,116,139,.12)'; }
 
-  // Meses que já passaram completamente (marcados como passados)
-  const pastMonths = new Set(['Fevereiro','Março','Abril']);
-
-  months.forEach(month => {
-    const confs = byMonth[month];
-    const nightTotal = confs.reduce((a, c) => a + c.parallel.length, 0);
-    const isPastMonth = confs.every(c => c.past);
-
-    const block = document.createElement('div');
-    block.className = 'month-block';
-    block.innerHTML = `
-      <div class="month-label">${month.toUpperCase()}</div>
-      <div class="month-header" id="mh-${month}">
-        <span class="month-name">${month} 2026</span>
-        ${isPastMonth ? '<span class="past-month-label">✓ Realizado</span>' : ''}
-        <span class="month-count" style="margin-left:auto;">${confs.length} evento${confs.length>1?'s':''} · ${nightTotal} noturno${nightTotal!==1?'s':''} mapeado${nightTotal!==1?'s':''}</span>
-      </div>
-      <div id="month-${month}"></div>`;
-    container.appendChild(block);
-    confs.forEach(c => renderConference(c, `month-${month}`));
-  });
-
-  // Popula select do modal com todas as opções
-  const sel = document.getElementById('m-conference');
-  sel.innerHTML = '<option value="">Selecione a feira principal</option>';
-  CONFERENCES.forEach(c => {
-    const opt = document.createElement('option');
-    opt.value = c.id;
-    opt.textContent = `${c.name} — ${c.month} ${c.year}`;
-    sel.appendChild(opt);
-  });
-
-  updateStats();
+function toast(msg,type='success'){
+  const w=document.getElementById('toast-wrap');
+  const t=document.createElement('div');
+  t.className=`toast ${type}`;
+  t.innerHTML=`${type==='success'?'✅':'❌'} ${msg}`;
+  w.appendChild(t);
+  setTimeout(()=>t.remove(),3000);
 }
 
-// ─── RENDERIZAR UMA CONFERÊNCIA ─────────────────────────────────────────────
-function renderConference(conf, containerId) {
-  const wrap = document.createElement('div');
-  wrap.className = 'conference-card' + (conf.past ? ' past-event' : '');
-  wrap.id = 'card-' + conf.id;
+// Date display
+(function setDate(){
+  const d=new Date();
+  document.getElementById('topbar-date').textContent=d.toLocaleDateString('pt-BR',{weekday:'short',day:'2-digit',month:'short',year:'numeric'});
+})();
 
-  const accessTag = conf.past
-    ? '<span class="conf-tag tag-past">✓ Realizado</span>'
-    : conf.access === 'invite'
-      ? '<span class="conf-tag tag-invite">Por Convite</span>'
-      : '<span class="conf-tag tag-public">Acesso Público</span>';
-
-  const linkBtn = conf.link
-    ? `<a class="conf-link" href="${conf.link}" target="_blank" rel="noopener" onclick="track('site_oficial_click',{conference:'${conf.name.replace(/'/g,'')}',month:'${conf.month}'})">↗ Site oficial</a>`
-    : '';
-
-  // "Adicionar à agenda" dropdown
-  const confDates = parseConfDates(conf);
-  let agendaBtn = '';
-  if (confDates) {
-    AGENDA_DATA['conf-' + conf.id] = { title: conf.name, start: confDates.start.toISOString(), end: confDates.end.toISOString(), location: conf.location };
-    agendaBtn = `<div class="agenda-dropdown" id="agd-conf-${conf.id}">
-        <button class="agenda-btn" onclick="toggleAgendaMenu('conf-${conf.id}',event)">📅 Agenda ▾</button>
-        <div class="agenda-menu">
-          <button onclick="openGCal('conf-${conf.id}')">📅 Google Calendar</button>
-          <button onclick="downloadIcalById('conf-${conf.id}')">⬇ Baixar .ics (Apple / Outlook)</button>
-        </div>
-      </div>`;
-  }
-
-  wrap.innerHTML = `
-    <div class="conf-header">
-      <div class="conf-stripe"></div>
-      <div class="conf-main">
-        <div class="conf-dates">${conf.dates}<span class="month-short">${conf.monthShort}</span></div>
-        <div class="conf-info">
-          <div class="conf-name">${conf.name}</div>
-          <div class="conf-location">${conf.location}</div>
-          <div class="conf-meta">${accessTag}</div>
-        </div>
-      </div>
-      <div class="conf-actions">
-        ${linkBtn}
-        ${agendaBtn}
-        <button class="conf-attend-btn" onclick="toggleGoer('goer-conf-${conf.id}')">✓ Eu vou! <span id="goer-cnt-conf-${conf.id}"></span></button>
-        <button class="conf-toggle" id="toggle-${conf.id}" onclick="toggleParallel('${conf.id}')">
-          ${nightLabel(conf)}
-        </button>
-      </div>
-    </div>
-    <div class="goer-section" id="goer-conf-${conf.id}">
-      <div class="goer-form">
-        <input type="text" id="gname-conf-${conf.id}" placeholder="Seu nome *">
-        <input type="text" id="gcomp-conf-${conf.id}" placeholder="Empresa (opcional)">
-        <button class="goer-submit" onclick="submitGoer('${conf.id}','conf-${conf.id}')">Confirmar presença</button>
-      </div>
-      <div class="goer-list" id="goer-list-conf-${conf.id}"></div>
-    </div>
-    <div class="parallel-panel" id="panel-${conf.id}">
-      <div class="parallel-header">
-        <span class="parallel-title">Agenda noturna & paralela</span>
-        <span class="parallel-subtitle">Eventos na semana desta feira</span>
-      </div>
-      <div class="parallel-grid" id="pgrid-${conf.id}"></div>
-      <button class="add-parallel-btn" onclick="openAddModal('${conf.id}')">
-        + Você sabe de outro evento? Adicione aqui
-      </button>
-    </div>`;
-
-  document.getElementById(containerId).appendChild(wrap);
-  renderParallelCards(conf);
-  renderGoers('conf-' + conf.id, conf.goers || []);
-}
-
-function nightLabel(conf) {
-  const n = conf.parallel.length;
-  return n > 0 ? `🌙 ${n} evento${n>1?'s':''} noturno${n>1?'s':''}` : '🌙 Ver agenda noturna';
-}
-
-// ─── RENDERIZAR CARDS PARALELOS ─────────────────────────────────────────────
-function renderParallelCards(conf) {
-  const grid = document.getElementById('pgrid-' + conf.id);
-  if (!grid) return;
-  grid.innerHTML = '';
-  if (conf.parallel.length === 0) {
-    grid.innerHTML = `<p style="grid-column:1/-1;font-size:13px;color:var(--muted);font-style:italic;padding:8px 0 4px;">
-      Nenhum evento noturno mapeado ainda. Seja o primeiro a contribuir com a comunidade.</p>`;
-    return;
-  }
-  conf.parallel.forEach(p => {
-    const card = document.createElement('div');
-    card.className = 'parallel-card';
-
-    // PASSO 2: calcula se o evento foi adicionado nos últimos 7 dias
-    const isNew = p.addedAt && (Date.now() - p.addedAt) < SEVEN_DAYS_MS;
-    const newTag = isNew
-      ? `<span style="display:inline-block;margin-left:8px;font-size:9px;letter-spacing:.18em;text-transform:uppercase;
-           padding:2px 8px;border-radius:2px;background:rgba(74,222,128,.15);color:#4ADE80;
-           border:1px solid rgba(74,222,128,.3);vertical-align:middle;font-family:'Syne',sans-serif;font-weight:700;">NOVO</span>`
-      : '';
-
-    // PASSO 3: lista de quem vai estar lá
-    const attendeesList = (p.attendees && p.attendees.length > 0)
-      ? `<div style="margin-top:10px;padding-top:10px;border-top:1px solid rgba(123,92,246,.15);">
-           <div style="font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:#A78BFA;margin-bottom:6px;font-family:'Syne',sans-serif;font-weight:700;">Quem vai estar lá</div>
-           <div style="display:flex;flex-wrap:wrap;gap:4px;">
-             ${p.attendees.map(a =>
-               `<span style="font-size:11px;padding:3px 8px;background:rgba(123,92,246,.1);border:1px solid rgba(123,92,246,.2);border-radius:2px;color:var(--muted2);">${a}</span>`
-             ).join('')}
-           </div>
-         </div>`
-      : '';
-
-    // "Adicionar à agenda" for parallel event
-    let parAgendaHtml = '';
-    const parDates = parseParallelDate(p, conf);
-    if (parDates) {
-      AGENDA_DATA['par-' + p.id] = { title: p.name, start: parDates.start.toISOString(), end: parDates.end.toISOString(), location: conf.location };
-      parAgendaHtml = `<div class="par-agenda-wrap" id="pagd-par-${p.id}">
-          <button class="par-agenda-btn" onclick="toggleParAgendaMenu('par-${p.id}',event)">📅 ▾</button>
-          <div class="par-agenda-menu">
-            <button onclick="openGCal('par-${p.id}')">📅 Google Calendar</button>
-            <button onclick="downloadIcalById('par-${p.id}')">⬇ Baixar .ics</button>
-          </div>
-        </div>`;
-    }
-
-    const goerCount = (p.goers || []).length;
-    const goerHtml = `
-      <div class="par-goer-wrap">
-        <div class="par-goer-top">
-          <button class="par-goer-btn" id="par-goer-btn-${p.id}" onclick="toggleParGoer('${p.id}')">✓ Eu vou!${goerCount > 0 ? ' (' + goerCount + ')' : ''}</button>
-          ${parAgendaHtml}
-        </div>
-        <div class="par-goer-form" id="par-goer-form-${p.id}">
-          <input type="text" id="par-gname-${p.id}" placeholder="Seu nome *">
-          <input type="text" id="par-gcomp-${p.id}" placeholder="Empresa">
-          <button class="par-goer-sub" onclick="submitParGoer('${conf.id}','${p.id}')">✓</button>
-        </div>
-        <div class="par-goer-list" id="par-goer-list-${p.id}"></div>
-      </div>`;
-
-    card.innerHTML = `
-      <div class="par-day">${p.day}</div>
-      <div class="par-name">${p.name}${newTag}</div>
-      <div class="par-desc">${p.desc}</div>
-      <span class="par-access ${p.access}">${p.access==='convite'?'Por Convite':p.access==='aberto'?'Aberto':'Restrito'}</span>
-      ${attendeesList}
-      ${goerHtml}`;
-    grid.appendChild(card);
-    renderParGoers(p.id, p.goers || []);
-  });
-}
-
-function toggleParallel(confId) {
-  const panel = document.getElementById('panel-' + confId);
-  const opening = !panel.classList.contains('open');
-  panel.classList.toggle('open');
-  if (opening) {
-    const conf = CONFERENCES.find(c => c.id === confId);
-    track('night_panel_open', { conference: conf ? conf.name : confId, month: conf ? conf.month : '' });
-  }
-}
-
-// ─── MODAL ──────────────────────────────────────────────────────────────────
-let currentConfId = null;
-
-function openAddModal(confId) {
-  currentConfId = confId;
-  if (confId) document.getElementById('m-conference').value = confId;
-  document.getElementById('modal-form-wrap').style.display = '';
-  document.getElementById('modal-success').style.display = 'none';
-  document.getElementById('modal-overlay').classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-
-function closeModal() {
-  document.getElementById('modal-overlay').classList.remove('open');
-  document.body.style.overflow = '';
-  ['m-name','m-date','m-time','m-desc','m-author','m-attendees'].forEach(id => { const el = document.getElementById(id); if(el) el.value = ''; });
-  document.querySelectorAll('.radio-pill').forEach((p,i) => p.classList.toggle('sel', i===0));
-}
-
-function selectPill(el) {
-  el.closest('.radio-row').querySelectorAll('.radio-pill').forEach(p => p.classList.remove('sel'));
-  el.classList.add('sel');
-  el.querySelector('input').checked = true;
-}
-
-function submitParallel() {
-  const name = document.getElementById('m-name').value.trim();
-  const confId = document.getElementById('m-conference').value;
-  if (!name || !confId) { showModalError('Preencha ao menos o nome do evento e a feira principal.'); return; }
-
-  const dateVal  = document.getElementById('m-date').value;
-  const timeVal  = document.getElementById('m-time').value;
-  let day = 'A confirmar';
-  if (dateVal) {
-    const d = new Date(dateVal + 'T12:00:00');
-    const wd = ['Dom','Seg','Ter','Qua','Qui','Sex','Sáb'][d.getDay()];
-    day = wd + ' ' + String(d.getDate()).padStart(2,'0') + '/' + String(d.getMonth()+1).padStart(2,'0');
-    if (timeVal) day += ' às ' + timeVal;
-  }
-  const desc     = document.getElementById('m-desc').value.trim() || '';
-  const access   = document.querySelector('input[name="access"]:checked')?.value || 'convite';
-  // PASSO 3: captura o campo "quem vai estar lá" (empresas separadas por vírgula)
-  const attendeeRaw = document.getElementById('m-attendees')?.value.trim() || '';
-  const attendees = attendeeRaw ? attendeeRaw.split(',').map(a => a.trim()).filter(Boolean) : [];
-
-  const conf = CONFERENCES.find(c => c.id === confId);
-  if (conf) {
-    // ── DEDUPLICAÇÃO INTELIGENTE ──────────────────────────────────────────────
-    // Normaliza texto: remove acentos, minúsculas, sem pontuação
-    const norm = s => s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9 ]/g,'').replace(/\s+/g,' ').trim();
-
-    // Distância de Levenshtein: mede quantas letras precisariam mudar de uma palavra para outra
-    // Exemplo: "camorim" → "camorins" = distância 1 (adicionou 1 letra)
-    const levenshtein = (a, b) => {
-      const m = a.length, n = b.length;
-      const dp = Array.from({length:m+1}, (_,i) => Array.from({length:n+1}, (_,j) => i===0?j:j===0?i:0));
-      for (let i=1;i<=m;i++) for (let j=1;j<=n;j++)
-        dp[i][j] = a[i-1]===b[j-1] ? dp[i-1][j-1] : 1+Math.min(dp[i-1][j],dp[i][j-1],dp[i-1][j-1]);
-      return dp[m][n];
-    };
-
-    // Similaridade: 0% = totalmente diferente, 100% = idêntico
-    const similarity = (a, b) => {
-      const na = norm(a), nb = norm(b);
-      if (na === nb) return 100;
-      const maxLen = Math.max(na.length, nb.length);
-      if (maxLen === 0) return 100;
-      const lev = levenshtein(na, nb);
-      const levScore = (1 - lev / maxLen) * 100;
-
-      // Verifica também se uma palavra-chave importante aparece em ambos
-      // Ex: "camorim" aparece em "Festa Camorim" e em "Camorim Party" → suspeito
-      const wordsA = na.split(' ').filter(w => w.length > 4);
-      const wordsB = new Set(nb.split(' '));
-      const sharedKeywords = wordsA.filter(w => wordsB.has(w)).length;
-      const keywordScore = sharedKeywords > 0 ? Math.min(sharedKeywords * 40, 80) : 0;
-
-      return Math.max(levScore, keywordScore);
-    };
-
-    // Procura eventos já cadastrados que sejam parecidos (limiar: 70%)
-    const similar = conf.parallel.find(p => similarity(p.name, name) >= 70);
-    if (similar) {
-      showModalError(`Evento parecido já existe: "${similar.name}". Tem certeza que são eventos diferentes?`, true, () => {
-        // Callback: se usuário confirmar, adiciona mesmo assim com timestamp e presença
-        conf.parallel.push({ id:'p_'+Date.now(), dateIso:dateVal, timeVal, day, name, desc, access, attendees, addedAt: Date.now(), goers:[] });
-        finishAddParallel(conf);
-      });
-      return;
-    }
-    conf.parallel.push({ id:'p_'+Date.now(), dateIso:dateVal, timeVal, day, name, desc, access, attendees, addedAt: Date.now(), goers:[] });
-    finishAddParallel(conf);
-  }
-}
-
-// Separa o "finalizar adição" para evitar repetição de código
-function finishAddParallel(conf) {
-  renderParallelCards(conf);
-  const toggleBtn = document.getElementById('toggle-' + conf.id);
-  if (toggleBtn) toggleBtn.textContent = nightLabel(conf);
-  document.getElementById('panel-' + conf.id).classList.add('open');
-  updateMonthHeader(conf.month);
-  updateStats();
-  saveParallelToApi(conf.id, conf.parallel[conf.parallel.length - 1]);
-  track('parallel_event_submit', { conference: conf.name, month: conf.month });
-  document.getElementById('modal-form-wrap').style.display = 'none';
-  document.getElementById('modal-success').style.display = 'block';
-  setTimeout(closeModal, 2800);
-}
-
-// Exibe erro inline dentro do modal (muito melhor do que alert() do navegador)
-function showModalError(msg, withConfirm, onConfirm) {
-  let el = document.getElementById('modal-inline-error');
-  if (!el) {
-    el = document.createElement('div');
-    el.id = 'modal-inline-error';
-    el.style.cssText = 'margin:0 32px 16px;padding:14px 18px;border-radius:2px;font-size:13px;line-height:1.5;border:1px solid rgba(239,68,68,.35);background:rgba(239,68,68,.08);color:#FCA5A5;';
-    const footer = document.querySelector('#modal-form-wrap .modal-footer');
-    footer.parentNode.insertBefore(el, footer);
-  }
-  if (withConfirm) {
-    el.innerHTML = `⚠ ${msg} <button onclick="document.getElementById('modal-inline-error').style.display='none';(${onConfirm.toString()})()" style="margin-left:12px;background:rgba(239,68,68,.2);border:1px solid rgba(239,68,68,.4);color:#FCA5A5;padding:4px 14px;border-radius:2px;cursor:pointer;font-size:12px;font-family:'Syne',sans-serif;font-weight:700;letter-spacing:.1em;">Adicionar mesmo assim</button>`;
-  } else {
-    el.innerHTML = `⚠ ${msg}`;
-  }
-  el.style.display = 'block';
-  setTimeout(() => { if (el) el.style.display = 'none'; }, 6000);
-}
-
-function updateMonthHeader(month) {
-  const confs = CONFERENCES.filter(c => c.month === month);
-  const total = confs.reduce((a, c) => a + c.parallel.length, 0);
-  const el = document.querySelector(`#mh-${month} .month-count`);
-  if (el) el.textContent = `${confs.length} evento${confs.length>1?'s':''} · ${total} noturno${total!==1?'s':''} mapeado${total!==1?'s':''}`;
-}
-
-function updateStats() {
-  const totalNight = CONFERENCES.reduce((a, c) => a + c.parallel.length, 0);
-  document.getElementById('stat-conf').textContent = CONFERENCES.length;
-  document.getElementById('stat-night').textContent = totalNight;
-}
-
-// ─── DIAGNOSTIC MODAL ────────────────────────────────────────────────────────
-
-function openDiagModal() {
-  // Populate events checklist on step 3 (do it once)
-  const grid = document.getElementById('diag-events-check');
-  if (grid && grid.children.length === 0) {
-    CONFERENCES.forEach(c => {
-      const lbl = document.createElement('label');
-      lbl.className = 'radio-pill';
-      lbl.style.cssText = 'justify-content:flex-start;';
-      lbl.innerHTML = `<input type="checkbox" name="d-events" value="${c.name}">
-        <span style="font-size:12px;">${c.name.split('—')[0].trim()} <span style="color:var(--muted);font-size:11px;">${c.month}</span></span>`;
-      lbl.onclick = function() { this.classList.toggle('sel'); };
-      grid.appendChild(lbl);
-    });
-  }
-  document.getElementById('diag-overlay').classList.add('open');
-  document.body.style.overflow = 'hidden';
-  diagGoStep(1);
-  track('diagnostic_start');
-}
-
-function closeDiagModal() {
-  document.getElementById('diag-overlay').classList.remove('open');
-  document.body.style.overflow = '';
-}
-
-function diagGoStep(n) {
-  [1,2,3,4].forEach(i => {
-    document.getElementById('ds'+i).classList.toggle('active', i===n);
-    const bar = document.getElementById('dp'+i);
-    if (bar) bar.style.background = i <= n ? 'var(--gold)' : 'var(--border2)';
-  });
-  document.getElementById('diag-step-label').textContent = `Etapa ${n} de 4`;
-}
-
-function diagNext(to) {
-  clearDiagError();
-  if (to === 2) {
-    if (!document.getElementById('d-name').value.trim()) { showDiagError('Informe seu nome completo.'); return; }
-    if (!document.getElementById('d-email').value.trim()) { showDiagError('Informe seu email profissional.'); return; }
-    if (!document.getElementById('d-company').value.trim()) { showDiagError('Informe o nome da empresa.'); return; }
-    if (!document.querySelector('input[name="d-segment"]:checked')) { showDiagError('Selecione o segmento da empresa para continuar.'); return; }
-  }
-  if (to === 3) {
-    if (!document.querySelector('input[name="d-goal"]:checked')) { showDiagError('Selecione seu objetivo principal nos eventos.'); return; }
-    if (!document.querySelector('input[name="d-size"]:checked')) { showDiagError('Selecione o porte da empresa.'); return; }
-  }
-  if (to === 4) {
-    if (!document.querySelector('input[name="d-budget"]:checked')) { showDiagError('Selecione uma faixa de orçamento para gerar o diagnóstico.'); return; }
-    buildDiagnostic();
-  }
-  diagGoStep(to);
-}
-
-function showDiagError(msg) {
-  let el = document.getElementById('diag-inline-error');
-  if (!el) {
-    el = document.createElement('div');
-    el.id = 'diag-inline-error';
-    el.style.cssText = 'margin:0 32px 16px;padding:12px 18px;border-radius:2px;font-size:13px;border:1px solid rgba(239,68,68,.35);background:rgba(239,68,68,.08);color:#FCA5A5;';
-    // Insert before the active step's footer
-    const activeFooter = document.querySelector('.diag-step.active .modal-footer');
-    if (activeFooter) activeFooter.parentNode.insertBefore(el, activeFooter);
-  }
-  el.textContent = '⚠ ' + msg;
-  el.style.display = 'block';
-}
-
-function clearDiagError() {
-  const el = document.getElementById('diag-inline-error');
-  if (el) el.style.display = 'none';
-}
-
-function diagBack(to) { diagGoStep(to); }
-
-// ─── MONTAR DIAGNÓSTICO ───────────────────────────────────────────────────────
-function buildDiagnostic() {
-  const name    = document.getElementById('d-name').value.trim();
-  const company = document.getElementById('d-company').value.trim();
-  const segment = document.querySelector('input[name="d-segment"]:checked')?.value || '';
-  const goal    = document.querySelector('input[name="d-goal"]:checked')?.value || '';
-  const size    = document.querySelector('input[name="d-size"]:checked')?.value || '';
-  const budget  = document.querySelector('input[name="d-budget"]:checked')?.value || '';
-  const comm    = document.querySelector('input[name="d-comm"]:checked')?.value || 'Não informado';
-
-  // Escolhe eventos recomendados com base no segmento
-  const recommendations = getEventRecs(segment, goal);
-  track('diagnostic_complete', { segment, goal, size, budget });
-
-  // Estima investimento baseado no orçamento declarado e perfil
-  const invest = getInvestmentBreakdown(budget, size, goal);
-
-  const body = document.getElementById('diag-result-body');
-  body.innerHTML = `
-    <div style="background:linear-gradient(135deg,rgba(201,147,58,.08),rgba(26,107,138,.06));border:1px solid rgba(201,147,58,.2);padding:24px;border-radius:2px;margin-bottom:24px;">
-      <div style="font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;">Diagnóstico para</div>
-      <div style="font-family:'Bebas Neue',sans-serif;font-size:32px;color:var(--white);line-height:1;">${company.toUpperCase()}</div>
-      <div style="font-size:12px;color:var(--muted);margin-top:4px;">${segment} · ${goal}</div>
-    </div>
-
-    <div style="margin-bottom:24px;">
-      <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border);">Eventos recomendados</div>
-      ${recommendations.map((r,i) => `
-        <div style="display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--border);align-items:flex-start;">
-          <div style="font-family:'Bebas Neue',sans-serif;font-size:28px;color:var(--gold);min-width:32px;line-height:1;">0${i+1}</div>
-          <div style="flex:1;">
-            <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:14px;color:var(--white);">${r.name}</div>
-            <div style="font-size:12px;color:var(--muted);margin-top:3px;line-height:1.5;">${r.reason}</div>
-          </div>
-          <div style="font-size:11px;font-family:'Syne',sans-serif;font-weight:700;color:var(--gold);background:rgba(201,147,58,.1);border:1px solid rgba(201,147,58,.2);padding:4px 12px;border-radius:2px;white-space:nowrap;">${r.score}% fit</div>
-        </div>`).join('')}
-    </div>
-
-    <div style="margin-bottom:24px;">
-      <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border);">Estimativa de investimento por evento</div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px;">
-        ${invest.map(item => `
-          <div style="background:var(--deep);border:1px solid var(--border);padding:18px;border-radius:2px;">
-            <div style="font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;">${item.label}</div>
-            <div style="font-family:'Bebas Neue',sans-serif;font-size:28px;color:var(--white);line-height:1;">${item.value}</div>
-            <div style="font-size:11px;color:var(--muted);margin-top:4px;">${item.desc}</div>
-          </div>`).join('')}
-      </div>
-    </div>
-
-    <div style="background:rgba(26,107,138,.08);border:1px solid rgba(33,150,181,.2);padding:20px 24px;border-radius:2px;">
-      <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:13px;color:var(--white);margin-bottom:8px;">Como a MR Solutions atua junto com <span style="color:var(--gold);">${company}</span></div>
-      <div style="font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:16px;">Produzimos conteúdo antes, durante e depois de cada evento para amplificar sua presença e converter visibilidade em relacionamento comercial. Nossa audiência no setor offshore conecta sua marca com profissionais técnicos e gestores de operações — exatamente o público dos eventos que você precisa estar.</div>
-      <div style="font-size:12px;color:var(--blue-l);">→ Um consultor da MR Solutions entrará em contato com <strong style="color:var(--white);">${name}</strong> em até 48 horas para detalhar a proposta.</div>
-    </div>
-
-    <!-- PASSO 1: Botão de compartilhamento WhatsApp -->
-    <div style="margin-top:20px;padding:20px 24px;background:rgba(37,211,102,.06);border:1px solid rgba(37,211,102,.2);border-radius:2px;">
-      <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:12px;color:#4ADE80;letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px;">📲 Compartilhe seu diagnóstico</div>
-      <div style="font-size:13px;color:var(--muted);margin-bottom:16px;line-height:1.6;">
-        Conhece algum colega que também deveria mapear os eventos certos para a empresa dele? Compartilha o MR Solutions Event Map no WhatsApp.
-      </div>
-      <button onclick="shareWhatsApp('${company}','${segment}','${goal}',${JSON.stringify(recommendations.map(r=>r.name))})"
-        style="display:inline-flex;align-items:center;gap:10px;background:#25D366;color:#000;border:none;padding:12px 24px;border-radius:2px;cursor:pointer;font-family:'Syne',sans-serif;font-weight:700;font-size:11px;letter-spacing:.15em;text-transform:uppercase;transition:.2s;"
-        onmouseover="this.style.background='#1ebe5a'" onmouseout="this.style.background='#25D366'">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.555 4.122 1.528 5.856L.057 23.882l6.186-1.622A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.884 0-3.656-.49-5.197-1.346l-.373-.22-3.873 1.015 1.034-3.773-.242-.389A9.956 9.956 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
-        Compartilhar no WhatsApp
-      </button>
-    </div>`;
-}
-
-function getEventRecs(segment, goal) {
-  const all = [
-    { name:'OTC Houston (Mai 4–7)', reason:'Maior evento offshore do mundo. Alta densidade de operadoras, decisores e contratos internacionais.', score:97 },
-    { name:'Brasil FPSO Epicentro Global (Mai)', reason:'Principal hub de decisão para contratos FPSO no Brasil. Concentração de operadoras nacionais e internacionais.', score:94 },
-    { name:'ONS Stavanger (Ago)', reason:'Referência técnica mundial em offshore. Posicionamento como empresa com padrão internacional.', score:89 },
-    { name:'ADIPEC Abu Dhabi (Nov)', reason:'Maior evento de energia do Oriente Médio. Expansão internacional e benchmarking com as melhores práticas globais.', score:85 },
-    { name:'Sergipe Oengás & Energy (Jul)', reason:'Relevante para empresas com foco no mercado nordestino e na bacia de Sergipe-Alagoas.', score:80 },
-  ];
-  if (segment === 'Treinamento / Capacitação') {
-    all[1].reason = 'Alta concentração de profissionais buscando qualificação e certificação offshore.';
-    all[1].score = 96;
-  }
-  if (goal === 'Networking com executivos') {
-    all[0].reason += ' Os eventos noturnos paralelos são onde os contratos realmente acontecem.';
-  }
-  return all.slice(0, 4);
-}
-
-function getInvestmentBreakdown(budget, size, goal) {
-  // Valores base ajustados por porte e objetivo
-  const isSmall = size.includes('MEI') || size.includes('Pequena');
-  const isIntl = goal.includes('Lançamento') || goal.includes('parcerias');
-
-  const inscricao = isSmall ? '$800 – $2.500' : '$2.500 – $8.000';
-  const logistica = isSmall ? '$3.000 – $6.000' : '$8.000 – $20.000';
-  const marketing = isIntl  ? '$10.000 – $30.000' : '$5.000 – $15.000';
-  const presenca  = '$3.500 – $12.000';
-
-  return [
-    { label:'Inscrição / Acesso', value: inscricao, desc:'Por evento, por pessoa' },
-    { label:'Logística & Hospedagem', value: logistica, desc:'Passagem + hotel + deslocamento' },
-    { label:'Marketing & Conteúdo', value: marketing, desc:'Produção antes, durante e pós-evento' },
-    { label:'Presença de Marca (MR Solutions)', value: presenca, desc:'Amplificação com criador de conteúdo especializado' },
-  ];
-}
-
-// ─── PASSO 1: COMPARTILHAMENTO WHATSAPP ─────────────────────────────────────
-function shareWhatsApp(company, segment, goal, eventNames) {
-  const topEvents = eventNames.slice(0, 3).map((n, i) => `  ${i+1}. ${n}`).join('\n');
-  const msg = [
-    `🛢️ *MR Solutions — Event Map 2026*`,
-    ``,
-    `Acabei de gerar o diagnóstico estratégico de eventos para *${company}*:`,
-    ``,
-    `📌 Segmento: ${segment}`,
-    `🎯 Objetivo: ${goal}`,
-    ``,
-    `✅ *Top eventos recomendados:*`,
-    topEvents,
-    ``,
-    `Acesse e gere o diagnóstico da sua empresa também 👇`,
-    `👉 ${window.location.href}`,
-  ].join('\n');
-
-  const encoded = encodeURIComponent(msg);
-  // Tenta abrir o app WhatsApp nativo primeiro; se falhar, abre o WhatsApp Web
-  const waApp  = `whatsapp://send?text=${encoded}`;
-  const waWeb  = `https://web.whatsapp.com/send?text=${encoded}`;
-  const waMobile = `https://api.whatsapp.com/send?text=${encoded}`;
-
-  track('whatsapp_share', { company, segment, goal });
-  window.open('https://wa.me/?text=' + encodeURIComponent(msg), '_blank');
-}
-
-// ─── PASSO 2: TAG "NOVO" NOS EVENTOS PARALELOS ───────────────────────────────
-// Cada evento recebe um timestamp ao ser adicionado.
-// Cards adicionados nos últimos 7 dias ganham uma tag "NOVO" destacada.
-const SEVEN_DAYS_MS = 7 * 24 * 60 * 60 * 1000;
-
-// Quando a plataforma carrega, marca os eventos pré-carregados como "antigos"
-// (timestamp 0 = não exibe tag). Eventos adicionados pela comunidade recebem Date.now().
-CONFERENCES.forEach(conf => {
-  conf.parallel.forEach(p => {
-    if (p.addedAt === undefined) p.addedAt = 0; // pré-carregados não têm tag Novo
-  });
+// Close modal on overlay click
+document.querySelectorAll('.modal-overlay').forEach(overlay=>{
+  overlay.addEventListener('click',e=>{if(e.target===overlay) overlay.classList.remove('open');});
 });
 
-// ─── PASSO 3: CAMPO "QUEM VAI ESTAR LÁ" ─────────────────────────────────────
-// Adiciona campo no modal de evento paralelo para capturar presença de empresas.
-// Armazenado como array de strings em p.attendees.
-
-document.getElementById('modal-overlay').addEventListener('click', function(e) {
-  if (e.target === this) closeModal();
-});
-
-document.getElementById('add-event-overlay').addEventListener('click', function(e) {
-  if (e.target === this) closeAddEventModal();
-});
-
-// ─── MODAL: ADICIONAR EVENTO DO SETOR ────────────────────────────────────────
-function openAddEventModal() {
-  document.getElementById('add-event-form-wrap').style.display = '';
-  document.getElementById('add-event-success').style.display = 'none';
-  document.getElementById('add-event-overlay').classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-
-function closeAddEventModal() {
-  document.getElementById('add-event-overlay').classList.remove('open');
-  document.body.style.overflow = '';
-  ['ae-name','ae-date-start','ae-date-end','ae-location','ae-link','ae-author'].forEach(id => {
-    const el = document.getElementById(id); if(el) el.value = '';
-  });
-  const sel = document.getElementById('ae-month');
-  if(sel) sel.value = '';
-}
-
-function submitAddEvent() {
-  const name     = document.getElementById('ae-name').value.trim();
-  const month    = document.getElementById('ae-month').value;
-  const location = document.getElementById('ae-location').value.trim();
-  if (!name || !month || !location) {
-    showAddEventError('Preencha ao menos o nome, o mês e o local do evento.');
-    return;
-  }
-  const startDate = document.getElementById('ae-date-start').value;
-  const endDate   = document.getElementById('ae-date-end').value;
-  let dates = 'A confirmar';
-  if (startDate) {
-    const s = new Date(startDate + 'T12:00:00');
-    if (endDate && endDate !== startDate) {
-      const e = new Date(endDate + 'T12:00:00');
-      dates = s.getDate() + ' – ' + e.getDate();
-    } else {
-      dates = String(s.getDate());
-    }
-  }
-  const link   = document.getElementById('ae-link').value.trim() || '';
-  const access = document.querySelector('input[name="ae-access"]:checked')?.value || 'public';
-
-  // Adiciona dinamicamente ao calendário
-  const id = 'user_' + Date.now();
-  const monthShortMap = {
-    'Janeiro':'JAN','Fevereiro':'FEV','Março':'MAR','Abril':'ABR',
-    'Maio':'MAI','Junho':'JUN','Julho':'JUL','Agosto':'AGO',
-    'Setembro':'SET','Outubro':'OUT','Novembro':'NOV','Dezembro':'DEZ'
-  };
-  CONFERENCES.push({
-    id, name, dates, month, monthShort: monthShortMap[month] || month.slice(0,3).toUpperCase(),
-    year:2026, location, access, link, past:false, parallel:[], goers:[], addedByUser:true,
-    dateIsoStart: startDate, dateIsoEnd: endDate
-  });
-
-  // Re-renderiza o bloco do mês ou cria novo se não existir
-  let container = document.getElementById('month-' + month);
-  if (!container) {
-    // Mês ainda não existe, adiciona bloco novo no final
-    const main = document.getElementById('months-container');
-    const block = document.createElement('div');
-    block.className = 'month-block';
-    block.innerHTML = `
-      <div class="month-label">${month.toUpperCase()}</div>
-      <div class="month-header" id="mh-${month}">
-        <span class="month-name">${month} 2026</span>
-        <span class="month-count" style="margin-left:auto;">1 evento · 0 noturnos mapeados</span>
-      </div>
-      <div id="month-${month}"></div>`;
-    main.appendChild(block);
-    container = document.getElementById('month-' + month);
-  }
-  const conf = CONFERENCES[CONFERENCES.length - 1];
-  renderConference(conf, 'month-' + month);
-  updateMonthHeader(month);
-  updateStats();
-  saveConferenceToApi(conf);
-  track('conference_event_submit', { event_name: conf.name, month: conf.month });
-
-  document.getElementById('add-event-form-wrap').style.display = 'none';
-  document.getElementById('add-event-success').style.display = 'block';
-  setTimeout(closeAddEventModal, 2800);
-}
-
-function showAddEventError(msg) {
-  let el = document.getElementById('ae-error');
-  if (!el) {
-    el = document.createElement('div');
-    el.id = 'ae-error';
-    el.style.cssText = 'margin:0 32px 16px;padding:12px 18px;border-radius:2px;font-size:13px;border:1px solid rgba(239,68,68,.35);background:rgba(239,68,68,.08);color:#FCA5A5;';
-    const footer = document.querySelector('#add-event-form-wrap .modal-footer');
-    footer.parentNode.insertBefore(el, footer);
-  }
-  el.textContent = '⚠ ' + msg;
-  el.style.display = 'block';
-  setTimeout(() => { el.style.display = 'none'; }, 5000);
-}
-
-document.getElementById('diag-overlay').addEventListener('click', function(e) {
-  if (e.target === this) closeDiagModal();
-});
-
-// ─── API PERSISTENCE ─────────────────────────────────────────────────────────
-const API = 'api/events.php';
-
-async function loadRemoteEvents() {
-  try {
-    const res = await fetch(API);
-    if (!res.ok) return;
-    const data = await res.json();
-    let changed = false;
-
-    if (data.conferences && data.conferences.length > 0) {
-      const ids = new Set(CONFERENCES.map(c => c.id));
-      data.conferences.forEach(c => {
-        if (!ids.has(c.id)) { CONFERENCES.push(c); ids.add(c.id); changed = true; }
-      });
-    }
-
-    if (data.parallels && data.parallels.length > 0) {
-      data.parallels.forEach(p => {
-        const conf = CONFERENCES.find(c => c.id === p.confId);
-        if (conf && !conf.parallel.some(ep => ep.name === p.name && ep.day === p.day)) {
-          const { confId, ...pd } = p;
-          if (!pd.id) pd.id = 'p_' + Date.now() + '_' + Math.random().toString(36).slice(2);
-          if (!pd.goers) pd.goers = [];
-          conf.parallel.push(pd);
-          changed = true;
-        }
-      });
-    }
-
-    if (changed) {
-      buildCalendar();
-    }
-
-    // Load goers (run every refresh)
-    if (data.goers && data.goers.length > 0) {
-      data.goers.forEach(g => {
-        if (g.eventType === 'conference') {
-          const conf = CONFERENCES.find(c => c.id === g.confId);
-          if (conf) {
-            conf.goers = conf.goers || [];
-            if (!conf.goers.find(x => x.name === g.name && x.ts === g.ts)) {
-              conf.goers.push({ name: g.name, company: g.company || '', ts: g.ts || 0 });
-              renderGoers('conf-' + g.confId, conf.goers);
-            }
-          }
-        } else if (g.eventType === 'parallel') {
-          const conf = CONFERENCES.find(c => c.id === g.confId);
-          if (conf) {
-            const p = conf.parallel.find(pp => pp.id === g.eventKey);
-            if (p) {
-              p.goers = p.goers || [];
-              if (!p.goers.find(x => x.name === g.name && x.ts === g.ts)) {
-                p.goers.push({ name: g.name, company: g.company || '', ts: g.ts || 0 });
-                renderParGoers(p.id, p.goers);
-                const btn = document.getElementById('par-goer-btn-' + p.id);
-                if (btn) btn.textContent = '✓ Eu vou! (' + p.goers.length + ')';
-              }
-            }
-          }
-        }
-      });
-    }
-  } catch (_) {}
-}
-
-async function saveConferenceToApi(conf) {
-  try {
-    await fetch(API, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        type: 'conference',
-        id: conf.id, name: conf.name, dates: conf.dates,
-        month: conf.month, location: conf.location,
-        access: conf.access, link: conf.link
-      })
-    });
-  } catch (_) {}
-}
-
-async function saveParallelToApi(confId, p) {
-  try {
-    await fetch(API, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        type: 'parallel', confId,
-        id: p.id, dateIso: p.dateIso || '', timeVal: p.timeVal || '',
-        day: p.day, name: p.name, desc: p.desc,
-        access: p.access, attendees: p.attendees || []
-      })
-    });
-  } catch (_) {}
-}
-
-// ─── CANVAS: OFFSHORE ANIMATION ──────────────────────────────────────────────
-function initHeroAnimation() {
-  const hero = document.getElementById('hero');
-  const canvas = document.createElement('canvas');
-  canvas.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;';
-  hero.insertBefore(canvas, hero.firstChild);
-  const ctx = canvas.getContext('2d');
-  let W, H, t = 0, stars = [], bubbles = [], waveOff = [];
-
-  const WAVES = [
-    {amp:18,freq:0.006,sp:0.40,yF:0.520,r:15,g:100,b:130,a:0.20},
-    {amp:12,freq:0.009,sp:0.60,yF:0.535,r:20,g: 80,b:120,a:0.17},
-    {amp: 8,freq:0.014,sp:0.90,yF:0.545,r:10,g: 60,b:100,a:0.14},
-    {amp:22,freq:0.004,sp:0.25,yF:0.515,r:25,g:110,b:145,a:0.11},
-    {amp: 5,freq:0.020,sp:1.20,yF:0.555,r:30,g: 90,b:130,a:0.09},
-  ];
-
-  function resize() {
-    W = canvas.width  = hero.offsetWidth;
-    H = canvas.height = hero.offsetHeight;
-    stars   = Array.from({length:160}, () => ({x:Math.random()*W, y:Math.random()*H*0.54, r:Math.random()*1.4+0.2, tw:Math.random()*Math.PI*2, op:Math.random()*0.5+0.1}));
-    bubbles = Array.from({length:50},  () => ({x:Math.random()*W, y:H*0.55+Math.random()*H*0.45, r:Math.random()*2.5+0.5, sp:Math.random()*0.35+0.08, drift:(Math.random()-0.5)*0.4, op:Math.random()*0.22+0.04}));
-    waveOff = WAVES.map(() => Math.random()*Math.PI*2);
-  }
-
-  function draw() {
-    ctx.clearRect(0,0,W,H);
-
-    // Sky
-    const sky = ctx.createLinearGradient(0,0,0,H*0.57);
-    sky.addColorStop(0,'rgba(4,7,14,0.97)');
-    sky.addColorStop(0.55,'rgba(8,18,35,0.88)');
-    sky.addColorStop(1,'rgba(12,35,58,0.5)');
-    ctx.fillStyle = sky; ctx.fillRect(0,0,W,H*0.58);
-
-    // Stars
-    stars.forEach(s => {
-      s.tw += 0.015;
-      ctx.beginPath(); ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
-      ctx.fillStyle = `rgba(220,215,200,${s.op*(0.5+0.5*Math.sin(s.tw))})`;
-      ctx.fill();
-    });
-
-    // Light rays from platform area
-    const pX=W*0.72, pY=H*0.08;
-    for(let i=0;i<4;i++){
-      const ang=-0.25+i*0.18+Math.sin(t*0.15+i)*0.04;
-      const len=H*0.6, ex=pX+Math.sin(ang)*len, ey=pY+Math.cos(ang)*len;
-      const rg=ctx.createLinearGradient(pX,pY,ex,ey);
-      rg.addColorStop(0,'rgba(201,147,58,0)');
-      rg.addColorStop(0.25,`rgba(201,147,58,${0.017+i*0.004})`);
-      rg.addColorStop(1,'rgba(201,147,58,0)');
-      ctx.beginPath(); ctx.moveTo(pX,pY); ctx.lineTo(ex+25,ey); ctx.lineTo(ex-25,ey); ctx.closePath();
-      ctx.fillStyle=rg; ctx.fill();
-    }
-
-    // Horizon glow
-    const hg=ctx.createLinearGradient(0,H*0.46,0,H*0.59);
-    hg.addColorStop(0,'rgba(25,70,110,0.18)'); hg.addColorStop(1,'rgba(10,30,55,0)');
-    ctx.fillStyle=hg; ctx.fillRect(0,H*0.46,W,H*0.13);
-
-    // Ocean background
-    const oc=ctx.createLinearGradient(0,H*0.5,0,H);
-    oc.addColorStop(0,'rgba(8,50,80,0.65)'); oc.addColorStop(0.4,'rgba(5,28,50,0.72)'); oc.addColorStop(1,'rgba(3,14,24,0.92)');
-    ctx.fillStyle=oc; ctx.fillRect(0,H*0.5,W,H*0.5);
-
-    // Underwater shimmer
-    for(let i=0;i<10;i++){
-      const ux=W*0.05+i*W*0.095+Math.sin(t*0.28+i*0.9)*25;
-      const uy=H*0.58+i*12+Math.sin(t*0.35+i)*10;
-      const ug=ctx.createRadialGradient(ux,uy,0,ux,uy,55);
-      ug.addColorStop(0,`rgba(33,140,170,${0.055+Math.sin(t*0.8+i)*0.022})`);
-      ug.addColorStop(1,'rgba(33,140,170,0)');
-      ctx.fillStyle=ug; ctx.fillRect(ux-55,uy-28,110,56);
-    }
-
-    // Bubbles
-    bubbles.forEach(b => {
-      b.y-=b.sp; b.x+=b.drift;
-      if(b.y<H*0.5){b.y=H;b.x=Math.random()*W;}
-      if(b.x<0)b.x=W; if(b.x>W)b.x=0;
-      const fade=(b.y-H*0.5)/(H*0.5);
-      ctx.beginPath(); ctx.arc(b.x,b.y,b.r,0,Math.PI*2);
-      ctx.strokeStyle=`rgba(160,210,240,${b.op*fade})`; ctx.lineWidth=0.5; ctx.stroke();
-    });
-
-    // Waves
-    WAVES.forEach((w,i) => {
-      ctx.beginPath(); ctx.moveTo(0,H);
-      for(let x=0;x<=W;x+=4){
-        const y=H*w.yF+Math.sin(x*w.freq+t*w.sp+waveOff[i])*w.amp+Math.sin(x*w.freq*1.8+t*w.sp*0.55+waveOff[i]+1)*w.amp*0.4;
-        ctx.lineTo(x,y);
-      }
-      ctx.lineTo(W,H); ctx.closePath();
-      ctx.fillStyle=`rgba(${w.r},${w.g},${w.b},${w.a})`; ctx.fill();
-    });
-
-    // Wave surface glints
-    for(let i=0;i<7;i++){
-      const gx=(W*0.12+i*W*0.13+Math.sin(t*0.35+i*1.4)*40)%W;
-      const gy=H*0.522+Math.sin(t*0.45+i*1.1)*6;
-      const gg=ctx.createRadialGradient(gx,gy,0,gx,gy,35);
-      gg.addColorStop(0,`rgba(201,147,58,${0.09+Math.sin(t*1.2+i)*0.04})`);
-      gg.addColorStop(1,'rgba(201,147,58,0)');
-      ctx.fillStyle=gg; ctx.fillRect(gx-35,gy-12,70,24);
-    }
-
-    // Supply vessel (left, gently bobbing)
-    const sX=W*0.13+Math.sin(t*0.12)*6, sY=H*0.516+Math.sin(t*0.20)*2.5;
-    const sS=Math.min(W,H)*0.00065;
-    ctx.save(); ctx.translate(sX,sY); ctx.scale(sS,sS);
-    ctx.fillStyle='rgba(18,28,42,0.82)';
-    ctx.beginPath(); ctx.moveTo(-85,0); ctx.lineTo(-95,22); ctx.lineTo(95,22); ctx.lineTo(105,8); ctx.lineTo(72,0); ctx.closePath(); ctx.fill();
-    ctx.fillStyle='rgba(22,38,58,0.82)';
-    ctx.beginPath(); ctx.rect(-45,-38,65,38); ctx.fill();
-    ctx.fillStyle='rgba(201,147,58,0.28)';
-    ctx.beginPath(); ctx.rect(-3,-78,6,40); ctx.fill();
-    const slg=ctx.createRadialGradient(0,-78,0,0,-78,22);
-    slg.addColorStop(0,`rgba(255,220,120,${0.65+Math.sin(t*2.5)*0.35})`);
-    slg.addColorStop(1,'rgba(255,200,90,0)');
-    ctx.fillStyle=slg; ctx.beginPath(); ctx.arc(0,-78,22,0,Math.PI*2); ctx.fill();
-    ctx.restore();
-
-    // Offshore platform (right)
-    const ppX=W*0.72, ppY=H*0.46, ppS=Math.min(W,H)*0.0011;
-    ctx.save(); ctx.translate(ppX,ppY); ctx.scale(ppS,ppS);
-    ctx.fillStyle='rgba(14,22,34,0.90)';
-    ctx.strokeStyle='rgba(201,147,58,0.12)'; ctx.lineWidth=1/ppS;
-    // Deck
-    ctx.beginPath(); ctx.rect(-85,-18,170,14); ctx.fill(); ctx.stroke();
-    // Legs
-    [-65,-25,25,65].forEach(lx => { ctx.beginPath(); ctx.rect(lx-5,-4,10,85); ctx.fill(); ctx.stroke(); });
-    // Cross braces
-    ctx.strokeStyle='rgba(201,147,58,0.08)'; ctx.lineWidth=1.5/ppS;
-    ctx.beginPath();
-    ctx.moveTo(-65,20); ctx.lineTo(-25,50); ctx.moveTo(-25,20); ctx.lineTo(-65,50);
-    ctx.moveTo(25,20);  ctx.lineTo(65,50);  ctx.moveTo(65,20);  ctx.lineTo(25,50);
-    ctx.stroke();
-    // Helideck
-    ctx.fillStyle='rgba(14,22,34,0.90)'; ctx.strokeStyle='rgba(201,147,58,0.12)'; ctx.lineWidth=1/ppS;
-    ctx.beginPath(); ctx.rect(32,-44,52,8); ctx.fill(); ctx.stroke();
-    ctx.strokeStyle='rgba(201,147,58,0.22)'; ctx.lineWidth=0.8/ppS;
-    ctx.beginPath(); ctx.moveTo(46,-40); ctx.lineTo(46,-33); ctx.moveTo(54,-40); ctx.lineTo(54,-33); ctx.moveTo(46,-37); ctx.lineTo(54,-37); ctx.stroke();
-    // Derrick tower
-    ctx.fillStyle='rgba(14,22,34,0.90)'; ctx.strokeStyle='rgba(201,147,58,0.10)'; ctx.lineWidth=1/ppS;
-    ctx.beginPath(); ctx.moveTo(-12,-18); ctx.lineTo(-28,-125); ctx.lineTo(-8,-125); ctx.lineTo(8,-18); ctx.closePath(); ctx.fill(); ctx.stroke();
-    for(let di=0;di<3;di++){ ctx.beginPath(); ctx.moveTo(-10-di*6,-18-di*35); ctx.lineTo(10+di*6,-18-di*35); ctx.strokeStyle='rgba(201,147,58,0.09)'; ctx.stroke(); }
-    // Flare boom
-    ctx.strokeStyle='rgba(201,147,58,0.18)'; ctx.lineWidth=2.5/ppS;
-    ctx.beginPath(); ctx.moveTo(65,-18); ctx.lineTo(108,-65); ctx.stroke();
-    // Flare flame
-    const fl=0.5+Math.sin(t*9)*0.22+Math.sin(t*13.7)*0.14;
-    const fg=ctx.createRadialGradient(108,-65,0,108,-65,24);
-    fg.addColorStop(0,`rgba(255,185,60,${fl})`); fg.addColorStop(0.4,`rgba(255,90,20,${fl*0.6})`); fg.addColorStop(1,'rgba(255,60,0,0)');
-    ctx.fillStyle=fg; ctx.beginPath(); ctx.arc(108,-65,24,0,Math.PI*2); ctx.fill();
-    for(let si=0;si<3;si++){ const so=(t*0.5+si*0.7)%1; ctx.beginPath(); ctx.arc(108+so*30,-65-so*40,so*12,0,Math.PI*2); ctx.fillStyle=`rgba(70,70,70,${0.06*(1-so)})`; ctx.fill(); }
-    // Crane
-    ctx.strokeStyle='rgba(201,147,58,0.14)'; ctx.lineWidth=2/ppS;
-    ctx.beginPath(); ctx.moveTo(-78,-18); ctx.lineTo(-78,-85); ctx.lineTo(-35,-96); ctx.stroke();
-    ctx.beginPath(); ctx.moveTo(-55,-96); ctx.lineTo(-55,-110); ctx.stroke();
-    // Platform lights
-    [[-28,-125],[108,-65],[-78,-85],[58,-44],[85,-18],[-68,65]].forEach(([lx,ly],li) => {
-      const lop=0.5+0.5*Math.sin(t*(3+li*0.7)+lx*0.1);
-      const lg2=ctx.createRadialGradient(lx,ly,0,lx,ly,18);
-      lg2.addColorStop(0,`rgba(255,230,150,${lop*0.9})`); lg2.addColorStop(1,'rgba(255,200,100,0)');
-      ctx.fillStyle=lg2; ctx.beginPath(); ctx.arc(lx,ly,18,0,Math.PI*2); ctx.fill();
-    });
-    ctx.restore();
-
-    // Vignette overlay
-    const ov=ctx.createLinearGradient(0,0,0,H);
-    ov.addColorStop(0,'rgba(13,17,23,0.28)'); ov.addColorStop(0.44,'rgba(13,17,23,0)');
-    ov.addColorStop(0.78,'rgba(13,17,23,0.45)'); ov.addColorStop(1,'rgba(13,17,23,1)');
-    ctx.fillStyle=ov; ctx.fillRect(0,0,W,H);
-
-    t+=0.016;
-    requestAnimationFrame(draw);
-  }
-
-  window.addEventListener('resize', resize);
-  resize();
-  draw();
-}
-
-document.addEventListener('click', () => {
-  document.querySelectorAll('.agenda-dropdown.open,.par-agenda-wrap.open').forEach(x => x.classList.remove('open'));
-});
-
-// ─── INIT ────────────────────────────────────────────────────────────────────
-buildCalendar();
-loadRemoteEvents();
-setInterval(loadRemoteEvents, 60000);
-document.addEventListener('visibilitychange', () => { if (!document.hidden) loadRemoteEvents(); });
-initHeroAnimation();
+// ============================================================
+// INIT
+// ============================================================
+renderDashboard();
+setTimeout(()=>{ initMap(); }, 300);
 </script>
 </body>
 </html>
