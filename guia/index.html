@@ -66,6 +66,22 @@ p + p{margin-top:14px;}
 .stat b{font-family:'Bebas Neue',sans-serif;font-size:44px;line-height:1;color:var(--gold);display:block;}
 .stat span{font-size:13px;color:var(--muted2);}
 
+/* prova: vídeo da FPSO Expo */
+.prova{background:var(--black);padding:72px 0 80px;border-top:1px solid var(--border);}
+.prova .head{text-align:center;max-width:760px;margin:0 auto 28px;}
+.prova .lead{margin:0 auto;}
+.player{position:relative;max-width:900px;margin:0 auto;border-radius:6px;overflow:hidden;border:1px solid var(--border2);box-shadow:0 30px 80px rgba(0,0,0,.5);background:#000;aspect-ratio:16/9;}
+.player video{width:100%;height:100%;display:block;object-fit:cover;}
+.player .cover{position:absolute;inset:0;border:none;cursor:pointer;padding:0;background:linear-gradient(to top,rgba(9,12,16,.85),rgba(9,12,16,.15) 55%,rgba(9,12,16,.25));display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;color:var(--white);font:inherit;}
+.player .cover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-1;}
+.player .big{width:88px;height:88px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 12px rgba(201,147,58,.22);transition:.2s;}
+.player .big::after{content:'';border-left:26px solid var(--black);border-top:16px solid transparent;border-bottom:16px solid transparent;margin-left:6px;}
+.player .cover:hover .big{transform:scale(1.06);}
+.player .cover span{font-weight:800;font-size:15px;letter-spacing:.04em;text-shadow:0 2px 10px rgba(0,0,0,.6);}
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:900px;margin:18px auto 0;}
+.quotes blockquote{background:var(--card);border:1px solid var(--border);border-left:3px solid var(--gold);border-radius:4px;padding:16px 18px;font-size:15px;line-height:1.5;}
+.quotes cite{display:block;font-style:normal;font-size:12px;color:var(--muted);margin-top:8px;}
+
 /* dor */
 .dor{background:var(--deep);}
 .dor .grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;}
@@ -167,6 +183,7 @@ footer a{color:var(--muted2);}
   .stats{grid-template-columns:1fr 1fr;}
   .recebe{grid-template-columns:1fr 1fr;}
   .vids{grid-template-columns:repeat(3,1fr);}
+  .quotes{grid-template-columns:1fr;}
   .quem .photo{max-width:380px;}
 }
 @media (max-width:640px){
@@ -211,6 +228,32 @@ footer a{color:var(--muted2);}
       <div class="stat"><b>+1.000</b><span>profissionais embarcaram seguindo minhas orientações</span></div>
       <div class="stat"><b>+15</b><span>países, em terra e no mar</span></div>
       <div class="stat"><b>39 mil</b><span>pessoas acompanham o canal Carreira Offshore</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="prova">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Antes de qualquer coisa, aperte o play</span>
+      <h2>Quem é do setor <span>falando de mim</span></h2>
+      <p class="lead">Dois minutos gravados na FPSO Expo 2026, com executivos e profissionais da indústria. Eu deixo que eles me apresentem.</p>
+    </div>
+    <div class="player" id="player">
+      <video id="fpso" preload="none" playsinline poster="video/fpso-expo-2026-capa.jpg">
+        <source src="video/fpso-expo-2026.mp4" type="video/mp4">
+        <track kind="captions" src="video/fpso-expo-2026.vtt" srclang="pt" label="Português" default>
+      </video>
+      <button class="cover" id="fpso-play" aria-label="Assistir ao vídeo da FPSO Expo 2026">
+        <img src="video/fpso-expo-2026-capa.jpg" alt="">
+        <div class="big"></div>
+        <span>Assistir · 2 min · com legenda</span>
+      </button>
+    </div>
+    <div class="quotes">
+      <blockquote>"O Matheus virou uma chave do mercado."<cite>FPSO Expo 2026</cite></blockquote>
+      <blockquote>"Uma pessoa ideal para explicar de forma didática como as coisas funcionam."<cite>FPSO Expo 2026</cite></blockquote>
+      <blockquote>"Ele está dando uma grande força com todo o conhecimento para poder ajudar no primeiro embarque dele."<cite>Esposa de um seguidor do canal · FPSO Expo 2026</cite></blockquote>
     </div>
   </div>
 </section>
@@ -380,6 +423,19 @@ document.addEventListener('click', e => {
   }
   const c = e.target.closest('[data-checkout]');
   if (c && window.gtag) gtag('event', 'guia_checkout_click', {posicao:c.dataset.checkout});
+});
+
+// Vídeo da FPSO Expo: capa com play grande, depois controles normais
+const fpso = document.getElementById('fpso'), capa = document.getElementById('fpso-play');
+capa.addEventListener('click', () => {
+  capa.remove(); fpso.controls = true; fpso.play();
+  if (window.gtag) gtag('event', 'guia_video_fpso_play');
+});
+let fpsoFim = false;
+fpso.addEventListener('timeupdate', () => {
+  if (!fpsoFim && fpso.duration && fpso.currentTime / fpso.duration > 0.9){
+    fpsoFim = true; if (window.gtag) gtag('event', 'guia_video_fpso_completo');
+  }
 });
 
 // Barra de compra no celular aparece depois do topo e some na seção da oferta
