@@ -1,0 +1,12 @@
+# MR Group: domínio principal é mrgroup.com.br
+RewriteEngine On
+
+# Endereço antigo (mreventmap.com.br) e www vão para mrgroup.com.br, mantendo o caminho.
+# A agenda continua na raiz, então mreventmap.com.br/vagas cai em mrgroup.com.br/vagas.
+RewriteCond %{HTTP_HOST} ^(www\.)?mreventmap\.com\.br$ [NC,OR]
+RewriteCond %{HTTP_HOST} ^www\.mrgroup\.com\.br$ [NC]
+RewriteRule ^(.*)$ https://mrgroup.com.br/$1 [R=301,L]
+
+# Radar Offshore em /radar (os arquivos continuam na pasta anp/)
+RewriteRule ^radar$ /radar/ [R=301,L]
+RewriteRule ^radar/(.*)$ anp/$1 [L]
