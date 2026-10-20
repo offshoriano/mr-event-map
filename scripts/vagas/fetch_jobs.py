@@ -42,6 +42,7 @@ EMPRESAS = [
     ('workday', 'Noble', ('noblecorp', 'noblecorp'), False),
     ('workday', 'Fugro', ('fugro', 'Careers'), False),
     ('workday', 'Repsol Sinopec', ('repsol', 'Sinopec'), False),
+    ('workday', 'Transocean', ('deepwater', 'BrazilExternalCareerSite'), False),
     # Oracle
     ('oracle', 'NOV', ('egay.fa.us6.oraclecloud.com', 'CX_2001'), False),
     ('oracle', 'Seadrill', ('fa-eykz-saasfaprod1.fa.ocs.oraclecloud.com', 'CX_1'), False),
