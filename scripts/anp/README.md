@@ -19,7 +19,7 @@ python3 scripts/anp/fetch.py producao pocos  # só alguns
 Unidades: petróleo em barris/dia (convertido de m³ com 6,2898), gás em mil m³/dia.
 
 O workflow `.github/workflows/anp-refresh.yml` roda toda segunda-feira, grava
-os dados novos no `main` e publica no Hostinger. Também dá para rodar na mão em
+os dados novos no `main` e no ramo que o Hostinger publica (`claude/event-map-platform-db2gk`). Também dá para rodar na mão em
 Actions > "Atualizar Radar Offshore" > Run workflow.
 
 Se a ANP renomear uma coluna ou medida, o script para com a mensagem de erro do
