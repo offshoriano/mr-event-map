@@ -53,7 +53,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .nav-btn.solid:hover{background:var(--gold-l);}
 
 /* HERO */
-#hero{position:relative;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:120px 24px 80px;overflow:hidden;}
+#hero{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:112px 24px 48px;overflow:hidden;}
 .hero-grid{position:absolute;inset:0;z-index:0;
   background-image:linear-gradient(rgba(201,147,58,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(201,147,58,.035) 1px,transparent 1px);
   background-size:56px 56px;mask-image:radial-gradient(ellipse 80% 60% at 50% 50%,black,transparent);}
@@ -80,7 +80,7 @@ h1.hero-title .l2{display:block;color:var(--gold);}
 
 /* STATS */
 /* HUB: os quatro caminhos do site */
-.hub{position:relative;z-index:1;display:grid;grid-template-columns:repeat(4,1fr);gap:12px;width:100%;max-width:1120px;margin-top:52px;text-align:left;animation:fadeUp .7s .42s ease both;}
+.hub{position:relative;z-index:1;display:grid;grid-template-columns:repeat(4,1fr);gap:12px;width:100%;max-width:1120px;margin-top:40px;text-align:left;animation:fadeUp .7s .42s ease both;}
 .hub a{display:flex;flex-direction:column;background:rgba(13,17,23,.84);backdrop-filter:blur(6px);border:1px solid var(--border2);border-radius:3px;
   padding:22px 20px 18px;text-decoration:none;color:var(--white);transition:.2s;}
 .hub a:hover{border-color:var(--gold);transform:translateY(-3px);}
@@ -90,7 +90,7 @@ h1.hero-title .l2{display:block;color:var(--gold);}
 .hub .who{display:flex;justify-content:space-between;align-items:center;margin-top:16px;padding-top:12px;border-top:1px solid var(--border);
   font-size:11px;letter-spacing:.06em;color:var(--muted);}
 .hub .who::after{content:'→';color:var(--gold);font-size:16px;}
-.stats-bar{position:relative;z-index:1;display:flex;gap:48px;margin-top:60px;justify-content:center;flex-wrap:wrap;animation:fadeUp .7s .48s ease both;}
+.stats-bar{position:relative;z-index:1;display:flex;gap:48px;margin-top:40px;justify-content:center;flex-wrap:wrap;animation:fadeUp .7s .48s ease both;}
 .stat{text-align:center;}
 .stat-num{font-family:'Bebas Neue',sans-serif;font-size:44px;color:var(--gold);line-height:1;}
 .stat-label{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-top:5px;}
@@ -103,7 +103,7 @@ h1.hero-title .l2{display:block;color:var(--gold);}
 .leg-dot.night-dot{background:var(--night-a);}
 
 /* MAIN */
-main{position:relative;z-index:1;max-width:1240px;margin:0 auto;padding:80px 48px 120px;}
+main{position:relative;z-index:1;max-width:1240px;margin:0 auto;padding:36px 48px 120px;}
 
 /* MONTH BLOCK */
 .month-block{margin-bottom:80px;}
@@ -271,7 +271,7 @@ footer{border-top:1px solid var(--border);padding:40px 48px;display:flex;justify
   .nav-links a{text-align:center;padding:13px 4px 11px;font-size:11px;letter-spacing:.08em;}
   .nav-links a .l{display:none;}
   .nav-links a .s{display:inline;}
-  #hero{padding-top:150px;}
+  #hero{padding-top:132px;padding-bottom:36px;}
   .hub{grid-template-columns:1fr 1fr;gap:10px;margin-top:40px;}
   .hub a{padding:16px 14px 14px;}
   .hub b{font-size:17px;}
@@ -286,7 +286,7 @@ footer{border-top:1px solid var(--border);padding:40px 48px;display:flex;justify
   .conf-actions .conf-link,.conf-actions .conf-toggle,.conf-actions button{width:100%;justify-content:center;text-align:center;}
   .agenda-head{flex-direction:column;align-items:flex-start;}
   .month-header{flex-wrap:wrap;}
-  main{padding:60px 20px 80px;}
+  main{padding:28px 20px 80px;}
   #hero,#register{padding-left:20px;padding-right:20px;}
   .conf-actions{flex-direction:column;padding:16px 20px;align-items:stretch;}
   .parallel-grid{grid-template-columns:1fr;}
@@ -604,8 +604,8 @@ input[type="date"],input[type="time"]{color-scheme:dark;}
         </div>
         <div class="field"><label>Datas (início e fim)</label>
           <div class="date-time-row">
-            <input type="date" id="ae-date-start" min="2026-01-01" max="2026-12-31" placeholder="Início">
-            <input type="date" id="ae-date-end" min="2026-01-01" max="2026-12-31" placeholder="Fim">
+            <input type="date" id="ae-date-start" min="2026-01-01" max="2027-12-31" placeholder="Início">
+            <input type="date" id="ae-date-end" min="2026-01-01" max="2027-12-31" placeholder="Fim">
           </div>
         </div>
         <div class="field"><label>Local / Cidade *</label>
@@ -658,7 +658,7 @@ input[type="date"],input[type="time"]{color-scheme:dark;}
         <div class="field">
           <label>Data e horário</label>
           <div class="date-time-row">
-            <input type="date" id="m-date" min="2026-01-01" max="2026-12-31">
+            <input type="date" id="m-date" min="2026-01-01" max="2027-12-31">
             <input type="time" id="m-time" placeholder="Horário (opcional)">
           </div>
         </div>
@@ -851,7 +851,7 @@ const CONFERENCES = [
   {
     id:'adipec2026',
     name:'ADIPEC — Abu Dhabi International Petroleum Exhibition',
-    dates:'9 – 12', month:'Novembro', monthShort:'NOV', year:2026,
+    dates:'2 – 5', month:'Novembro', monthShort:'NOV', year:2026,
     location:'Abu Dhabi — Emirados Árabes Unidos',
     access:'public', link:'https://www.adipec.com/',
     past:false,
@@ -866,6 +866,144 @@ const CONFERENCES = [
     past:false,
     parallel:[]
   },
+
+  // ── PRÓXIMOS: FIM DE 2026 E 2027 (base: Radar Global de Feiras QLP + sites oficiais) ──
+  {
+    id:'brazilwindpower2026',
+    name:'Brazil Windpower 2026',
+    dates:'27 – 29', month:'Outubro', monthShort:'OUT', year:2026,
+    location:'São Paulo, SP — Brasil',
+    access:'public', link:'https://www.brazilwindpower.com.br/',
+    past:false,
+    parallel:[]
+  },
+  {
+    id:'offshoreenergy2026',
+    name:'Offshore Energy Exhibition & Conference',
+    dates:'24 – 25', month:'Novembro', monthShort:'NOV', year:2026,
+    location:'Amsterdam — Países Baixos',
+    access:'public', link:'https://www.offshore-energy.biz/offshore-energy-exhibition-conference/',
+    past:false,
+    parallel:[]
+  },
+  {
+    id:'osea2026',
+    name:'OSEA 2026',
+    dates:'24 – 26', month:'Novembro', monthShort:'NOV', year:2026,
+    location:'Singapura',
+    access:'public', link:'https://www.osea-asia.com/',
+    past:false,
+    parallel:[]
+  },
+  {
+    id:'guyana2027',
+    name:'Guyana Energy Conference & Supply Chain Expo',
+    dates:'16 – 19', month:'Fevereiro', monthShort:'FEV', year:2027,
+    location:'Guyana Marriott, Georgetown — Guiana',
+    access:'public', link:'https://www.guyanaenergyconference.com/',
+    past:false,
+    parallel:[]
+  },
+  {
+    id:'ibem2027',
+    name:'iBEM27 — International Brazil Energy Meeting',
+    dates:'24 – 26', month:'Fevereiro', monthShort:'FEV', year:2027,
+    location:'Salvador Convention Center, Salvador, BA — Brasil',
+    access:'public', link:'https://www.ibemenergy.com/',
+    past:false,
+    parallel:[]
+  },
+  {
+    id:'otc2027',
+    name:'OTC — Offshore Technology Conference',
+    dates:'3 – 5', month:'Maio', monthShort:'MAI', year:2027,
+    location:'NRG Park, Houston, TX — EUA',
+    access:'public', link:'https://2027.otcnet.org/',
+    past:false,
+    parallel:[]
+  },
+  {
+    id:'fpsoexpo2027',
+    name:'FPSO Expo Brasil — Epicentro Global (5ª Edição)',
+    dates:'18 – 20', month:'Maio', monthShort:'MAI', year:2027,
+    location:'ExpoRio Cidade Nova, Rio de Janeiro, RJ — Brasil',
+    access:'public', link:'https://fpsosexpor.com.br/',
+    past:false,
+    parallel:[]
+  },
+  {
+    id:'norshipping2027',
+    name:'Nor-Shipping 2027',
+    dates:'7 – 11', month:'Junho', monthShort:'JUN', year:2027,
+    location:'Lillestrøm, Oslo — Noruega',
+    access:'public', link:'https://nor-shipping.com/',
+    past:false,
+    parallel:[]
+  },
+  {
+    id:'sog2027',
+    name:'SOG.e — Sergipe Oil & Gas & Energy',
+    dates:'28 – 30', month:'Julho', monthShort:'JUL', year:2027,
+    location:'AM Malls Convention Center, Aracaju, SE — Brasil',
+    access:'public', link:'https://sergipeoilgas.com.br/',
+    past:false,
+    parallel:[]
+  },
+  {
+    id:'navalshore2027',
+    name:'Navalshore 2027',
+    dates:'Ago · Data a confirmar', month:'Agosto', monthShort:'AGO', year:2027,
+    location:'Rio de Janeiro, RJ — Brasil',
+    access:'public', link:'https://www.navalshore.com.br/',
+    past:false,
+    parallel:[]
+  },
+  {
+    id:'offshoreeurope2027',
+    name:'SPE Offshore Europe 2027',
+    dates:'7 – 10', month:'Setembro', monthShort:'SET', year:2027,
+    location:'Aberdeen — Reino Unido',
+    access:'public', link:'https://www.offshore-europe.co.uk/',
+    past:false,
+    parallel:[]
+  },
+  {
+    id:'gastech2027',
+    name:'Gastech 2027',
+    dates:'14 – 17', month:'Setembro', monthShort:'SET', year:2027,
+    location:'Houston, TX — EUA',
+    access:'public', link:'https://www.gastechevent.com/',
+    past:false,
+    parallel:[]
+  },
+  {
+    id:'otcbrasil2027',
+    name:'OTC Brasil 2027',
+    dates:'26 – 28', month:'Outubro', monthShort:'OUT', year:2027,
+    location:'Rio de Janeiro, RJ — Brasil',
+    access:'public', link:'https://otcbrasil.org/',
+    past:false,
+    parallel:[]
+  },
+  {
+    id:'boge2027',
+    name:'Bahia Oil & Gas Energy (BOGE27)',
+    dates:'Data a confirmar', month:'A confirmar', monthShort:'—', year:2027,
+    location:'Salvador Convention Center, Salvador, BA — Brasil',
+    access:'public', link:'https://www.bahiaoilgasenergy.com.br/',
+    past:false,
+    parallel:[]
+  },
+  {
+    id:'adipec2027',
+    name:'ADIPEC 2027',
+    dates:'Data a confirmar', month:'A confirmar', monthShort:'—', year:2027,
+    location:'ADNEC, Abu Dhabi — Emirados Árabes Unidos',
+    access:'public', link:'https://www.adipec.com/',
+    past:false,
+    parallel:[]
+  }
+
 ];
 
 // Assign stable IDs and goer arrays to pre-existing parallel events
@@ -1069,12 +1207,19 @@ function buildCalendar() {
   const container = document.getElementById('months-container');
   container.innerHTML = '';
 
-  // Agrupa conferências por mês preservando a ordem
+  // Ordena por data e agrupa por mês + ano ("Maio 2026" e "Maio 2027" são blocos
+  // diferentes). Eventos sem mês definido ("A confirmar") vão para o fim do ano.
+  const MES_ORD = ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
+  const ordem = c => {
+    const mi = MES_ORD.indexOf(c.month), d = String(c.dates || '').match(/\d+/);
+    return c.year * 1000 + (mi < 0 ? 12 : mi) * 40 + (d ? +d[0] : 39);
+  };
   const months = [];
   const byMonth = {};
-  CONFERENCES.forEach(c => {
-    if (!byMonth[c.month]) { byMonth[c.month] = []; months.push(c.month); }
-    byMonth[c.month].push(c);
+  [...CONFERENCES].sort((a, b) => ordem(a) - ordem(b)).forEach(c => {
+    const k = c.month + ' ' + c.year;
+    if (!byMonth[k]) { byMonth[k] = []; months.push(k); }
+    byMonth[k].push(c);
   });
 
   // Evento passa a "realizado" sozinho depois do último dia (ou do fim do mês,
@@ -1084,7 +1229,7 @@ function buildCalendar() {
   const hoje = new Date(); hoje.setHours(0, 0, 0, 0);
   CONFERENCES.forEach(c => {
     const mi = MESES.indexOf(c.month);
-    if (mi < 0) return;
+    if (mi < 0) { c.past = false; return; }
     const dias = String(c.dates || '').match(/\d+/g);
     const fim = dias ? new Date(c.year, mi, +dias[dias.length - 1]) : new Date(c.year, mi + 1, 0);
     c.past = fim < hoje;
@@ -1109,16 +1254,18 @@ function buildCalendar() {
 
     const block = document.createElement('div');
     block.className = 'month-block';
+    const mNome = month.slice(0, month.lastIndexOf(' ')), mAno = month.slice(month.lastIndexOf(' ') + 1);
+    const mId = month.replace(/\s+/g, '-');
     block.innerHTML = `
-      <div class="month-label">${month.toUpperCase()}</div>
-      <div class="month-header" id="mh-${month}">
-        <span class="month-name">${month} 2026</span>
+      <div class="month-label">${mNome === 'A confirmar' ? mAno : mNome.toUpperCase()}</div>
+      <div class="month-header" id="mh-${mId}">
+        <span class="month-name">${mNome === 'A confirmar' ? mAno + ' · datas a confirmar' : month}</span>
         ${isPastMonth ? '<span class="past-month-label">✓ Realizado</span>' : ''}
         <span class="month-count" style="margin-left:auto;">${confs.length} evento${confs.length>1?'s':''} · ${nightTotal} noturno${nightTotal!==1?'s':''} mapeado${nightTotal!==1?'s':''}</span>
       </div>
-      <div id="month-${month}"></div>`;
+      <div id="month-${mId}"></div>`;
     destino.appendChild(block);
-    confs.forEach(c => renderConference(c, `month-${month}`));
+    confs.forEach(c => renderConference(c, `month-${mId}`));
   });
 
   // Popula select do modal com todas as opções
@@ -1399,7 +1546,7 @@ function finishAddParallel(conf) {
   const toggleBtn = document.getElementById('toggle-' + conf.id);
   if (toggleBtn) toggleBtn.textContent = nightLabel(conf);
   document.getElementById('panel-' + conf.id).classList.add('open');
-  updateMonthHeader(conf.month);
+  updateMonthHeader(conf.month, conf.year);
   updateStats();
   saveParallelToApi(conf.id, conf.parallel[conf.parallel.length - 1]);
   track('parallel_event_submit', { conference: conf.name, month: conf.month });
@@ -1427,11 +1574,11 @@ function showModalError(msg, withConfirm, onConfirm) {
   setTimeout(() => { if (el) el.style.display = 'none'; }, 6000);
 }
 
-function updateMonthHeader(month) {
-  const confs = CONFERENCES.filter(c => c.month === month);
+function updateMonthHeader(month, year) {
+  const confs = CONFERENCES.filter(c => c.month === month && (!year || c.year === year));
   const total = confs.reduce((a, c) => a + c.parallel.length, 0);
-  const el = document.querySelector(`#mh-${month} .month-count`);
-  if (el) el.textContent = `${confs.length} evento${confs.length>1?'s':''} · ${total} noturno${total!==1?'s':''} mapeado${total!==1?'s':''}`;
+  const el = document.getElementById(`mh-${month.replace(/\s+/g, '-')}-${year || 2026}`);
+  if (el) el.querySelector('.month-count').textContent = `${confs.length} evento${confs.length>1?'s':''} · ${total} noturno${total!==1?'s':''} mapeado${total!==1?'s':''}`;
 }
 
 // Números vivos do topo: produção da ANP e vagas abertas
@@ -1739,30 +1886,12 @@ function submitAddEvent() {
   };
   CONFERENCES.push({
     id, name, dates, month, monthShort: monthShortMap[month] || month.slice(0,3).toUpperCase(),
-    year:2026, location, access, link, past:false, parallel:[], goers:[], addedByUser:true,
+    year: startDate ? +String(startDate).slice(0, 4) : 2026, location, access, link, past:false, parallel:[], goers:[], addedByUser:true,
     dateIsoStart: startDate, dateIsoEnd: endDate
   });
 
-  // Re-renderiza o bloco do mês ou cria novo se não existir
-  let container = document.getElementById('month-' + month);
-  if (!container) {
-    // Mês ainda não existe, adiciona bloco novo no final
-    const main = document.getElementById('months-container');
-    const block = document.createElement('div');
-    block.className = 'month-block';
-    block.innerHTML = `
-      <div class="month-label">${month.toUpperCase()}</div>
-      <div class="month-header" id="mh-${month}">
-        <span class="month-name">${month} 2026</span>
-        <span class="month-count" style="margin-left:auto;">1 evento · 0 noturnos mapeados</span>
-      </div>
-      <div id="month-${month}"></div>`;
-    main.appendChild(block);
-    container = document.getElementById('month-' + month);
-  }
   const conf = CONFERENCES[CONFERENCES.length - 1];
-  renderConference(conf, 'month-' + month);
-  updateMonthHeader(month);
+  buildCalendar();
   updateStats();
   saveConferenceToApi(conf);
   track('conference_event_submit', { event_name: conf.name, month: conf.month });
