@@ -1,26 +1,24 @@
-name: Deploy para Hostinger
+name: Publicar no Hostinger
 
+# O Hostinger publica sozinho (integração GitHub do hPanel) a partir do ramo
+# abaixo. Este workflow só repassa o main para esse ramo a cada atualização.
 on:
   push:
     branches:
       - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
-  deploy:
+  publicar:
     runs-on: ubuntu-latest
     steps:
       - name: Baixar código
         uses: actions/checkout@v4
-
-      - name: Enviar para Hostinger via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./
-          server-dir: /public_html/
-          exclude: |
-            **/.git*
-            **/.git*/**
-            **/node_modules/**
+          fetch-depth: 0
+
+      - name: Repassar main para o ramo que o Hostinger publica
+        run: git push origin HEAD:refs/heads/claude/event-map-platform-db2gk
