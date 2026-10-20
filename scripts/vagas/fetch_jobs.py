@@ -244,7 +244,10 @@ def main():
         try:
             velhas = json.loads(SAIDA.read_text())['vagas']
             falhas = {s['empresa'] for s in status if not s['ok']}
-            vagas += [v for v in velhas if v['empresa'] in falhas]
+            for v in velhas:
+                if v['empresa'] in falhas:
+                    v['videos'] = escolha_videos.escolher(v['titulo'], v['empresa'])[0]
+                    vagas.append(v)
         except Exception:
             pass
     vistos, unicas = set(), []

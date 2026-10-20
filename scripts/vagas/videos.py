@@ -17,7 +17,7 @@ FUNCOES = [
     ('radio', 'rádio operador', r'r[aá]dio ?operad|radio operator|operador de r[aá]dio', r'r[aá]dio'),
     ('aviacao', 'aviação offshore', r'aviation|helic|aw139|aeron[aá]ut|\bpilot\b|cadet', r'helic[oó]pter|avia[cç][aã]o'),
     ('nautica', 'oficial de náutica e DP', r'oficial de n[aá]utica|\boqn\b|imediato|comandante|\bmaster\b|captain|posicionamento din[aâ]mico|\bdp\b|marinha|\bmarine\b', r'n[aá]utica|comandante|imediato|posicionamento din|\bdp\b|efomm|marinha mercante'),
-    ('maquinas', 'oficial e marinheiro de máquinas', r'\bm[aá]quinas|\boqm\b|maquinista|3rd engineer|chief engineer', r'\bm[aá]quinas|maquinista|efomm|marinha mercante|aquavi'),
+    ('maquinas', 'oficial e marinheiro de máquinas', r'(marinheir|oficial|chefe|condutor|cabo|mo[cç]o)\S* de m[aá]quinas|\boqm\b|maquinista|3rd engineer|chief engineer', r'\bm[aá]quinas|maquinista|efomm|marinha mercante|aquavi'),
     ('conves', 'operador de convés e marinheiro', r'conv[eé]s|\bdeck\b|marinheir|contramestre|mo[cç]o de|homem de [aá]rea|auxiliar de plataforma|able seaman|\bab\b', r'conv[eé]s|homem de [aá]rea|marinheir|contramestre'),
     ('solda', 'soldador, caldeireiro e acesso por corda', r'solda|welder|caldeir|escalador|irata|pintor|hidrojat|montador|andaim|scaffold', r'solda|caldeir|irata|escalad|acesso por corda|pintor|andaime'),
     ('instrumentacao', 'instrumentação e automação', r'instrument|automa[cç]|e&i\b|\bcontrols?\b|ot network|ot systems', r'instrument|automa[cç]'),
@@ -33,6 +33,7 @@ FUNCOES = [
     ('trainee', 'estágio, trainee e primeiro emprego', r'est[aá]gi|\bintern\b|trainee|aprendiz|apprentice|aspire', r'trainee|est[aá]gi|aprendiz|sem experi[eê]ncia'),
     ('engenharia', 'engenharia', r'engenheir|engineer|engenharia', r'engenheir'),
 ]
+VIZINHA = {'instrumentacao': 'eletrica', 'radio': 'producao'}
 OFFSHORE = re.compile(r'offshore|embarc|plataforma|fpso|navio|subsea|sonda', re.I)
 
 def _sem_acento(s):
@@ -45,8 +46,8 @@ def _buscar(regex, so_titulo=False):
     for v in CANAL:
         if r.search(v['t']):
             achados.append((2, v))
-        elif not so_titulo and len(r.findall(v.get('d', ''))) >= 3:
-            # Descrição só conta quando insiste no assunto; uma ou duas menções costumam ser lista de temas da live
+        elif not so_titulo and len(r.findall(v.get('d', ''))) >= 4:
+            # Descrição só conta quando o vídeo inteiro é sobre o assunto; poucas menções costumam ser lista de temas da live
             achados.append((1, v))
     achados.sort(key=lambda x: (-x[0], x[1]['tipo'] == 'shorts', -x[1]['views']))
     return [v for _, v in achados]
@@ -61,7 +62,7 @@ _li = _buscar(r'linkedin', so_titulo=True)
 GENERICOS['linkedin'] = (_li[0]['id'] if _li else 'PWWJ4NeFftc', GENERICOS['linkedin'][1])
 
 # Nome da empresa como aparece nos títulos do canal
-APELIDOS = {'TechnipFMC': r'technip', 'Altera&Ocyan': r'altera|ocyan', 'SBM Offshore': r'\bsbm\b', 'Wilson Sons Offshore': r'wilson sons',
+APELIDOS = {'TechnipFMC': r'technip', 'Wilson Sons': r'wilson sons', 'NOV': r'\bNOV\b(?!idade)', 'Altera&Ocyan': r'altera|ocyan', 'SBM Offshore': r'\bsbm\b', 'Wilson Sons Offshore': r'wilson sons',
             'Baker Hughes': r'baker', 'Repsol Sinopec': r'repsol', 'Brava Energia': r'\bbrava\b'}
 
 def escolher(titulo, empresa, descricao=''):
@@ -77,9 +78,14 @@ def escolher(titulo, empresa, descricao=''):
     if funcao:
         for v in _buscar(funcao[3])[:2]:
             add(v['id'], f'Fala de {funcao[1]}, a função desta vaga.')
-    padrao_emp = APELIDOS.get(empresa, re.escape(empresa.split()[0]))
+        # Função sem vídeo próprio no canal: usa o da área mais próxima
+        if not escolhidos and funcao[0] in VIZINHA:
+            viz = next(f for f in FUNCOES if f[0] == VIZINHA[funcao[0]])
+            for v in _buscar(viz[3])[:1]:
+                add(v['id'], f'Fala de {viz[1]}, área vizinha desta vaga.')
+    padrao_emp = APELIDOS.get(empresa, r'\b' + re.escape(empresa.split()[0]) + r'\b')
     for v in _buscar(padrao_emp, so_titulo=True)[:1]:
-        add(v['id'], f'Mostra a {empresa} por dentro. Ajuda a chegar preparado na entrevista.')
+        add(v['id'], f'Vídeo do canal sobre a {empresa}. Ajuda a chegar preparado na entrevista.')
     if not funcao and not OFFSHORE.search(titulo):
         add(*GENERICOS['linkedin'])
     add(*GENERICOS['curriculo'])
