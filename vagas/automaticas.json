@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-10-20T21:02:39+00:00",
+ "atualizado": "2026-10-20T21:22:03+00:00",
  "fontes": [
   {
    "empresa": "PRIO",
@@ -54,6 +54,11 @@
   {
    "empresa": "Tecnosonda",
    "vagas": 10,
+   "ok": true
+  },
+  {
+   "empresa": "Kaefer",
+   "vagas": 2,
    "ok": true
   },
   {
@@ -132,6 +137,16 @@
    "ok": true
   },
   {
+   "empresa": "Transocean",
+   "vagas": 1,
+   "ok": true
+  },
+  {
+   "empresa": "Bristow",
+   "vagas": 7,
+   "ok": true
+  },
+  {
    "empresa": "NOV",
    "vagas": 4,
    "ok": true
@@ -144,6 +159,11 @@
   {
    "empresa": "Valaris",
    "vagas": 0,
+   "ok": true
+  },
+  {
+   "empresa": "Oceaneering",
+   "vagas": 15,
    "ok": true
   },
   {
@@ -1118,6 +1138,90 @@
    "vistaEm": "2026-10-20"
   },
   {
+   "id": "bristow-aw139-aviation-maintenance-technician-brazil-67164",
+   "titulo": "AW139 Aviation Maintenance Technician - Brazil",
+   "empresa": "Bristow",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://bristow.wd1.myworkdayjobs.com/Careers/job/Americas--Brazil--Rio-de-Janeiro/AW139-Aviation-Maintenance-Technician---Brazil_R-0005761",
+   "regime": "Em terra ou a confirmar",
+   "area": "Mecânica e manutenção",
+   "tema": "mecanica",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "bristow-aw139-captain-brazil-59166",
+   "titulo": "AW139 Captain – Brazil",
+   "empresa": "Bristow",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://bristow.wd1.myworkdayjobs.com/Careers/job/Americas--Brazil--Rio-de-Janeiro/AW139-Captain---Brazil_R-0005764",
+   "regime": "Em terra ou a confirmar",
+   "area": "Marítimo",
+   "tema": "maritimo",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "bristow-cadet-brazil-39775",
+   "titulo": "Cadet – Brazil",
+   "empresa": "Bristow",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://bristow.wd1.myworkdayjobs.com/Careers/job/Americas--Brazil--Rio-de-Janeiro/Cadet---Brazil_R-0005758",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "bristow-global-fdm-manager-brazil-with-report-to-global-team-45939",
+   "titulo": "Global FDM Manager (Brazil with report to Global Team)",
+   "empresa": "Bristow",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://bristow.wd1.myworkdayjobs.com/Careers/job/Americas--Brazil--Rio-de-Janeiro/Global-FDM-Manager--Brazil-with-report-to-Global-Team-_R-0005829",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "bristow-pbh-administrator-senior-buyer-brazil-with-report-to-global-team-80552",
+   "titulo": "PBH Administrator - Senior Buyer (Brazil with report to Global Team)",
+   "empresa": "Bristow",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://bristow.wd1.myworkdayjobs.com/Careers/job/Americas--Brazil--Rio-de-Janeiro/PBH-Administrator---Senior-Buyer--Brazil-with-report-to-Global-Team-_R-0005808",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "bristow-pbh-administrator-senior-buyer-brazil-with-report-to-global-team-57758",
+   "titulo": "PBH Administrator - Senior Buyer (Brazil with report to Global Team)",
+   "empresa": "Bristow",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://bristow.wd1.myworkdayjobs.com/Careers/job/Americas--Brazil--Rio-de-Janeiro/PBH-Administrator---Senior-Buyer--Brazil-with-report-to-Global-Team-_R-0005809",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "bristow-pbh-administrator-senior-buyer-brazil-with-report-to-global-team-84923",
+   "titulo": "PBH Administrator - Senior Buyer (Brazil with report to Global Team)",
+   "empresa": "Bristow",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://bristow.wd1.myworkdayjobs.com/Careers/job/Americas--Brazil--Rio-de-Janeiro/PBH-Administrator---Senior-Buyer--Brazil-with-report-to-Global-Team-_R-0005810",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
    "id": "camorim-analista-de-sistemas-pleno-76657",
    "titulo": "ANALISTA DE SISTEMAS PLENO",
    "empresa": "Camorim",
@@ -1579,6 +1683,30 @@
    "empresa": "Halliburton",
    "local": "Macaé, RJ",
    "link": "https://careers.halliburton.com/job/macae/deep-program-brazil-2027/543/101956951920",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "kaefer-analista-de-suprimentos-indaiatuba-sp-91598",
+   "titulo": "Analista de Suprimentos - Indaiatuba/SP",
+   "empresa": "Kaefer",
+   "local": "Indaiatuba, SP",
+   "link": "https://kaeferbrasil.gupy.io/jobs/12604222",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "kaefer-auxiliar-de-almoxarifado-indaiatuba-sp-42266",
+   "titulo": "Auxiliar de Almoxarifado - Indaiatuba/SP",
+   "empresa": "Kaefer",
+   "local": "Indaiatuba, SP",
+   "link": "https://kaeferbrasil.gupy.io/jobs/12697376",
    "regime": "Em terra ou a confirmar",
    "area": "Outras",
    "tema": "geral",
@@ -2486,6 +2614,186 @@
    "vistaEm": "2026-10-20"
   },
   {
+   "id": "oceaneering-analista-de-invent-rio-tempor-rio-56649",
+   "titulo": "Analista de Inventário (Temporário)",
+   "empresa": "Oceaneering",
+   "local": "Niteroi, RJ",
+   "link": "https://ebfr.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/11695",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "oceaneering-apprentice-31579",
+   "titulo": "Apprentice",
+   "empresa": "Oceaneering",
+   "local": "Macaé, RJ",
+   "link": "https://ebfr.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/11391",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "oceaneering-assistente-de-materiais-ii-tempor-rio-17841",
+   "titulo": "Assistente de Materiais II (Temporário)",
+   "empresa": "Oceaneering",
+   "local": "Macaé, RJ",
+   "link": "https://ebfr.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/11752",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "oceaneering-assistente-de-projetos-exclusiva-pcds-79623",
+   "titulo": "Assistente de Projetos (Exclusiva PCDs)",
+   "empresa": "Oceaneering",
+   "local": "Macaé, RJ",
+   "link": "https://ebfr.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/11584",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "oceaneering-electrical-services-engineer-97225",
+   "titulo": "Electrical Services Engineer",
+   "empresa": "Oceaneering",
+   "local": "Macaé, RJ",
+   "link": "https://ebfr.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/11738",
+   "regime": "Em terra ou a confirmar",
+   "area": "Elétrica e instrumentação",
+   "tema": "eletrica",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "oceaneering-finance-project-analyst-99352",
+   "titulo": "Finance Project Analyst",
+   "empresa": "Oceaneering",
+   "local": "Macaé, RJ",
+   "link": "https://ebfr.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/11611",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "oceaneering-gerente-de-projetos-53051",
+   "titulo": "Gerente de Projetos",
+   "empresa": "Oceaneering",
+   "local": "Niteroi, RJ",
+   "link": "https://ebfr.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/11184",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "oceaneering-manager-quality-assurance-48477",
+   "titulo": "Manager, Quality Assurance",
+   "empresa": "Oceaneering",
+   "local": "Macaé, RJ",
+   "link": "https://ebfr.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/11683",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "oceaneering-project-scheduler-20978",
+   "titulo": "Project Scheduler",
+   "empresa": "Oceaneering",
+   "local": "Niteroi, RJ",
+   "link": "https://ebfr.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/11644",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "oceaneering-receptionist-24553",
+   "titulo": "Receptionist",
+   "empresa": "Oceaneering",
+   "local": "Niteroi, RJ",
+   "link": "https://ebfr.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/11564",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "oceaneering-service-technician-70138",
+   "titulo": "Service Technician",
+   "empresa": "Oceaneering",
+   "local": "Macaé, RJ",
+   "link": "https://ebfr.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/10999",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "oceaneering-service-technician-27449",
+   "titulo": "Service Technician",
+   "empresa": "Oceaneering",
+   "local": "Macaé, RJ",
+   "link": "https://ebfr.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/11040",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "oceaneering-survey-operations-manager-44463",
+   "titulo": "Survey Operations Manager",
+   "empresa": "Oceaneering",
+   "local": "Macaé, RJ",
+   "link": "https://ebfr.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/11726",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "oceaneering-workshop-service-technician-v-95089",
+   "titulo": "Workshop Service Technician V",
+   "empresa": "Oceaneering",
+   "local": "Macaé, RJ",
+   "link": "https://ebfr.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/11494",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "oceaneering-workshop-service-technician-v-94609",
+   "titulo": "Workshop Service Technician V",
+   "empresa": "Oceaneering",
+   "local": "Macaé, RJ",
+   "link": "https://ebfr.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/11539",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
    "id": "ocyan-analista-tribut-rio-iii-12793",
    "titulo": "Analista Tributário III",
    "empresa": "Ocyan",
@@ -3298,6 +3606,18 @@
    "regime": "Em terra ou a confirmar",
    "area": "Mecânica e manutenção",
    "tema": "mecanica",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "transocean-roustabout-exclusive-for-people-with-disabilities-vaga-exclusiva-para-29076",
+   "titulo": "Roustabout - EXCLUSIVE FOR PEOPLE WITH DISABILITIES / VAGA EXCLUSIVA PARA PESSOAS COM DEFICIÊNCIA",
+   "empresa": "Transocean",
+   "local": "Talent Pool - Brazil",
+   "link": "https://deepwater.wd1.myworkdayjobs.com/BrazilExternalCareerSite/job/Talent-Pool---Brazil/Roustabout---EXCLUSIVE-FOR-PERSONS-WITH-DISABILITIES---VAGA-EXCLUSIVA-PARA-PESSOAS-COM-DEFICINCIA_R110375",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
    "banco": false,
    "vistaEm": "2026-10-20"
   },
