@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
-<title>Contatos · MR Solutions</title>
+<title>Painel · MR Group</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..800;1,9..40,300&display=swap" rel="stylesheet">
 <style>
 :root{--deep:#0D1117;--card:#111820;--card2:#141D27;--border:#1C2733;--border2:#243040;--gold:#C9933A;--gold-l:#E8B86D;--white:#EEE9E2;--muted:#7A8FA6;--muted2:#A0B2C4;}
@@ -40,6 +40,30 @@ td.m{color:var(--muted2);}
 .del:hover{color:#ef7a7a;}
 .note{font-size:12px;color:var(--muted);margin-top:12px;line-height:1.6;}
 @media(max-width:700px){.kpis{grid-template-columns:1fr 1fr;}.bar .btn{margin-left:0;}}
+.tabs{display:flex;gap:6px;margin:22px 0 4px;border-bottom:1px solid var(--border);}
+.tab{font-family:inherit;font-weight:700;font-size:13px;background:none;border:none;border-bottom:2px solid transparent;color:var(--muted2);padding:10px 14px;cursor:pointer;}
+.tab.on{color:var(--white);border-color:var(--gold);}
+.badge{display:inline-block;min-width:20px;padding:1px 6px;margin-left:6px;border-radius:10px;background:#E5484D;color:#fff;font-size:11px;text-align:center;}
+.aviso{background:var(--card);border:1px solid var(--border);border-radius:3px;padding:16px;margin:20px 0;display:flex;gap:10px;flex-wrap:wrap;align-items:center;}
+.aviso p{flex:1 1 100%;font-size:13px;color:var(--muted2);line-height:1.6;}
+.aviso input{max-width:320px;}
+h2.sec{font-size:15px;font-weight:800;margin:26px 0 10px;}
+.vg{background:var(--card);border:1px solid var(--border);border-radius:3px;padding:18px;margin-bottom:12px;}
+.vg.pend{border-color:rgba(201,147,58,.45);}
+.vg-meta{font-size:12px;color:var(--muted);margin-bottom:12px;line-height:1.6;}
+.vg-meta b{color:var(--muted2);}
+.vg .g{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px;}
+.vg label{display:block;font-size:11px;color:var(--muted);margin-bottom:4px;}
+.vg textarea{font-family:inherit;font-size:14px;background:var(--card2);color:var(--white);border:1px solid var(--border2);border-radius:3px;padding:10px 12px;width:100%;min-height:140px;line-height:1.55;}
+.vg-acts{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;}
+.vg-line{display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap;}
+.vg-line a{color:var(--gold-l);}
+.ov{position:fixed;inset:0;background:rgba(5,8,11,.78);display:flex;align-items:center;justify-content:center;padding:16px;z-index:50;}
+.md{background:var(--card);border:1px solid var(--border2);border-radius:4px;max-width:420px;width:100%;padding:26px;}
+.md h3{font-size:20px;font-weight:800;margin-bottom:8px;}
+.md p{color:var(--muted2);font-size:14px;line-height:1.6;margin-bottom:16px;}
+.md .btn{width:100%;margin-top:8px;}
+@media(max-width:700px){.vg .g{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
@@ -61,22 +85,113 @@ function login(msg){
   $('#f').onsubmit = e => { e.preventDefault(); senha = $('#pw').value; carregar(); };
 }
 
+let VG = [], AVISO = '', aba = location.hash === '#vagas' ? 'vagas' : 'contatos', avisou = false;
+const AREAS = {seguranca:'Segurança', eletrica:'Elétrica e instrumentação', mecanica:'Mecânica e manutenção', pocos:'Perfuração e poços',
+  maritimo:'Marítimo', hotelaria:'Hotelaria', operacao:'Operação e produção', engenharia:'Engenharia', trainee:'Trainee e estágio', geral:'Outras'};
+const VAPI = '../api/vagas-enviadas.php';
+const vpost = body => fetch(VAPI, {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(body)})
+  .then(async r => ({ok:r.ok, data:await r.json().catch(() => ({}))}));
+const pendentes = () => VG.filter(v => v.status === 'pendente');
+
 function carregar(){
-  post({action:'list', senha}).then(({ok, data}) => {
-    if (!ok){ try { sessionStorage.removeItem('mr-leads'); } catch (e) {} return login(data.error || 'Erro ao carregar'); }
+  Promise.all([post({action:'list', senha}), vpost({action:'listar', senha})]).then(([l, v]) => {
+    if (!l.ok){ try { sessionStorage.removeItem('mr-leads'); } catch (e) {} return login(l.data.error || 'Erro ao carregar'); }
     try { sessionStorage.setItem('mr-leads', senha); } catch (e) {}
-    LEADS = data.leads || [];
+    LEADS = l.data.leads || [];
+    VG = v.ok ? (v.data.vagas || []) : []; AVISO = v.ok ? (v.data.aviso || '') : '';
+    const n = pendentes().length;
+    document.title = (n ? `(${n}) ` : '') + 'Painel · MR Group';
     painel();
+    // Ao entrar, avisa uma vez se tem vaga esperando aprovação
+    if (n && !avisou && aba !== 'vagas'){
+      avisou = true;
+      document.body.insertAdjacentHTML('beforeend', `<div class="ov" id="ov"><div class="md">
+        <h3>${n} vaga${n > 1 ? 's' : ''} esperando aprovação</h3>
+        <p>Empresas enviaram vaga pelo site. Elas só aparecem em /vagas depois que você aprovar.</p>
+        <button class="btn" id="ov-ir">Revisar agora</button><button class="btn ghost" id="ov-x">Depois</button></div></div>`);
+      $('#ov-ir').onclick = () => { $('#ov').remove(); aba = 'vagas'; painel(); };
+      $('#ov-x').onclick = () => $('#ov').remove();
+    }
   }).catch(() => login('Sem conexão com o servidor'));
 }
 
 function painel(){
+  const n = pendentes().length;
+  $('#app').innerHTML = `<div class="wrap">
+    <h1>Painel <span>MR</span></h1>
+    <div class="tabs">
+      <button class="tab ${aba === 'contatos' ? 'on' : ''}" data-aba="contatos">Contatos</button>
+      <button class="tab ${aba === 'vagas' ? 'on' : ''}" data-aba="vagas">Vagas enviadas${n ? `<span class="badge">${n}</span>` : ''}</button>
+    </div>
+    <div id="conteudo"></div></div>`;
+  document.querySelectorAll('.tab').forEach(t => t.onclick = () => { aba = t.dataset.aba; history.replaceState(null, '', aba === 'vagas' ? '#vagas' : '#'); painel(); });
+  aba === 'vagas' ? painelVagas() : painelContatos();
+}
+
+function painelVagas(){
+  const pend = pendentes(), pub = VG.filter(v => v.status === 'aprovada'), rec = VG.filter(v => v.status === 'recusada');
+  const hoje = new Date().toISOString().slice(0, 10);
+  const optAreas = sel => Object.entries(AREAS).map(([k, n]) => `<option value="${k}"${k === sel ? ' selected' : ''}>${n}</option>`).join('');
+  const quando = d => new Date(d).toLocaleString('pt-BR', {dateStyle:'short', timeStyle:'short'});
+  $('#conteudo').innerHTML = `
+    <div class="aviso">
+      <p>${AVISO ? `Quando chega vaga nova, o aviso vai para <b>${esc(AVISO)}</b>.` : '<b>Coloque seu e-mail aqui</b> para receber um aviso toda vez que uma empresa enviar vaga.'} Se não aparecer na caixa de entrada, olhe no spam e marque como "não é spam".</p>
+      <input type="email" id="av" placeholder="seu@email.com" value="${esc(AVISO)}">
+      <button class="btn" id="av-s">Salvar e mandar teste</button><span id="av-m" class="note" style="margin:0"></span>
+    </div>
+    <p class="note" style="margin:0 0 6px">Link para mandar a empresas: <a href="../vagas/divulgar/" target="_blank" style="color:var(--gold-l)">mrgroup.com.br/vagas/divulgar</a></p>
+    <h2 class="sec">Esperando aprovação (${pend.length})</h2>
+    ${pend.length ? pend.map(v => `<div class="vg pend" data-id="${esc(v.id)}">
+      <div class="vg-meta">Enviada em ${quando(v.enviada)} por <b>${esc(v.contato)}</b> · <a href="mailto:${esc(v.email)}" style="color:var(--gold-l)">${esc(v.email)}</a>${v.whatsapp ? ' · WhatsApp ' + esc(v.whatsapp) : ''}</div>
+      <div class="g"><div><label>Cargo</label><input data-k="titulo" value="${esc(v.titulo)}"></div><div><label>Empresa</label><input data-k="empresa" value="${esc(v.empresa)}"></div></div>
+      <div class="g"><div><label>Local</label><input data-k="local" value="${esc(v.local)}"></div>
+        <div><label>Regime</label><select data-k="regime">${['Embarcado','Em terra','Híbrido'].map(r => `<option${r === v.regime ? ' selected' : ''}>${r}</option>`).join('')}</select></div></div>
+      <div class="g"><div><label>Área (define os vídeos sugeridos)</label><select data-k="tema">${optAreas(v.tema || 'geral')}</select></div>
+        <div><label>Inscrições até</label><input type="date" data-k="inscricoesAte" value="${esc(v.inscricoesAte)}"></div></div>
+      <div class="g"><div><label>Contrato</label><input data-k="contrato" value="${esc(v.contrato)}"></div>
+        <div><label>Link ou e-mail para candidatura</label><input data-k="link" value="${esc(v.link.replace(/^mailto:/, ''))}"></div></div>
+      <label>Descrição</label><textarea data-k="descricao">${esc(v.descricao)}</textarea>
+      <div class="vg-acts"><button class="btn" data-acao="aprovar">Aprovar e publicar</button><button class="btn ghost" data-acao="recusar">Recusar</button>
+        <a class="btn ghost" href="${esc(v.link)}" target="_blank" rel="noopener" style="text-decoration:none">Testar link</a></div>
+    </div>`).join('') : '<p class="note">Nenhuma vaga esperando. Quando chegar, aparece aqui e você recebe o aviso.</p>'}
+    <h2 class="sec">Publicadas (${pub.length})</h2>
+    ${pub.map(v => `<div class="vg" data-id="${esc(v.id)}"><div class="vg-line"><div><b>${esc(v.titulo)}</b> · ${esc(v.empresa)} · ${esc(v.local)}
+      <div class="vg-meta" style="margin:4px 0 0">${v.inscricoesAte < hoje ? 'Prazo encerrado, já saiu do site' : 'No ar até ' + esc(v.inscricoesAte)} · <a href="../vagas/#${esc(v.id)}" target="_blank">ver no site</a></div></div>
+      <button class="del" data-acao="apagar">tirar do ar</button></div></div>`).join('') || '<p class="note">Nenhuma ainda.</p>'}
+    ${rec.length ? `<details style="margin-top:20px"><summary class="note" style="cursor:pointer">Recusadas (${rec.length})</summary>
+      ${rec.map(v => `<div class="vg" data-id="${esc(v.id)}"><div class="vg-line"><div>${esc(v.titulo)} · ${esc(v.empresa)} <span class="note">${esc(v.email)}</span></div>
+      <button class="del" data-acao="apagar">apagar</button></div></div>`).join('')}</details>` : ''}`;
+
+  $('#av-s').onclick = () => {
+    const email = $('#av').value.trim();
+    $('#av-m').textContent = 'Salvando...';
+    vpost({action:'aviso', senha, email, teste:true}).then(({ok, data}) => {
+      if (!ok) return $('#av-m').textContent = data.error || 'Erro';
+      AVISO = email; $('#av-m').textContent = email ? 'Salvo. Mandei um e-mail de teste.' : 'Avisos desligados.';
+    });
+  };
+  $('#conteudo').onclick = e => {
+    const b = e.target.closest('[data-acao]'); if (!b) return;
+    const card = b.closest('[data-id]'), id = card.dataset.id, acao = b.dataset.acao;
+    if (acao === 'apagar' && !confirm('Tirar esta vaga do site e apagar de vez?')) return;
+    if (acao === 'recusar' && !confirm('Recusar esta vaga? Ela não vai aparecer no site.')) return;
+    const vaga = {};
+    card.querySelectorAll('[data-k]').forEach(i => vaga[i.dataset.k] = i.value.trim());
+    if (vaga.tema) vaga.area = AREAS[vaga.tema];
+    b.disabled = true;
+    vpost({action:acao, senha, id, vaga}).then(({ok, data}) => {
+      if (!ok){ b.disabled = false; return alert(data.error || 'Erro'); }
+      carregar();
+    });
+  };
+}
+
+function painelContatos(){
   const vagas = [...new Set(LEADS.map(l => l.vaga).filter(Boolean))];
   const semExp = LEADS.filter(l => l.experiencia === 'nao').length;
   const semana = LEADS.filter(l => Date.now() - new Date(l.data) < 7 * 864e5).length;
-  $('#app').innerHTML = `<div class="wrap">
-    <h1>Contatos <span>das vagas</span></h1>
-    <p class="sub">Pessoas que preencheram o pop-up antes de se candidatar.</p>
+  $('#conteudo').innerHTML = `
+    <p class="sub" style="margin-top:16px">Pessoas que preencheram o pop-up antes de se candidatar.</p>
     <div class="kpis">
       <div class="kpi"><b>${LEADS.length}</b><span>Contatos</span></div>
       <div class="kpi"><b>${semana}</b><span>Últimos 7 dias</span></div>
@@ -90,8 +205,7 @@ function painel(){
       <button class="btn" id="csv">Baixar planilha</button>
     </div>
     <div class="tbl" id="tbl"></div>
-    <p class="note">Se alguém pedir para ter os dados apagados (LGPD), clique em "remover" na linha da pessoa.</p>
-  </div>`;
+    <p class="note">Se alguém pedir para ter os dados apagados (LGPD), clique em "remover" na linha da pessoa.</p>`;
   const filtrados = () => {
     const q = $('#q').value.toLowerCase(), ex = $('#exp').value, vg = $('#vg').value;
     return LEADS.filter(l => (!ex || l.experiencia === ex) && (!vg || l.vaga === vg) && (!q || (l.nome + ' ' + l.email + ' ' + l.funcao).toLowerCase().includes(q)));
