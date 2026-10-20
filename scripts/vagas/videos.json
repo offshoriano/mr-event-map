@@ -1,0 +1,70 @@
+{
+ "regras": [
+  ["seguranca", "seguran[cç]a|safety|hse|sms\\b|hsse|bombeiro"],
+  ["eletrica", "el[eé]tric|electric|instrument|automa[cç]|eletr[oô]nic|electronic|e&i"],
+  ["mecanica", "mec[aâ]nic|mechanic|caldeir|solda|welder|hidr[aá]ulic|manuten|maintenance|torneiro|ajustador|fitter|plataformista|irata"],
+  ["pocos", "sonda|perfura|drill|well|po[cç]o|sondador|torrista|wireline|mwd|lwd|completa|cimenta|fluid"],
+  ["maritimo", "conv[eé]s|deck|mar[ií]tim|marine|marinh|oficial de m|embarca[cç]|comandante|imediato|n[aá]utic|oficial|master|captain|rov|dp operator|moço|moco"],
+  ["hotelaria", "taifeir|cozinh|cook|camareir|hotelaria|steward|saloneir"],
+  ["operacao", "operador|operator|produ[cç][aã]o|production|sala de controle|control room|process"],
+  ["engenharia", "engenheir|engineer|engenharia"],
+  ["trainee", "trainee|est[aá]gi|intern|aprendiz|jovem"]
+ ],
+ "nomes": {
+  "seguranca": "Segurança", "eletrica": "Elétrica e instrumentação", "mecanica": "Mecânica e manutenção",
+  "pocos": "Perfuração e poços", "maritimo": "Marítimo", "hotelaria": "Hotelaria",
+  "operacao": "Operação e produção", "engenharia": "Engenharia", "trainee": "Trainee e estágio", "geral": "Outras"
+ },
+ "videos": {
+  "seguranca": [
+   {"id": "VzHXNdUlHVA", "titulo": "5 empresas para trabalhar embarcado como técnico de segurança", "porque": "Onde estão as vagas de segurança offshore e o que cada empresa pede."},
+   {"id": "Vn2yBVRC-t0", "titulo": "CBSP, o curso básico para trabalhar embarcado", "porque": "Sem CBSP não tem embarque. Veja como tirar."},
+   {"id": "eHqY18dRP8Q", "titulo": "Perguntas feitas em uma entrevista para vaga offshore", "porque": "As perguntas que mais aparecem e como responder."}
+  ],
+  "eletrica": [
+   {"id": "-35oTYToV2A", "titulo": "Eletricista marítimo, tudo que você precisa saber", "porque": "Rotina, certificações e salário de quem trabalha com elétrica embarcado."},
+   {"id": "TSUnVzxiBjU", "titulo": "3 empresas para trabalhar na área de elétrica e mecânica", "porque": "Quem mais contrata elétrica offshore hoje."},
+   {"id": "eHqY18dRP8Q", "titulo": "Perguntas feitas em uma entrevista para vaga offshore", "porque": "As perguntas que mais aparecem e como responder."}
+  ],
+  "mecanica": [
+   {"id": "3yOdA-HnSeg", "titulo": "Se você é mecânico, precisa ver esse vídeo", "porque": "O que não pode faltar no currículo de um mecânico para passar na triagem."},
+   {"id": "vN0tv-N_fSo", "titulo": "Manutenção offshore, cursos que fazem diferença", "porque": "Os cursos que separam quem embarca de quem fica na fila."},
+   {"id": "eHqY18dRP8Q", "titulo": "Perguntas feitas em uma entrevista para vaga offshore", "porque": "As perguntas que mais aparecem e como responder."}
+  ],
+  "pocos": [
+   {"id": "bFgYyXPn2Bc", "titulo": "10 empresas de perfuração para trabalhar embarcado", "porque": "Quem opera sonda no Brasil e contrata gente nova."},
+   {"id": "s0IT2LuUGvo", "titulo": "10 equipamentos de perfuração que você precisa conhecer", "porque": "O vocabulário que a entrevista técnica cobra."},
+   {"id": "eHqY18dRP8Q", "titulo": "Perguntas feitas em uma entrevista para vaga offshore", "porque": "As perguntas que mais aparecem e como responder."}
+  ],
+  "maritimo": [
+   {"id": "-Fg2KN6627E", "titulo": "Quanto ganha um homem de área e um operador de convés", "porque": "Salário real de quem começa no marítimo."},
+   {"id": "B6KcYo0ZA5M", "titulo": "Operador de convés trainee, como conquistar a vaga", "porque": "O passo a passo de quem entrou sem experiência."},
+   {"id": "ZEIQ2xRUfqQ", "titulo": "O inglês que todo trabalhador offshore fala", "porque": "A bordo de embarcação estrangeira, o inglês é cobrado no dia a dia."}
+  ],
+  "hotelaria": [
+   {"id": "lz5Da9ACjyY", "titulo": "O que é taifeiro e o que é saloneiro", "porque": "Como funciona a hotelaria a bordo e quem contrata."},
+   {"id": "31OGhlFoE9Y", "titulo": "Iniciar como taifeiro, banco de talentos e idade para embarcar", "porque": "As dúvidas mais comuns de quem quer começar pela hotelaria."},
+   {"id": "Vn2yBVRC-t0", "titulo": "CBSP, o curso básico para trabalhar embarcado", "porque": "Sem CBSP não tem embarque. Veja como tirar."}
+  ],
+  "operacao": [
+   {"id": "QK0V7T28G5Q", "titulo": "Onde trabalhar embarcado, produção", "porque": "As empresas que mais contratam operador de produção."},
+   {"id": "kJZqpRE1bvY", "titulo": "Operador de produção trainee, Altera e Ocyan", "porque": "Como funciona o cadastro e o processo seletivo de operação."},
+   {"id": "eHqY18dRP8Q", "titulo": "Perguntas feitas em uma entrevista para vaga offshore", "porque": "As perguntas que mais aparecem e como responder."}
+  ],
+  "engenharia": [
+   {"id": "9ZlICqIBUMg", "titulo": "Como conquistar uma vaga de engenheiro trainee offshore", "porque": "O que as operadoras olham no currículo de engenharia."},
+   {"id": "ZEIQ2xRUfqQ", "titulo": "O inglês que todo trabalhador offshore fala", "porque": "Multinacional cobra inglês já na primeira entrevista."},
+   {"id": "_JguAbT9zDs", "titulo": "Como se dar bem em uma entrevista para vaga offshore", "porque": "Postura e respostas que fazem diferença na reta final."}
+  ],
+  "trainee": [
+   {"id": "4eWz_1hX3OI", "titulo": "10 empresas offshore que contratam sem experiência", "porque": "Quem abre porta para o primeiro embarque."},
+   {"id": "iKkxsnu9rZ8", "titulo": "Como trabalhar embarcado mesmo sem experiência", "porque": "O caminho mais curto para quem está começando."},
+   {"id": "sMTU-gjxcLU", "titulo": "Como alinhar meu currículo para uma vaga offshore", "porque": "Ajuste o currículo para a vaga antes de clicar em candidatar."}
+  ],
+  "geral": [
+   {"id": "sMTU-gjxcLU", "titulo": "Como alinhar meu currículo para uma vaga offshore", "porque": "Ajuste o currículo para a vaga antes de clicar em candidatar."},
+   {"id": "eHqY18dRP8Q", "titulo": "Perguntas feitas em uma entrevista para vaga offshore", "porque": "As perguntas que mais aparecem e como responder."},
+   {"id": "ZEIQ2xRUfqQ", "titulo": "O inglês que todo trabalhador offshore fala", "porque": "O vocabulário que você usa a bordo e na entrevista."}
+  ]
+ }
+}
