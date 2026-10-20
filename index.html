@@ -381,7 +381,7 @@ input[type="date"],input[type="time"]{color-scheme:dark;}
   <div class="nav-links">
     <a href="#calendar-main" class="on">Agenda</a>
     <a href="vagas/">Vagas</a>
-    <a href="anp/"><span class="l">Radar Offshore</span><span class="s">Radar</span></a>
+    <a href="radar/"><span class="l">Radar Offshore</span><span class="s">Radar</span></a>
     <a href="guia/"><span class="l">Guia 7 Passos</span><span class="s">Guia</span></a>
   </div>
   <button class="nav-btn solid" onclick="openDiagModal()"><span class="l">Quero diagnóstico</span></button>
@@ -399,7 +399,7 @@ input[type="date"],input[type="time"]{color-scheme:dark;}
   <p class="hero-sub">Os eventos do setor, os dados oficiais da produção e as oportunidades de carreira. Em um só lugar, atualizado toda semana.</p>
   <div class="hub">
     <a href="#calendar-main"><span class="k">Onde estar</span><b>Agenda</b><p>Feiras, conferências e os encontros da noite que ninguém divulga.</p><span class="who">Para todo o setor</span></a>
-    <a href="anp/"><span class="k">O que está mudando</span><b>Radar Offshore</b><p>Produção, plataformas, sondas e blocos, com dados oficiais da ANP.</p><span class="who">Para todo o setor</span></a>
+    <a href="radar/"><span class="k">O que está mudando</span><b>Radar Offshore</b><p>Produção, plataformas, sondas e blocos, com dados oficiais da ANP.</p><span class="who">Para todo o setor</span></a>
     <a href="vagas/"><span class="k">Quem está contratando</span><b>Vagas</b><p>Vagas selecionadas, cada uma com vídeo de preparação.</p><span class="who">Para profissionais</span></a>
     <a href="guia/"><span class="k">Como entrar</span><b>Guia 7 Passos</b><p>O caminho para o primeiro embarque, na ordem certa.</p><span class="who">Para quem quer embarcar</span></a>
   </div>
@@ -1082,7 +1082,7 @@ function makeGCalLink(title, start, end, location) {
     action: 'TEMPLATE', text: title,
     dates: toICalDate(start) + '/' + toICalDate(end),
     location: location || '',
-    details: 'Evento do setor de óleo & gás. Veja mais em mreventmap.com.br'
+    details: 'Evento do setor de óleo & gás. Veja mais em mrgroup.com.br'
   });
   return 'https://calendar.google.com/calendar/render?' + p.toString();
 }
@@ -1092,10 +1092,10 @@ function downloadIcal(key, title, start, end, location) {
   const stamp = toICalDate(now) + 'T' + String(now.getUTCHours()).padStart(2,'0') + String(now.getUTCMinutes()).padStart(2,'0') + String(now.getUTCSeconds()).padStart(2,'0') + 'Z';
   const ical = [
     'BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//MR Solutions Event Map//EN',
-    'BEGIN:VEVENT','UID:' + Date.now() + '@mreventmap.com.br','DTSTAMP:' + stamp,
+    'BEGIN:VEVENT','UID:' + Date.now() + '@mrgroup.com.br','DTSTAMP:' + stamp,
     'DTSTART;VALUE=DATE:' + toICalDate(start),'DTEND;VALUE=DATE:' + toICalDate(end),
     'SUMMARY:' + title,'LOCATION:' + (location || ''),
-    'DESCRIPTION:Evento do setor de óleo & gás. Veja mais em mreventmap.com.br',
+    'DESCRIPTION:Evento do setor de óleo & gás. Veja mais em mrgroup.com.br',
     'END:VEVENT','END:VCALENDAR'
   ].join('\r\n');
   const blob = new Blob([ical], { type: 'text/calendar;charset=utf-8' });
