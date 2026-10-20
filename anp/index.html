@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Radar Offshore · MR Solutions</title>
+<meta name="description" content="Produção, plataformas, sondas e exploração de petróleo e gás no Brasil, com dados oficiais da ANP.">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BBGCSZ37C4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-BBGCSZ37C4');
+</script>
+<style>
+:root {
+  --black:#090C10; --deep:#0D1117; --card:#111820; --card2:#141D27;
+  --border:#1C2733; --border2:#243040;
+  --gold:#C9933A; --gold-l:#E8B86D; --gold-d:rgba(201,147,58,0.14);
+  --white:#EEE9E2; --muted:#7A8FA6; --muted2:#A0B2C4;
+  /* séries validadas contra a superfície dos cards (#111820) */
+  --s-oil:#BC8A33; --s-gas:#3987e5; --s-3:#199e70; --s-off:#2E3B4A;
+  --up:#0ca30c; --down:#d03b3b;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--deep);color:var(--white);overflow-x:hidden;}
+a{color:var(--gold-l);}
+
+nav{position:sticky;top:0;z-index:500;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 48px;
+  background:rgba(9,12,16,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--border);}
+.nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:13px;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap;}
+.nav-logo span{color:var(--gold);}
+.tabs{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;}
+.tabs::-webkit-scrollbar{display:none;}
+.tab{font-family:'Syne',sans-serif;font-weight:700;font-size:10px;letter-spacing:.16em;text-transform:uppercase;white-space:nowrap;
+  padding:9px 14px;border-radius:2px;cursor:pointer;border:1px solid transparent;background:none;color:var(--muted);transition:.2s;}
+.tab:hover{color:var(--white);}
+.tab.on{color:var(--black);background:var(--gold);}
+.nav-back{font-family:'Syne',sans-serif;font-weight:700;font-size:10px;letter-spacing:.16em;text-transform:uppercase;white-space:nowrap;
+  color:var(--muted);text-decoration:none;border:1px solid var(--border);padding:9px 14px;border-radius:2px;}
+.nav-back:hover{color:var(--white);border-color:var(--border2);}
+
+header.hero{position:relative;padding:72px 48px 40px;max-width:1240px;margin:0 auto;}
+.eyebrow{display:inline-block;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);
+  border:1px solid rgba(201,147,58,.3);padding:7px 18px;border-radius:2px;background:rgba(201,147,58,.05);margin-bottom:22px;}
+h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(56px,9vw,112px);line-height:.9;letter-spacing:.02em;}
+h1 .l2{color:var(--gold);}
+.hero-sub{max-width:620px;margin-top:18px;font-size:15px;line-height:1.75;color:var(--muted2);font-weight:300;}
+
+main{max-width:1240px;margin:0 auto;padding:0 48px 100px;}
+.panel{display:none;}
+.panel.on{display:block;animation:fade .35s ease both;}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+.sec-title{font-family:'Syne',sans-serif;font-weight:800;font-size:15px;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);
+  margin:40px 0 6px;}
+.sec-sub{font-size:13px;color:var(--muted);margin-bottom:18px;line-height:1.6;}
+
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+.kpi{background:var(--card);border:1px solid var(--border);border-radius:2px;padding:20px 22px;}
+.kpi-label{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);}
+.kpi-num{font-family:'Bebas Neue',sans-serif;font-size:46px;line-height:1;margin-top:10px;color:var(--white);}
+.kpi-num small{font-family:'DM Sans',sans-serif;font-size:13px;color:var(--muted2);margin-left:6px;letter-spacing:0;}
+.kpi-delta{font-size:12px;color:var(--muted2);margin-top:8px;display:flex;gap:12px;flex-wrap:wrap;}
+.d-up{color:#5ccf5c;} .d-down{color:#ef7a7a;}
+
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.card{background:var(--card);border:1px solid var(--border);border-radius:2px;padding:22px 22px 18px;min-width:0;}
+.card-h{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap;margin-bottom:14px;}
+.card-t{font-family:'Syne',sans-serif;font-weight:700;font-size:14px;color:var(--white);}
+.card-s{font-size:12px;color:var(--muted);margin-top:4px;}
+.legend{display:flex;gap:16px;flex-wrap:wrap;font-size:12px;color:var(--muted2);}
+.legend i{display:inline-block;width:12px;height:3px;border-radius:2px;margin-right:6px;vertical-align:middle;}
+
+.ctrl{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:4px 0 14px;}
+.seg{display:inline-flex;border:1px solid var(--border2);border-radius:2px;overflow:hidden;}
+.seg button{font-family:'Syne',sans-serif;font-weight:700;font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+  background:none;border:none;color:var(--muted);padding:8px 12px;cursor:pointer;}
+.seg button.on{background:var(--gold-d);color:var(--gold-l);}
+select,input[type=search]{font-family:'DM Sans',sans-serif;font-size:13px;background:var(--card2);color:var(--white);
+  border:1px solid var(--border2);border-radius:2px;padding:8px 10px;max-width:100%;}
+input[type=search]{min-width:220px;}
+
+.insight{background:linear-gradient(135deg,rgba(201,147,58,.10),rgba(201,147,58,.02));border:1px solid rgba(201,147,58,.28);
+  border-radius:2px;padding:22px 24px;margin-top:12px;}
+.insight h3{font-family:'Syne',sans-serif;font-weight:800;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;}
+.insight p{font-size:14px;line-height:1.75;color:var(--white);margin-bottom:8px;}
+.insight p:last-child{margin-bottom:0;}
+
+svg.chart{display:block;width:100%;overflow:visible;}
+svg.chart text{font-family:'DM Sans',sans-serif;font-size:11px;fill:var(--muted);}
+.grid-line{stroke:var(--border);stroke-width:1;}
+.bars .row{cursor:default;}
+.bar-label{fill:var(--muted2)!important;font-size:12px!important;}
+.bar-val{fill:var(--white)!important;font-size:12px!important;}
+
+#tip{position:fixed;z-index:1000;pointer-events:none;background:#0A0F14;border:1px solid var(--border2);border-radius:2px;
+  padding:10px 12px;font-size:12px;line-height:1.55;color:var(--white);max-width:300px;opacity:0;transition:opacity .12s;box-shadow:0 8px 24px rgba(0,0,0,.4);}
+#tip b{font-family:'Syne',sans-serif;font-size:12px;}
+#tip .m{color:var(--muted2);}
+#tip i{display:inline-block;width:10px;height:3px;border-radius:2px;margin-right:6px;vertical-align:middle;}
+
+.tbl-wrap{overflow:auto;max-height:520px;border:1px solid var(--border);border-radius:2px;}
+table{width:100%;border-collapse:collapse;font-size:13px;}
+th{position:sticky;top:0;background:var(--card2);text-align:left;font-family:'Syne',sans-serif;font-weight:700;font-size:10px;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--muted2);padding:10px 12px;cursor:pointer;white-space:nowrap;border-bottom:1px solid var(--border2);}
+th.num,td.num{text-align:right;}
+td{padding:9px 12px;border-bottom:1px solid var(--border);color:var(--white);vertical-align:top;}
+td.m{color:var(--muted2);}
+tr:hover td{background:rgba(201,147,58,.04);}
+.chip{display:inline-block;font-size:10px;letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;border-radius:2px;white-space:nowrap;
+  border:1px solid var(--border2);color:var(--muted2);}
+.chip.warn{color:var(--gold-l);border-color:rgba(201,147,58,.4);background:var(--gold-d);}
+
+#map{height:520px;border:1px solid var(--border);border-radius:2px;background:#0A0F14;}
+.leaflet-popup-content-wrapper,.leaflet-popup-tip{background:#0A0F14;color:var(--white);border:1px solid var(--border2);border-radius:2px;}
+.leaflet-popup-content{font-family:'DM Sans',sans-serif;font-size:12px;line-height:1.6;margin:12px 14px;}
+.leaflet-popup-content b{font-family:'Syne',sans-serif;}
+.leaflet-container a.leaflet-popup-close-button{color:var(--muted);}
+.leaflet-control-attribution{background:rgba(9,12,16,.8)!important;color:var(--muted)!important;}
+.leaflet-control-attribution a{color:var(--muted2)!important;}
+
+.loading{padding:80px 0;text-align:center;color:var(--muted);font-size:13px;letter-spacing:.2em;text-transform:uppercase;}
+.note{font-size:12px;color:var(--muted);line-height:1.7;margin-top:10px;}
+
+footer{border-top:1px solid var(--border);padding:36px 48px;max-width:1240px;margin:0 auto;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;}
+.foot-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:13px;letter-spacing:.12em;text-transform:uppercase;}
+.foot-logo span{color:var(--gold);}
+.foot-copy{font-size:12px;color:var(--muted);line-height:1.7;max-width:640px;}
+
+@media (max-width:1480px){
+  nav{flex-wrap:wrap;row-gap:10px;}
+  .nav-logo{order:1;}
+  .nav-back{order:2;}
+  .tabs{order:3;width:100%;}
+}
+@media (max-width:900px){
+  nav{padding:12px 16px;}
+  .nav-logo{font-size:11px;letter-spacing:.06em;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;}
+  .nav-logo{order:1;}
+  .nav-back{order:2;}
+  .tabs{order:3;width:100%;}
+  header.hero{padding:44px 16px 24px;}
+  main{padding:0 16px 80px;}
+  footer{padding:28px 16px;}
+  .kpis{grid-template-columns:1fr 1fr;}
+  .grid2{grid-template-columns:1fr;}
+  .kpi-num{font-size:38px;}
+  #map{height:400px;}
+  input[type=search]{min-width:0;width:100%;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">MR Solutions <span>·</span> Radar Offshore</div>
+  <div class="tabs" id="tabs">
+    <button class="tab on" data-p="geral">Visão geral</button>
+    <button class="tab" data-p="campos">Campos e operadoras</button>
+    <button class="tab" data-p="plataformas">Plataformas</button>
+    <button class="tab" data-p="sondas">Sondas e poços</button>
+    <button class="tab" data-p="exploracao">Exploração</button>
+  </div>
+  <a class="nav-back" href="../">Event Map</a>
+</nav>
+
+<header class="hero">
+  <div class="eyebrow" id="eyebrow">Dados oficiais ANP</div>
+  <h1>Radar Offshore<br><span class="l2">Petróleo e gás no Brasil</span></h1>
+  <p class="hero-sub">Quanto o Brasil produz, quais campos e plataformas puxam o número, quantas sondas estão rodando e onde estão os próximos blocos. Tudo em um lugar, direto da base da ANP.</p>
+</header>
+
+<main id="app"><div class="loading">Carregando dados da ANP</div></main>
+
+<footer>
+  <div class="foot-logo">MR Solutions <span>·</span> Radar Offshore</div>
+  <div class="foot-copy">Fonte: Agência Nacional do Petróleo, Gás Natural e Biocombustíveis (ANP), painéis dinâmicos de Produção (Boletim Mensal), Instalações Marítimas, Poços na Fase de Produção e Fase de Exploração. Leitura, organização e análise: MR Solutions.</div>
+</footer>
+
+<div id="tip"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+const D = {};
+const BOE = 6.2898; // mil m³ de gás -> boe
+const C = {oil:'#BC8A33', gas:'#3987e5', s3:'#199e70', off:'#2E3B4A'};
+const MESES = ['jan','fev','mar','abr','mai','jun','jul','ago','set','out','nov','dez'];
+const MESES_L = ['janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setembro','outubro','novembro','dezembro'];
+
+const nf = (v, d=0) => v == null || isNaN(v) ? '·' : v.toLocaleString('pt-BR', {minimumFractionDigits:d, maximumFractionDigits:d});
+const pct = (v, d=1) => v == null || !isFinite(v) ? '·' : (v > 0 ? '+' : '') + nf(v*100, d) + '%';
+const mLabel = m => MESES[+m.slice(5)-1] + '/' + m.slice(2,4);
+const mLong = m => MESES_L[+m.slice(5)-1] + ' de ' + m.slice(0,4);
+const fmtDate = s => s ? s.slice(8,10) + '/' + s.slice(5,7) + '/' + s.slice(0,4) : '';
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const title = s => String(s||'').replace(/_/g, ' ').toLowerCase()
+  .replace(/(^|[\s\-\/(])([a-zà-ú])/g, (a,b,c) => b + c.toUpperCase())
+  .replace(/(?!^)\b(De|Da|Do|Dos|Das|E)\b/g, w => w.toLowerCase())
+  .replace(/\b(Fpso|Eco|Ss|Tlp|Bp|Cnooc|Bw|3r|Prio|Petrobras S\.a\.)\b/gi, w => w.toUpperCase());
+// Nome curto de empresa: "PETRÓLEO BRASILEIRO S.A. - PETROBRAS" -> "Petrobras"
+const opName = s => !s ? 'Não informado' : /PETROBRAS/i.test(s) ? 'Petrobras' : title(s)
+  .replace(/[\s,]*\b(Ltda|S\.?\s?A|S\/A)\.?\s*$/i, '').replace(/[\s,]*\b(Ltda|S\.?\s?A)\.?\s*$/i, '')
+  .replace(/Totalenergies/i, 'TotalEnergies').replace(/\bEp\b/g, 'EP').trim();
+const sum = a => a.reduce((x,y) => x + (y||0), 0);
+const deltaHTML = (v, label) => v == null || !isFinite(v) ? '' :
+  `<span style="white-space:nowrap"><span class="${v >= 0 ? 'd-up' : 'd-down'}">${v >= 0 ? '▲' : '▼'} ${pct(v)}</span> ${label}</span>`;
+
+/* ---------- tooltip ---------- */
+const tip = document.getElementById('tip');
+function showTip(e, html){
+  tip.innerHTML = html; tip.style.opacity = 1;
+  const r = tip.getBoundingClientRect(), pad = 14;
+  let x = e.clientX + pad, y = e.clientY + pad;
+  if (x + r.width > innerWidth - 8) x = e.clientX - r.width - pad;
+  if (y + r.height > innerHeight - 8) y = e.clientY - r.height - pad;
+  tip.style.left = Math.max(8, x) + 'px'; tip.style.top = Math.max(8, y) + 'px';
+}
+const hideTip = () => tip.style.opacity = 0;
+
+/* ---------- gráficos SVG ---------- */
+const NS = 'http://www.w3.org/2000/svg';
+function el(tag, attrs={}, parent){
+  const n = document.createElementNS(NS, tag);
+  for (const k in attrs) n.setAttribute(k, attrs[k]);
+  if (parent) parent.appendChild(n);
+  return n;
+}
+// Escala do eixo: 4 ou 5 intervalos de valor redondo, o que deixar menos folga
+function niceScale(v){
+  if (v <= 0) return [4, 4];
+  let best = null;
+  for (const n of [4, 5]){
+    const raw = v / n, p = Math.pow(10, Math.floor(Math.log10(raw))), f = raw / p;
+    const top = (f <= 1 ? 1 : f <= 2 ? 2 : f <= 2.5 ? 2.5 : f <= 5 ? 5 : 10) * p * n;
+    if (!best || top < best[0]) best = [top, n];
+  }
+  return best;
+}
+
+// Linhas com crosshair. series: [{name, color, values}]
+function lineChart(host, {labels, series, fmt = v => nf(v), h = 280, tipLabel = l => l, xTicks = 6, yMin = 0}){
+  host.innerHTML = '';
+  const w = host.clientWidth || 600, m = {t:10, r:12, b:26, l:48};
+  const svg = el('svg', {class:'chart', viewBox:`0 0 ${w} ${h}`, height:h}, host);
+  const all = series.flatMap(s => s.values).filter(v => v != null);
+  const [max, nt] = niceScale(Math.max(...all) * 1.02), min = yMin;
+  const X = i => m.l + (labels.length < 2 ? 0 : i * (w - m.l - m.r) / (labels.length - 1));
+  const Y = v => m.t + (h - m.t - m.b) * (1 - (v - min) / (max - min));
+  for (let k = 0; k <= nt; k++){
+    const v = min + (max - min) * k / nt;
+    el('line', {x1:m.l, x2:w-m.r, y1:Y(v), y2:Y(v), class:'grid-line'}, svg);
+    el('text', {x:m.l-8, y:Y(v)+4, 'text-anchor':'end'}, svg).textContent = fmt(v);
+  }
+  const step = Math.max(1, Math.ceil(labels.length / xTicks));
+  labels.forEach((l, i) => {
+    if (i % step && i !== labels.length - 1) return;
+    if (i !== labels.length - 1 && labels.length - 1 - i < step * .6) return;
+    el('text', {x:X(i), y:h-6, 'text-anchor': i === 0 ? 'start' : i === labels.length-1 ? 'end' : 'middle'}, svg).textContent = l;
+  });
+  series.forEach((s, si) => {
+    let d = '';
+    s.values.forEach((v, i) => { if (v == null) return; d += (d && s.values[i-1] != null ? 'L' : 'M') + X(i).toFixed(1) + ',' + Y(v).toFixed(1); });
+    if (si === 0 && series.length === 1){
+      const first = s.values.findIndex(v => v != null);
+      el('path', {d: d + `L${X(s.values.length-1)},${Y(min)}L${X(first)},${Y(min)}Z`, fill:s.color, opacity:.10}, svg);
+    }
+    el('path', {d, fill:'none', stroke:s.color, 'stroke-width':2, 'stroke-linejoin':'round', 'stroke-linecap':'round'}, svg);
+  });
+  const cross = el('line', {y1:m.t, y2:h-m.b, stroke:'#5b6b7d', 'stroke-width':1, opacity:0}, svg);
+  const dots = series.map(s => el('circle', {r:4.5, fill:s.color, stroke:'#111820', 'stroke-width':2, opacity:0}, svg));
+  const hit = el('rect', {x:m.l, y:0, width:w-m.l-m.r, height:h, fill:'transparent'}, svg);
+  hit.addEventListener('mousemove', e => {
+    const r = svg.getBoundingClientRect(), px = (e.clientX - r.left) * w / r.width;
+    const i = Math.max(0, Math.min(labels.length-1, Math.round((px - m.l) / ((w - m.l - m.r) / Math.max(1, labels.length-1)))));
+    cross.setAttribute('x1', X(i)); cross.setAttribute('x2', X(i)); cross.setAttribute('opacity', 1);
+    series.forEach((s, k) => {
+      const v = s.values[i];
+      dots[k].setAttribute('opacity', v == null ? 0 : 1);
+      if (v != null){ dots[k].setAttribute('cx', X(i)); dots[k].setAttribute('cy', Y(v)); }
+    });
+    showTip(e, `<b>${tipLabel(labels[i], i)}</b><br>` + series.map(s =>
+      `<i style="background:${s.color}"></i>${s.name}: <b>${fmt(s.values[i])}</b>`).join('<br>'));
+  });
+  hit.addEventListener('mouseleave', () => { cross.setAttribute('opacity', 0); dots.forEach(d => d.setAttribute('opacity', 0)); hideTip(); });
+}
+
+// Barras horizontais ranqueadas. items: [{label, value, tip, color}]
+function barChart(host, items, {fmt = v => nf(v), color = C.oil, labelW} = {}){
+  host.innerHTML = '';
+  const w = host.clientWidth || 600, rowH = 26, gap = 2, h = items.length * (rowH + gap) + 4;
+  const lw = labelW || Math.min(190, Math.max(110, w * .34)), vw = 64;
+  const svg = el('svg', {class:'chart bars', viewBox:`0 0 ${w} ${h}`, height:h}, host);
+  const max = Math.max(...items.map(i => i.value), 0) || 1;
+  items.forEach((it, i) => {
+    const y = i * (rowH + gap), g = el('g', {class:'row'}, svg);
+    const bw = Math.max(2, (w - lw - vw - 8) * it.value / max);
+    const lab = el('text', {x:lw - 10, y:y + rowH/2 + 4, 'text-anchor':'end', class:'bar-label'}, g);
+    const maxCh = Math.max(8, Math.floor((lw - 14) / 6.4));
+    lab.textContent = it.label.length > maxCh ? it.label.slice(0, maxCh - 1) + '…' : it.label;
+    const x0 = lw, r = Math.min(4, bw / 2);
+    el('path', {d:`M${x0},${y+5}H${x0+bw-r}Q${x0+bw},${y+5} ${x0+bw},${y+5+r}V${y+rowH-5-r}Q${x0+bw},${y+rowH-5} ${x0+bw-r},${y+rowH-5}H${x0}Z`,
+      fill: it.color || color}, g);
+    el('text', {x:x0 + bw + 8, y:y + rowH/2 + 4, class:'bar-val'}, g).textContent = fmt(it.value);
+    const hit = el('rect', {x:0, y, width:w, height:rowH + gap, fill:'transparent'}, g);
+    hit.addEventListener('mousemove', e => showTip(e, it.tip || `<b>${esc(it.label)}</b><br>${fmt(it.value)}`));
+    hit.addEventListener('mouseleave', hideTip);
+  });
+}
+
+// Colunas verticais (contagens por ano etc.)
+function colChart(host, labels, values, {fmt = v => nf(v), color = C.oil, h = 240, tipFn} = {}){
+  host.innerHTML = '';
+  const w = host.clientWidth || 600, m = {t:16, r:6, b:26, l:40};
+  const svg = el('svg', {class:'chart', viewBox:`0 0 ${w} ${h}`, height:h}, host);
+  const [max, nt] = niceScale(Math.max(...values, 1));
+  const Y = v => m.t + (h - m.t - m.b) * (1 - v / max);
+  for (let k = 0; k <= nt; k++){
+    const v = max * k / nt;
+    el('line', {x1:m.l, x2:w-m.r, y1:Y(v), y2:Y(v), class:'grid-line'}, svg);
+    el('text', {x:m.l-8, y:Y(v)+4, 'text-anchor':'end'}, svg).textContent = fmt(v);
+  }
+  const slot = (w - m.l - m.r) / labels.length, bw = Math.max(3, Math.min(34, slot - 2));
+  const step = Math.ceil(labels.length / Math.max(4, Math.floor(w / 56)));
+  labels.forEach((l, i) => {
+    const x = m.l + i * slot + (slot - bw) / 2, v = values[i], y = Y(v), bh = h - m.b - y, r = Math.min(4, bw/2, bh);
+    if (v > 0) el('path', {d:`M${x},${h-m.b}V${y+r}Q${x},${y} ${x+r},${y}H${x+bw-r}Q${x+bw},${y} ${x+bw},${y+r}V${h-m.b}Z`, fill:color}, svg);
+    if (i % step === 0 || i === labels.length - 1) el('text', {x:x + bw/2, y:h-8, 'text-anchor':'middle'}, svg).textContent = l;
+    const hit = el('rect', {x:m.l + i*slot, y:m.t, width:slot, height:h-m.t-m.b, fill:'transparent'}, svg);
+    hit.addEventListener('mousemove', e => showTip(e, tipFn ? tipFn(i) : `<b>${l}</b><br>${fmt(v)}`));
+    hit.addEventListener('mouseleave', hideTip);
+  });
+}
+
+// Tabela ordenável. cols: [{k, t, num, f}]
+function table(host, rows, cols, {sortK, desc = true, limit = 400} = {}){
+  let sk = sortK || cols[0].k, sd = desc;
+  const draw = () => {
+    const r = [...rows].sort((a, b) => {
+      const x = a[sk], y = b[sk];
+      if (x == null) return 1; if (y == null) return -1;
+      return (typeof x === 'number' ? x - y : String(x).localeCompare(String(y), 'pt-BR')) * (sd ? -1 : 1);
+    }).slice(0, limit);
+    host.innerHTML = `<div class="tbl-wrap"><table><thead><tr>${cols.map(c =>
+      `<th class="${c.num ? 'num' : ''}" data-k="${c.k}">${c.t}${c.k === sk ? (sd ? ' ↓' : ' ↑') : ''}</th>`).join('')}</tr></thead><tbody>${
+      r.map(o => `<tr>${cols.map(c => `<td class="${c.num ? 'num' : ''} ${c.muted ? 'm' : ''}">${c.f ? c.f(o[c.k], o) : esc(o[c.k])}</td>`).join('')}</tr>`).join('')
+      }</tbody></table></div>` + (rows.length > limit ? `<p class="note">Mostrando ${limit} de ${nf(rows.length)}. Use a busca para filtrar.</p>` : '');
+    host.querySelectorAll('th').forEach(th => th.onclick = () => {
+      const k = th.dataset.k; sd = k === sk ? !sd : true; sk = k; draw();
+    });
+  };
+  draw();
+}
+
+function seg(host, options, value, onChange){
+  host.innerHTML = '<div class="seg">' + options.map(([v, l]) => `<button data-v="${v}" class="${v === value ? 'on' : ''}">${l}</button>`).join('') + '</div>';
+  host.querySelectorAll('button').forEach(b => b.onclick = () => {
+    host.querySelectorAll('button').forEach(x => x.classList.toggle('on', x === b));
+    onChange(b.dataset.v);
+  });
+}
+const $ = s => document.querySelector(s);
+const redraws = [];
+let rt; addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(() => redraws.forEach(f => f()), 150); });
+function live(f){ redraws.push(f); f(); }
+
+/* ---------- painéis ---------- */
+function buildGeral(){
+  const P = D.producao, S = P.serie, last = S[S.length-1], prev = S[S.length-2], ya = S[S.length-13];
+  const ueps = P.ueps.filter(u => u.oil[u.oil.length-1] > 0);
+  const top = [...P.campos].sort((a,b) => b.oil.at(-1) - a.oil.at(-1));
+  const topU = [...P.ueps].sort((a,b) => b.oil.at(-1) - a.oil.at(-1))[0];
+  const rec = Math.max(...S.slice(0,-1).map(s => s.oil));
+  const sondas = D.pocos.sondas.length;
+  const boe = last.oil + last.gas * BOE;
+
+  $('#p-geral').innerHTML = `
+    <div class="sec-title">${mLong(last.m)}</div>
+    <div class="sec-sub">Último mês consolidado pela ANP no Boletim Mensal de Produção.</div>
+    <div class="kpis">
+      <div class="kpi"><div class="kpi-label">Petróleo</div><div class="kpi-num">${nf(last.oil/1000,2)}<small>milhões bbl/d</small></div>
+        <div class="kpi-delta">${deltaHTML(last.oil/prev.oil-1,'no mês')}${deltaHTML(last.oil/ya.oil-1,'em 12 meses')}</div></div>
+      <div class="kpi"><div class="kpi-label">Gás natural</div><div class="kpi-num">${nf(last.gas,0)}<small>milhões m³/d</small></div>
+        <div class="kpi-delta">${deltaHTML(last.gas/prev.gas-1,'no mês')}${deltaHTML(last.gas/ya.gas-1,'em 12 meses')}</div></div>
+      <div class="kpi"><div class="kpi-label">Óleo equivalente</div><div class="kpi-num">${nf(boe/1000,2)}<small>milhões boe/d</small></div>
+        <div class="kpi-delta"><span>${nf(last.oilM/last.oil*100,1)}% do petróleo vem do mar</span></div></div>
+      <div class="kpi"><div class="kpi-label">Pré-sal</div><div class="kpi-num">${nf(last.pre/last.oil*100,1)}<small>% do petróleo</small></div>
+        <div class="kpi-delta"><span>${nf(last.pre/1000,2)} milhões bbl/d</span></div></div>
+      <div class="kpi"><div class="kpi-label">Plataformas produzindo</div><div class="kpi-num">${ueps.length}<small>no mar</small></div>
+        <div class="kpi-delta"><span>com produção reportada no mês</span></div></div>
+      <div class="kpi"><div class="kpi-label">Sondas em operação</div><div class="kpi-num">${sondas}<small>terra e mar</small></div>
+        <div class="kpi-delta"><span>em ${fmtDate(D.pocos.sondasData)}</span></div></div>
+      <div class="kpi"><div class="kpi-label">Campos produtores</div><div class="kpi-num">${P.campos.filter(c => c.oil.at(-1) + c.gas.at(-1) > 0).length}</div>
+        <div class="kpi-delta"><span>com produção no mês</span></div></div>
+      <div class="kpi"><div class="kpi-label">Aproveitamento de gás</div><div class="kpi-num">${nf(last.aprov*100,1)}<small>%</small></div>
+        <div class="kpi-delta"><span>queima de ${nf(last.queima,1)} milhões m³/d</span></div></div>
+    </div>
+
+    <div class="insight">
+      <h3>Leitura MR</h3>
+      <p>O Brasil produziu ${nf(last.oil/1000,2)} milhões de barris de petróleo por dia em ${mLong(last.m)}${
+        last.oil > rec ? ', o maior volume de toda a série histórica da ANP desde 2010' : `, ${nf((1-last.oil/rec)*100,1)}% abaixo do recorde da série`}. Em doze meses, a variação foi de ${pct(last.oil/ya.oil-1)}.</p>
+      <p>${top[0].n} lidera entre os campos com ${nf(top[0].oil.at(-1)/1000,0)} mil barris por dia, seguido por ${top[1].n} e ${top[2].n}. Só esses três respondem por ${nf(sum(top.slice(0,3).map(c=>c.oil.at(-1)))/(last.oil*1000)*100,0)}% do petróleo do país.</p>
+      <p>A plataforma que mais produziu no mês foi a ${title(topU.n)}, com ${nf(topU.oil.at(-1)/1000,0)} mil barris por dia. O pré-sal já responde por ${nf(last.pre/last.oil*100,0)} de cada 100 barris produzidos.</p>
+    </div>
+
+    <div class="sec-title">Histórico de produção</div>
+    <div class="ctrl" id="g-range"></div>
+    <div class="grid2">
+      <div class="card"><div class="card-h"><div><div class="card-t">Petróleo</div><div class="card-s">milhares de barris por dia</div></div>
+        <div class="legend"><span><i style="background:${C.oil}"></i>Total Brasil</span><span><i style="background:${C.s3}"></i>Pré-sal</span></div></div>
+        <div id="g-oil"></div></div>
+      <div class="card"><div class="card-h"><div><div class="card-t">Gás natural</div><div class="card-s">milhões de m³ por dia</div></div>
+        <div class="legend"><span><i style="background:${C.gas}"></i>Total Brasil</span><span><i style="background:${C.s3}"></i>Pré-sal</span></div></div>
+        <div id="g-gas"></div></div>
+    </div>
+    <p class="note">Pré-sal conforme a classificação de zona produtora da ANP, disponível na série a partir de agosto de 2014.</p>`;
+
+  let range = '60';
+  const draw = () => {
+    const s = range === 'all' ? S : S.slice(-+range);
+    const labels = s.map(x => mLabel(x.m));
+    lineChart($('#g-oil'), {labels, tipLabel:(l,i) => mLong(s[i].m), series:[
+      {name:'Total Brasil', color:C.oil, values:s.map(x => x.oil)},
+      {name:'Pré-sal', color:C.s3, values:s.map(x => x.pre)}], fmt:v => nf(v)});
+    lineChart($('#g-gas'), {labels, tipLabel:(l,i) => mLong(s[i].m), series:[
+      {name:'Total Brasil', color:C.gas, values:s.map(x => x.gas)},
+      {name:'Pré-sal', color:C.s3, values:s.map(x => x.gasPre)}], fmt:v => nf(v,0)});
+  };
+  seg($('#g-range'), [['13','12 meses'],['60','5 anos'],['120','10 anos'],['all','Desde 2010']], range, v => { range = v; draw(); });
+  live(draw);
+}
+
+function buildCampos(){
+  const P = D.producao, M = P.meses;
+  let mi = M.length - 1, amb = 'TODOS', metric = 'oil', bacia = '';
+  const bacias = [...new Set(P.campos.map(c => c.b).filter(Boolean))].sort();
+  $('#p-campos').innerHTML = `
+    <div class="sec-title">Campos e operadoras</div>
+    <div class="sec-sub">Quem produz e onde. Óleo equivalente soma petróleo e gás convertido (1 mil m³ de gás = 6,29 boe).</div>
+    <div class="ctrl">
+      <select id="c-mes">${M.map((m,i) => `<option value="${i}" ${i===mi?'selected':''}>${mLong(m)}</option>`).reverse().join('')}</select>
+      <select id="c-bacia"><option value="">Todas as bacias</option>${bacias.map(b => `<option>${esc(b)}</option>`).join('')}</select>
+      <span id="c-amb"></span><span id="c-met"></span>
+    </div>
+    <div class="grid2">
+      <div class="card"><div class="card-h"><div><div class="card-t">Os 15 maiores campos</div><div class="card-s" id="c-unit1"></div></div></div><div id="c-top"></div></div>
+      <div class="card"><div class="card-h"><div><div class="card-t">Operadoras</div><div class="card-s" id="c-unit2"></div></div></div><div id="c-ops"></div></div>
+    </div>
+    <div class="sec-title">Todos os campos</div>
+    <div class="ctrl"><input type="search" id="c-q" placeholder="Buscar campo, operadora ou bacia"></div>
+    <div id="c-tbl"></div>`;
+  const val = (c, i) => metric === 'oil' ? c.oil[i] : metric === 'gas' ? c.gas[i] : c.oil[i] + c.gas[i] * BOE;
+  const unit = () => metric === 'oil' ? 'barris por dia' : metric === 'gas' ? 'mil m³ por dia' : 'boe por dia';
+  const draw = () => {
+    const q = ($('#c-q').value || '').toLowerCase();
+    const rows = P.campos.filter(c => (amb === 'TODOS' || c.amb === amb) && (!bacia || c.b === bacia));
+    $('#c-unit1').textContent = $('#c-unit2').textContent = unit() + ', ' + mLong(M[mi]);
+    const top = rows.map(c => ({c, v:val(c, mi)})).filter(x => x.v > 0).sort((a,b) => b.v - a.v).slice(0,15);
+    barChart($('#c-top'), top.map(({c, v}) => ({label:c.n, value:v,
+      color: metric === 'gas' ? C.gas : C.oil,
+      tip:`<b>${esc(c.n)}</b><br><span class="m">${esc(opName(c.op))} · ${esc(c.b)} · ${c.amb === 'MAR' ? 'mar' : 'terra'}</span><br>Petróleo: <b>${nf(c.oil[mi])}</b> bbl/d<br>Gás: <b>${nf(c.gas[mi])}</b> mil m³/d`})),
+      {fmt: v => v >= 1e5 ? nf(v/1000,0) + ' mil' : nf(v)});
+    const ops = {};
+    rows.forEach(c => { const k = c.op || 'Não informado'; ops[opName(k)] = (ops[opName(k)] || 0) + val(c, mi); });
+    const tot = sum(Object.values(ops));
+    const opsTop = Object.entries(ops).filter(x => x[1] > 0).sort((a,b) => b[1] - a[1]).slice(0,15);
+    barChart($('#c-ops'), opsTop.map(([k, v]) => ({label:k, value:v, color: metric === 'gas' ? C.gas : C.oil,
+      tip:`<b>${esc(k)}</b><br>${nf(v)} ${unit()}<br><span class="m">${nf(v/tot*100,1)}% do total filtrado</span>`})),
+      {fmt: v => v >= 1e5 ? nf(v/1000,0) + ' mil' : nf(v)});
+    const yi = mi - 12;
+    const t = rows.filter(c => !q || (c.n + ' ' + c.op + ' ' + c.b).toLowerCase().includes(q))
+      .map(c => ({n:c.n, op:opName(c.op), b:c.b, amb:c.amb === 'MAR' ? 'Mar' : 'Terra', uf:c.uf, oil:c.oil[mi], gas:c.gas[mi], boe:Math.round(c.oil[mi] + c.gas[mi]*BOE),
+        va: yi >= 0 && (c.oil[yi] + c.gas[yi]*BOE) > 0 ? (c.oil[mi] + c.gas[mi]*BOE) / (c.oil[yi] + c.gas[yi]*BOE) - 1 : null}))
+      .filter(r => r.boe > 0);
+    table($('#c-tbl'), t, [
+      {k:'n', t:'Campo'}, {k:'op', t:'Operadora', muted:1}, {k:'b', t:'Bacia', muted:1}, {k:'amb', t:'Ambiente', muted:1},
+      {k:'oil', t:'Petróleo bbl/d', num:1, f:v => nf(v)}, {k:'gas', t:'Gás mil m³/d', num:1, f:v => nf(v,1)},
+      {k:'boe', t:'boe/d', num:1, f:v => nf(v)},
+      {k:'va', t:'Var. 12 meses', num:1, f:v => v == null ? '·' : `<span class="${v>=0?'d-up':'d-down'}">${pct(v)}</span>`}], {sortK:'boe'});
+  };
+  seg($('#c-amb'), [['TODOS','Terra e mar'],['MAR','Mar'],['TERRA','Terra']], amb, v => { amb = v; draw(); });
+  seg($('#c-met'), [['oil','Petróleo'],['gas','Gás'],['boe','boe']], metric, v => { metric = v; draw(); });
+  $('#c-mes').onchange = e => { mi = +e.target.value; draw(); };
+  $('#c-bacia').onchange = e => { bacia = e.target.value; draw(); };
+  $('#c-q').oninput = draw;
+  live(draw);
+}
+
+function buildPlataformas(){
+  const P = D.producao, M = P.meses, li = M.length - 1;
+  const prod = Object.fromEntries(P.ueps.map(u => [u.n.toUpperCase(), u]));
+  const anoAtual = +M[li].slice(0,4);
+  const inst = D.instalacoes.itens.map(x => {
+    const u = prod[x.n.toUpperCase()];
+    const oil = u ? u.oil[li] : 0, gas = u ? u.gas[li] : 0;
+    return {...x, nome:title(x.n), opT:opName(x.op), u, oil, gas,
+      boe:Math.round(oil + gas*BOE), uso: x.capO && oil ? oil / x.capO : null,
+      oil12: u && li >= 12 ? u.oil[li-12] : null,
+      fimProx: x.fim && x.fim <= anoAtual + 2};
+  });
+  const comProd = inst.filter(x => x.oil > 0).sort((a,b) => b.oil - a.oil);
+  const fimProx = inst.filter(x => x.fimProx);
+  $('#p-plataformas').innerHTML = `
+    <div class="sec-title">Plataformas em operação no mar</div>
+    <div class="sec-sub">${inst.length} unidades de produção marítimas cadastradas na ANP. Produção de ${mLong(M[li])}.</div>
+    <div class="kpis">
+      <div class="kpi"><div class="kpi-label">Unidades em operação</div><div class="kpi-num">${inst.length}</div>
+        <div class="kpi-delta"><span>${inst.filter(x => /FPSO/.test(x.t)).length} FPSOs</span></div></div>
+      <div class="kpi"><div class="kpi-label">Maior produtora</div><div class="kpi-num">${nf(comProd[0].oil/1000,0)}<small>mil bbl/d</small></div>
+        <div class="kpi-delta"><span>${esc(comProd[0].nome)}</span></div></div>
+      <div class="kpi"><div class="kpi-label">Top 10 concentram</div><div class="kpi-num">${nf(sum(comProd.slice(0,10).map(x=>x.oil))/sum(comProd.map(x=>x.oil))*100,0)}<small>%</small></div>
+        <div class="kpi-delta"><span>do petróleo produzido no mar</span></div></div>
+      <div class="kpi"><div class="kpi-label">Vida útil até ${anoAtual + 2}</div><div class="kpi-num">${fimProx.length}</div>
+        <div class="kpi-delta"><span>candidatas a extensão ou descomissionamento</span></div></div>
+    </div>
+    <div class="grid2" style="margin-top:12px">
+      <div class="card"><div class="card-h"><div><div class="card-t">As 20 plataformas que mais produzem</div><div class="card-s">petróleo, barris por dia</div></div></div><div id="pl-top"></div></div>
+      <div class="card"><div class="card-h"><div><div class="card-t">Mapa das unidades</div><div class="card-s">tamanho do ponto proporcional à produção em boe/d</div></div>
+        <div class="legend"><span><i style="background:${C.oil}"></i>Produzindo</span><span><i style="background:#5b6b7d"></i>Sem produção no mês</span></div></div><div id="map"></div></div>
+    </div>
+    <div class="sec-title">Todas as unidades</div>
+    <div class="ctrl"><input type="search" id="pl-q" placeholder="Buscar plataforma, operadora, campo ou bacia"><span id="pl-f"></span></div>
+    <div id="pl-tbl"></div>
+    <p class="note">Uso da capacidade = petróleo produzido no mês dividido pela capacidade de processamento de petróleo cadastrada na ANP. Ano de fim de vida útil conforme informado pela operadora.</p>`;
+
+  live(() => barChart($('#pl-top'), comProd.slice(0,20).map(x => ({label:x.nome.replace(/^Fpso /,'FPSO ').replace(/^Petrobras /,'P-'), value:x.oil,
+    tip:`<b>${esc(x.nome)}</b><br><span class="m">${esc(x.opT)} · ${esc(title(x.campos))}</span><br>Petróleo: <b>${nf(x.oil)}</b> bbl/d<br>Gás: <b>${nf(x.gas)}</b> mil m³/d` +
+      (x.uso ? `<br>Uso da capacidade: <b>${nf(x.uso*100,0)}%</b>` : '') + (x.oil12 ? `<br>12 meses antes: ${nf(x.oil12)} bbl/d` : '')})),
+    {fmt: v => nf(v/1000,0) + ' mil'}));
+
+  if (window.L){
+    const map = L.map('map', {scrollWheelZoom:false, attributionControl:true}).setView([-22.5, -40.5], 6);
+    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}',
+      {attribution:'Base: Esri, HERE, Garmin, OpenStreetMap', maxZoom:12}).addTo(map);
+    const maxB = Math.max(...inst.map(x => x.boe));
+    const pts = [];
+    [...inst].sort((a,b) => a.boe - b.boe).forEach(x => {
+      if (x.lat == null || x.lon == null) return;
+      pts.push([x.lat, x.lon]);
+      L.circleMarker([x.lat, x.lon], {radius: x.boe ? 4 + 12 * Math.sqrt(x.boe / maxB) : 4,
+        color:'#111820', weight:2, fillColor: x.boe ? C.oil : '#5b6b7d', fillOpacity:.9})
+        .bindPopup(`<b>${esc(x.nome)}</b> (${esc(x.sig)})<br>${esc(x.opT)}<br>Campos: ${esc(title(x.campos))}<br>Bacia de ${esc(x.b)} · lâmina d'água ${nf(x.lam)} m<br>` +
+          `Petróleo: <b>${nf(x.oil)}</b> bbl/d · Gás: <b>${nf(x.gas)}</b> mil m³/d` + (x.uso ? `<br>Uso da capacidade: ${nf(x.uso*100,0)}%` : '') +
+          `<br>Em operação desde ${x.ini || '·'}${x.fim ? ', vida útil até ' + x.fim : ''}`).addTo(map);
+    });
+    if (pts.length) map.fitBounds(pts, {padding:[20,20]});
+    redraws.push(() => map.invalidateSize());
+    document.querySelector('[data-p="plataformas"]').addEventListener('click', () => setTimeout(() => { map.invalidateSize(); if (pts.length) map.fitBounds(pts, {padding:[20,20]}); }, 60));
+  }
+
+  let filtro = 'all';
+  const draw = () => {
+    const q = ($('#pl-q').value || '').toLowerCase();
+    const rows = inst.filter(x => (filtro === 'all' || (filtro === 'fim' && x.fimProx) || (filtro === 'fpso' && /FPSO/.test(x.t)))
+      && (!q || (x.n + ' ' + x.sig + ' ' + x.op + ' ' + x.campos + ' ' + x.b).toLowerCase().includes(q)));
+    table($('#pl-tbl'), rows, [
+      {k:'nome', t:'Plataforma', f:(v,o) => esc(v) + `<br><span class="chip">${esc(o.sig)}</span>`},
+      {k:'opT', t:'Operadora', muted:1}, {k:'campos', t:'Campos', muted:1, f:v => esc(title(v))}, {k:'b', t:'Bacia', muted:1},
+      {k:'t', t:'Tipo', muted:1, f:v => esc((v||'').replace(/^.* - /,''))},
+      {k:'lam', t:'Lâmina m', num:1, f:v => nf(v)}, {k:'oil', t:'Petróleo bbl/d', num:1, f:v => nf(v)},
+      {k:'gas', t:'Gás mil m³/d', num:1, f:v => nf(v)}, {k:'uso', t:'Uso cap.', num:1, f:v => v == null ? '·' : nf(v*100,0) + '%'},
+      {k:'ini', t:'Início', num:1, f:v => v || '·'}, {k:'fim', t:'Vida útil', num:1, f:(v,o) => v ? (o.fimProx ? `<span class="chip warn">${v}</span>` : v) : '·'}], {sortK:'oil'});
+  };
+  seg($('#pl-f'), [['all','Todas'],['fpso','Só FPSOs'],['fim','Vida útil próxima do fim']], filtro, v => { filtro = v; draw(); });
+  $('#pl-q').oninput = draw;
+  draw();
+}
+
+function buildSondas(){
+  const W = D.pocos;
+  const hist = W.sondasHist, sondas = W.sondas.map(s => ({...s, opT:title(s.op), campos:title(s.campos)}));
+  const mar = sondas.filter(s => /Mar/i.test(s.amb)).length;
+  const anos = [...new Set(W.intervencoes.map(i => i.ano))].filter(a => +a >= 2013).sort();
+  const anoUlt = anos.at(-1);
+  $('#p-sondas').innerHTML = `
+    <div class="sec-title">Sondas em operação</div>
+    <div class="sec-sub">Sondas trabalhando em poços de campos já em produção (perfuração, completação, workover), conforme reportado diariamente à ANP. Retrato de ${fmtDate(W.sondasData)}.</div>
+    <div class="kpis">
+      <div class="kpi"><div class="kpi-label">Sondas em operação</div><div class="kpi-num">${sondas.length}</div><div class="kpi-delta"><span>${fmtDate(W.sondasData)}</span></div></div>
+      <div class="kpi"><div class="kpi-label">No mar</div><div class="kpi-num">${mar}</div><div class="kpi-delta"><span>sondas marítimas</span></div></div>
+      <div class="kpi"><div class="kpi-label">Em terra</div><div class="kpi-num">${sondas.length - mar}</div><div class="kpi-delta"><span>sondas terrestres</span></div></div>
+      <div class="kpi"><div class="kpi-label">Intervenções em ${anoUlt}</div><div class="kpi-num">${nf(sum(W.intervencoes.filter(i => i.ano === anoUlt).map(i => i.n)))}</div><div class="kpi-delta"><span>ano em andamento</span></div></div>
+    </div>
+    <div class="card" style="margin-top:12px"><div class="card-h"><div><div class="card-t">Sondas em operação por dia</div><div class="card-s">fase de produção, terra e mar</div></div><span id="s-range"></span></div><div id="s-hist"></div></div>
+    <div class="grid2" style="margin-top:12px">
+      <div class="card"><div class="card-h"><div><div class="card-t">Sondas por empresa</div><div class="card-s">dona ou operadora da sonda</div></div><span id="s-amb"></span></div><div id="s-emp"></div></div>
+      <div class="card"><div class="card-h"><div><div class="card-t">Intervenções em poços por ano</div><div class="card-s" id="s-int-s">mar</div></div><span id="s-iamb"></span></div><div id="s-int"></div>
+        <div class="card-t" style="margin-top:18px;font-size:13px">Quem mais interveio em ${anoUlt}</div><div id="s-intop" style="margin-top:10px"></div></div>
+    </div>
+    <div class="sec-title">Lista de sondas</div>
+    <div class="ctrl"><input type="search" id="s-q" placeholder="Buscar sonda, empresa ou campo"></div>
+    <div id="s-tbl"></div>
+    <div class="sec-title">Poços na fase de produção</div>
+    <div class="sec-sub">Situação atual dos poços cadastrados em campos de produção.</div>
+    <div class="grid2">
+      <div class="card"><div class="card-h"><div><div class="card-t">Poços por situação</div></div><span id="s-pamb"></span></div><div id="s-sit"></div></div>
+      <div class="card"><div class="card-h"><div><div class="card-t">Método de elevação</div><div class="card-s">poços com método informado</div></div></div><div id="s-me"></div></div>
+    </div>`;
+
+  let range = '365';
+  const drawH = () => {
+    const h = range === 'all' ? hist : hist.slice(-+range);
+    lineChart($('#s-hist'), {labels:h.map(x => fmtDate(x[0]).slice(3)), tipLabel:(l,i) => fmtDate(h[i][0]),
+      series:[{name:'Sondas', color:C.oil, values:h.map(x => x[1])}], h:240});
+  };
+  seg($('#s-range'), [['90','90 dias'],['365','1 ano'],['all','Tudo']], range, v => { range = v; drawH(); });
+  live(drawH);
+
+  let amb = 'all';
+  const drawE = () => {
+    const c = {};
+    sondas.filter(s => amb === 'all' || (amb === 'mar') === /Mar/i.test(s.amb)).forEach(s => c[s.opT] = (c[s.opT] || 0) + 1);
+    barChart($('#s-emp'), Object.entries(c).sort((a,b) => b[1] - a[1]).slice(0,14).map(([k,v]) => ({label:k, value:v,
+      tip:`<b>${esc(k)}</b><br>${v} sonda${v>1?'s':''}<br><span class="m">${esc(sondas.filter(s => s.opT === k).map(s => s.n).join(', '))}</span>`})));
+  };
+  seg($('#s-amb'), [['all','Todas'],['mar','Mar'],['terra','Terra']], amb, v => { amb = v; drawE(); });
+  live(drawE);
+
+  let iamb = 'MAR';
+  const drawI = () => {
+    const rows = W.intervencoes.filter(i => iamb === 'all' || i.amb === iamb);
+    $('#s-int-s').textContent = iamb === 'MAR' ? 'poços marítimos' : iamb === 'TERRA' ? 'poços terrestres' : 'terra e mar';
+    colChart($('#s-int'), anos, anos.map(a => sum(rows.filter(i => i.ano === a).map(i => i.n))), {h:200,
+      tipFn: k => { const r = rows.filter(i => i.ano === anos[k]), o = {};
+        r.forEach(i => o[i.obj] = (o[i.obj]||0) + i.n);
+        return `<b>${anos[k]}</b><br>${nf(sum(r.map(i=>i.n)))} intervenções<br>` + Object.entries(o).sort((a,b)=>b[1]-a[1]).slice(0,5).map(([k,v]) => `<span class="m">${esc(k)}: ${v}</span>`).join('<br>'); }});
+    const o = {};
+    rows.filter(i => i.ano === anoUlt).forEach(i => o[opName(i.op)] = (o[opName(i.op)] || 0) + i.n);
+    barChart($('#s-intop'), Object.entries(o).sort((a,b) => b[1]-a[1]).slice(0,8).map(([k,v]) => ({label:k, value:v})), {color:C.gas});
+  };
+  seg($('#s-iamb'), [['MAR','Mar'],['TERRA','Terra'],['all','Todos']], iamb, v => { iamb = v; drawI(); });
+  live(drawI);
+
+  const drawT = () => {
+    const q = ($('#s-q').value || '').toLowerCase();
+    table($('#s-tbl'), sondas.filter(s => !q || (s.n + ' ' + s.opT + ' ' + s.campos).toLowerCase().includes(q)), [
+      {k:'n', t:'Sonda'}, {k:'opT', t:'Empresa', muted:1}, {k:'amb', t:'Ambiente', muted:1}, {k:'campos', t:'Campo(s)', muted:1}], {sortK:'opT', desc:false});
+  };
+  $('#s-q').oninput = drawT; drawT();
+
+  let pamb = 'MAR';
+  const drawP = () => {
+    const r = W.situacao.filter(s => s.sit && (pamb === 'all' || s.amb === pamb));
+    const o = {}, me = {};
+    r.forEach(s => { o[s.sit] = (o[s.sit] || 0) + s.n; if (s.me) me[s.me] = (me[s.me] || 0) + s.n; });
+    barChart($('#s-sit'), Object.entries(o).sort((a,b) => b[1]-a[1]).slice(0,10).map(([k,v]) => ({label:title(k), value:v,
+      tip:`<b>${esc(title(k))}</b><br>${nf(v)} poços`})), {color:C.gas, labelW:200});
+    barChart($('#s-me'), Object.entries(me).sort((a,b) => b[1]-a[1]).slice(0,8).map(([k,v]) => ({label:title(k), value:v,
+      tip:`<b>${esc(title(k))}</b><br>${nf(v)} poços`})), {color:C.s3, labelW:200});
+  };
+  seg($('#s-pamb'), [['MAR','Mar'],['TERRA','Terra'],['all','Todos']], pamb, v => { pamb = v; drawP(); });
+  live(drawP);
+}
+
+function buildExploracao(){
+  const E = D.exploracao, B = E.blocos;
+  const hoje = new Date().toISOString().slice(0,10), ano = +hoje.slice(0,4);
+  const area = sum(B.map(b => b.area));
+  const dc5 = E.declaracoes.filter(d => +d.data.slice(0,4) >= ano - 5);
+  $('#p-exploracao').innerHTML = `
+    <div class="sec-title">Fase de exploração</div>
+    <div class="sec-sub">Blocos sob contrato, descobertas em avaliação e novos campos declarados. Dados atualizados em ${fmtDate(E.atualizado)}.</div>
+    <div class="kpis">
+      <div class="kpi"><div class="kpi-label">Blocos sob contrato</div><div class="kpi-num">${B.length}</div><div class="kpi-delta"><span>${B.filter(b=>b.amb==='MAR').length} no mar</span></div></div>
+      <div class="kpi"><div class="kpi-label">Área contratada</div><div class="kpi-num">${nf(area,0)}<small>mil km²</small></div><div class="kpi-delta"><span>${nf(sum(B.filter(b=>b.amb==='MAR').map(b=>b.area)),0)} mil km² no mar</span></div></div>
+      <div class="kpi"><div class="kpi-label">Descobertas em avaliação</div><div class="kpi-num">${E.pads.length}</div><div class="kpi-delta"><span>planos de avaliação (PADs) em andamento</span></div></div>
+      <div class="kpi"><div class="kpi-label">Novos campos</div><div class="kpi-num">${dc5.length}</div><div class="kpi-delta"><span>declarações de comercialidade desde ${ano-5}</span></div></div>
+    </div>
+    <div class="ctrl" style="margin-top:16px" id="e-amb"></div>
+    <div class="grid2">
+      <div class="card"><div class="card-h"><div><div class="card-t">Blocos por operadora</div><div class="card-s">número de blocos sob contrato</div></div></div><div id="e-op"></div></div>
+      <div class="card"><div class="card-h"><div><div class="card-t">Blocos por bacia</div><div class="card-s">número de blocos sob contrato</div></div></div><div id="e-bac"></div></div>
+    </div>
+    <div class="grid2" style="margin-top:12px">
+      <div class="card"><div class="card-h"><div><div class="card-t">Poços exploratórios iniciados por ano</div><div class="card-s">em blocos exploratórios</div></div></div><div id="e-pocos"></div></div>
+      <div class="card"><div class="card-h"><div><div class="card-t">Fase exploratória vence em</div><div class="card-s">blocos por ano de vencimento</div></div></div><div id="e-venc"></div></div>
+    </div>
+    <div class="sec-title">Blocos sob contrato</div>
+    <div class="ctrl"><input type="search" id="e-q" placeholder="Buscar bloco, operadora, sócio, bacia ou rodada"></div>
+    <div id="e-tbl"></div>
+    <div class="sec-title">Descobertas em avaliação</div>
+    <div class="sec-sub">Planos de Avaliação de Descobertas em andamento. É aqui que nascem os próximos campos.</div>
+    <div id="e-pads"></div>
+    <div class="sec-title">Declarações de comercialidade</div>
+    <div class="sec-sub">Quando a operadora declara à ANP que a descoberta é viável e vira campo de produção.</div>
+    <div id="e-dc"></div>`;
+
+  let amb = 'all';
+  const drawC = () => {
+    const b = B.filter(x => amb === 'all' || x.amb === amb);
+    const by = k => { const o = {}; b.forEach(x => o[x[k]] = (o[x[k]] || 0) + 1); return Object.entries(o).sort((a,c) => c[1] - a[1]); };
+    barChart($('#e-op'), by('op').slice(0,14).map(([k,v]) => ({label:k, value:v,
+      tip:`<b>${esc(k)}</b><br>${v} blocos<br><span class="m">${nf(sum(b.filter(x=>x.op===k).map(x=>x.area)),1)} mil km²</span>`})));
+    barChart($('#e-bac'), by('b').slice(0,14).map(([k,v]) => ({label:k, value:v,
+      tip:`<b>Bacia ${esc(k)}</b><br>${v} blocos<br><span class="m">${nf(sum(b.filter(x=>x.b===k).map(x=>x.area)),1)} mil km²</span>`})), {color:C.gas});
+    const p = E.pocos.filter(x => x.ini && (amb === 'all' || x.amb === amb));
+    const anos = []; for (let a = 2000; a <= ano; a++) anos.push(String(a));
+    colChart($('#e-pocos'), anos, anos.map(a => p.filter(x => x.ini.startsWith(a)).length), {h:220,
+      tipFn: i => { const r = p.filter(x => x.ini.startsWith(anos[i]));
+        return `<b>${anos[i]}</b><br>${r.length} poços exploratórios<br><span class="m">${r.filter(x=>x.desc==='Sim').length} com notificação de descoberta</span>`; }});
+    const va = []; for (let a = ano; a <= ano + 8; a++) va.push(String(a));
+    colChart($('#e-venc'), va, va.map(a => b.filter(x => x.venc && x.venc.startsWith(a)).length), {h:220, color:C.gas,
+      tipFn: i => { const r = b.filter(x => x.venc && x.venc.startsWith(va[i]));
+        return `<b>${va[i]}</b><br>${r.length} blocos<br><span class="m">${esc([...new Set(r.map(x=>x.op))].slice(0,6).join(', '))}</span>`; }});
+  };
+  seg($('#e-amb'), [['all','Terra e mar'],['MAR','Mar'],['TERRA','Terra']], amb, v => { amb = v; drawC(); });
+  live(drawC);
+
+  const drawT = () => {
+    const q = ($('#e-q').value || '').toLowerCase();
+    table($('#e-tbl'), B.filter(x => !q || (x.bl + ' ' + x.op + ' ' + x.socios + ' ' + x.b + ' ' + x.rod).toLowerCase().includes(q)), [
+      {k:'bl', t:'Bloco'}, {k:'op', t:'Operadora', muted:1}, {k:'socios', t:'Consórcio', muted:1, f:v => esc((v||'').replace(/^\*/,''))},
+      {k:'b', t:'Bacia', muted:1}, {k:'amb', t:'Ambiente', muted:1, f:v => v === 'MAR' ? 'Mar' : 'Terra'}, {k:'rod', t:'Rodada', muted:1},
+      {k:'reg', t:'Regime', muted:1}, {k:'area', t:'Área mil km²', num:1, f:v => nf(v,2)}, {k:'pocos', t:'Poços', num:1},
+      {k:'venc', t:'Fim da fase expl.', num:1, f:(v,o) => o.susp ? '<span class="chip">Suspenso</span>' : fmtDate(v)}], {sortK:'venc', desc:false, limit:500});
+  };
+  $('#e-q').oninput = drawT; drawT();
+
+  table($('#e-pads'), E.pads, [
+    {k:'pad', t:'Plano de avaliação'}, {k:'op', t:'Operadora', muted:1}, {k:'bl', t:'Bloco', muted:1}, {k:'b', t:'Bacia', muted:1},
+    {k:'amb', t:'Ambiente', muted:1, f:v => /mar/i.test(v) ? 'Mar' : 'Terra'},
+    {k:'sit', t:'Situação', f:v => `<span class="chip">${esc((v||'').replace(/^PAD /,'').replace('Em Postergacao Declaracao de Comercialidade','Postergação da DC'))}</span>`},
+    {k:'ini', t:'Início', num:1, f:fmtDate}, {k:'fim', t:'Término previsto', num:1, f:fmtDate}], {sortK:'fim', desc:false});
+
+  table($('#e-dc'), E.declaracoes, [
+    {k:'data', t:'Data', f:fmtDate}, {k:'campo', t:'Novo campo', f:v => esc(title(v))}, {k:'op', t:'Operadora', muted:1},
+    {k:'bl', t:'Bloco de origem', muted:1}, {k:'b', t:'Bacia', muted:1}, {k:'amb', t:'Ambiente', muted:1, f:v => /mar/i.test(v) ? 'Mar' : 'Terra'}],
+    {sortK:'data', limit:60});
+}
+
+/* ---------- abas ---------- */
+const built = {};
+const builders = {geral:buildGeral, campos:buildCampos, plataformas:buildPlataformas, sondas:buildSondas, exploracao:buildExploracao};
+function openTab(p){
+  document.querySelectorAll('.tab').forEach(t => t.classList.toggle('on', t.dataset.p === p));
+  document.querySelectorAll('.panel').forEach(x => x.classList.toggle('on', x.id === 'p-' + p));
+  if (!built[p]){ built[p] = 1; builders[p](); }
+  else redraws.forEach(f => f());
+  history.replaceState(null, '', '#' + p);
+  if (window.gtag) gtag('event', 'radar_tab', {tab:p});
+}
+
+Promise.all(['producao','instalacoes','pocos','exploracao'].map(n =>
+  fetch('data/' + n + '.json', {cache:'no-cache'}).then(r => r.json()).then(j => D[n] = j)))
+  .then(() => {
+    $('#app').innerHTML = Object.keys(builders).map(p => `<section class="panel" id="p-${p}"></section>`).join('');
+    $('#eyebrow').textContent = 'Dados oficiais ANP · produção até ' + mLong(D.producao.ultimoMes);
+    document.querySelectorAll('.tab').forEach(t => t.onclick = () => { openTab(t.dataset.p); scrollTo({top:0, behavior:'smooth'}); });
+    const h = location.hash.slice(1);
+    openTab(builders[h] ? h : 'geral');
+    addEventListener('hashchange', () => { const k = location.hash.slice(1); if (builders[k]) openTab(k); });
+  })
+  .catch(err => { $('#app').innerHTML = '<div class="loading">Não foi possível carregar os dados. Tente recarregar a página.</div>'; console.error(err); });
+</script>
+</body>
+</html>
