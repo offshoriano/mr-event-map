@@ -95,6 +95,30 @@ details[open] summary::before{content:'– ';}
 .btn-ghost:hover{color:var(--white);border-color:var(--gold);}
 .job-note{font-size:12px;color:var(--muted);margin-left:auto;}
 
+/* Pop-up antes da candidatura */
+.ov{position:fixed;inset:0;z-index:300;background:rgba(5,8,11,.78);backdrop-filter:blur(3px);display:none;align-items:center;justify-content:center;padding:16px;}
+.ov.on{display:flex;}
+.md{background:var(--card);border:1px solid var(--border2);border-radius:4px;width:100%;max-width:460px;max-height:calc(100vh - 32px);overflow:auto;padding:28px 26px 22px;position:relative;}
+.md-x{position:absolute;top:10px;right:12px;background:none;border:none;color:var(--muted);font-size:24px;cursor:pointer;line-height:1;}
+.md h2{font-weight:800;font-size:21px;line-height:1.3;padding-right:20px;}
+.md .lead{font-size:14px;color:var(--muted2);margin:8px 0 18px;line-height:1.6;}
+.fld{margin-bottom:13px;}
+.fld label{display:block;font-size:12px;font-weight:600;color:var(--muted2);margin-bottom:6px;}
+.fld input{width:100%;font-family:inherit;font-size:15px;background:var(--card2);color:var(--white);border:1px solid var(--border2);border-radius:3px;padding:11px 12px;}
+.fld input:focus{outline:none;border-color:var(--gold);}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.opt{font-family:inherit;font-size:14px;background:var(--card2);color:var(--white);border:1px solid var(--border2);border-radius:3px;padding:11px 10px;cursor:pointer;text-align:center;}
+.opt.on{border-color:var(--gold);background:var(--gold-d);color:var(--gold-l);}
+.md .btn{width:100%;justify-content:center;margin-top:6px;}
+.md-err{color:#ef7a7a;font-size:13px;min-height:18px;margin-top:6px;}
+.md-legal{font-size:11px;color:var(--muted);line-height:1.55;margin-top:12px;}
+.md-skip{display:block;text-align:center;margin-top:12px;font-size:12px;color:var(--muted);background:none;border:none;cursor:pointer;text-decoration:underline;width:100%;font-family:inherit;}
+.md-skip:hover{color:var(--muted2);}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0;}
+.guia{background:linear-gradient(135deg,rgba(201,147,58,.16),rgba(201,147,58,.04));border:1px solid rgba(201,147,58,.35);border-radius:3px;padding:16px;margin:4px 0 14px;}
+.guia b{display:block;font-size:15px;margin-bottom:6px;}
+.guia p{font-size:13px;color:var(--muted2);line-height:1.6;}
+.md .btn + .btn{margin-top:10px;}
 .empty{padding:60px 20px;text-align:center;color:var(--muted);border:1px dashed var(--border2);border-radius:2px;}
 .empresas{margin-top:48px;background:var(--black);border:1px solid var(--border);border-radius:2px;padding:30px;display:flex;gap:20px;align-items:center;justify-content:space-between;flex-wrap:wrap;}
 .empresas h3{font-family:'DM Sans',sans-serif;font-weight:800;font-size:18px;}
@@ -154,7 +178,14 @@ footer{border-top:1px solid var(--border);padding:36px 48px;max-width:1080px;mar
   <div class="foot-copy">As vagas são divulgadas pelas próprias empresas. A candidatura é feita no site de cada empresa, e a MR Solutions não cobra nada do candidato. Vídeos do canal Carreira Offshore, de Matheus Rangel.</div>
 </footer>
 
+<div class="ov" id="ov" role="dialog" aria-modal="true" aria-labelledby="md-t">
+  <div class="md" id="md"></div>
+</div>
+
 <script>
+// Guia oferecido a quem ainda não tem experiência offshore
+const GUIA_URL = 'https://hotmart.com/pt-br/marketplace/produtos/guia-pratico-de-curso-7-passos-para-trabalhar-embarcado/M70701969B';
+const FUNCOES = ['Mecânico','Eletricista','Instrumentista','Operador de produção','Técnico de segurança','Soldador','Caldeireiro','Engenheiro','Taifeiro / hotelaria','Marinheiro de convés','Piloto de ROV','Técnico de enfermagem'];
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const fmt = s => s ? s.slice(8,10) + '/' + s.slice(5,7) + '/' + s.slice(0,4) : '';
 const hoje = new Date().toISOString().slice(0,10);
@@ -255,9 +286,72 @@ fetch('vagas.json', {cache:'no-cache'}).then(r => r.json()).then(all => {
       if (window.gtag) gtag('event', 'vaga_video_play', {vaga:b.dataset.vaga, video:b.dataset.id});
     }
     const a = e.target.closest('[data-apply]');
-    if (a && window.gtag) gtag('event', 'vaga_candidatura_click', {vaga:a.dataset.apply});
+    if (a){
+      if (window.gtag) gtag('event', 'vaga_candidatura_click', {vaga:a.dataset.apply});
+      // Quem já se apresentou antes vai direto; os outros veem o pop-up primeiro
+      let conhecido = false;
+      try { conhecido = !!localStorage.getItem('mr-lead'); } catch (err) {}
+      if (!conhecido){ e.preventDefault(); abrirPopup(VAGAS.find(v => v.id === a.dataset.apply)); }
+    }
   });
 }).catch(() => { $('#app').innerHTML = '<div class="empty">Não foi possível carregar as vagas. Tente recarregar a página.</div>'; });
+
+function fecharPopup(){ $('#ov').classList.remove('on'); document.body.style.overflow = ''; }
+function irParaVaga(v){ window.open(v.link, '_blank', 'noopener'); fecharPopup(); }
+
+function abrirPopup(v){
+  let exp = '';
+  $('#md').innerHTML = `<button class="md-x" aria-label="Fechar">&times;</button>
+    <h2 id="md-t">Antes de te encaminhar para a vaga, quero te conhecer um pouco</h2>
+    <p class="lead">Leva 20 segundos. Com isso eu consigo te mandar vagas e conteúdos que fazem sentido para o seu momento.</p>
+    <form id="lf" novalidate>
+      <div class="fld"><label for="lf-nome">Seu nome</label><input id="lf-nome" autocomplete="name" required></div>
+      <div class="fld"><label for="lf-email">Seu e-mail</label><input id="lf-email" type="email" autocomplete="email" inputmode="email" required></div>
+      <div class="fld"><label for="lf-funcao">Em que função você quer trabalhar embarcado?</label>
+        <input id="lf-funcao" list="lf-funcoes" placeholder="Ex: Mecânico, Eletricista, Operador" required>
+        <datalist id="lf-funcoes">${FUNCOES.map(f => `<option value="${esc(f)}">`).join('')}</datalist></div>
+      <div class="fld"><label>Você já tem experiência offshore?</label>
+        <div class="opts"><button type="button" class="opt" data-exp="sim">Sim, já embarquei</button><button type="button" class="opt" data-exp="nao">Ainda não</button></div></div>
+      <input class="hp" id="lf-site" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="md-err" id="lf-err"></div>
+      <button class="btn btn-gold" type="submit">Continuar para a vaga</button>
+      <p class="md-legal">Seus dados ficam com a MR Solutions e são usados só para te enviar vagas e conteúdos de carreira offshore. Você pode pedir para apagar quando quiser.</p>
+    </form>
+    <button class="md-skip" id="lf-skip">Pular e ir direto para a vaga</button>`;
+  $('#ov').classList.add('on'); document.body.style.overflow = 'hidden';
+  setTimeout(() => $('#lf-nome').focus(), 50);
+
+  $('#md .md-x').onclick = fecharPopup;
+  $('#lf-skip').onclick = () => { if (window.gtag) gtag('event', 'lead_pular', {vaga:v.id}); irParaVaga(v); };
+  $('#md').querySelectorAll('.opt').forEach(b => b.onclick = () => {
+    exp = b.dataset.exp; $('#md').querySelectorAll('.opt').forEach(x => x.classList.toggle('on', x === b));
+  });
+  $('#lf').onsubmit = e => {
+    e.preventDefault();
+    const nome = $('#lf-nome').value.trim(), email = $('#lf-email').value.trim(), funcao = $('#lf-funcao').value.trim();
+    if (!nome || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || !funcao || !exp){
+      $('#lf-err').textContent = 'Preencha nome, e-mail, função e se você já embarcou.'; return;
+    }
+    // keepalive: o envio termina mesmo se a pessoa sair da página
+    fetch('../api/leads.php', {method:'POST', keepalive:true, headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({action:'add', nome, email, funcao, experiencia:exp, vaga:v.titulo, empresa:v.empresa, site:$('#lf-site').value})}).catch(() => {});
+    try { localStorage.setItem('mr-lead', '1'); } catch (err) {}
+    if (window.gtag) gtag('event', 'lead_enviado', {vaga:v.id, experiencia:exp});
+    if (exp === 'sim') return irParaVaga(v);
+    $('#md').innerHTML = `<button class="md-x" aria-label="Fechar">&times;</button>
+      <h2 id="md-t">${esc(nome.split(' ')[0])}, anotado. Uma coisa antes de você ir</h2>
+      <p class="lead">Conquistar o primeiro embarque é a parte mais difícil. Eu passei por ela, e quase todo mundo que me escreve trava no mesmo lugar.</p>
+      <div class="guia"><b>Guia 7 Passos para Trabalhar Embarcado</b>
+        <p>O caminho que eu seguiria hoje, do zero: cursos, currículo, onde procurar vaga e como passar na entrevista sem ter experiência offshore.</p></div>
+      <a class="btn btn-gold" id="lf-guia" href="${GUIA_URL}" target="_blank" rel="noopener">Conhecer o guia</a>
+      <button class="btn btn-ghost" id="lf-vaga" type="button">Seguir para a vaga</button>`;
+    $('#md .md-x').onclick = fecharPopup;
+    $('#lf-guia').onclick = () => { if (window.gtag) gtag('event', 'guia_click', {vaga:v.id}); };
+    $('#lf-vaga').onclick = () => irParaVaga(v);
+  };
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') fecharPopup(); });
+$('#ov').addEventListener('click', e => { if (e.target.id === 'ov') fecharPopup(); });
 </script>
 </body>
 </html>

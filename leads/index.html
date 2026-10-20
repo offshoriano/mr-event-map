@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Contatos · MR Solutions</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..800;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+:root{--deep:#0D1117;--card:#111820;--card2:#141D27;--border:#1C2733;--border2:#243040;--gold:#C9933A;--gold-l:#E8B86D;--white:#EEE9E2;--muted:#7A8FA6;--muted2:#A0B2C4;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'DM Sans',sans-serif;background:var(--deep);color:var(--white);}
+.wrap{max-width:1100px;margin:0 auto;padding:40px 24px 80px;}
+h1{font-weight:800;font-size:26px;}
+h1 span{color:var(--gold);}
+.sub{color:var(--muted2);font-size:14px;margin-top:6px;}
+.login{max-width:380px;margin:12vh auto 0;background:var(--card);border:1px solid var(--border);border-radius:4px;padding:28px;}
+.login h1{font-size:20px;margin-bottom:16px;}
+input,select{font-family:inherit;font-size:14px;background:var(--card2);color:var(--white);border:1px solid var(--border2);border-radius:3px;padding:11px 12px;width:100%;}
+.btn{font-family:inherit;font-weight:700;font-size:12px;letter-spacing:.14em;text-transform:uppercase;padding:12px 20px;border-radius:3px;border:none;cursor:pointer;background:var(--gold);color:#090C10;}
+.btn.ghost{background:transparent;color:var(--muted2);border:1px solid var(--border2);}
+.err{color:#ef7a7a;font-size:13px;margin-top:10px;min-height:18px;}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:24px 0;}
+.kpi{background:var(--card);border:1px solid var(--border);border-radius:3px;padding:16px;}
+.kpi b{display:block;font-size:30px;font-weight:800;}
+.kpi span{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);}
+.bar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:14px;}
+.bar input{max-width:280px;}
+.bar select{max-width:220px;}
+.bar .btn{margin-left:auto;}
+.tbl{overflow:auto;border:1px solid var(--border);border-radius:3px;}
+table{width:100%;border-collapse:collapse;font-size:13px;}
+th{background:var(--card2);text-align:left;font-weight:700;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted2);padding:10px 12px;white-space:nowrap;}
+td{padding:10px 12px;border-top:1px solid var(--border);vertical-align:top;}
+td.m{color:var(--muted2);}
+.tag{font-size:11px;padding:3px 8px;border-radius:3px;white-space:nowrap;}
+.tag.sim{background:rgba(12,163,12,.15);color:#7fdc7f;}
+.tag.nao{background:rgba(201,147,58,.15);color:var(--gold-l);}
+.del{background:none;border:none;color:var(--muted);cursor:pointer;font-size:12px;text-decoration:underline;}
+.del:hover{color:#ef7a7a;}
+.note{font-size:12px;color:var(--muted);margin-top:12px;line-height:1.6;}
+@media(max-width:700px){.kpis{grid-template-columns:1fr 1fr;}.bar .btn{margin-left:0;}}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<script>
+const API = '../api/leads.php';
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const $ = s => document.querySelector(s);
+let senha = '', LEADS = [];
+try { senha = sessionStorage.getItem('mr-leads') || ''; } catch (e) {}
+
+const post = body => fetch(API, {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(body)})
+  .then(async r => ({ok:r.ok, data:await r.json().catch(() => ({}))}));
+
+function login(msg){
+  $('#app').innerHTML = `<form class="login" id="f"><h1>Contatos das vagas</h1>
+    <input type="password" id="pw" placeholder="Senha" autofocus><div class="err">${esc(msg || '')}</div>
+    <button class="btn" style="width:100%;margin-top:8px">Entrar</button></form>`;
+  $('#f').onsubmit = e => { e.preventDefault(); senha = $('#pw').value; carregar(); };
+}
+
+function carregar(){
+  post({action:'list', senha}).then(({ok, data}) => {
+    if (!ok){ try { sessionStorage.removeItem('mr-leads'); } catch (e) {} return login(data.error || 'Erro ao carregar'); }
+    try { sessionStorage.setItem('mr-leads', senha); } catch (e) {}
+    LEADS = data.leads || [];
+    painel();
+  }).catch(() => login('Sem conexão com o servidor'));
+}
+
+function painel(){
+  const vagas = [...new Set(LEADS.map(l => l.vaga).filter(Boolean))];
+  const semExp = LEADS.filter(l => l.experiencia === 'nao').length;
+  const semana = LEADS.filter(l => Date.now() - new Date(l.data) < 7 * 864e5).length;
+  $('#app').innerHTML = `<div class="wrap">
+    <h1>Contatos <span>das vagas</span></h1>
+    <p class="sub">Pessoas que preencheram o pop-up antes de se candidatar.</p>
+    <div class="kpis">
+      <div class="kpi"><b>${LEADS.length}</b><span>Contatos</span></div>
+      <div class="kpi"><b>${semana}</b><span>Últimos 7 dias</span></div>
+      <div class="kpi"><b>${semExp}</b><span>Sem experiência offshore</span></div>
+      <div class="kpi"><b>${LEADS.length - semExp}</b><span>Com experiência</span></div>
+    </div>
+    <div class="bar">
+      <input type="search" id="q" placeholder="Buscar nome, e-mail ou função">
+      <select id="exp"><option value="">Com e sem experiência</option><option value="nao">Sem experiência offshore</option><option value="sim">Com experiência offshore</option></select>
+      <select id="vg"><option value="">Todas as vagas</option>${vagas.map(v => `<option>${esc(v)}</option>`).join('')}</select>
+      <button class="btn" id="csv">Baixar planilha</button>
+    </div>
+    <div class="tbl" id="tbl"></div>
+    <p class="note">Se alguém pedir para ter os dados apagados (LGPD), clique em "remover" na linha da pessoa.</p>
+  </div>`;
+  const filtrados = () => {
+    const q = $('#q').value.toLowerCase(), ex = $('#exp').value, vg = $('#vg').value;
+    return LEADS.filter(l => (!ex || l.experiencia === ex) && (!vg || l.vaga === vg) && (!q || (l.nome + ' ' + l.email + ' ' + l.funcao).toLowerCase().includes(q)));
+  };
+  const draw = () => {
+    const r = filtrados();
+    $('#tbl').innerHTML = r.length ? `<table><thead><tr><th>Data</th><th>Nome</th><th>E-mail</th><th>Função desejada</th><th>Offshore</th><th>Vaga</th><th></th></tr></thead><tbody>${
+      r.map(l => `<tr><td class="m">${new Date(l.data).toLocaleString('pt-BR', {dateStyle:'short', timeStyle:'short'})}</td><td>${esc(l.nome)}</td>
+        <td><a href="mailto:${esc(l.email)}" style="color:var(--gold-l)">${esc(l.email)}</a></td><td>${esc(l.funcao)}</td>
+        <td><span class="tag ${l.experiencia}">${l.experiencia === 'sim' ? 'Tem experiência' : 'Sem experiência'}</span></td>
+        <td class="m">${esc(l.vaga)}${l.empresa ? ' · ' + esc(l.empresa) : ''}</td>
+        <td><button class="del" data-id="${esc(l.id)}">remover</button></td></tr>`).join('')}</tbody></table>`
+      : '<p style="padding:24px;color:var(--muted)">Nenhum contato ainda.</p>';
+  };
+  $('#q').oninput = draw; $('#exp').onchange = draw; $('#vg').onchange = draw;
+  $('#tbl').onclick = e => {
+    const b = e.target.closest('.del'); if (!b) return;
+    if (!confirm('Remover este contato de vez?')) return;
+    post({action:'delete', senha, id:b.dataset.id}).then(() => carregar());
+  };
+  $('#csv').onclick = () => {
+    const cols = ['data','nome','email','funcao','experiencia','vaga','empresa'];
+    const csv = '﻿' + [cols.join(';')].concat(filtrados().map(l => cols.map(c => '"' + String(l[c] ?? '').replace(/"/g, '""') + '"').join(';'))).join('\n');
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob([csv], {type:'text/csv;charset=utf-8'}));
+    a.download = 'contatos-vagas-' + new Date().toISOString().slice(0,10) + '.csv';
+    a.click();
+  };
+  draw();
+}
+
+senha ? carregar() : login();
+</script>
+</body>
+</html>
