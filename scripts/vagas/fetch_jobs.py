@@ -20,6 +20,16 @@ EMPRESAS = [
     ('gupy', 'MODEC', 'modec-br', False),
     ('gupy', 'Perbras', 'perbras', False),
     ('gupy', 'Wilson Sons', 'wilsonsons', True),
+    ('gupy', 'Constellation', 'theconstellation', False),
+    ('gupy', 'Altera&Ocyan', 'alteraocyan', False),
+    ('gupy', 'Origem Energia', 'origemenergia', False),
+    ('gupy', 'Tecnosonda', 'tecnosonda', False),
+    # InHire
+    ('inhire', 'OceanPact', 'oceanpact', False),
+    ('inhire', 'Camorim', 'camorim', False),
+    ('inhire', 'PetroReconcavo', 'petroreconcavo', False),
+    ('inhire', 'Wilson Sons Offshore', 'wsut', False),
+    ('inhire', 'Solstad', 'solstad', False),
     # SAP SuccessFactors
     ('rmk', 'SBM Offshore', 'careers.sbmoffshore.com', False),
     ('rmk', 'TechnipFMC', 'careers.technipfmc.com', False),
@@ -28,8 +38,14 @@ EMPRESAS = [
     # Workday
     ('workday', 'Baker Hughes', ('bakerhughes', 'BakerHughes'), False),
     ('workday', 'Shell', ('shell', 'ShellCareers'), False),
+    ('workday', 'Equinor', ('equinor', 'EQNR'), False),
+    ('workday', 'Noble', ('noblecorp', 'noblecorp'), False),
+    ('workday', 'Fugro', ('fugro', 'Careers'), False),
+    ('workday', 'Repsol Sinopec', ('repsol', 'Sinopec'), False),
     # Oracle
     ('oracle', 'NOV', ('egay.fa.us6.oraclecloud.com', 'CX_2001'), False),
+    ('oracle', 'Seadrill', ('fa-eykz-saasfaprod1.fa.ocs.oraclecloud.com', 'CX_1'), False),
+    ('oracle', 'Valaris', ('efqq.fa.us6.oraclecloud.com', 'CX_1'), False),
     # Radancy
     ('radancy', 'Halliburton', 'careers.halliburton.com', False),
 ]
@@ -113,9 +129,9 @@ def oracle(cfg):
            f'&finder=findReqs;siteNumber={site},limit=200,offset=0,sortBy=POSTING_DATES_DESC,keyword=%22Brazil%22')
     d = json.loads(get(url, headers={'Accept': 'application/json'}))
     for j in d['items'][0]['requisitionList']:
-        if not re.search(r'bra[sz]il', j.get('PrimaryLocation') or '', re.I):
+        if j.get('PrimaryLocationCountry') != 'BR' and not re.search(r'bra[sz]il', j.get('PrimaryLocation') or '', re.I):
             continue
-        yield dict(titulo=j['Title'], local=re.sub(r', Bra[sz]il$', '', j['PrimaryLocation']),
+        yield dict(titulo=j['Title'], local=re.sub(r', Bra[sz]il$', '', j['PrimaryLocation']) + ('' if re.search(r'bra[sz]il', j['PrimaryLocation'], re.I) else ', Brasil'),
                    link=f'https://{host}/hcmUI/CandidateExperience/en/sites/{site}/job/{j["Id"]}', data=j.get('PostedDate') or '')
 
 def radancy(host):
@@ -132,7 +148,18 @@ def radancy(host):
         if not achou:
             break
 
-LEITORES = dict(gupy=gupy, rmk=rmk, workday=workday, oracle=oracle, radancy=radancy)
+def inhire(tenant):
+    d = json.loads(get('https://api.inhire.app/job-posts/public/pages/lean', headers={'X-Tenant': tenant, 'Accept': 'application/json'}))
+    for j in d:
+        titulo = limpa(j.get('displayName'))
+        # A InHire não traz a cidade separada; quando vem no título ("Cargo - Macaé/RJ"), aproveita
+        m = re.search(r'\s[-–|]\s*([A-Za-zÀ-ú .]+?)\s*/\s*([A-Z]{2})\s*$', titulo)
+        local = f'{m.group(1).strip()}, {m.group(2)}' if m else 'Brasil'
+        if m:
+            titulo = titulo[:m.start()].strip()
+        yield dict(titulo=titulo, local=local, link=j.get('link') or f'https://{tenant}.inhire.app/vagas/{j["jobId"]}')
+
+LEITORES = dict(inhire=inhire, gupy=gupy, rmk=rmk, workday=workday, oracle=oracle, radancy=radancy)
 
 def classifica(titulo):
     t = titulo.lower()
@@ -158,7 +185,11 @@ def arruma_local(loc):
     loc = re.sub(r',?\s*\d{5}-?\d{3}', '', loc)
     loc = re.sub(r',\s*(BR|Brasil|Brazil)\s*$', '', loc)
     loc = re.sub(r'Rio De Janeiro', 'Rio de Janeiro', loc).replace(' - Ventura Office', '')
-    return loc.replace('Macae', 'Macaé').replace('Sao Joao', 'São João') or 'Brasil'
+    loc = loc.replace('Macae', 'Macaé').replace('Sao Joao', 'São João') or 'Brasil'
+    # Cidade sem estado vira "Cidade, UF" para o filtro e a busca agruparem igual
+    uf = {'Rio de Janeiro': 'RJ', 'Macaé': 'RJ', 'Niterói': 'RJ', 'Rio das Ostras': 'RJ', 'Santos': 'SP', 'São Paulo': 'SP',
+          'Vitória': 'ES', 'Salvador': 'BA', 'Belo Horizonte': 'MG', 'Aracaju': 'SE', 'Mossoró': 'RN', 'Natal': 'RN'}
+    return f'{loc}, {uf[loc]}' if loc in uf else loc
 
 def slug(s):
     s = re.sub(r'[^a-z0-9]+', '-', s.lower()).strip('-')
