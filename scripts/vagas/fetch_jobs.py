@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Busca vagas no Brasil direto nos sites de carreira das empresas de óleo e gás
 e grava vagas/automaticas.json. Roda toda semana pelo GitHub Actions."""
-import html, json, re, sys, time, urllib.request, urllib.error, zlib
+import html, json, re, sys, time, urllib.parse, urllib.request, urllib.error, zlib
 from datetime import date, datetime, timezone
 from pathlib import Path
 
@@ -24,6 +24,7 @@ EMPRESAS = [
     ('gupy', 'Altera&Ocyan', 'alteraocyan', False),
     ('gupy', 'Origem Energia', 'origemenergia', False),
     ('gupy', 'Tecnosonda', 'tecnosonda', False),
+    ('gupy', 'Kaefer', 'kaeferbrasil', False),
     # InHire
     ('inhire', 'OceanPact', 'oceanpact', False),
     ('inhire', 'Camorim', 'camorim', False),
@@ -43,10 +44,12 @@ EMPRESAS = [
     ('workday', 'Fugro', ('fugro', 'Careers'), False),
     ('workday', 'Repsol Sinopec', ('repsol', 'Sinopec'), False),
     ('workday', 'Transocean', ('deepwater', 'BrazilExternalCareerSite'), False),
+    ('workday', 'Bristow', ('bristow', 'Careers'), False),
     # Oracle
     ('oracle', 'NOV', ('egay.fa.us6.oraclecloud.com', 'CX_2001'), False),
     ('oracle', 'Seadrill', ('fa-eykz-saasfaprod1.fa.ocs.oraclecloud.com', 'CX_1'), False),
     ('oracle', 'Valaris', ('efqq.fa.us6.oraclecloud.com', 'CX_1'), False),
+    ('oracle', 'Oceaneering', ('ebfr.fa.us2.oraclecloud.com', 'CX_1', None), False),
     # Radancy
     ('radancy', 'Halliburton', 'careers.halliburton.com', False),
 ]
@@ -125,15 +128,20 @@ def workday(cfg):
     raise RuntimeError('workday sem resposta')
 
 def oracle(cfg):
-    host, site = cfg
-    url = (f'https://{host}/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList'
-           f'&finder=findReqs;siteNumber={site},limit=200,offset=0,sortBy=POSTING_DATES_DESC,keyword=%22Brazil%22')
-    d = json.loads(get(url, headers={'Accept': 'application/json'}))
-    for j in d['items'][0]['requisitionList']:
-        if j.get('PrimaryLocationCountry') != 'BR' and not re.search(r'bra[sz]il', j.get('PrimaryLocation') or '', re.I):
-            continue
-        yield dict(titulo=j['Title'], local=re.sub(r', Bra[sz]il$', '', j['PrimaryLocation']) + ('' if re.search(r'bra[sz]il', j['PrimaryLocation'], re.I) else ', Brasil'),
-                   link=f'https://{host}/hcmUI/CandidateExperience/en/sites/{site}/job/{j["Id"]}', data=j.get('PostedDate') or '')
+    # cfg = (host, site) busca "Brazil"; (host, site, None) varre todas as vagas e filtra o Brasil
+    host, site, palavra = (cfg + ('"Brazil"',))[:3]
+    filtro = f',keyword={urllib.parse.quote(palavra)}' if palavra else ''
+    for off in range(0, 2000, 200):
+        url = (f'https://{host}/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList'
+               f'&finder=findReqs;siteNumber={site},limit=200,offset={off},sortBy=POSTING_DATES_DESC{filtro}')
+        lista = json.loads(get(url, headers={'Accept': 'application/json'}))['items'][0]['requisitionList']
+        for j in lista:
+            if j.get('PrimaryLocationCountry') != 'BR' and not re.search(r'bra[sz]il', j.get('PrimaryLocation') or '', re.I):
+                continue
+            yield dict(titulo=j['Title'], local=re.sub(r', Bra[sz]il$', '', j['PrimaryLocation']) + ('' if re.search(r'bra[sz]il', j['PrimaryLocation'], re.I) else ', Brasil'),
+                       link=f'https://{host}/hcmUI/CandidateExperience/en/sites/{site}/job/{j["Id"]}', data=j.get('PostedDate') or '')
+        if len(lista) < 200:
+            break
 
 def radancy(host):
     vistos = set()
@@ -179,6 +187,8 @@ def regime(titulo, local):
 
 def arruma_local(loc):
     loc = limpa(loc)
+    if '>' in loc:  # Workday da Bristow: "Americas > Brazil > Rio de Janeiro"
+        loc = loc.split('>')[-1].strip()
     m = re.match(r'BR-([A-Z]{2})-([^-]+)', loc)
     if m:
         cidade = m.group(2).title().replace(' De ', ' de ').replace(' Do ', ' do ').replace('Macae', 'Macaé').replace('Niteroi', 'Niterói')
