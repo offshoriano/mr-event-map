@@ -157,6 +157,34 @@ footer{border-top:1px solid var(--border);padding:36px 48px;max-width:1080px;mar
   .vid-frame{grid-row:span 2;}
   .vid.playing{display:block;}
 }
+.sec-h{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:44px 0 6px;}
+.sec-h h2{font-family:'DM Sans',sans-serif;font-weight:800;font-size:22px;}
+.sec-h small{font-size:12px;color:var(--muted);}
+.sec-sub{font-size:14px;color:var(--muted2);line-height:1.6;margin-bottom:16px;max-width:720px;}
+.ctrl2{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:8px;margin-bottom:12px;}
+.ctrl2 input,.ctrl2 select{width:100%;min-width:0;}
+.tg{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted2);margin:0 0 14px;cursor:pointer;width:max-content;}
+.row{background:var(--card);border:1px solid var(--border);border-radius:2px;margin-bottom:8px;}
+.row.hl{border-color:var(--gold);}
+.row-main{display:flex;gap:14px;align-items:center;padding:14px 16px;}
+.row-info{flex:1;min-width:0;}
+.row-t{font-weight:700;font-size:15px;line-height:1.35;}
+.row-c{font-size:13px;color:var(--muted2);margin-top:3px;}
+.row .chips{margin-top:8px;}
+.row-act{display:flex;gap:8px;align-items:center;flex-shrink:0;}
+.row-act .btn{padding:10px 16px;}
+.row-prep{background:none;border:1px solid var(--border2);color:var(--muted2);font-family:inherit;font-size:12px;padding:9px 12px;border-radius:2px;cursor:pointer;white-space:nowrap;}
+.row-prep:hover,.row-prep.on{color:var(--gold-l);border-color:rgba(201,147,58,.5);}
+.row .prep{margin:0 16px 16px;}
+.mais{display:block;margin:14px auto 0;}
+.fontes{font-size:12px;color:var(--muted);margin-top:14px;line-height:1.7;}
+@media (max-width:700px){
+  .ctrl2{grid-template-columns:1fr 1fr;}
+  .ctrl2 input{grid-column:1/-1;}
+  .row-main{flex-direction:column;align-items:stretch;}
+  .row-act{justify-content:space-between;}
+  .row-act .btn{flex:1;justify-content:center;}
+}
 </style>
 </head>
 <body>
@@ -172,9 +200,9 @@ footer{border-top:1px solid var(--border);padding:36px 48px;max-width:1080px;mar
 </nav>
 
 <header class="hero">
-  <div class="eyebrow">Vagas selecionadas · Carreira Offshore</div>
+  <div class="eyebrow">Vagas de óleo e gás · atualizadas toda semana</div>
   <h1>Vagas offshore<br><span class="l2">com preparação junto</span></h1>
-  <p class="hero-sub">Cada vaga aqui vem com os vídeos que eu indicaria para você assistir antes de se candidatar. Currículo, entrevista, inglês, o que aquela empresa e aquele cargo pedem. Assiste, ajusta e manda.</p>
+  <p class="hero-sub">Juntei aqui as vagas abertas no Brasil das principais empresas do setor, puxadas direto do site de cada uma. Cada vaga vem com os vídeos que eu indicaria antes de você se candidatar. Assiste, ajusta o currículo e manda.</p>
 </header>
 
 <main id="app"><div class="empty">Carregando vagas</div></main>
@@ -264,25 +292,93 @@ function render(){
 }
 const $ = s => document.querySelector(s);
 
-fetch('vagas.json', {cache:'no-cache'}).then(r => r.json()).then(all => {
+let AUTO = [], VIDS = {}, mostrar = 30;
+const todas = () => VAGAS.concat(AUTO);
+
+function rowHTML(v){
+  return `<div class="row" id="${esc(v.id)}">
+    <div class="row-main">
+      <div class="row-info">
+        <div class="row-t">${esc(v.titulo)}</div>
+        <div class="row-c">${esc(v.empresa)} · ${esc(v.local)}</div>
+        <div class="chips"><span class="chip${v.regime === 'Embarcado' ? ' gold' : ''}">${esc(v.regime)}</span>${v.tema === 'geral' ? '' : `<span class="chip">${esc(v.area)}</span>`}${v.banco ? '<span class="chip">Banco de talentos</span>' : ''}</div>
+      </div>
+      <div class="row-act">
+        <button class="row-prep" data-prep="${esc(v.id)}">Como se preparar</button>
+        <a class="btn btn-gold" href="${esc(v.link)}" target="_blank" rel="noopener" data-apply="${esc(v.id)}">Candidatar-se</a>
+      </div>
+    </div>
+  </div>`;
+}
+function prepHTML(v){
+  const vids = VIDS[v.tema] || VIDS.geral || [];
+  return `<div class="prep"><h3>Antes de se candidatar, assista</h3>
+    <p class="sub">Do canal Carreira Offshore, ${v.tema === 'geral' ? 'o que mais ajuda antes de qualquer candidatura' : 'o que mais ajuda em vaga de ' + esc(v.area.toLowerCase())}.</p>
+    <div class="vids">${vids.map(x => `<button class="vid" data-id="${esc(x.id)}" data-vaga="${esc(v.id)}" aria-label="Assistir: ${esc(x.titulo)}">
+      <div class="vid-frame"><img src="https://i.ytimg.com/vi/${esc(x.id)}/hqdefault.jpg" alt="" loading="lazy"><span class="vid-play"></span></div>
+      <div class="vid-t">${esc(x.titulo)}</div><div class="vid-why">${esc(x.porque)}</div></button>`).join('')}</div></div>`;
+}
+function renderAuto(){
+  if (!$('#lista2')) return;
+  const q = $('#q2').value.toLowerCase(), em = $('#emp').value, ar = $('#ar2').value, rg = $('#reg').value, bt = $('#bt').checked;
+  const lista = AUTO.filter(v => (!em || v.empresa === em) && (!ar || v.area === ar) && (!rg || v.regime === rg) && (bt || !v.banco)
+    && (!q || (v.titulo + ' ' + v.empresa + ' ' + v.local + ' ' + v.area).toLowerCase().includes(q)));
+  $('#count2').textContent = `${lista.length} vaga${lista.length === 1 ? '' : 's'}`;
+  $('#lista2').innerHTML = lista.length ? lista.slice(0, mostrar).map(rowHTML).join('') +
+    (lista.length > mostrar ? `<button class="btn btn-ghost mais" id="mais">Ver mais ${Math.min(30, lista.length - mostrar)} vagas</button>` : '')
+    : '<div class="empty">Nenhuma vaga com esse filtro agora.</div>';
+}
+
+Promise.all([
+  fetch('vagas.json', {cache:'no-cache'}).then(r => r.json()),
+  fetch('automaticas.json', {cache:'no-cache'}).then(r => r.json()).catch(() => null)
+]).then(([all, auto]) => {
   // Vaga sai do ar sozinha depois do último dia de inscrição
   VAGAS = all.filter(v => !v.inscricoesAte || v.inscricoesAte >= hoje).sort((a,b) => b.publicada.localeCompare(a.publicada));
+  if (auto){
+    VIDS = auto.videos || {};
+    // não repete a vaga que já está comentada lá em cima
+    const comentadas = new Set(VAGAS.map(v => (v.empresa + v.titulo).toLowerCase()));
+    AUTO = auto.vagas.filter(v => !comentadas.has((v.empresa + v.titulo).toLowerCase()));
+  }
   const areas = [...new Set(VAGAS.map(v => v.area))].sort();
+  const opc = (lista, rot) => `<option value="">${rot}</option>` + [...new Set(lista)].sort().map(x => `<option>${esc(x)}</option>`).join('');
+  const atual = auto ? new Date(auto.atualizado).toLocaleDateString('pt-BR') : '';
   $('#app').innerHTML = `
+    ${VAGAS.length ? `<div class="sec-h"><h2>Vagas comentadas</h2><small>com análise e vídeos escolhidos a dedo</small></div>
     <div class="ctrl">
       <input type="search" id="q" placeholder="Buscar cargo, empresa ou cidade">
       <select id="area"><option value="">Todas as áreas</option>${areas.map(a => `<option>${esc(a)}</option>`).join('')}</select>
       <span class="count" id="count"></span>
     </div>
-    <div id="list"></div>
+    <div id="list"></div>` : ''}
+    ${AUTO.length ? `<div class="sec-h"><h2>Vagas abertas no setor</h2><small id="count2"></small></div>
+    <p class="sec-sub">Direto dos sites de carreira de ${new Set(AUTO.map(v => v.empresa)).size} empresas, atualizado em ${atual}. A candidatura é feita no site da empresa.</p>
+    <div class="ctrl2">
+      <input type="search" id="q2" placeholder="Buscar cargo ou cidade">
+      <select id="emp">${opc(AUTO.map(v => v.empresa), 'Todas as empresas')}</select>
+      <select id="ar2">${opc(AUTO.map(v => v.area), 'Todas as áreas')}</select>
+      <select id="reg">${opc(AUTO.map(v => v.regime), 'Embarcado e terra')}</select>
+    </div>
+    <label class="tg"><input type="checkbox" id="bt"> Mostrar banco de talentos</label>
+    <div id="lista2"></div>
+    <p class="fontes">Empresas acompanhadas: ${[...new Set(AUTO.map(v => v.empresa))].sort().map(esc).join(', ')}.</p>` : ''}
     <div class="empresas">
       <div><h3>Sua empresa está contratando?</h3><p>Divulgue a vaga para quem acompanha o Carreira Offshore, com conteúdo de preparação junto. O candidato chega mais pronto na entrevista.</p></div>
       <a class="btn btn-gold" href="../#sponsors">Divulgar uma vaga</a>
     </div>`;
-  $('#q').oninput = render; $('#area').onchange = render;
-  render();
+  if ($('#q')){ $('#q').oninput = render; $('#area').onchange = render; render(); }
+  if ($('#q2')){
+    const re = () => { mostrar = 30; renderAuto(); };
+    $('#q2').oninput = re; ['#emp','#ar2','#reg','#bt'].forEach(id => $(id).onchange = re);
+    renderAuto();
+  }
   jsonLd(VAGAS);
-  if (location.hash){ const el = document.getElementById(location.hash.slice(1)); if (el){ el.classList.add('hl'); el.scrollIntoView(); } }
+  if (location.hash){
+    const id = decodeURIComponent(location.hash.slice(1));
+    if (AUTO.some(v => v.id === id)){ $('#bt').checked = true; mostrar = AUTO.length; renderAuto(); }
+    const el = document.getElementById(id); if (el){ el.classList.add('hl'); el.scrollIntoView(); }
+  }
 
   document.addEventListener('click', e => {
     const b = e.target.closest('.vid');
@@ -291,13 +387,24 @@ fetch('vagas.json', {cache:'no-cache'}).then(r => r.json()).then(all => {
       b.querySelector('.vid-frame').innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${b.dataset.id}?autoplay=1&rel=0" title="Vídeo" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>`;
       if (window.gtag) gtag('event', 'vaga_video_play', {vaga:b.dataset.vaga, video:b.dataset.id});
     }
+    const p = e.target.closest('[data-prep]');
+    if (p){
+      const row = p.closest('.row'), aberto = row.querySelector('.prep');
+      if (aberto){ aberto.remove(); p.classList.remove('on'); }
+      else {
+        row.insertAdjacentHTML('beforeend', prepHTML(AUTO.find(v => v.id === p.dataset.prep)));
+        p.classList.add('on');
+        if (window.gtag) gtag('event', 'vaga_preparar', {vaga:p.dataset.prep});
+      }
+    }
+    if (e.target.id === 'mais'){ mostrar += 30; renderAuto(); }
     const a = e.target.closest('[data-apply]');
     if (a){
       if (window.gtag) gtag('event', 'vaga_candidatura_click', {vaga:a.dataset.apply});
       // Quem já se apresentou antes vai direto; os outros veem o pop-up primeiro
       let conhecido = false;
       try { conhecido = !!localStorage.getItem('mr-lead'); } catch (err) {}
-      if (!conhecido){ e.preventDefault(); abrirPopup(VAGAS.find(v => v.id === a.dataset.apply)); }
+      if (!conhecido){ e.preventDefault(); abrirPopup(todas().find(v => v.id === a.dataset.apply)); }
     }
   });
 }).catch(() => { $('#app').innerHTML = '<div class="empty">Não foi possível carregar as vagas. Tente recarregar a página.</div>'; });

@@ -1,0 +1,2114 @@
+{
+ "atualizado": "2026-10-20T20:26:01+00:00",
+ "fontes": [
+  {
+   "empresa": "PRIO",
+   "vagas": 8,
+   "ok": true
+  },
+  {
+   "empresa": "Brava Energia",
+   "vagas": 22,
+   "ok": true
+  },
+  {
+   "empresa": "Ocyan",
+   "vagas": 15,
+   "ok": true
+  },
+  {
+   "empresa": "Foresea",
+   "vagas": 7,
+   "ok": true
+  },
+  {
+   "empresa": "MODEC",
+   "vagas": 7,
+   "ok": true
+  },
+  {
+   "empresa": "Perbras",
+   "vagas": 17,
+   "ok": true
+  },
+  {
+   "empresa": "Wilson Sons",
+   "vagas": 16,
+   "ok": true
+  },
+  {
+   "empresa": "SBM Offshore",
+   "vagas": 6,
+   "ok": true
+  },
+  {
+   "empresa": "TechnipFMC",
+   "vagas": 4,
+   "ok": true
+  },
+  {
+   "empresa": "Subsea7",
+   "vagas": 23,
+   "ok": true
+  },
+  {
+   "empresa": "Yinson",
+   "vagas": 4,
+   "ok": true
+  },
+  {
+   "empresa": "Baker Hughes",
+   "vagas": 17,
+   "ok": true
+  },
+  {
+   "empresa": "Shell",
+   "vagas": 1,
+   "ok": true
+  },
+  {
+   "empresa": "NOV",
+   "vagas": 4,
+   "ok": true
+  },
+  {
+   "empresa": "Halliburton",
+   "vagas": 4,
+   "ok": true
+  }
+ ],
+ "videos": {
+  "seguranca": [
+   {
+    "id": "VzHXNdUlHVA",
+    "titulo": "5 empresas para trabalhar embarcado como técnico de segurança",
+    "porque": "Onde estão as vagas de segurança offshore e o que cada empresa pede."
+   },
+   {
+    "id": "Vn2yBVRC-t0",
+    "titulo": "CBSP, o curso básico para trabalhar embarcado",
+    "porque": "Sem CBSP não tem embarque. Veja como tirar."
+   },
+   {
+    "id": "eHqY18dRP8Q",
+    "titulo": "Perguntas feitas em uma entrevista para vaga offshore",
+    "porque": "As perguntas que mais aparecem e como responder."
+   }
+  ],
+  "eletrica": [
+   {
+    "id": "-35oTYToV2A",
+    "titulo": "Eletricista marítimo, tudo que você precisa saber",
+    "porque": "Rotina, certificações e salário de quem trabalha com elétrica embarcado."
+   },
+   {
+    "id": "TSUnVzxiBjU",
+    "titulo": "3 empresas para trabalhar na área de elétrica e mecânica",
+    "porque": "Quem mais contrata elétrica offshore hoje."
+   },
+   {
+    "id": "eHqY18dRP8Q",
+    "titulo": "Perguntas feitas em uma entrevista para vaga offshore",
+    "porque": "As perguntas que mais aparecem e como responder."
+   }
+  ],
+  "mecanica": [
+   {
+    "id": "3yOdA-HnSeg",
+    "titulo": "Se você é mecânico, precisa ver esse vídeo",
+    "porque": "O que não pode faltar no currículo de um mecânico para passar na triagem."
+   },
+   {
+    "id": "vN0tv-N_fSo",
+    "titulo": "Manutenção offshore, cursos que fazem diferença",
+    "porque": "Os cursos que separam quem embarca de quem fica na fila."
+   },
+   {
+    "id": "eHqY18dRP8Q",
+    "titulo": "Perguntas feitas em uma entrevista para vaga offshore",
+    "porque": "As perguntas que mais aparecem e como responder."
+   }
+  ],
+  "pocos": [
+   {
+    "id": "bFgYyXPn2Bc",
+    "titulo": "10 empresas de perfuração para trabalhar embarcado",
+    "porque": "Quem opera sonda no Brasil e contrata gente nova."
+   },
+   {
+    "id": "s0IT2LuUGvo",
+    "titulo": "10 equipamentos de perfuração que você precisa conhecer",
+    "porque": "O vocabulário que a entrevista técnica cobra."
+   },
+   {
+    "id": "eHqY18dRP8Q",
+    "titulo": "Perguntas feitas em uma entrevista para vaga offshore",
+    "porque": "As perguntas que mais aparecem e como responder."
+   }
+  ],
+  "maritimo": [
+   {
+    "id": "-Fg2KN6627E",
+    "titulo": "Quanto ganha um homem de área e um operador de convés",
+    "porque": "Salário real de quem começa no marítimo."
+   },
+   {
+    "id": "B6KcYo0ZA5M",
+    "titulo": "Operador de convés trainee, como conquistar a vaga",
+    "porque": "O passo a passo de quem entrou sem experiência."
+   },
+   {
+    "id": "ZEIQ2xRUfqQ",
+    "titulo": "O inglês que todo trabalhador offshore fala",
+    "porque": "A bordo de embarcação estrangeira, o inglês é cobrado no dia a dia."
+   }
+  ],
+  "hotelaria": [
+   {
+    "id": "lz5Da9ACjyY",
+    "titulo": "O que é taifeiro e o que é saloneiro",
+    "porque": "Como funciona a hotelaria a bordo e quem contrata."
+   },
+   {
+    "id": "31OGhlFoE9Y",
+    "titulo": "Iniciar como taifeiro, banco de talentos e idade para embarcar",
+    "porque": "As dúvidas mais comuns de quem quer começar pela hotelaria."
+   },
+   {
+    "id": "Vn2yBVRC-t0",
+    "titulo": "CBSP, o curso básico para trabalhar embarcado",
+    "porque": "Sem CBSP não tem embarque. Veja como tirar."
+   }
+  ],
+  "operacao": [
+   {
+    "id": "QK0V7T28G5Q",
+    "titulo": "Onde trabalhar embarcado, produção",
+    "porque": "As empresas que mais contratam operador de produção."
+   },
+   {
+    "id": "kJZqpRE1bvY",
+    "titulo": "Operador de produção trainee, Altera e Ocyan",
+    "porque": "Como funciona o cadastro e o processo seletivo de operação."
+   },
+   {
+    "id": "eHqY18dRP8Q",
+    "titulo": "Perguntas feitas em uma entrevista para vaga offshore",
+    "porque": "As perguntas que mais aparecem e como responder."
+   }
+  ],
+  "engenharia": [
+   {
+    "id": "9ZlICqIBUMg",
+    "titulo": "Como conquistar uma vaga de engenheiro trainee offshore",
+    "porque": "O que as operadoras olham no currículo de engenharia."
+   },
+   {
+    "id": "ZEIQ2xRUfqQ",
+    "titulo": "O inglês que todo trabalhador offshore fala",
+    "porque": "Multinacional cobra inglês já na primeira entrevista."
+   },
+   {
+    "id": "_JguAbT9zDs",
+    "titulo": "Como se dar bem em uma entrevista para vaga offshore",
+    "porque": "Postura e respostas que fazem diferença na reta final."
+   }
+  ],
+  "trainee": [
+   {
+    "id": "4eWz_1hX3OI",
+    "titulo": "10 empresas offshore que contratam sem experiência",
+    "porque": "Quem abre porta para o primeiro embarque."
+   },
+   {
+    "id": "iKkxsnu9rZ8",
+    "titulo": "Como trabalhar embarcado mesmo sem experiência",
+    "porque": "O caminho mais curto para quem está começando."
+   },
+   {
+    "id": "sMTU-gjxcLU",
+    "titulo": "Como alinhar meu currículo para uma vaga offshore",
+    "porque": "Ajuste o currículo para a vaga antes de clicar em candidatar."
+   }
+  ],
+  "geral": [
+   {
+    "id": "sMTU-gjxcLU",
+    "titulo": "Como alinhar meu currículo para uma vaga offshore",
+    "porque": "Ajuste o currículo para a vaga antes de clicar em candidatar."
+   },
+   {
+    "id": "eHqY18dRP8Q",
+    "titulo": "Perguntas feitas em uma entrevista para vaga offshore",
+    "porque": "As perguntas que mais aparecem e como responder."
+   },
+   {
+    "id": "ZEIQ2xRUfqQ",
+    "titulo": "O inglês que todo trabalhador offshore fala",
+    "porque": "O vocabulário que você usa a bordo e na entrevista."
+   }
+  ]
+ },
+ "vagas": [
+  {
+   "id": "brava-energia-bombeador-offshore-85035",
+   "titulo": "Bombeador Offshore",
+   "empresa": "Brava Energia",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://bravaenergia.gupy.io/jobs/12401067",
+   "regime": "Embarcado",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "brava-energia-superintendente-de-manuten-o-offshore-11045",
+   "titulo": "Superintendente de Manutenção Offshore",
+   "empresa": "Brava Energia",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://bravaenergia.gupy.io/jobs/12533452",
+   "regime": "Embarcado",
+   "area": "Mecânica e manutenção",
+   "tema": "mecanica",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "brava-energia-superintendente-de-marinha-offshore-97295",
+   "titulo": "Superintendente de Marinha Offshore",
+   "empresa": "Brava Energia",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://bravaenergia.gupy.io/jobs/12533521",
+   "regime": "Embarcado",
+   "area": "Marítimo",
+   "tema": "maritimo",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "brava-energia-supervisor-a-de-facilidades-offshore-34500",
+   "titulo": "Supervisor (a) de Facilidades Offshore",
+   "empresa": "Brava Energia",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://bravaenergia.gupy.io/jobs/12533771",
+   "regime": "Embarcado",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "brava-energia-supervisor-a-de-marinha-offshore-29488",
+   "titulo": "Supervisor (a) de Marinha Offshore",
+   "empresa": "Brava Energia",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://bravaenergia.gupy.io/jobs/12665106",
+   "regime": "Embarcado",
+   "area": "Marítimo",
+   "tema": "maritimo",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "brava-energia-supervisor-a-de-mec-nica-offshore-16631",
+   "titulo": "Supervisor (a) de Mecânica Offshore",
+   "empresa": "Brava Energia",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://bravaenergia.gupy.io/jobs/12400733",
+   "regime": "Embarcado",
+   "area": "Mecânica e manutenção",
+   "tema": "mecanica",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "brava-energia-t-cnico-a-de-el-trica-e-instrumenta-o-offshore-40713",
+   "titulo": "Técnico (a) de Elétrica e Instrumentação Offshore",
+   "empresa": "Brava Energia",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://bravaenergia.gupy.io/jobs/12441631",
+   "regime": "Embarcado",
+   "area": "Elétrica e instrumentação",
+   "tema": "eletrica",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "brava-energia-t-cnico-de-mec-nica-offshore-10094",
+   "titulo": "Técnico de Mecânica Offshore",
+   "empresa": "Brava Energia",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://bravaenergia.gupy.io/jobs/12409493",
+   "regime": "Embarcado",
+   "area": "Mecânica e manutenção",
+   "tema": "mecanica",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "ocyan-mso-caldeireiro-a-escalador-a-ni-offshore-56054",
+   "titulo": "MSO - Caldeireiro(a) Escalador(a) NI - OFFSHORE",
+   "empresa": "Ocyan",
+   "local": "Macaé, RJ",
+   "link": "https://ocyan.gupy.io/jobs/12394579",
+   "regime": "Embarcado",
+   "area": "Mecânica e manutenção",
+   "tema": "mecanica",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "ocyan-mso-inspetor-a-de-solda-n1-lp-pm-escalador-offshore-60762",
+   "titulo": "MSO - Inspetor(a) de Solda N1 LP/PM Escalador - Offshore",
+   "empresa": "Ocyan",
+   "local": "Macaé, RJ",
+   "link": "https://ocyan.gupy.io/jobs/12664434",
+   "regime": "Embarcado",
+   "area": "Mecânica e manutenção",
+   "tema": "mecanica",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "ocyan-mso-pintor-a-hidrojatista-offshore-36409",
+   "titulo": "MSO - Pintor(a) Hidrojatista - OFFSHORE",
+   "empresa": "Ocyan",
+   "local": "Macaé, RJ",
+   "link": "https://ocyan.gupy.io/jobs/12634647",
+   "regime": "Embarcado",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "ocyan-mso-soldador-a-i-escalador-ni-offshore-66066",
+   "titulo": "MSO - Soldador(a) I Escalador NI - OFFSHORE",
+   "empresa": "Ocyan",
+   "local": "Macaé, RJ",
+   "link": "https://ocyan.gupy.io/jobs/12634713",
+   "regime": "Embarcado",
+   "area": "Mecânica e manutenção",
+   "tema": "mecanica",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "sbm-offshore-offshore-maintenance-engineer-24117",
+   "titulo": "Offshore Maintenance Engineer",
+   "empresa": "SBM Offshore",
+   "local": "Santos",
+   "link": "https://careers.sbmoffshore.com/job/Santos-Offshore-Maintenance-Engineer-11035-260/1373863357/",
+   "regime": "Embarcado",
+   "area": "Mecânica e manutenção",
+   "tema": "mecanica",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "subsea7-consultor-rh-hrbp-offshore-delivery-65965",
+   "titulo": "Consultor RH (HRBP Offshore Delivery)",
+   "empresa": "Subsea7",
+   "local": "Brasil",
+   "link": "https://careers.subsea7.com/job/Rio-de-Janeiro-Consultor-RH-%28HRBP-Offshore-Delivery%29/1373523355/",
+   "regime": "Embarcado",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "subsea7-marinheira-o-de-m-quinas-3323",
+   "titulo": "Marinheira(o) de Máquinas",
+   "empresa": "Subsea7",
+   "local": "Brasil",
+   "link": "https://careers.subsea7.com/job/Offshore-Marinheira%28o%29-de-M%C3%A1quinas/1353616855/",
+   "regime": "Embarcado",
+   "area": "Marítimo",
+   "tema": "maritimo",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "subsea7-operadora-o-de-conv-s-contrato-por-tempo-determinado-8593",
+   "titulo": "Operadora(o) de Convés (CONTRATO POR TEMPO DETERMINADO)",
+   "empresa": "Subsea7",
+   "local": "Brasil",
+   "link": "https://careers.subsea7.com/job/Offshore-Operadora%28o%29-de-Conv%C3%A9s-%28CONTRATO-POR-TEMPO-DETERMINADO%29/1364665455/",
+   "regime": "Embarcado",
+   "area": "Marítimo",
+   "tema": "maritimo",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "subsea7-superintendente-de-embarca-es-adjunto-31963",
+   "titulo": "Superintendente de Embarcações Adjunto",
+   "empresa": "Subsea7",
+   "local": "Brasil",
+   "link": "https://careers.subsea7.com/job/Rio-de-Janeiro-Superintendente-de-Embarca%C3%A7%C3%B5es-Adjunto/1370559955/",
+   "regime": "Embarcado",
+   "area": "Marítimo",
+   "tema": "maritimo",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "technipfmc-3-oficial-de-m-quinas-3rd-engineer-93045",
+   "titulo": "3º Oficial de Máquinas (3rd Engineer)",
+   "empresa": "TechnipFMC",
+   "local": "Macaé, RJ",
+   "link": "https://careers.technipfmc.com/job/Maca%C3%A9-3%C2%BA-Oficial-de-M%C3%A1quinas-%283rd-Engineer%29-RJ-27970-020/1440934900/",
+   "regime": "Embarcado",
+   "area": "Marítimo",
+   "tema": "maritimo",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "baker-hughes-aspire-supply-chain-2027-25715",
+   "titulo": "ASPIRE Supply Chain - 2027",
+   "empresa": "Baker Hughes",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://bakerhughes.wd5.myworkdayjobs.com/BakerHughes/job/BR-RJ-RIO-DE-JANEIRO-VENTURA-AV-REPUBLICA-DO-CHILE-330/ASPIRE-Supply-Chain---2027_R169742-1",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "baker-hughes-coordenador-de-manuten-o-57470",
+   "titulo": "Coordenador de Manutenção",
+   "empresa": "Baker Hughes",
+   "local": "Niterói, RJ",
+   "link": "https://bakerhughes.wd5.myworkdayjobs.com/BakerHughes/job/BR-RJ-NITEROI-PRACA-ALCIDES-PEREIRA/Coordenador-de-Manuteno_R169501",
+   "regime": "Em terra ou a confirmar",
+   "area": "Mecânica e manutenção",
+   "tema": "mecanica",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "baker-hughes-electrical-engineer-13431",
+   "titulo": "Electrical Engineer",
+   "empresa": "Baker Hughes",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://bakerhughes.wd5.myworkdayjobs.com/BakerHughes/job/BR-RJ-RIO-DE-JANEIRO-RETIC-ILHA-DO-FUNDAO-R36-2757/Electrical-Engineer_R170025",
+   "regime": "Em terra ou a confirmar",
+   "area": "Elétrica e instrumentação",
+   "tema": "eletrica",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "baker-hughes-especialista-de-suporte-t-cnico-em-servi-os-de-workover-e-abandono-26443",
+   "titulo": "Especialista de Suporte Técnico em Serviços de Workover e Abandono",
+   "empresa": "Baker Hughes",
+   "local": "Macaé, RJ",
+   "link": "https://bakerhughes.wd5.myworkdayjobs.com/BakerHughes/job/BR-RJ-MACAE-BELA-VISTA-AREA-19-1600/Especialista-de-Suporte-Tcnico-em-Servios-de-Workover-e-Abandono_R168728",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "baker-hughes-field-specialist-controls-gas-turbine-compressors-54097",
+   "titulo": "Field Specialist - Controls - Gas Turbine / Compressors",
+   "empresa": "Baker Hughes",
+   "local": "Macaé, RJ",
+   "link": "https://bakerhughes.wd5.myworkdayjobs.com/BakerHughes/job/BR-RJ-MACAE-ESTRADA-DE-FAZENDA-SAO-JOSE-DO-MUTUM-200/Field-Specialist---Controls---Gas-Turbine---Compressors_R161362",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "baker-hughes-field-specialist-mechanical-gas-turbine-compressors-brazil-24538",
+   "titulo": "Field Specialist - Mechanical Gas Turbine / Compressors - Brazil",
+   "empresa": "Baker Hughes",
+   "local": "Macaé, RJ",
+   "link": "https://bakerhughes.wd5.myworkdayjobs.com/BakerHughes/job/BR-RJ-MACAE-ESTRADA-DE-FAZENDA-SAO-JOSE-DO-MUTUM-200/Field-Specialist---Mechanical-Gas-Turbine---Compressors---Brazil_R161361",
+   "regime": "Em terra ou a confirmar",
+   "area": "Mecânica e manutenção",
+   "tema": "mecanica",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "baker-hughes-geomechanics-specialist-10274",
+   "titulo": "Geomechanics Specialist",
+   "empresa": "Baker Hughes",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://bakerhughes.wd5.myworkdayjobs.com/BakerHughes/job/BR-RJ-RIO-DE-JANEIRO-VENTURA-AV-REPUBLICA-DO-CHILE-330/Geomechanics-Specialist_R166651",
+   "regime": "Em terra ou a confirmar",
+   "area": "Mecânica e manutenção",
+   "tema": "mecanica",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "baker-hughes-latam-quality-senior-specialist-45499",
+   "titulo": "LATAM Quality Senior Specialist",
+   "empresa": "Baker Hughes",
+   "local": "Macaé, RJ",
+   "link": "https://bakerhughes.wd5.myworkdayjobs.com/BakerHughes/job/BR-RJ-MACAE-LAGOMAR-AV-ARAXA-240/LATAM-Quality-Senior-Specialist_R170598",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "baker-hughes-operador-de-m-quinas-i-41949",
+   "titulo": "Operador de Máquinas I",
+   "empresa": "Baker Hughes",
+   "local": "Niterói, RJ",
+   "link": "https://bakerhughes.wd5.myworkdayjobs.com/BakerHughes/job/BR-RJ-NITEROI-PRACA-ALCIDES-PEREIRA/Operador-de-Mquinas-I_R169511",
+   "regime": "Em terra ou a confirmar",
+   "area": "Operação e produção",
+   "tema": "operacao",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "baker-hughes-operadora-de-m-quinas-i-afirmativa-para-mulheres-6189",
+   "titulo": "Operadora de Máquinas I - Afirmativa para Mulheres",
+   "empresa": "Baker Hughes",
+   "local": "Niterói, RJ",
+   "link": "https://bakerhughes.wd5.myworkdayjobs.com/BakerHughes/job/BR-RJ-NITEROI-PRACA-ALCIDES-PEREIRA/Operadora-de-Mquinas-I---Afirmativa-para-Mulheres_R169510",
+   "regime": "Em terra ou a confirmar",
+   "area": "Operação e produção",
+   "tema": "operacao",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "baker-hughes-sales-staff-director-71799",
+   "titulo": "Sales Staff Director",
+   "empresa": "Baker Hughes",
+   "local": "Campinas, SP",
+   "link": "https://bakerhughes.wd5.myworkdayjobs.com/BakerHughes/job/BR-SP-CAMPINAS-RUA-MANUEL-THOMAZ-245/Sales-Staff-Director_R170780",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "baker-hughes-service-delivery-coordinator-36221",
+   "titulo": "Service Delivery Coordinator",
+   "empresa": "Baker Hughes",
+   "local": "Macaé, RJ",
+   "link": "https://bakerhughes.wd5.myworkdayjobs.com/BakerHughes/job/BR-RJ-MACAE-LAGOMAR-AV-ARAXA-240/Service-Delivery-Coordinator_R170007",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "baker-hughes-service-delivery-coordinator-completions-61093",
+   "titulo": "Service Delivery Coordinator - Completions",
+   "empresa": "Baker Hughes",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://bakerhughes.wd5.myworkdayjobs.com/BakerHughes/job/BR-RJ-RIO-DE-JANEIRO-VENTURA-AV-REPUBLICA-DO-CHILE-330/Service-Delivery-Coordinator---Completions_R170306",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "baker-hughes-sr-subsea-well-access-intervention-engineer-87131",
+   "titulo": "Sr. Subsea Well Access & Intervention Engineer",
+   "empresa": "Baker Hughes",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://bakerhughes.wd5.myworkdayjobs.com/BakerHughes/job/BR-RJ-RIO-DE-JANEIRO-RETIC-ILHA-DO-FUNDAO-R36-2757/Sr-Subsea-Well-Access---Intervention-Engineer_R166386",
+   "regime": "Em terra ou a confirmar",
+   "area": "Perfuração e poços",
+   "tema": "pocos",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "baker-hughes-systems-engineer-product-lifecycle-management-digital-engineering-s-66565",
+   "titulo": "Systems Engineer - Product Lifecycle Management & Digital Engineering Solutions",
+   "empresa": "Baker Hughes",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://bakerhughes.wd5.myworkdayjobs.com/BakerHughes/job/BR-RJ-RIO-DE-JANEIRO-RETIC-ILHA-DO-FUNDAO-R36-2757/Systems-Engineer---Product-Lifecycle-Management---Digital-Engineering-Solutions_R170281",
+   "regime": "Em terra ou a confirmar",
+   "area": "Engenharia",
+   "tema": "engenharia",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "baker-hughes-tolling-lead-39089",
+   "titulo": "Tolling Lead",
+   "empresa": "Baker Hughes",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://bakerhughes.wd5.myworkdayjobs.com/BakerHughes/job/BR-RJ-RIO-DE-JANEIRO-VENTURA-AV-REPUBLICA-DO-CHILE-330/Tolling-Lead_R169963",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "baker-hughes-t-cnico-de-manuten-o-55004",
+   "titulo": "Técnico de Manutenção",
+   "empresa": "Baker Hughes",
+   "local": "Macaé, RJ",
+   "link": "https://bakerhughes.wd5.myworkdayjobs.com/BakerHughes/job/BR-RJ-MACAE-LAGOMAR-AV-ARAXA-240/Tcnico-de-Manuteno_R170023",
+   "regime": "Em terra ou a confirmar",
+   "area": "Mecânica e manutenção",
+   "tema": "mecanica",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "brava-energia-analista-de-gest-o-de-dados-s-nior-74142",
+   "titulo": "Analista de Gestão de Dados Sênior",
+   "empresa": "Brava Energia",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://bravaenergia.gupy.io/jobs/12443024",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "brava-energia-analista-de-informa-es-gerenciais-s-nior-99925",
+   "titulo": "Analista de Informações Gerenciais Sênior",
+   "empresa": "Brava Energia",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://bravaenergia.gupy.io/jobs/12521043",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "brava-energia-analista-de-treinamento-normativo-j-nior-68271",
+   "titulo": "Analista de Treinamento Normativo Júnior",
+   "empresa": "Brava Energia",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://bravaenergia.gupy.io/jobs/12660114",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "brava-energia-engenheiro-a-de-reservat-rio-s-nior-72194",
+   "titulo": "Engenheiro (a) de Reservatório Sênior",
+   "empresa": "Brava Energia",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://bravaenergia.gupy.io/jobs/12574383",
+   "regime": "Em terra ou a confirmar",
+   "area": "Engenharia",
+   "tema": "engenharia",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "brava-energia-engenheiro-a-de-seguran-a-de-processos-s-nior-44551",
+   "titulo": "Engenheiro (a) de Segurança de Processos Sênior",
+   "empresa": "Brava Energia",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://bravaenergia.gupy.io/jobs/12679377",
+   "regime": "Em terra ou a confirmar",
+   "area": "Segurança",
+   "tema": "seguranca",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "brava-energia-especialista-de-gest-o-de-energia-37723",
+   "titulo": "Especialista de Gestão de Energia",
+   "empresa": "Brava Energia",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://bravaenergia.gupy.io/jobs/12748981",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "brava-energia-especialista-de-recursos-e-reservas-92507",
+   "titulo": "Especialista de Recursos e Reservas",
+   "empresa": "Brava Energia",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://bravaenergia.gupy.io/jobs/12520812",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "brava-energia-ge-logo-a-s-nior-63701",
+   "titulo": "Geólogo (a) Sênior",
+   "empresa": "Brava Energia",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://bravaenergia.gupy.io/jobs/12401320",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "brava-energia-operador-de-facilidades-96663",
+   "titulo": "Operador de Facilidades",
+   "empresa": "Brava Energia",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://bravaenergia.gupy.io/jobs/12646154",
+   "regime": "Em terra ou a confirmar",
+   "area": "Operação e produção",
+   "tema": "operacao",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "brava-energia-supervisor-de-po-os-jr-65788",
+   "titulo": "Supervisor de Poços Jr",
+   "empresa": "Brava Energia",
+   "local": "Mossoró, RN",
+   "link": "https://bravaenergia.gupy.io/jobs/12584854",
+   "regime": "Em terra ou a confirmar",
+   "area": "Perfuração e poços",
+   "tema": "pocos",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "foresea-especialista-de-perfura-o-drilling-specialist-45170",
+   "titulo": "Especialista de Perfuração / Drilling Specialist",
+   "empresa": "Foresea",
+   "local": "Macaé, RJ",
+   "link": "https://foresea.gupy.io/jobs/12686951",
+   "regime": "Em terra ou a confirmar",
+   "area": "Perfuração e poços",
+   "tema": "pocos",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "foresea-m-dico-examinador-doctor-42162",
+   "titulo": "Médico (Examinador) | Doctor",
+   "empresa": "Foresea",
+   "local": "Macaé, RJ",
+   "link": "https://foresea.gupy.io/jobs/12453660",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "foresea-supervisor-de-mec-nica-mechanic-supervisor-11154",
+   "titulo": "SUPERVISOR DE MECÂNICA - MECHANIC SUPERVISOR",
+   "empresa": "Foresea",
+   "local": "Macaé, RJ",
+   "link": "https://foresea.gupy.io/jobs/12694891",
+   "regime": "Em terra ou a confirmar",
+   "area": "Mecânica e manutenção",
+   "tema": "mecanica",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "halliburton-br-maca-analista-logistica-pleno-exporta-o-19839",
+   "titulo": "BR-Macaé-ANALISTA LOGISTICA PLENO [Exportação]",
+   "empresa": "Halliburton",
+   "local": "Macaé",
+   "link": "https://careers.halliburton.com/job/macae/br-macae-analista-logistica-pleno-exportacao/543/102212567968",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "halliburton-br-maca-senior-logistics-specialist-imports-71996",
+   "titulo": "BR-Macaé: Senior Logistics Specialist - Imports",
+   "empresa": "Halliburton",
+   "local": "Macaé",
+   "link": "https://careers.halliburton.com/job/macae/br-macae-senior-logistics-specialist-imports/543/102051216144",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "halliburton-brasil-rj-maca-assistente-de-opera-es-pipeline-and-process-services-94617",
+   "titulo": "Brasil - RJ - Macaé: Assistente de Operações (Pipeline and Process Services)",
+   "empresa": "Halliburton",
+   "local": "Macaé",
+   "link": "https://careers.halliburton.com/job/macae/brasil-rj-macae-assistente-de-operacoes-pipeline-and-process-services/543/102208748496",
+   "regime": "Em terra ou a confirmar",
+   "area": "Operação e produção",
+   "tema": "operacao",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "halliburton-deep-program-brazil-2027-47657",
+   "titulo": "DEEP Program Brazil 2027",
+   "empresa": "Halliburton",
+   "local": "Macaé",
+   "link": "https://careers.halliburton.com/job/macae/deep-program-brazil-2027/543/101956951920",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "modec-engenharia-de-dados-data-engineer-69365",
+   "titulo": "ENGENHARIA DE DADOS / Data Engineer",
+   "empresa": "MODEC",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://modec-br.gupy.io/jobs/12666191",
+   "regime": "Em terra ou a confirmar",
+   "area": "Engenharia",
+   "tema": "engenharia",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "modec-engenheiro-de-confiabilidade-de-equipamentos-rotativos-rotating-equipment--47262",
+   "titulo": "ENGENHEIRO DE CONFIABILIDADE DE EQUIPAMENTOS ROTATIVOS / Rotating Equipment Reliability Engineer",
+   "empresa": "MODEC",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://modec-br.gupy.io/jobs/12716822",
+   "regime": "Em terra ou a confirmar",
+   "area": "Engenharia",
+   "tema": "engenharia",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "modec-engenheiro-de-turbom-quinas-especialista-turbomachinery-engineer-specialis-84566",
+   "titulo": "ENGENHEIRO DE TURBOMÁQUINAS ESPECIALISTA / Turbomachinery Engineer Specialist",
+   "empresa": "MODEC",
+   "local": "Santos, SP",
+   "link": "https://modec-br.gupy.io/jobs/12695442",
+   "regime": "Em terra ou a confirmar",
+   "area": "Engenharia",
+   "tema": "engenharia",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "modec-especialista-em-opera-es-navais-marine-operations-specialist-41971",
+   "titulo": "ESPECIALISTA EM OPERAÇÕES NAVAIS / Marine Operations Specialist",
+   "empresa": "MODEC",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://modec-br.gupy.io/jobs/11842998",
+   "regime": "Em terra ou a confirmar",
+   "area": "Marítimo",
+   "tema": "maritimo",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "modec-operador-de-produ-o-production-operator-52472",
+   "titulo": "OPERADOR DE PRODUÇÃO / Production Operator",
+   "empresa": "MODEC",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://modec-br.gupy.io/jobs/12730378",
+   "regime": "Em terra ou a confirmar",
+   "area": "Operação e produção",
+   "tema": "operacao",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "modec-t-cnico-de-seguran-a-do-trabalho-safety-technician-90170",
+   "titulo": "TÉCNICO DE SEGURANÇA DO TRABALHO / Safety Technician",
+   "empresa": "MODEC",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://modec-br.gupy.io/jobs/12729629",
+   "regime": "Em terra ou a confirmar",
+   "area": "Segurança",
+   "tema": "seguranca",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "modec-t-cnico-de-seguran-a-do-trabalho-onshore-onshore-safety-technician-91722",
+   "titulo": "TÉCNICO DE SEGURANÇA DO TRABALHO ONSHORE / Onshore Safety Technician",
+   "empresa": "MODEC",
+   "local": "Macaé, RJ",
+   "link": "https://modec-br.gupy.io/jobs/12721500",
+   "regime": "Em terra ou a confirmar",
+   "area": "Segurança",
+   "tema": "seguranca",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "nov-electrical-engineer-plant-projects-27672",
+   "titulo": "Electrical Engineer – Plant Projects",
+   "empresa": "NOV",
+   "local": "São João da Barra, RJ",
+   "link": "https://egay.fa.us6.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2001/job/43317",
+   "regime": "Em terra ou a confirmar",
+   "area": "Elétrica e instrumentação",
+   "tema": "eletrica",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "nov-maintenance-reliability-engineer-55264",
+   "titulo": "Maintenance & Reliability Engineer",
+   "empresa": "NOV",
+   "local": "Macaé, RJ",
+   "link": "https://egay.fa.us6.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2001/job/43684",
+   "regime": "Em terra ou a confirmar",
+   "area": "Mecânica e manutenção",
+   "tema": "mecanica",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "nov-ot-systems-administrator-87281",
+   "titulo": "OT Systems Administrator",
+   "empresa": "NOV",
+   "local": "São João da Barra, RJ",
+   "link": "https://egay.fa.us6.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2001/job/44196",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "nov-senior-factories-installation-engineer-carcass-66804",
+   "titulo": "Senior Factories & Installation Engineer - Carcass",
+   "empresa": "NOV",
+   "local": "São João da Barra, RJ",
+   "link": "https://egay.fa.us6.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2001/job/43322",
+   "regime": "Em terra ou a confirmar",
+   "area": "Engenharia",
+   "tema": "engenharia",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "ocyan-analista-tribut-rio-iii-12793",
+   "titulo": "Analista Tributário III",
+   "empresa": "Ocyan",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://ocyan.gupy.io/jobs/12409051",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "ocyan-analista-de-seguros-ii-34209",
+   "titulo": "Analista de Seguros II",
+   "empresa": "Ocyan",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://ocyan.gupy.io/jobs/12412584",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "ocyan-especialista-financeiro-es-34318",
+   "titulo": "Especialista Financeiro es",
+   "empresa": "Ocyan",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://ocyan.gupy.io/jobs/12614888",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "ocyan-estagi-rio-a-de-qsms-91708",
+   "titulo": "Estagiário(a) de QSMS",
+   "empresa": "Ocyan",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://ocyan.gupy.io/jobs/12434098",
+   "regime": "Em terra ou a confirmar",
+   "area": "Segurança",
+   "tema": "seguranca",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "ocyan-mso-analista-de-rh-jr-tempor-rio-90-dias-23548",
+   "titulo": "MSO - Analista de RH Jr - Temporário (90 dias)",
+   "empresa": "Ocyan",
+   "local": "Macaé, RJ",
+   "link": "https://ocyan.gupy.io/jobs/12541951",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "ocyan-mso-engenheiro-a-de-integridade-especialista-em-inspe-o-e-reparos-97278",
+   "titulo": "MSO - Engenheiro(a) de Integridade (Especialista em Inspeção e Reparos)",
+   "empresa": "Ocyan",
+   "local": "Macaé, RJ",
+   "link": "https://ocyan.gupy.io/jobs/12714832",
+   "regime": "Em terra ou a confirmar",
+   "area": "Engenharia",
+   "tema": "engenharia",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "ocyan-mso-motorista-maric-16977",
+   "titulo": "MSO - Motorista (MARICÁ)",
+   "empresa": "Ocyan",
+   "local": "Macaé, RJ",
+   "link": "https://ocyan.gupy.io/jobs/12696667",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "ocyan-mso-pintor-a-jatista-onshore-base-maca-4769",
+   "titulo": "MSO - Pintor(a) Jatista Onshore - Base Macaé",
+   "empresa": "Ocyan",
+   "local": "Macaé, RJ",
+   "link": "https://ocyan.gupy.io/jobs/12148218",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "ocyan-projetista-iii-25090",
+   "titulo": "Projetista III",
+   "empresa": "Ocyan",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://ocyan.gupy.io/jobs/12645807",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "prio-analista-de-comunica-o-com-imprensa-s-nior-27833",
+   "titulo": "Analista de Comunicação com Imprensa Sênior",
+   "empresa": "PRIO",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://prio.gupy.io/jobs/12716037",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "prio-analista-de-eventos-s-nior-82408",
+   "titulo": "Analista de Eventos Sênior",
+   "empresa": "PRIO",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://prio.gupy.io/jobs/11929330",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "prio-analista-de-performance-s-nior-39117",
+   "titulo": "Analista de Performance Sênior",
+   "empresa": "PRIO",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://prio.gupy.io/jobs/12752638",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "prio-auditor-interno-pleno-67038",
+   "titulo": "Auditor Interno Pleno",
+   "empresa": "PRIO",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://prio.gupy.io/jobs/12573895",
+   "regime": "Em terra ou a confirmar",
+   "area": "Trainee e estágio",
+   "tema": "trainee",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "prio-engenheiro-de-automa-o-especialista-66963",
+   "titulo": "Engenheiro de Automação Especialista",
+   "empresa": "PRIO",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://prio.gupy.io/jobs/12514240",
+   "regime": "Em terra ou a confirmar",
+   "area": "Elétrica e instrumentação",
+   "tema": "eletrica",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "prio-engenheiro-a-de-medi-o-fiscal-s-nior-60367",
+   "titulo": "Engenheiro(a) de Medição Fiscal Sênior",
+   "empresa": "PRIO",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://prio.gupy.io/jobs/12599097",
+   "regime": "Em terra ou a confirmar",
+   "area": "Engenharia",
+   "tema": "engenharia",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "prio-especialista-em-ot-ics-83591",
+   "titulo": "Especialista em OT/ICS",
+   "empresa": "PRIO",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://prio.gupy.io/jobs/12565154",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "perbras-t-cnico-em-refrigera-o-urucu-am-32841",
+   "titulo": "TÉCNICO EM REFRIGERAÇÃO - (URUCU-AM)",
+   "empresa": "Perbras",
+   "local": "Manaus, AM",
+   "link": "https://perbras.gupy.io/jobs/12752837",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "perbras-t-cnico-de-seguran-a-do-trabalho-suape-pe-14249",
+   "titulo": "Técnico de Segurança do Trabalho - [SUAPE/PE]",
+   "empresa": "Perbras",
+   "local": "Ipojuca, PE",
+   "link": "https://perbras.gupy.io/jobs/11301595",
+   "regime": "Em terra ou a confirmar",
+   "area": "Segurança",
+   "tema": "seguranca",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "perbras-manutene-pintor-industrial-suape-pe-17768",
+   "titulo": "[ManuteNE] Pintor Industrial - Suape/PE",
+   "empresa": "Perbras",
+   "local": "Ipojuca, PE",
+   "link": "https://perbras.gupy.io/jobs/12706256",
+   "regime": "Em terra ou a confirmar",
+   "area": "Mecânica e manutenção",
+   "tema": "mecanica",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "sbm-offshore-data-steward-50836",
+   "titulo": "Data Steward",
+   "empresa": "SBM Offshore",
+   "local": "Rio de Janeiro",
+   "link": "https://careers.sbmoffshore.com/job/Rio-de-Janeiro-Data-Steward-20021-290/1375358057/",
+   "regime": "Em terra ou a confirmar",
+   "area": "Hotelaria",
+   "tema": "hotelaria",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "sbm-offshore-global-operations-excellence-lead-65936",
+   "titulo": "Global Operations Excellence Lead",
+   "empresa": "SBM Offshore",
+   "local": "Rio de Janeiro",
+   "link": "https://careers.sbmoffshore.com/job/Rio-de-Janeiro-Global-Operations-Excellence-Lead-20021-290/1374240557/",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "sbm-offshore-join-our-talent-pool-instrument-technician-71739",
+   "titulo": "Join Our Talent Pool - Instrument Technician",
+   "empresa": "SBM Offshore",
+   "local": "Rio de Janeiro",
+   "link": "https://careers.sbmoffshore.com/job/Rio-de-Janeiro-Join-Our-Talent-Pool-Instrument-Technician-20021-290/1330289957/",
+   "regime": "Em terra ou a confirmar",
+   "area": "Elétrica e instrumentação",
+   "tema": "eletrica",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "sbm-offshore-project-regulatory-engineer-84423",
+   "titulo": "Project Regulatory Engineer",
+   "empresa": "SBM Offshore",
+   "local": "Rio de Janeiro",
+   "link": "https://careers.sbmoffshore.com/job/Rio-de-Janeiro-Project-Regulatory-Engineer-20021-290/1375151857/",
+   "regime": "Em terra ou a confirmar",
+   "area": "Engenharia",
+   "tema": "engenharia",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "sbm-offshore-supply-chain-discipline-manager-45599",
+   "titulo": "Supply Chain Discipline Manager",
+   "empresa": "SBM Offshore",
+   "local": "Rio de Janeiro",
+   "link": "https://careers.sbmoffshore.com/job/Rio-de-Janeiro-Supply-Chain-Discipline-Manager-20021-290/1367262657/",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "shell-sc-supply-base-lead-53184",
+   "titulo": "SC Supply Base Lead",
+   "empresa": "Shell",
+   "local": "Rio de Janeiro",
+   "link": "https://shell.wd3.myworkdayjobs.com/ShellCareers/job/Rio-De-Janeiro---Ventura-Office/SC-Supply-Base-Lead_R211527-1",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "subsea7-analista-de-planejamento-pessoal-pleno-16676",
+   "titulo": "Analista de Planejamento Pessoal Pleno",
+   "empresa": "Subsea7",
+   "local": "Brasil",
+   "link": "https://careers.subsea7.com/job/Rio-de-Janeiro-Analista-de-Planejamento-Pessoal-Pleno/1371162055/",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "subsea7-assistente-administrativo-exclusiva-pcd-71026",
+   "titulo": "Assistente Administrativo - Exclusiva PCD",
+   "empresa": "Subsea7",
+   "local": "Brasil",
+   "link": "https://careers.subsea7.com/job/Rio-de-Janeiro-Assistente-Administrativo-Exclusiva-PCD/1370560255/",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "subsea7-engenheira-o-sgi-i-74113",
+   "titulo": "Engenheira(o) SGI I",
+   "empresa": "Subsea7",
+   "local": "Brasil",
+   "link": "https://careers.subsea7.com/job/Rio-de-Janeiro-Engenheira%28o%29-SGI-I/1373328755/",
+   "regime": "Em terra ou a confirmar",
+   "area": "Engenharia",
+   "tema": "engenharia",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "subsea7-engenheiro-ii-suporte-t-cnico-80263",
+   "titulo": "Engenheiro II (Suporte Técnico)",
+   "empresa": "Subsea7",
+   "local": "Brasil",
+   "link": "https://careers.subsea7.com/job/Rio-de-Janeiro-Engenheiro-II-%28Suporte-T%C3%A9cnico%29/1371103755/",
+   "regime": "Em terra ou a confirmar",
+   "area": "Engenharia",
+   "tema": "engenharia",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "subsea7-gerente-de-projetos-de-engenharia-43840",
+   "titulo": "Gerente de Projetos de Engenharia",
+   "empresa": "Subsea7",
+   "local": "Brasil",
+   "link": "https://careers.subsea7.com/job/Rio-de-Janeiro-Gerente-de-Projetos-de-Engenharia/1373187655/",
+   "regime": "Em terra ou a confirmar",
+   "area": "Engenharia",
+   "tema": "engenharia",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "subsea7-graduate-development-programme-2027-commercial-57969",
+   "titulo": "Graduate Development Programme 2027 - Commercial",
+   "empresa": "Subsea7",
+   "local": "Brasil",
+   "link": "https://careers.subsea7.com/job/STAVANGER-Graduate-Development-Programme-2027-Commercial/1369134455/",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "subsea7-lead-scm-specialist-electrical-78424",
+   "titulo": "Lead SCM Specialist-Electrical",
+   "empresa": "Subsea7",
+   "local": "Brasil",
+   "link": "https://careers.subsea7.com/job/Dubai-Lead-SCM-Specialist-Electrical/1373238955/",
+   "regime": "Em terra ou a confirmar",
+   "area": "Elétrica e instrumentação",
+   "tema": "eletrica",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "subsea7-operations-engineer-ii-2352",
+   "titulo": "Operations Engineer II",
+   "empresa": "Subsea7",
+   "local": "Brasil",
+   "link": "https://careers.subsea7.com/job/Rio-de-Janeiro-Operations-Engineer-II/1370552455/",
+   "regime": "Em terra ou a confirmar",
+   "area": "Engenharia",
+   "tema": "engenharia",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "subsea7-operations-engineer-ii-a-u-66843",
+   "titulo": "Operations Engineer II - Açu",
+   "empresa": "Subsea7",
+   "local": "Brasil",
+   "link": "https://careers.subsea7.com/job/S%C3%A3o-Joao-da-Barra-Operations-Engineer-II-A%C3%A7u/1370552655/",
+   "regime": "Em terra ou a confirmar",
+   "area": "Engenharia",
+   "tema": "engenharia",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "subsea7-operations-engineer-ii-ubu-55581",
+   "titulo": "Operations Engineer II - UBU",
+   "empresa": "Subsea7",
+   "local": "Brasil",
+   "link": "https://careers.subsea7.com/job/Espirito-Santo-%28Ubu%29-Operations-Engineer-II-UBU/1370552755/",
+   "regime": "Em terra ou a confirmar",
+   "area": "Engenharia",
+   "tema": "engenharia",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "subsea7-principal-engineer-installation-and-projects-95070",
+   "titulo": "Principal Engineer - Installation and Projects",
+   "empresa": "Subsea7",
+   "local": "Brasil",
+   "link": "https://careers.subsea7.com/job/London-%28Sutton%29-Principal-Engineer-Installation-and-Projects/1356546755/",
+   "regime": "Em terra ou a confirmar",
+   "area": "Engenharia",
+   "tema": "engenharia",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "subsea7-quality-lead-8153",
+   "titulo": "Quality Lead",
+   "empresa": "Subsea7",
+   "local": "Brasil",
+   "link": "https://careers.subsea7.com/job/Rio-de-Janeiro-Quality-Lead/1359292655/",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "subsea7-r-dio-operadora-o-11013",
+   "titulo": "Rádio Operadora(o)",
+   "empresa": "Subsea7",
+   "local": "Brasil",
+   "link": "https://careers.subsea7.com/job/Offshore-R%C3%A1dio-Operadora%28o%29/1361964555/",
+   "regime": "Em terra ou a confirmar",
+   "area": "Operação e produção",
+   "tema": "operacao",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "subsea7-senior-installation-analysis-engineer-54690",
+   "titulo": "Senior Installation Analysis Engineer",
+   "empresa": "Subsea7",
+   "local": "Brasil",
+   "link": "https://careers.subsea7.com/job/Merida-Senior-Installation-Analysis-Engineer/1353600455/",
+   "regime": "Em terra ou a confirmar",
+   "area": "Engenharia",
+   "tema": "engenharia",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "subsea7-sr-engineer-flexible-pipelines-and-umbilicals-54284",
+   "titulo": "Sr Engineer - (Flexible Pipelines and Umbilicals)",
+   "empresa": "Subsea7",
+   "local": "Brasil",
+   "link": "https://careers.subsea7.com/job/Rio-de-Janeiro-Sr-Engineer-%28Flexible-Pipelines-and-Umbilicals%29/1373526355/",
+   "regime": "Em terra ou a confirmar",
+   "area": "Engenharia",
+   "tema": "engenharia",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "subsea7-sr-hse-engineer-4351",
+   "titulo": "Sr HSE Engineer",
+   "empresa": "Subsea7",
+   "local": "Brasil",
+   "link": "https://careers.subsea7.com/job/Rio-de-Janeiro-Sr-HSE-Engineer/1370558955/",
+   "regime": "Em terra ou a confirmar",
+   "area": "Segurança",
+   "tema": "seguranca",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "subsea7-technical-support-manager-nivel-coordena-o-17616",
+   "titulo": "Technical Support Manager (Nivel Coordenação)",
+   "empresa": "Subsea7",
+   "local": "Brasil",
+   "link": "https://careers.subsea7.com/job/Espirito-Santo-%28Ubu%29-Technical-Support-Manager-%28Nivel-Coordena%C3%A7%C3%A3o%29/1373524955/",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "technipfmc-control-automation-devops-engineer-4311",
+   "titulo": "Control & Automation Devops Engineer",
+   "empresa": "TechnipFMC",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://careers.technipfmc.com/job/Rio-de-Janeiro-Control-&amp;-Automation-Devops-Engineer-RJ-21941-850/1434774800/",
+   "regime": "Em terra ou a confirmar",
+   "area": "Engenharia",
+   "tema": "engenharia",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "technipfmc-senior-controls-engineer-17154",
+   "titulo": "Senior Controls Engineer",
+   "empresa": "TechnipFMC",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://careers.technipfmc.com/job/Rio-de-Janeiro-Senior-Controls-Engineer-RJ-21535-900/1435139400/",
+   "regime": "Em terra ou a confirmar",
+   "area": "Engenharia",
+   "tema": "engenharia",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "technipfmc-testops-engineer-qa-91067",
+   "titulo": "TestOps Engineer - QA",
+   "empresa": "TechnipFMC",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://careers.technipfmc.com/job/Rio-de-Janeiro-TestOps-Engineer-QA-RJ-21941-850/1436127200/",
+   "regime": "Em terra ou a confirmar",
+   "area": "Engenharia",
+   "tema": "engenharia",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "wilson-sons-assistente-de-agente-maritimo-jr-tempor-rio-fortaleza-8120",
+   "titulo": "ASSISTENTE DE AGENTE MARITIMO JR (temporário) - FORTALEZA",
+   "empresa": "Wilson Sons",
+   "local": "Fortaleza, CE",
+   "link": "https://wilsonsons.gupy.io/jobs/12661541",
+   "regime": "Em terra ou a confirmar",
+   "area": "Marítimo",
+   "tema": "maritimo",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "wilson-sons-agente-mar-timo-jr-s-o-jo-o-da-barra-rj-316",
+   "titulo": "Agente Marítimo JR | São João da Barra - RJ",
+   "empresa": "Wilson Sons",
+   "local": "São João da Barra, RJ",
+   "link": "https://wilsonsons.gupy.io/jobs/12502427",
+   "regime": "Em terra ou a confirmar",
+   "area": "Marítimo",
+   "tema": "maritimo",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "wilson-sons-agente-mar-timo-jr-vitoria-72388",
+   "titulo": "Agente Marítimo JR | Vitoria",
+   "empresa": "Wilson Sons",
+   "local": "Vitória, ES",
+   "link": "https://wilsonsons.gupy.io/jobs/12502873",
+   "regime": "Em terra ou a confirmar",
+   "area": "Marítimo",
+   "tema": "maritimo",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "wilson-sons-analista-de-opera-es-de-rebocadores-pl-itacoatiara-am-90227",
+   "titulo": "Analista de Operações de Rebocadores PL - Itacoatiara (AM)",
+   "empresa": "Wilson Sons",
+   "local": "Oriximiná, PA",
+   "link": "https://wilsonsons.gupy.io/jobs/12477756",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "wilson-sons-assistente-de-agente-mar-timo-jr-s-o-jo-o-da-barra-12447",
+   "titulo": "Assistente de Agente Marítimo JR - São João da Barra",
+   "empresa": "Wilson Sons",
+   "local": "São João da Barra, RJ",
+   "link": "https://wilsonsons.gupy.io/jobs/12503231",
+   "regime": "Em terra ou a confirmar",
+   "area": "Marítimo",
+   "tema": "maritimo",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "wilson-sons-assistente-de-agente-mar-timo-jr-vitoria-81804",
+   "titulo": "Assistente de Agente Marítimo JR - Vitoria",
+   "empresa": "Wilson Sons",
+   "local": "Vitória, ES",
+   "link": "https://wilsonsons.gupy.io/jobs/12503346",
+   "regime": "Em terra ou a confirmar",
+   "area": "Marítimo",
+   "tema": "maritimo",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "wilson-sons-chefe-de-m-quinas-aracaju-se-16269",
+   "titulo": "Chefe de Máquinas - Aracaju (SE)",
+   "empresa": "Wilson Sons",
+   "local": "Barra dos Coqueiros, SE",
+   "link": "https://wilsonsons.gupy.io/jobs/12369524",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "wilson-sons-chefe-de-m-quinas-macei-al-24229",
+   "titulo": "Chefe de Máquinas - Maceió (AL)",
+   "empresa": "Wilson Sons",
+   "local": "Maceió, AL",
+   "link": "https://wilsonsons.gupy.io/jobs/12441686",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "wilson-sons-chefe-de-m-quinas-santos-sp-38866",
+   "titulo": "Chefe de Máquinas - Santos (SP)",
+   "empresa": "Wilson Sons",
+   "local": "Santos, SP",
+   "link": "https://wilsonsons.gupy.io/jobs/12369210",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "wilson-sons-chefe-de-m-quinas-fluvial-santar-m-pa-4323",
+   "titulo": "Chefe de Máquinas Fluvial | Santarém (PA)",
+   "empresa": "Wilson Sons",
+   "local": "Santarém, PA",
+   "link": "https://wilsonsons.gupy.io/jobs/12523381",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "wilson-sons-comandante-rio-de-janeiro-65539",
+   "titulo": "Comandante - Rio de Janeiro",
+   "empresa": "Wilson Sons",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://wilsonsons.gupy.io/jobs/12653936",
+   "regime": "Em terra ou a confirmar",
+   "area": "Marítimo",
+   "tema": "maritimo",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "wilson-sons-especialista-comercial-shore-base-subsea-53628",
+   "titulo": "Especialista Comercial | Shore Base & Subsea",
+   "empresa": "Wilson Sons",
+   "local": "Niterói, RJ",
+   "link": "https://wilsonsons.gupy.io/jobs/12439613",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "wilson-sons-mec-nico-sr-rebocadores-s-o-lu-s-84571",
+   "titulo": "Mecânico SR Rebocadores | São Luís",
+   "empresa": "Wilson Sons",
+   "local": "São Luís, MA",
+   "link": "https://wilsonsons.gupy.io/jobs/12265690",
+   "regime": "Em terra ou a confirmar",
+   "area": "Mecânica e manutenção",
+   "tema": "mecanica",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "wilson-sons-mec-nico-sr-rebocadores-trombetas-68605",
+   "titulo": "Mecânico SR Rebocadores | Trombetas",
+   "empresa": "Wilson Sons",
+   "local": "Oriximiná, PA",
+   "link": "https://wilsonsons.gupy.io/jobs/12587301",
+   "regime": "Em terra ou a confirmar",
+   "area": "Mecânica e manutenção",
+   "tema": "mecanica",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "wilson-sons-supervisor-a-de-manuten-o-rebocadores-rio-grande-72643",
+   "titulo": "Supervisor(a) de Manutenção | Rebocadores Rio Grande",
+   "empresa": "Wilson Sons",
+   "local": "Rio Grande, RS",
+   "link": "https://wilsonsons.gupy.io/jobs/12677104",
+   "regime": "Em terra ou a confirmar",
+   "area": "Mecânica e manutenção",
+   "tema": "mecanica",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "yinson-automation-and-ot-network-engineer-64434",
+   "titulo": "Automation and OT Network Engineer",
+   "empresa": "Yinson",
+   "local": "Brasil",
+   "link": "https://careers.yinson.com/job/Rio-de-Janeiro-Automation-and-OT-Network-Engineer-RJ/1370356655/",
+   "regime": "Em terra ou a confirmar",
+   "area": "Engenharia",
+   "tema": "engenharia",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "yinson-field-operator-trainee-4675",
+   "titulo": "Field Operator Trainee",
+   "empresa": "Yinson",
+   "local": "Brasil",
+   "link": "https://careers.yinson.com/job/Rio-de-Janeiro-Field-Operator-Trainee/1367631355/",
+   "regime": "Em terra ou a confirmar",
+   "area": "Operação e produção",
+   "tema": "operacao",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "yinson-operations-intern-37411",
+   "titulo": "Operations Intern",
+   "empresa": "Yinson",
+   "local": "Brasil",
+   "link": "https://careers.yinson.com/job/Rio-de-Janeiro-Operations-Intern-RJ/1368781055/",
+   "regime": "Em terra ou a confirmar",
+   "area": "Trainee e estágio",
+   "tema": "trainee",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "yinson-radio-operator-9664",
+   "titulo": "Radio Operator",
+   "empresa": "Yinson",
+   "local": "Brasil",
+   "link": "https://careers.yinson.com/job/Rio-de-Janeiro-Radio-Operator/1356020155/",
+   "regime": "Em terra ou a confirmar",
+   "area": "Operação e produção",
+   "tema": "operacao",
+   "banco": false,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "brava-energia-banco-de-talentos-offshore-35824",
+   "titulo": "Banco de Talentos Offshore",
+   "empresa": "Brava Energia",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://bravaenergia.gupy.io/jobs/11848711",
+   "regime": "Embarcado",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": true,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "foresea-auxiliar-de-plataforma-plataformista-banco-de-talentos-9351",
+   "titulo": "Auxiliar de Plataforma | Plataformista - Banco de Talentos",
+   "empresa": "Foresea",
+   "local": "Macaé, RJ",
+   "link": "https://foresea.gupy.io/jobs/10992150",
+   "regime": "Embarcado",
+   "area": "Mecânica e manutenção",
+   "tema": "mecanica",
+   "banco": true,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "perbras-banco-de-talentos-engenheiro-offshore-tfo-maca-rj-76962",
+   "titulo": "[BANCO DE TALENTOS] Engenheiro Offshore - TFO - Macaé/RJ",
+   "empresa": "Perbras",
+   "local": "Macaé, RJ",
+   "link": "https://perbras.gupy.io/jobs/7026513",
+   "regime": "Embarcado",
+   "area": "Engenharia",
+   "tema": "engenharia",
+   "banco": true,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "perbras-banco-de-talentos-mecanico-n1-offshore-rn-28864",
+   "titulo": "[BANCO DE TALENTOS] MECANICO N1 Offshore - RN",
+   "empresa": "Perbras",
+   "local": "Guamaré, RN",
+   "link": "https://perbras.gupy.io/jobs/11404772",
+   "regime": "Embarcado",
+   "area": "Mecânica e manutenção",
+   "tema": "mecanica",
+   "banco": true,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "perbras-banco-de-talentos-operador-de-guindaste-offshore-rn-25994",
+   "titulo": "[BANCO DE TALENTOS] Operador de Guindaste Offshore - RN",
+   "empresa": "Perbras",
+   "local": "Guamaré, RN",
+   "link": "https://perbras.gupy.io/jobs/10704152",
+   "regime": "Embarcado",
+   "area": "Operação e produção",
+   "tema": "operacao",
+   "banco": true,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "perbras-banco-de-talentos-sondador-spm-e-sm-maca-rj-63819",
+   "titulo": "[BANCO DE TALENTOS] Sondador SPM e SM - MACAÉ/RJ",
+   "empresa": "Perbras",
+   "local": "Macaé, RJ",
+   "link": "https://perbras.gupy.io/jobs/6651936",
+   "regime": "Embarcado",
+   "area": "Perfuração e poços",
+   "tema": "pocos",
+   "banco": true,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "perbras-banco-de-talentos-t-cnico-de-seguran-a-do-trabalho-offshore-tfo-maca-rj-94913",
+   "titulo": "[BANCO DE TALENTOS] Técnico de Segurança do Trabalho Offshore - TFO - Macaé/RJ",
+   "empresa": "Perbras",
+   "local": "Macaé, RJ",
+   "link": "https://perbras.gupy.io/jobs/7086758",
+   "regime": "Embarcado",
+   "area": "Segurança",
+   "tema": "seguranca",
+   "banco": true,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "brava-energia-banco-de-talentos-est-gio-em-engenharia-de-petr-leo-rio-rj-16930",
+   "titulo": "Banco de Talentos - Estágio em Engenharia de Petróleo | Rio/RJ",
+   "empresa": "Brava Energia",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://bravaenergia.gupy.io/jobs/12409299",
+   "regime": "Em terra ou a confirmar",
+   "area": "Engenharia",
+   "tema": "engenharia",
+   "banco": true,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "brava-energia-banco-de-talentos-est-gio-em-geologia-rio-rj-45725",
+   "titulo": "Banco de Talentos - Estágio em Geologia | Rio/RJ",
+   "empresa": "Brava Energia",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://bravaenergia.gupy.io/jobs/12409704",
+   "regime": "Em terra ou a confirmar",
+   "area": "Trainee e estágio",
+   "tema": "trainee",
+   "banco": true,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "brava-energia-banco-de-talentos-exclusivo-para-profissionais-com-defici-ncia-41007",
+   "titulo": "Banco de Talentos - Exclusivo para Profissionais com Deficiência",
+   "empresa": "Brava Energia",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://bravaenergia.gupy.io/jobs/7837117",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": true,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "foresea-banco-de-talentos-18674",
+   "titulo": "Banco de Talentos",
+   "empresa": "Foresea",
+   "local": "Macaé, RJ",
+   "link": "https://foresea.gupy.io/jobs/10342991",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": true,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "foresea-banco-de-talentos-cadastro-de-reserva-1711",
+   "titulo": "Banco de Talentos (cadastro de reserva)",
+   "empresa": "Foresea",
+   "local": "Macaé, RJ",
+   "link": "https://foresea.gupy.io/jobs/6460894",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": true,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "foresea-banco-de-talentos-exclusivo-para-pessoas-com-defici-ncia-pcd-36699",
+   "titulo": "Banco de Talentos - Exclusivo para Pessoas com Deficiência (PCD)",
+   "empresa": "Foresea",
+   "local": "Macaé, RJ",
+   "link": "https://foresea.gupy.io/jobs/9347746",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": true,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "ocyan-banco-de-talentos-pessoas-com-defici-ncia-cadastre-seu-curr-culo-aqui-84145",
+   "titulo": "Banco de Talentos (Pessoas com Deficiência) - Cadastre seu currículo aqui!",
+   "empresa": "Ocyan",
+   "local": "Macaé, RJ",
+   "link": "https://ocyan.gupy.io/jobs/434268",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": true,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "ocyan-banco-de-talentos-cadastre-seu-curr-culo-aqui-8168",
+   "titulo": "Banco de Talentos - Cadastre seu currículo aqui!",
+   "empresa": "Ocyan",
+   "local": "Macaé, RJ",
+   "link": "https://ocyan.gupy.io/jobs/225341",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": true,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "prio-banco-de-talentos-prio-futuras-oportunidades-71486",
+   "titulo": "Banco de Talentos PRIO: Futuras Oportunidades!",
+   "empresa": "PRIO",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://prio.gupy.io/jobs/3992102",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": true,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "perbras-banco-de-talentos-t-cnico-de-administra-o-maca-rj-22286",
+   "titulo": "[ BANCO DE TALENTOS ] TÉCNICO DE ADMINISTRAÇÃO [MACAÉ/RJ]",
+   "empresa": "Perbras",
+   "local": "Macaé, RJ",
+   "link": "https://perbras.gupy.io/jobs/6599951",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": true,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "perbras-banco-de-talentos-t-cnico-de-logistica-maca-rj-27089",
+   "titulo": "[ BANCO DE TALENTOS ] TÉCNICO DE LOGISTICA  [MACAÉ/RJ]",
+   "empresa": "Perbras",
+   "local": "Macaé, RJ",
+   "link": "https://perbras.gupy.io/jobs/6506414",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": true,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "perbras-banco-de-talentos-t-cnico-de-manuten-o-tfo-onshore-maca-rj-61207",
+   "titulo": "[ BANCO DE TALENTOS] Técnico de Manutenção - TFO - ONSHORE - MACAÉ/RJ",
+   "empresa": "Perbras",
+   "local": "Macaé, RJ",
+   "link": "https://perbras.gupy.io/jobs/11132138",
+   "regime": "Em terra ou a confirmar",
+   "area": "Mecânica e manutenção",
+   "tema": "mecanica",
+   "banco": true,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "perbras-banco-de-talentos-auxiliar-de-manuten-o-tfo-maca-rj-90940",
+   "titulo": "[BANCO DE TALENTOS] Auxiliar de Manutenção - TFO - Macaé/RJ",
+   "empresa": "Perbras",
+   "local": "Macaé, RJ",
+   "link": "https://perbras.gupy.io/jobs/7027866",
+   "regime": "Em terra ou a confirmar",
+   "area": "Mecânica e manutenção",
+   "tema": "mecanica",
+   "banco": true,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "perbras-banco-de-talentos-inspetor-de-manuten-o-tfo-maca-rj-25923",
+   "titulo": "[BANCO DE TALENTOS] Inspetor de Manutenção - TFO - Macaé/RJ",
+   "empresa": "Perbras",
+   "local": "Macaé, RJ",
+   "link": "https://perbras.gupy.io/jobs/7027068",
+   "regime": "Em terra ou a confirmar",
+   "area": "Mecânica e manutenção",
+   "tema": "mecanica",
+   "banco": true,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "perbras-banco-de-talentos-inspetor-de-pintura-industrial-fortaleza-ce-38604",
+   "titulo": "[BANCO DE TALENTOS] Inspetor de Pintura Industrial - Fortaleza-CE",
+   "empresa": "Perbras",
+   "local": "Fortaleza, CE",
+   "link": "https://perbras.gupy.io/jobs/10966760",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": true,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "perbras-banco-de-talentos-plataformista-maca-rj-70944",
+   "titulo": "[BANCO DE TALENTOS] Plataformista - Macaé/RJ",
+   "empresa": "Perbras",
+   "local": "Macaé, RJ",
+   "link": "https://perbras.gupy.io/jobs/6651973",
+   "regime": "Em terra ou a confirmar",
+   "area": "Mecânica e manutenção",
+   "tema": "mecanica",
+   "banco": true,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "perbras-banco-de-talentos-supervisor-tfo-maca-rj-24836",
+   "titulo": "[BANCO DE TALENTOS] Supervisor - TFO - Macaé/RJ",
+   "empresa": "Perbras",
+   "local": "Macaé, RJ",
+   "link": "https://perbras.gupy.io/jobs/7026682",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": true,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "perbras-banco-de-talentos-torrista-maca-rj-89623",
+   "titulo": "[BANCO DE TALENTOS] Torrista - Macaé/RJ",
+   "empresa": "Perbras",
+   "local": "Macaé, RJ",
+   "link": "https://perbras.gupy.io/jobs/6651962",
+   "regime": "Em terra ou a confirmar",
+   "area": "Perfuração e poços",
+   "tema": "pocos",
+   "banco": true,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "subsea7-banco-de-talentos-pcd-programa-de-aprendizagem-subsea7-49766",
+   "titulo": "Banco de Talentos PCD | Programa de Aprendizagem Subsea7",
+   "empresa": "Subsea7",
+   "local": "Brasil",
+   "link": "https://careers.subsea7.com/job/Rio-de-Janeiro-Banco-de-Talentos-PCD-Programa-de-Aprendizagem-Subsea7/1362962255/",
+   "regime": "Em terra ou a confirmar",
+   "area": "Trainee e estágio",
+   "tema": "trainee",
+   "banco": true,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "subsea7-banco-de-talentos-pcd-subsea7-75056",
+   "titulo": "Banco de Talentos PCD | Subsea7",
+   "empresa": "Subsea7",
+   "local": "Brasil",
+   "link": "https://careers.subsea7.com/job/Rio-de-Janeiro-Banco-de-Talentos-PCD-Subsea7/1362247855/",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": true,
+   "vistaEm": "2026-10-20"
+  },
+  {
+   "id": "wilson-sons-banco-de-talentos-mar-timos-59519",
+   "titulo": "Banco de Talentos | Marítimos",
+   "empresa": "Wilson Sons",
+   "local": "Remoto",
+   "link": "https://wilsonsons.gupy.io/jobs/6438342",
+   "regime": "Remoto",
+   "area": "Marítimo",
+   "tema": "maritimo",
+   "banco": true,
+   "vistaEm": "2026-10-20"
+  }
+ ]
+}

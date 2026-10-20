@@ -1604,11 +1604,14 @@ fetch('anp/data/producao.json').then(r => r.json()).then(d => {
   document.getElementById('stat-oil').textContent = (u.oil / 1000).toLocaleString('pt-BR', {maximumFractionDigits:2}) + ' mi';
   document.getElementById('stat-oil-l').textContent = `Barris por dia no Brasil · ${M[+u.m.slice(5) - 1]}/${u.m.slice(2, 4)} · ANP`;
 }).catch(() => {});
-fetch('vagas/vagas.json').then(r => r.json()).then(v => {
+Promise.all([
+  fetch('vagas/vagas.json').then(r => r.json()),
+  fetch('vagas/automaticas.json').then(r => r.json()).catch(() => ({vagas: []}))
+]).then(([v, a]) => {
   const hoje = new Date().toISOString().slice(0, 10);
-  const n = v.filter(x => !x.inscricoesAte || x.inscricoesAte >= hoje).length;
+  const n = v.filter(x => !x.inscricoesAte || x.inscricoesAte >= hoje).length + a.vagas.filter(x => !x.banco).length;
   document.getElementById('stat-vagas').textContent = n;
-  document.getElementById('stat-vagas-l').textContent = n === 1 ? 'Vaga aberta' : 'Vagas abertas';
+  document.getElementById('stat-vagas-l').textContent = n === 1 ? 'Vaga aberta' : 'Vagas abertas no setor';
 }).catch(() => {});
 
 function updateStats() {

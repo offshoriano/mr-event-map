@@ -1,0 +1,42 @@
+name: Atualizar vagas das empresas
+
+on:
+  schedule:
+    # Segunda e quinta, 10:23 UTC (07:23 em Brasília)
+    - cron: '23 10 * * 1,4'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  atualizar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Baixar código
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Buscar vagas nos sites de carreira
+        run: python3 scripts/vagas/fetch_jobs.py
+
+      - name: Salvar e publicar vagas novas
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add vagas/automaticas.json
+          if git diff --cached --quiet; then
+            echo "Sem vagas novas"
+          else
+            git commit -m "Vagas: atualiza vagas das empresas"
+            git pull --rebase origin main
+            git push origin HEAD:main
+            # Push feito com GITHUB_TOKEN não dispara o deploy.yml, então repassa aqui
+            git push origin HEAD:refs/heads/claude/event-map-platform-db2gk
+          fi
