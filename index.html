@@ -193,6 +193,20 @@ input::placeholder,textarea::placeholder{color:var(--muted);opacity:.5;}
 .reg-input::placeholder{color:var(--muted);opacity:.5;}
 
 /* FOOTER */
+/* PATROCINADORES */
+#sponsors{background:#F3EFE9;padding:72px 48px 56px;}
+.sp-inner{max-width:1000px;margin:0 auto;}
+.sp-eyebrow{text-align:center;font-family:'Syne',sans-serif;font-weight:700;font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:#4A4036;margin-bottom:36px;}
+.sp-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.sp-card{background:#fff;border:1px solid #E4DDD2;border-radius:4px;height:130px;display:flex;align-items:center;justify-content:center;padding:18px;text-decoration:none;transition:.2s;}
+.sp-card:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.08);}
+.sp-card img{max-width:100%;max-height:100%;object-fit:contain;display:block;}
+.sp-card.dark{background:#0E0C0D;border-color:#0E0C0D;padding:10px;}
+.sp-card.cta{background:linear-gradient(135deg,var(--gold),#8E6424);border:none;flex-direction:column;gap:8px;cursor:pointer;
+  font-family:'Syne',sans-serif;font-weight:700;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#fff;text-align:center;line-height:1.5;}
+.sp-foot{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;margin-top:36px;padding-top:28px;border-top:1px solid #E4DDD2;}
+.sp-foot p{font-size:14px;color:#4A4036;}
+.sp-foot .btn{padding:12px 26px;}
 footer{border-top:1px solid var(--border);padding:40px 48px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
 .foot-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:13px;letter-spacing:.12em;text-transform:uppercase;}
 .foot-logo span{color:var(--gold);}
@@ -211,12 +225,19 @@ footer{border-top:1px solid var(--border);padding:40px 48px;display:flex;justify
 @keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
 
 @media(max-width:768px){
-  nav{padding:16px 20px;}
+  nav{padding:14px 20px;flex-wrap:wrap;row-gap:10px;}
+  .nav-actions{width:100%;overflow-x:auto;scrollbar-width:none;gap:8px;}
+  .nav-actions::-webkit-scrollbar{display:none;}
+  .nav-btn{white-space:nowrap;flex-shrink:0;padding:8px 14px;}
+  .month-header{flex-wrap:wrap;}
   main{padding:60px 20px 80px;}
   #hero,#register{padding-left:20px;padding-right:20px;}
   .conf-actions{flex-direction:column;padding:16px 20px;align-items:stretch;}
   .parallel-grid{grid-template-columns:1fr;}
   footer{padding:28px 20px;flex-direction:column;text-align:center;}
+  #sponsors{padding:56px 20px 44px;}
+  .sp-grid{grid-template-columns:1fr 1fr;gap:12px;}
+  .sp-card{height:110px;}
   .reg-form{flex-direction:column;}
 }
 
@@ -344,6 +365,22 @@ input[type="date"],input[type="time"]{color-scheme:dark;}
     <h2 class="reg-title">Quais eventos fazem<br><span>sentido para você?</span></h2>
     <p class="reg-sub">Responda algumas perguntas sobre sua empresa e seus objetivos. A MR Solutions entrega um diagnóstico personalizado indicando quais eventos têm mais aderência com o seu perfil, e uma estimativa de investimento real para cada um deles.</p>
     <button class="btn btn-gold" style="font-size:13px;padding:18px 48px;" onclick="openDiagModal()">Iniciar meu diagnóstico gratuito →</button>
+  </div>
+</section>
+
+<section id="sponsors">
+  <div class="sp-inner">
+    <div class="sp-eyebrow">Patrocinadores &amp; apoio institucional</div>
+    <div class="sp-grid">
+      <div class="sp-card"><img src="assets/patrocinadores/mr-solutions.png" alt="MR Solutions" loading="lazy"></div>
+      <div class="sp-card"><img src="assets/patrocinadores/qlp-group.png" alt="QLP Group" loading="lazy"></div>
+      <div class="sp-card dark"><img src="assets/patrocinadores/techocean-services.png" alt="Techocean Services" loading="lazy"></div>
+      <div class="sp-card cta" onclick="openDiagModal()" role="button" tabindex="0">Anuncie<br>sua marca aqui</div>
+    </div>
+    <div class="sp-foot">
+      <p>Quer levar sua marca para o circuito de energia mais qualificado do Brasil?</p>
+      <button class="btn btn-gold" onclick="openDiagModal()">Falar sobre patrocínio</button>
+    </div>
   </div>
 </section>
 
