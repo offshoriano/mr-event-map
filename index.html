@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MR Solutions — Event Map 2026</title>
+<title>MR Solutions · Onde o óleo e gás se encontra</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300..800;1,9..40,300&display=swap" rel="stylesheet">
 <!-- Google Analytics 4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-BBGCSZ37C4"></script>
@@ -63,7 +63,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .hero-eyebrow{position:relative;z-index:1;font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);
   border:1px solid rgba(201,147,58,.3);padding:7px 22px;border-radius:2px;background:rgba(201,147,58,.05);margin-bottom:28px;
   animation:fadeUp .7s ease both;}
-h1.hero-title{position:relative;z-index:1;font-family:'Bebas Neue',sans-serif;font-size:clamp(68px,11vw,136px);line-height:.9;letter-spacing:.02em;animation:fadeUp .7s .12s ease both;}
+h1.hero-title{position:relative;z-index:1;font-family:'Bebas Neue',sans-serif;font-size:clamp(54px,9vw,118px);line-height:.9;letter-spacing:.02em;animation:fadeUp .7s .12s ease both;}
 h1.hero-title .l1{display:block;color:var(--white);}
 h1.hero-title .l2{display:block;color:var(--gold);}
 .hero-sub{position:relative;z-index:1;max-width:520px;margin:24px auto 0;font-size:15px;line-height:1.75;color:var(--muted);font-weight:300;animation:fadeUp .7s .24s ease both;}
@@ -79,6 +79,17 @@ h1.hero-title .l2{display:block;color:var(--gold);}
 .btn-night:hover{background:rgba(123,92,246,.25);transform:translateY(-2px);}
 
 /* STATS */
+/* HUB: os quatro caminhos do site */
+.hub{position:relative;z-index:1;display:grid;grid-template-columns:repeat(4,1fr);gap:12px;width:100%;max-width:1120px;margin-top:52px;text-align:left;animation:fadeUp .7s .42s ease both;}
+.hub a{display:flex;flex-direction:column;background:rgba(13,17,23,.84);backdrop-filter:blur(6px);border:1px solid var(--border2);border-radius:3px;
+  padding:22px 20px 18px;text-decoration:none;color:var(--white);transition:.2s;}
+.hub a:hover{border-color:var(--gold);transform:translateY(-3px);}
+.hub .k{font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);}
+.hub b{display:block;font-size:20px;font-weight:800;margin:8px 0 6px;}
+.hub p{font-size:13px;line-height:1.55;color:var(--muted2);flex:1;}
+.hub .who{display:flex;justify-content:space-between;align-items:center;margin-top:16px;padding-top:12px;border-top:1px solid var(--border);
+  font-size:11px;letter-spacing:.06em;color:var(--muted);}
+.hub .who::after{content:'→';color:var(--gold);font-size:16px;}
 .stats-bar{position:relative;z-index:1;display:flex;gap:48px;margin-top:60px;justify-content:center;flex-wrap:wrap;animation:fadeUp .7s .48s ease both;}
 .stat{text-align:center;}
 .stat-num{font-family:'Bebas Neue',sans-serif;font-size:44px;color:var(--gold);line-height:1;}
@@ -261,6 +272,11 @@ footer{border-top:1px solid var(--border);padding:40px 48px;display:flex;justify
   .nav-links a .l{display:none;}
   .nav-links a .s{display:inline;}
   #hero{padding-top:150px;}
+  .hub{grid-template-columns:1fr 1fr;gap:10px;margin-top:40px;}
+  .hub a{padding:16px 14px 14px;}
+  .hub b{font-size:17px;}
+  .hub p{font-size:12px;}
+  .stats-bar{display:grid;grid-template-columns:1fr 1fr;gap:28px 12px;width:100%;}
   #calendar-main{scroll-margin-top:60px;}
   .conf-header{flex-wrap:wrap;position:relative;}
   .conf-stripe{position:absolute;left:0;top:0;bottom:0;}
@@ -375,30 +391,33 @@ input[type="date"],input[type="time"]{color-scheme:dark;}
   <!-- Canvas animation: offshore scene at night (injected by initHeroAnimation) -->
   <div class="hero-grid"></div>
   <div class="hero-glow"></div>
-  <div class="hero-eyebrow">Setor de Energia · Óleo & Gás · 2026</div>
+  <div class="hero-eyebrow">MR Solutions · Óleo, gás e energia</div>
   <h1 class="hero-title">
-    <span class="l1">MR Solutions</span>
-    <span class="l2">Event Map</span>
+    <span class="l1">Onde o óleo e gás</span>
+    <span class="l2">se encontra</span>
   </h1>
-  <p class="hero-sub">Agenda dupla do setor energético. Onde estar de dia nas feiras e conferências oficiais. O que não perder de noite nos eventos de network que ninguém divulga.</p>
-  <div class="hero-cta">
-    <button class="btn btn-gold" onclick="document.getElementById('calendar-main').scrollIntoView({behavior:'smooth'})">Ver próximos eventos</button>
-    <button class="btn btn-night" onclick="openAddModal(null)">🌙 Adicionar evento noturno</button>
+  <p class="hero-sub">Os eventos do setor, os dados oficiais da produção e as oportunidades de carreira. Em um só lugar, atualizado toda semana.</p>
+  <div class="hub">
+    <a href="#calendar-main"><span class="k">Onde estar</span><b>Agenda</b><p>Feiras, conferências e os encontros da noite que ninguém divulga.</p><span class="who">Para todo o setor</span></a>
+    <a href="anp/"><span class="k">O que está mudando</span><b>Radar Offshore</b><p>Produção, plataformas, sondas e blocos, com dados oficiais da ANP.</p><span class="who">Para todo o setor</span></a>
+    <a href="vagas/"><span class="k">Quem está contratando</span><b>Vagas</b><p>Vagas selecionadas, cada uma com vídeo de preparação.</p><span class="who">Para profissionais</span></a>
+    <a href="guia/"><span class="k">Como entrar</span><b>Guia 7 Passos</b><p>O caminho para o primeiro embarque, na ordem certa.</p><span class="who">Para quem quer embarcar</span></a>
   </div>
   <div class="stats-bar">
-    <div class="stat"><div class="stat-num" id="stat-conf">10</div><div class="stat-label">Conferências Oficiais</div></div>
-    <div class="stat"><div class="stat-num" id="stat-night">7</div><div class="stat-label">Eventos Noturnos</div></div>
-    <div class="stat"><div class="stat-num">2x</div><div class="stat-label">Agenda Dia + Noite</div></div>
-  </div>
-  <div class="legend">
-    <div class="leg-item"><div class="leg-dot day-dot"></div> Feira / Conferência (dia)</div>
-    <div class="leg-item"><div class="leg-dot night-dot"></div> Network / Paralelo (noite)</div>
+    <div class="stat"><div class="stat-num" id="stat-conf">10</div><div class="stat-label">Eventos mapeados</div></div>
+    <div class="stat"><div class="stat-num" id="stat-night">7</div><div class="stat-label">Encontros noturnos</div></div>
+    <div class="stat"><div class="stat-num" id="stat-oil">4,7 mi</div><div class="stat-label" id="stat-oil-l">Barris por dia no Brasil · ANP</div></div>
+    <div class="stat"><div class="stat-num" id="stat-vagas">1</div><div class="stat-label" id="stat-vagas-l">Vagas abertas</div></div>
   </div>
 </section>
 
 <main id="calendar-main">
   <div class="agenda-head">
-    <div><h2>Próximos <span>eventos</span></h2><p>Feiras e conferências do setor, com os eventos de network da noite.</p></div>
+    <div><h2>Próximos <span>eventos</span></h2><p>Feiras e conferências do setor, com os eventos de network da noite.</p>
+      <div class="legend" style="justify-content:flex-start;margin-top:12px;animation:none">
+        <div class="leg-item"><div class="leg-dot day-dot"></div> Feira / Conferência (dia)</div>
+        <div class="leg-item"><div class="leg-dot night-dot"></div> Network / Paralelo (noite)</div>
+      </div></div>
     <div class="agenda-actions">
       <button class="nav-btn ghost" onclick="openAddEventModal()">+ Sugerir evento do setor</button>
       <button class="nav-btn ghost" onclick="openAddModal(null)">+ Evento noturno</button>
@@ -1414,6 +1433,19 @@ function updateMonthHeader(month) {
   const el = document.querySelector(`#mh-${month} .month-count`);
   if (el) el.textContent = `${confs.length} evento${confs.length>1?'s':''} · ${total} noturno${total!==1?'s':''} mapeado${total!==1?'s':''}`;
 }
+
+// Números vivos do topo: produção da ANP e vagas abertas
+fetch('anp/data/producao.json').then(r => r.json()).then(d => {
+  const u = d.serie[d.serie.length - 1], M = ['jan','fev','mar','abr','mai','jun','jul','ago','set','out','nov','dez'];
+  document.getElementById('stat-oil').textContent = (u.oil / 1000).toLocaleString('pt-BR', {maximumFractionDigits:2}) + ' mi';
+  document.getElementById('stat-oil-l').textContent = `Barris por dia no Brasil · ${M[+u.m.slice(5) - 1]}/${u.m.slice(2, 4)} · ANP`;
+}).catch(() => {});
+fetch('vagas/vagas.json').then(r => r.json()).then(v => {
+  const hoje = new Date().toISOString().slice(0, 10);
+  const n = v.filter(x => !x.inscricoesAte || x.inscricoesAte >= hoje).length;
+  document.getElementById('stat-vagas').textContent = n;
+  document.getElementById('stat-vagas-l').textContent = n === 1 ? 'Vaga aberta' : 'Vagas abertas';
+}).catch(() => {});
 
 function updateStats() {
   const totalNight = CONFERENCES.reduce((a, c) => a + c.parallel.length, 0);
