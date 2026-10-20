@@ -3,8 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vagas Offshore · MR Event Map</title>
-<meta name="description" content="Vagas offshore e de óleo e gás selecionadas pela MR Solutions, com vídeos do canal Carreira Offshore para você se preparar antes de se candidatar.">
+<title>Vagas offshore abertas agora · MR Group</title>
+<meta name="description" content="Vagas de PRIO, SBM, MODEC, Subsea7, Baker Hughes, Halliburton e outras, direto do site de cada empresa. Com vídeo para você se preparar antes de se candidatar.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MR Group">
+<meta property="og:url" content="https://mrgroup.com.br/vagas/">
+<meta property="og:title" content="Vagas offshore abertas agora · MR Group">
+<meta property="og:description" content="Vagas de PRIO, SBM, MODEC, Subsea7, Baker Hughes, Halliburton e outras, direto do site de cada empresa. Com vídeo para você se preparar antes de se candidatar.">
+<meta property="og:image" content="https://mrgroup.com.br/assets/og/vagas.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300..800;1,9..40,300&display=swap" rel="stylesheet">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-BBGCSZ37C4"></script>
 <script>
@@ -176,6 +186,10 @@ footer{border-top:1px solid var(--border);padding:36px 48px;max-width:1080px;mar
 .row-prep{background:none;border:1px solid var(--border2);color:var(--muted2);font-family:inherit;font-size:12px;padding:9px 12px;border-radius:2px;cursor:pointer;white-space:nowrap;}
 .row-prep:hover,.row-prep.on{color:var(--gold-l);border-color:rgba(201,147,58,.5);}
 .row .prep{margin:0 16px 16px;}
+.sobre{margin:0 16px 14px;padding-top:4px;}
+.sobre h3{font-weight:800;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-l);margin-bottom:8px;}
+.sobre p{font-size:14px;line-height:1.7;white-space:pre-line;}
+.sobre .sobre-ate{font-size:12px;color:var(--muted);margin-top:8px;}
 .mais{display:block;margin:14px auto 0;}
 .fontes{font-size:12px;color:var(--muted);margin-top:14px;line-height:1.7;}
 @media (max-width:700px){
@@ -301,10 +315,10 @@ function rowHTML(v){
       <div class="row-info">
         <div class="row-t">${esc(v.titulo)}</div>
         <div class="row-c">${esc(v.empresa)} · ${esc(v.local)}</div>
-        <div class="chips"><span class="chip${v.regime === 'Embarcado' ? ' gold' : ''}">${esc(v.regime)}</span>${v.tema === 'geral' ? '' : `<span class="chip">${esc(v.area)}</span>`}${v.banco ? '<span class="chip">Banco de talentos</span>' : ''}</div>
+        <div class="chips"><span class="chip${v.regime === 'Embarcado' ? ' gold' : ''}">${esc(v.regime)}</span>${v.tema === 'geral' ? '' : `<span class="chip">${esc(v.area)}</span>`}${v.banco ? '<span class="chip">Banco de talentos</span>' : ''}${v.enviada ? '<span class="chip gold">Divulgada pela empresa</span>' : ''}</div>
       </div>
       <div class="row-act">
-        <button class="row-prep" data-prep="${esc(v.id)}">Como se preparar</button>
+        <button class="row-prep" data-prep="${esc(v.id)}">${v.descricao ? 'Ver vaga' : 'Como se preparar'}</button>
         <a class="btn btn-gold" href="${esc(v.link)}" target="_blank" rel="noopener" data-apply="${esc(v.id)}">Candidatar-se</a>
       </div>
     </div>
@@ -312,7 +326,8 @@ function rowHTML(v){
 }
 function prepHTML(v){
   const vids = VIDS[v.tema] || VIDS.geral || [];
-  return `<div class="prep"><h3>Antes de se candidatar, assista</h3>
+  const sobre = v.descricao ? `<div class="sobre"><h3>Sobre a vaga</h3><p>${esc(v.descricao)}</p>${v.inscricoesAte ? `<p class="sobre-ate">Inscrições até ${fmt(v.inscricoesAte)}${v.contrato ? ' · ' + esc(v.contrato) : ''}</p>` : ''}</div>` : '';
+  return sobre + `<div class="prep"><h3>Antes de se candidatar, assista</h3>
     <p class="sub">Do canal Carreira Offshore, ${v.tema === 'geral' ? 'o que mais ajuda antes de qualquer candidatura' : 'o que mais ajuda em vaga de ' + esc(v.area.toLowerCase())}.</p>
     <div class="vids">${vids.map(x => `<button class="vid" data-id="${esc(x.id)}" data-vaga="${esc(v.id)}" aria-label="Assistir: ${esc(x.titulo)}">
       <div class="vid-frame"><img src="https://i.ytimg.com/vi/${esc(x.id)}/hqdefault.jpg" alt="" loading="lazy"><span class="vid-play"></span></div>
@@ -331,8 +346,14 @@ function renderAuto(){
 
 Promise.all([
   fetch('vagas.json', {cache:'no-cache'}).then(r => r.json()),
-  fetch('automaticas.json', {cache:'no-cache'}).then(r => r.json()).catch(() => null)
-]).then(([all, auto]) => {
+  fetch('automaticas.json', {cache:'no-cache'}).then(r => r.json()).catch(() => null),
+  fetch('../api/vagas-enviadas.php', {method:'POST', headers:{'Content-Type':'application/json'}, body:'{"action":"publicas"}'})
+    .then(r => r.json()).then(d => d.vagas || []).catch(() => [])
+]).then(([all, auto, enviadas]) => {
+  // Vagas enviadas pelas empresas e aprovadas no painel entram no topo da lista do setor
+  enviadas = enviadas.map(v => ({...v, enviada:true, banco:false}));
+  auto = {videos:{}, vagas:[], ...(auto || {})};
+  auto.vagas = enviadas.concat(auto.vagas);
   // Vaga sai do ar sozinha depois do último dia de inscrição
   VAGAS = all.filter(v => !v.inscricoesAte || v.inscricoesAte >= hoje).sort((a,b) => b.publicada.localeCompare(a.publicada));
   if (auto){
@@ -343,7 +364,7 @@ Promise.all([
   }
   const areas = [...new Set(VAGAS.map(v => v.area))].sort();
   const opc = (lista, rot) => `<option value="">${rot}</option>` + [...new Set(lista)].sort().map(x => `<option>${esc(x)}</option>`).join('');
-  const atual = auto ? new Date(auto.atualizado).toLocaleDateString('pt-BR') : '';
+  const atual = auto.atualizado ? new Date(auto.atualizado).toLocaleDateString('pt-BR') : '';
   $('#app').innerHTML = `
     ${VAGAS.length ? `<div class="sec-h"><h2>Vagas comentadas</h2><small>com análise e vídeos escolhidos a dedo</small></div>
     <div class="ctrl">
@@ -353,7 +374,7 @@ Promise.all([
     </div>
     <div id="list"></div>` : ''}
     ${AUTO.length ? `<div class="sec-h"><h2>Vagas abertas no setor</h2><small id="count2"></small></div>
-    <p class="sec-sub">Direto dos sites de carreira de ${new Set(AUTO.map(v => v.empresa)).size} empresas, atualizado em ${atual}. A candidatura é feita no site da empresa.</p>
+    <p class="sec-sub">Direto dos sites de carreira de ${new Set(AUTO.map(v => v.empresa)).size} empresas${atual ? ', atualizado em ' + atual : ''}. A candidatura é feita no site da empresa.</p>
     <div class="ctrl2">
       <input type="search" id="q2" placeholder="Buscar cargo ou cidade">
       <select id="emp">${opc(AUTO.map(v => v.empresa), 'Todas as empresas')}</select>
@@ -365,7 +386,7 @@ Promise.all([
     <p class="fontes">Empresas acompanhadas: ${[...new Set(AUTO.map(v => v.empresa))].sort().map(esc).join(', ')}.</p>` : ''}
     <div class="empresas">
       <div><h3>Sua empresa está contratando?</h3><p>Divulgue a vaga para quem acompanha o Carreira Offshore, com conteúdo de preparação junto. O candidato chega mais pronto na entrevista.</p></div>
-      <a class="btn btn-gold" href="../#sponsors">Divulgar uma vaga</a>
+      <a class="btn btn-gold" href="divulgar/">Divulgar uma vaga</a>
     </div>`;
   if ($('#q')){ $('#q').oninput = render; $('#area').onchange = render; render(); }
   if ($('#q2')){
@@ -390,7 +411,7 @@ Promise.all([
     const p = e.target.closest('[data-prep]');
     if (p){
       const row = p.closest('.row'), aberto = row.querySelector('.prep');
-      if (aberto){ aberto.remove(); p.classList.remove('on'); }
+      if (aberto){ row.querySelectorAll('.prep,.sobre').forEach(x => x.remove()); p.classList.remove('on'); }
       else {
         row.insertAdjacentHTML('beforeend', prepHTML(AUTO.find(v => v.id === p.dataset.prep)));
         p.classList.add('on');
