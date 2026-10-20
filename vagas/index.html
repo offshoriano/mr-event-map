@@ -307,7 +307,7 @@ function render(){
 }
 const $ = s => document.querySelector(s);
 
-let AUTO = [], VIDS = {}, mostrar = 30;
+let AUTO = [], VIDS = {}, CAT = {}, mostrar = 30;
 const todas = () => VAGAS.concat(AUTO);
 
 function rowHTML(v){
@@ -326,10 +326,12 @@ function rowHTML(v){
   </div>`;
 }
 function prepHTML(v){
-  const vids = VIDS[v.tema] || VIDS.geral || [];
+  // Vídeos escolhidos para esta vaga pelo título; vaga sem escolha própria usa os da área
+  const vids = v.videos && v.videos.length ? v.videos.map(([id, porque]) => ({id, porque, titulo: CAT[id] || 'Vídeo do Carreira Offshore'}))
+    : (VIDS[v.tema] || VIDS.geral || []);
   const sobre = v.descricao ? `<div class="sobre"><h3>Sobre a vaga</h3><p>${esc(v.descricao)}</p>${v.inscricoesAte ? `<p class="sobre-ate">Inscrições até ${fmt(v.inscricoesAte)}${v.contrato ? ' · ' + esc(v.contrato) : ''}</p>` : ''}</div>` : '';
   return sobre + `<div class="prep"><h3>Antes de se candidatar, assista</h3>
-    <p class="sub">Do canal Carreira Offshore, ${v.tema === 'geral' ? 'o que mais ajuda antes de qualquer candidatura' : 'o que mais ajuda em vaga de ' + esc(v.area.toLowerCase())}.</p>
+    <p class="sub">Escolhidos do canal Carreira Offshore para esta vaga.</p>
     <div class="vids">${vids.map(x => `<button class="vid" data-id="${esc(x.id)}" data-vaga="${esc(v.id)}" aria-label="Assistir: ${esc(x.titulo)}">
       <div class="vid-frame"><img src="https://i.ytimg.com/vi/${esc(x.id)}/hqdefault.jpg" alt="" loading="lazy"><span class="vid-play"></span></div>
       <div class="vid-t">${esc(x.titulo)}</div><div class="vid-why">${esc(x.porque)}</div></button>`).join('')}</div></div>`;
@@ -358,7 +360,7 @@ Promise.all([
   // Vaga sai do ar sozinha depois do último dia de inscrição
   VAGAS = all.filter(v => !v.inscricoesAte || v.inscricoesAte >= hoje).sort((a,b) => b.publicada.localeCompare(a.publicada));
   if (auto){
-    VIDS = auto.videos || {};
+    VIDS = auto.videos || {}; CAT = auto.catalogo || {};
     // não repete a vaga que já está comentada lá em cima
     const comentadas = new Set(VAGAS.map(v => (v.empresa + v.titulo).toLowerCase()));
     AUTO = auto.vagas.filter(v => !comentadas.has((v.empresa + v.titulo).toLowerCase()));
