@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vagas Offshore · MR Event Map</title>
+<meta name="description" content="Vagas offshore e de óleo e gás selecionadas pela MR Solutions, com vídeos do canal Carreira Offshore para você se preparar antes de se candidatar.">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BBGCSZ37C4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-BBGCSZ37C4');
+</script>
+<style>
+:root {
+  --black:#090C10; --deep:#0D1117; --card:#111820; --card2:#141D27;
+  --border:#1C2733; --border2:#243040;
+  --gold:#C9933A; --gold-l:#E8B86D; --gold-d:rgba(201,147,58,0.14);
+  --white:#EEE9E2; --muted:#7A8FA6; --muted2:#A0B2C4;
+  --yt:#E5484D;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--deep);color:var(--white);overflow-x:hidden;}
+a{color:var(--gold-l);}
+
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 48px;
+  background:rgba(9,12,16,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--border);}
+.nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:13px;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap;}
+.nav-logo span{color:var(--gold);}
+.nav-links{display:flex;gap:8px;}
+.nav-links a{font-family:'Syne',sans-serif;font-weight:700;font-size:10px;letter-spacing:.16em;text-transform:uppercase;white-space:nowrap;
+  color:var(--muted);text-decoration:none;border:1px solid var(--border);padding:9px 14px;border-radius:2px;}
+.nav-links a:hover{color:var(--white);border-color:var(--border2);}
+
+header.hero{max-width:1080px;margin:0 auto;padding:72px 48px 36px;}
+.eyebrow{display:inline-block;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);
+  border:1px solid rgba(201,147,58,.3);padding:7px 18px;border-radius:2px;background:rgba(201,147,58,.05);margin-bottom:22px;}
+h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(56px,9vw,104px);line-height:.9;letter-spacing:.02em;}
+h1 .l2{color:var(--gold);}
+.hero-sub{max-width:640px;margin-top:18px;font-size:15px;line-height:1.75;color:var(--muted2);font-weight:300;}
+
+main{max-width:1080px;margin:0 auto;padding:0 48px 100px;}
+.ctrl{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:18px;}
+select,input[type=search]{font-family:'DM Sans',sans-serif;font-size:13px;background:var(--card2);color:var(--white);
+  border:1px solid var(--border2);border-radius:2px;padding:10px 12px;max-width:100%;}
+input[type=search]{min-width:260px;}
+.count{font-size:12px;color:var(--muted);letter-spacing:.08em;margin-left:auto;}
+
+.job{background:var(--card);border:1px solid var(--border);border-radius:2px;margin-bottom:16px;overflow:hidden;scroll-margin-top:90px;}
+.job:target,.job.hl{border-color:rgba(201,147,58,.5);}
+.job-head{display:flex;gap:18px;padding:24px 26px 18px;align-items:flex-start;}
+.job-logo{width:64px;height:64px;border-radius:4px;background:#fff;object-fit:contain;flex-shrink:0;}
+.job-title{font-family:'Syne',sans-serif;font-weight:800;font-size:20px;line-height:1.25;}
+.job-company{font-size:14px;color:var(--muted2);margin-top:4px;}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px;}
+.chip{font-size:10px;letter-spacing:.12em;text-transform:uppercase;padding:4px 9px;border-radius:2px;border:1px solid var(--border2);color:var(--muted2);white-space:nowrap;}
+.chip.gold{color:var(--gold-l);border-color:rgba(201,147,58,.4);background:var(--gold-d);}
+.chip.warn{color:#ef9a7a;border-color:rgba(239,154,122,.4);}
+.job-body{padding:0 26px 22px;}
+.job-resumo{font-size:15px;line-height:1.75;color:var(--white);}
+
+.prep{margin-top:22px;background:linear-gradient(135deg,rgba(229,72,77,.10),rgba(201,147,58,.05));border:1px solid rgba(229,72,77,.28);border-radius:2px;padding:20px 20px 18px;}
+.prep h3{font-family:'Syne',sans-serif;font-weight:800;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#F28B8E;}
+.prep p.sub{font-size:13px;color:var(--muted2);margin:6px 0 16px;line-height:1.6;}
+.vids{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+.vid{background:var(--black);border:1px solid var(--border);border-radius:2px;overflow:hidden;cursor:pointer;text-align:left;color:inherit;font:inherit;padding:0;}
+.vid:hover{border-color:var(--border2);}
+.vid-frame{position:relative;aspect-ratio:16/9;background:#000;}
+.vid-frame img,.vid-frame iframe{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border:0;}
+.vid-play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:56px;height:40px;border-radius:10px;background:var(--yt);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,.4);}
+.vid-play::after{content:'';border-left:14px solid #fff;border-top:9px solid transparent;border-bottom:9px solid transparent;margin-left:3px;}
+.vid-t{font-family:'Syne',sans-serif;font-weight:700;font-size:13px;line-height:1.4;padding:12px 12px 4px;}
+.vid-why{font-size:12px;color:var(--muted2);line-height:1.55;padding:0 12px 12px;}
+
+details{margin-top:18px;border-top:1px solid var(--border);padding-top:14px;}
+summary{cursor:pointer;font-family:'Syne',sans-serif;font-weight:700;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-l);list-style:none;}
+summary::-webkit-details-marker{display:none;}
+summary::before{content:'+ ';}
+details[open] summary::before{content:'– ';}
+.cols{display:grid;grid-template-columns:1.4fr 1fr;gap:26px;margin-top:16px;}
+.cols h4{font-family:'Syne',sans-serif;font-weight:700;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted2);margin:0 0 10px;}
+.cols h4:not(:first-child){margin-top:20px;}
+.cols ul{list-style:none;}
+.cols li{font-size:14px;line-height:1.6;color:var(--white);padding-left:16px;position:relative;margin-bottom:6px;}
+.cols li::before{content:'';position:absolute;left:0;top:10px;width:6px;height:2px;background:var(--gold);}
+.job-foot{display:flex;gap:10px;flex-wrap:wrap;align-items:center;padding:18px 26px;border-top:1px solid var(--border);background:var(--card2);}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:'Syne',sans-serif;font-weight:700;font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+  padding:13px 26px;border-radius:2px;cursor:pointer;border:none;text-decoration:none;transition:.2s;}
+.btn-gold{background:var(--gold);color:var(--black);}
+.btn-gold:hover{background:var(--gold-l);}
+.btn-ghost{background:transparent;color:var(--muted2);border:1px solid var(--border2);}
+.btn-ghost:hover{color:var(--white);border-color:var(--gold);}
+.job-note{font-size:12px;color:var(--muted);margin-left:auto;}
+
+.empty{padding:60px 20px;text-align:center;color:var(--muted);border:1px dashed var(--border2);border-radius:2px;}
+.empresas{margin-top:48px;background:var(--black);border:1px solid var(--border);border-radius:2px;padding:30px;display:flex;gap:20px;align-items:center;justify-content:space-between;flex-wrap:wrap;}
+.empresas h3{font-family:'Syne',sans-serif;font-weight:800;font-size:18px;}
+.empresas p{font-size:14px;color:var(--muted2);margin-top:6px;line-height:1.6;max-width:560px;}
+
+footer{border-top:1px solid var(--border);padding:36px 48px;max-width:1080px;margin:0 auto;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;}
+.foot-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:13px;letter-spacing:.12em;text-transform:uppercase;}
+.foot-logo span{color:var(--gold);}
+.foot-copy{font-size:12px;color:var(--muted);line-height:1.7;max-width:600px;}
+
+@media (max-width:900px){
+  .vids{grid-template-columns:1fr;}
+  .cols{grid-template-columns:1fr;}
+}
+@media (max-width:700px){
+  nav{padding:12px 16px;flex-wrap:wrap;row-gap:10px;}
+  .nav-logo{font-size:11px;letter-spacing:.06em;}
+  .nav-links{width:100%;overflow-x:auto;}
+  header.hero{padding:44px 16px 24px;}
+  main{padding:0 16px 80px;}
+  footer{padding:28px 16px;}
+  .job-head{padding:20px 18px 14px;gap:14px;}
+  .job-logo{width:52px;height:52px;}
+  .job-title{font-size:17px;}
+  .job-body{padding:0 18px 18px;}
+  .job-foot{padding:16px 18px;}
+  .job-note{margin-left:0;}
+  input[type=search]{min-width:0;width:100%;}
+  .count{margin-left:0;}
+  .vid{display:grid;grid-template-columns:132px 1fr;}
+  .vid-frame{grid-row:span 2;}
+  .vid.playing{display:block;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">MR Solutions <span>·</span> Vagas Offshore</div>
+  <div class="nav-links">
+    <a href="../">Event Map</a>
+    <a href="../anp/">Radar Offshore</a>
+    <a href="https://www.youtube.com/@carreiraoffshore" target="_blank" rel="noopener">Canal no YouTube</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="eyebrow">Vagas selecionadas · Carreira Offshore</div>
+  <h1>Vagas offshore<br><span class="l2">com preparação junto</span></h1>
+  <p class="hero-sub">Cada vaga aqui vem com os vídeos que eu indicaria para você assistir antes de se candidatar. Currículo, entrevista, inglês, o que aquela empresa e aquele cargo pedem. Assiste, ajusta e manda.</p>
+</header>
+
+<main id="app"><div class="empty">Carregando vagas</div></main>
+
+<footer>
+  <div class="foot-logo">MR Solutions <span>·</span> Vagas Offshore</div>
+  <div class="foot-copy">As vagas são divulgadas pelas próprias empresas. A candidatura é feita no site de cada empresa, e a MR Solutions não cobra nada do candidato. Vídeos do canal Carreira Offshore, de Matheus Rangel.</div>
+</footer>
+
+<script>
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const fmt = s => s ? s.slice(8,10) + '/' + s.slice(5,7) + '/' + s.slice(0,4) : '';
+const hoje = new Date().toISOString().slice(0,10);
+const diasAte = s => Math.round((new Date(s + 'T23:59:59') - new Date()) / 864e5);
+let VAGAS = [];
+
+function jobHTML(v){
+  const d = v.inscricoesAte ? diasAte(v.inscricoesAte) : null;
+  const prazo = d == null ? '' : d <= 3 ? `<span class="chip warn">Últimos ${d + 1} dia${d ? 's' : ''}</span>` : `<span class="chip">Inscrições até ${fmt(v.inscricoesAte)}</span>`;
+  const msg = encodeURIComponent(`Vaga: ${v.titulo} na ${v.empresa}. Tem vídeo de preparação junto: ${location.origin + location.pathname}#${v.id}`);
+  return `<article class="job" id="${esc(v.id)}">
+    <div class="job-head">
+      ${v.logo ? `<img class="job-logo" src="${esc(v.logo)}" alt="${esc(v.empresa)}">` : ''}
+      <div>
+        <div class="job-title">${esc(v.titulo)}</div>
+        <div class="job-company">${esc(v.empresa)} · ${esc(v.local)}</div>
+        <div class="chips">
+          <span class="chip gold">${esc(v.regime)}</span><span class="chip">${esc(v.contrato)}</span>
+          <span class="chip">${esc(v.nivel)}</span>${v.pcd ? '<span class="chip">Aceita PcD</span>' : ''}${prazo}
+        </div>
+      </div>
+    </div>
+    <div class="job-body">
+      <p class="job-resumo">${esc(v.resumo)}</p>
+      ${v.videos && v.videos.length ? `<div class="prep">
+        <h3>Antes de se candidatar, assista</h3>
+        <p class="sub">Separei do canal Carreira Offshore o que vai fazer diferença nessa vaga.</p>
+        <div class="vids">${v.videos.map(x => `<button class="vid" data-id="${esc(x.id)}" data-vaga="${esc(v.id)}" aria-label="Assistir: ${esc(x.titulo)}">
+          <div class="vid-frame"><img src="https://i.ytimg.com/vi/${esc(x.id)}/hqdefault.jpg" alt="" loading="lazy"><span class="vid-play"></span></div>
+          <div class="vid-t">${esc(x.titulo)}</div><div class="vid-why">${esc(x.porque)}</div></button>`).join('')}</div>
+      </div>` : ''}
+      <details>
+        <summary>Atividades, requisitos e benefícios</summary>
+        <div class="cols">
+          <div><h4>O que você vai fazer</h4><ul>${(v.atividades||[]).map(a => `<li>${esc(a)}</li>`).join('')}</ul></div>
+          <div><h4>O que pedem</h4><ul>${(v.requisitos||[]).map(a => `<li>${esc(a)}</li>`).join('')}</ul>
+            ${v.beneficios && v.beneficios.length ? `<h4>Benefícios</h4><ul>${v.beneficios.map(a => `<li>${esc(a)}</li>`).join('')}</ul>` : ''}</div>
+        </div>
+      </details>
+    </div>
+    <div class="job-foot">
+      <a class="btn btn-gold" href="${esc(v.link)}" target="_blank" rel="noopener" data-apply="${esc(v.id)}">Candidatar-se</a>
+      <a class="btn btn-ghost" href="https://wa.me/?text=${msg}" target="_blank" rel="noopener">Enviar para um amigo</a>
+      <span class="job-note">Candidatura no site da ${esc(v.empresa)}</span>
+    </div>
+  </article>`;
+}
+
+// Marcação JobPosting para a busca de vagas do Google
+function jsonLd(lista){
+  const s = document.createElement('script');
+  s.type = 'application/ld+json';
+  s.textContent = JSON.stringify(lista.map(v => ({
+    '@context':'https://schema.org/', '@type':'JobPosting',
+    title:v.titulo, description:`<p>${v.resumo}</p><ul>${(v.atividades||[]).map(a=>`<li>${a}</li>`).join('')}</ul><p>Requisitos:</p><ul>${(v.requisitos||[]).map(a=>`<li>${a}</li>`).join('')}</ul>`,
+    datePosted:v.publicada, validThrough:v.inscricoesAte ? v.inscricoesAte + 'T23:59' : undefined,
+    employmentType:'FULL_TIME', hiringOrganization:{'@type':'Organization', name:v.empresa},
+    jobLocation:{'@type':'Place', address:{'@type':'PostalAddress', addressLocality:v.local.split(',')[0], addressRegion:(v.local.split(',')[1]||'').trim(), addressCountry:'BR'}},
+    directApply:false, url:location.origin + location.pathname + '#' + v.id
+  })));
+  document.head.appendChild(s);
+}
+
+function render(){
+  const q = ($('#q').value || '').toLowerCase(), area = $('#area').value;
+  const lista = VAGAS.filter(v => (!area || v.area === area) && (!q || (v.titulo + ' ' + v.empresa + ' ' + v.local + ' ' + v.area).toLowerCase().includes(q)));
+  $('#count').textContent = `${lista.length} vaga${lista.length === 1 ? '' : 's'} aberta${lista.length === 1 ? '' : 's'}`;
+  $('#list').innerHTML = lista.length ? lista.map(jobHTML).join('') :
+    '<div class="empty">Nenhuma vaga com esse filtro agora. Volte em breve ou siga o canal para saber das próximas.</div>';
+}
+const $ = s => document.querySelector(s);
+
+fetch('vagas.json', {cache:'no-cache'}).then(r => r.json()).then(all => {
+  // Vaga sai do ar sozinha depois do último dia de inscrição
+  VAGAS = all.filter(v => !v.inscricoesAte || v.inscricoesAte >= hoje).sort((a,b) => b.publicada.localeCompare(a.publicada));
+  const areas = [...new Set(VAGAS.map(v => v.area))].sort();
+  $('#app').innerHTML = `
+    <div class="ctrl">
+      <input type="search" id="q" placeholder="Buscar cargo, empresa ou cidade">
+      <select id="area"><option value="">Todas as áreas</option>${areas.map(a => `<option>${esc(a)}</option>`).join('')}</select>
+      <span class="count" id="count"></span>
+    </div>
+    <div id="list"></div>
+    <div class="empresas">
+      <div><h3>Sua empresa está contratando?</h3><p>Divulgue a vaga para quem acompanha o Carreira Offshore, com conteúdo de preparação junto. O candidato chega mais pronto na entrevista.</p></div>
+      <a class="btn btn-gold" href="../#sponsors">Divulgar uma vaga</a>
+    </div>`;
+  $('#q').oninput = render; $('#area').onchange = render;
+  render();
+  jsonLd(VAGAS);
+  if (location.hash){ const el = document.getElementById(location.hash.slice(1)); if (el){ el.classList.add('hl'); el.scrollIntoView(); } }
+
+  document.addEventListener('click', e => {
+    const b = e.target.closest('.vid');
+    if (b && !b.classList.contains('playing')){
+      b.classList.add('playing');
+      b.querySelector('.vid-frame').innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${b.dataset.id}?autoplay=1&rel=0" title="Vídeo" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>`;
+      if (window.gtag) gtag('event', 'vaga_video_play', {vaga:b.dataset.vaga, video:b.dataset.id});
+    }
+    const a = e.target.closest('[data-apply]');
+    if (a && window.gtag) gtag('event', 'vaga_candidatura_click', {vaga:a.dataset.apply});
+  });
+}).catch(() => { $('#app').innerHTML = '<div class="empty">Não foi possível carregar as vagas. Tente recarregar a página.</div>'; });
+</script>
+</body>
+</html>
