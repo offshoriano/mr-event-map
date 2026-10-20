@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MR Solutions — Event Map 2026</title>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300..800;1,9..40,300&display=swap" rel="stylesheet">
 <!-- Google Analytics 4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-BBGCSZ37C4"></script>
 <script>
@@ -32,10 +32,10 @@ body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:18px 48px;
   background:linear-gradient(to bottom,rgba(9,12,16,.97),transparent);backdrop-filter:blur(6px);}
-.nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:14px;letter-spacing:.12em;text-transform:uppercase;}
+.nav-logo{font-family:'DM Sans',sans-serif;font-weight:800;font-size:14px;letter-spacing:.12em;text-transform:uppercase;}
 .nav-logo span{color:var(--gold);}
 .nav-actions{display:flex;gap:12px;align-items:center;}
-.nav-btn{font-family:'Syne',sans-serif;font-weight:700;font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+.nav-btn{font-family:'DM Sans',sans-serif;font-weight:700;font-size:11px;letter-spacing:.18em;text-transform:uppercase;
   padding:8px 20px;border-radius:2px;cursor:pointer;border:none;transition:.2s;}
 .nav-btn.ghost{background:transparent;color:var(--muted);border:1px solid var(--border);}
 .nav-btn.ghost:hover{color:var(--white);border-color:var(--border2);}
@@ -60,7 +60,7 @@ h1.hero-title .l2{display:block;color:var(--gold);}
 .hero-cta{position:relative;z-index:1;margin-top:40px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap;animation:fadeUp .7s .36s ease both;}
 
 /* BUTTONS */
-.btn{display:inline-flex;align-items:center;gap:8px;font-family:'Syne',sans-serif;font-weight:700;font-size:11px;letter-spacing:.2em;text-transform:uppercase;padding:14px 32px;border-radius:2px;cursor:pointer;border:none;text-decoration:none;transition:all .22s;}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:'DM Sans',sans-serif;font-weight:700;font-size:11px;letter-spacing:.2em;text-transform:uppercase;padding:14px 32px;border-radius:2px;cursor:pointer;border:none;text-decoration:none;transition:all .22s;}
 .btn-gold{background:var(--gold);color:var(--black);}
 .btn-gold:hover{background:var(--gold-l);transform:translateY(-2px);box-shadow:0 8px 28px rgba(201,147,58,.28);}
 .btn-ghost{background:transparent;color:var(--muted2);border:1px solid var(--border2);}
@@ -88,7 +88,7 @@ main{position:relative;z-index:1;max-width:1240px;margin:0 auto;padding:80px 48p
 .month-block{margin-bottom:80px;}
 .month-label{font-family:'Bebas Neue',sans-serif;font-size:72px;color:rgba(201,147,58,.08);line-height:1;margin-bottom:-20px;letter-spacing:.04em;}
 .month-header{display:flex;align-items:center;gap:16px;margin-bottom:32px;border-bottom:1px solid var(--border);padding-bottom:20px;}
-.month-name{font-family:'Syne',sans-serif;font-weight:800;font-size:16px;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);}
+.month-name{font-family:'DM Sans',sans-serif;font-weight:800;font-size:16px;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);}
 .month-count{font-size:11px;color:var(--muted);letter-spacing:.1em;}
 
 /* CONFERENCE CARD */
@@ -97,10 +97,10 @@ main{position:relative;z-index:1;max-width:1240px;margin:0 auto;padding:80px 48p
 .conf-header{display:flex;align-items:stretch;}
 .conf-stripe{width:4px;background:var(--day-a);flex-shrink:0;}
 .conf-main{flex:1;padding:24px 28px;display:flex;align-items:center;gap:24px;flex-wrap:wrap;}
-.conf-dates{font-family:'Syne',sans-serif;font-weight:700;font-size:28px;color:var(--white);min-width:80px;line-height:1;}
+.conf-dates{font-family:'DM Sans',sans-serif;font-weight:700;font-size:28px;color:var(--white);min-width:80px;line-height:1;}
 .conf-dates .month-short{font-size:12px;font-weight:600;letter-spacing:.1em;color:var(--day-a);display:block;margin-top:2px;}
 .conf-info{flex:1;min-width:200px;}
-.conf-name{font-family:'Syne',sans-serif;font-weight:700;font-size:18px;color:var(--white);margin-bottom:4px;}
+.conf-name{font-family:'DM Sans',sans-serif;font-weight:700;font-size:18px;color:var(--white);margin-bottom:4px;}
 .conf-location{font-size:13px;color:var(--muted);display:flex;align-items:center;gap:6px;}
 .conf-location::before{content:'◎';font-size:10px;color:var(--day-a);}
 .conf-meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;}
@@ -108,11 +108,11 @@ main{position:relative;z-index:1;max-width:1240px;margin:0 auto;padding:80px 48p
 .tag-public{background:rgba(76,175,101,.1);color:var(--day-a);border:1px solid rgba(76,175,101,.25);}
 .tag-invite{background:rgba(201,147,58,.1);color:var(--gold);border:1px solid rgba(201,147,58,.25);}
 .conf-actions{display:flex;gap:10px;align-items:center;padding:0 24px;flex-shrink:0;}
-.conf-link{font-family:'Syne',sans-serif;font-weight:700;font-size:10px;letter-spacing:.18em;text-transform:uppercase;
+.conf-link{font-family:'DM Sans',sans-serif;font-weight:700;font-size:10px;letter-spacing:.18em;text-transform:uppercase;
   padding:8px 18px;border-radius:2px;text-decoration:none;transition:.2s;white-space:nowrap;
   background:rgba(76,175,101,.08);color:var(--day-a);border:1px solid rgba(76,175,101,.2);}
 .conf-link:hover{background:rgba(76,175,101,.18);}
-.conf-toggle{font-family:'Syne',sans-serif;font-weight:700;font-size:10px;letter-spacing:.15em;text-transform:uppercase;
+.conf-toggle{font-family:'DM Sans',sans-serif;font-weight:700;font-size:10px;letter-spacing:.15em;text-transform:uppercase;
   padding:8px 16px;border-radius:2px;cursor:pointer;border:none;transition:.2s;white-space:nowrap;
   background:rgba(123,92,246,.08);color:#A78BFA;border:1px solid rgba(123,92,246,.2);}
 .conf-toggle:hover{background:rgba(123,92,246,.18);}
@@ -121,20 +121,20 @@ main{position:relative;z-index:1;max-width:1240px;margin:0 auto;padding:80px 48p
 .parallel-panel{display:none;border-top:1px solid var(--border);}
 .parallel-panel.open{display:block;}
 .parallel-header{padding:20px 28px 0;display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
-.parallel-title{font-family:'Syne',sans-serif;font-weight:700;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#A78BFA;}
+.parallel-title{font-family:'DM Sans',sans-serif;font-weight:700;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#A78BFA;}
 .parallel-subtitle{font-size:12px;color:var(--muted);margin-left:auto;}
 .parallel-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px;padding:16px 28px 24px;}
 .parallel-card{background:var(--night);border:1px solid rgba(123,92,246,.2);border-radius:2px;padding:16px 18px;transition:all .2s;}
 .parallel-card:hover{border-color:rgba(123,92,246,.5);transform:translateY(-2px);}
 .par-day{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#A78BFA;margin-bottom:6px;}
-.par-name{font-family:'Syne',sans-serif;font-weight:700;font-size:14px;color:var(--white);margin-bottom:4px;line-height:1.3;}
+.par-name{font-family:'DM Sans',sans-serif;font-weight:700;font-size:14px;color:var(--white);margin-bottom:4px;line-height:1.3;}
 .par-desc{font-size:12px;color:var(--muted);line-height:1.5;}
 .par-access{display:inline-block;margin-top:8px;font-size:9px;letter-spacing:.15em;text-transform:uppercase;padding:3px 8px;border-radius:2px;}
 .par-access.convite{background:rgba(201,147,58,.1);color:var(--gold);border:1px solid rgba(201,147,58,.2);}
 .par-access.aberto{background:rgba(76,175,101,.1);color:var(--day-a);border:1px solid rgba(76,175,101,.2);}
 .par-access.restrito{background:rgba(123,92,246,.1);color:#A78BFA;border:1px solid rgba(123,92,246,.2);}
 .add-parallel-btn{margin:0 28px 24px;width:calc(100% - 56px);background:transparent;border:1px dashed rgba(123,92,246,.3);
-  color:#A78BFA;font-family:'Syne',sans-serif;font-weight:700;font-size:10px;letter-spacing:.2em;text-transform:uppercase;
+  color:#A78BFA;font-family:'DM Sans',sans-serif;font-weight:700;font-size:10px;letter-spacing:.2em;text-transform:uppercase;
   padding:12px;border-radius:2px;cursor:pointer;transition:.2s;display:flex;align-items:center;justify-content:center;gap:8px;}
 .add-parallel-btn:hover{background:rgba(123,92,246,.06);border-color:rgba(123,92,246,.5);}
 
@@ -144,14 +144,14 @@ main{position:relative;z-index:1;max-width:1240px;margin:0 auto;padding:80px 48p
 .modal-overlay.open{display:flex;}
 .modal{background:var(--card);border:1px solid var(--border2);border-radius:2px;width:100%;max-width:560px;max-height:90vh;overflow-y:auto;}
 .modal-head{padding:28px 32px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;}
-.modal-title{font-family:'Syne',sans-serif;font-weight:800;font-size:16px;color:var(--white);}
+.modal-title{font-family:'DM Sans',sans-serif;font-weight:800;font-size:16px;color:var(--white);}
 .modal-title span{color:#A78BFA;}
 .modal-close{background:none;border:none;color:var(--muted);font-size:20px;cursor:pointer;padding:4px;line-height:1;transition:.2s;}
 .modal-close:hover{color:var(--white);}
 .modal-body{padding:28px 32px 20px;}
 .modal-subtitle{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:28px;}
 .field{margin-bottom:20px;}
-.field label{display:block;font-family:'Syne',sans-serif;font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:10px;}
+.field label{display:block;font-family:'DM Sans',sans-serif;font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:10px;}
 .field input,.field textarea,.field select{width:100%;background:var(--deep);border:1px solid var(--border2);color:var(--white);
   padding:12px 16px;font-family:'DM Sans',sans-serif;font-size:14px;border-radius:2px;outline:none;transition:.2s;}
 .field input:focus,.field textarea:focus,.field select:focus{border-color:rgba(123,92,246,.5);}
@@ -166,11 +166,11 @@ input::placeholder,textarea::placeholder{color:var(--muted);opacity:.5;}
 .radio-pill input{display:none;}
 .modal-footer{padding:16px 32px 28px;display:flex;gap:12px;}
 .modal-submit{flex:1;background:var(--night-b);color:#A78BFA;border:1px solid rgba(123,92,246,.4);
-  font-family:'Syne',sans-serif;font-weight:700;font-size:11px;letter-spacing:.2em;text-transform:uppercase;
+  font-family:'DM Sans',sans-serif;font-weight:700;font-size:11px;letter-spacing:.2em;text-transform:uppercase;
   padding:14px;border-radius:2px;cursor:pointer;transition:.2s;}
 .modal-submit:hover{background:var(--night-a);color:var(--white);}
 .modal-cancel{background:transparent;color:var(--muted);border:1px solid var(--border);
-  font-family:'Syne',sans-serif;font-weight:700;font-size:11px;letter-spacing:.2em;text-transform:uppercase;
+  font-family:'DM Sans',sans-serif;font-weight:700;font-size:11px;letter-spacing:.2em;text-transform:uppercase;
   padding:14px 24px;border-radius:2px;cursor:pointer;transition:.2s;}
 .modal-cancel:hover{color:var(--white);}
 .submit-success{display:none;text-align:center;padding:48px 32px;}
@@ -196,19 +196,19 @@ input::placeholder,textarea::placeholder{color:var(--muted);opacity:.5;}
 /* PATROCINADORES */
 #sponsors{background:#F3EFE9;padding:72px 48px 56px;}
 .sp-inner{max-width:1000px;margin:0 auto;}
-.sp-eyebrow{text-align:center;font-family:'Syne',sans-serif;font-weight:700;font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:#4A4036;margin-bottom:36px;}
+.sp-eyebrow{text-align:center;font-family:'DM Sans',sans-serif;font-weight:700;font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:#4A4036;margin-bottom:36px;}
 .sp-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
 .sp-card{background:#fff;border:1px solid #E4DDD2;border-radius:4px;height:130px;display:flex;align-items:center;justify-content:center;padding:18px;text-decoration:none;transition:.2s;}
 .sp-card:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.08);}
 .sp-card img{max-width:100%;max-height:100%;object-fit:contain;display:block;}
 .sp-card.dark{background:#0E0C0D;border-color:#0E0C0D;padding:10px;}
 .sp-card.cta{background:linear-gradient(135deg,var(--gold),#8E6424);border:none;flex-direction:column;gap:8px;cursor:pointer;
-  font-family:'Syne',sans-serif;font-weight:700;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#fff;text-align:center;line-height:1.5;}
+  font-family:'DM Sans',sans-serif;font-weight:700;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#fff;text-align:center;line-height:1.5;}
 .sp-foot{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;margin-top:36px;padding-top:28px;border-top:1px solid #E4DDD2;}
 .sp-foot p{font-size:14px;color:#4A4036;}
 .sp-foot .btn{padding:12px 26px;}
 footer{border-top:1px solid var(--border);padding:40px 48px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
-.foot-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:13px;letter-spacing:.12em;text-transform:uppercase;}
+.foot-logo{font-family:'DM Sans',sans-serif;font-weight:800;font-size:13px;letter-spacing:.12em;text-transform:uppercase;}
 .foot-logo span{color:var(--gold);}
 .foot-copy{font-size:11px;color:var(--muted);letter-spacing:.08em;}
 
@@ -254,21 +254,21 @@ input[type="date"],input[type="time"]{color-scheme:dark;}
   padding:9px 13px;font-family:'DM Sans',sans-serif;font-size:13px;border-radius:2px;outline:none;transition:.2s;}
 .goer-form input:focus{border-color:rgba(201,147,58,.4);}
 .goer-form input::placeholder{color:var(--muted);opacity:.5;}
-.goer-submit{font-family:'Syne',sans-serif;font-weight:700;font-size:10px;letter-spacing:.18em;text-transform:uppercase;
+.goer-submit{font-family:'DM Sans',sans-serif;font-weight:700;font-size:10px;letter-spacing:.18em;text-transform:uppercase;
   padding:9px 16px;border-radius:2px;cursor:pointer;border:none;background:var(--gold);color:var(--black);transition:.2s;white-space:nowrap;}
 .goer-submit:hover{background:var(--gold-l);}
 .goer-list{display:flex;flex-wrap:wrap;gap:6px;padding:8px 28px 14px;}
 .goer-chip{display:inline-flex;align-items:center;gap:5px;font-size:11px;padding:4px 10px;
   background:rgba(201,147,58,.07);border:1px solid rgba(201,147,58,.2);border-radius:2px;color:var(--muted2);}
 .goer-chip strong{color:var(--white);font-weight:600;}
-.conf-attend-btn{font-family:'Syne',sans-serif;font-weight:700;font-size:10px;letter-spacing:.15em;text-transform:uppercase;
+.conf-attend-btn{font-family:'DM Sans',sans-serif;font-weight:700;font-size:10px;letter-spacing:.15em;text-transform:uppercase;
   padding:8px 14px;border-radius:2px;cursor:pointer;border:1px solid rgba(201,147,58,.28);transition:.2s;white-space:nowrap;
   background:rgba(201,147,58,.06);color:var(--gold-l);}
 .conf-attend-btn:hover,.conf-attend-btn.active{background:rgba(201,147,58,.18);border-color:var(--gold);}
 
 /* Adicionar à agenda — dropdown */
 .agenda-dropdown{position:relative;display:inline-block;}
-.agenda-btn{font-family:'Syne',sans-serif;font-weight:700;font-size:10px;letter-spacing:.12em;text-transform:uppercase;
+.agenda-btn{font-family:'DM Sans',sans-serif;font-weight:700;font-size:10px;letter-spacing:.12em;text-transform:uppercase;
   padding:8px 12px;border-radius:2px;cursor:pointer;border:1px solid rgba(122,143,166,.2);transition:.2s;white-space:nowrap;
   background:rgba(122,143,166,.05);color:var(--muted2);display:inline-flex;align-items:center;gap:4px;}
 .agenda-btn:hover{background:rgba(122,143,166,.12);color:var(--white);}
@@ -287,12 +287,12 @@ input[type="date"],input[type="time"]{color-scheme:dark;}
 .par-goer-top{display:flex;align-items:center;gap:6px;flex-wrap:wrap;}
 .par-goer-btn{font-size:9px;letter-spacing:.14em;text-transform:uppercase;padding:4px 9px;border-radius:2px;cursor:pointer;
   border:1px solid rgba(201,147,58,.28);background:rgba(201,147,58,.06);color:var(--gold-l);
-  font-family:'Syne',sans-serif;font-weight:700;transition:.2s;}
+  font-family:'DM Sans',sans-serif;font-weight:700;transition:.2s;}
 .par-goer-btn:hover,.par-goer-btn.active{background:rgba(201,147,58,.18);border-color:var(--gold);}
 .par-agenda-wrap{position:relative;display:inline-block;}
 .par-agenda-btn{font-size:9px;letter-spacing:.12em;text-transform:uppercase;padding:4px 8px;border-radius:2px;cursor:pointer;
   border:1px solid rgba(122,143,166,.2);background:rgba(122,143,166,.05);color:var(--muted2);
-  font-family:'Syne',sans-serif;font-weight:700;transition:.2s;display:inline-flex;align-items:center;gap:3px;}
+  font-family:'DM Sans',sans-serif;font-weight:700;transition:.2s;display:inline-flex;align-items:center;gap:3px;}
 .par-agenda-btn:hover{background:rgba(122,143,166,.12);color:var(--white);}
 .par-agenda-menu{display:none;position:absolute;right:0;top:100%;margin-top:4px;min-width:190px;
   background:var(--card2);border:1px solid var(--border2);border-radius:2px;z-index:300;overflow:hidden;
@@ -309,7 +309,7 @@ input[type="date"],input[type="time"]{color-scheme:dark;}
   padding:7px 10px;font-family:'DM Sans',sans-serif;font-size:12px;border-radius:2px;outline:none;transition:.2s;}
 .par-goer-form input:focus{border-color:rgba(201,147,58,.4);}
 .par-goer-form input::placeholder{color:var(--muted);opacity:.5;}
-.par-goer-sub{font-family:'Syne',sans-serif;font-weight:700;font-size:9px;letter-spacing:.14em;text-transform:uppercase;
+.par-goer-sub{font-family:'DM Sans',sans-serif;font-weight:700;font-size:9px;letter-spacing:.14em;text-transform:uppercase;
   padding:7px 10px;border-radius:2px;cursor:pointer;border:none;background:var(--gold);color:var(--black);transition:.2s;white-space:nowrap;}
 .par-goer-sub:hover{background:var(--gold-l);}
 .par-goer-list{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px;}
@@ -1144,13 +1144,13 @@ function renderParallelCards(conf) {
     const newTag = isNew
       ? `<span style="display:inline-block;margin-left:8px;font-size:9px;letter-spacing:.18em;text-transform:uppercase;
            padding:2px 8px;border-radius:2px;background:rgba(74,222,128,.15);color:#4ADE80;
-           border:1px solid rgba(74,222,128,.3);vertical-align:middle;font-family:'Syne',sans-serif;font-weight:700;">NOVO</span>`
+           border:1px solid rgba(74,222,128,.3);vertical-align:middle;font-family:'DM Sans',sans-serif;font-weight:700;">NOVO</span>`
       : '';
 
     // PASSO 3: lista de quem vai estar lá
     const attendeesList = (p.attendees && p.attendees.length > 0)
       ? `<div style="margin-top:10px;padding-top:10px;border-top:1px solid rgba(123,92,246,.15);">
-           <div style="font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:#A78BFA;margin-bottom:6px;font-family:'Syne',sans-serif;font-weight:700;">Quem vai estar lá</div>
+           <div style="font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:#A78BFA;margin-bottom:6px;font-family:'DM Sans',sans-serif;font-weight:700;">Quem vai estar lá</div>
            <div style="display:flex;flex-wrap:wrap;gap:4px;">
              ${p.attendees.map(a =>
                `<span style="font-size:11px;padding:3px 8px;background:rgba(123,92,246,.1);border:1px solid rgba(123,92,246,.2);border-radius:2px;color:var(--muted2);">${a}</span>`
@@ -1331,7 +1331,7 @@ function showModalError(msg, withConfirm, onConfirm) {
     footer.parentNode.insertBefore(el, footer);
   }
   if (withConfirm) {
-    el.innerHTML = `⚠ ${msg} <button onclick="document.getElementById('modal-inline-error').style.display='none';(${onConfirm.toString()})()" style="margin-left:12px;background:rgba(239,68,68,.2);border:1px solid rgba(239,68,68,.4);color:#FCA5A5;padding:4px 14px;border-radius:2px;cursor:pointer;font-size:12px;font-family:'Syne',sans-serif;font-weight:700;letter-spacing:.1em;">Adicionar mesmo assim</button>`;
+    el.innerHTML = `⚠ ${msg} <button onclick="document.getElementById('modal-inline-error').style.display='none';(${onConfirm.toString()})()" style="margin-left:12px;background:rgba(239,68,68,.2);border:1px solid rgba(239,68,68,.4);color:#FCA5A5;padding:4px 14px;border-radius:2px;cursor:pointer;font-size:12px;font-family:'DM Sans',sans-serif;font-weight:700;letter-spacing:.1em;">Adicionar mesmo assim</button>`;
   } else {
     el.innerHTML = `⚠ ${msg}`;
   }
@@ -1454,20 +1454,20 @@ function buildDiagnostic() {
     </div>
 
     <div style="margin-bottom:24px;">
-      <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border);">Eventos recomendados</div>
+      <div style="font-family:'DM Sans',sans-serif;font-weight:700;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border);">Eventos recomendados</div>
       ${recommendations.map((r,i) => `
         <div style="display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--border);align-items:flex-start;">
           <div style="font-family:'Bebas Neue',sans-serif;font-size:28px;color:var(--gold);min-width:32px;line-height:1;">0${i+1}</div>
           <div style="flex:1;">
-            <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:14px;color:var(--white);">${r.name}</div>
+            <div style="font-family:'DM Sans',sans-serif;font-weight:700;font-size:14px;color:var(--white);">${r.name}</div>
             <div style="font-size:12px;color:var(--muted);margin-top:3px;line-height:1.5;">${r.reason}</div>
           </div>
-          <div style="font-size:11px;font-family:'Syne',sans-serif;font-weight:700;color:var(--gold);background:rgba(201,147,58,.1);border:1px solid rgba(201,147,58,.2);padding:4px 12px;border-radius:2px;white-space:nowrap;">${r.score}% fit</div>
+          <div style="font-size:11px;font-family:'DM Sans',sans-serif;font-weight:700;color:var(--gold);background:rgba(201,147,58,.1);border:1px solid rgba(201,147,58,.2);padding:4px 12px;border-radius:2px;white-space:nowrap;">${r.score}% fit</div>
         </div>`).join('')}
     </div>
 
     <div style="margin-bottom:24px;">
-      <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border);">Estimativa de investimento por evento</div>
+      <div style="font-family:'DM Sans',sans-serif;font-weight:700;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border);">Estimativa de investimento por evento</div>
       <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px;">
         ${invest.map(item => `
           <div style="background:var(--deep);border:1px solid var(--border);padding:18px;border-radius:2px;">
@@ -1479,19 +1479,19 @@ function buildDiagnostic() {
     </div>
 
     <div style="background:rgba(26,107,138,.08);border:1px solid rgba(33,150,181,.2);padding:20px 24px;border-radius:2px;">
-      <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:13px;color:var(--white);margin-bottom:8px;">Como a MR Solutions atua junto com <span style="color:var(--gold);">${company}</span></div>
+      <div style="font-family:'DM Sans',sans-serif;font-weight:700;font-size:13px;color:var(--white);margin-bottom:8px;">Como a MR Solutions atua junto com <span style="color:var(--gold);">${company}</span></div>
       <div style="font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:16px;">Produzimos conteúdo antes, durante e depois de cada evento para amplificar sua presença e converter visibilidade em relacionamento comercial. Nossa audiência no setor offshore conecta sua marca com profissionais técnicos e gestores de operações — exatamente o público dos eventos que você precisa estar.</div>
       <div style="font-size:12px;color:var(--blue-l);">→ Um consultor da MR Solutions entrará em contato com <strong style="color:var(--white);">${name}</strong> em até 48 horas para detalhar a proposta.</div>
     </div>
 
     <!-- PASSO 1: Botão de compartilhamento WhatsApp -->
     <div style="margin-top:20px;padding:20px 24px;background:rgba(37,211,102,.06);border:1px solid rgba(37,211,102,.2);border-radius:2px;">
-      <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:12px;color:#4ADE80;letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px;">📲 Compartilhe seu diagnóstico</div>
+      <div style="font-family:'DM Sans',sans-serif;font-weight:700;font-size:12px;color:#4ADE80;letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px;">📲 Compartilhe seu diagnóstico</div>
       <div style="font-size:13px;color:var(--muted);margin-bottom:16px;line-height:1.6;">
         Conhece algum colega que também deveria mapear os eventos certos para a empresa dele? Compartilha o MR Solutions Event Map no WhatsApp.
       </div>
       <button onclick="shareWhatsApp('${company}','${segment}','${goal}',${JSON.stringify(recommendations.map(r=>r.name))})"
-        style="display:inline-flex;align-items:center;gap:10px;background:#25D366;color:#000;border:none;padding:12px 24px;border-radius:2px;cursor:pointer;font-family:'Syne',sans-serif;font-weight:700;font-size:11px;letter-spacing:.15em;text-transform:uppercase;transition:.2s;"
+        style="display:inline-flex;align-items:center;gap:10px;background:#25D366;color:#000;border:none;padding:12px 24px;border-radius:2px;cursor:pointer;font-family:'DM Sans',sans-serif;font-weight:700;font-size:11px;letter-spacing:.15em;text-transform:uppercase;transition:.2s;"
         onmouseover="this.style.background='#1ebe5a'" onmouseout="this.style.background='#25D366'">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.555 4.122 1.528 5.856L.057 23.882l6.186-1.622A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.884 0-3.656-.49-5.197-1.346l-.373-.22-3.873 1.015 1.034-3.773-.242-.389A9.956 9.956 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
         Compartilhar no WhatsApp
