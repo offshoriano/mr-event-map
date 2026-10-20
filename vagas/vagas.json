@@ -1,0 +1,62 @@
+[
+  {
+    "id": "brava-tecnico-mecanica-offshore",
+    "titulo": "Técnico de Mecânica Offshore",
+    "empresa": "Brava Energia",
+    "logo": "../assets/empresas/brava-energia.jpg",
+    "local": "Rio de Janeiro, RJ",
+    "regime": "Embarcado",
+    "contrato": "Efetivo (CLT)",
+    "area": "Manutenção",
+    "nivel": "Com experiência offshore",
+    "publicada": "2026-10-20",
+    "inscricoesAte": "2026-11-01",
+    "link": "https://bravaenergia.gupy.io/job/eyJqb2JJZCI6MTI0MDk0OTMsInNvdXJjZSI6ImxpbmtlZGluIn0=?jobBoardSource=linkedin",
+    "resumo": "A Brava Energia está contratando técnico de mecânica para manutenção a bordo de unidade marítima. É vaga para quem já tem rodagem offshore: você vai cuidar de bombas, válvulas, compressores, geradores, HPUs e sistemas hidráulicos, do topside à praça de máquinas, com autonomia para diagnosticar falha e resolver.",
+    "atividades": [
+      "Manutenção preventiva, preditiva e corretiva em bombas, válvulas, tubulações e sistemas hidráulicos, pneumáticos e rotativos",
+      "Apoio em inspeção e manutenção de geradores, compressores, vasos de pressão, bombas de injeção de água, HPUs e motores",
+      "Diagnóstico de falhas e execução dos reparos",
+      "Troca de rolamentos, buchas, rotores e guarnições, lubrificação e alinhamento de acionadores",
+      "Usinagem em torno, fresadora e furadeira, e pequenos reparos com solda elétrica e oxiacetilênica",
+      "Montagem e desmontagem de equipamentos, tubulações, flanges e conexões de processo",
+      "Registro das intervenções e relatórios técnicos",
+      "Brigada de emergência da unidade"
+    ],
+    "requisitos": [
+      "Técnico em Mecânica com registro ativo no CREA",
+      "Experiência com sistemas hidráulicos e mecânicos onshore ou offshore",
+      "Experiência como mecânico em instalação offshore",
+      "Inglês intermediário"
+    ],
+    "beneficios": [
+      "Vale refeição e alimentação de R$ 2.500",
+      "Cartão flexível de R$ 600",
+      "PLR",
+      "Previdência privada",
+      "Plano de saúde e odontológico",
+      "Wellhub ou TotalPass",
+      "Seguro de vida",
+      "Auxílio creche, escola ou babá",
+      "Licença maternidade e paternidade estendidas"
+    ],
+    "pcd": true,
+    "videos": [
+      {
+        "id": "3yOdA-HnSeg",
+        "titulo": "Se você é mecânico, precisa ver esse vídeo!",
+        "porque": "O que não pode faltar no currículo de um mecânico para passar na triagem."
+      },
+      {
+        "id": "eHqY18dRP8Q",
+        "titulo": "Perguntas feitas em uma entrevista para vaga offshore",
+        "porque": "As perguntas que mais aparecem na entrevista e como responder."
+      },
+      {
+        "id": "ZEIQ2xRUfqQ",
+        "titulo": "O inglês que todo trabalhador offshore fala",
+        "porque": "A vaga pede inglês intermediário. Aqui está o vocabulário que você usa a bordo."
+      }
+    ]
+  }
+]
