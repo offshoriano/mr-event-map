@@ -167,7 +167,7 @@ function painelVagas(){
     $('#av-m').textContent = 'Salvando...';
     vpost({action:'aviso', senha, email, teste:true}).then(({ok, data}) => {
       if (!ok) return $('#av-m').textContent = data.error || 'Erro';
-      AVISO = email; $('#av-m').textContent = email ? 'Salvo. Mandei um e-mail de teste.' : 'Avisos desligados.';
+      AVISO = email; $('#av-m').textContent = email ? 'Salvo. Mandei um e-mail de teste.' : 'Salvo. Os avisos vão para o e-mail padrão.';
     });
   };
   $('#conteudo').onclick = e => {
