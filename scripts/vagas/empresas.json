@@ -911,7 +911,7 @@
   "linkedin": "https://www.linkedin.com/company/manservoficial",
   "ats": {
    "tipo": "pandape",
-   "cfg": "manservoficial"
+   "cfg": "manserv,manservoficial"
   }
  },
  {
@@ -6591,5 +6591,13 @@
   ],
   "site": "",
   "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Newinter",
+  "origem": [
+   "MR"
+  ],
+  "site": "newinter.com.br",
+  "obs": "Recebe currículo por e-mail (cadastro@newinter.com.br) e divulga vagas no LinkedIn."
  }
 ]

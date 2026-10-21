@@ -40,6 +40,8 @@ def get(url, data=None, headers=None, tentativas=3):
         except urllib.error.HTTPError as e:
             if e.code in (400, 401, 403, 404, 422):
                 raise
+            if e.code == 429:  # pediu para esperar
+                time.sleep(20 * (i + 1))
             err = e
         except Exception as e:
             err = e
@@ -229,7 +231,40 @@ def recruitee(conta):
             continue
         yield dict(titulo=limpa(o.get('title')), local=limpa(o.get('city') or o.get('location') or 'Brasil'), link=o.get('careers_url') or o.get('url'))
 
-LEITORES = dict(solides=solides, recruitee=recruitee, brunel=brunel, airswift=airswift, atlas=atlas, mde=mde, beehire=beehire, inhire=inhire, gupy=gupy, rmk=rmk, workday=workday, oracle=oracle, radancy=radancy)
+def pandape(contas):
+    # Algumas empresas têm mais de um portal na Pandapé (InfoJobs); cfg aceita "a,b"
+    for conta in contas.split(','):
+        vistos = set()
+        for pagina in range(1, 11):
+            s = get(f'https://{conta}.pandape.infojobs.com.br/?PageNumber={pagina}')
+            cards = re.findall(r'<a[^>]*card-vacancy[^>]*href="(/Detail/\d+)"[^>]*>(.*?)</a>', s, re.S)
+            novos = 0
+            for href, c in cards:
+                if href in vistos:
+                    continue
+                vistos.add(href); novos += 1
+                t = re.search(r'<h3[^>]*title="([^"]+)"', c)
+                loc = re.search(r'icon-location-pin-1.*?</div>\s*([^<]+?)\s*</div>', c, re.S)
+                local = limpa(loc.group(1)) if loc else 'Brasil'
+                yield dict(titulo=limpa(t.group(1)) if t else 'Vaga', local='Brasil' if local == 'Todo Brasil' else local,
+                           link=f'https://{conta}.pandape.infojobs.com.br{href}')
+            if not novos:
+                break
+
+def workable(conta):
+    corpo = {'query': '', 'location': [], 'department': [], 'worktype': [], 'remote': []}
+    for _ in range(10):
+        d = json.loads(get(f'https://apply.workable.com/api/v3/accounts/{conta}/jobs', json.dumps(corpo).encode(), {'Content-Type': 'application/json'}))
+        for j in d.get('results') or []:
+            locs = j.get('locations') or [j.get('location') or {}]
+            br = next((l for l in locs if l.get('countryCode') == 'BR'), None)
+            if br:
+                yield dict(titulo=limpa(j['title']), local=br.get('city') or 'Brasil', link=f"https://apply.workable.com/{conta}/j/{j['shortcode']}/")
+        if not d.get('nextPage'):
+            break
+        corpo['token'] = d['nextPage']
+
+LEITORES = dict(pandape=pandape, workable=workable, solides=solides, recruitee=recruitee, brunel=brunel, airswift=airswift, atlas=atlas, mde=mde, beehire=beehire, inhire=inhire, gupy=gupy, rmk=rmk, workday=workday, oracle=oracle, radancy=radancy)
 
 def classifica(titulo):
     t = titulo.lower()
@@ -254,6 +289,7 @@ def arruma_local(loc):
     if m:
         cidade = m.group(2).title().replace(' De ', ' de ').replace(' Do ', ' do ').replace('Macae', 'Macaé').replace('Niteroi', 'Niterói')
         return f'{cidade}, {m.group(1)}'
+    loc = re.sub(r'\s+-\s+([A-Z]{2})$', r', \1', loc)  # Pandapé: "Macaé - RJ"
     loc = re.sub(r',?\s*\d{5}-?\d{3}', '', loc)
     loc = re.sub(r',\s*(BR|Brasil|Brazil)\s*$', '', loc)
     loc = re.sub(r'Rio De Janeiro', 'Rio de Janeiro', loc).replace(' - Ventura Office', '')
@@ -283,7 +319,7 @@ def main():
             if filtro:
                 itens = [i for i in itens if OG.search(i['titulo'] + ' ' + i.get('area', ''))]
             for i in itens:
-                if not re.search(r'bra[sz]il|,\s*(rj|sp|es|ba|se|rn|ce|am|mg|pr|sc|rs|pe|al|ma|pa)\b|^BR-|maca[eé]|rio de janeiro|niter[oó]i|vit[oó]ria|santos|remoto|itagua[ií]|aracaju|salvador|mossor[oó]|s[aã]o paulo|angra|campos|serra', i['local'], re.I):
+                if not re.search(r'bra[sz]il|,\s*(rj|sp|es|ba|se|rn|ce|am|mg|pr|sc|rs|pe|al|ma|pa)\b|^BR-|maca[eé]|rio de janeiro|niter[oó]i|vit[oó]ria|santos|remoto|itagua[ií]|aracaju|salvador|mossor[oó]|s[aã]o paulo|angra|campos|serra', arruma_local(i['local']), re.I):
                     continue
                 area = classifica(i['titulo'])
                 vagas.append(dict(
@@ -314,6 +350,16 @@ def main():
         if v['link'] not in vistos:
             vistos.add(v['link']); unicas.append(v)
     unicas.sort(key=lambda v: (v['banco'], v['regime'] != 'Embarcado', v['empresa'], v['titulo']))
+    # Só regrava (e o site só republica) quando entra, sai ou muda alguma vaga
+    def assinatura(lista):
+        return sorted((v['link'], v['titulo'], v['local']) for v in lista)
+    if SAIDA.exists():
+        try:
+            if assinatura(json.loads(SAIDA.read_text())['vagas']) == assinatura(unicas):
+                print('nenhuma vaga nova ou encerrada; site não muda', file=sys.stderr)
+                return
+        except Exception:
+            pass
     SAIDA.write_text(json.dumps(dict(atualizado=datetime.now(timezone.utc).isoformat(timespec='seconds'),
                                      fontes=status, videos=VIDEOS['videos'],
                                      catalogo=escolha_videos.catalogo({x[0] for v in unicas for x in v.get('videos', [])}), vagas=unicas), ensure_ascii=False, indent=1) + '\n')

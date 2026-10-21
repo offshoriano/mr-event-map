@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-10-21T17:09:58+00:00",
+ "atualizado": "2026-10-21T17:23:53+00:00",
  "fontes": [
   {
    "empresa": "PRIO",
@@ -133,7 +133,7 @@
   },
   {
    "empresa": "Fugro",
-   "vagas": 11,
+   "vagas": 10,
    "ok": true
   },
   {
@@ -184,6 +184,16 @@
   {
    "empresa": "Vertical Group",
    "vagas": 0,
+   "ok": true
+  },
+  {
+   "empresa": "BW Energy",
+   "vagas": 0,
+   "ok": false
+  },
+  {
+   "empresa": "Manserv",
+   "vagas": 20,
    "ok": true
   },
   {
@@ -334,6 +344,11 @@
   {
    "empresa": "Solana Agência Marítima LTDA",
    "vagas": 3,
+   "ok": true
+  },
+  {
+   "empresa": "MI Electric Brasil",
+   "vagas": 14,
    "ok": true
   },
   {
@@ -609,7 +624,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "kJZqpRE1bvY",
@@ -635,7 +650,7 @@
    "area": "Segurança",
    "tema": "seguranca",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "VzHXNdUlHVA",
@@ -661,7 +676,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "sMTU-gjxcLU",
@@ -687,7 +702,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "sMTU-gjxcLU",
@@ -713,7 +728,7 @@
    "area": "Perfuração e poços",
    "tema": "pocos",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "bFgYyXPn2Bc",
@@ -739,7 +754,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "LeI6KBdvdQc",
@@ -765,7 +780,7 @@
    "area": "Marítimo",
    "tema": "maritimo",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "-Fg2KN6627E",
@@ -791,7 +806,7 @@
    "area": "Marítimo",
    "tema": "maritimo",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "-Fg2KN6627E",
@@ -817,7 +832,7 @@
    "area": "Marítimo",
    "tema": "maritimo",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "-Fg2KN6627E",
@@ -843,7 +858,7 @@
    "area": "Marítimo",
    "tema": "maritimo",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "f3XoJANQNPk",
@@ -869,7 +884,7 @@
    "area": "Elétrica e instrumentação",
    "tema": "eletrica",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "-35oTYToV2A",
@@ -895,7 +910,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "kJZqpRE1bvY",
@@ -921,7 +936,7 @@
    "area": "Mecânica e manutenção",
    "tema": "mecanica",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "3yOdA-HnSeg",
@@ -947,7 +962,7 @@
    "area": "Marítimo",
    "tema": "maritimo",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "IVGvdu3BEwI",
@@ -973,7 +988,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "sMTU-gjxcLU",
@@ -999,7 +1014,7 @@
    "area": "Marítimo",
    "tema": "maritimo",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "IVGvdu3BEwI",
@@ -1025,7 +1040,7 @@
    "area": "Mecânica e manutenção",
    "tema": "mecanica",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "3yOdA-HnSeg",
@@ -1051,7 +1066,7 @@
    "area": "Elétrica e instrumentação",
    "tema": "eletrica",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "-35oTYToV2A",
@@ -1077,7 +1092,7 @@
    "area": "Mecânica e manutenção",
    "tema": "mecanica",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "3yOdA-HnSeg",
@@ -1103,7 +1118,7 @@
    "area": "Marítimo",
    "tema": "maritimo",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "f3XoJANQNPk",
@@ -1129,7 +1144,7 @@
    "area": "Marítimo",
    "tema": "maritimo",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "WP-YqW9rW3E",
@@ -1155,7 +1170,7 @@
    "area": "Perfuração e poços",
    "tema": "pocos",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "bFgYyXPn2Bc",
@@ -1181,7 +1196,7 @@
    "area": "Marítimo",
    "tema": "maritimo",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "-Fg2KN6627E",
@@ -1207,7 +1222,7 @@
    "area": "Marítimo",
    "tema": "maritimo",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "WP-YqW9rW3E",
@@ -1233,7 +1248,7 @@
    "area": "Marítimo",
    "tema": "maritimo",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "WP-YqW9rW3E",
@@ -1259,7 +1274,7 @@
    "area": "Perfuração e poços",
    "tema": "pocos",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "bFgYyXPn2Bc",
@@ -1285,7 +1300,7 @@
    "area": "Marítimo",
    "tema": "maritimo",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "f3XoJANQNPk",
@@ -1311,7 +1326,7 @@
    "area": "Marítimo",
    "tema": "maritimo",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "f3XoJANQNPk",
@@ -1337,7 +1352,7 @@
    "area": "Marítimo",
    "tema": "maritimo",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "f3XoJANQNPk",
@@ -1363,7 +1378,7 @@
    "area": "Perfuração e poços",
    "tema": "pocos",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "bFgYyXPn2Bc",
@@ -1389,7 +1404,7 @@
    "area": "Perfuração e poços",
    "tema": "pocos",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "bFgYyXPn2Bc",
@@ -1415,7 +1430,7 @@
    "area": "Perfuração e poços",
    "tema": "pocos",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "bFgYyXPn2Bc",
@@ -1441,7 +1456,7 @@
    "area": "Operação e produção",
    "tema": "operacao",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -1467,7 +1482,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "sMTU-gjxcLU",
@@ -1493,7 +1508,7 @@
    "area": "Marítimo",
    "tema": "maritimo",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "-Fg2KN6627E",
@@ -1519,7 +1534,7 @@
    "area": "Engenharia",
    "tema": "engenharia",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "9ZlICqIBUMg",
@@ -1545,7 +1560,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "sMTU-gjxcLU",
@@ -1571,7 +1586,7 @@
    "area": "Marítimo",
    "tema": "maritimo",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "f3XoJANQNPk",
@@ -1597,7 +1612,7 @@
    "area": "Mecânica e manutenção",
    "tema": "mecanica",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "3yOdA-HnSeg",
@@ -1623,7 +1638,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "sMTU-gjxcLU",
@@ -1649,7 +1664,7 @@
    "area": "Marítimo",
    "tema": "maritimo",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "f3XoJANQNPk",
@@ -1675,7 +1690,7 @@
    "area": "Marítimo",
    "tema": "maritimo",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "f3XoJANQNPk",
@@ -1701,7 +1716,7 @@
    "area": "Segurança",
    "tema": "seguranca",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "VzHXNdUlHVA",
@@ -1727,7 +1742,7 @@
    "area": "Mecânica e manutenção",
    "tema": "mecanica",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "89nmfX5NnpI",
@@ -1753,7 +1768,7 @@
    "area": "Mecânica e manutenção",
    "tema": "mecanica",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "89nmfX5NnpI",
@@ -1779,7 +1794,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "89nmfX5NnpI",
@@ -1805,7 +1820,7 @@
    "area": "Mecânica e manutenção",
    "tema": "mecanica",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "89nmfX5NnpI",
@@ -1831,7 +1846,7 @@
    "area": "Perfuração e poços",
    "tema": "pocos",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "bFgYyXPn2Bc",
@@ -1857,7 +1872,7 @@
    "area": "Mecânica e manutenção",
    "tema": "mecanica",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "3yOdA-HnSeg",
@@ -1883,7 +1898,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "kxMbpcGcYks",
@@ -1909,7 +1924,7 @@
    "area": "Marítimo",
    "tema": "maritimo",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "-Fg2KN6627E",
@@ -1935,7 +1950,7 @@
    "area": "Marítimo",
    "tema": "maritimo",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "kxMbpcGcYks",
@@ -1961,7 +1976,7 @@
    "area": "Marítimo",
    "tema": "maritimo",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "WP-YqW9rW3E",
@@ -1987,7 +2002,7 @@
    "area": "Marítimo",
    "tema": "maritimo",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "WP-YqW9rW3E",
@@ -2013,7 +2028,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "YTu30XI9rhg",
@@ -2039,7 +2054,7 @@
    "area": "Engenharia",
    "tema": "engenharia",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "9ZlICqIBUMg",
@@ -2065,7 +2080,7 @@
    "area": "Elétrica e instrumentação",
    "tema": "eletrica",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "-35oTYToV2A",
@@ -2091,7 +2106,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -2117,7 +2132,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -2143,7 +2158,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -2169,7 +2184,7 @@
    "area": "Mecânica e manutenção",
    "tema": "mecanica",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "3yOdA-HnSeg",
@@ -2195,7 +2210,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -2221,7 +2236,7 @@
    "area": "Engenharia",
    "tema": "engenharia",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "-35oTYToV2A",
@@ -2247,7 +2262,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -2273,7 +2288,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -2299,7 +2314,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -2325,7 +2340,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -2351,7 +2366,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -2377,7 +2392,7 @@
    "area": "Segurança",
    "tema": "seguranca",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "VzHXNdUlHVA",
@@ -2403,7 +2418,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -2429,7 +2444,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -2455,7 +2470,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -2481,7 +2496,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -2507,7 +2522,7 @@
    "area": "Elétrica e instrumentação",
    "tema": "eletrica",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "9ZlICqIBUMg",
@@ -2533,7 +2548,7 @@
    "area": "Engenharia",
    "tema": "engenharia",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "9ZlICqIBUMg",
@@ -2559,7 +2574,7 @@
    "area": "Engenharia",
    "tema": "engenharia",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "9ZlICqIBUMg",
@@ -2585,7 +2600,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -2611,7 +2626,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -2637,7 +2652,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -2663,7 +2678,7 @@
    "area": "Operação e produção",
    "tema": "operacao",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -2689,7 +2704,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -2715,7 +2730,7 @@
    "area": "Mecânica e manutenção",
    "tema": "mecanica",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "3yOdA-HnSeg",
@@ -2741,7 +2756,7 @@
    "area": "Elétrica e instrumentação",
    "tema": "eletrica",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "-35oTYToV2A",
@@ -2767,7 +2782,7 @@
    "area": "Mecânica e manutenção",
    "tema": "mecanica",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "3yOdA-HnSeg",
@@ -2793,7 +2808,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -2819,7 +2834,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -2845,7 +2860,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -2871,7 +2886,7 @@
    "area": "Segurança",
    "tema": "seguranca",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "VzHXNdUlHVA",
@@ -2897,7 +2912,7 @@
    "area": "Segurança",
    "tema": "seguranca",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "VzHXNdUlHVA",
@@ -2923,7 +2938,7 @@
    "area": "Mecânica e manutenção",
    "tema": "mecanica",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "3yOdA-HnSeg",
@@ -2949,7 +2964,7 @@
    "area": "Engenharia",
    "tema": "engenharia",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "WP-YqW9rW3E",
@@ -2975,7 +2990,7 @@
    "area": "Engenharia",
    "tema": "engenharia",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "WP-YqW9rW3E",
@@ -3001,7 +3016,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -3027,7 +3042,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "sMTU-gjxcLU",
@@ -3053,7 +3068,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -3079,7 +3094,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -3105,7 +3120,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -3131,7 +3146,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -3157,7 +3172,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -3183,7 +3198,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -3209,7 +3224,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -3235,7 +3250,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -3261,7 +3276,7 @@
    "area": "Perfuração e poços",
    "tema": "pocos",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -3287,7 +3302,7 @@
    "area": "Elétrica e instrumentação",
    "tema": "eletrica",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "-35oTYToV2A",
@@ -3313,7 +3328,7 @@
    "area": "Engenharia",
    "tema": "engenharia",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "9ZlICqIBUMg",
@@ -3339,7 +3354,7 @@
    "area": "Engenharia",
    "tema": "engenharia",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "9ZlICqIBUMg",
@@ -3365,7 +3380,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -3391,7 +3406,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -3417,7 +3432,7 @@
    "area": "Operação e produção",
    "tema": "operacao",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "kJZqpRE1bvY",
@@ -3443,7 +3458,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "WP-YqW9rW3E",
@@ -3469,7 +3484,7 @@
    "area": "Mecânica e manutenção",
    "tema": "mecanica",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "3yOdA-HnSeg",
@@ -3495,7 +3510,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "sMTU-gjxcLU",
@@ -3521,7 +3536,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -3547,7 +3562,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -3573,7 +3588,7 @@
    "area": "Mecânica e manutenção",
    "tema": "mecanica",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "3yOdA-HnSeg",
@@ -3599,7 +3614,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -3625,7 +3640,7 @@
    "area": "Elétrica e instrumentação",
    "tema": "eletrica",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "-35oTYToV2A",
@@ -3651,7 +3666,7 @@
    "area": "Mecânica e manutenção",
    "tema": "mecanica",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "3yOdA-HnSeg",
@@ -3677,7 +3692,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -3703,7 +3718,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -3729,7 +3744,7 @@
    "area": "Mecânica e manutenção",
    "tema": "mecanica",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "89nmfX5NnpI",
@@ -3755,7 +3770,7 @@
    "area": "Elétrica e instrumentação",
    "tema": "eletrica",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "-35oTYToV2A",
@@ -3781,7 +3796,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -3807,7 +3822,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "sMTU-gjxcLU",
@@ -3833,7 +3848,7 @@
    "area": "Elétrica e instrumentação",
    "tema": "eletrica",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "-35oTYToV2A",
@@ -3859,7 +3874,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -3885,7 +3900,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "-35oTYToV2A",
@@ -3911,7 +3926,7 @@
    "area": "Mecânica e manutenção",
    "tema": "mecanica",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "3yOdA-HnSeg",
@@ -3937,7 +3952,7 @@
    "area": "Mecânica e manutenção",
    "tema": "mecanica",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "3yOdA-HnSeg",
@@ -3963,7 +3978,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "YTu30XI9rhg",
@@ -3989,7 +4004,7 @@
    "area": "Operação e produção",
    "tema": "operacao",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -4015,7 +4030,7 @@
    "area": "Operação e produção",
    "tema": "operacao",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -4041,7 +4056,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -4067,7 +4082,7 @@
    "area": "Operação e produção",
    "tema": "operacao",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "9ZlICqIBUMg",
@@ -4093,7 +4108,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -4119,7 +4134,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -4145,7 +4160,7 @@
    "area": "Perfuração e poços",
    "tema": "pocos",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "9ZlICqIBUMg",
@@ -4171,7 +4186,7 @@
    "area": "Engenharia",
    "tema": "engenharia",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "9ZlICqIBUMg",
@@ -4197,7 +4212,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -4223,7 +4238,7 @@
    "area": "Mecânica e manutenção",
    "tema": "mecanica",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "3yOdA-HnSeg",
@@ -4249,7 +4264,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -4275,7 +4290,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -4301,7 +4316,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -4327,7 +4342,7 @@
    "area": "Engenharia",
    "tema": "engenharia",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "9ZlICqIBUMg",
@@ -4353,7 +4368,7 @@
    "area": "Segurança",
    "tema": "seguranca",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "VzHXNdUlHVA",
@@ -4379,7 +4394,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -4405,7 +4420,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -4431,7 +4446,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -4457,7 +4472,7 @@
    "area": "Operação e produção",
    "tema": "operacao",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -4483,7 +4498,7 @@
    "area": "Perfuração e poços",
    "tema": "pocos",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -4509,7 +4524,7 @@
    "area": "Mecânica e manutenção",
    "tema": "mecanica",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "M1b9Czpw5rg",
@@ -4535,7 +4550,7 @@
    "area": "Marítimo",
    "tema": "maritimo",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "M1b9Czpw5rg",
@@ -4561,7 +4576,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "M1b9Czpw5rg",
@@ -4587,7 +4602,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -4613,7 +4628,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "sMTU-gjxcLU",
@@ -4639,7 +4654,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "sMTU-gjxcLU",
@@ -4665,7 +4680,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "sMTU-gjxcLU",
@@ -4691,7 +4706,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -4717,7 +4732,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -4743,7 +4758,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -4769,7 +4784,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "YTu30XI9rhg",
@@ -4795,7 +4810,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -4821,7 +4836,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -4847,7 +4862,7 @@
    "area": "Engenharia",
    "tema": "engenharia",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "9ZlICqIBUMg",
@@ -4873,7 +4888,7 @@
    "area": "Operação e produção",
    "tema": "operacao",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -4899,7 +4914,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -4925,7 +4940,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -4951,7 +4966,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -4977,7 +4992,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -5003,7 +5018,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -5029,7 +5044,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -5055,7 +5070,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -5081,7 +5096,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -5107,7 +5122,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "LeI6KBdvdQc",
@@ -5133,7 +5148,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -5159,7 +5174,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -5185,7 +5200,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -5211,7 +5226,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -5237,7 +5252,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -5263,7 +5278,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -5289,7 +5304,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -5315,7 +5330,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -5341,7 +5356,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -5367,7 +5382,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -5393,7 +5408,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -5419,7 +5434,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -5445,7 +5460,7 @@
    "area": "Operação e produção",
    "tema": "operacao",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -5471,7 +5486,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -5497,7 +5512,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -5523,7 +5538,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -5549,7 +5564,7 @@
    "area": "Trainee e estágio",
    "tema": "trainee",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "iKkxsnu9rZ8",
@@ -5575,7 +5590,7 @@
    "area": "Trainee e estágio",
    "tema": "trainee",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "iKkxsnu9rZ8",
@@ -5601,7 +5616,7 @@
    "area": "Trainee e estágio",
    "tema": "trainee",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "iKkxsnu9rZ8",
@@ -5627,7 +5642,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -5653,7 +5668,7 @@
    "area": "Segurança",
    "tema": "seguranca",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "VzHXNdUlHVA",
@@ -5679,7 +5694,7 @@
    "area": "Segurança",
    "tema": "seguranca",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "VzHXNdUlHVA",
@@ -5705,7 +5720,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -5731,7 +5746,7 @@
    "area": "Segurança",
    "tema": "seguranca",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "VzHXNdUlHVA",
@@ -5757,7 +5772,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "jHvoPOebDx8",
@@ -5783,7 +5798,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "jHvoPOebDx8",
@@ -5809,7 +5824,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "jHvoPOebDx8",
@@ -5835,7 +5850,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "jHvoPOebDx8",
@@ -5861,7 +5876,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "jHvoPOebDx8",
@@ -5887,7 +5902,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "jHvoPOebDx8",
@@ -5913,7 +5928,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "jHvoPOebDx8",
@@ -5939,7 +5954,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "jHvoPOebDx8",
@@ -5965,7 +5980,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "jHvoPOebDx8",
@@ -5991,7 +6006,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "WP-YqW9rW3E",
@@ -6017,7 +6032,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "jHvoPOebDx8",
@@ -6043,7 +6058,7 @@
    "area": "Mecânica e manutenção",
    "tema": "mecanica",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "3yOdA-HnSeg",
@@ -6069,7 +6084,7 @@
    "area": "Trainee e estágio",
    "tema": "trainee",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "iKkxsnu9rZ8",
@@ -6095,7 +6110,7 @@
    "area": "Mecânica e manutenção",
    "tema": "mecanica",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "3yOdA-HnSeg",
@@ -6121,7 +6136,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -6147,7 +6162,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -6173,7 +6188,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -6199,7 +6214,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -6225,7 +6240,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "YTu30XI9rhg",
@@ -6251,7 +6266,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "YTu30XI9rhg",
@@ -6277,7 +6292,7 @@
    "area": "Elétrica e instrumentação",
    "tema": "eletrica",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "-35oTYToV2A",
@@ -6303,7 +6318,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "-Fg2KN6627E",
@@ -6329,7 +6344,7 @@
    "area": "Elétrica e instrumentação",
    "tema": "eletrica",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "-35oTYToV2A",
@@ -6355,7 +6370,7 @@
    "area": "Perfuração e poços",
    "tema": "pocos",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "bFgYyXPn2Bc",
@@ -6381,7 +6396,7 @@
    "area": "Engenharia",
    "tema": "engenharia",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "iKkxsnu9rZ8",
@@ -6407,7 +6422,7 @@
    "area": "Trainee e estágio",
    "tema": "trainee",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "iKkxsnu9rZ8",
@@ -6433,7 +6448,7 @@
    "area": "Trainee e estágio",
    "tema": "trainee",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "iKkxsnu9rZ8",
@@ -6459,7 +6474,7 @@
    "area": "Trainee e estágio",
    "tema": "trainee",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "iKkxsnu9rZ8",
@@ -6485,7 +6500,7 @@
    "area": "Marítimo",
    "tema": "maritimo",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "IVGvdu3BEwI",
@@ -6511,7 +6526,7 @@
    "area": "Operação e produção",
    "tema": "operacao",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "IVGvdu3BEwI",
@@ -6537,7 +6552,7 @@
    "area": "Trainee e estágio",
    "tema": "trainee",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "iKkxsnu9rZ8",
@@ -6563,7 +6578,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -6589,7 +6604,7 @@
    "area": "Engenharia",
    "tema": "engenharia",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "iKkxsnu9rZ8",
@@ -6615,7 +6630,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -6641,7 +6656,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -6667,7 +6682,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -6693,7 +6708,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -6719,7 +6734,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -6745,7 +6760,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "hxboMKFt9Ho",
@@ -6771,7 +6786,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "hxboMKFt9Ho",
@@ -6797,7 +6812,7 @@
    "area": "Mecânica e manutenção",
    "tema": "mecanica",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "89nmfX5NnpI",
@@ -6823,7 +6838,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "hxboMKFt9Ho",
@@ -6849,7 +6864,7 @@
    "area": "Mecânica e manutenção",
    "tema": "mecanica",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "3yOdA-HnSeg",
@@ -6875,7 +6890,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -6901,7 +6916,7 @@
    "area": "Mecânica e manutenção",
    "tema": "mecanica",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "89nmfX5NnpI",
@@ -6927,7 +6942,7 @@
    "area": "Mecânica e manutenção",
    "tema": "mecanica",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "89nmfX5NnpI",
@@ -6953,7 +6968,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -6979,7 +6994,7 @@
    "area": "Perfuração e poços",
    "tema": "pocos",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "bFgYyXPn2Bc",
@@ -7005,7 +7020,7 @@
    "area": "Operação e produção",
    "tema": "operacao",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "IVGvdu3BEwI",
@@ -7031,7 +7046,7 @@
    "area": "Mecânica e manutenção",
    "tema": "mecanica",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "3yOdA-HnSeg",
@@ -7057,7 +7072,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "wNai9-JZxOI",
@@ -7083,7 +7098,7 @@
    "area": "Elétrica e instrumentação",
    "tema": "eletrica",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "wNai9-JZxOI",
@@ -7109,7 +7124,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "3yOdA-HnSeg",
@@ -7135,33 +7150,7 @@
    "area": "Trainee e estágio",
    "tema": "trainee",
    "banco": false,
-   "vistaEm": "2026-10-20",
-   "videos": [
-    [
-     "iKkxsnu9rZ8",
-     "Fala de estágio, trainee e primeiro emprego, a função desta vaga."
-    ],
-    [
-     "4eWz_1hX3OI",
-     "Fala de estágio, trainee e primeiro emprego, a função desta vaga."
-    ],
-    [
-     "soNSsLJtOdo",
-     "Vídeo do canal sobre a Fugro. Ajuda a chegar preparado na entrevista."
-    ]
-   ]
-  },
-  {
-   "id": "fugro-apprentice-jovem-aprendiz-95596",
-   "titulo": "Apprentice \\ Jovem Aprendiz",
-   "empresa": "Fugro",
-   "local": "Pinhais",
-   "link": "https://fugro.wd3.myworkdayjobs.com/Careers/job/Pinhais-Brazil/Apprentice---Jovem-Aprendiz_R0032177",
-   "regime": "Em terra ou a confirmar",
-   "area": "Trainee e estágio",
-   "tema": "trainee",
-   "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "iKkxsnu9rZ8",
@@ -7187,7 +7176,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "soNSsLJtOdo",
@@ -7213,7 +7202,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "soNSsLJtOdo",
@@ -7239,7 +7228,7 @@
    "area": "Marítimo",
    "tema": "maritimo",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "IVGvdu3BEwI",
@@ -7265,7 +7254,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "3yOdA-HnSeg",
@@ -7291,7 +7280,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "soNSsLJtOdo",
@@ -7317,7 +7306,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "sMTU-gjxcLU",
@@ -7334,6 +7323,32 @@
    ]
   },
   {
+   "id": "halliburton-account-manager-40258",
+   "titulo": "Account Manager",
+   "empresa": "Halliburton",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://careers.halliburton.com/job/rio-de-janeiro/brazil-rj-account-manager/543/102251354464",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-15",
+   "videos": [
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
    "id": "halliburton-assistente-de-opera-es-pipeline-and-process-services-94617",
    "titulo": "Assistente de Operações (Pipeline and Process Services)",
    "empresa": "Halliburton",
@@ -7343,7 +7358,7 @@
    "area": "Operação e produção",
    "tema": "operacao",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -7369,7 +7384,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -7395,7 +7410,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "sMTU-gjxcLU",
@@ -7408,32 +7423,6 @@
     [
      "lttRYy_P8T8",
      "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
-    ]
-   ]
-  },
-  {
-   "id": "halliburton-consultor-de-opera-es-pleno-85341",
-   "titulo": "Consultor de operações Pleno",
-   "empresa": "Halliburton",
-   "local": "Catu",
-   "link": "https://careers.halliburton.com/job/catu/br-catu-consultor-de-operacoes-pleno/543/102051216128",
-   "regime": "Em terra ou a confirmar",
-   "area": "Outras",
-   "tema": "geral",
-   "banco": false,
-   "vistaEm": "2026-10-21",
-   "videos": [
-    [
-     "lttRYy_P8T8",
-     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
-    ],
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ],
-    [
-     "eHqY18dRP8Q",
-     "As perguntas que mais aparecem na entrevista e como responder."
     ]
    ]
   },
@@ -7447,7 +7436,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -7473,7 +7462,7 @@
    "area": "Perfuração e poços",
    "tema": "pocos",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "bFgYyXPn2Bc",
@@ -7499,7 +7488,7 @@
    "area": "Elétrica e instrumentação",
    "tema": "eletrica",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "-35oTYToV2A",
@@ -7525,7 +7514,7 @@
    "area": "Engenharia",
    "tema": "engenharia",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "9ZlICqIBUMg",
@@ -7551,7 +7540,7 @@
    "area": "Engenharia",
    "tema": "engenharia",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "9ZlICqIBUMg",
@@ -7577,7 +7566,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "sMTU-gjxcLU",
@@ -7603,7 +7592,7 @@
    "area": "Perfuração e poços",
    "tema": "pocos",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "9ZlICqIBUMg",
@@ -7629,7 +7618,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -7655,7 +7644,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -7681,7 +7670,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -7707,7 +7696,7 @@
    "area": "Engenharia",
    "tema": "engenharia",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "9ZlICqIBUMg",
@@ -7733,7 +7722,7 @@
    "area": "Engenharia",
    "tema": "engenharia",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "9ZlICqIBUMg",
@@ -7759,7 +7748,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "sMTU-gjxcLU",
@@ -7785,7 +7774,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -7811,7 +7800,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -7837,7 +7826,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -7863,7 +7852,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -7889,7 +7878,7 @@
    "area": "Mecânica e manutenção",
    "tema": "mecanica",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "3yOdA-HnSeg",
@@ -7915,7 +7904,7 @@
    "area": "Mecânica e manutenção",
    "tema": "mecanica",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "3yOdA-HnSeg",
@@ -7941,7 +7930,7 @@
    "area": "Elétrica e instrumentação",
    "tema": "eletrica",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "3yOdA-HnSeg",
@@ -7967,7 +7956,7 @@
    "area": "Perfuração e poços",
    "tema": "pocos",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -7993,7 +7982,7 @@
    "area": "Perfuração e poços",
    "tema": "pocos",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "9ZlICqIBUMg",
@@ -8019,7 +8008,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "sMTU-gjxcLU",
@@ -8045,7 +8034,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "sMTU-gjxcLU",
@@ -8071,7 +8060,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -8097,7 +8086,7 @@
    "area": "Mecânica e manutenção",
    "tema": "mecanica",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "3yOdA-HnSeg",
@@ -8123,7 +8112,7 @@
    "area": "Engenharia",
    "tema": "engenharia",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "sMTU-gjxcLU",
@@ -8149,7 +8138,7 @@
    "area": "Engenharia",
    "tema": "engenharia",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "9ZlICqIBUMg",
@@ -8175,7 +8164,7 @@
    "area": "Trainee e estágio",
    "tema": "trainee",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "YTu30XI9rhg",
@@ -8201,7 +8190,7 @@
    "area": "Trainee e estágio",
    "tema": "trainee",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "iKkxsnu9rZ8",
@@ -8210,6 +8199,292 @@
     [
      "4eWz_1hX3OI",
      "Fala de estágio, trainee e primeiro emprego, a função desta vaga."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ]
+   ]
+  },
+  {
+   "id": "mi-electric-brasil-analista-de-rh-jr-hrbp-14020",
+   "titulo": "Analista de RH Jr - HRBP",
+   "empresa": "MI Electric Brasil",
+   "local": "Macaé, RJ",
+   "link": "https://mielectricbrazil.pandape.infojobs.com.br/Detail/3798698",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-15",
+   "videos": [
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
+   "id": "mi-electric-brasil-analista-de-sistemas-de-automa-o-50227",
+   "titulo": "Analista de Sistemas de Automação",
+   "empresa": "MI Electric Brasil",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://mielectricbrazil.pandape.infojobs.com.br/Detail/3716461",
+   "regime": "Em terra ou a confirmar",
+   "area": "Elétrica e instrumentação",
+   "tema": "eletrica",
+   "banco": false,
+   "vistaEm": "2026-10-15",
+   "videos": [
+    [
+     "-35oTYToV2A",
+     "Fala de eletricista, área vizinha desta vaga."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
+   "id": "mi-electric-brasil-est-gio-or-amento-t-cnico-31113",
+   "titulo": "Estágio - Orçamento Técnico",
+   "empresa": "MI Electric Brasil",
+   "local": "Belo Horizonte, MG",
+   "link": "https://mielectricbrazil.pandape.infojobs.com.br/Detail/3791550",
+   "regime": "Em terra ou a confirmar",
+   "area": "Trainee e estágio",
+   "tema": "trainee",
+   "banco": false,
+   "vistaEm": "2026-10-15",
+   "videos": [
+    [
+     "iKkxsnu9rZ8",
+     "Fala de estágio, trainee e primeiro emprego, a função desta vaga."
+    ],
+    [
+     "4eWz_1hX3OI",
+     "Fala de estágio, trainee e primeiro emprego, a função desta vaga."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ]
+   ]
+  },
+  {
+   "id": "mi-electric-brasil-jovem-aprendiz-vem-ser-mi-electric-33116",
+   "titulo": "Jovem Aprendiz - Vem ser MI Electric",
+   "empresa": "MI Electric Brasil",
+   "local": "Brasil",
+   "link": "https://mielectricbrazil.pandape.infojobs.com.br/Detail/2267503",
+   "regime": "Em terra ou a confirmar",
+   "area": "Elétrica e instrumentação",
+   "tema": "eletrica",
+   "banco": false,
+   "vistaEm": "2026-10-15",
+   "videos": [
+    [
+     "-35oTYToV2A",
+     "Fala de eletricista, a função desta vaga."
+    ],
+    [
+     "TSUnVzxiBjU",
+     "Fala de eletricista, a função desta vaga."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ]
+   ]
+  },
+  {
+   "id": "mi-electric-brasil-programa-de-est-gio-vem-ser-mi-electric-n-vel-superior-1506",
+   "titulo": "Programa de Estágio - Vem ser MI Electric (Nível Superior)",
+   "empresa": "MI Electric Brasil",
+   "local": "Brasil",
+   "link": "https://mielectricbrazil.pandape.infojobs.com.br/Detail/2159739",
+   "regime": "Em terra ou a confirmar",
+   "area": "Elétrica e instrumentação",
+   "tema": "eletrica",
+   "banco": false,
+   "vistaEm": "2026-10-15",
+   "videos": [
+    [
+     "-35oTYToV2A",
+     "Fala de eletricista, a função desta vaga."
+    ],
+    [
+     "TSUnVzxiBjU",
+     "Fala de eletricista, a função desta vaga."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ]
+   ]
+  },
+  {
+   "id": "mi-electric-brasil-programa-de-est-gio-vem-ser-mi-electric-n-vel-t-cnico-73006",
+   "titulo": "Programa de Estágio - Vem ser MI Electric (Nível Técnico)",
+   "empresa": "MI Electric Brasil",
+   "local": "Brasil",
+   "link": "https://mielectricbrazil.pandape.infojobs.com.br/Detail/2175332",
+   "regime": "Em terra ou a confirmar",
+   "area": "Elétrica e instrumentação",
+   "tema": "eletrica",
+   "banco": false,
+   "vistaEm": "2026-10-15",
+   "videos": [
+    [
+     "-35oTYToV2A",
+     "Fala de eletricista, a função desta vaga."
+    ],
+    [
+     "TSUnVzxiBjU",
+     "Fala de eletricista, a função desta vaga."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ]
+   ]
+  },
+  {
+   "id": "mi-electric-brasil-t-cnico-inspetor-ex-certificado-iecex-ou-abendi-64240",
+   "titulo": "Técnico Inspetor EX - Certificado (IECEx ou Abendi)",
+   "empresa": "MI Electric Brasil",
+   "local": "Brasil",
+   "link": "https://mielectricbrazil.pandape.infojobs.com.br/Detail/2323032",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-15",
+   "videos": [
+    [
+     "YTu30XI9rhg",
+     "Fala de inspeção e qualidade, a função desta vaga."
+    ],
+    [
+     "nmu4AyYiBC0",
+     "Fala de inspeção e qualidade, a função desta vaga."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ]
+   ]
+  },
+  {
+   "id": "mi-electric-brasil-t-cnico-em-eletrot-cnica-inspetor-ex-56380",
+   "titulo": "Técnico em Eletrotécnica - Inspetor Ex",
+   "empresa": "MI Electric Brasil",
+   "local": "Macaé, RJ",
+   "link": "https://mielectricbrazil.pandape.infojobs.com.br/Detail/2128361",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-15",
+   "videos": [
+    [
+     "-35oTYToV2A",
+     "Fala de eletricista, a função desta vaga."
+    ],
+    [
+     "TSUnVzxiBjU",
+     "Fala de eletricista, a função desta vaga."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ]
+   ]
+  },
+  {
+   "id": "mi-electric-brasil-t-cnico-em-eletrot-cnica-inspetor-ex-8326",
+   "titulo": "Técnico em Eletrotécnica - Inspetor Ex",
+   "empresa": "MI Electric Brasil",
+   "local": "Brasil",
+   "link": "https://mielectricbrazil.pandape.infojobs.com.br/Detail/2128362",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-15",
+   "videos": [
+    [
+     "-35oTYToV2A",
+     "Fala de eletricista, a função desta vaga."
+    ],
+    [
+     "TSUnVzxiBjU",
+     "Fala de eletricista, a função desta vaga."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ]
+   ]
+  },
+  {
+   "id": "mi-electric-brasil-t-cnico-em-eletrot-cnica-ensaios-e-testes-el-tricos-65967",
+   "titulo": "Técnico em Eletrotécnica – Ensaios e Testes Elétricos",
+   "empresa": "MI Electric Brasil",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://mielectricbrazil.pandape.infojobs.com.br/Detail/3174060",
+   "regime": "Em terra ou a confirmar",
+   "area": "Elétrica e instrumentação",
+   "tema": "eletrica",
+   "banco": false,
+   "vistaEm": "2026-10-15",
+   "videos": [
+    [
+     "-35oTYToV2A",
+     "Fala de eletricista, a função desta vaga."
+    ],
+    [
+     "TSUnVzxiBjU",
+     "Fala de eletricista, a função desta vaga."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ]
+   ]
+  },
+  {
+   "id": "mi-electric-brasil-t-cnico-a-em-mec-nica-nr-12-45430",
+   "titulo": "Técnico(a) em Mecânica - NR 12",
+   "empresa": "MI Electric Brasil",
+   "local": "Belo Horizonte, MG",
+   "link": "https://mielectricbrazil.pandape.infojobs.com.br/Detail/3552794",
+   "regime": "Em terra ou a confirmar",
+   "area": "Mecânica e manutenção",
+   "tema": "mecanica",
+   "banco": false,
+   "vistaEm": "2026-10-15",
+   "videos": [
+    [
+     "3yOdA-HnSeg",
+     "Fala de mecânico e manutenção, a função desta vaga."
+    ],
+    [
+     "AFQCQwo_5Kc",
+     "Fala de mecânico e manutenção, a função desta vaga."
     ],
     [
      "sMTU-gjxcLU",
@@ -8227,7 +8502,7 @@
    "area": "Engenharia",
    "tema": "engenharia",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "9ZlICqIBUMg",
@@ -8253,7 +8528,7 @@
    "area": "Engenharia",
    "tema": "engenharia",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "9ZlICqIBUMg",
@@ -8279,7 +8554,7 @@
    "area": "Engenharia",
    "tema": "engenharia",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "9ZlICqIBUMg",
@@ -8305,7 +8580,7 @@
    "area": "Marítimo",
    "tema": "maritimo",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "IVGvdu3BEwI",
@@ -8331,7 +8606,7 @@
    "area": "Operação e produção",
    "tema": "operacao",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "kJZqpRE1bvY",
@@ -8357,7 +8632,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "7u0m6SwMtzc",
@@ -8383,7 +8658,7 @@
    "area": "Segurança",
    "tema": "seguranca",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "VzHXNdUlHVA",
@@ -8409,7 +8684,7 @@
    "area": "Segurança",
    "tema": "seguranca",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "VzHXNdUlHVA",
@@ -8435,7 +8710,7 @@
    "area": "Mecânica e manutenção",
    "tema": "mecanica",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "3yOdA-HnSeg",
@@ -8461,7 +8736,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -8487,7 +8762,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -8513,7 +8788,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -8539,7 +8814,527 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
+   "videos": [
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
+   "id": "manserv-analista-financeiro-pl-14812",
+   "titulo": "Analista Financeiro - PL",
+   "empresa": "Manserv",
+   "local": "São Caetano do Sul, SP",
+   "link": "https://manserv.pandape.infojobs.com.br/Detail/3552865",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-15",
+   "videos": [
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
+   "id": "manserv-analista-gest-o-de-servi-os-jr-21431",
+   "titulo": "Analista Gestão de Serviços - JR",
+   "empresa": "Manserv",
+   "local": "São Caetano do Sul, SP",
+   "link": "https://manserv.pandape.infojobs.com.br/Detail/3338116",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-15",
+   "videos": [
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
+   "id": "manserv-analista-recursos-humanos-jr-administra-o-de-ponto-87117",
+   "titulo": "Analista Recursos Humanos JR - Administração de Ponto",
+   "empresa": "Manserv",
+   "local": "São Caetano do Sul, SP",
+   "link": "https://manserv.pandape.infojobs.com.br/Detail/3778755",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-15",
+   "videos": [
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
+   "id": "manserv-assistente-jur-dico-80635",
+   "titulo": "Assistente Jurídico",
+   "empresa": "Manserv",
+   "local": "São Caetano do Sul, SP",
+   "link": "https://manserv.pandape.infojobs.com.br/Detail/3546264",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-15",
+   "videos": [
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
+   "id": "manserv-cadastre-seu-curr-culo-no-banco-de-oportunidades-vagas-interna-98086",
+   "titulo": "Cadastre seu Currículo no Banco de Oportunidades - Vagas Interna",
+   "empresa": "Manserv",
+   "local": "Brasil",
+   "link": "https://manserv.pandape.infojobs.com.br/Detail/2503919",
+   "regime": "Em terra ou a confirmar",
+   "area": "Trainee e estágio",
+   "tema": "trainee",
+   "banco": false,
+   "vistaEm": "2026-10-15",
+   "videos": [
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
+   "id": "manserv-comprador-jr-5368",
+   "titulo": "Comprador Jr",
+   "empresa": "Manserv",
+   "local": "São Caetano do Sul, SP",
+   "link": "https://manserv.pandape.infojobs.com.br/Detail/3213530",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-15",
+   "videos": [
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
+   "id": "manserv-comprador-sr-55582",
+   "titulo": "Comprador Sr",
+   "empresa": "Manserv",
+   "local": "Campinas, SP",
+   "link": "https://manserv.pandape.infojobs.com.br/Detail/3172404",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-15",
+   "videos": [
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
+   "id": "manserv-diretor-regional-78442",
+   "titulo": "Diretor Regional",
+   "empresa": "Manserv",
+   "local": "Contagem, MG",
+   "link": "https://manserv.pandape.infojobs.com.br/Detail/3765092",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-15",
+   "videos": [
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
+   "id": "manserv-especialista-suprimentos-i-96554",
+   "titulo": "Especialista Suprimentos I",
+   "empresa": "Manserv",
+   "local": "São Caetano do Sul, SP",
+   "link": "https://manserv.pandape.infojobs.com.br/Detail/3566683",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-15",
+   "videos": [
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ],
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ]
+   ]
+  },
+  {
+   "id": "manserv-gerente-desenvolvimento-neg-cios-ii-industrial-33126",
+   "titulo": "Gerente Desenvolvimento Negócios II - Industrial",
+   "empresa": "Manserv",
+   "local": "Campinas, SP",
+   "link": "https://manserv.pandape.infojobs.com.br/Detail/3708889",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-15",
+   "videos": [
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
+   "id": "manserv-gerente-desenvolvimento-neg-cios-ii-industrial-35337",
+   "titulo": "Gerente Desenvolvimento Negócios II - Industrial",
+   "empresa": "Manserv",
+   "local": "Camaçari, BA",
+   "link": "https://manserv.pandape.infojobs.com.br/Detail/3292086",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-15",
+   "videos": [
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
+   "id": "manserv-gerente-desenvolvimento-neg-cios-iii-industrial-69424",
+   "titulo": "Gerente Desenvolvimento Negócios III - Industrial",
+   "empresa": "Manserv",
+   "local": "Contagem, MG",
+   "link": "https://manserv.pandape.infojobs.com.br/Detail/3709085",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-15",
+   "videos": [
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
+   "id": "manserv-gerente-engenharia-de-processos-83474",
+   "titulo": "Gerente Engenharia de Processos",
+   "empresa": "Manserv",
+   "local": "São Paulo, SP",
+   "link": "https://manserv.pandape.infojobs.com.br/Detail/3592689",
+   "regime": "Em terra ou a confirmar",
+   "area": "Operação e produção",
+   "tema": "operacao",
+   "banco": false,
+   "vistaEm": "2026-10-15",
+   "videos": [
+    [
+     "9ZlICqIBUMg",
+     "Fala de engenharia, a função desta vaga."
+    ],
+    [
+     "0uMWC3VBm8A",
+     "Fala de engenharia, a função desta vaga."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ]
+   ]
+  },
+  {
+   "id": "manserv-gerente-opera-es-ii-energia-89869",
+   "titulo": "Gerente Operações II - Energia",
+   "empresa": "Manserv",
+   "local": "Serra, ES",
+   "link": "https://manserv.pandape.infojobs.com.br/Detail/3561165",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-15",
+   "videos": [
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
+   "id": "manserv-gerente-de-contrato-79816",
+   "titulo": "Gerente de Contrato",
+   "empresa": "Manserv",
+   "local": "São José dos Campos, SP",
+   "link": "https://manserv.pandape.infojobs.com.br/Detail/3441578",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-15",
+   "videos": [
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
+   "id": "manserv-gerente-de-contrato-i-6679",
+   "titulo": "Gerente de Contrato I",
+   "empresa": "Manserv",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://manserv.pandape.infojobs.com.br/Detail/3778761",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-15",
+   "videos": [
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
+   "id": "manserv-gerente-de-contrato-ii-80552",
+   "titulo": "Gerente de Contrato II",
+   "empresa": "Manserv",
+   "local": "Belo Horizonte, MG",
+   "link": "https://manserv.pandape.infojobs.com.br/Detail/3718393",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-15",
+   "videos": [
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
+   "id": "manserv-gerente-de-desenvolvimento-de-neg-cios-24247",
+   "titulo": "Gerente de Desenvolvimento de Negócios",
+   "empresa": "Manserv",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://manserv.pandape.infojobs.com.br/Detail/3592665",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-15",
+   "videos": [
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
+   "id": "manserv-jovem-aprendiz-administrativo-50384",
+   "titulo": "Jovem Aprendiz - Administrativo",
+   "empresa": "Manserv",
+   "local": "São Caetano do Sul, SP",
+   "link": "https://manserv.pandape.infojobs.com.br/Detail/3285279",
+   "regime": "Em terra ou a confirmar",
+   "area": "Trainee e estágio",
+   "tema": "trainee",
+   "banco": false,
+   "vistaEm": "2026-10-15",
+   "videos": [
+    [
+     "iKkxsnu9rZ8",
+     "Fala de estágio, trainee e primeiro emprego, a função desta vaga."
+    ],
+    [
+     "4eWz_1hX3OI",
+     "Fala de estágio, trainee e primeiro emprego, a função desta vaga."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ]
+   ]
+  },
+  {
+   "id": "manserv-or-amentista-sr-93550",
+   "titulo": "Orçamentista SR",
+   "empresa": "Manserv",
+   "local": "São Paulo, SP",
+   "link": "https://manserv.pandape.infojobs.com.br/Detail/3295388",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -8565,7 +9360,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "wj-tFC2Qpxs",
@@ -8591,7 +9386,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "iKkxsnu9rZ8",
@@ -8617,7 +9412,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "wj-tFC2Qpxs",
@@ -8643,7 +9438,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "wj-tFC2Qpxs",
@@ -8669,7 +9464,7 @@
    "area": "Operação e produção",
    "tema": "operacao",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "9ZlICqIBUMg",
@@ -8695,7 +9490,7 @@
    "area": "Elétrica e instrumentação",
    "tema": "eletrica",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "-35oTYToV2A",
@@ -8721,7 +9516,7 @@
    "area": "Operação e produção",
    "tema": "operacao",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "9ZlICqIBUMg",
@@ -8747,7 +9542,7 @@
    "area": "Engenharia",
    "tema": "engenharia",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "9ZlICqIBUMg",
@@ -8773,7 +9568,7 @@
    "area": "Engenharia",
    "tema": "engenharia",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "9ZlICqIBUMg",
@@ -8799,7 +9594,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "wj-tFC2Qpxs",
@@ -8825,7 +9620,7 @@
    "area": "Operação e produção",
    "tema": "operacao",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "9ZlICqIBUMg",
@@ -8851,7 +9646,7 @@
    "area": "Mecânica e manutenção",
    "tema": "mecanica",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "3yOdA-HnSeg",
@@ -8877,7 +9672,7 @@
    "area": "Marítimo",
    "tema": "maritimo",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "IVGvdu3BEwI",
@@ -8903,7 +9698,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "-35oTYToV2A",
@@ -8929,7 +9724,7 @@
    "area": "Operação e produção",
    "tema": "operacao",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "wj-tFC2Qpxs",
@@ -8955,7 +9750,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "89nmfX5NnpI",
@@ -8981,7 +9776,7 @@
    "area": "Engenharia",
    "tema": "engenharia",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "9ZlICqIBUMg",
@@ -9007,7 +9802,7 @@
    "area": "Mecânica e manutenção",
    "tema": "mecanica",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "wj-tFC2Qpxs",
@@ -9033,7 +9828,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "sMTU-gjxcLU",
@@ -9059,7 +9854,7 @@
    "area": "Mecânica e manutenção",
    "tema": "mecanica",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "3yOdA-HnSeg",
@@ -9085,7 +9880,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -9111,7 +9906,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -9137,7 +9932,7 @@
    "area": "Engenharia",
    "tema": "engenharia",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "9ZlICqIBUMg",
@@ -9163,7 +9958,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -9189,7 +9984,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -9215,7 +10010,7 @@
    "area": "Mecânica e manutenção",
    "tema": "mecanica",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "3yOdA-HnSeg",
@@ -9241,7 +10036,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -9267,7 +10062,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -9293,7 +10088,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -9319,7 +10114,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -9345,7 +10140,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -9371,7 +10166,7 @@
    "area": "Segurança",
    "tema": "seguranca",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "VzHXNdUlHVA",
@@ -9397,7 +10192,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "sMTU-gjxcLU",
@@ -9423,7 +10218,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -9449,7 +10244,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "sMTU-gjxcLU",
@@ -9475,7 +10270,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -9501,7 +10296,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "VzHXNdUlHVA",
@@ -9527,7 +10322,7 @@
    "area": "Segurança",
    "tema": "seguranca",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "VzHXNdUlHVA",
@@ -9553,7 +10348,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -9579,7 +10374,7 @@
    "area": "Mecânica e manutenção",
    "tema": "mecanica",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "3yOdA-HnSeg",
@@ -9605,7 +10400,7 @@
    "area": "Engenharia",
    "tema": "engenharia",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "9ZlICqIBUMg",
@@ -9631,7 +10426,7 @@
    "area": "Mecânica e manutenção",
    "tema": "mecanica",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "3yOdA-HnSeg",
@@ -9657,7 +10452,7 @@
    "area": "Elétrica e instrumentação",
    "tema": "eletrica",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "-35oTYToV2A",
@@ -9683,7 +10478,7 @@
    "area": "Trainee e estágio",
    "tema": "trainee",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "iKkxsnu9rZ8",
@@ -9709,7 +10504,7 @@
    "area": "Trainee e estágio",
    "tema": "trainee",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "iKkxsnu9rZ8",
@@ -9735,7 +10530,7 @@
    "area": "Trainee e estágio",
    "tema": "trainee",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "sMTU-gjxcLU",
@@ -9761,7 +10556,7 @@
    "area": "Trainee e estágio",
    "tema": "trainee",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "iKkxsnu9rZ8",
@@ -9787,7 +10582,7 @@
    "area": "Trainee e estágio",
    "tema": "trainee",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "iKkxsnu9rZ8",
@@ -9813,7 +10608,7 @@
    "area": "Operação e produção",
    "tema": "operacao",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "iKkxsnu9rZ8",
@@ -9839,7 +10634,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "LeI6KBdvdQc",
@@ -9865,7 +10660,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "sMTU-gjxcLU",
@@ -9891,7 +10686,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "sMTU-gjxcLU",
@@ -9917,7 +10712,7 @@
    "area": "Mecânica e manutenção",
    "tema": "mecanica",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "3yOdA-HnSeg",
@@ -9943,7 +10738,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "sMTU-gjxcLU",
@@ -9969,7 +10764,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "sMTU-gjxcLU",
@@ -9995,7 +10790,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "IVGvdu3BEwI",
@@ -10021,7 +10816,7 @@
    "area": "Engenharia",
    "tema": "engenharia",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "9ZlICqIBUMg",
@@ -10047,7 +10842,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "VzHXNdUlHVA",
@@ -10073,7 +10868,7 @@
    "area": "Marítimo",
    "tema": "maritimo",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -10099,7 +10894,7 @@
    "area": "Marítimo",
    "tema": "maritimo",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -10125,7 +10920,7 @@
    "area": "Marítimo",
    "tema": "maritimo",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -10151,7 +10946,7 @@
    "area": "Operação e produção",
    "tema": "operacao",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "VzHXNdUlHVA",
@@ -10177,7 +10972,7 @@
    "area": "Operação e produção",
    "tema": "operacao",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "VzHXNdUlHVA",
@@ -10203,7 +10998,7 @@
    "area": "Operação e produção",
    "tema": "operacao",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "VzHXNdUlHVA",
@@ -10229,7 +11024,7 @@
    "area": "Operação e produção",
    "tema": "operacao",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "VzHXNdUlHVA",
@@ -10255,7 +11050,7 @@
    "area": "Operação e produção",
    "tema": "operacao",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "VzHXNdUlHVA",
@@ -10281,7 +11076,7 @@
    "area": "Operação e produção",
    "tema": "operacao",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "VzHXNdUlHVA",
@@ -10307,7 +11102,7 @@
    "area": "Operação e produção",
    "tema": "operacao",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "VzHXNdUlHVA",
@@ -10333,7 +11128,7 @@
    "area": "Operação e produção",
    "tema": "operacao",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "VzHXNdUlHVA",
@@ -10359,7 +11154,7 @@
    "area": "Operação e produção",
    "tema": "operacao",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "VzHXNdUlHVA",
@@ -10385,7 +11180,7 @@
    "area": "Operação e produção",
    "tema": "operacao",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "VzHXNdUlHVA",
@@ -10411,7 +11206,7 @@
    "area": "Operação e produção",
    "tema": "operacao",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "VzHXNdUlHVA",
@@ -10437,7 +11232,7 @@
    "area": "Operação e produção",
    "tema": "operacao",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "VzHXNdUlHVA",
@@ -10463,7 +11258,7 @@
    "area": "Trainee e estágio",
    "tema": "trainee",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "iKkxsnu9rZ8",
@@ -10489,7 +11284,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -10515,7 +11310,7 @@
    "area": "Mecânica e manutenção",
    "tema": "mecanica",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "3yOdA-HnSeg",
@@ -10541,7 +11336,7 @@
    "area": "Marítimo",
    "tema": "maritimo",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -10567,7 +11362,7 @@
    "area": "Elétrica e instrumentação",
    "tema": "eletrica",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -10593,7 +11388,7 @@
    "area": "Segurança",
    "tema": "seguranca",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "VzHXNdUlHVA",
@@ -10619,7 +11414,7 @@
    "area": "Segurança",
    "tema": "seguranca",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "VzHXNdUlHVA",
@@ -10645,7 +11440,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -10671,7 +11466,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "iKkxsnu9rZ8",
@@ -10697,7 +11492,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -10723,7 +11518,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -10749,7 +11544,7 @@
    "area": "Elétrica e instrumentação",
    "tema": "eletrica",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "-35oTYToV2A",
@@ -10775,7 +11570,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -10801,7 +11596,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -10827,7 +11622,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "YTu30XI9rhg",
@@ -10853,7 +11648,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -10879,7 +11674,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -10905,7 +11700,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "3yOdA-HnSeg",
@@ -10931,7 +11726,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "3yOdA-HnSeg",
@@ -10957,7 +11752,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -10983,7 +11778,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "3yOdA-HnSeg",
@@ -11009,7 +11804,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "3yOdA-HnSeg",
@@ -11035,7 +11830,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "kJZqpRE1bvY",
@@ -11061,7 +11856,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "kJZqpRE1bvY",
@@ -11087,7 +11882,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "kJZqpRE1bvY",
@@ -11113,7 +11908,7 @@
    "area": "Segurança",
    "tema": "seguranca",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "iKkxsnu9rZ8",
@@ -11139,7 +11934,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "kJZqpRE1bvY",
@@ -11165,7 +11960,7 @@
    "area": "Engenharia",
    "tema": "engenharia",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "YTu30XI9rhg",
@@ -11191,7 +11986,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "kJZqpRE1bvY",
@@ -11217,7 +12012,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "89nmfX5NnpI",
@@ -11243,7 +12038,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "kJZqpRE1bvY",
@@ -11269,7 +12064,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "sMTU-gjxcLU",
@@ -11295,7 +12090,7 @@
    "area": "Operação e produção",
    "tema": "operacao",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -11321,7 +12116,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "bY0r9BqrwYw",
@@ -11347,7 +12142,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "bY0r9BqrwYw",
@@ -11373,7 +12168,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "bY0r9BqrwYw",
@@ -11399,7 +12194,7 @@
    "area": "Trainee e estágio",
    "tema": "trainee",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "bY0r9BqrwYw",
@@ -11425,7 +12220,7 @@
    "area": "Elétrica e instrumentação",
    "tema": "eletrica",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "-35oTYToV2A",
@@ -11451,7 +12246,7 @@
    "area": "Engenharia",
    "tema": "engenharia",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "9ZlICqIBUMg",
@@ -11477,7 +12272,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "bY0r9BqrwYw",
@@ -11503,7 +12298,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -11529,7 +12324,7 @@
    "area": "Segurança",
    "tema": "seguranca",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "VzHXNdUlHVA",
@@ -11555,7 +12350,7 @@
    "area": "Mecânica e manutenção",
    "tema": "mecanica",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "89nmfX5NnpI",
@@ -11581,7 +12376,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "YTu30XI9rhg",
@@ -11607,7 +12402,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "YTu30XI9rhg",
@@ -11633,7 +12428,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "sMTU-gjxcLU",
@@ -11659,7 +12454,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "sMTU-gjxcLU",
@@ -11685,7 +12480,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -11711,7 +12506,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -11737,7 +12532,7 @@
    "area": "Elétrica e instrumentação",
    "tema": "eletrica",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "-35oTYToV2A",
@@ -11763,7 +12558,7 @@
    "area": "Elétrica e instrumentação",
    "tema": "eletrica",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "-35oTYToV2A",
@@ -11789,7 +12584,7 @@
    "area": "Segurança",
    "tema": "seguranca",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "VzHXNdUlHVA",
@@ -11815,7 +12610,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -11841,7 +12636,7 @@
    "area": "Trainee e estágio",
    "tema": "trainee",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "sMTU-gjxcLU",
@@ -11867,7 +12662,7 @@
    "area": "Elétrica e instrumentação",
    "tema": "eletrica",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "-35oTYToV2A",
@@ -11893,7 +12688,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "ENw5h8Jo6fo",
@@ -11919,7 +12714,7 @@
    "area": "Trainee e estágio",
    "tema": "trainee",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "sMTU-gjxcLU",
@@ -11945,7 +12740,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "sMTU-gjxcLU",
@@ -11971,7 +12766,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -11997,7 +12792,7 @@
    "area": "Hotelaria",
    "tema": "hotelaria",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "fqj2M7KTR0U",
@@ -12023,7 +12818,7 @@
    "area": "Engenharia",
    "tema": "engenharia",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "9ZlICqIBUMg",
@@ -12049,7 +12844,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "fqj2M7KTR0U",
@@ -12075,7 +12870,7 @@
    "area": "Elétrica e instrumentação",
    "tema": "eletrica",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "-35oTYToV2A",
@@ -12101,7 +12896,7 @@
    "area": "Engenharia",
    "tema": "engenharia",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "9ZlICqIBUMg",
@@ -12127,7 +12922,7 @@
    "area": "Engenharia",
    "tema": "engenharia",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "9ZlICqIBUMg",
@@ -12153,7 +12948,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "fqj2M7KTR0U",
@@ -12179,7 +12974,7 @@
    "area": "Segurança",
    "tema": "seguranca",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "VzHXNdUlHVA",
@@ -12205,7 +13000,7 @@
    "area": "Perfuração e poços",
    "tema": "pocos",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "bFgYyXPn2Bc",
@@ -12231,7 +13026,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "bFgYyXPn2Bc",
@@ -12257,7 +13052,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "sMTU-gjxcLU",
@@ -12283,7 +13078,7 @@
    "area": "Marítimo",
    "tema": "maritimo",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -12309,7 +13104,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "sMTU-gjxcLU",
@@ -12335,7 +13130,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "kxMbpcGcYks",
@@ -12361,7 +13156,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "kxMbpcGcYks",
@@ -12387,7 +13182,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "kxMbpcGcYks",
@@ -12413,7 +13208,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "kxMbpcGcYks",
@@ -12439,7 +13234,7 @@
    "area": "Trainee e estágio",
    "tema": "trainee",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "iKkxsnu9rZ8",
@@ -12465,7 +13260,7 @@
    "area": "Engenharia",
    "tema": "engenharia",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "9ZlICqIBUMg",
@@ -12491,7 +13286,7 @@
    "area": "Engenharia",
    "tema": "engenharia",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "9ZlICqIBUMg",
@@ -12517,7 +13312,7 @@
    "area": "Engenharia",
    "tema": "engenharia",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "9ZlICqIBUMg",
@@ -12543,7 +13338,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "kxMbpcGcYks",
@@ -12569,7 +13364,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "kxMbpcGcYks",
@@ -12595,7 +13390,7 @@
    "area": "Engenharia",
    "tema": "engenharia",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "9ZlICqIBUMg",
@@ -12621,7 +13416,7 @@
    "area": "Engenharia",
    "tema": "engenharia",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "9ZlICqIBUMg",
@@ -12647,7 +13442,7 @@
    "area": "Engenharia",
    "tema": "engenharia",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "9ZlICqIBUMg",
@@ -12673,7 +13468,7 @@
    "area": "Engenharia",
    "tema": "engenharia",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "9ZlICqIBUMg",
@@ -12699,7 +13494,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "YTu30XI9rhg",
@@ -12725,7 +13520,7 @@
    "area": "Segurança",
    "tema": "seguranca",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "VzHXNdUlHVA",
@@ -12751,7 +13546,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "kxMbpcGcYks",
@@ -12777,7 +13572,7 @@
    "area": "Engenharia",
    "tema": "engenharia",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "iKkxsnu9rZ8",
@@ -12803,7 +13598,7 @@
    "area": "Engenharia",
    "tema": "engenharia",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "iKkxsnu9rZ8",
@@ -12829,7 +13624,7 @@
    "area": "Engenharia",
    "tema": "engenharia",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "-35oTYToV2A",
@@ -12855,7 +13650,7 @@
    "area": "Operação e produção",
    "tema": "operacao",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "kJZqpRE1bvY",
@@ -12881,7 +13676,7 @@
    "area": "Engenharia",
    "tema": "engenharia",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "-35oTYToV2A",
@@ -12907,7 +13702,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "0uMWC3VBm8A",
@@ -12933,7 +13728,7 @@
    "area": "Engenharia",
    "tema": "engenharia",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "9ZlICqIBUMg",
@@ -12959,7 +13754,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -12985,7 +13780,7 @@
    "area": "Engenharia",
    "tema": "engenharia",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "9ZlICqIBUMg",
@@ -13011,7 +13806,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -13037,7 +13832,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "sMTU-gjxcLU",
@@ -13063,7 +13858,7 @@
    "area": "Engenharia",
    "tema": "engenharia",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "9ZlICqIBUMg",
@@ -13089,7 +13884,7 @@
    "area": "Mecânica e manutenção",
    "tema": "mecanica",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "3yOdA-HnSeg",
@@ -13115,7 +13910,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -13141,7 +13936,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -13167,7 +13962,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -13193,7 +13988,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -13219,7 +14014,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -13245,7 +14040,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "sMTU-gjxcLU",
@@ -13271,7 +14066,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -13297,7 +14092,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -13323,7 +14118,7 @@
    "area": "Elétrica e instrumentação",
    "tema": "eletrica",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "-35oTYToV2A",
@@ -13349,7 +14144,7 @@
    "area": "Operação e produção",
    "tema": "operacao",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "IVGvdu3BEwI",
@@ -13375,7 +14170,7 @@
    "area": "Operação e produção",
    "tema": "operacao",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "kJZqpRE1bvY",
@@ -13401,7 +14196,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -13427,7 +14222,7 @@
    "area": "Mecânica e manutenção",
    "tema": "mecanica",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "3yOdA-HnSeg",
@@ -13453,7 +14248,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "sMTU-gjxcLU",
@@ -13479,7 +14274,7 @@
    "area": "Elétrica e instrumentação",
    "tema": "eletrica",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -13505,7 +14300,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "sMTU-gjxcLU",
@@ -13531,7 +14326,7 @@
    "area": "Marítimo",
    "tema": "maritimo",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -13557,7 +14352,7 @@
    "area": "Marítimo",
    "tema": "maritimo",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -13583,7 +14378,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -13609,7 +14404,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "WP-YqW9rW3E",
@@ -13635,7 +14430,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "WP-YqW9rW3E",
@@ -13661,7 +14456,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "WP-YqW9rW3E",
@@ -13687,7 +14482,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "WP-YqW9rW3E",
@@ -13713,7 +14508,7 @@
    "area": "Marítimo",
    "tema": "maritimo",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "IVGvdu3BEwI",
@@ -13739,7 +14534,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "sMTU-gjxcLU",
@@ -13765,7 +14560,7 @@
    "area": "Mecânica e manutenção",
    "tema": "mecanica",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "3yOdA-HnSeg",
@@ -13791,7 +14586,7 @@
    "area": "Mecânica e manutenção",
    "tema": "mecanica",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "3yOdA-HnSeg",
@@ -13817,7 +14612,7 @@
    "area": "Mecânica e manutenção",
    "tema": "mecanica",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "3yOdA-HnSeg",
@@ -13843,7 +14638,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "WP-YqW9rW3E",
@@ -13869,7 +14664,7 @@
    "area": "Trainee e estágio",
    "tema": "trainee",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "iKkxsnu9rZ8",
@@ -13895,7 +14690,7 @@
    "area": "Marítimo",
    "tema": "maritimo",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "IVGvdu3BEwI",
@@ -13921,7 +14716,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "WP-YqW9rW3E",
@@ -13947,7 +14742,7 @@
    "area": "Mecânica e manutenção",
    "tema": "mecanica",
    "banco": false,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "3yOdA-HnSeg",
@@ -13973,7 +14768,7 @@
    "area": "Engenharia",
    "tema": "engenharia",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "-35oTYToV2A",
@@ -13999,7 +14794,7 @@
    "area": "Operação e produção",
    "tema": "operacao",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "kJZqpRE1bvY",
@@ -14025,7 +14820,7 @@
    "area": "Trainee e estágio",
    "tema": "trainee",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "iKkxsnu9rZ8",
@@ -14051,7 +14846,7 @@
    "area": "Operação e produção",
    "tema": "operacao",
    "banco": false,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "kJZqpRE1bvY",
@@ -14077,7 +14872,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": true,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "sMTU-gjxcLU",
@@ -14103,7 +14898,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": true,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "jurHKwqu7lg",
@@ -14129,7 +14924,7 @@
    "area": "Mecânica e manutenção",
    "tema": "mecanica",
    "banco": true,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "bFgYyXPn2Bc",
@@ -14155,7 +14950,7 @@
    "area": "Operação e produção",
    "tema": "operacao",
    "banco": true,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "VzHXNdUlHVA",
@@ -14181,7 +14976,7 @@
    "area": "Engenharia",
    "tema": "engenharia",
    "banco": true,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "9ZlICqIBUMg",
@@ -14207,7 +15002,7 @@
    "area": "Mecânica e manutenção",
    "tema": "mecanica",
    "banco": true,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "3yOdA-HnSeg",
@@ -14233,7 +15028,7 @@
    "area": "Operação e produção",
    "tema": "operacao",
    "banco": true,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "8UKg6ApoNcw",
@@ -14259,7 +15054,7 @@
    "area": "Perfuração e poços",
    "tema": "pocos",
    "banco": true,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "bFgYyXPn2Bc",
@@ -14285,7 +15080,7 @@
    "area": "Segurança",
    "tema": "seguranca",
    "banco": true,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "VzHXNdUlHVA",
@@ -14311,7 +15106,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": true,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "sMTU-gjxcLU",
@@ -14337,7 +15132,7 @@
    "area": "Marítimo",
    "tema": "maritimo",
    "banco": true,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "-Fg2KN6627E",
@@ -14363,7 +15158,7 @@
    "area": "Marítimo",
    "tema": "maritimo",
    "banco": true,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "-Fg2KN6627E",
@@ -14389,7 +15184,7 @@
    "area": "Marítimo",
    "tema": "maritimo",
    "banco": true,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lz5Da9ACjyY",
@@ -14415,7 +15210,7 @@
    "area": "Operação e produção",
    "tema": "operacao",
    "banco": true,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -14441,7 +15236,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": true,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -14467,7 +15262,7 @@
    "area": "Engenharia",
    "tema": "engenharia",
    "banco": true,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "iKkxsnu9rZ8",
@@ -14493,7 +15288,7 @@
    "area": "Trainee e estágio",
    "tema": "trainee",
    "banco": true,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "iKkxsnu9rZ8",
@@ -14519,7 +15314,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": true,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -14545,7 +15340,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": true,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -14571,7 +15366,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": true,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "sMTU-gjxcLU",
@@ -14597,7 +15392,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": true,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "sMTU-gjxcLU",
@@ -14623,7 +15418,7 @@
    "area": "Mecânica e manutenção",
    "tema": "mecanica",
    "banco": true,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "bFgYyXPn2Bc",
@@ -14649,7 +15444,7 @@
    "area": "Marítimo",
    "tema": "maritimo",
    "banco": true,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -14675,7 +15470,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": true,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "wNai9-JZxOI",
@@ -14701,7 +15496,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": true,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "wNai9-JZxOI",
@@ -14727,7 +15522,85 @@
    "area": "Outras",
    "tema": "geral",
    "banco": true,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
+   "videos": [
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
+   "id": "mi-electric-brasil-trabalhe-conosco-banco-de-talentos-belo-horizonte-77346",
+   "titulo": "Trabalhe Conosco - Banco de Talentos (Belo Horizonte)",
+   "empresa": "MI Electric Brasil",
+   "local": "Belo Horizonte, MG",
+   "link": "https://mielectricbrazil.pandape.infojobs.com.br/Detail/2597242",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": true,
+   "vistaEm": "2026-10-15",
+   "videos": [
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
+   "id": "mi-electric-brasil-trabalhe-conosco-banco-de-talentos-maca-97161",
+   "titulo": "Trabalhe Conosco - Banco de Talentos (Macaé)",
+   "empresa": "MI Electric Brasil",
+   "local": "Macaé, RJ",
+   "link": "https://mielectricbrazil.pandape.infojobs.com.br/Detail/2596603",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": true,
+   "vistaEm": "2026-10-15",
+   "videos": [
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
+   "id": "mi-electric-brasil-trabalhe-conosco-banco-de-talentos-rj-71249",
+   "titulo": "Trabalhe Conosco - Banco de Talentos (RJ)",
+   "empresa": "MI Electric Brasil",
+   "local": "Brasil",
+   "link": "https://mielectricbrazil.pandape.infojobs.com.br/Detail/2070689",
+   "regime": "Em terra ou a confirmar",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": true,
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -14753,7 +15626,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": true,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -14779,7 +15652,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": true,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -14805,7 +15678,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": true,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -14831,7 +15704,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": true,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -14857,7 +15730,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": true,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "kJZqpRE1bvY",
@@ -14883,7 +15756,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": true,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "kJZqpRE1bvY",
@@ -14909,7 +15782,7 @@
    "area": "Operação e produção",
    "tema": "operacao",
    "banco": true,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -14935,7 +15808,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": true,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -14961,7 +15834,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": true,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "bY0r9BqrwYw",
@@ -14987,7 +15860,7 @@
    "area": "Mecânica e manutenção",
    "tema": "mecanica",
    "banco": true,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "3yOdA-HnSeg",
@@ -15013,7 +15886,7 @@
    "area": "Mecânica e manutenção",
    "tema": "mecanica",
    "banco": true,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "3yOdA-HnSeg",
@@ -15039,7 +15912,7 @@
    "area": "Mecânica e manutenção",
    "tema": "mecanica",
    "banco": true,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "3yOdA-HnSeg",
@@ -15065,7 +15938,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": true,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "YTu30XI9rhg",
@@ -15091,7 +15964,7 @@
    "area": "Mecânica e manutenção",
    "tema": "mecanica",
    "banco": true,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "bFgYyXPn2Bc",
@@ -15117,7 +15990,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": true,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -15143,7 +16016,7 @@
    "area": "Perfuração e poços",
    "tema": "pocos",
    "banco": true,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "bFgYyXPn2Bc",
@@ -15169,7 +16042,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": true,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -15195,7 +16068,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": true,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -15221,7 +16094,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": true,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "sMTU-gjxcLU",
@@ -15247,7 +16120,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": true,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -15273,7 +16146,7 @@
    "area": "Marítimo",
    "tema": "maritimo",
    "banco": true,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -15299,7 +16172,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": true,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -15325,7 +16198,7 @@
    "area": "Trainee e estágio",
    "tema": "trainee",
    "banco": true,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "kxMbpcGcYks",
@@ -15351,7 +16224,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": true,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "kxMbpcGcYks",
@@ -15377,7 +16250,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": true,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -15403,7 +16276,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": true,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -15429,7 +16302,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": true,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -15455,7 +16328,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": true,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "sMTU-gjxcLU",
@@ -15481,7 +16354,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": true,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -15507,7 +16380,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": true,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "sMTU-gjxcLU",
@@ -15533,7 +16406,7 @@
    "area": "Segurança",
    "tema": "seguranca",
    "banco": true,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "VzHXNdUlHVA",
@@ -15559,7 +16432,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": true,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -15585,7 +16458,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": true,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "sMTU-gjxcLU",
@@ -15611,7 +16484,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": true,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -15637,7 +16510,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": true,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "sMTU-gjxcLU",
@@ -15663,7 +16536,7 @@
    "area": "Marítimo",
    "tema": "maritimo",
    "banco": true,
-   "vistaEm": "2026-10-20",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -15689,7 +16562,7 @@
    "area": "Marítimo",
    "tema": "maritimo",
    "banco": true,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "iKkxsnu9rZ8",
@@ -15715,7 +16588,7 @@
    "area": "Outras",
    "tema": "geral",
    "banco": true,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "sMTU-gjxcLU",
@@ -15741,7 +16614,7 @@
    "area": "Marítimo",
    "tema": "maritimo",
    "banco": true,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "IVGvdu3BEwI",
@@ -15767,7 +16640,7 @@
    "area": "Marítimo",
    "tema": "maritimo",
    "banco": true,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lz5Da9ACjyY",
@@ -15793,7 +16666,7 @@
    "area": "Marítimo",
    "tema": "maritimo",
    "banco": true,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "IVGvdu3BEwI",
@@ -15819,7 +16692,7 @@
    "area": "Marítimo",
    "tema": "maritimo",
    "banco": true,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "WP-YqW9rW3E",
@@ -15845,7 +16718,7 @@
    "area": "Marítimo",
    "tema": "maritimo",
    "banco": true,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "WP-YqW9rW3E",
@@ -15871,7 +16744,7 @@
    "area": "Marítimo",
    "tema": "maritimo",
    "banco": true,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "IVGvdu3BEwI",
@@ -15897,7 +16770,7 @@
    "area": "Marítimo",
    "tema": "maritimo",
    "banco": true,
-   "vistaEm": "2026-10-21",
+   "vistaEm": "2026-10-15",
    "videos": [
     [
      "WP-YqW9rW3E",

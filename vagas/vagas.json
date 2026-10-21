@@ -1,5 +1,61 @@
 [
   {
+    "id": "newinter-homem-de-area-movimentacao-carga",
+    "titulo": "Homem de Área - Movimentação de Carga (Rigger)",
+    "empresa": "Newinter",
+    "logo": "",
+    "local": "Macaé, RJ",
+    "regime": "A confirmar com a empresa",
+    "contrato": "Efetivo",
+    "area": "Movimentação de carga",
+    "nivel": "Ensino médio e curso de homem de área",
+    "publicada": "2026-10-21",
+    "inscricoesAte": "2026-11-20",
+    "link": "mailto:cadastro@newinter.com.br?subject=Homem%20de%20%C3%81rea%20-%20Movimenta%C3%A7%C3%A3o%20de%20Carga",
+    "resumo": "A Newinter está contratando homem de área para o setor de movimentação de carga. É porta de entrada: pede ensino médio e o curso de homem de área, e quem já tem o curso de sinaleiro amarrador (rigger) sai na frente. Só para quem mora em Macaé, Rio das Ostras ou Carapebus.",
+    "atividades": [
+      "Auxiliar na movimentação, transporte, carga e descarga de materiais e equipamentos",
+      "Amarrar, fixar e desamarrar cargas seguindo os procedimentos",
+      "Auxiliar no posicionamento e na organização das cargas para içamento",
+      "Inspecionar visualmente os acessórios de movimentação",
+      "Sinalizar e se comunicar com a operação durante o içamento",
+      "Identificar riscos e condições inseguras e usar os EPIs"
+    ],
+    "requisitos": [
+      "Ensino médio completo, com comprovação",
+      "Curso de homem de área",
+      "Desejável: curso de sinaleiro amarrador de cargas (rigger)",
+      "Morar em Macaé, Rio das Ostras ou Carapebus",
+      "Trabalho em equipe, comunicação e organização"
+    ],
+    "beneficios": [
+      "Plano de saúde e odontológico",
+      "Refeitório na empresa",
+      "Transporte da empresa",
+      "Seguro de vida",
+      "Gympass",
+      "Convênio educacional"
+    ],
+    "pcd": false,
+    "videos": [
+      {
+        "id": "S3f4xuHKtQM",
+        "titulo": "Cursos na área de movimentação de carga",
+        "porque": "Quais cursos pesam para homem de área e rigger, o diferencial que a vaga pede."
+      },
+      {
+        "id": "-Fg2KN6627E",
+        "titulo": "Salários offshore: quanto ganha um homem de área?",
+        "porque": "Quanto paga a função e para onde ela leva na carreira."
+      },
+      {
+        "id": "nfoK6jz77RQ",
+        "titulo": "Investimento para se qualificar como homem de área",
+        "porque": "Quanto custa tirar os cursos da vaga e por onde começar."
+      }
+    ]
+  },
+  {
     "id": "halliburton-sondador-sph-mossoro",
     "titulo": "Operador de Serviços HWO (Sondador de SPH)",
     "empresa": "Halliburton",
