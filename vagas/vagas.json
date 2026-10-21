@@ -1,5 +1,113 @@
 [
   {
+    "id": "halliburton-sondador-sph-mossoro",
+    "titulo": "Operador de Serviços HWO (Sondador de SPH)",
+    "empresa": "Halliburton",
+    "logo": "",
+    "local": "Mossoró, RN",
+    "regime": "Em terra (sonda de produção terrestre)",
+    "contrato": "Efetivo, tempo integral",
+    "area": "Perfuração e poços",
+    "nivel": "Com experiência em sonda",
+    "publicada": "2026-10-21",
+    "inscricoesAte": "2026-11-20",
+    "link": "https://careers.halliburton.com/job/mossoro/brazil-mossoro-operador-de-servicos-hwo-sondador-de-sph/543/102225216896",
+    "resumo": "A Halliburton está contratando sondador para a linha de serviços HWO (Hydraulic Workover), em sonda de produção terrestre (SPH) que atende a Petrobras em Mossoró. É vaga para quem já tem rodagem em sonda: você lidera a equipe no poço, opera a sonda e o console do BOP e cuida da desmontagem, mobilização e montagem do equipamento.",
+    "atividades": [
+      "Liderar a equipe da sonda nas operações no poço, seguindo as normas de SMS da Petrobras",
+      "Operar a sonda, o guincho de contrapeso, o console do BOP e o macaco hidráulico HWO",
+      "Fazer testes hidrostáticos no BOP antes e depois do serviço, incluindo manutenção preventiva",
+      "Monitorar parâmetros e cálculos de controle de poço durante as operações",
+      "Coordenar desmontagem, mobilização e montagem (DMM) da sonda",
+      "Operar guindaste e içamento com segurança",
+      "Fazer JSA, reuniões de segurança e treinar os assistentes de operador"
+    ],
+    "requisitos": [
+      "Curso técnico completo em mecânica, eletrônica ou área afim",
+      "CFT ativo",
+      "Pelo menos 1 ano de experiência em sondagem",
+      "Diferencial: experiência em sonda SPH e conhecimento dos procedimentos da Petrobras"
+    ],
+    "beneficios": [],
+    "pcd": false,
+    "videos": [
+      {
+        "id": "Ahai0Knbmtk",
+        "titulo": "Curso de well control",
+        "porque": "A vaga cobra controle de poço e operação do BOP. Esse é o curso que sustenta isso no currículo."
+      },
+      {
+        "id": "s0IT2LuUGvo",
+        "titulo": "10 equipamentos de perfuração que você precisa conhecer",
+        "porque": "BOP, guincho, bombas. O vocabulário que vai aparecer na entrevista técnica."
+      },
+      {
+        "id": "if-3ux6qhi8",
+        "titulo": "Os desafios da mudança: offshore para onshore",
+        "porque": "A vaga é em sonda terrestre. Aqui está o que muda na rotina de quem vem do mar ou vai para a terra."
+      }
+    ]
+  },
+  {
+    "id": "macnor-tecnico-overhaul-compressores",
+    "titulo": "Técnico de Serviços - Overhaul de Compressores HVAC-R",
+    "empresa": "Macnor Marine",
+    "logo": "",
+    "local": "Niterói, RJ",
+    "regime": "Oficina com embarques eventuais",
+    "contrato": "Efetivo (CLT)",
+    "area": "Mecânica e manutenção",
+    "nivel": "Com experiência em compressores",
+    "publicada": "2026-10-21",
+    "inscricoesAte": "2026-11-20",
+    "link": "https://macnor.gupy.io/jobs/12730804",
+    "resumo": "A Macnor Marine, que atende o mercado naval e offshore desde 2003, procura técnico para manutenção, revisão e overhaul de compressores de refrigeração e ar-condicionado. O trabalho é na oficina em Niterói, com atendimentos de campo e embarques eventuais em navios e plataformas.",
+    "atividades": [
+      "Avaliar os compressores recebidos e diagnosticar as condições mecânicas e elétricas",
+      "Definir se o reparo é viável, especificar peças e executar o overhaul completo",
+      "Instalar, manter, testar e comissionar sistemas de refrigeração e climatização (HVAC) em ambiente naval e offshore",
+      "Atuar em equipes de campo, em terra e a bordo",
+      "Elaborar relatórios técnicos dos serviços",
+      "Fazer a interface com a tripulação, clientes e equipe Macnor"
+    ],
+    "requisitos": [
+      "Técnico em Refrigeração e Climatização, Mecânica, Eletromecânica ou área correlata",
+      "CFT ou CREA ativo",
+      "Experiência comprovada em manutenção, reparo ou overhaul de compressores de refrigeração",
+      "Conhecimento de compressores alternativos semi-herméticos ou abertos, lubrificação, válvulas e motores elétricos",
+      "Metrologia e instrumentos de medição",
+      "Disponibilidade para viagens e embarques eventuais",
+      "Morar em Niterói ou perto",
+      "Diferencial: treinamento em compressores BITZER e experiência naval ou offshore"
+    ],
+    "beneficios": [
+      "Plano de saúde extensivo a cônjuge e filhos",
+      "Plano odontológico sem custo",
+      "Seguro de vida",
+      "Alimentação no local",
+      "Benefício mobilidade",
+      "Wellhub"
+    ],
+    "pcd": false,
+    "videos": [
+      {
+        "id": "3yOdA-HnSeg",
+        "titulo": "Se você é mecânico, precisa ver esse vídeo!",
+        "porque": "O que não pode faltar no currículo de um mecânico para passar na triagem."
+      },
+      {
+        "id": "vN0tv-N_fSo",
+        "titulo": "Manutenção offshore: cursos que podem ser um diferencial",
+        "porque": "A vaga valoriza certificação de fabricante. Veja quais cursos pesam na manutenção offshore."
+      },
+      {
+        "id": "AvGsd8A08UA",
+        "titulo": "Ilha Cast 03: mecânico em um PLSV",
+        "porque": "Como é a rotina de mecânico a bordo de navio, para quem vai encarar os embarques da vaga."
+      }
+    ]
+  },
+  {
     "id": "brava-tecnico-mecanica-offshore",
     "titulo": "Técnico de Mecânica Offshore",
     "empresa": "Brava Energia",

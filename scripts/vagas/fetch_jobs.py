@@ -27,6 +27,7 @@ EMPRESAS = [
     ('gupy', 'Origem Energia', 'origemenergia', False),
     ('gupy', 'Tecnosonda', 'tecnosonda', False),
     ('gupy', 'Kaefer', 'kaeferbrasil', False),
+    ('gupy', 'Macnor Marine', 'macnor', False),
     # InHire
     ('inhire', 'OceanPact', 'oceanpact', False),
     ('inhire', 'Camorim', 'camorim', False),
@@ -145,18 +146,30 @@ def oracle(cfg):
         if len(lista) < 200:
             break
 
+# Código GeoNames do Brasil, usado como filtro de país nos sites da Radancy (Halliburton)
+BRASIL_GEONAMES = 3469034
+
 def radancy(host):
     vistos = set()
-    for p in range(1, 6):
-        s = get(f'https://{host}/search-jobs/Brazil?p={p}')
+    for pagina in range(1, 6):
+        q = urllib.parse.urlencode({
+            'ActiveFacetID': BRASIL_GEONAMES, 'CurrentPage': pagina, 'RecordsPerPage': 100, 'SearchType': 6, 'OrganizationIds': 543,
+            'FacetFilters[0].ID': BRASIL_GEONAMES, 'FacetFilters[0].FacetType': 2, 'FacetFilters[0].Display': 'Brazil',
+            'FacetFilters[0].IsApplied': 'true', 'SearchResultsModuleName': 'Search Results', 'SearchFiltersModuleName': 'Search Filters'})
+        s = json.loads(get(f'https://{host}/search-jobs/results?{q}', headers={'X-Requested-With': 'XMLHttpRequest'}))['results']
         achou = 0
-        for href, tit in re.findall(r'href="(/job/[^"]+/\d+/\d+)"[^>]*>\s*(?:<h2>)?([^<]{3,150})', s):
+        for href, tit, loc in re.findall(r'<a href="(/job/[^"]+/\d+/\d+)"[^>]*>\s*<h2>(.*?)</h2>\s*<span class="job-location">(.*?)</span>', s, re.S):
             if href in vistos:
                 continue
             vistos.add(href); achou += 1
-            cidade = href.split('/')[2].replace('-', ' ').title()
-            yield dict(titulo=limpa(tit), local=cidade, link=f'https://{host}{href}')
-        if not achou:
+            local = limpa(re.sub('<[^>]+>', '', loc))
+            partes = [x.strip() for x in local.split(',') if x.strip()]
+            uf = {'Rio de Janeiro': 'RJ', 'Rio Grande do Norte': 'RN', 'Bahia': 'BA', 'Espirito Santo': 'ES', 'Espírito Santo': 'ES', 'Sergipe': 'SE', 'São Paulo': 'SP'}
+            cidade = partes[0] if partes else 'Brasil'
+            estado = next((uf[x] for x in partes if x in uf), '')
+            titulo = re.sub(r'^(Brazil|Brasil|BR)\s*[-–]\s*((RJ|RN|BA|ES|SE|SP)\s*[-–]\s*)?([A-Za-zÀ-ú ]+?\s*[-–:]\s*)?', '', limpa(tit)).strip() or limpa(tit)
+            yield dict(titulo=titulo, local=f'{cidade}, {estado}' if estado else cidade + ', Brasil', link=f'https://{host}{href}')
+        if achou < 100:
             break
 
 def inhire(tenant):
