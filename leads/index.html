@@ -193,13 +193,13 @@ function painelRanking(mes){
   fetch('../api/cliques.php', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({action:'ranking', senha, mes})})
     .then(r => r.json()).then(r => {
       const d = r.dados || {}, tot = d.total || {};
-      const soma = x => (x.candidatar || 0) + (x.preparar || 0) + (x.video || 0);
+      const soma = x => (x.candidatar || 0) + (x.preparar || 0) + (x.video || 0) + (x.compartilhar || 0);
       const ordem = (a, b) => (b.candidatar || 0) - (a.candidatar || 0) || soma(b) - soma(a);
       const vagas = Object.entries(d.vagas || {}).map(([id, v]) => ({id, ...v})).sort(ordem);
       const emps = Object.entries(d.empresas || {}).map(([nome, v]) => ({nome, ...v})).sort(ordem);
       const nomeMes = m => { const [a, b] = m.split('-'); return ['jan','fev','mar','abr','mai','jun','jul','ago','set','out','nov','dez'][b - 1] + '/' + a; };
-      const linha = (i, a, b, x) => `<tr><td class="m">${i + 1}º</td><td>${a}</td><td class="m">${b}</td><td><b>${x.candidatar || 0}</b></td><td>${x.preparar || 0}</td><td>${x.video || 0}</td></tr>`;
-      const cab = c => `<thead><tr><th></th><th>${c}</th><th></th><th>Candidatar</th><th>Como se preparar</th><th>Vídeos</th></tr></thead>`;
+      const linha = (i, a, b, x) => `<tr><td class="m">${i + 1}º</td><td>${a}</td><td class="m">${b}</td><td><b>${x.candidatar || 0}</b></td><td>${x.preparar || 0}</td><td>${x.video || 0}</td><td>${x.compartilhar || 0}</td></tr>`;
+      const cab = c => `<thead><tr><th></th><th>${c}</th><th></th><th>Candidatar</th><th>Como se preparar</th><th>Vídeos</th><th>Compartilhamentos</th></tr></thead>`;
       $('#conteudo').innerHTML = `
         <div class="bar" style="margin-top:20px"><select id="mes">${(r.meses.length ? r.meses : [r.mes]).map(m => `<option value="${m}"${m === r.mes ? ' selected' : ''}>${nomeMes(m)}</option>`).join('')}</select>
           <button class="btn" id="csv-r">Baixar planilha</button></div>
@@ -207,7 +207,7 @@ function painelRanking(mes){
           <div class="kpi"><b>${tot.candidatar || 0}</b><span>Cliques em candidatar</span></div>
           <div class="kpi"><b>${tot.preparar || 0}</b><span>Aberturas de preparação</span></div>
           <div class="kpi"><b>${tot.video || 0}</b><span>Vídeos assistidos</span></div>
-          <div class="kpi"><b>${vagas.length}</b><span>Vagas com clique</span></div>
+          <div class="kpi"><b>${tot.compartilhar || 0}</b><span>Compartilhamentos</span></div>
         </div>
         <h2 class="sec">Empresas mais procuradas</h2>
         <div class="tbl">${emps.length ? `<table>${cab('Empresa')}<tbody>${emps.slice(0, 20).map((e, i) => linha(i, esc(e.nome), '', e)).join('')}</tbody></table>` : '<p style="padding:20px;color:var(--muted)">Ainda sem cliques neste mês.</p>'}</div>
@@ -216,9 +216,9 @@ function painelRanking(mes){
         <p class="note">Mesma pessoa clicando várias vezes na mesma vaga no mesmo dia conta uma vez. Os números começam a contar a partir da publicação desta versão.</p>`;
       $('#mes').onchange = () => painelRanking($('#mes').value);
       $('#csv-r').onclick = () => {
-        const linhas = [['tipo','nome','empresa','candidatar','preparar','video']].concat(
-          emps.map(e => ['empresa', e.nome, '', e.candidatar || 0, e.preparar || 0, e.video || 0]),
-          vagas.map(v => ['vaga', v.titulo, v.empresa, v.candidatar || 0, v.preparar || 0, v.video || 0]));
+        const linhas = [['tipo','nome','empresa','candidatar','preparar','video','compartilhar']].concat(
+          emps.map(e => ['empresa', e.nome, '', e.candidatar || 0, e.preparar || 0, e.video || 0, e.compartilhar || 0]),
+          vagas.map(v => ['vaga', v.titulo, v.empresa, v.candidatar || 0, v.preparar || 0, v.video || 0, v.compartilhar || 0]));
         const csv = '\ufeff' + linhas.map(l => l.map(c => '"' + String(c).replace(/"/g, '""') + '"').join(';')).join('\n');
         const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([csv], {type:'text/csv;charset=utf-8'}));
         a.download = 'ranking-vagas-' + r.mes + '.csv'; a.click();

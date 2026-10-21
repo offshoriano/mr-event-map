@@ -6,7 +6,7 @@
 require __DIR__ . '/_base.php';
 $arquivo = $dataDir . '/cliques.json';
 $vistosArquivo = $dataDir . '/cliques-vistos.json';
-const TIPOS = ['candidatar', 'preparar', 'video'];
+const TIPOS = ['candidatar', 'preparar', 'video', 'compartilhar'];
 
 $in = entrada();
 $action = $in['action'] ?? '';
