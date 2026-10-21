@@ -1,0 +1,6595 @@
+[
+ {
+  "nome": "PRIO",
+  "origem": [
+   "MR",
+   "IBP",
+   "ABPIP"
+  ],
+  "site": "",
+  "ats": {
+   "tipo": "gupy",
+   "cfg": "prio"
+  }
+ },
+ {
+  "nome": "Brava Energia",
+  "origem": [
+   "MR",
+   "IBP",
+   "ABPIP"
+  ],
+  "site": "",
+  "ats": {
+   "tipo": "gupy",
+   "cfg": "bravaenergia"
+  }
+ },
+ {
+  "nome": "Ocyan",
+  "origem": [
+   "MR",
+   "IBP",
+   "ABESPetro"
+  ],
+  "site": "http://www.ocyan-sa.com/",
+  "ats": {
+   "tipo": "gupy",
+   "cfg": "ocyan"
+  }
+ },
+ {
+  "nome": "Foresea",
+  "origem": [
+   "MR",
+   "ABESPetro"
+  ],
+  "site": "https://www.foresea.com/",
+  "ats": {
+   "tipo": "gupy",
+   "cfg": "foresea"
+  }
+ },
+ {
+  "nome": "MODEC",
+  "origem": [
+   "MR",
+   "ABESPetro"
+  ],
+  "site": "http://www.modec.com/",
+  "ats": {
+   "tipo": "gupy",
+   "cfg": "modec-br"
+  }
+ },
+ {
+  "nome": "Perbras",
+  "origem": [
+   "MR"
+  ],
+  "site": "",
+  "ats": {
+   "tipo": "gupy",
+   "cfg": "perbras"
+  }
+ },
+ {
+  "nome": "Wilson Sons",
+  "origem": [
+   "MR",
+   "ABEEMAR"
+  ],
+  "site": "https://www.wilsonsons.com.br/pt-br/",
+  "ats": {
+   "tipo": "gupy",
+   "cfg": "wilsonsons"
+  },
+  "somente_og": true
+ },
+ {
+  "nome": "Constellation",
+  "origem": [
+   "MR",
+   "ABESPetro"
+  ],
+  "site": "https://www.theconstellation.com/",
+  "ats": {
+   "tipo": "gupy",
+   "cfg": "theconstellation"
+  }
+ },
+ {
+  "nome": "Altera&Ocyan",
+  "origem": [
+   "MR"
+  ],
+  "site": "",
+  "ats": {
+   "tipo": "gupy",
+   "cfg": "alteraocyan"
+  }
+ },
+ {
+  "nome": "Origem Energia",
+  "origem": [
+   "MR",
+   "ABPIP"
+  ],
+  "site": "",
+  "ats": {
+   "tipo": "gupy",
+   "cfg": "origemenergia"
+  }
+ },
+ {
+  "nome": "Tecnosonda",
+  "origem": [
+   "MR"
+  ],
+  "site": "",
+  "ats": {
+   "tipo": "gupy",
+   "cfg": "tecnosonda"
+  }
+ },
+ {
+  "nome": "Kaefer",
+  "origem": [
+   "MR"
+  ],
+  "site": "",
+  "ats": {
+   "tipo": "gupy",
+   "cfg": "kaeferbrasil"
+  }
+ },
+ {
+  "nome": "Macnor Marine",
+  "origem": [
+   "MR",
+   "NBCC"
+  ],
+  "site": "",
+  "ats": {
+   "tipo": "gupy",
+   "cfg": "macnor"
+  }
+ },
+ {
+  "nome": "OceanPact",
+  "origem": [
+   "MR",
+   "ABEEMAR",
+   "ABESPetro"
+  ],
+  "site": "https://oceanpact.com/servicos/meio-ambiente/",
+  "ats": {
+   "tipo": "inhire",
+   "cfg": "oceanpact"
+  }
+ },
+ {
+  "nome": "Camorim",
+  "origem": [
+   "MR",
+   "IADC Brazil",
+   "ABESPetro"
+  ],
+  "site": "https://camorim.com.br/",
+  "ats": {
+   "tipo": "inhire",
+   "cfg": "camorim"
+  }
+ },
+ {
+  "nome": "PetroReconcavo",
+  "origem": [
+   "MR",
+   "ABPIP"
+  ],
+  "site": "",
+  "ats": {
+   "tipo": "inhire",
+   "cfg": "petroreconcavo"
+  }
+ },
+ {
+  "nome": "Wilson Sons Offshore",
+  "origem": [
+   "MR"
+  ],
+  "site": "",
+  "ats": {
+   "tipo": "inhire",
+   "cfg": "wsut"
+  }
+ },
+ {
+  "nome": "Solstad",
+  "origem": [
+   "MR",
+   "NBCC"
+  ],
+  "site": "https://www.solstad.com/",
+  "ats": {
+   "tipo": "inhire",
+   "cfg": "solstad"
+  }
+ },
+ {
+  "nome": "SBM Offshore",
+  "origem": [
+   "MR",
+   "IBP",
+   "NBCC",
+   "ABESPetro"
+  ],
+  "site": "https://www.sbmoffshore.com/",
+  "ats": {
+   "tipo": "rmk",
+   "cfg": "careers.sbmoffshore.com"
+  }
+ },
+ {
+  "nome": "TechnipFMC",
+  "origem": [
+   "MR",
+   "ABEAM",
+   "NBCC",
+   "ABESPetro"
+  ],
+  "site": "https://www.technipfmc.com/",
+  "ats": {
+   "tipo": "rmk",
+   "cfg": "careers.technipfmc.com"
+  }
+ },
+ {
+  "nome": "Subsea7",
+  "origem": [
+   "MR",
+   "ABEAM",
+   "IBP"
+  ],
+  "site": "",
+  "ats": {
+   "tipo": "rmk",
+   "cfg": "careers.subsea7.com"
+  }
+ },
+ {
+  "nome": "Yinson",
+  "origem": [
+   "MR",
+   "IBP"
+  ],
+  "site": "",
+  "ats": {
+   "tipo": "rmk",
+   "cfg": "careers.yinson.com"
+  }
+ },
+ {
+  "nome": "Baker Hughes",
+  "origem": [
+   "MR",
+   "ABESPetro"
+  ],
+  "site": "https://www.bakerhughes.com/",
+  "ats": {
+   "tipo": "workday",
+   "cfg": [
+    "bakerhughes",
+    "BakerHughes"
+   ]
+  }
+ },
+ {
+  "nome": "Shell",
+  "origem": [
+   "MR"
+  ],
+  "site": "",
+  "ats": {
+   "tipo": "workday",
+   "cfg": [
+    "shell",
+    "ShellCareers"
+   ]
+  }
+ },
+ {
+  "nome": "Equinor",
+  "origem": [
+   "MR",
+   "IBP",
+   "NBCC"
+  ],
+  "site": "http://www.statoil.com",
+  "ats": {
+   "tipo": "workday",
+   "cfg": [
+    "equinor",
+    "EQNR"
+   ]
+  }
+ },
+ {
+  "nome": "Noble",
+  "origem": [
+   "MR",
+   "IADC Brazil",
+   "ABESPetro"
+  ],
+  "site": "https://www.noblecorp.com/",
+  "ats": {
+   "tipo": "workday",
+   "cfg": [
+    "noblecorp",
+    "noblecorp"
+   ]
+  }
+ },
+ {
+  "nome": "Fugro",
+  "origem": [
+   "MR",
+   "ABESPetro"
+  ],
+  "site": "http://www.fugro.com/",
+  "ats": {
+   "tipo": "workday",
+   "cfg": [
+    "fugro",
+    "Careers"
+   ]
+  }
+ },
+ {
+  "nome": "Repsol Sinopec",
+  "origem": [
+   "MR",
+   "IBP"
+  ],
+  "site": "",
+  "ats": {
+   "tipo": "workday",
+   "cfg": [
+    "repsol",
+    "Sinopec"
+   ]
+  }
+ },
+ {
+  "nome": "Transocean",
+  "origem": [
+   "MR",
+   "IBP",
+   "IADC Brazil",
+   "ABESPetro"
+  ],
+  "site": "http://www.deepwater.com/",
+  "ats": {
+   "tipo": "workday",
+   "cfg": [
+    "deepwater",
+    "BrazilExternalCareerSite"
+   ]
+  }
+ },
+ {
+  "nome": "Bristow",
+  "origem": [
+   "MR"
+  ],
+  "site": "",
+  "ats": {
+   "tipo": "workday",
+   "cfg": [
+    "bristow",
+    "Careers"
+   ]
+  }
+ },
+ {
+  "nome": "NOV",
+  "origem": [
+   "MR",
+   "ABESPetro",
+   "ABPIP"
+  ],
+  "site": "https://www.nov.com/",
+  "ats": {
+   "tipo": "oracle",
+   "cfg": [
+    "egay.fa.us6.oraclecloud.com",
+    "CX_2001",
+    null
+   ]
+  }
+ },
+ {
+  "nome": "Seadrill",
+  "origem": [
+   "MR",
+   "ABESPetro"
+  ],
+  "site": "http://www.seadrill.com/",
+  "ats": {
+   "tipo": "oracle",
+   "cfg": [
+    "fa-eykz-saasfaprod1.fa.ocs.oraclecloud.com",
+    "CX_1",
+    null
+   ]
+  }
+ },
+ {
+  "nome": "Valaris",
+  "origem": [
+   "MR",
+   "ABESPetro"
+  ],
+  "site": "https://www.enscorowan.com/",
+  "ats": {
+   "tipo": "oracle",
+   "cfg": [
+    "efqq.fa.us6.oraclecloud.com",
+    "CX_1",
+    null
+   ]
+  }
+ },
+ {
+  "nome": "Oceaneering",
+  "origem": [
+   "MR",
+   "ABESPetro"
+  ],
+  "site": "https://www.oceaneering.com/",
+  "ats": {
+   "tipo": "oracle",
+   "cfg": [
+    "ebfr.fa.us2.oraclecloud.com",
+    "CX_1",
+    null
+   ]
+  }
+ },
+ {
+  "nome": "Halliburton",
+  "origem": [
+   "MR",
+   "NBCC",
+   "ABESPetro"
+  ],
+  "site": "http://www.halliburton.com/en-US/default.page",
+  "ats": {
+   "tipo": "radancy",
+   "cfg": "careers.halliburton.com"
+  }
+ },
+ {
+  "nome": "Oceânica",
+  "origem": [
+   "MR",
+   "IBP"
+  ],
+  "site": "oceanica.com.br",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio.",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/oceanica"
+ },
+ {
+  "nome": "CBO",
+  "origem": [
+   "MR",
+   "IBP"
+  ],
+  "site": "grupocbo.com.br",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio.",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "DOF",
+  "origem": [
+   "MR",
+   "NBCC",
+   "ABESPetro"
+  ],
+  "site": "dof.com",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio.",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/271814"
+ },
+ {
+  "nome": "Guanabara Offshore",
+  "origem": [
+   "MR"
+  ],
+  "site": "",
+  "obs": "O sistema achado pelo nome era de outra empresa.",
+  "mapeado_em": "2026-10-21",
+  "ats_descartado": {
+   "tipo": "gupy",
+   "cfg": "guanabara",
+   "vagas": 52,
+   "nome_no_sistema": "Somos Todos Guanabara"
+  }
+ },
+ {
+  "nome": "Sistac",
+  "origem": [
+   "MR",
+   "ABESPetro"
+  ],
+  "site": "https://www.sistac.com.br/",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio.",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/sistac-sistemas-de-acesso"
+ },
+ {
+  "nome": "BRS Robotics",
+  "origem": [
+   "MR"
+  ],
+  "site": "",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio.",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Marfood",
+  "origem": [
+   "MR"
+  ],
+  "site": "",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio.",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Grupo GPS",
+  "origem": [
+   "MR"
+  ],
+  "site": "gpssa.com.br",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio.",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "OpenSea",
+  "origem": [
+   "MR"
+  ],
+  "site": "",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio.",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Infotec",
+  "origem": [
+   "MR"
+  ],
+  "site": "",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio.",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Etesco",
+  "origem": [
+   "MR",
+   "ABESPetro"
+  ],
+  "site": "etesco.com.br",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio.",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/etesco"
+ },
+ {
+  "nome": "Ventura Offshore",
+  "origem": [
+   "MR",
+   "ABESPetro"
+  ],
+  "site": "venturapetroleo.com.br",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio.",
+  "mapeado_em": "2026-10-21",
+  "ats": {
+   "tipo": "inhire",
+   "cfg": "venturaoffshore",
+   "vagas": 13,
+   "nome_no_sistema": "Ventura Offshore"
+  }
+ },
+ {
+  "nome": "Helix",
+  "origem": [
+   "MR",
+   "IADC Brazil"
+  ],
+  "site": "helixesg.com",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio.",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "COSL",
+  "origem": [
+   "MR",
+   "ABESPetro"
+  ],
+  "site": "https://www.cosl.no/",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio.",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Weatherford",
+  "origem": [
+   "MR",
+   "ABESPetro"
+  ],
+  "site": "weatherford.com",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio.",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "SLB",
+  "origem": [
+   "MR",
+   "IBP",
+   "ABESPetro",
+   "ABPIP"
+  ],
+  "site": "slb.com",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio.",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/slbglobal"
+ },
+ {
+  "nome": "OneSubsea",
+  "origem": [
+   "MR",
+   "IBP",
+   "ABESPetro"
+  ],
+  "site": "onesubsea.slb.com",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio.",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/onesubsea"
+ },
+ {
+  "nome": "McDermott",
+  "origem": [
+   "MR",
+   "IBP",
+   "ABESPetro"
+  ],
+  "site": "mcdermott.com",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio.",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Saipem",
+  "origem": [
+   "MR",
+   "ABESPetro"
+  ],
+  "site": "saipem.com",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio.",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/saipem"
+ },
+ {
+  "nome": "Expro",
+  "origem": [
+   "MR",
+   "IADC Brazil",
+   "ABESPetro"
+  ],
+  "site": "expro.com",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio.",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/14038",
+  "ats": {
+   "tipo": "successfactors",
+   "cfg": [
+    "career5.successfactors.eu",
+    "EXPROPROD"
+   ]
+  }
+ },
+ {
+  "nome": "Seagems",
+  "origem": [
+   "MR",
+   "ABEAM",
+   "ABESPetro"
+  ],
+  "site": "seagems.com.br",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio.",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "STEP Oil and Gas",
+  "origem": [
+   "MR",
+   "IADC Brazil"
+  ],
+  "site": "https://step-og.com/",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio.",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Vertical Group",
+  "origem": [
+   "MR"
+  ],
+  "site": "verticalgroup.com.br",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio.",
+  "mapeado_em": "2026-10-21",
+  "ats": {
+   "tipo": "inhire",
+   "cfg": "vertical",
+   "vagas": 6,
+   "nome_no_sistema": "Vertical"
+  },
+  "somente_og": true
+ },
+ {
+  "nome": "MISC",
+  "origem": [
+   "MR",
+   "ABESPetro"
+  ],
+  "site": "miscgroup.com",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio.",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/misc-berhad"
+ },
+ {
+  "nome": "BW Offshore",
+  "origem": [
+   "MR",
+   "NBCC",
+   "ABESPetro"
+  ],
+  "site": "bwoffshore.com",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio.",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/bw-offshore"
+ },
+ {
+  "nome": "BW Energy",
+  "origem": [
+   "MR",
+   "IBP",
+   "ABPIP"
+  ],
+  "site": "bwenergy.no",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio.",
+  "mapeado_em": "2026-10-21",
+  "ats": {
+   "tipo": "workable",
+   "cfg": "bw-energy"
+  }
+ },
+ {
+  "nome": "Bram Offshore",
+  "origem": [
+   "MR",
+   "IBP"
+  ],
+  "site": "bramoffshore.com.br",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio.",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/bram-offshore"
+ },
+ {
+  "nome": "Starnav",
+  "origem": [
+   "MR"
+  ],
+  "site": "starnav.com.br",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio.",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/starnav-servi-os-mar-timos-ltda"
+ },
+ {
+  "nome": "Heftos",
+  "origem": [
+   "MR"
+  ],
+  "site": "heftos.com.br",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio.",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/heftos"
+ },
+ {
+  "nome": "Mota-Engil",
+  "origem": [
+   "MR",
+   "ABESPetro"
+  ],
+  "site": "mota-engil.com",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio.",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/mota-engil"
+ },
+ {
+  "nome": "Aker Solutions",
+  "origem": [
+   "MR"
+  ],
+  "site": "akersolutions.com",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio.",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/aker-solutions"
+ },
+ {
+  "nome": "Akofs Offshore",
+  "origem": [
+   "MR"
+  ],
+  "site": "",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio.",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "OOS International",
+  "origem": [
+   "MR"
+  ],
+  "site": "blueoos.com",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio.",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/blueoos"
+ },
+ {
+  "nome": "CHC do Brasil",
+  "origem": [
+   "MR"
+  ],
+  "site": "chcheli.com",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio.",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/chc-helicopter"
+ },
+ {
+  "nome": "Omni Táxi Aéreo",
+  "origem": [
+   "MR"
+  ],
+  "site": "omnihelicoptersinternational.com",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio.",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/omni-helicopters-guyana-inc-ohgi"
+ },
+ {
+  "nome": "Líder Aviação",
+  "origem": [
+   "MR"
+  ],
+  "site": "",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio.",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Seatrium Brasfels",
+  "origem": [
+   "MR"
+  ],
+  "site": "",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio.",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Bureau Veritas",
+  "origem": [
+   "MR"
+  ],
+  "site": "bureauveritas.com.br",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio.",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "SGS",
+  "origem": [
+   "MR"
+  ],
+  "site": "sgs.com",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio.",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/sgs"
+ },
+ {
+  "nome": "Manserv",
+  "origem": [
+   "MR",
+   "ABESPetro"
+  ],
+  "site": "manserv.com.br",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio.",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/manservoficial",
+  "ats": {
+   "tipo": "pandape",
+   "cfg": "manservoficial"
+  }
+ },
+ {
+  "nome": "Sodexo On-Site",
+  "origem": [
+   "MR"
+  ],
+  "site": "sodexo.com.br",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio.",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/sodexo"
+ },
+ {
+  "nome": "Belov Engenharia",
+  "origem": [
+   "MR"
+  ],
+  "site": "belov.com.br",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio.",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Bourbon",
+  "origem": [
+   "MR"
+  ],
+  "site": "bourbonoffshore.com",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio.",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/bourbon"
+ },
+ {
+  "nome": "Tidewater",
+  "origem": [
+   "MR"
+  ],
+  "site": "tdw.com",
+  "obs": "O sistema achado pelo nome era de outra empresa.",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/65967",
+  "ats_descartado": {
+   "tipo": "inhire",
+   "cfg": "tdw",
+   "vagas": 0,
+   "nome_no_sistema": "Wilson Sons Offshore"
+  }
+ },
+ {
+  "nome": "Elfe",
+  "origem": [
+   "MR"
+  ],
+  "site": "elfe.com.br",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio.",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Imetame",
+  "origem": [
+   "MR",
+   "ABPIP"
+  ],
+  "site": "imetame.com.br",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio.",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Navemar",
+  "origem": [
+   "MR"
+  ],
+  "site": "",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio.",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Astromarítima",
+  "origem": [
+   "MR"
+  ],
+  "site": "",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio.",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Engeman",
+  "origem": [
+   "MR"
+  ],
+  "site": "",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio.",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Petrobras",
+  "origem": [
+   "MR"
+  ],
+  "site": "petrobras.com.br",
+  "obs": "Contrata por concurso público.",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/petrobras"
+ },
+ {
+  "nome": "Brunel",
+  "origem": [
+   "MR",
+   "Consultoria de recrutamento",
+   "NBCC",
+   "IADC Brazil"
+  ],
+  "site": "brunel.net",
+  "ats": {
+   "tipo": "brunel",
+   "cfg": ""
+  }
+ },
+ {
+  "nome": "Airswift",
+  "origem": [
+   "MR",
+   "Consultoria de recrutamento"
+  ],
+  "site": "airswift.com",
+  "ats": {
+   "tipo": "airswift",
+   "cfg": ""
+  }
+ },
+ {
+  "nome": "Atlas NextWave",
+  "origem": [
+   "MR",
+   "Consultoria de recrutamento"
+  ],
+  "site": "atlasnextwave.com",
+  "ats": {
+   "tipo": "atlas",
+   "cfg": ""
+  }
+ },
+ {
+  "nome": "MDE Group",
+  "origem": [
+   "MR",
+   "Consultoria de recrutamento"
+  ],
+  "site": "mde-group.com",
+  "ats": {
+   "tipo": "mde",
+   "cfg": ""
+  }
+ },
+ {
+  "nome": "Aldelia",
+  "origem": [
+   "MR",
+   "Consultoria de recrutamento"
+  ],
+  "site": "aldelia.com",
+  "ats": {
+   "tipo": "beehire",
+   "cfg": "aldelia"
+  }
+ },
+ {
+  "nome": "AK Operações do Brasil Ltda.",
+  "origem": [
+   "ABEAM"
+  ],
+  "site": "https://AKOFSoffshore.com",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/akofs-offshore"
+ },
+ {
+  "nome": "Aracaju Serviços Auxiliares Ltda.",
+  "origem": [
+   "ABEAM"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "ASSO Marítima Navegação Ltda.",
+  "origem": [
+   "ABEAM"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Belov Engenharia S/A",
+  "origem": [
+   "ABEAM"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Bram Offshore Transportes Marítimos Ltda.",
+  "origem": [
+   "ABEAM"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Brasbunker Participações S/A",
+  "origem": [
+   "ABEAM",
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Camorim Serviços Marítimos Ltda.",
+  "origem": [
+   "ABEAM",
+   "IADC Brazil",
+   "SINAVAL"
+  ],
+  "site": "https://camorim.com.br/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/camorimoficial",
+  "ats": {
+   "tipo": "inhire",
+   "cfg": "camorim",
+   "vagas": 14,
+   "nome_no_sistema": "Camorim"
+  },
+  "mesma_conta_de": "Camorim",
+  "pausada": true
+ },
+ {
+  "nome": "CBO - Serviços Marítimos Ltda.",
+  "origem": [
+   "ABEAM"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Columbus Offshore S/A",
+  "origem": [
+   "ABEAM"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "CMM Offshore Brasil Ltda.",
+  "origem": [
+   "ABEAM"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Companhia Brasileira de Offshore",
+  "origem": [
+   "ABEAM"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Dof Subsea Brasil Serviços Ltda.",
+  "origem": [
+   "ABEAM"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Dofcon Navegação Ltda.",
+  "origem": [
+   "ABEAM"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Finarge Apoio Marítimo Ltda.",
+  "origem": [
+   "ABEAM"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Fugro Brasil Serviços Submarinos e Levantamentos Ltda.",
+  "origem": [
+   "ABEAM"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Hornbeck Offshore Navegação Ltda.",
+  "origem": [
+   "ABEAM"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Locar Guindastes e Transporte Intermodal Ltda.",
+  "origem": [
+   "ABEAM"
+  ],
+  "site": "https://www.locar.com.br",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/locar-guindastes-e-transportes-intermodais"
+ },
+ {
+  "nome": "Maraú Navegação Ltda.",
+  "origem": [
+   "ABEAM"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Marlin Navegação S/A",
+  "origem": [
+   "ABEAM"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Navvik Services Ltda.",
+  "origem": [
+   "ABEAM",
+   "ABESPetro"
+  ],
+  "site": "https://navvik.com.br",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/navvikoffshore"
+ },
+ {
+  "nome": "Norskan Offshore Ltda.",
+  "origem": [
+   "ABEAM"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Oceânica Engenharia e Consultoria S/A",
+  "origem": [
+   "ABEAM"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "OceanPact Navegação Ltda.",
+  "origem": [
+   "ABEAM"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21",
+  "ats": {
+   "tipo": "inhire",
+   "cfg": "oceanpact",
+   "vagas": 73,
+   "nome_no_sistema": "OceanPact"
+  },
+  "mesma_conta_de": "OceanPact",
+  "pausada": true
+ },
+ {
+  "nome": "OceanPact Serviços Marítimos S/A",
+  "origem": [
+   "ABEAM"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21",
+  "ats": {
+   "tipo": "inhire",
+   "cfg": "oceanpact",
+   "vagas": 73,
+   "nome_no_sistema": "OceanPact"
+  },
+  "mesma_conta_de": "OceanPact",
+  "pausada": true
+ },
+ {
+  "nome": "OSM do Brasil Gerenciamento de Operações Marítimas Ltda.",
+  "origem": [
+   "ABEAM"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Posidonia Shipping & Trading Ltda.",
+  "origem": [
+   "ABEAM"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Saipem do Brasil Serviços de Petóleo Ltda.",
+  "origem": [
+   "ABEAM"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "SEA 1 Offshore do Brasil S/A",
+  "origem": [
+   "ABEAM"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Sistac - Sistemas de Acesso S/A",
+  "origem": [
+   "ABEAM"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Solstad Navegação Marítima Ltda.",
+  "origem": [
+   "ABEAM"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21",
+  "ats": {
+   "tipo": "inhire",
+   "cfg": "solstad",
+   "vagas": 2,
+   "nome_no_sistema": "Solstad"
+  },
+  "mesma_conta_de": "Solstad",
+  "pausada": true
+ },
+ {
+  "nome": "Solstad Shipping Ltda.",
+  "origem": [
+   "ABEAM"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21",
+  "ats": {
+   "tipo": "inhire",
+   "cfg": "solstad",
+   "vagas": 2,
+   "nome_no_sistema": "Solstad"
+  },
+  "mesma_conta_de": "Solstad",
+  "pausada": true
+ },
+ {
+  "nome": "Starnav Serviços Marítimos Ltda.",
+  "origem": [
+   "ABEAM"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Tidewater do Brasil S/A",
+  "origem": [
+   "ABEAM"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Tranship Transportes Marítimos Ltda.",
+  "origem": [
+   "ABEAM"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "UP Offshore Apoio Marítimo Ltda.",
+  "origem": [
+   "ABEAM"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Wilson Sons Serviços Marítimos Ltda.",
+  "origem": [
+   "ABEAM"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Estaleiro Rio Maguari",
+  "origem": [
+   "ABEEMAR"
+  ],
+  "site": "https://riomaguari.com.br/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/estaleiro-rio-maguari"
+ },
+ {
+  "nome": "Transpetro",
+  "origem": [
+   "ABEEMAR"
+  ],
+  "site": "https://transpetro.com.br/transpetro-institucional/",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "EBSE",
+  "origem": [
+   "ABEEMAR"
+  ],
+  "site": "https://ebse.com.br/",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Alfa Bierges",
+  "origem": [
+   "ABEEMAR"
+  ],
+  "site": "https://alfabierges.com.br/",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "DLC",
+  "origem": [
+   "ABEEMAR"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Triunfo Logística",
+  "origem": [
+   "ABEEMAR"
+  ],
+  "site": "https://triunfologistica.com.br/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/triunfo-logistica"
+ },
+ {
+  "nome": "Casa Offshore Automação",
+  "origem": [
+   "ABEEMAR"
+  ],
+  "site": "https://casaoffshoreautomacao.com.br/",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "OSX Brasil",
+  "origem": [
+   "ABEEMAR",
+   "IBP"
+  ],
+  "site": "https://www.osx.com.br/",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Ecovix",
+  "origem": [
+   "ABEEMAR"
+  ],
+  "site": "https://www.ecovix.com/",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Bravante",
+  "origem": [
+   "ABEEMAR",
+   "NBCC"
+  ],
+  "site": "https://bravante.com.br/",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Açotubo",
+  "origem": [
+   "ABEEMAR"
+  ],
+  "site": "https://www.acotubo.com.br/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/grupoacotubo",
+  "ats": {
+   "tipo": "gupy",
+   "cfg": "acotubo",
+   "vagas": 13,
+   "nome_no_sistema": "Grupo Açotubo"
+  },
+  "somente_og": true
+ },
+ {
+  "nome": "Ghenova",
+  "origem": [
+   "ABEEMAR"
+  ],
+  "site": "https://ghenova.com/en/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/ghenova"
+ },
+ {
+  "nome": "MB Indústria Mecânica",
+  "origem": [
+   "ABEEMAR"
+  ],
+  "site": "https://www.mbindmecanica.com.br/",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "One Nature",
+  "origem": [
+   "ABEEMAR"
+  ],
+  "site": "https://1nature.com/",
+  "mapeado_em": "2026-10-21",
+  "ats_descartado": {
+   "tipo": "gupy",
+   "cfg": "one",
+   "vagas": 0,
+   "nome_no_sistema": "One "
+  },
+  "obs": "O sistema achado pelo nome era de outra empresa."
+ },
+ {
+  "nome": "Voith",
+  "origem": [
+   "ABEEMAR"
+  ],
+  "site": "https://voith.com/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/voithgroup"
+ },
+ {
+  "nome": "Enterlog",
+  "origem": [
+   "ABEEMAR"
+  ],
+  "site": "https://www.enterlog.com.br/",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "MO",
+  "origem": [
+   "ABEEMAR"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Five Air",
+  "origem": [
+   "ABEEMAR"
+  ],
+  "site": "https://www.fiveair.com.br/",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "MRM Logistics",
+  "origem": [
+   "ABEEMAR"
+  ],
+  "site": "https://mrmlogistics.com.br/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/mrmlogistics",
+  "ats_descartado": {
+   "tipo": "gupy",
+   "cfg": "mrm",
+   "vagas": 0,
+   "nome_no_sistema": "Vagas MRM Brasil"
+  },
+  "obs": "O sistema achado pelo nome era de outra empresa."
+ },
+ {
+  "nome": "Roxtec",
+  "origem": [
+   "ABEEMAR"
+  ],
+  "site": "https://www.roxtec.com/br/",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Vesper",
+  "origem": [
+   "ABEEMAR"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "QLP Group",
+  "origem": [
+   "ABEEMAR"
+  ],
+  "site": "https://qlpgroup.com.br/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/qlp-group"
+ },
+ {
+  "nome": "Mackay Communications",
+  "origem": [
+   "ABEEMAR"
+  ],
+  "site": "https://www.mackaycomm.com/",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Anschütz",
+  "origem": [
+   "ABEEMAR"
+  ],
+  "site": "https://www.anschuetz.com/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/anschuetz-kiel"
+ },
+ {
+  "nome": "R&M Electrical",
+  "origem": [
+   "ABEEMAR"
+  ],
+  "site": "https://www.rm-electrical.com/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/r"
+ },
+ {
+  "nome": "Flexprin",
+  "origem": [
+   "ABEEMAR"
+  ],
+  "site": "https://flexprin.com.br/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/flexprin-ind"
+ },
+ {
+  "nome": "Minura",
+  "origem": [
+   "ABEEMAR"
+  ],
+  "site": "https://www.linkedin.com/company/minura/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/minura",
+  "ats_descartado": {
+   "tipo": "gupy",
+   "cfg": "linkedin",
+   "vagas": 0,
+   "nome_no_sistema": "Linkedin"
+  },
+  "obs": "O sistema achado pelo nome era de outra empresa."
+ },
+ {
+  "nome": "Aegir Marine",
+  "origem": [
+   "ABEEMAR"
+  ],
+  "site": "https://www.aegirmarine.com/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/aegir-marine-bv"
+ },
+ {
+  "nome": "Vulkan",
+  "origem": [
+   "ABEEMAR"
+  ],
+  "site": "https://vulkan.com/",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Smart Service",
+  "origem": [
+   "ABEEMAR"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21",
+  "ats_descartado": {
+   "tipo": "gupy",
+   "cfg": "smart",
+   "vagas": 4,
+   "nome_no_sistema": "TALENTOS SMART"
+  },
+  "obs": "O sistema achado pelo nome era de outra empresa."
+ },
+ {
+  "nome": "Delta Safety",
+  "origem": [
+   "ABEEMAR"
+  ],
+  "site": "https://deltasafety.com.br/",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Palm",
+  "origem": [
+   "ABEEMAR"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "FXX",
+  "origem": [
+   "ABEEMAR"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Gaia Silva Gaede Advogados",
+  "origem": [
+   "ABEEMAR"
+  ],
+  "site": "https://gsga.com.br/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/gaiasilvagaedeadvogados",
+  "ats": {
+   "tipo": "solides",
+   "cfg": "gsgasp"
+  },
+  "pausada": true,
+  "obs": "Fora do setor (escritório de advocacia)."
+ },
+ {
+  "nome": "Four Corretora",
+  "origem": [
+   "ABEEMAR"
+  ],
+  "site": "http://www.fourcorretora.com.br/",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Consilium",
+  "origem": [
+   "ABEEMAR"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Belga Marine",
+  "origem": [
+   "ABEEMAR"
+  ],
+  "site": "https://belgamarine.com.br/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/belga-marine"
+ },
+ {
+  "nome": "ASA Consultoria",
+  "origem": [
+   "ABEEMAR",
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21",
+  "ats_descartado": {
+   "tipo": "gupy",
+   "cfg": "consultoria",
+   "vagas": 0,
+   "nome_no_sistema": "Softgun"
+  },
+  "obs": "O sistema achado pelo nome era de outra empresa."
+ },
+ {
+  "nome": "Metizoft",
+  "origem": [
+   "ABEEMAR",
+   "IADC Brazil"
+  ],
+  "site": "https://metizoft.com/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/metizoft-as"
+ },
+ {
+  "nome": "Zigmo",
+  "origem": [
+   "ABEEMAR"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "JL Comex",
+  "origem": [
+   "ABEEMAR"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Facility",
+  "origem": [
+   "ABEEMAR"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "KOMEA",
+  "origem": [
+   "ABEEMAR"
+  ],
+  "site": "http://www.komea.kr/",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "AHK Brasil-Alemanha",
+  "origem": [
+   "ABEEMAR"
+  ],
+  "site": "https://www.ahkbrasilien.com.br/br",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/ahkbrasil"
+ },
+ {
+  "nome": "Gricco",
+  "origem": [
+   "ABEEMAR"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Teknofil",
+  "origem": [
+   "ABEEMAR"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Dinamus Consultoria",
+  "origem": [
+   "ABEEMAR"
+  ],
+  "site": "https://dinamusconsultoria.com.br/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/dinamusconsultoria-desenvolvimento-de-negocios"
+ },
+ {
+  "nome": "GSEG",
+  "origem": [
+   "ABEEMAR"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Casado Martins",
+  "origem": [
+   "ABEEMAR"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Meetal",
+  "origem": [
+   "ABEEMAR"
+  ],
+  "site": "https://meetal.com.br/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/meetal-br"
+ },
+ {
+  "nome": "Fide",
+  "origem": [
+   "ABEEMAR"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Onda",
+  "origem": [
+   "ABEEMAR"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Enform",
+  "origem": [
+   "ABEEMAR"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Estaleiro Tubarão Branco",
+  "origem": [
+   "ABEEMAR",
+   "SINAVAL"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Mais Sabor",
+  "origem": [
+   "ABEEMAR"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "GreenJob",
+  "origem": [
+   "ABEEMAR"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "4subsea Do Brasil",
+  "origem": [
+   "IBP",
+   "NBCC"
+  ],
+  "site": "https://www.4subsea.com/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/4subsea"
+ },
+ {
+  "nome": "6XPhere",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "7 Minds Partners",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Abb Automação Ltda",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "ABC DRIVES AUTOMACAO INDUSTRIAL LTDA",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Accenture do Brasil Ltda",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Acelen",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "AFINKO SOLUÇÕES EM POLÍMEROS",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Afton Chemical Industria De Aditivos Ltda",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Air BP Brasil Ltda",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Albriggs Defesa Ambiental S/A",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "ALL FACILITIES LTDA",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Altave Indústria, Comércio e Exportação de Aeronaves S/A",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "ALTERA PETROJARL I SERVIÇOS DE PETRÓLEO LTDA",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Altus Sistemas De Automacao S/A",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Alvarez & Marsal Consultoria Em Engenharia Ltda",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Ambiental - Engenharia e Consultoria",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Ambipar Response Tank Cleaning S/A",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "American Bureau of Shipping - ABS",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "AMSPEC BRASIL INSPEÇÕES TÉCNICAS LTDA",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "ARGUS MEDIA BRASIL",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "ASAS - AGÊNCIA DE SOLUÇÕES AMBIENTAIS E SOCIAIS",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Baker Hughes do Brasil Ltda",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Betunel Indústria E Comercio Ltda",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21",
+  "ats": {
+   "tipo": "gupy",
+   "cfg": "betunel",
+   "vagas": 9,
+   "nome_no_sistema": "Betunel "
+  },
+  "somente_og": true
+ },
+ {
+  "nome": "Bichara Advogados",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21",
+  "ats": {
+   "tipo": "gupy",
+   "cfg": "bichara-advogados",
+   "vagas": 26,
+   "nome_no_sistema": "Carreira | Bichara Advogados"
+  },
+  "pausada": true,
+  "obs": "Fora do setor (escritório de advocacia)."
+ },
+ {
+  "nome": "BMA Advogados",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "BOLSA BRASILEIRA DE GÁS NATURAL (BBGN)",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "BP Energy",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Bradesco",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21",
+  "ats": {
+   "tipo": "inhire",
+   "cfg": "bradesco",
+   "vagas": 1,
+   "nome_no_sistema": "Bradesco"
+  },
+  "somente_og": true
+ },
+ {
+  "nome": "BRASKEM",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Brasquimica Produtos Asfalticos Ltda",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "BRH Saúde Corporativo (BRMED)",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Bristow Taxi Aereo Ltda",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "BTG Pactual S.A",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "CAPCO BRASIL SERVIÇOS E CONSULTORIA LTDA",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Casa Offshore Comercio e Serviço",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Castrol Brasil Ltda",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Cataldo Oil Gas & Energy Law",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Cattalini Terminais Maritimos S/A",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Cbb - indústria e comércio de asfaltos e engenharia Ltda",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "CESCON, BARRIEU, FLESCH E BARRETO SOCIEDADE DE ADVOGADOS",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Chevron Brasil Óleo E Gás Ltda",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "CLAM ENGENHARIA",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21",
+  "ats": {
+   "tipo": "inhire",
+   "cfg": "clam",
+   "vagas": 36,
+   "nome_no_sistema": "Clam"
+  }
+ },
+ {
+  "nome": "CNODC (CNPC)",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "CNOOC",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Companhia de Gás Da Bahia - Bahiagas",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Companhia de Gás de São Paulo - Comgas",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Companhia Ultragaz",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Confab Industrial S/A (Tenaris)",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Copa Energia Distribuidora de Gás S.A.",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Cosan Lubrificantes E Especialidades S.A.",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21",
+  "ats": {
+   "tipo": "gupy",
+   "cfg": "cosan",
+   "vagas": 0,
+   "nome_no_sistema": "Cosan"
+  },
+  "somente_og": true
+ },
+ {
+  "nome": "CRISSIUMA ADVOGADOS",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Deloitte Touche Tohmatsu Consultores Ltda",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21",
+  "ats": {
+   "tipo": "inhire",
+   "cfg": "deloitte",
+   "vagas": 208,
+   "nome_no_sistema": "Deloitte"
+  },
+  "somente_og": true
+ },
+ {
+  "nome": "DNV Classificação, Certificação e Consultoria Brasil Ltda",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Domingues E Pinho Consultores Ltda",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Dss Sustainable Solutions Do Brasil Ltda",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Dynatest Engenharia Ltda",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "EB Bombas",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Ecopart Assessoria em Negócios Empresariais",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Ecopetrol",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21",
+  "ats": {
+   "tipo": "gupy",
+   "cfg": "ecopetrol",
+   "vagas": 0,
+   "nome_no_sistema": "Ecopetrol Brasil"
+  }
+ },
+ {
+  "nome": "ERM Brasil Ltda.",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Excelerate Energy Comercializadora de Gás Natural Ltda",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "EXXON MOBIL",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "EY AUDITORES (ERNST & YOUNG AUDITORES INDEPENDENTES)",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Falconi Consultores LTDA",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21",
+  "ats": {
+   "tipo": "inhire",
+   "cfg": "falconi",
+   "vagas": 0,
+   "nome_no_sistema": "Falconi"
+  },
+  "somente_og": true
+ },
+ {
+  "nome": "Faveret, Tepedino, Londres & Fraga Advogados",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Fluxys Brasil S/A",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "FMC Technologies do Brasil Ltda (Technip)",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Forship",
+  "origem": [
+   "IBP",
+   "ABESPetro"
+  ],
+  "site": "https://www.forship.com/pt-BR/index.html",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Framo Do Brasil Ltda",
+  "origem": [
+   "IBP",
+   "NBCC"
+  ],
+  "site": "https://www.framo.com/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/framopumps",
+  "ats": {
+   "tipo": "workday",
+   "cfg": [
+    "alfalaval",
+    "Framo_jobs"
+   ],
+   "wd": 3
+  }
+ },
+ {
+  "nome": "Furtado Nemer Advogados",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "GASHUB",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Grupo IPB",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Halliburton Produtos Ltda",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Helix do Brasil Serviços de Petróleo Ltda",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Honeywell Do Brasil Ltda",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Horiens",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Iconic Lubrificantes S/A",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21",
+  "ats": {
+   "tipo": "gupy",
+   "cfg": "iconic",
+   "vagas": 11,
+   "nome_no_sistema": "ICONIC"
+  },
+  "somente_og": true
+ },
+ {
+  "nome": "Ikm Testing Brasil Ltda",
+  "origem": [
+   "IBP",
+   "NBCC",
+   "ABESPetro"
+  ],
+  "site": "http://www.ikm.com/ikm-testing-brasil",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Infotec Consultoria E Planejamento",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Ingevity Química Ltda",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Ingrax Industria E Comercio De Graxas S/A",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Innospec Do Brasil Imp E Com. De Produtos Quimicos",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "INSTITUTO INICIATIVA EMPRESARIAL PELA IGUALDADE",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Intelie Soluções em Informática S/A",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Intero Integrity Services Brasil Eireli",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Intrix Engenharia",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "IPB GR INDÚSTRIA MECÂNICA LTDA",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Ipiranga Produtos de Petróleo",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21",
+  "ats": {
+   "tipo": "gupy",
+   "cfg": "ipiranga",
+   "vagas": 23,
+   "nome_no_sistema": "Ipiranga"
+  },
+  "somente_og": true
+ },
+ {
+  "nome": "Itaú",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "J. Martinelli Advogados",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Karoon",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "KPMG Auditores Independentes",
+  "origem": [
+   "IBP",
+   "NBCC"
+  ],
+  "site": "https://home.kpmg/br/pt/home.html",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/kpmg-brasil",
+  "ats": {
+   "tipo": "inhire",
+   "cfg": "kpmg",
+   "vagas": 207,
+   "nome_no_sistema": "KPMG"
+  },
+  "somente_og": true
+ },
+ {
+  "nome": "Leal Cotrim Jansen Advogados",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Lefosse Advogados",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21",
+  "ats": {
+   "tipo": "gupy",
+   "cfg": "lefosse",
+   "vagas": 22,
+   "nome_no_sistema": "Lefosse"
+  },
+  "pausada": true,
+  "obs": "Fora do setor (escritório de advocacia)."
+ },
+ {
+  "nome": "Logum Logística S/A",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Machado, Meyer, Sendacz E Opice Advogados",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Maneira Advogados",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Marine Production Systems Do Brasil Ltda (OCEANEERING)",
+  "origem": [
+   "IBP",
+   "IADC Brazil"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "MATRIX COMERCIALIZADORA DE GAS",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Mattos Filho,Veiga Filho,Marrey Jr. e Quiroga Advogados",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "MCS Markup Assessoria Empresarial",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Misc Berhad",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Modec Serviços De Petróleo",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "MOL (Brasil) LTDA/ (Mitsui OSK Lines)",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "MSA do Brasil Equip. e Instrumentos de Segurança Ltda",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "MTX Comercializadora de Gás",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Mubadala Consultoria Financeira e Gestora de Recursos Ltda.",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Murphy",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "MXM Sistemas e Serviços de Informática LTDA",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Nacional Gás Butano Distribuidora Ltda.",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Naturgy",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "NewFields",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "NFE POWER BRASIL PARTICIPAÇÕES SA (New Fortress)",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Nokia Solutions and Networks do Brasil Telecomunicações Ltda",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "NSG Engenharia LTDA",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Oceanpact Navegação",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21",
+  "ats": {
+   "tipo": "inhire",
+   "cfg": "oceanpact",
+   "vagas": 73,
+   "nome_no_sistema": "OceanPact"
+  },
+  "mesma_conta_de": "OceanPact",
+  "pausada": true
+ },
+ {
+  "nome": "OCEANSERV",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "OCYAN DRILLING S.A. (FORESEA)",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21",
+  "ats": {
+   "tipo": "gupy",
+   "cfg": "ocyan",
+   "vagas": 15,
+   "nome_no_sistema": "Ocyan"
+  },
+  "mesma_conta_de": "Ocyan",
+  "pausada": true
+ },
+ {
+  "nome": "Offshore Link Sat Ltda",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "OnCorp",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Origem Energia S.A.",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Ouro Nova",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Oxiteno S.A",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Pan American Energy",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21",
+  "ats_descartado": {
+   "tipo": "gupy",
+   "cfg": "panamerican",
+   "vagas": 5,
+   "nome_no_sistema": "Pan American Silver Brasil"
+  },
+  "obs": "O sistema achado pelo nome era de outra empresa."
+ },
+ {
+  "nome": "Pandenor",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Pepperl+Fuchs LTDA",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Perenco",
+  "origem": [
+   "IBP",
+   "ABPIP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "PETROBRAS - Petróleo Brasileiro S.A.",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Petrobras Transporte S/A - Transpetro",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Petrogal Brasil",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Petroreconcavo S/A",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21",
+  "ats": {
+   "tipo": "inhire",
+   "cfg": "petroreconcavo",
+   "vagas": 16,
+   "nome_no_sistema": "PetroReconcavo"
+  },
+  "mesma_conta_de": "PetroReconcavo",
+  "pausada": true
+ },
+ {
+  "nome": "Pinheiro Neto Advogados",
+  "origem": [
+   "IBP",
+   "NBCC"
+  ],
+  "site": "http://www.pinheironeto.com.br/",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Porto Sudeste",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21",
+  "ats_descartado": {
+   "tipo": "gupy",
+   "cfg": "porto",
+   "vagas": 185,
+   "nome_no_sistema": "Porto"
+  },
+  "obs": "O sistema achado pelo nome era de outra empresa."
+ },
+ {
+  "nome": "Promax Produtos Maximos S/A ind e com",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Prumo Logistica S/A",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "QPI BRASIL PETROLEO LTDA (QATAR PETROLEUM)",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Radix Engenharia E Desenvolvimento De Software",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21",
+  "ats": {
+   "tipo": "inhire",
+   "cfg": "radix",
+   "vagas": 107,
+   "nome_no_sistema": "Radix"
+  },
+  "somente_og": true
+ },
+ {
+  "nome": "RAIZEN S.A.",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Rosenbra Engenharia Brasil Ltda",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "RSM Brasil",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21",
+  "ats": {
+   "tipo": "gupy",
+   "cfg": "rsmbrasil",
+   "vagas": 59,
+   "nome_no_sistema": "Carreiras RSM | Geral"
+  },
+  "somente_og": true
+ },
+ {
+  "nome": "Rystad",
+  "origem": [
+   "IBP",
+   "NBCC"
+  ],
+  "site": "http://www.rystadenergy.com",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Saipem do Brasil Serviços de Petróleo Ltda",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Salomão, Kaiuca & Abrahão Sociedade De Advogados",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Samson Control Ltda",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Schneider Electric Brasil Automação De Processos LTDA",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "SEATRIUM Fels Brasil SA",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Senai DN - Serviço Nacional De Aprendizagem Industrial",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "SENAI RN - SERVIÇO NACIONAL DE APRENDIZAGEM INDUSTRIAL",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Serviços De Petróleo Constellation",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Shell Brasil Petróleo",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Simpipe",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "SINDICATO NACIONAL DO COMERCIO TRANS. REV. RET. DE COMBUSTIVEIS",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Sonda",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Souto, Correa Advocacia",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "SPEEDCAST (CAPROCK COMUNICAÇÕES)",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Stormgeo",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Stratura Asfaltos S/A",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Supergasbras Energia",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21",
+  "ats": {
+   "tipo": "gupy",
+   "cfg": "supergasbras",
+   "vagas": 72,
+   "nome_no_sistema": "Supergasbras"
+  },
+  "somente_og": true
+ },
+ {
+  "nome": "Superior Energy Services - Serviços de Petróleo do Brasil Ltda",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "SYENSQO Quimicos e Soluções Sustentáveis do Brasil",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "TAGD Advogados",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Tata Consultancy Services Do Brasil Ltda (TCS)",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Tauil e Chequer Advogados Associados",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "TBX Upstream do Brasil",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Techint Engenharia E Construção S/A",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Tecnoil Comercio E Representacoes Ltda",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "TGS do Brasil Ltda",
+  "origem": [
+   "IBP",
+   "NBCC"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "The Boston Consulting Group (Brasil) Ltda",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "TOTALENERGIES",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Transportadora Associada de Gás S/A - TAG",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Transportadora Brasileira Gasoduto Bolivia-Brasil S/A TBG",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Trench, Rossi E Watanabe Advogados",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Trident",
+  "origem": [
+   "IBP",
+   "ABPIP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Triunfo Logistica Ltda",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "T&T Sistemas Brasil LTDA",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Ute Gna I Geração De Energia S.A.",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Vallourec Solucoes Tubulares Do Brasil S/A",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Vanasa Multigas Engenharia, Indústria E Comércio Ltda",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Vibra Energia",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21",
+  "ats": {
+   "tipo": "gupy",
+   "cfg": "vibraenergia",
+   "vagas": 47,
+   "nome_no_sistema": "Vibra Energia"
+  },
+  "somente_og": true
+ },
+ {
+  "nome": "Vieira, Rezende E Guerreiro Advogados",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "VIRIDIEN",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Vitol Do Brasil Ltda",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Weatherford Industria E Comercio Ltda",
+  "origem": [
+   "IBP",
+   "IADC Brazil"
+  ],
+  "site": "https://www.weatherford.com/",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Westlawn Brasil",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "WILSON SONS HOLDINGS BRASIL S.A",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Zerust",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "3DMatCIS",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "ATOMUM",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "BioRen",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Carbonova",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Deep Solutions",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Descarbontech",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "EvcomX",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "FindOut Oil",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Geowellex",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Goldfine",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Hai Inovação / Hybrid IA",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Integral IMI",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "MicroDots",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Neovision",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Orion",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Paresi",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Pix Force",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21",
+  "ats": {
+   "tipo": "inhire",
+   "cfg": "pixforce",
+   "vagas": 0,
+   "nome_no_sistema": "Pix Force"
+  }
+ },
+ {
+  "nome": "Play2Learn",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "RFID Brasil",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "SANDECH iN!",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "TCX",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "The Insight",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Trackfy",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21",
+  "ats": {
+   "tipo": "inhire",
+   "cfg": "trackfy",
+   "vagas": 6,
+   "nome_no_sistema": "Trackfy"
+  }
+ },
+ {
+  "nome": "Vertesis",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Voltpile",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "WDL",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "WIISE",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Zel Care",
+  "origem": [
+   "IBP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "ABEAM",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "http://www.abeam.org.br",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Abran",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "http://abran.org",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Adonis AS",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "https://www.adonis.no/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/adonis-the-global-human-resource-solution"
+ },
+ {
+  "nome": "Aegir Marine Brasil Ltda",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "https://www.aegirmarine.com/en/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/aegir-marine-bv"
+ },
+ {
+  "nome": "American Bureau of Shipping",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "http://www.eagle.org/",
+  "mapeado_em": "2026-10-21",
+  "ats_descartado": {
+   "tipo": "gupy",
+   "cfg": "eagle",
+   "vagas": 0,
+   "nome_no_sistema": "Eagle - Empreendimentos Imobiliários "
+  },
+  "obs": "O sistema achado pelo nome era de outra empresa."
+ },
+ {
+  "nome": "Archer Drilling",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "https://archerwell.com/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/archer---the-well-company"
+ },
+ {
+  "nome": "ASPEN OFFSHORE LTDA",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Axess do Brasil LTDA",
+  "origem": [
+   "NBCC",
+   "IADC Brazil"
+  ],
+  "site": "https://www.axessgroup.com/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/axessgroup"
+ },
+ {
+  "nome": "Beerenberg Brasil Ltd",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "https://beerenberg.com/en/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/beerenberg"
+ },
+ {
+  "nome": "Borregard Brasil",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "http://www.borregaard.com/",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "BR VISA",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "http://www.br-visa.com.br/en/",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Braaten technology",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "https://braaten.technology/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/81986339"
+ },
+ {
+  "nome": "Brazilship/Scanbrasil",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "http://www.brazilship.com.br",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "BTG Pactual Advisors",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "https://advisors.btgpactual.com/",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Bunker One",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "https://bunkerone.com/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/bunkerone"
+ },
+ {
+  "nome": "Campos Mello Advogados",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "http://www.cmalaw.com",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Castro Barros",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "https://castrobarros.com.br/en/team/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/castro-barros-advogados"
+ },
+ {
+  "nome": "TOCANTINS ADVOGADOS",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "https://www.ctadv.com.br/",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Damen",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "http://www.damen.com/",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "DAYTWO",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Delta Offshore",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "https://www.deltaoffshore.com.br/",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "DNB",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "http://www.dnb.no",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "DNV",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "http://www.dnvgl.com",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Dolphin Drilling Brasil",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "http://www.dolphindrilling.no",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Domingues e Pinho Contadores",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "http://www.dpc.com.br",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Fernanda Gabriel Arquitetos Associados",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "FMC Logística & Aduaneira",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "GARD",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "GIEK",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "http://www.giek.no",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Grupo Alma / Almeida Automação",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "https://grupoalma.com.br/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/somosgrupoalma"
+ },
+ {
+  "nome": "Grupo Nicomex Logística Internacional",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Grupo Planus",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "http://www.grupoplanus.com.br/",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Gunnebo Industries",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "http://www.gunneboindustries.com.br/",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Gyromar Sat",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "https://gyromarsat.com.br/",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "HBI Serv. Adm. Eireli",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "HOEGH LNG BRASIL LTDA",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "https://hoeghevi.com/",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Hunting do Brasil",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "https://huntingplc.com/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/hunting-energy-services",
+  "ats_descartado": {
+   "tipo": "gupy",
+   "cfg": "hunting",
+   "vagas": 0,
+   "nome_no_sistema": "Vagas Estratégicas"
+  },
+  "obs": "O sistema achado pelo nome era de outra empresa."
+ },
+ {
+  "nome": "Hydro do Brasil",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "http://www.hydro.com",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "ICM DO BRASIL RECURSOS HUMANOS LTDA",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "https://icmpeople.com/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/icmgroup"
+ },
+ {
+  "nome": "IKM SUBSEA BRASIL LTDA",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "https://www.ikm.com/ikm-subsea/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/ikm-subsea-as"
+ },
+ {
+  "nome": "Innovation Norway",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "http://www.innovasjonnorge.no/",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "IPIRANGA",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "https://portal.ipiranga/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/petroleo-ipiranga",
+  "ats": {
+   "tipo": "gupy",
+   "cfg": "ipiranga",
+   "vagas": 23,
+   "nome_no_sistema": "Ipiranga"
+  },
+  "somente_og": true,
+  "mesma_conta_de": "Ipiranga Produtos de Petróleo",
+  "pausada": true
+ },
+ {
+  "nome": "Jocatec Corretagem de Seguros Ltda",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "http://www.jocatec.com.br",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Jotun",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "http://www.jotun.com",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Knutsen OAS Shipping",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "http://knutsenoas.com/",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Kongsberg Maritime do Brasil Ltda.",
+  "origem": [
+   "NBCC",
+   "IADC Brazil"
+  ],
+  "site": "http://www.km.kongsberg.com",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Law Offices Carl kincaid",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "http://www.kincaid.com.br/",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Leal Cotrim Advogados",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "http://lealcotrim.com.br/",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Lefosse",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "https://lefosse.com/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/lefosse",
+  "ats": {
+   "tipo": "gupy",
+   "cfg": "lefosse",
+   "vagas": 22,
+   "nome_no_sistema": "Lefosse"
+  },
+  "pausada": true,
+  "obs": "Fora do setor (escritório de advocacia).",
+  "mesma_conta_de": "Lefosse Advogados"
+ },
+ {
+  "nome": "Lobo de Rizzo",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "https://www.ldr.com.br/",
+  "mapeado_em": "2026-10-21",
+  "ats": {
+   "tipo": "gupy",
+   "cfg": "loboderizzo",
+   "vagas": 16,
+   "nome_no_sistema": "Lobo de Rizzo"
+  },
+  "pausada": true,
+  "obs": "Fora do setor (escritório de advocacia)."
+ },
+ {
+  "nome": "Lorinvest",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "http://www.lorinvest.com.br",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Maritime Developments Brasil Ltda",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "https://maritimedevelopments.com/pt/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/maritime-developments-limited"
+ },
+ {
+  "nome": "Mattos Filho",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "https://www.mattosfilho.com.br/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/mattosfilho",
+  "ats": {
+   "tipo": "gupy",
+   "cfg": "mattosfilho",
+   "vagas": 14,
+   "nome_no_sistema": "Mattos Filho"
+  },
+  "pausada": true,
+  "obs": "Fora do setor (escritório de advocacia)."
+ },
+ {
+  "nome": "Med Rio",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "http://www.medriocheck-up.com.br",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "MHWIRTH DO BRASIL EQUIPAMENTOS LTDA.",
+  "origem": [
+   "NBCC",
+   "IADC Brazil"
+  ],
+  "site": "http://www.hmhw.com/",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Miko Marine AS",
+  "origem": [
+   "NBCC",
+   "IADC Brazil"
+  ],
+  "site": "https://mikomarine.com/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/miko-marine-as"
+ },
+ {
+  "nome": "MLS Serviços Offshore Navais Ltda. MacGregor",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "http://www.macgregor.com",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "M&O Maritime and Offshore Partners",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "http://www.mopartners.global",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "NOV INTERVENTION AND STIMULATION EQUIPMENT",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "http://www.nov.com",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "NORLENSE AS",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "https://www.norlense.no/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/norlense"
+ },
+ {
+  "nome": "NORSK SOLAR",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "https://norsksolar.com/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/norskrenewables"
+ },
+ {
+  "nome": "NORWEP – Norwegian Energy Partners",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "http://www.norwep.com/",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Ocean IMR AS",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "https://www.oceanimr.com/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/oceanimr"
+ },
+ {
+  "nome": "Ocean Pact",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "http://www.oceanpact.com/",
+  "mapeado_em": "2026-10-21",
+  "ats": {
+   "tipo": "inhire",
+   "cfg": "oceanpact",
+   "vagas": 73,
+   "nome_no_sistema": "OceanPact"
+  },
+  "mesma_conta_de": "OceanPact",
+  "pausada": true
+ },
+ {
+  "nome": "Odfjell Brasil LTDA.",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "http://www.odfjell.com/Pages/default.aspx",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "OIL STATES",
+  "origem": [
+   "NBCC",
+   "ABESPetro",
+   "ABPIP"
+  ],
+  "site": "https://oilstates.com/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/oil-states-industries"
+ },
+ {
+  "nome": "OSEP Brasil",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "http://www.osep.com.br",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "OSM THOME",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "https://osm.no",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/osm-thome"
+ },
+ {
+  "nome": "OUVI",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "http://www.ouvi.com.br",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Palfinger Marine",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "http://www.palfingermarine.com",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Plan Practical Language Solutions Ltda",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "https://www.planidiomas.com.br/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/plan-idiomas-direcionados"
+ },
+ {
+  "nome": "Portella Cabos",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "https://www.portellacabos.com.br/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/portella-cabos"
+ },
+ {
+  "nome": "Posidonia Shipping & Trading",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "PR Assessoria Empresarial Ltda.",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Prosafe Serviços Maritimos Ltd.",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "http://www.prosafe.com",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "RSM BRASIL CONSULTORIA EMPRESARIAL LTDA",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "https://www.rsm.global/brazil/pt-br/sobre-nos",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/rsm-brasil-oficial",
+  "ats": {
+   "tipo": "gupy",
+   "cfg": "rsmbrasil"
+  },
+  "somente_og": true,
+  "mesma_conta_de": "RSM Brasil",
+  "pausada": true
+ },
+ {
+  "nome": "Saga Welco Rio",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "http://www.sagawelco.com/",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Salomão, Kaiuca, Abrahão, Raposo e Cotta Advogados",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "https://www.salomaoadv.com.br/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/salomaoadvogados"
+ },
+ {
+  "nome": "SCATEC BRASIL",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "https://scatec.com/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/scatec"
+ },
+ {
+  "nome": "Sea Brokers Brasil Ltda",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "http://www.seabrokers.no",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Siem Offshore",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "http://www.siemconsub.com.br",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "SISTAC SISTEMAS DE ACESSO AS",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "https://www.sistac.com.br/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/sistac-sistemas-de-acesso"
+ },
+ {
+  "nome": "SLBOneSubsea",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "https://www.onesubsea.slb.com/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/onesubsea"
+ },
+ {
+  "nome": "Cescon, Barrieu, Flesch & Barreto Advogados",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "http://www.cesconbarrieu.com.br/",
+  "mapeado_em": "2026-10-21",
+  "ats": {
+   "tipo": "inhire",
+   "cfg": "cesconbarrieu",
+   "vagas": 20,
+   "nome_no_sistema": "Cescon Barrieu"
+  },
+  "pausada": true,
+  "obs": "Fora do setor (escritório de advocacia)."
+ },
+ {
+  "nome": "Star Information Systems AS",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Statkraft",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "http://www.statkraft.com",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Subsea 7",
+  "origem": [
+   "NBCC",
+   "ABESPetro"
+  ],
+  "site": "http://www.subsea7.com",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Tampnet Telecom do Brasil",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "https://www.tampnet.com/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/tampnet"
+ },
+ {
+  "nome": "Tauil & Chequer Advogados",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "https://www.tauilchequer.com.br/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/tauilchequer"
+ },
+ {
+  "nome": "TozziniFreire Advogados",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "https://tozzinifreire.com.br/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/tozzinifreire-advogados",
+  "ats": {
+   "tipo": "gupy",
+   "cfg": "tozzinifreire",
+   "vagas": 29,
+   "nome_no_sistema": "Venha ser TozziniFreire"
+  },
+  "pausada": true,
+  "obs": "Fora do setor (escritório de advocacia)."
+ },
+ {
+  "nome": "TREKKING TECNOLOGIA",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "https://trekkingtecnologia.com/",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Ulstein Group",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "http://www.ulstein.com",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "V.SHIPS BRASIL S.A",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "http://www.vships.com.br/",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Valor +",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "VAN BEEST DO BRASIL",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "https://www.vanbeest.com/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/van-beest-b-v-",
+  "ats": {
+   "tipo": "recruitee",
+   "cfg": "vanbeestbv"
+  }
+ },
+ {
+  "nome": "Veirano Advogados",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "http://www.veirano.com.br",
+  "mapeado_em": "2026-10-21",
+  "ats": {
+   "tipo": "gupy",
+   "cfg": "veirano",
+   "vagas": 4,
+   "nome_no_sistema": "Veirano Advogados"
+  },
+  "pausada": true,
+  "obs": "Fora do setor (escritório de advocacia)."
+ },
+ {
+  "nome": "Ventura Petróleo S.A",
+  "origem": [
+   "NBCC",
+   "IADC Brazil"
+  ],
+  "site": "https://ventura-offshore.com/pt/",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Vieira Rezende",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "http://www.vrbg.com.br",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "VortexMundus",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "https://www.vortexmundus.com/",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "WESTHON",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Wilhelmsen Ship Management",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "https://wilhelmsen.com/ship-management/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/wilhelmsen_group",
+  "ats": {
+   "tipo": "workday",
+   "cfg": [
+    "wilhelmsen",
+    "Wilhelmsen"
+   ],
+   "wd": 3
+  }
+ },
+ {
+  "nome": "Wilhelmsen Ships Service (Unitor)",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "https://wilhelmsen.com/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/wilhelmsen-ships-service",
+  "ats": {
+   "tipo": "workday",
+   "cfg": [
+    "wilhelmsen",
+    "Wilhelmsen"
+   ],
+   "wd": 3
+  },
+  "mesma_conta_de": "Wilhelmsen Ship Management",
+  "pausada": true
+ },
+ {
+  "nome": "Yara Brasil",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "http://www.yarabrasil.com.br/",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "YINSON PRODUCTION",
+  "origem": [
+   "NBCC",
+   "ABESPetro"
+  ],
+  "site": "http://www.yinson.com.my",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Zoomout",
+  "origem": [
+   "NBCC"
+  ],
+  "site": "http://zoomout.com.br/",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Etesco Construções e Comércio LTDA.",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Ocyan/FORESEA S/A",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "https://www.foresea.com/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/foresea-offshore",
+  "ats": {
+   "tipo": "gupy",
+   "cfg": "ocyan",
+   "vagas": 15,
+   "nome_no_sistema": "Ocyan"
+  },
+  "mesma_conta_de": "Ocyan",
+  "pausada": true
+ },
+ {
+  "nome": "COSL Drilling Brasil LTDA.",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "https://www.cosl.no/",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Serviços de Petróleo Constellation S/A",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "https://www.theconstellation.com/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/constellation-oil-services",
+  "ats": {
+   "tipo": "gupy",
+   "cfg": "theconstellation",
+   "vagas": 16,
+   "nome_no_sistema": "Constellation Oil Services"
+  },
+  "mesma_conta_de": "Constellation",
+  "pausada": true
+ },
+ {
+  "nome": "(Valaris) Ensco do Brasil Petróleo e Gás LTDA.",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "https://www.valaris.com/home/default.aspx",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/valaris-limited",
+  "ats": {
+   "tipo": "oracle",
+   "cfg": [
+    "efqq.fa.us6.oraclecloud.com",
+    "CX_1",
+    null
+   ]
+  },
+  "pausada": true,
+  "mesma_conta_de": "Valaris"
+ },
+ {
+  "nome": "Seadrill Serviços de Petróleo LTDA.",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "https://www.seadrill.com/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/seadrill",
+  "ats": {
+   "tipo": "oracle",
+   "cfg": [
+    "fa-eykz-saasfaprod1.fa.ocs.oraclecloud.com",
+    "CX_1",
+    null
+   ]
+  },
+  "pausada": true,
+  "mesma_conta_de": "Seadrill"
+ },
+ {
+  "nome": "Brasdril Sociedade de Perfurações LTDA.",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "WOM do Brasil LTDA.",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "https://womgroup.com/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/worldwide-oilfield-machine"
+ },
+ {
+  "nome": "Idea Group",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "https://group-idea.com.br/",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Avantis do Brasil LTDA.",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "https://www.avantisgroup.com/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/group-avantis"
+ },
+ {
+  "nome": "Marfood Comércio e Serviços de Hotelaria LTDA.",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "https://marfood.com.br/",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Luzone Sociedade de Advogados",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "https://www.luzonelegal.com/pt/index",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/luzone-"
+ },
+ {
+  "nome": "Geoforce do Brasil",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "https://www.geoforce.com/brazil/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/geoforce-inc"
+ },
+ {
+  "nome": "SUBC do Brasil Manutenções Petrolíferas LTDA.",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "https://www.subc-engineering.com/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/subc-engineering"
+ },
+ {
+  "nome": "CSL",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "https://csl.ind.br/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/cslcilindros"
+ },
+ {
+  "nome": "VRV Equipamentos Hidráulicos e Mecânicos LTDA.",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "https://vrvservicos.com.br/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/vrv-servi"
+ },
+ {
+  "nome": "Sotreq S/A",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "https://www.sotreq.com.br/#/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/sotreq-sa"
+ },
+ {
+  "nome": "Wild Well",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "https://wildwell.com/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/wild-well-control"
+ },
+ {
+  "nome": "Oceaneering/Marine Power Serviços e Reparos Navais LTDA.",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "https://www.oceaneering.com/pt/",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "CS Serviços Marítimos LTDA.",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "https://www.cssea.com.br/a-cs/",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "TechOcean",
+  "origem": [
+   "IADC Brazil",
+   "ABESPetro"
+  ],
+  "site": "https://tech-aasj.com.br/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/techocean-offshore-ltda"
+ },
+ {
+  "nome": "Lumini",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "http://luminiconsultoria.com.br/",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "National Oilwell Varco do Brasil LTDA.",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "https://www.nov.com/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/novglobal",
+  "ats": {
+   "tipo": "oracle",
+   "cfg": [
+    "egay.fa.us6.oraclecloud.com",
+    "CX_2001",
+    null
+   ]
+  },
+  "pausada": true,
+  "mesma_conta_de": "NOV"
+ },
+ {
+  "nome": "Qualitech Inseção, Reparo e Manutenção LTDA.",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "https://qualitechirm.com/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/qualitech-inspe-o-reparo-e-manuten-o-ltda"
+ },
+ {
+  "nome": "Diesel Line Cambuí LTDA.",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "https://dlcdiesel.com.br/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/dlcdiesel",
+  "ats": {
+   "tipo": "solides",
+   "cfg": "dlcdiesel"
+  },
+  "somente_og": true
+ },
+ {
+  "nome": "Haliburton Produtos LTDA.",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Anion Química Industrial S.A",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "RTC Treinamentos",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "https://gruportc.com.br/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/gruportctreinamentos"
+ },
+ {
+  "nome": "CMI Brasil Serviços de Manutenção de Equipamentos Industriais LTDA.",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Fujitec Tecnologia LTDA.",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "DNV GL Classificação, Certificação e Consultoria Brasil LTDA.",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "https://www.dnv.com.br/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/dnv",
+  "ats": {
+   "tipo": "oracle",
+   "cfg": [
+    "ecyq.fa.em2.oraclecloud.com",
+    "CX_1",
+    null
+   ]
+  }
+ },
+ {
+  "nome": "Dril Quip do Brasil LTDA",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "RelyOn Brasil Treinamentos em Segurança Marítima LTDA.",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "https://relyon.com/pt/home",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Frank's International Brasil LTDA.",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Swire Energy Services do Brasil LTDA.",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "https://swirees.com/locations/brazil/brazil",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/ses-energy-ltd"
+ },
+ {
+  "nome": "RIO Analytics Engenharia e Participações LTDA.",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "https://rioanalytics.ai/en/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/rio-analytics"
+ },
+ {
+  "nome": "Trekking Rio Serviço e Comercio LTDA.",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "https://www.trekkingtecnologia.com/index.html",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "BluEdge Tech em Equipamentos Sub. LTDA.",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "https://bluedge-svc.com/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/bluedge-services"
+ },
+ {
+  "nome": "LHR Serviços e Equipamentos LTDA.",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "https://lhrservices.com.br/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/lhr-brasil"
+ },
+ {
+  "nome": "MRM Freight Agenciamento de Cargas LTDA.",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "https://mrmlogistics.com.br/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/mrmlogistics",
+  "ats_descartado": {
+   "tipo": "gupy",
+   "cfg": "mrm",
+   "vagas": 0,
+   "nome_no_sistema": "Vagas MRM Brasil"
+  },
+  "obs": "O sistema achado pelo nome era de outra empresa."
+ },
+ {
+  "nome": "Oil States Industries do Brasil Instalações Marítimas LTDA.",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "https://oilstates.com/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/oil-states-industries"
+ },
+ {
+  "nome": "OOS Internacional do Brasil Serviços Marítimos LTDA.",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "https://www.oosinternational.com/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/blueoos"
+ },
+ {
+  "nome": "Paschoalin Consultoria em Engenharia LTDA.",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "https://paschoalin.com.br/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/paschoalin-consultoria"
+ },
+ {
+  "nome": "Supply Log Oil Gas LTDA - SLOG",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "https://supply.log.br/",
+  "mapeado_em": "2026-10-21",
+  "ats_descartado": {
+   "tipo": "gupy",
+   "cfg": "supply",
+   "vagas": 0,
+   "nome_no_sistema": "Suprimentos"
+  },
+  "obs": "O sistema achado pelo nome era de outra empresa."
+ },
+ {
+  "nome": "Radiomar Eletrônica Naval LTDA.",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "https://www.radiomar.com.br/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/radiomar"
+ },
+ {
+  "nome": "Roxtec Latin America",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "https://www.roxtec.com/br/",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Estaleiro Mauá S/A",
+  "origem": [
+   "IADC Brazil",
+   "SINAVAL"
+  ],
+  "site": "https://www.estaleiromaua.ind.br/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/estaleiro-maua"
+ },
+ {
+  "nome": "Sonardyne Brasil LTDA.",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "https://www.sonardyne.com/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/sonardyne-international-ltd"
+ },
+ {
+  "nome": "Sparrows BSM Engenharia LTDA.",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "https://www.sparrowsbsm.com.br/",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Serviços Subsea Especializado do Brasil LTDA.",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "https://groupsse.com/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/ssegroup"
+ },
+ {
+  "nome": "Sub Sea Serviços Offshore do Brasil LTDA.",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Subtec Serviços LTDA. EPP",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "https://rioanalytics.ai/en/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/rio-analytics"
+ },
+ {
+  "nome": "Teknofil Comercial LTDA.",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "https://teknofil.com.br/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/teknofil-comercial-ltda"
+ },
+ {
+  "nome": "BIC TESS Industrial e Comercial LTDA.",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "https://www.tessbrazil.com.br/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/tess-brazil",
+  "ats": {
+   "tipo": "solides",
+   "cfg": "tessbrazil"
+  }
+ },
+ {
+  "nome": "Tiger Retank do Brasil Equipamentos Industriais LTDA.",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "https://www.tiger-rentank.com.br/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/tiger-rentank-do-brasil"
+ },
+ {
+  "nome": "Transbrasileira de Madeiras LTDA.",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "https://transbrasileira.com.br/",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Drillco Serviços de Petroleo LTDA.",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "https://drillco.com/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/drillco-tools"
+ },
+ {
+  "nome": "IPH do Brasil Comércio e Representações",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "https://www.iphglobal.com/br/po",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/iph-saicf"
+ },
+ {
+  "nome": "CEPEM – Centro de Psicologia Empresarial LTDA. EPP",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "https://cepemrh.com.br/",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Hansa-Flex do Brasil LTDA.",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "https://hansaflexbrasil.com.br/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/hansaflexbr"
+ },
+ {
+  "nome": "Fusão Offshore Comércio de Mangueiras e Serviços LTDA.",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "https://www.fusaooffshore.com.br/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/fusaooffshore"
+ },
+ {
+  "nome": "Dismeter Comercial Elétrica LTDA.",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Armazém Offshore de Macaé Com e Imp de Equip p/ Petróleo LTDA.",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "https://armazemoffshore.com.br/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/armaz-m-das-soldas-dismeter-comercial-el-trica"
+ },
+ {
+  "nome": "One Nature LTDA.",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "https://1nature.com/",
+  "mapeado_em": "2026-10-21",
+  "ats_descartado": {
+   "tipo": "gupy",
+   "cfg": "one",
+   "vagas": 0,
+   "nome_no_sistema": "One "
+  },
+  "obs": "O sistema achado pelo nome era de outra empresa."
+ },
+ {
+  "nome": "Thermo Solutions Comércio Serviço e Motores LTDA.",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "https://www.thermosolutions.com.br/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/thermo-solutions"
+ },
+ {
+  "nome": "Sophia Oilfield Supply Services",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "https://sossusa.com.br/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/sophia-oilfield-supply-services"
+ },
+ {
+  "nome": "Innova Develop Assessoria Consultoria e Desenvolvimento de Negócios LTDA.",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "https://www.innova-develop.com/home",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/innova-business-development",
+  "ats_descartado": {
+   "tipo": "gupy",
+   "cfg": "innova",
+   "vagas": 10,
+   "nome_no_sistema": "Innova "
+  },
+  "obs": "O sistema achado pelo nome era de outra empresa."
+ },
+ {
+  "nome": "OES Serviços e Equipamentos de Petróleo e Gás LTDA.",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "https://www.oesgroup.com/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/1492243"
+ },
+ {
+  "nome": "Ocean Marine - Agênciamento e Servicos Maritimos Eireli",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "https://www.tessbrazil.com.br/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/tess-brazil",
+  "ats_descartado": {
+   "tipo": "solides",
+   "cfg": "tessbrazil"
+  },
+  "obs": "O sistema achado pelo nome era de outra empresa."
+ },
+ {
+  "nome": "4Subsea do Brasil Projetos e Serviços de Integridade LTDA.",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "https://4subsea.com/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/4subsea"
+ },
+ {
+  "nome": "The Callen Group",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "https://thecallengroup.com/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/thecallengroup"
+ },
+ {
+  "nome": "Chromax Superfícies Industriais",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "https://www.chromax.com.br/",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Kaefer Testtorque do Brasil LTDA.",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "https://kaeferbrasil.com.br/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/410028",
+  "ats": {
+   "tipo": "gupy",
+   "cfg": "kaeferbrasil",
+   "vagas": 2,
+   "nome_no_sistema": "KAEFER RIP Serviços Industriais "
+  },
+  "mesma_conta_de": "Kaefer",
+  "pausada": true
+ },
+ {
+  "nome": "Lifting Assistência Técnica Elétrica e Comercial LTDA.",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "https://www.fusaooffshore.com.br/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/fusaooffshore"
+ },
+ {
+  "nome": "Kbras Serviços Offshore LTDA.",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Marcelo Mello Advogados",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Oceanserv Serviços e Locação de Equipamentos LTDA.",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "https://www.oceanserv.com/",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Hilong Group of Companies",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "http://www.hilonggroup.com/en/",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "A M de Souza Gomes Comércio de Ferramentas LTDA.",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "https://www.amsouza.com.br/",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Infinity Oil and Gas Technical and Engineering Services",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "https://infinity-oil.com.br/",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Mercadal e Fleury LTDA.",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Tecnofink LTDA.",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "https://tecnofink.com/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/tecnofink"
+ },
+ {
+  "nome": "JDR Comércio de Sistemas de Cabos, Umbilicais e Serviços",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "https://www.jdrcables.com/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/tele-fonika-kable-s-a-"
+ },
+ {
+  "nome": "Reach",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "https://www.jdrcables.com/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/tele-fonika-kable-s-a-"
+ },
+ {
+  "nome": "R&M Electrical Group LTD",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "https://www.rm-electrical.com/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/r"
+ },
+ {
+  "nome": "Alpha Biosoluções e Consultoria",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "https://alphabiosolucoes.com.br/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/alpha-biosolucoes"
+ },
+ {
+  "nome": "Altave Holding S.A.",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "https://altave.com.br/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/flyaltave",
+  "ats": {
+   "tipo": "solides",
+   "cfg": "carreirasaltave"
+  }
+ },
+ {
+  "nome": "Amerapex do Brasil Testes e Analises Tecnicas Ltda.",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "https://www.amerapex.com/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/amerapex"
+ },
+ {
+  "nome": "CET Logistics Agente de Carga e Transporte LTDA",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "https://www.cet-logistics.com/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/cet-logistics"
+ },
+ {
+  "nome": "Dolfines Latam LTDA",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "https://www.dolfines.com/",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "EM&I Brasil Integrity Servicos Tecnicos LTDA",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "https://emialliance.com/pt-br/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/emi-group",
+  "ats_descartado": {
+   "tipo": "teamtailor",
+   "cfg": "app"
+  },
+  "obs": "O sistema achado pelo nome era de outra empresa."
+ },
+ {
+  "nome": "Globomar LTDA",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "https://globomar.com.br/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/globomar"
+ },
+ {
+  "nome": "IGBD Innova Brasil Participacoes e Desenvolvimento de Negocios LTDA",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "https://igbd-group.com/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/innova-business-development"
+ },
+ {
+  "nome": "New Inter Comércio e Serviços S.A.",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "https://newinter.com.br/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/objectopublicidade"
+ },
+ {
+  "nome": "Regnier Industries Americas LTDA",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "https://regniergroup.com.br/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/regnier-industries-latam"
+ },
+ {
+  "nome": "Solana Agência Marítima LTDA",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "https://solana.com.br/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/solana-agncia-martima-ltda",
+  "ats": {
+   "tipo": "inhire",
+   "cfg": "solana",
+   "vagas": 3,
+   "nome_no_sistema": "Solana"
+  }
+ },
+ {
+  "nome": "Support Subsea Servicos de Apoio A Extracao de Petroleo e Gas LTDA",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "https://supportsubsea.com.br/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/support-subsea-epp"
+ },
+ {
+  "nome": "TSA Holding LTDA.",
+  "origem": [
+   "IADC Brazil",
+   "ABESPetro"
+  ],
+  "site": "https://tsa-holding.com/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/tsa-holdingbr"
+ },
+ {
+  "nome": "TSC Indústria Manufatureira, Comércio e Serviços Em Petróleo LTDA",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Uno Traduções Serviços Linguísticos LTDA",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "https://unotraducoes.com.br/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/uno-tradu"
+ },
+ {
+  "nome": "Tree Energy",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "https://treeenergy.eu/pt/",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Luzone Legal",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "https://luzonelegal.com/en/index",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/luzone-"
+ },
+ {
+  "nome": "MI Electric Brasil",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "https://mielectric.com.br/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/objectopublicidade",
+  "ats": {
+   "tipo": "pandape",
+   "cfg": "mielectricbrazil"
+  }
+ },
+ {
+  "nome": "Hollinspec",
+  "origem": [
+   "IADC Brazil"
+  ],
+  "site": "https://hollinspec.com.br/pt",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/hollinspec-servicos"
+ },
+ {
+  "nome": "2H Offshore",
+  "origem": [
+   "ABESPetro"
+  ],
+  "site": "https://2hoffshore.com/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/2hoffshore"
+ },
+ {
+  "nome": "ABS (American Bureau of Shipping)",
+  "origem": [
+   "ABESPetro"
+  ],
+  "site": "https://ww2.eagle.org/en.html",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/american-bureau-of-shipping",
+  "ats": {
+   "tipo": "oracle",
+   "cfg": [
+    "hbbq.fa.us2.oraclecloud.com",
+    "CX_1",
+    null
+   ]
+  }
+ },
+ {
+  "nome": "Altera Infrastructure",
+  "origem": [
+   "ABESPetro"
+  ],
+  "site": "https://alterainfra.com/",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "CHC Helicopter",
+  "origem": [
+   "ABESPetro"
+  ],
+  "site": "https://chcheli.com/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/chc-helicopter"
+ },
+ {
+  "nome": "Cladtek",
+  "origem": [
+   "ABESPetro"
+  ],
+  "site": "https://cladtek.com/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/cladtek",
+  "ats": {
+   "tipo": "solides",
+   "cfg": "cladtek"
+  }
+ },
+ {
+  "nome": "DeepSea Technologies",
+  "origem": [
+   "ABESPetro"
+  ],
+  "site": "https://deepsea-tech.com/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/deepsea-technologies-inc"
+ },
+ {
+  "nome": "Delp",
+  "origem": [
+   "ABESPetro"
+  ],
+  "site": "https://delp.com.br/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/grupodelp",
+  "ats": {
+   "tipo": "solides",
+   "cfg": "delp"
+  }
+ },
+ {
+  "nome": "Edison Chouest Offshore",
+  "origem": [
+   "ABESPetro"
+  ],
+  "site": "https://www.chouest.com/index.html",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/edison-chouest-offshore"
+ },
+ {
+  "nome": "Gran Services (GranIHC)",
+  "origem": [
+   "ABESPetro"
+  ],
+  "site": "https://granihc.com/",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Helix Energy Solutions",
+  "origem": [
+   "ABESPetro"
+  ],
+  "site": "https://www.helixesg.com/",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "IKM",
+  "origem": [
+   "ABESPetro"
+  ],
+  "site": "https://www.ikm.no/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/ikm-gruppen-as"
+ },
+ {
+  "nome": "Innovex",
+  "origem": [
+   "ABESPetro"
+  ],
+  "site": "https://www.innovex-inc.com/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/innovex"
+ },
+ {
+  "nome": "InterMoor",
+  "origem": [
+   "ABESPetro"
+  ],
+  "site": "http://www.intermoor.com/",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "MDL (Maritime Developments)",
+  "origem": [
+   "ABESPetro"
+  ],
+  "site": "https://maritimedevelopments.com/pt/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/maritime-developments-limited"
+ },
+ {
+  "nome": "MFX",
+  "origem": [
+   "ABESPetro"
+  ],
+  "site": "https://mfx.com.br/",
+  "mapeado_em": "2026-10-21",
+  "ats": {
+   "tipo": "inhire",
+   "cfg": "mfx",
+   "vagas": 7,
+   "nome_no_sistema": "MFX do Brasil"
+  }
+ },
+ {
+  "nome": "Porto do Açu",
+  "origem": [
+   "ABESPetro"
+  ],
+  "site": "https://portodoacu.com.br/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/porto-do-acu",
+  "ats": {
+   "tipo": "inhire",
+   "cfg": "portodoacu",
+   "vagas": 1,
+   "nome_no_sistema": "Porto do Açu"
+  }
+ },
+ {
+  "nome": "Prosafe",
+  "origem": [
+   "ABESPetro"
+  ],
+  "site": "https://www.prosafe.com/",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Prysmian",
+  "origem": [
+   "ABESPetro"
+  ],
+  "site": "https://br.prysmiangroup.com/",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/prysmian",
+  "ats": {
+   "tipo": "workday",
+   "cfg": [
+    "prysmiangroup",
+    "Careers"
+   ],
+   "wd": 3
+  },
+  "somente_og": true
+ },
+ {
+  "nome": "Schneider Electric",
+  "origem": [
+   "ABESPetro"
+  ],
+  "site": "https://www.se.com/br/pt/",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Siemens",
+  "origem": [
+   "ABESPetro"
+  ],
+  "site": "https://www.siemens.com/pt-br/",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Superior Energy Services",
+  "origem": [
+   "ABESPetro",
+   "ABPIP"
+  ],
+  "site": "http://www.superiorenergy.com/",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "UTEC (Acteon)",
+  "origem": [
+   "ABESPetro"
+  ],
+  "site": "https://acteon.com/solutions/business-lines/utec",
+  "mapeado_em": "2026-10-21",
+  "linkedin": "https://www.linkedin.com/company/utec-survey-construction-services"
+ },
+ {
+  "nome": "Wood",
+  "origem": [
+   "ABESPetro"
+  ],
+  "site": "https://www.woodplc.com/",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Alvopetro",
+  "origem": [
+   "ABPIP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Carmo Energy",
+  "origem": [
+   "ABPIP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Eneva",
+  "origem": [
+   "ABPIP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "EnP Energy Platform",
+  "origem": [
+   "ABPIP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Energizzi Energias do Brasil",
+  "origem": [
+   "ABPIP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "GBS Storage",
+  "origem": [
+   "ABPIP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Mandacaru Energia",
+  "origem": [
+   "ABPIP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "PetroSynergy",
+  "origem": [
+   "ABPIP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Petro Victory Energy",
+  "origem": [
+   "ABPIP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Sonangol",
+  "origem": [
+   "ABPIP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Apolo",
+  "origem": [
+   "ABPIP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Catalyst Brazil",
+  "origem": [
+   "ABPIP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Enerflex",
+  "origem": [
+   "ABPIP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Fluxo Soluções Integradas",
+  "origem": [
+   "ABPIP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21",
+  "ats": {
+   "tipo": "gupy",
+   "cfg": "fluxo",
+   "vagas": 4,
+   "nome_no_sistema": "Fluxo Soluções Integradas"
+  }
+ },
+ {
+  "nome": "Idus Inteligência Industrial",
+  "origem": [
+   "ABPIP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Kerui Petroleum Technology",
+  "origem": [
+   "ABPIP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Pason",
+  "origem": [
+   "ABPIP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Pecom (Grupo Perez Companc)",
+  "origem": [
+   "ABPIP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Pochteca Coremal",
+  "origem": [
+   "ABPIP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Progel",
+  "origem": [
+   "ABPIP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Relimpp Serviços Industriais",
+  "origem": [
+   "ABPIP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "SoEnergy International",
+  "origem": [
+   "ABPIP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Smar Technology Company",
+  "origem": [
+   "ABPIP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "SNF",
+  "origem": [
+   "ABPIP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Tenaris",
+  "origem": [
+   "ABPIP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "TIVIT",
+  "origem": [
+   "ABPIP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Tuper",
+  "origem": [
+   "ABPIP"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21",
+  "ats": {
+   "tipo": "gupy",
+   "cfg": "tuper",
+   "vagas": 11,
+   "nome_no_sistema": "ArcelorMittal | Tuper"
+  },
+  "somente_og": true
+ },
+ {
+  "nome": "ALIANÇA S.A. – Indústria Naval e Empresa de Navegação",
+  "origem": [
+   "SINAVAL"
+  ],
+  "site": "http://www.estaleiroalianca.com.br",
+  "mapeado_em": "2026-10-21",
+  "ats_descartado": {
+   "tipo": "gupy",
+   "cfg": "alianca",
+   "vagas": 2,
+   "nome_no_sistema": "Aliança Logística"
+  },
+  "obs": "O sistema achado pelo nome era de outra empresa."
+ },
+ {
+  "nome": "BELOV Engenharia Portuária, Subaquática, Naval e Offshore",
+  "origem": [
+   "SINAVAL"
+  ],
+  "site": "http://www.belov.com.br",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "CONSAG Engenharia S.A.",
+  "origem": [
+   "SINAVAL"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "DETROIT Brasil S.A.",
+  "origem": [
+   "SINAVAL"
+  ],
+  "site": "http://www.detroit.cl",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "DOCKBRASIL Engenharia e Serviços S.A.",
+  "origem": [
+   "SINAVAL"
+  ],
+  "site": "http://www.estaleirodockbrasil.com.br",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "ECOVIX Construções Oceânicas S.A. (Estaleiro Rio Grande)",
+  "origem": [
+   "SINAVAL"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Empresa Brasileira de Reparos Navais S.A. – RENAVE",
+  "origem": [
+   "SINAVAL"
+  ],
+  "site": "http://www.enavi.com.br",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "ENAV Reparo Naval Ltda.",
+  "origem": [
+   "SINAVAL"
+  ],
+  "site": "http://www.enavnaval.com.br",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "ENSEADA Indústria Naval S.A.",
+  "origem": [
+   "SINAVAL"
+  ],
+  "site": "http://www.enseada.com",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Estaleiro ATLÂNTICO SUL S.A.",
+  "origem": [
+   "SINAVAL"
+  ],
+  "site": "http://www.estaleiroatlanticosul.com.br",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Estaleiro BRASFELS Ltda.",
+  "origem": [
+   "SINAVAL"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Estaleiro JURONG Aracruz Ltda.",
+  "origem": [
+   "SINAVAL"
+  ],
+  "site": "http://www.jurong.com.br",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Estaleiro NAVSHIP Ltda.",
+  "origem": [
+   "SINAVAL"
+  ],
+  "site": "http://www.navship.com.br",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Estaleiro RIO MAGUARI S.A.",
+  "origem": [
+   "SINAVAL"
+  ],
+  "site": "http://www.riomaguari.com.br",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Estaleiro SÃO JACINTO Ltda. (Grupo Muliceiro)",
+  "origem": [
+   "SINAVAL"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Estaleiro VELAR Ltda.",
+  "origem": [
+   "SINAVAL"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "ICN – Itaguaí Construções Navais S.A.",
+  "origem": [
+   "SINAVAL"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "INACE Ltda.",
+  "origem": [
+   "SINAVAL"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "INC – Indústria Naval Catarinense",
+  "origem": [
+   "SINAVAL"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21",
+  "ats_descartado": {
+   "tipo": "gupy",
+   "cfg": "industria",
+   "vagas": 0,
+   "nome_no_sistema": "Confidencial"
+  },
+  "obs": "O sistema achado pelo nome era de outra empresa."
+ },
+ {
+  "nome": "ÍON Engenharia Industrial, Offshore e Naval Ltda.",
+  "origem": [
+   "SINAVAL"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "JURUÁ Estaleiros e Navegação Ltda.",
+  "origem": [
+   "SINAVAL"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "MAC LAREN OIL Logística Portuária Estaleiros Ltda.",
+  "origem": [
+   "SINAVAL"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "Navegação SÃO MIGUEL Ltda.",
+  "origem": [
+   "SINAVAL"
+  ],
+  "site": "http://www.bravante.com.br",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "QUATRIA Naval S.A.",
+  "origem": [
+   "SINAVAL"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "SEAGEMS SOLUTIONS S. A.",
+  "origem": [
+   "SINAVAL"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "SQUADRA Comércio e Serviços Ltda. (Estaleiro SÃO JOSÉ)",
+  "origem": [
+   "SINAVAL"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "TENENGE ENGENHARIA Ltda.",
+  "origem": [
+   "SINAVAL"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "VARD Promar S. A.",
+  "origem": [
+   "SINAVAL"
+  ],
+  "site": "http://www.vard.com",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "VIKING Norsafe Life Saving Brasil Ltda.",
+  "origem": [
+   "SINAVAL"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ },
+ {
+  "nome": "WILSON, SONS – Comércio, Indústria e Agência de Navegação Ltda.",
+  "origem": [
+   "SINAVAL"
+  ],
+  "site": "http://www.wilsonsons.com.br",
+  "mapeado_em": "2026-10-21",
+  "ats": {
+   "tipo": "gupy",
+   "cfg": "wilsonsons",
+   "vagas": 51,
+   "nome_no_sistema": "Wilson Sons"
+  },
+  "mesma_conta_de": "Wilson Sons",
+  "pausada": true
+ },
+ {
+  "nome": "WTN LAK Serviços Ltda.",
+  "origem": [
+   "SINAVAL"
+  ],
+  "site": "",
+  "mapeado_em": "2026-10-21"
+ }
+]

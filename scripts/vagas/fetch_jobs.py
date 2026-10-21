@@ -12,49 +12,19 @@ sys.path.insert(0, str(Path(__file__).parent))
 import videos as escolha_videos  # noqa: E402
 UA = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126 Safari/537.36'
 
-# filtro: True = só vagas com palavra de óleo, gás, offshore ou marítimo
-EMPRESAS = [
-    # Gupy
-    ('gupy', 'PRIO', 'prio', False),
-    ('gupy', 'Brava Energia', 'bravaenergia', False),
-    ('gupy', 'Ocyan', 'ocyan', False),
-    ('gupy', 'Foresea', 'foresea', False),
-    ('gupy', 'MODEC', 'modec-br', False),
-    ('gupy', 'Perbras', 'perbras', False),
-    ('gupy', 'Wilson Sons', 'wilsonsons', True),
-    ('gupy', 'Constellation', 'theconstellation', False),
-    ('gupy', 'Altera&Ocyan', 'alteraocyan', False),
-    ('gupy', 'Origem Energia', 'origemenergia', False),
-    ('gupy', 'Tecnosonda', 'tecnosonda', False),
-    ('gupy', 'Kaefer', 'kaeferbrasil', False),
-    # InHire
-    ('inhire', 'OceanPact', 'oceanpact', False),
-    ('inhire', 'Camorim', 'camorim', False),
-    ('inhire', 'PetroReconcavo', 'petroreconcavo', False),
-    ('inhire', 'Wilson Sons Offshore', 'wsut', False),
-    ('inhire', 'Solstad', 'solstad', False),
-    # SAP SuccessFactors
-    ('rmk', 'SBM Offshore', 'careers.sbmoffshore.com', False),
-    ('rmk', 'TechnipFMC', 'careers.technipfmc.com', False),
-    ('rmk', 'Subsea7', 'careers.subsea7.com', False),
-    ('rmk', 'Yinson', 'careers.yinson.com', False),
-    # Workday
-    ('workday', 'Baker Hughes', ('bakerhughes', 'BakerHughes'), False),
-    ('workday', 'Shell', ('shell', 'ShellCareers'), False),
-    ('workday', 'Equinor', ('equinor', 'EQNR'), False),
-    ('workday', 'Noble', ('noblecorp', 'noblecorp'), False),
-    ('workday', 'Fugro', ('fugro', 'Careers'), False),
-    ('workday', 'Repsol Sinopec', ('repsol', 'Sinopec'), False),
-    ('workday', 'Transocean', ('deepwater', 'BrazilExternalCareerSite'), False),
-    ('workday', 'Bristow', ('bristow', 'Careers'), False),
-    # Oracle
-    ('oracle', 'NOV', ('egay.fa.us6.oraclecloud.com', 'CX_2001'), False),
-    ('oracle', 'Seadrill', ('fa-eykz-saasfaprod1.fa.ocs.oraclecloud.com', 'CX_1'), False),
-    ('oracle', 'Valaris', ('efqq.fa.us6.oraclecloud.com', 'CX_1'), False),
-    ('oracle', 'Oceaneering', ('ebfr.fa.us2.oraclecloud.com', 'CX_1', None), False),
-    # Radancy
-    ('radancy', 'Halliburton', 'careers.halliburton.com', False),
-]
+# Cadastro de empresas acompanhadas (empresas.json). Para incluir uma empresa, adicione-a lá;
+# scripts/vagas/mapear.py descobre sozinho o sistema de vagas de quem ainda não tem.
+CADASTRO = Path(__file__).parent / 'empresas.json'
+
+def carregar_empresas():
+    """(tipo, nome, cfg, somente óleo e gás) das empresas com sistema de vagas que sabemos ler."""
+    out = []
+    for e in json.loads(CADASTRO.read_text()):
+        ats = e.get('ats') or {}
+        if ats.get('tipo') in LEITORES and not e.get('pausada'):
+            cfg = tuple(ats['cfg']) if isinstance(ats['cfg'], list) else ats['cfg']
+            out.append((ats['tipo'], e['nome'], cfg, bool(e.get('somente_og'))))
+    return out
 
 OG = re.compile(r'offshore|embarc|plataforma|fpso|sonda|navio|mar[ií]tim|rebocador|conv[eé]s|m[aá]quinas|'
                 r'subsea|petr[oó]le|[oó]leo|g[aá]s|po[cç]o|drilling|vessel|marine|rov|estaleiro|naval', re.I)
@@ -145,18 +115,30 @@ def oracle(cfg):
         if len(lista) < 200:
             break
 
+# Código GeoNames do Brasil, usado como filtro de país nos sites da Radancy (Halliburton)
+BRASIL_GEONAMES = 3469034
+
 def radancy(host):
     vistos = set()
-    for p in range(1, 6):
-        s = get(f'https://{host}/search-jobs/Brazil?p={p}')
+    for pagina in range(1, 6):
+        q = urllib.parse.urlencode({
+            'ActiveFacetID': BRASIL_GEONAMES, 'CurrentPage': pagina, 'RecordsPerPage': 100, 'SearchType': 6, 'OrganizationIds': 543,
+            'FacetFilters[0].ID': BRASIL_GEONAMES, 'FacetFilters[0].FacetType': 2, 'FacetFilters[0].Display': 'Brazil',
+            'FacetFilters[0].IsApplied': 'true', 'SearchResultsModuleName': 'Search Results', 'SearchFiltersModuleName': 'Search Filters'})
+        s = json.loads(get(f'https://{host}/search-jobs/results?{q}', headers={'X-Requested-With': 'XMLHttpRequest'}))['results']
         achou = 0
-        for href, tit in re.findall(r'href="(/job/[^"]+/\d+/\d+)"[^>]*>\s*(?:<h2>)?([^<]{3,150})', s):
+        for href, tit, loc in re.findall(r'<a href="(/job/[^"]+/\d+/\d+)"[^>]*>\s*<h2>(.*?)</h2>\s*<span class="job-location">(.*?)</span>', s, re.S):
             if href in vistos:
                 continue
             vistos.add(href); achou += 1
-            cidade = href.split('/')[2].replace('-', ' ').title()
-            yield dict(titulo=limpa(tit), local=cidade, link=f'https://{host}{href}')
-        if not achou:
+            local = limpa(re.sub('<[^>]+>', '', loc))
+            partes = [x.strip() for x in local.split(',') if x.strip()]
+            uf = {'Rio de Janeiro': 'RJ', 'Rio Grande do Norte': 'RN', 'Bahia': 'BA', 'Espirito Santo': 'ES', 'Espírito Santo': 'ES', 'Sergipe': 'SE', 'São Paulo': 'SP'}
+            cidade = partes[0] if partes else 'Brasil'
+            estado = next((uf[x] for x in partes if x in uf), '')
+            titulo = re.sub(r'^(Brazil|Brasil|BR)\s*[-–]\s*((RJ|RN|BA|ES|SE|SP)\s*[-–]\s*)?([A-Za-zÀ-ú ]+?\s*[-–:]\s*)?', '', limpa(tit)).strip() or limpa(tit)
+            yield dict(titulo=titulo, local=f'{cidade}, {estado}' if estado else cidade + ', Brasil', link=f'https://{host}{href}')
+        if achou < 100:
             break
 
 def inhire(tenant):
@@ -170,7 +152,84 @@ def inhire(tenant):
             titulo = titulo[:m.start()].strip()
         yield dict(titulo=titulo, local=local, link=j.get('link') or f'https://{tenant}.inhire.app/vagas/{j["jobId"]}')
 
-LEITORES = dict(inhire=inhire, gupy=gupy, rmk=rmk, workday=workday, oracle=oracle, radancy=radancy)
+# Consultorias de recrutamento
+BRUNEL_CHAVE = 'eb0dfbddc7564004b2da4d064f2c54e2'  # chave pública do próprio site da Brunel
+
+def brunel(_):
+    for pagina in range(1, 6):
+        corpo = json.dumps({'page': pagina, 'pageSize': 50, 'language': 'en', 'countryPreset': ['BRA']}).encode()
+        d = json.loads(get('https://api.brunel.net/publicationsearch/api/PublicationsSearch/Get', corpo,
+                           {'Content-Type': 'application/json', 'Ocp-Apim-Subscription-Key': BRUNEL_CHAVE}))
+        for j in d.get('publications') or []:
+            slug_t = re.sub(r'[^a-z0-9]+', '-', limpa(j['title']).lower()).strip('-')
+            yield dict(titulo=limpa(j['title']), local=(j.get('city') or 'Brasil') + ', Brasil',
+                       link=f"https://www.brunel.net/en/jobs/{slug_t}-{j['publicationId'].lower()}")
+        if pagina * 50 >= (d.get('totalCount') or 0):
+            break
+
+def airswift(_):
+    vistos = set()
+    for pagina in range(1, 6):
+        s = get(f'https://www.airswift.com/jobs?location=Brazil&page_num={pagina}')
+        cards = re.findall(r'<article[^>]*c-card-job-item[^>]*>(.*?)</article>', s, re.S)
+        for c in cards:
+            m = re.search(r'c-card-job-item__title[^>]*>\s*<a[^>]*href="([^"]+)"[^>]*>(.*?)</a>', c, re.S)
+            loc = re.search(r'c-card-job-item__location[^>]*>(.*?)</p>', c, re.S)
+            local = limpa(re.sub('<[^>]+>', '', loc.group(1))) if loc else ''
+            if not m or m.group(1) in vistos or not re.search(r'bra[sz]il', local, re.I) or re.search(r'texas|houston', local, re.I):
+                continue
+            vistos.add(m.group(1))
+            partes = [x.strip() for x in local.split(',')]
+            yield dict(titulo=limpa(re.sub('<[^>]+>', '', m.group(2))), local=partes[0] + ', Brasil', link=urllib.parse.urljoin('https://www.airswift.com', m.group(1)))
+        if not cards:
+            break
+
+def atlas(_):
+    # Atlas Professionals agora é Atlas NextWave; 4 é o código do Brasil no site
+    d = json.loads(get('https://atlasnextwave.com/wp-json/wp/v2/job?country=4&per_page=100&_fields=id,title,link'))
+    for j in d:
+        yield dict(titulo=limpa(j['title']['rendered']), local='Brasil', link=j['link'])
+
+def mde(_):
+    d = json.loads(get('https://api.hubapi.com/cms/v3/hubdb/tables/5743423/rows?portalId=8479246&limit=1000'))
+    hoje = date.today().isoformat()
+    for r in d.get('results') or []:
+        v = r.get('values') or {}
+        fim = str(v.get('end_date') or '')[:10]
+        if v.get('ikke_publisert') or (fim and fim < hoje) or str(v.get('country_id_recman')) != '47':
+            continue
+        yield dict(titulo=limpa(v.get('name') or v.get('tittel')), local=limpa(str(v.get('parea') or 'Brasil')),
+                   link=f"https://www.mde-group.com/pt-br/procurando-emprego/{r.get('path')}")
+
+def beehire(conta):
+    d = json.loads(get(f'https://app.beehire.com/users/getPublicCampaigns/{conta}'))
+    for c in d.get('campaigns') or []:
+        loc = c.get('location') or {}
+        if not re.search(r'bra[sz]il|br[eé]sil', str(loc.get('country') or loc.get('name') or ''), re.I):
+            continue
+        t = c.get('title')
+        titulo = limpa(next(iter(t.values())) if isinstance(t, dict) and t else str(t or ''))
+        local = ', '.join(x for x in (loc.get('city'), loc.get('state')) if x) or 'Brasil'
+        yield dict(titulo=titulo, local=local, link=c.get('inviteLink') or f'https://app.beehire.com/{conta}')
+
+def solides(slug):
+    for pagina in range(1, 11):
+        d = json.loads(get(f'https://apigw.solides.com.br/jobs/v3/companies/{slug}/vacancies?take=25&page={pagina}'))
+        for v in d.get('data') or []:
+            cidade, uf = (v.get('city') or {}).get('name'), (v.get('state') or {}).get('code')
+            local = 'Remoto' if v.get('homeOffice') else ', '.join(x for x in (cidade, uf) if x) or 'Brasil'
+            yield dict(titulo=limpa(v.get('title')), local=local, link=f'https://{slug}.vagas.solides.com.br/vaga/{v["id"]}')
+        if pagina >= (d.get('totalPages') or 1):
+            break
+
+def recruitee(conta):
+    d = json.loads(get(f'https://{conta}.recruitee.com/api/offers/'))
+    for o in d.get('offers') or []:
+        if not re.search(r'bra[sz]il', f"{o.get('country')} {o.get('location')}", re.I):
+            continue
+        yield dict(titulo=limpa(o.get('title')), local=limpa(o.get('city') or o.get('location') or 'Brasil'), link=o.get('careers_url') or o.get('url'))
+
+LEITORES = dict(solides=solides, recruitee=recruitee, brunel=brunel, airswift=airswift, atlas=atlas, mde=mde, beehire=beehire, inhire=inhire, gupy=gupy, rmk=rmk, workday=workday, oracle=oracle, radancy=radancy)
 
 def classifica(titulo):
     t = titulo.lower()
@@ -218,7 +277,7 @@ def main():
         except Exception:
             pass
     vagas, status = [], []
-    for tipo, nome, cfg, filtro in EMPRESAS:
+    for tipo, nome, cfg, filtro in carregar_empresas():
         try:
             itens = list(LEITORES[tipo](cfg))
             if filtro:
