@@ -186,6 +186,7 @@ footer{border-top:1px solid var(--border);padding:36px 48px;max-width:1080px;mar
 .row-prep{background:none;border:1px solid var(--border2);color:var(--muted2);font-family:inherit;font-size:12px;padding:9px 12px;border-radius:2px;cursor:pointer;white-space:nowrap;}
 .row-prep:hover,.row-prep.on{color:var(--gold-l);border-color:rgba(201,147,58,.5);}
 .row .prep{margin:0 16px 16px;}
+.chip.nova{color:#0D1117;background:#7fdc7f;border-color:#7fdc7f;font-weight:700;}
 .sobre{margin:0 16px 14px;padding-top:4px;}
 .sobre h3{font-weight:800;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-l);margin-bottom:8px;}
 .sobre p{font-size:14px;line-height:1.7;white-space:pre-line;}
@@ -308,6 +309,9 @@ function render(){
 const $ = s => document.querySelector(s);
 
 let AUTO = [], VIDS = {}, CAT = {}, mostrar = 30;
+// Vaga que o robô viu pela primeira vez nos últimos 3 dias ganha o selo de nova
+const NOVA_DESDE = new Date(Date.now() - 3 * 864e5).toISOString().slice(0, 10);
+const ehNova = v => v.vistaEm && v.vistaEm >= NOVA_DESDE;
 // Conta o clique para o ranking mensal do painel (só números, sem dado pessoal)
 function contar(id, tipo){
   const v = todas().find(x => x.id === id); if (!v) return;
@@ -322,7 +326,7 @@ function rowHTML(v){
       <div class="row-info">
         <div class="row-t">${esc(v.titulo)}</div>
         <div class="row-c">${esc(v.empresa)} · ${esc(v.local)}</div>
-        <div class="chips"><span class="chip${v.regime === 'Embarcado' ? ' gold' : ''}">${esc(v.regime)}</span>${v.tema === 'geral' ? '' : `<span class="chip">${esc(v.area)}</span>`}${v.banco ? '<span class="chip">Banco de talentos</span>' : ''}${v.enviada ? '<span class="chip gold">Divulgada pela empresa</span>' : ''}</div>
+        <div class="chips"><span class="chip${v.regime === 'Embarcado' ? ' gold' : ''}">${esc(v.regime)}</span>${v.tema === 'geral' ? '' : `<span class="chip">${esc(v.area)}</span>`}${v.banco ? '<span class="chip">Banco de talentos</span>' : ''}${v.enviada ? '<span class="chip gold">Divulgada pela empresa</span>' : ''}${ehNova(v) ? '<span class="chip nova">Nova</span>' : ''}</div>
       </div>
       <div class="row-act">
         <button class="row-prep" data-prep="${esc(v.id)}">${v.descricao ? 'Ver vaga' : 'Como se preparar'}</button>
@@ -344,8 +348,8 @@ function prepHTML(v){
 }
 function renderAuto(){
   if (!$('#lista2')) return;
-  const q = $('#q2').value.toLowerCase(), em = $('#emp').value, ar = $('#ar2').value, rg = $('#reg').value, bt = $('#bt').checked;
-  const lista = AUTO.filter(v => (!em || v.empresa === em) && (!ar || v.area === ar) && (!rg || v.regime === rg) && (!bt || !v.banco)
+  const q = $('#q2').value.toLowerCase(), em = $('#emp').value, ar = $('#ar2').value, rg = $('#reg').value, bt = $('#bt').checked, sn = $('#sn').checked;
+  const lista = AUTO.filter(v => (!em || v.empresa === em) && (!ar || v.area === ar) && (!rg || v.regime === rg) && (!bt || !v.banco) && (!sn || ehNova(v))
     && (!q || (v.titulo + ' ' + v.empresa + ' ' + v.local + ' ' + v.area).toLowerCase().includes(q)));
   $('#count2').textContent = `${lista.length} vaga${lista.length === 1 ? '' : 's'}`;
   $('#lista2').innerHTML = lista.length ? lista.slice(0, mostrar).map(rowHTML).join('') +
@@ -370,6 +374,8 @@ Promise.all([
     // não repete a vaga que já está comentada lá em cima
     const comentadas = new Set(VAGAS.map(v => (v.empresa + v.titulo).toLowerCase()));
     AUTO = auto.vagas.filter(v => !comentadas.has((v.empresa + v.titulo).toLowerCase()));
+    // As que o robô acabou de achar sobem para o topo (sort estável: o resto mantém a ordem)
+    AUTO.sort((a, b) => ehNova(b) - ehNova(a));
   }
   const areas = [...new Set(VAGAS.map(v => v.area))].sort();
   const opc = (lista, rot) => `<option value="">${rot}</option>` + [...new Set(lista)].sort().map(x => `<option>${esc(x)}</option>`).join('');
@@ -390,7 +396,8 @@ Promise.all([
       <select id="ar2">${opc(AUTO.map(v => v.area), 'Todas as áreas')}</select>
       <select id="reg">${opc(AUTO.map(v => v.regime), 'Embarcado e terra')}</select>
     </div>
-    <label class="tg"><input type="checkbox" id="bt"> Esconder banco de talentos</label>
+    <div style="display:flex;gap:22px;flex-wrap:wrap"><label class="tg"><input type="checkbox" id="sn"> Só as novas (${AUTO.filter(ehNova).length} nos últimos 3 dias)</label>
+    <label class="tg"><input type="checkbox" id="bt"> Esconder banco de talentos</label></div>
     <div id="lista2"></div>
     <p class="fontes">Empresas acompanhadas: ${[...new Set(AUTO.map(v => v.empresa))].sort().map(esc).join(', ')}.</p>` : ''}
     <div class="empresas">
@@ -400,7 +407,7 @@ Promise.all([
   if ($('#q')){ $('#q').oninput = render; $('#area').onchange = render; render(); }
   if ($('#q2')){
     const re = () => { mostrar = 30; renderAuto(); };
-    $('#q2').oninput = re; ['#emp','#ar2','#reg','#bt'].forEach(id => $(id).onchange = re);
+    $('#q2').oninput = re; ['#emp','#ar2','#reg','#bt','#sn'].forEach(id => $(id).onchange = re);
     renderAuto();
   }
   jsonLd(VAGAS);

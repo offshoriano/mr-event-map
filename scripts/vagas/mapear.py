@@ -123,26 +123,39 @@ def tenta_site(site):
         return {'tipo': tipo, 'cfg': g[0]}, linkedin
     return None, linkedin
 
+def parece(nome, nome_no_sistema):
+    """O nome no sistema de vagas bate com a empresa? Evita pegar o "Guanabara" supermercado no lugar da Guanabara Offshore."""
+    def tokens(x):
+        x = unicodedata.normalize('NFKD', x or '').encode('ascii', 'ignore').decode().lower()
+        return {t for t in re.sub(r'[^a-z0-9 ]', ' ', re.sub(RUIDO, ' ', x)).split() if len(t) > 2}
+    a, b = tokens(nome), tokens(nome_no_sistema)
+    return bool(a and b) and len(a & b) / len(a) >= 0.5
+
 def mapear(e):
-    achado = None
-    for s in slugs(e['nome'], e.get('site', '')):
-        achado = tenta_gupy(s) or tenta_inhire(s) or tenta_solides(s)
-        if achado:
-            break
+    # Achado pelo site da própria empresa é confiável e entra direto. Achado só pelo nome (Gupy, InHire,
+    # Sólides) pode ser homônimo, como o supermercado Guanabara: fica como sugestão para conferir no painel.
     site_ats, linkedin = tenta_site(e.get('site', ''))
-    if not achado and site_ats:
-        achado = site_ats
+    sugerido = None
+    if not site_ats:
+        for s in slugs(e['nome'], e.get('site', '')):
+            sugerido = tenta_gupy(s) or tenta_inhire(s) or tenta_solides(s)
+            if sugerido:
+                break
     e['mapeado_em'] = date.today().isoformat()
     if linkedin and not e.get('linkedin'):
         e['linkedin'] = linkedin
-    if achado:
-        e['ats'] = achado
+    descartado = (e.get('ats_descartado') or {}).get('cfg')
+    if site_ats and not e.get('ats') and site_ats.get('cfg') != descartado:
+        e['ats'] = site_ats
+        e['novo'] = True
+    elif sugerido and not e.get('ats') and sugerido.get('cfg') != descartado and parece(e['nome'], sugerido.get('nome_no_sistema', '')):
+        e['ats_sugerido'] = sugerido
     return e
 
 def main():
     todas = '--todas' in sys.argv
     cad = json.loads(CADASTRO.read_text())
-    alvo = [e for e in cad if todas or (not e.get('ats') and not e.get('mapeado_em'))]
+    alvo = [e for e in cad if (todas and not e.get('ats')) or (not e.get('ats') and not e.get('mapeado_em'))]
     print(f'mapeando {len(alvo)} de {len(cad)} empresas', file=sys.stderr)
     with cf.ThreadPoolExecutor(10) as ex:
         for e in ex.map(mapear, alvo):

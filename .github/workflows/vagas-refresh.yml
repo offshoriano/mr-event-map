@@ -2,8 +2,8 @@ name: Atualizar vagas das empresas
 
 on:
   schedule:
-    # Segunda e quinta, 10:23 UTC (07:23 em Brasília)
-    - cron: '23 10 * * 1,4'
+    # Todo dia, 10:23 UTC (07:23 em Brasília)
+    - cron: '23 10 * * *'
   workflow_dispatch:
 
 permissions:
@@ -23,16 +23,21 @@ jobs:
         with:
           python-version: '3.12'
 
+      - name: Procurar sistema de vagas de empresas novas do cadastro
+        run: |
+          # Todo dia 1º revisita também as empresas que ainda não tinham sistema de vagas
+          if [ "$(date -u +%d)" = "01" ]; then python3 scripts/vagas/mapear.py --todas; else python3 scripts/vagas/mapear.py; fi
+
       - name: Buscar vagas nos sites de carreira
         run: python3 scripts/vagas/fetch_jobs.py
 
-      - name: Salvar e publicar vagas novas
+      - name: Publicar só se alguma vaga mudou
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add vagas/automaticas.json
+          git add vagas/automaticas.json scripts/vagas/empresas.json
           if git diff --cached --quiet; then
-            echo "Sem vagas novas"
+            echo "Nenhuma vaga nova ou encerrada hoje"
           else
             git commit -m "Vagas: atualiza vagas das empresas"
             git pull --rebase origin main
