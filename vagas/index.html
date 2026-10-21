@@ -277,9 +277,9 @@ function jobHTML(v){
       </details>
     </div>
     <div class="job-foot">
-      <a class="btn btn-gold" href="${esc(v.link)}" target="_blank" rel="noopener" data-apply="${esc(v.id)}">Candidatar-se</a>
+      <a class="btn btn-gold" href="${esc(v.link)}" target="_blank" rel="noopener" data-apply="${esc(v.id)}">${/^mailto:/.test(v.link) ? 'Enviar currículo' : 'Candidatar-se'}</a>
       <a class="btn btn-ghost" href="https://wa.me/?text=${msg}" target="_blank" rel="noopener">Enviar para um amigo</a>
-      <span class="job-note">Candidatura no site da ${esc(v.empresa)}</span>
+      <span class="job-note">${/^mailto:/.test(v.link) ? 'Candidatura por e-mail, direto com a ' + esc(v.empresa) : 'Candidatura no site da ' + esc(v.empresa)}</span>
     </div>
   </article>`;
 }
