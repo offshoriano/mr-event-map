@@ -12,50 +12,19 @@ sys.path.insert(0, str(Path(__file__).parent))
 import videos as escolha_videos  # noqa: E402
 UA = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126 Safari/537.36'
 
-# filtro: True = só vagas com palavra de óleo, gás, offshore ou marítimo
-EMPRESAS = [
-    # Gupy
-    ('gupy', 'PRIO', 'prio', False),
-    ('gupy', 'Brava Energia', 'bravaenergia', False),
-    ('gupy', 'Ocyan', 'ocyan', False),
-    ('gupy', 'Foresea', 'foresea', False),
-    ('gupy', 'MODEC', 'modec-br', False),
-    ('gupy', 'Perbras', 'perbras', False),
-    ('gupy', 'Wilson Sons', 'wilsonsons', True),
-    ('gupy', 'Constellation', 'theconstellation', False),
-    ('gupy', 'Altera&Ocyan', 'alteraocyan', False),
-    ('gupy', 'Origem Energia', 'origemenergia', False),
-    ('gupy', 'Tecnosonda', 'tecnosonda', False),
-    ('gupy', 'Kaefer', 'kaeferbrasil', False),
-    ('gupy', 'Macnor Marine', 'macnor', False),
-    # InHire
-    ('inhire', 'OceanPact', 'oceanpact', False),
-    ('inhire', 'Camorim', 'camorim', False),
-    ('inhire', 'PetroReconcavo', 'petroreconcavo', False),
-    ('inhire', 'Wilson Sons Offshore', 'wsut', False),
-    ('inhire', 'Solstad', 'solstad', False),
-    # SAP SuccessFactors
-    ('rmk', 'SBM Offshore', 'careers.sbmoffshore.com', False),
-    ('rmk', 'TechnipFMC', 'careers.technipfmc.com', False),
-    ('rmk', 'Subsea7', 'careers.subsea7.com', False),
-    ('rmk', 'Yinson', 'careers.yinson.com', False),
-    # Workday
-    ('workday', 'Baker Hughes', ('bakerhughes', 'BakerHughes'), False),
-    ('workday', 'Shell', ('shell', 'ShellCareers'), False),
-    ('workday', 'Equinor', ('equinor', 'EQNR'), False),
-    ('workday', 'Noble', ('noblecorp', 'noblecorp'), False),
-    ('workday', 'Fugro', ('fugro', 'Careers'), False),
-    ('workday', 'Repsol Sinopec', ('repsol', 'Sinopec'), False),
-    ('workday', 'Transocean', ('deepwater', 'BrazilExternalCareerSite'), False),
-    ('workday', 'Bristow', ('bristow', 'Careers'), False),
-    # Oracle
-    ('oracle', 'NOV', ('egay.fa.us6.oraclecloud.com', 'CX_2001'), False),
-    ('oracle', 'Seadrill', ('fa-eykz-saasfaprod1.fa.ocs.oraclecloud.com', 'CX_1'), False),
-    ('oracle', 'Valaris', ('efqq.fa.us6.oraclecloud.com', 'CX_1'), False),
-    ('oracle', 'Oceaneering', ('ebfr.fa.us2.oraclecloud.com', 'CX_1', None), False),
-    # Radancy
-    ('radancy', 'Halliburton', 'careers.halliburton.com', False),
-]
+# Cadastro de empresas acompanhadas (empresas.json). Para incluir uma empresa, adicione-a lá;
+# scripts/vagas/mapear.py descobre sozinho o sistema de vagas de quem ainda não tem.
+CADASTRO = Path(__file__).parent / 'empresas.json'
+
+def carregar_empresas():
+    """(tipo, nome, cfg, somente óleo e gás) das empresas com sistema de vagas que sabemos ler."""
+    out = []
+    for e in json.loads(CADASTRO.read_text()):
+        ats = e.get('ats') or {}
+        if ats.get('tipo') in LEITORES and not e.get('pausada'):
+            cfg = tuple(ats['cfg']) if isinstance(ats['cfg'], list) else ats['cfg']
+            out.append((ats['tipo'], e['nome'], cfg, bool(e.get('somente_og'))))
+    return out
 
 OG = re.compile(r'offshore|embarc|plataforma|fpso|sonda|navio|mar[ií]tim|rebocador|conv[eé]s|m[aá]quinas|'
                 r'subsea|petr[oó]le|[oó]leo|g[aá]s|po[cç]o|drilling|vessel|marine|rov|estaleiro|naval', re.I)
@@ -231,7 +200,7 @@ def main():
         except Exception:
             pass
     vagas, status = [], []
-    for tipo, nome, cfg, filtro in EMPRESAS:
+    for tipo, nome, cfg, filtro in carregar_empresas():
         try:
             itens = list(LEITORES[tipo](cfg))
             if filtro:

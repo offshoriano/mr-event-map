@@ -1,0 +1,825 @@
+[
+ {
+  "nome": "PRIO",
+  "origem": [
+   "MR"
+  ],
+  "site": "",
+  "ats": {
+   "tipo": "gupy",
+   "cfg": "prio"
+  }
+ },
+ {
+  "nome": "Brava Energia",
+  "origem": [
+   "MR"
+  ],
+  "site": "",
+  "ats": {
+   "tipo": "gupy",
+   "cfg": "bravaenergia"
+  }
+ },
+ {
+  "nome": "Ocyan",
+  "origem": [
+   "MR"
+  ],
+  "site": "",
+  "ats": {
+   "tipo": "gupy",
+   "cfg": "ocyan"
+  }
+ },
+ {
+  "nome": "Foresea",
+  "origem": [
+   "MR"
+  ],
+  "site": "",
+  "ats": {
+   "tipo": "gupy",
+   "cfg": "foresea"
+  }
+ },
+ {
+  "nome": "MODEC",
+  "origem": [
+   "MR"
+  ],
+  "site": "",
+  "ats": {
+   "tipo": "gupy",
+   "cfg": "modec-br"
+  }
+ },
+ {
+  "nome": "Perbras",
+  "origem": [
+   "MR"
+  ],
+  "site": "",
+  "ats": {
+   "tipo": "gupy",
+   "cfg": "perbras"
+  }
+ },
+ {
+  "nome": "Wilson Sons",
+  "origem": [
+   "MR"
+  ],
+  "site": "",
+  "ats": {
+   "tipo": "gupy",
+   "cfg": "wilsonsons"
+  },
+  "somente_og": true
+ },
+ {
+  "nome": "Constellation",
+  "origem": [
+   "MR"
+  ],
+  "site": "",
+  "ats": {
+   "tipo": "gupy",
+   "cfg": "theconstellation"
+  }
+ },
+ {
+  "nome": "Altera&Ocyan",
+  "origem": [
+   "MR"
+  ],
+  "site": "",
+  "ats": {
+   "tipo": "gupy",
+   "cfg": "alteraocyan"
+  }
+ },
+ {
+  "nome": "Origem Energia",
+  "origem": [
+   "MR"
+  ],
+  "site": "",
+  "ats": {
+   "tipo": "gupy",
+   "cfg": "origemenergia"
+  }
+ },
+ {
+  "nome": "Tecnosonda",
+  "origem": [
+   "MR"
+  ],
+  "site": "",
+  "ats": {
+   "tipo": "gupy",
+   "cfg": "tecnosonda"
+  }
+ },
+ {
+  "nome": "Kaefer",
+  "origem": [
+   "MR"
+  ],
+  "site": "",
+  "ats": {
+   "tipo": "gupy",
+   "cfg": "kaeferbrasil"
+  }
+ },
+ {
+  "nome": "Macnor Marine",
+  "origem": [
+   "MR"
+  ],
+  "site": "",
+  "ats": {
+   "tipo": "gupy",
+   "cfg": "macnor"
+  }
+ },
+ {
+  "nome": "OceanPact",
+  "origem": [
+   "MR"
+  ],
+  "site": "",
+  "ats": {
+   "tipo": "inhire",
+   "cfg": "oceanpact"
+  }
+ },
+ {
+  "nome": "Camorim",
+  "origem": [
+   "MR"
+  ],
+  "site": "",
+  "ats": {
+   "tipo": "inhire",
+   "cfg": "camorim"
+  }
+ },
+ {
+  "nome": "PetroReconcavo",
+  "origem": [
+   "MR"
+  ],
+  "site": "",
+  "ats": {
+   "tipo": "inhire",
+   "cfg": "petroreconcavo"
+  }
+ },
+ {
+  "nome": "Wilson Sons Offshore",
+  "origem": [
+   "MR"
+  ],
+  "site": "",
+  "ats": {
+   "tipo": "inhire",
+   "cfg": "wsut"
+  }
+ },
+ {
+  "nome": "Solstad",
+  "origem": [
+   "MR"
+  ],
+  "site": "",
+  "ats": {
+   "tipo": "inhire",
+   "cfg": "solstad"
+  }
+ },
+ {
+  "nome": "SBM Offshore",
+  "origem": [
+   "MR"
+  ],
+  "site": "",
+  "ats": {
+   "tipo": "rmk",
+   "cfg": "careers.sbmoffshore.com"
+  }
+ },
+ {
+  "nome": "TechnipFMC",
+  "origem": [
+   "MR"
+  ],
+  "site": "",
+  "ats": {
+   "tipo": "rmk",
+   "cfg": "careers.technipfmc.com"
+  }
+ },
+ {
+  "nome": "Subsea7",
+  "origem": [
+   "MR"
+  ],
+  "site": "",
+  "ats": {
+   "tipo": "rmk",
+   "cfg": "careers.subsea7.com"
+  }
+ },
+ {
+  "nome": "Yinson",
+  "origem": [
+   "MR"
+  ],
+  "site": "",
+  "ats": {
+   "tipo": "rmk",
+   "cfg": "careers.yinson.com"
+  }
+ },
+ {
+  "nome": "Baker Hughes",
+  "origem": [
+   "MR"
+  ],
+  "site": "",
+  "ats": {
+   "tipo": "workday",
+   "cfg": [
+    "bakerhughes",
+    "BakerHughes"
+   ]
+  }
+ },
+ {
+  "nome": "Shell",
+  "origem": [
+   "MR"
+  ],
+  "site": "",
+  "ats": {
+   "tipo": "workday",
+   "cfg": [
+    "shell",
+    "ShellCareers"
+   ]
+  }
+ },
+ {
+  "nome": "Equinor",
+  "origem": [
+   "MR"
+  ],
+  "site": "",
+  "ats": {
+   "tipo": "workday",
+   "cfg": [
+    "equinor",
+    "EQNR"
+   ]
+  }
+ },
+ {
+  "nome": "Noble",
+  "origem": [
+   "MR"
+  ],
+  "site": "",
+  "ats": {
+   "tipo": "workday",
+   "cfg": [
+    "noblecorp",
+    "noblecorp"
+   ]
+  }
+ },
+ {
+  "nome": "Fugro",
+  "origem": [
+   "MR"
+  ],
+  "site": "",
+  "ats": {
+   "tipo": "workday",
+   "cfg": [
+    "fugro",
+    "Careers"
+   ]
+  }
+ },
+ {
+  "nome": "Repsol Sinopec",
+  "origem": [
+   "MR"
+  ],
+  "site": "",
+  "ats": {
+   "tipo": "workday",
+   "cfg": [
+    "repsol",
+    "Sinopec"
+   ]
+  }
+ },
+ {
+  "nome": "Transocean",
+  "origem": [
+   "MR"
+  ],
+  "site": "",
+  "ats": {
+   "tipo": "workday",
+   "cfg": [
+    "deepwater",
+    "BrazilExternalCareerSite"
+   ]
+  }
+ },
+ {
+  "nome": "Bristow",
+  "origem": [
+   "MR"
+  ],
+  "site": "",
+  "ats": {
+   "tipo": "workday",
+   "cfg": [
+    "bristow",
+    "Careers"
+   ]
+  }
+ },
+ {
+  "nome": "NOV",
+  "origem": [
+   "MR"
+  ],
+  "site": "",
+  "ats": {
+   "tipo": "oracle",
+   "cfg": [
+    "egay.fa.us6.oraclecloud.com",
+    "CX_2001"
+   ]
+  }
+ },
+ {
+  "nome": "Seadrill",
+  "origem": [
+   "MR"
+  ],
+  "site": "",
+  "ats": {
+   "tipo": "oracle",
+   "cfg": [
+    "fa-eykz-saasfaprod1.fa.ocs.oraclecloud.com",
+    "CX_1"
+   ]
+  }
+ },
+ {
+  "nome": "Valaris",
+  "origem": [
+   "MR"
+  ],
+  "site": "",
+  "ats": {
+   "tipo": "oracle",
+   "cfg": [
+    "efqq.fa.us6.oraclecloud.com",
+    "CX_1"
+   ]
+  }
+ },
+ {
+  "nome": "Oceaneering",
+  "origem": [
+   "MR"
+  ],
+  "site": "",
+  "ats": {
+   "tipo": "oracle",
+   "cfg": [
+    "ebfr.fa.us2.oraclecloud.com",
+    "CX_1",
+    null
+   ]
+  }
+ },
+ {
+  "nome": "Halliburton",
+  "origem": [
+   "MR"
+  ],
+  "site": "",
+  "ats": {
+   "tipo": "radancy",
+   "cfg": "careers.halliburton.com"
+  }
+ },
+ {
+  "nome": "Oceânica",
+  "origem": [
+   "MR"
+  ],
+  "site": "oceanica.com.br",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio."
+ },
+ {
+  "nome": "CBO",
+  "origem": [
+   "MR"
+  ],
+  "site": "grupocbo.com.br",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio."
+ },
+ {
+  "nome": "DOF",
+  "origem": [
+   "MR"
+  ],
+  "site": "dof.com",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio."
+ },
+ {
+  "nome": "Guanabara Offshore",
+  "origem": [
+   "MR"
+  ],
+  "site": "",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio."
+ },
+ {
+  "nome": "Sistac",
+  "origem": [
+   "MR"
+  ],
+  "site": "",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio."
+ },
+ {
+  "nome": "BRS Robotics",
+  "origem": [
+   "MR"
+  ],
+  "site": "",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio."
+ },
+ {
+  "nome": "Marfood",
+  "origem": [
+   "MR"
+  ],
+  "site": "",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio."
+ },
+ {
+  "nome": "Grupo GPS",
+  "origem": [
+   "MR"
+  ],
+  "site": "gpssa.com.br",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio."
+ },
+ {
+  "nome": "OpenSea",
+  "origem": [
+   "MR"
+  ],
+  "site": "",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio."
+ },
+ {
+  "nome": "Infotec",
+  "origem": [
+   "MR"
+  ],
+  "site": "",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio."
+ },
+ {
+  "nome": "Etesco",
+  "origem": [
+   "MR"
+  ],
+  "site": "etesco.com.br",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio."
+ },
+ {
+  "nome": "Ventura Offshore",
+  "origem": [
+   "MR"
+  ],
+  "site": "venturapetroleo.com.br",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio."
+ },
+ {
+  "nome": "Helix",
+  "origem": [
+   "MR"
+  ],
+  "site": "helixesg.com",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio."
+ },
+ {
+  "nome": "COSL",
+  "origem": [
+   "MR"
+  ],
+  "site": "",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio."
+ },
+ {
+  "nome": "Weatherford",
+  "origem": [
+   "MR"
+  ],
+  "site": "weatherford.com",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio."
+ },
+ {
+  "nome": "SLB",
+  "origem": [
+   "MR"
+  ],
+  "site": "slb.com",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio."
+ },
+ {
+  "nome": "OneSubsea",
+  "origem": [
+   "MR"
+  ],
+  "site": "onesubsea.slb.com",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio."
+ },
+ {
+  "nome": "McDermott",
+  "origem": [
+   "MR"
+  ],
+  "site": "mcdermott.com",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio."
+ },
+ {
+  "nome": "Saipem",
+  "origem": [
+   "MR"
+  ],
+  "site": "saipem.com",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio."
+ },
+ {
+  "nome": "Expro",
+  "origem": [
+   "MR"
+  ],
+  "site": "expro.com",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio."
+ },
+ {
+  "nome": "Seagems",
+  "origem": [
+   "MR"
+  ],
+  "site": "seagems.com.br",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio."
+ },
+ {
+  "nome": "STEP Oil and Gas",
+  "origem": [
+   "MR"
+  ],
+  "site": "",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio."
+ },
+ {
+  "nome": "Vertical Group",
+  "origem": [
+   "MR"
+  ],
+  "site": "verticalgroup.com.br",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio."
+ },
+ {
+  "nome": "MISC",
+  "origem": [
+   "MR"
+  ],
+  "site": "miscgroup.com",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio."
+ },
+ {
+  "nome": "BW Offshore",
+  "origem": [
+   "MR"
+  ],
+  "site": "bwoffshore.com",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio."
+ },
+ {
+  "nome": "BW Energy",
+  "origem": [
+   "MR"
+  ],
+  "site": "bwenergy.no",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio."
+ },
+ {
+  "nome": "Bram Offshore",
+  "origem": [
+   "MR"
+  ],
+  "site": "bramoffshore.com.br",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio."
+ },
+ {
+  "nome": "Starnav",
+  "origem": [
+   "MR"
+  ],
+  "site": "starnav.com.br",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio."
+ },
+ {
+  "nome": "Heftos",
+  "origem": [
+   "MR"
+  ],
+  "site": "heftos.com.br",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio."
+ },
+ {
+  "nome": "Mota-Engil",
+  "origem": [
+   "MR"
+  ],
+  "site": "mota-engil.com",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio."
+ },
+ {
+  "nome": "Aker Solutions",
+  "origem": [
+   "MR"
+  ],
+  "site": "akersolutions.com",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio."
+ },
+ {
+  "nome": "Akofs Offshore",
+  "origem": [
+   "MR"
+  ],
+  "site": "",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio."
+ },
+ {
+  "nome": "OOS International",
+  "origem": [
+   "MR"
+  ],
+  "site": "blueoos.com",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio."
+ },
+ {
+  "nome": "CHC do Brasil",
+  "origem": [
+   "MR"
+  ],
+  "site": "chcheli.com",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio."
+ },
+ {
+  "nome": "Omni Táxi Aéreo",
+  "origem": [
+   "MR"
+  ],
+  "site": "omnihelicoptersinternational.com",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio."
+ },
+ {
+  "nome": "Líder Aviação",
+  "origem": [
+   "MR"
+  ],
+  "site": "",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio."
+ },
+ {
+  "nome": "Seatrium Brasfels",
+  "origem": [
+   "MR"
+  ],
+  "site": "",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio."
+ },
+ {
+  "nome": "Bureau Veritas",
+  "origem": [
+   "MR"
+  ],
+  "site": "bureauveritas.com.br",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio."
+ },
+ {
+  "nome": "SGS",
+  "origem": [
+   "MR"
+  ],
+  "site": "sgs.com",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio."
+ },
+ {
+  "nome": "Manserv",
+  "origem": [
+   "MR"
+  ],
+  "site": "manserv.com.br",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio."
+ },
+ {
+  "nome": "Sodexo On-Site",
+  "origem": [
+   "MR"
+  ],
+  "site": "sodexo.com.br",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio."
+ },
+ {
+  "nome": "Belov Engenharia",
+  "origem": [
+   "MR"
+  ],
+  "site": "belov.com.br",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio."
+ },
+ {
+  "nome": "Bourbon",
+  "origem": [
+   "MR"
+  ],
+  "site": "bourbonoffshore.com",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio."
+ },
+ {
+  "nome": "Tidewater",
+  "origem": [
+   "MR"
+  ],
+  "site": "tdw.com",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio."
+ },
+ {
+  "nome": "Elfe",
+  "origem": [
+   "MR"
+  ],
+  "site": "elfe.com.br",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio."
+ },
+ {
+  "nome": "Imetame",
+  "origem": [
+   "MR"
+  ],
+  "site": "imetame.com.br",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio."
+ },
+ {
+  "nome": "Navemar",
+  "origem": [
+   "MR"
+  ],
+  "site": "",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio."
+ },
+ {
+  "nome": "Astromarítima",
+  "origem": [
+   "MR"
+  ],
+  "site": "",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio."
+ },
+ {
+  "nome": "Engeman",
+  "origem": [
+   "MR"
+  ],
+  "site": "",
+  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio."
+ },
+ {
+  "nome": "Petrobras",
+  "origem": [
+   "MR"
+  ],
+  "site": "petrobras.com.br",
+  "obs": "Contrata por concurso público."
+ }
+]
