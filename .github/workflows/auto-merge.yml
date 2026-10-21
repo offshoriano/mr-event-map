@@ -1,0 +1,42 @@
+name: Publicar pedidos do Claude automaticamente
+
+# Autorizado pelo Matheus em 21/10/2026: pedidos (pull requests) abertos pelo Claude a partir
+# de um branch claude/* deste mesmo repositório entram no main sozinhos e vão para o site,
+# sem precisar clicar em merge. Pedido vindo de fora (fork) ou de outro branch não entra por aqui.
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+    branches: [main]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: auto-merge
+  cancel-in-progress: false
+
+jobs:
+  publicar:
+    if: >-
+      github.event.pull_request.head.repo.full_name == github.repository &&
+      startsWith(github.event.pull_request.head.ref, 'claude/') &&
+      !github.event.pull_request.draft
+    runs-on: ubuntu-latest
+    steps:
+      - name: Baixar código
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Juntar o pedido no main
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh pr merge ${{ github.event.pull_request.number }} --merge --repo ${{ github.repository }}
+
+      - name: Publicar no site
+        run: |
+          git fetch origin main
+          # Merge feito com o token do GitHub Actions não dispara o deploy.yml, então publica aqui
+          git push origin origin/main:refs/heads/claude/event-map-platform-db2gk
