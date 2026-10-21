@@ -212,7 +212,24 @@ def beehire(conta):
         local = ', '.join(x for x in (loc.get('city'), loc.get('state')) if x) or 'Brasil'
         yield dict(titulo=titulo, local=local, link=c.get('inviteLink') or f'https://app.beehire.com/{conta}')
 
-LEITORES = dict(brunel=brunel, airswift=airswift, atlas=atlas, mde=mde, beehire=beehire, inhire=inhire, gupy=gupy, rmk=rmk, workday=workday, oracle=oracle, radancy=radancy)
+def solides(slug):
+    for pagina in range(1, 11):
+        d = json.loads(get(f'https://apigw.solides.com.br/jobs/v3/companies/{slug}/vacancies?take=25&page={pagina}'))
+        for v in d.get('data') or []:
+            cidade, uf = (v.get('city') or {}).get('name'), (v.get('state') or {}).get('code')
+            local = 'Remoto' if v.get('homeOffice') else ', '.join(x for x in (cidade, uf) if x) or 'Brasil'
+            yield dict(titulo=limpa(v.get('title')), local=local, link=f'https://{slug}.vagas.solides.com.br/vaga/{v["id"]}')
+        if pagina >= (d.get('totalPages') or 1):
+            break
+
+def recruitee(conta):
+    d = json.loads(get(f'https://{conta}.recruitee.com/api/offers/'))
+    for o in d.get('offers') or []:
+        if not re.search(r'bra[sz]il', f"{o.get('country')} {o.get('location')}", re.I):
+            continue
+        yield dict(titulo=limpa(o.get('title')), local=limpa(o.get('city') or o.get('location') or 'Brasil'), link=o.get('careers_url') or o.get('url'))
+
+LEITORES = dict(solides=solides, recruitee=recruitee, brunel=brunel, airswift=airswift, atlas=atlas, mde=mde, beehire=beehire, inhire=inhire, gupy=gupy, rmk=rmk, workday=workday, oracle=oracle, radancy=radancy)
 
 def classifica(titulo):
     t = titulo.lower()

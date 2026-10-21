@@ -85,7 +85,7 @@ function login(msg){
   $('#f').onsubmit = e => { e.preventDefault(); senha = $('#pw').value; carregar(); };
 }
 
-let VG = [], AVISO = '', aba = ({'#vagas':'vagas', '#ranking':'ranking'})[location.hash] || 'contatos', avisou = false;
+let VG = [], AVISO = '', aba = ({'#vagas':'vagas', '#ranking':'ranking', '#empresas':'empresas'})[location.hash] || 'contatos', avisou = false;
 const AREAS = {seguranca:'Segurança', eletrica:'Elétrica e instrumentação', mecanica:'Mecânica e manutenção', pocos:'Perfuração e poços',
   maritimo:'Marítimo', hotelaria:'Hotelaria', operacao:'Operação e produção', engenharia:'Engenharia', trainee:'Trainee e estágio', geral:'Outras'};
 const VAPI = '../api/vagas-enviadas.php';
@@ -123,10 +123,11 @@ function painel(){
       <button class="tab ${aba === 'contatos' ? 'on' : ''}" data-aba="contatos">Contatos</button>
       <button class="tab ${aba === 'vagas' ? 'on' : ''}" data-aba="vagas">Vagas enviadas${n ? `<span class="badge">${n}</span>` : ''}</button>
       <button class="tab ${aba === 'ranking' ? 'on' : ''}" data-aba="ranking">Ranking de cliques</button>
+      <button class="tab ${aba === 'empresas' ? 'on' : ''}" data-aba="empresas">Empresas</button>
     </div>
     <div id="conteudo"></div></div>`;
   document.querySelectorAll('.tab').forEach(t => t.onclick = () => { aba = t.dataset.aba; history.replaceState(null, '', aba === 'contatos' ? '#' : '#' + aba); painel(); });
-  aba === 'vagas' ? painelVagas() : aba === 'ranking' ? painelRanking() : painelContatos();
+  aba === 'vagas' ? painelVagas() : aba === 'ranking' ? painelRanking() : aba === 'empresas' ? painelEmpresas() : painelContatos();
 }
 
 function painelVagas(){
@@ -223,6 +224,40 @@ function painelRanking(mes){
         a.download = 'ranking-vagas-' + r.mes + '.csv'; a.click();
       };
     }).catch(() => { $('#conteudo').innerHTML = '<p class="note">Não foi possível carregar o ranking.</p>'; });
+}
+
+// Cadastro de empresas que o robô de vagas acompanha (scripts/vagas/empresas.json)
+function painelEmpresas(){
+  $('#conteudo').innerHTML = '<p class="note">Carregando...</p>';
+  Promise.all([fetch('../scripts/vagas/empresas.json', {cache:'no-cache'}).then(r => r.json()), fetch('../vagas/automaticas.json', {cache:'no-cache'}).then(r => r.json())])
+    .then(([cad, auto]) => {
+      const n = {}; auto.vagas.forEach(v => n[v.empresa] = (n[v.empresa] || 0) + 1);
+      const LIDOS = ['gupy','rmk','workday','oracle','radancy','inhire','solides','recruitee','brunel','airswift','atlas','mde','beehire'];
+      const lista = cad.map(e => ({...e, lendo: !!(e.ats && !e.pausada && LIDOS.includes(e.ats.tipo)), vagas: n[e.nome] || 0, origens: (e.origem || []).join(', ')}));
+      const origens = [...new Set(lista.flatMap(e => e.origem || []))].sort();
+      $('#conteudo').innerHTML = `
+        <div class="kpis" style="margin-top:20px">
+          <div class="kpi"><b>${lista.length}</b><span>Empresas no cadastro</span></div>
+          <div class="kpi"><b>${lista.filter(e => e.lendo).length}</b><span>Com vagas lidas pelo robô</span></div>
+          <div class="kpi"><b>${lista.filter(e => e.vagas).length}</b><span>Com vaga aberta agora</span></div>
+          <div class="kpi"><b>${auto.vagas.length}</b><span>Vagas no site</span></div>
+        </div>
+        <div class="bar"><input type="search" id="qe" placeholder="Buscar empresa">
+          <select id="oe"><option value="">Todas as origens</option>${origens.map(o => `<option>${esc(o)}</option>`).join('')}</select>
+          <select id="se"><option value="">Todas</option><option value="lendo">Robô lendo as vagas</option><option value="nao">Sem sistema de vagas</option></select></div>
+        <div class="tbl" id="te"></div>
+        <p class="note">Empresas sem sistema de vagas publicam pelo LinkedIn ou formulário próprio. Vale mandar o link de "Divulgue sua vaga" para o RH delas. Atualizado em ${new Date(auto.atualizado).toLocaleDateString('pt-BR')}.</p>`;
+      const draw = () => {
+        const q = $('#qe').value.toLowerCase(), o = $('#oe').value, st = $('#se').value;
+        const r = lista.filter(e => (!q || e.nome.toLowerCase().includes(q)) && (!o || (e.origem || []).includes(o)) && (!st || (st === 'lendo') === e.lendo))
+          .sort((a, b) => b.vagas - a.vagas || b.lendo - a.lendo || a.nome.localeCompare(b.nome));
+        $('#te').innerHTML = `<table><thead><tr><th>Empresa</th><th>Origem</th><th>Vagas agora</th><th>Situação</th><th>Links</th></tr></thead><tbody>${r.map(e => `<tr>
+          <td>${esc(e.nome)}</td><td class="m">${esc(e.origens)}</td><td><b>${e.vagas || ''}</b></td>
+          <td class="m">${e.lendo ? 'Robô lendo (' + esc(e.ats.tipo) + ')' : e.mesma_conta_de ? 'Igual a ' + esc(e.mesma_conta_de) : e.ats && !e.pausada ? 'Usa ' + esc(e.ats.tipo) + ', leitor ainda não feito' : esc(e.obs || 'Sem sistema de vagas achado')}</td>
+          <td class="m">${e.site ? `<a href="${esc(/^http/.test(e.site) ? e.site : 'https://' + e.site)}" target="_blank" style="color:var(--gold-l)">site</a>` : ''} ${e.linkedin ? `<a href="${esc(e.linkedin)}/jobs/" target="_blank" style="color:var(--gold-l)">LinkedIn</a>` : ''}</td></tr>`).join('')}</tbody></table>`;
+      };
+      $('#qe').oninput = draw; $('#oe').onchange = draw; $('#se').onchange = draw; draw();
+    }).catch(() => { $('#conteudo').innerHTML = '<p class="note">Não foi possível carregar o cadastro.</p>'; });
 }
 
 function painelContatos(){
