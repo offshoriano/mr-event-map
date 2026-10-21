@@ -152,7 +152,67 @@ def inhire(tenant):
             titulo = titulo[:m.start()].strip()
         yield dict(titulo=titulo, local=local, link=j.get('link') or f'https://{tenant}.inhire.app/vagas/{j["jobId"]}')
 
-LEITORES = dict(inhire=inhire, gupy=gupy, rmk=rmk, workday=workday, oracle=oracle, radancy=radancy)
+# Consultorias de recrutamento
+BRUNEL_CHAVE = 'eb0dfbddc7564004b2da4d064f2c54e2'  # chave pública do próprio site da Brunel
+
+def brunel(_):
+    for pagina in range(1, 6):
+        corpo = json.dumps({'page': pagina, 'pageSize': 50, 'language': 'en', 'countryPreset': ['BRA']}).encode()
+        d = json.loads(get('https://api.brunel.net/publicationsearch/api/PublicationsSearch/Get', corpo,
+                           {'Content-Type': 'application/json', 'Ocp-Apim-Subscription-Key': BRUNEL_CHAVE}))
+        for j in d.get('publications') or []:
+            slug_t = re.sub(r'[^a-z0-9]+', '-', limpa(j['title']).lower()).strip('-')
+            yield dict(titulo=limpa(j['title']), local=(j.get('city') or 'Brasil') + ', Brasil',
+                       link=f"https://www.brunel.net/en/jobs/{slug_t}-{j['publicationId'].lower()}")
+        if pagina * 50 >= (d.get('totalCount') or 0):
+            break
+
+def airswift(_):
+    vistos = set()
+    for pagina in range(1, 6):
+        s = get(f'https://www.airswift.com/jobs?location=Brazil&page_num={pagina}')
+        cards = re.findall(r'<article[^>]*c-card-job-item[^>]*>(.*?)</article>', s, re.S)
+        for c in cards:
+            m = re.search(r'c-card-job-item__title[^>]*>\s*<a[^>]*href="([^"]+)"[^>]*>(.*?)</a>', c, re.S)
+            loc = re.search(r'c-card-job-item__location[^>]*>(.*?)</p>', c, re.S)
+            local = limpa(re.sub('<[^>]+>', '', loc.group(1))) if loc else ''
+            if not m or m.group(1) in vistos or not re.search(r'bra[sz]il', local, re.I) or re.search(r'texas|houston', local, re.I):
+                continue
+            vistos.add(m.group(1))
+            partes = [x.strip() for x in local.split(',')]
+            yield dict(titulo=limpa(re.sub('<[^>]+>', '', m.group(2))), local=partes[0] + ', Brasil', link=urllib.parse.urljoin('https://www.airswift.com', m.group(1)))
+        if not cards:
+            break
+
+def atlas(_):
+    # Atlas Professionals agora é Atlas NextWave; 4 é o código do Brasil no site
+    d = json.loads(get('https://atlasnextwave.com/wp-json/wp/v2/job?country=4&per_page=100&_fields=id,title,link'))
+    for j in d:
+        yield dict(titulo=limpa(j['title']['rendered']), local='Brasil', link=j['link'])
+
+def mde(_):
+    d = json.loads(get('https://api.hubapi.com/cms/v3/hubdb/tables/5743423/rows?portalId=8479246&limit=1000'))
+    hoje = date.today().isoformat()
+    for r in d.get('results') or []:
+        v = r.get('values') or {}
+        fim = str(v.get('end_date') or '')[:10]
+        if v.get('ikke_publisert') or (fim and fim < hoje) or str(v.get('country_id_recman')) != '47':
+            continue
+        yield dict(titulo=limpa(v.get('name') or v.get('tittel')), local=limpa(str(v.get('parea') or 'Brasil')),
+                   link=f"https://www.mde-group.com/pt-br/procurando-emprego/{r.get('path')}")
+
+def beehire(conta):
+    d = json.loads(get(f'https://app.beehire.com/users/getPublicCampaigns/{conta}'))
+    for c in d.get('campaigns') or []:
+        loc = c.get('location') or {}
+        if not re.search(r'bra[sz]il|br[eé]sil', str(loc.get('country') or loc.get('name') or ''), re.I):
+            continue
+        t = c.get('title')
+        titulo = limpa(next(iter(t.values())) if isinstance(t, dict) and t else str(t or ''))
+        local = ', '.join(x for x in (loc.get('city'), loc.get('state')) if x) or 'Brasil'
+        yield dict(titulo=titulo, local=local, link=c.get('inviteLink') or f'https://app.beehire.com/{conta}')
+
+LEITORES = dict(brunel=brunel, airswift=airswift, atlas=atlas, mde=mde, beehire=beehire, inhire=inhire, gupy=gupy, rmk=rmk, workday=workday, oracle=oracle, radancy=radancy)
 
 def classifica(titulo):
     t = titulo.lower()
