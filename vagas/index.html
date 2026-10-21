@@ -308,6 +308,12 @@ function render(){
 const $ = s => document.querySelector(s);
 
 let AUTO = [], VIDS = {}, CAT = {}, mostrar = 30;
+// Conta o clique para o ranking mensal do painel (só números, sem dado pessoal)
+function contar(id, tipo){
+  const v = todas().find(x => x.id === id); if (!v) return;
+  const corpo = JSON.stringify({action:'clique', tipo, vaga:id, titulo:v.titulo, empresa:v.empresa});
+  try { navigator.sendBeacon('../api/cliques.php', new Blob([corpo], {type:'application/json'})); } catch (e) {}
+}
 const todas = () => VAGAS.concat(AUTO);
 
 function rowHTML(v){
@@ -410,6 +416,7 @@ Promise.all([
       b.classList.add('playing');
       b.querySelector('.vid-frame').innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${b.dataset.id}?autoplay=1&rel=0" title="Vídeo" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>`;
       if (window.gtag) gtag('event', 'vaga_video_play', {vaga:b.dataset.vaga, video:b.dataset.id});
+      contar(b.dataset.vaga, 'video');
     }
     const p = e.target.closest('[data-prep]');
     if (p){
@@ -419,12 +426,14 @@ Promise.all([
         row.insertAdjacentHTML('beforeend', prepHTML(AUTO.find(v => v.id === p.dataset.prep)));
         p.classList.add('on');
         if (window.gtag) gtag('event', 'vaga_preparar', {vaga:p.dataset.prep});
+        contar(p.dataset.prep, 'preparar');
       }
     }
     if (e.target.id === 'mais'){ mostrar += 30; renderAuto(); }
     const a = e.target.closest('[data-apply]');
     if (a){
       if (window.gtag) gtag('event', 'vaga_candidatura_click', {vaga:a.dataset.apply});
+      contar(a.dataset.apply, 'candidatar');
       // Quem já se apresentou antes vai direto; os outros veem o pop-up primeiro
       let conhecido = false;
       try { conhecido = !!localStorage.getItem('mr-lead'); } catch (err) {}
