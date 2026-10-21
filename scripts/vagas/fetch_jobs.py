@@ -8,6 +8,8 @@ from pathlib import Path
 RAIZ = Path(__file__).resolve().parents[2]
 SAIDA = RAIZ / 'vagas' / 'automaticas.json'
 VIDEOS = json.loads((Path(__file__).parent / 'videos.json').read_text())
+sys.path.insert(0, str(Path(__file__).parent))
+import videos as escolha_videos  # noqa: E402
 UA = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126 Safari/537.36'
 
 # filtro: True = só vagas com palavra de óleo, gás, offshore ou marítimo
@@ -230,7 +232,8 @@ def main():
                     titulo=i['titulo'].strip(' -|'), empresa=nome, local=arruma_local(i['local']), link=i['link'],
                     regime=regime(i['titulo'], i['local']), area=VIDEOS['nomes'].get(area, 'Outras'), tema=area,
                     banco=bool(i.get('banco')) or 'banco de talentos' in i['titulo'].lower(),
-                    vistaEm=anterior.get(i['link'], hoje)))
+                    vistaEm=anterior.get(i['link'], hoje),
+                    videos=escolha_videos.escolher(i['titulo'], nome)[0]))
             status.append(dict(empresa=nome, vagas=sum(1 for v in vagas if v['empresa'] == nome), ok=True))
             print(f'{nome:15} {status[-1]["vagas"]}', file=sys.stderr)
         except Exception as e:
@@ -241,7 +244,10 @@ def main():
         try:
             velhas = json.loads(SAIDA.read_text())['vagas']
             falhas = {s['empresa'] for s in status if not s['ok']}
-            vagas += [v for v in velhas if v['empresa'] in falhas]
+            for v in velhas:
+                if v['empresa'] in falhas:
+                    v['videos'] = escolha_videos.escolher(v['titulo'], v['empresa'])[0]
+                    vagas.append(v)
         except Exception:
             pass
     vistos, unicas = set(), []
@@ -250,7 +256,8 @@ def main():
             vistos.add(v['link']); unicas.append(v)
     unicas.sort(key=lambda v: (v['banco'], v['regime'] != 'Embarcado', v['empresa'], v['titulo']))
     SAIDA.write_text(json.dumps(dict(atualizado=datetime.now(timezone.utc).isoformat(timespec='seconds'),
-                                     fontes=status, videos=VIDEOS['videos'], vagas=unicas), ensure_ascii=False, indent=1) + '\n')
+                                     fontes=status, videos=VIDEOS['videos'],
+                                     catalogo=escolha_videos.catalogo({x[0] for v in unicas for x in v.get('videos', [])}), vagas=unicas), ensure_ascii=False, indent=1) + '\n')
     print(f'{len(unicas)} vagas gravadas', file=sys.stderr)
     if not any(s['ok'] for s in status):
         sys.exit(1)

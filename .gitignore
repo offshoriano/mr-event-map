@@ -1,3 +1,4 @@
 data/leads.json*
 data/vagas-enviadas.json*
 data/config.json*
+__pycache__/
