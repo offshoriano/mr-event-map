@@ -185,6 +185,8 @@ footer{border-top:1px solid var(--border);padding:36px 48px;max-width:1080px;mar
 .row-act .btn{padding:10px 16px;}
 .row-prep{background:none;border:1px solid var(--border2);color:var(--muted2);font-family:inherit;font-size:12px;padding:9px 12px;border-radius:2px;cursor:pointer;white-space:nowrap;}
 .row-prep:hover,.row-prep.on{color:var(--gold-l);border-color:rgba(201,147,58,.5);}
+.row-share{display:inline-flex;align-items:center;gap:6px;text-decoration:none;}
+.row-share svg{width:15px;height:15px;fill:#25D366;}
 .row .prep{margin:0 16px 16px;}
 .chip.nova{color:#0D1117;background:#7fdc7f;border-color:#7fdc7f;font-weight:700;}
 .sobre{margin:0 16px 14px;padding-top:4px;}
@@ -199,6 +201,8 @@ footer{border-top:1px solid var(--border);padding:36px 48px;max-width:1080px;mar
   .row-main{flex-direction:column;align-items:stretch;}
   .row-act{justify-content:space-between;}
   .row-act .btn{flex:1;justify-content:center;}
+  .row-act{flex-wrap:wrap;}
+  .row-act .row-prep{flex:1;justify-content:center;text-align:center;}
 }
 </style>
 </head>
@@ -245,7 +249,6 @@ let VAGAS = [];
 function jobHTML(v){
   const d = v.inscricoesAte ? diasAte(v.inscricoesAte) : null;
   const prazo = d == null ? '' : d <= 3 ? `<span class="chip warn">Últimos ${d + 1} dia${d ? 's' : ''}</span>` : `<span class="chip">Inscrições até ${fmt(v.inscricoesAte)}</span>`;
-  const msg = encodeURIComponent(`Vaga: ${v.titulo} na ${v.empresa}. Tem vídeo de preparação junto: ${location.origin + location.pathname}#${v.id}`);
   return `<article class="job" id="${esc(v.id)}">
     <div class="job-head">
       ${v.logo ? `<img class="job-logo" src="${esc(v.logo)}" alt="${esc(v.empresa)}">` : ''}
@@ -278,7 +281,7 @@ function jobHTML(v){
     </div>
     <div class="job-foot">
       <a class="btn btn-gold" href="${esc(v.link)}" target="_blank" rel="noopener" data-apply="${esc(v.id)}">${/^mailto:/.test(v.link) ? 'Enviar currículo' : 'Candidatar-se'}</a>
-      <a class="btn btn-ghost" href="https://wa.me/?text=${msg}" target="_blank" rel="noopener">Enviar para um amigo</a>
+      <a class="btn btn-ghost" href="${esc(waShare(v))}" target="_blank" rel="noopener" data-share="${esc(v.id)}">Compartilhar com um amigo</a>
       <span class="job-note">${/^mailto:/.test(v.link) ? 'Candidatura por e-mail, direto com a ' + esc(v.empresa) : 'Candidatura no site da ' + esc(v.empresa)}</span>
     </div>
   </article>`;
@@ -309,6 +312,9 @@ function render(){
 const $ = s => document.querySelector(s);
 
 let AUTO = [], VIDS = {}, CAT = {}, mostrar = 30;
+const linkVaga = v => location.origin + location.pathname + '#' + v.id;
+const textoShare = v => `Vaga de ${v.titulo} na ${v.empresa}${v.local ? ' (' + v.local + ')' : ''}. Tem vídeo para se preparar antes de se candidatar:`;
+const waShare = v => 'https://wa.me/?text=' + encodeURIComponent(textoShare(v) + ' ' + linkVaga(v));
 // Vaga que o robô viu pela primeira vez nos últimos 3 dias ganha o selo de nova
 const NOVA_DESDE = new Date(Date.now() - 3 * 864e5).toISOString().slice(0, 10);
 const ehNova = v => v.vistaEm && v.vistaEm >= NOVA_DESDE;
@@ -329,6 +335,7 @@ function rowHTML(v){
         <div class="chips"><span class="chip${v.regime === 'Embarcado' ? ' gold' : ''}">${esc(v.regime)}</span>${v.tema === 'geral' ? '' : `<span class="chip">${esc(v.area)}</span>`}${v.banco ? '<span class="chip">Banco de talentos</span>' : ''}${v.enviada ? '<span class="chip gold">Divulgada pela empresa</span>' : ''}${ehNova(v) ? '<span class="chip nova">Nova</span>' : ''}</div>
       </div>
       <div class="row-act">
+        <a class="row-prep row-share" href="${esc(waShare(v))}" target="_blank" rel="noopener" data-share="${esc(v.id)}" aria-label="Compartilhar esta vaga com um amigo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>Compartilhar</a>
         <button class="row-prep" data-prep="${esc(v.id)}">${v.descricao ? 'Ver vaga' : 'Como se preparar'}</button>
         <a class="btn btn-gold" href="${esc(v.link)}" target="_blank" rel="noopener" data-apply="${esc(v.id)}">Candidatar-se</a>
       </div>
@@ -414,7 +421,13 @@ Promise.all([
   if (location.hash){
     const id = decodeURIComponent(location.hash.slice(1));
     if (AUTO.some(v => v.id === id)){ $('#bt').checked = false; mostrar = AUTO.length; renderAuto(); }
-    const el = document.getElementById(id); if (el){ el.classList.add('hl'); el.scrollIntoView(); }
+    const el = document.getElementById(id);
+    if (el){
+      el.classList.add('hl');
+      // Quem chega por link compartilhado já vê a vaga aberta, com os vídeos
+      const prep = el.querySelector('[data-prep]'); if (prep) setTimeout(() => { prep.click(); el.scrollIntoView(); }, 0);
+      el.scrollIntoView();
+    }
   }
 
   document.addEventListener('click', e => {
@@ -424,6 +437,17 @@ Promise.all([
       b.querySelector('.vid-frame').innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${b.dataset.id}?autoplay=1&rel=0" title="Vídeo" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>`;
       if (window.gtag) gtag('event', 'vaga_video_play', {vaga:b.dataset.vaga, video:b.dataset.id});
       contar(b.dataset.vaga, 'video');
+    }
+    const sh = e.target.closest('[data-share]');
+    if (sh){
+      const v = todas().find(x => x.id === sh.dataset.share);
+      contar(sh.dataset.share, 'compartilhar');
+      if (window.gtag) gtag('event', 'vaga_compartilhar', {vaga:sh.dataset.share});
+      if (v && navigator.share && matchMedia('(pointer:coarse)').matches){
+        e.preventDefault();
+        navigator.share({title: v.titulo + ' · ' + v.empresa, text: textoShare(v), url: linkVaga(v)}).catch(() => {});
+      }
+      return;
     }
     const p = e.target.closest('[data-prep]');
     if (p){
