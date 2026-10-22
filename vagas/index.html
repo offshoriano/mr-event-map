@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vagas offshore abertas agora · MR Group</title>
-<meta name="description" content="Vagas de PRIO, SBM, MODEC, Subsea7, Baker Hughes, Halliburton e outras, direto do site de cada empresa. Com vídeo para você se preparar antes de se candidatar.">
+<title>Vagas de óleo e gás, offshore e onshore · MR Group</title>
+<meta name="description" content="Vagas embarcadas e em terra de PRIO, SBM, MODEC, Subsea7, Baker Hughes, Halliburton e outras, direto do site de cada empresa. Com vídeo para você se preparar antes de se candidatar.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="MR Group">
 <meta property="og:url" content="https://mrgroup.com.br/vagas/">
-<meta property="og:title" content="Vagas offshore abertas agora · MR Group">
-<meta property="og:description" content="Vagas de PRIO, SBM, MODEC, Subsea7, Baker Hughes, Halliburton e outras, direto do site de cada empresa. Com vídeo para você se preparar antes de se candidatar.">
+<meta property="og:title" content="Vagas de óleo e gás, offshore e onshore · MR Group">
+<meta property="og:description" content="Vagas embarcadas e em terra de PRIO, SBM, MODEC, Subsea7, Baker Hughes, Halliburton e outras, direto do site de cada empresa. Com vídeo para você se preparar antes de se candidatar.">
 <meta property="og:image" content="https://mrgroup.com.br/assets/og/vagas.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -54,6 +54,13 @@ header.hero{max-width:1080px;margin:0 auto;padding:72px 48px 36px;}
   border:1px solid rgba(201,147,58,.3);padding:7px 18px;border-radius:2px;background:rgba(201,147,58,.05);margin-bottom:22px;}
 h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(56px,9vw,104px);line-height:.9;letter-spacing:.02em;}
 h1 .l2{color:var(--gold);}
+.hero-terra{margin-top:14px;font-size:17px;color:var(--white);font-weight:600;}
+.hero-sub b{color:var(--white);font-weight:600;}
+.seg{display:inline-flex;border:1px solid var(--border2);border-radius:3px;overflow:hidden;margin-bottom:12px;}
+.seg button{font-family:inherit;font-size:13px;font-weight:700;background:var(--card2);color:var(--muted2);border:none;border-right:1px solid var(--border2);padding:11px 18px;cursor:pointer;}
+.seg button:last-child{border-right:none;}
+.seg button.on{background:var(--gold);color:var(--black);}
+.seg button small{font-weight:400;opacity:.8;margin-left:4px;}
 .hero-sub{max-width:640px;margin-top:18px;font-size:15px;line-height:1.75;color:var(--muted2);font-weight:300;}
 
 main{max-width:1080px;margin:0 auto;padding:0 48px 100px;}
@@ -171,7 +178,7 @@ footer{border-top:1px solid var(--border);padding:36px 48px;max-width:1080px;mar
 .sec-h h2{font-family:'DM Sans',sans-serif;font-weight:800;font-size:22px;}
 .sec-h small{font-size:12px;color:var(--muted);}
 .sec-sub{font-size:14px;color:var(--muted2);line-height:1.6;margin-bottom:16px;max-width:720px;}
-.ctrl2{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:8px;margin-bottom:12px;}
+.ctrl2{display:grid;grid-template-columns:2fr 1fr 1fr;gap:8px;margin-bottom:12px;}
 .ctrl2 input,.ctrl2 select{width:100%;min-width:0;}
 .tg{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted2);margin:0 0 14px;cursor:pointer;width:max-content;}
 .row{background:var(--card);border:1px solid var(--border);border-radius:2px;margin-bottom:8px;}
@@ -220,7 +227,7 @@ footer{border-top:1px solid var(--border);padding:36px 48px;max-width:1080px;mar
 <body>
 
 <nav>
-  <a class="nav-logo" href="../" aria-label="MR Solutions, início"><img src="../assets/mr-solutions-branco.png" alt="MR Solutions"><span>Vagas Offshore</span></a>
+  <a class="nav-logo" href="../" aria-label="MR Solutions, início"><img src="../assets/mr-solutions-branco.png" alt="MR Solutions"><span>Vagas</span></a>
   <div class="nav-links">
     <a href="../sobre/">Sobre</a>
     <a href="../#calendar-main">Agenda</a>
@@ -231,9 +238,10 @@ footer{border-top:1px solid var(--border);padding:36px 48px;max-width:1080px;mar
 </nav>
 
 <header class="hero">
-  <div class="eyebrow">Vagas de óleo e gás · atualizadas toda semana</div>
+  <div class="eyebrow">Vagas de óleo e gás · offshore e onshore · atualizadas todo dia</div>
   <h1>Vagas offshore<br><span class="l2">com preparação junto</span></h1>
-  <p class="hero-sub">Juntei aqui as vagas abertas no Brasil das principais empresas do setor, puxadas direto do site de cada uma. Cada vaga vem com os vídeos que eu indicaria antes de você se candidatar. Assiste, ajusta o currículo e manda.</p>
+  <p class="hero-terra">E também vagas em terra, para quem quer trabalhar no setor sem embarcar.</p>
+  <p class="hero-sub">Juntei as vagas abertas no Brasil das empresas de óleo e gás, puxadas direto do site de cada uma. Quer embarcar? Filtra <b>Offshore</b>. Prefere trabalhar em terra, na base, no escritório ou na oficina? Filtra <b>Onshore</b>. Cada vaga vem com os vídeos que eu indicaria antes de você se candidatar.</p>
 </header>
 
 <main id="app"><div class="empty">Carregando vagas</div></main>
@@ -322,7 +330,9 @@ function render(){
 }
 const $ = s => document.querySelector(s);
 
-let AUTO = [], VIDS = {}, CAT = {}, QUAL = [], mostrar = 30;
+let AUTO = [], VIDS = {}, CAT = {}, QUAL = [], REG = '', mostrar = 30;
+// Fontes diferentes escrevem o regime de jeitos diferentes; aqui vira Offshore, Onshore ou Remoto
+const tipoRegime = v => /embarc|offshore/i.test(v.regime || '') ? 'Offshore' : /remot/i.test(v.regime || '') ? 'Remoto' : 'Onshore';
 const linkVaga = v => location.origin + location.pathname + '#' + v.id;
 const textoShare = v => v.organizador
   ? `${v.gratuito ? 'Curso gratuito' : 'Curso'}: ${v.titulo}, ${v.organizador}. Inscrições ${v.inscricoesDe ? 'de ' + fmt(v.inscricoesDe) + ' ' : ''}até ${fmt(v.inscricoesAte)}. Detalhes e edital:`
@@ -376,7 +386,7 @@ function rowHTML(v){
       <div class="row-info">
         <div class="row-t">${esc(v.titulo)}</div>
         <div class="row-c">${esc(v.empresa)} · ${esc(v.local)}</div>
-        <div class="chips"><span class="chip${v.regime === 'Embarcado' ? ' gold' : ''}">${esc(v.regime)}</span>${v.tema === 'geral' ? '' : `<span class="chip">${esc(v.area)}</span>`}${v.banco ? '<span class="chip">Banco de talentos</span>' : ''}${v.enviada ? '<span class="chip gold">Divulgada pela empresa</span>' : ''}${v.destaque ? '<span class="chip gold">Em destaque</span>' : ''}${ehNova(v) ? '<span class="chip nova">Nova</span>' : ''}</div>
+        <div class="chips"><span class="chip${tipoRegime(v) === 'Offshore' ? ' gold' : ''}">${tipoRegime(v) === 'Offshore' ? 'Offshore · embarcado' : tipoRegime(v) === 'Onshore' ? 'Onshore · em terra' : 'Remoto'}</span>${v.tema === 'geral' ? '' : `<span class="chip">${esc(v.area)}</span>`}${v.banco ? '<span class="chip">Banco de talentos</span>' : ''}${v.enviada ? '<span class="chip gold">Divulgada pela empresa</span>' : ''}${v.destaque ? '<span class="chip gold">Em destaque</span>' : ''}${ehNova(v) ? '<span class="chip nova">Nova</span>' : ''}</div>
       </div>
       <div class="row-act">
         <a class="row-prep row-share" href="${esc(waShare(v))}" target="_blank" rel="noopener" data-share="${esc(v.id)}" aria-label="Compartilhar esta vaga com um amigo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>Compartilhar</a>
@@ -399,8 +409,8 @@ function prepHTML(v){
 }
 function renderAuto(){
   if (!$('#lista2')) return;
-  const q = $('#q2').value.toLowerCase(), em = $('#emp').value, ar = $('#ar2').value, rg = $('#reg').value, bt = $('#bt').checked, sn = $('#sn').checked;
-  const lista = AUTO.filter(v => (!em || v.empresa === em) && (!ar || v.area === ar) && (!rg || v.regime === rg) && (!bt || !v.banco) && (!sn || ehNova(v))
+  const q = $('#q2').value.toLowerCase(), em = $('#emp').value, ar = $('#ar2').value, rg = REG, bt = $('#bt').checked, sn = $('#sn').checked;
+  const lista = AUTO.filter(v => (!em || v.empresa === em) && (!ar || v.area === ar) && (!rg || tipoRegime(v) === rg) && (!bt || !v.banco) && (!sn || ehNova(v))
     && (!q || (v.titulo + ' ' + v.empresa + ' ' + v.local + ' ' + v.area).toLowerCase().includes(q)));
   $('#count2').textContent = `${lista.length} vaga${lista.length === 1 ? '' : 's'}`;
   $('#lista2').innerHTML = lista.length ? lista.slice(0, mostrar).map(rowHTML).join('') +
@@ -451,11 +461,12 @@ Promise.all([
     <div id="list"></div>` : ''}
     ${AUTO.length ? `<div class="sec-h" id="setor" style="scroll-margin-top:90px"><h2>Vagas abertas no setor</h2><small id="count2"></small></div>
     <p class="sec-sub">Direto dos sites de carreira de ${new Set(AUTO.map(v => v.empresa)).size} empresas${atual ? ', atualizado em ' + atual : ''}. A candidatura é feita no site da empresa.</p>
+    <div class="seg" role="group" aria-label="Offshore ou onshore">${[['', 'Todas'], ['Offshore', 'Offshore'], ['Onshore', 'Onshore']].map(([k, t]) =>
+      `<button type="button" data-reg="${k}" class="${k === REG ? 'on' : ''}">${t}<small>${k ? AUTO.filter(v => tipoRegime(v) === k).length : AUTO.length}</small></button>`).join('')}</div>
     <div class="ctrl2">
       <input type="search" id="q2" placeholder="Buscar cargo ou cidade">
       <select id="emp">${opc(AUTO.map(v => v.empresa), 'Todas as empresas')}</select>
       <select id="ar2">${opc(AUTO.map(v => v.area), 'Todas as áreas')}</select>
-      <select id="reg">${opc(AUTO.map(v => v.regime), 'Embarcado e terra')}</select>
     </div>
     <div style="display:flex;gap:22px;flex-wrap:wrap"><label class="tg"><input type="checkbox" id="sn"> Só as novas (${AUTO.filter(ehNova).length} nos últimos 3 dias)</label>
     <label class="tg"><input type="checkbox" id="bt"> Esconder banco de talentos</label></div>
@@ -468,7 +479,12 @@ Promise.all([
   if ($('#q')){ $('#q').oninput = render; $('#area').onchange = render; render(); }
   if ($('#q2')){
     const re = () => { mostrar = 30; renderAuto(); };
-    $('#q2').oninput = re; ['#emp','#ar2','#reg','#bt','#sn'].forEach(id => $(id).onchange = re);
+    document.querySelectorAll('[data-reg]').forEach(b => b.onclick = () => {
+      REG = b.dataset.reg; document.querySelectorAll('[data-reg]').forEach(x => x.classList.toggle('on', x === b));
+      if (window.gtag) gtag('event', 'vagas_filtro_regime', {regime: REG || 'todas'});
+      re();
+    });
+    $('#q2').oninput = re; ['#emp','#ar2','#bt','#sn'].forEach(id => $(id).onchange = re);
     renderAuto();
   }
   jsonLd(VAGAS);
