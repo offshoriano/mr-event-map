@@ -332,19 +332,19 @@ function rowHTML(v){
       <div class="row-info">
         <div class="row-t">${esc(v.titulo)}</div>
         <div class="row-c">${esc(v.empresa)} · ${esc(v.local)}</div>
-        <div class="chips"><span class="chip${v.regime === 'Embarcado' ? ' gold' : ''}">${esc(v.regime)}</span>${v.tema === 'geral' ? '' : `<span class="chip">${esc(v.area)}</span>`}${v.banco ? '<span class="chip">Banco de talentos</span>' : ''}${v.enviada ? '<span class="chip gold">Divulgada pela empresa</span>' : ''}${ehNova(v) ? '<span class="chip nova">Nova</span>' : ''}</div>
+        <div class="chips"><span class="chip${v.regime === 'Embarcado' ? ' gold' : ''}">${esc(v.regime)}</span>${v.tema === 'geral' ? '' : `<span class="chip">${esc(v.area)}</span>`}${v.banco ? '<span class="chip">Banco de talentos</span>' : ''}${v.enviada ? '<span class="chip gold">Divulgada pela empresa</span>' : ''}${v.destaque ? '<span class="chip gold">Em destaque</span>' : ''}${ehNova(v) ? '<span class="chip nova">Nova</span>' : ''}</div>
       </div>
       <div class="row-act">
         <a class="row-prep row-share" href="${esc(waShare(v))}" target="_blank" rel="noopener" data-share="${esc(v.id)}" aria-label="Compartilhar esta vaga com um amigo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>Compartilhar</a>
         <button class="row-prep" data-prep="${esc(v.id)}">${v.descricao ? 'Ver vaga' : 'Como se preparar'}</button>
-        <a class="btn btn-gold" href="${esc(v.link)}" target="_blank" rel="noopener" data-apply="${esc(v.id)}">Candidatar-se</a>
+        <a class="btn btn-gold" href="${esc(v.link)}" target="_blank" rel="noopener" data-apply="${esc(v.id)}">${/^mailto:/.test(v.link) ? 'Enviar currículo' : 'Candidatar-se'}</a>
       </div>
     </div>
   </div>`;
 }
 function prepHTML(v){
   // Vídeos escolhidos para esta vaga pelo título; vaga sem escolha própria usa os da área
-  const vids = v.videos && v.videos.length ? v.videos.map(([id, porque]) => ({id, porque, titulo: CAT[id] || 'Vídeo do Carreira Offshore'}))
+  const vids = v.videos && v.videos.length ? v.videos.map(([id, porque, titulo]) => ({id, porque, titulo: titulo || CAT[id] || 'Vídeo do Carreira Offshore'}))
     : (VIDS[v.tema] || VIDS.geral || []);
   const sobre = v.descricao ? `<div class="sobre"><h3>Sobre a vaga</h3><p>${esc(v.descricao)}</p>${v.inscricoesAte ? `<p class="sobre-ate">Inscrições até ${fmt(v.inscricoesAte)}${v.contrato ? ' · ' + esc(v.contrato) : ''}</p>` : ''}</div>` : '';
   return sobre + `<div class="prep"><h3>Antes de se candidatar, assista</h3>
@@ -367,13 +367,16 @@ function renderAuto(){
 Promise.all([
   fetch('vagas.json', {cache:'no-cache'}).then(r => r.json()),
   fetch('automaticas.json', {cache:'no-cache'}).then(r => r.json()).catch(() => null),
+  fetch('manuais.json', {cache:'no-cache'}).then(r => r.json()).catch(() => []),
   fetch('../api/vagas-enviadas.php', {method:'POST', headers:{'Content-Type':'application/json'}, body:'{"action":"publicas"}'})
     .then(r => r.json()).then(d => d.vagas || []).catch(() => [])
-]).then(([all, auto, enviadas]) => {
+]).then(([all, auto, manuais, enviadas]) => {
   // Vagas enviadas pelas empresas e aprovadas no painel entram no topo da lista do setor
   enviadas = enviadas.map(v => ({...v, enviada:true, banco:false}));
+  // Vagas que o Matheus passa por link (posts de recrutadores), com o mesmo formato das enviadas
+  manuais = manuais.filter(v => !v.inscricoesAte || v.inscricoesAte >= hoje);
   auto = {videos:{}, vagas:[], ...(auto || {})};
-  auto.vagas = enviadas.concat(auto.vagas);
+  auto.vagas = manuais.concat(enviadas, auto.vagas);
   // Vaga sai do ar sozinha depois do último dia de inscrição
   VAGAS = all.filter(v => !v.inscricoesAte || v.inscricoesAte >= hoje).sort((a,b) => b.publicada.localeCompare(a.publicada));
   if (auto){
