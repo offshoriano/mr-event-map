@@ -1,0 +1,46 @@
+[
+ {
+  "id": "seagems-rio-das-ostras-rov-trainee-2026",
+  "titulo": "Programa Piloto de ROV Trainee",
+  "organizador": "Seagems e Prefeitura de Rio das Ostras",
+  "local": "Rio das Ostras, RJ (Centro de Treinamento SEA, na ZEN) e online",
+  "gratuito": true,
+  "vagas": 20,
+  "cargaHoraria": "187 horas",
+  "inscricoesDe": "2026-10-26",
+  "inscricoesAte": "2026-10-27",
+  "resumo": "Curso gratuito de formação de piloto de ROV trainee, com aulas teóricas e práticas na base da Seagems em Rio das Ostras e módulos online. São 20 vagas, só para quem mora em Rio das Ostras. Atenção: entram os 20 primeiros que se inscreverem com toda a documentação certa. Quem deixar para depois perde a vaga.",
+  "requisitos": [
+    "Morar em Rio das Ostras",
+    "Ter concluído o ensino médio técnico há no máximo 10 anos, ou estar concluindo em 2026",
+    "Curso técnico em eletrônica, mecânica, elétrica ou área afim",
+    "Ter estudado em escola pública em algum momento (municipal, estadual ou federal)",
+    "Ter 18 anos completos até a matrícula"
+  ],
+  "documentos": [
+    "RG ou outro documento oficial com foto",
+    "CPF",
+    "Comprovante de residência em Rio das Ostras dos últimos 3 meses (ou a autodeclaração do edital)",
+    "Diploma do curso técnico ou declaração de matrícula (ou a autodeclaração do edital)",
+    "Quem fez o técnico em escola particular: certificado do ensino fundamental em escola pública"
+  ],
+  "cronograma": [
+    ["26/10, 10h, até 27/10, 16h", "Inscrição pelo aplicativo COLAB"],
+    ["28/10", "Lista de inscritos no Jornal Oficial"],
+    ["Até 30/10", "Envio de documentos pendentes"],
+    ["04/11", "Lista final dos classificados"],
+    ["09/11", "Abertura e início das aulas presenciais"],
+    ["26/11", "Cerimônia de encerramento"]
+  ],
+  "comoParticipar": "Baixe o aplicativo COLAB antes do dia 26 e deixe os documentos digitalizados no celular. A inscrição abre às 10h do dia 26/10 e a ordem de chegada decide quem entra.",
+  "link": "https://riodasostras.colab.re/",
+  "linkTexto": "Inscrição no COLAB",
+  "edital": "https://appro.riodasostras.rj.gov.br/storage/riodasostrasapp/jornais/2026/10/e3ad54da-b097-4299-95be-08aafd449052.pdf",
+  "editalTexto": "Edital SEGEP nº 008/2026 (Jornal Oficial, páginas 17 a 20)",
+  "videos": [
+   ["f3XoJANQNPk", "Processo seletivo trainee DOF, piloto de ROV trainee", "Como funciona a seleção de ROV trainee e o que cobram."],
+   ["iNN7An0Uq_U", "Piloto de ROV trainee: como se dar bem no processo seletivo", "O que estudar e como se apresentar para entrar na área."],
+   ["-_H2YH-TOZE", "PLSV: o que faz e quais são os equipamentos", "O navio onde o piloto de ROV trabalha, por dentro."]
+  ]
+ }
+]
