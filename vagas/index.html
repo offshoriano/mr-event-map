@@ -188,6 +188,17 @@ footer{border-top:1px solid var(--border);padding:36px 48px;max-width:1080px;mar
 .row-share{display:inline-flex;align-items:center;gap:6px;text-decoration:none;}
 .row-share svg{width:15px;height:15px;fill:#25D366;}
 .row .prep{margin:0 16px 16px;}
+.atalhos{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 4px;}
+.atalhos a{font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--muted2);text-decoration:none;border:1px solid var(--border2);padding:9px 14px;border-radius:2px;}
+.atalhos a:hover{color:var(--white);border-color:var(--gold);}
+.atalhos a b{color:var(--gold-l);}
+.qual{background:var(--card);border:1px solid rgba(127,220,127,.35);border-radius:2px;margin-bottom:16px;overflow:hidden;scroll-margin-top:90px;}
+.qual .job-head{padding:22px 24px 10px;}
+.qual .job-body{padding:0 24px 20px;}
+.qual .aviso{background:rgba(127,220,127,.08);border-left:3px solid #7fdc7f;padding:12px 14px;font-size:14px;line-height:1.6;margin:16px 0;}
+.crono{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin-top:6px;}
+.crono li{background:var(--card2);border:1px solid var(--border);padding:10px 12px;font-size:13px;line-height:1.45;color:var(--muted2);}
+.crono li b{display:block;color:var(--white);font-size:13px;margin-bottom:2px;}
 .chip.nova{color:#0D1117;background:#7fdc7f;border-color:#7fdc7f;font-weight:700;}
 .sobre{margin:0 16px 14px;padding-top:4px;}
 .sobre h3{font-weight:800;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-l);margin-bottom:8px;}
@@ -311,9 +322,11 @@ function render(){
 }
 const $ = s => document.querySelector(s);
 
-let AUTO = [], VIDS = {}, CAT = {}, mostrar = 30;
+let AUTO = [], VIDS = {}, CAT = {}, QUAL = [], mostrar = 30;
 const linkVaga = v => location.origin + location.pathname + '#' + v.id;
-const textoShare = v => `Vaga de ${v.titulo} na ${v.empresa}${v.local ? ' (' + v.local + ')' : ''}. Tem vídeo para se preparar antes de se candidatar:`;
+const textoShare = v => v.organizador
+  ? `${v.gratuito ? 'Curso gratuito' : 'Curso'}: ${v.titulo}, ${v.organizador}. Inscrições ${v.inscricoesDe ? 'de ' + fmt(v.inscricoesDe) + ' ' : ''}até ${fmt(v.inscricoesAte)}. Detalhes e edital:`
+  : `Vaga de ${v.titulo} na ${v.empresa}${v.local ? ' (' + v.local + ')' : ''}. Tem vídeo para se preparar antes de se candidatar:`;
 const waShare = v => 'https://wa.me/?text=' + encodeURIComponent(textoShare(v) + ' ' + linkVaga(v));
 // Vaga que o robô viu pela primeira vez nos últimos 3 dias ganha o selo de nova
 const NOVA_DESDE = new Date(Date.now() - 3 * 864e5).toISOString().slice(0, 10);
@@ -324,7 +337,38 @@ function contar(id, tipo){
   const corpo = JSON.stringify({action:'clique', tipo, vaga:id, titulo:v.titulo, empresa:v.empresa});
   try { navigator.sendBeacon('../api/cliques.php', new Blob([corpo], {type:'application/json'})); } catch (e) {}
 }
-const todas = () => VAGAS.concat(AUTO);
+const todas = () => VAGAS.concat(AUTO, QUAL.map(q => ({...q, empresa: q.organizador})));
+
+function qualHTML(q){
+  const abre = q.inscricoesDe && q.inscricoesDe > hoje;
+  const prazo = abre ? `<span class="chip nova">Inscrições a partir de ${fmt(q.inscricoesDe)}</span>` : `<span class="chip nova">Inscrições até ${fmt(q.inscricoesAte)}</span>`;
+  const vids = (q.videos || []).map(([id, titulo, porque]) => ({id, titulo, porque}));
+  return `<article class="qual" id="${esc(q.id)}">
+    <div class="job-head"><div>
+      <div class="job-title">${esc(q.titulo)}</div>
+      <div class="job-company">${esc(q.organizador)} · ${esc(q.local)}</div>
+      <div class="chips">${q.gratuito ? '<span class="chip gold">Gratuito</span>' : ''}${q.vagas ? `<span class="chip">${q.vagas} vagas</span>` : ''}${q.cargaHoraria ? `<span class="chip">${esc(q.cargaHoraria)}</span>` : ''}${prazo}</div>
+    </div></div>
+    <div class="job-body">
+      <p class="job-resumo">${esc(q.resumo)}</p>
+      ${q.comoParticipar ? `<div class="aviso"><b>Como garantir a vaga:</b> ${esc(q.comoParticipar)}</div>` : ''}
+      ${q.cronograma ? `<ul class="crono">${q.cronograma.map(([d, t]) => `<li><b>${esc(d)}</b>${esc(t)}</li>`).join('')}</ul>` : ''}
+      ${vids.length ? `<div class="prep"><h3>Antes de se inscrever, assista</h3><p class="sub">Do canal Carreira Offshore, para chegar preparado.</p>
+        <div class="vids">${vids.map(x => `<button class="vid" data-id="${esc(x.id)}" data-vaga="${esc(q.id)}" aria-label="Assistir: ${esc(x.titulo)}">
+          <div class="vid-frame"><img src="https://i.ytimg.com/vi/${esc(x.id)}/hqdefault.jpg" alt="" loading="lazy"><span class="vid-play"></span></div>
+          <div class="vid-t">${esc(x.titulo)}</div><div class="vid-why">${esc(x.porque)}</div></button>`).join('')}</div></div>` : ''}
+      <details><summary>Requisitos e documentos</summary>
+        <div class="cols"><div><h4>Quem pode participar</h4><ul>${(q.requisitos || []).map(a => `<li>${esc(a)}</li>`).join('')}</ul></div>
+        <div><h4>Documentos para a inscrição</h4><ul>${(q.documentos || []).map(a => `<li>${esc(a)}</li>`).join('')}</ul></div></div>
+      </details>
+    </div>
+    <div class="job-foot">
+      <a class="btn btn-gold" href="${esc(q.link)}" target="_blank" rel="noopener" data-curso="${esc(q.id)}">${esc(q.linkTexto || 'Inscrever-se')}</a>
+      <a class="btn btn-ghost" href="${esc(waShare({...q, empresa: q.organizador}))}" target="_blank" rel="noopener" data-share="${esc(q.id)}">Compartilhar com um amigo</a>
+      ${q.edital ? `<a class="job-note" href="${esc(q.edital)}" target="_blank" rel="noopener" style="color:var(--gold-l)">${esc(q.editalTexto || 'Ler o edital')}</a>` : ''}
+    </div>
+  </article>`;
+}
 
 function rowHTML(v){
   return `<div class="row" id="${esc(v.id)}">
@@ -368,9 +412,12 @@ Promise.all([
   fetch('vagas.json', {cache:'no-cache'}).then(r => r.json()),
   fetch('automaticas.json', {cache:'no-cache'}).then(r => r.json()).catch(() => null),
   fetch('manuais.json', {cache:'no-cache'}).then(r => r.json()).catch(() => []),
+  fetch('qualificacao.json', {cache:'no-cache'}).then(r => r.json()).catch(() => []),
   fetch('../api/vagas-enviadas.php', {method:'POST', headers:{'Content-Type':'application/json'}, body:'{"action":"publicas"}'})
     .then(r => r.json()).then(d => d.vagas || []).catch(() => [])
-]).then(([all, auto, manuais, enviadas]) => {
+]).then(([all, auto, manuais, qual, enviadas]) => {
+  // Cursos saem do site sozinhos depois do último dia de inscrição
+  QUAL = qual.filter(q => !q.inscricoesAte || q.inscricoesAte >= hoje);
   // Vagas enviadas pelas empresas e aprovadas no painel entram no topo da lista do setor
   enviadas = enviadas.map(v => ({...v, enviada:true, banco:false}));
   // Vagas que o Matheus passa por link (posts de recrutadores), com o mesmo formato das enviadas
@@ -390,7 +437,11 @@ Promise.all([
   const areas = [...new Set(VAGAS.map(v => v.area))].sort();
   const opc = (lista, rot) => `<option value="">${rot}</option>` + [...new Set(lista)].sort().map(x => `<option>${esc(x)}</option>`).join('');
   const atual = auto.atualizado ? new Date(auto.atualizado).toLocaleDateString('pt-BR') : '';
+  const atalhos = [QUAL.length && ['#qualificacao', 'Qualificação aberta', QUAL.length], VAGAS.length && ['#list', 'Vagas comentadas', VAGAS.length], AUTO.length && ['#setor', 'Vagas do setor', AUTO.length]].filter(Boolean);
   $('#app').innerHTML = `
+    <div class="atalhos" role="navigation" aria-label="Seções">${atalhos.map(([h, t, n]) => `<a href="${h}">${t} <b>${n}</b></a>`).join('')}</div>
+    ${QUAL.length ? `<div class="sec-h" id="qualificacao" style="scroll-margin-top:90px"><h2>Qualificação com inscrição aberta</h2><small>cursos e programas gratuitos do setor</small></div>
+    ${QUAL.map(qualHTML).join('')}` : ''}
     ${VAGAS.length ? `<div class="sec-h"><h2>Vagas comentadas</h2><small>com análise e vídeos escolhidos a dedo</small></div>
     <div class="ctrl">
       <input type="search" id="q" placeholder="Buscar cargo, empresa ou cidade">
@@ -398,7 +449,7 @@ Promise.all([
       <span class="count" id="count"></span>
     </div>
     <div id="list"></div>` : ''}
-    ${AUTO.length ? `<div class="sec-h"><h2>Vagas abertas no setor</h2><small id="count2"></small></div>
+    ${AUTO.length ? `<div class="sec-h" id="setor" style="scroll-margin-top:90px"><h2>Vagas abertas no setor</h2><small id="count2"></small></div>
     <p class="sec-sub">Direto dos sites de carreira de ${new Set(AUTO.map(v => v.empresa)).size} empresas${atual ? ', atualizado em ' + atual : ''}. A candidatura é feita no site da empresa.</p>
     <div class="ctrl2">
       <input type="search" id="q2" placeholder="Buscar cargo ou cidade">
@@ -441,6 +492,8 @@ Promise.all([
       if (window.gtag) gtag('event', 'vaga_video_play', {vaga:b.dataset.vaga, video:b.dataset.id});
       contar(b.dataset.vaga, 'video');
     }
+    const cu = e.target.closest('[data-curso]');
+    if (cu){ contar(cu.dataset.curso, 'candidatar'); if (window.gtag) gtag('event', 'curso_inscricao_click', {curso:cu.dataset.curso}); }
     const sh = e.target.closest('[data-share]');
     if (sh){
       const v = todas().find(x => x.id === sh.dataset.share);
