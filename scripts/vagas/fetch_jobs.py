@@ -264,7 +264,19 @@ def workable(conta):
             break
         corpo['token'] = d['nextPage']
 
-LEITORES = dict(pandape=pandape, workable=workable, solides=solides, recruitee=recruitee, brunel=brunel, airswift=airswift, atlas=atlas, mde=mde, beehire=beehire, inhire=inhire, gupy=gupy, rmk=rmk, workday=workday, oracle=oracle, radancy=radancy)
+def teamtailor(host):
+    # Feed RSS público do Teamtailor (career.empresa.com/jobs.rss)
+    s = get(f'https://{host}/jobs.rss')
+    for it in re.findall(r'<item>(.*?)</item>', s, re.S):
+        pais = re.search(r'<tt:country>([^<]*)', it)
+        if not pais or not re.search(r'bra[sz]il', pais.group(1), re.I):
+            continue
+        titulo = re.search(r'<title>(.*?)</title>', it, re.S).group(1)
+        link = re.search(r'<link>(.*?)</link>', it, re.S).group(1)
+        cidade = re.search(r'<tt:city>([^<]*)', it)
+        yield dict(titulo=limpa(titulo), local=(cidade.group(1) if cidade else 'Brasil'), link=limpa(link))
+
+LEITORES = dict(teamtailor=teamtailor, pandape=pandape, workable=workable, solides=solides, recruitee=recruitee, brunel=brunel, airswift=airswift, atlas=atlas, mde=mde, beehire=beehire, inhire=inhire, gupy=gupy, rmk=rmk, workday=workday, oracle=oracle, radancy=radancy)
 
 def classifica(titulo):
     t = titulo.lower()
@@ -273,13 +285,29 @@ def classifica(titulo):
             return chave
     return 'geral'
 
-def regime(titulo, local):
+# Funções que só existem a bordo, mesmo quando o título não diz "offshore"
+FUNCOES_A_BORDO = {'rov', 'conves', 'maquinas', 'nautica', 'radio', 'hotelaria'}
+# Empresas que só têm sonda em terra: sondador delas trabalha onshore
+SONDA_EM_TERRA = re.compile(r'petroreconcavo|perbras|tecnosonda|halliburton|origem|carmo|braserv|ebs\b|conterp', re.I)
+
+def regime(titulo, local, empresa=''):
+    """Offshore (embarcado), Onshore (em terra) ou Remoto."""
     t = (titulo + ' ' + local).lower()
-    if re.search(r'offshore|embarc|plataforma|fpso|sonda|rig\b|vessel|navio|rov|marinh|conv[eé]s|taifeir|oficial de m|escalador|embarca[cç]', t):
-        return 'Embarcado'
+    # Cargo de escritório continua em terra mesmo quando o título cita a operação offshore
+    if re.search(r'\b(analista|assistente|auxiliar administrativo|business partner|hrbp|recursos humanos|\brh\b|financeir|cont[aá]bil|fiscal|jur[ií]dic|advogad|comercial|vendas|sales|compras|procurement|buyer|marketing|comunica[cç]|recrutamento|talent|est[aá]gi|intern\b|aprendiz)', t) and 'embarcad' not in t:
+        return 'Onshore'
+    if re.search(r'onshore|em terra|\bsph\b|terrestre|base de apoio|oficina|f[aá]brica', t):
+        return 'Onshore'
+    if re.search(r'offshore|embarc|plataforma|fpso|rig\b|vessel|navio|\brov\b|marinh|conv[eé]s|taifeir|oficial de m|escalador|embarca[cç]|plsv|psv\b|ahts', t):
+        return 'Offshore'
     if 'remoto' in t or 'remote' in t:
         return 'Remoto'
-    return 'Em terra ou a confirmar'
+    if re.search(r'roustabout|roughneck|plataformista|torrista|sondador|\bmpd\b|toolpusher|driller', t) and not SONDA_EM_TERRA.search(empresa):
+        return 'Offshore'
+    funcao = escolha_videos.escolher(titulo, empresa)[1]
+    if funcao in FUNCOES_A_BORDO or (funcao == 'sonda' and not SONDA_EM_TERRA.search(empresa)):
+        return 'Offshore'
+    return 'Onshore'
 
 def arruma_local(loc):
     loc = limpa(loc)
@@ -325,7 +353,7 @@ def main():
                 vagas.append(dict(
                     id=slug(nome + '-' + i['titulo']) + '-' + str(zlib.crc32(i["link"].encode()) % 100000),
                     titulo=i['titulo'].strip(' -|'), empresa=nome, local=arruma_local(i['local']), link=i['link'],
-                    regime=regime(i['titulo'], i['local']), area=VIDEOS['nomes'].get(area, 'Outras'), tema=area,
+                    regime=regime(i['titulo'], i['local'], nome), area=VIDEOS['nomes'].get(area, 'Outras'), tema=area,
                     banco=bool(i.get('banco')) or 'banco de talentos' in i['titulo'].lower(),
                     vistaEm=anterior.get(i['link'], hoje),
                     videos=escolha_videos.escolher(i['titulo'], nome)[0]))
@@ -342,6 +370,7 @@ def main():
             for v in velhas:
                 if v['empresa'] in falhas:
                     v['videos'] = escolha_videos.escolher(v['titulo'], v['empresa'])[0]
+                    v['regime'] = regime(v['titulo'], v['local'], v['empresa'])
                     vagas.append(v)
         except Exception:
             pass
@@ -349,10 +378,10 @@ def main():
     for v in vagas:
         if v['link'] not in vistos:
             vistos.add(v['link']); unicas.append(v)
-    unicas.sort(key=lambda v: (v['banco'], v['regime'] != 'Embarcado', v['empresa'], v['titulo']))
+    unicas.sort(key=lambda v: (v['banco'], v['regime'] != 'Offshore', v['empresa'], v['titulo']))
     # Só regrava (e o site só republica) quando entra, sai ou muda alguma vaga
     def assinatura(lista):
-        return sorted((v['link'], v['titulo'], v['local']) for v in lista)
+        return sorted((v['link'], v['titulo'], v['local'], v.get('regime', ''), json.dumps(v.get('videos', []))) for v in lista)
     if SAIDA.exists():
         try:
             if assinatura(json.loads(SAIDA.read_text())['vagas']) == assinatura(unicas):

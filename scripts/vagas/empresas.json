@@ -6601,5 +6601,17 @@
   "obs": "Recebe currículo por e-mail (cadastro@newinter.com.br) e divulga vagas no LinkedIn.",
   "mapeado_em": "2026-10-22",
   "linkedin": "https://www.linkedin.com/company/objectopublicidade"
+ },
+ {
+  "nome": "Kabal",
+  "origem": [
+   "MR"
+  ],
+  "site": "kabal.com",
+  "ats": {
+   "tipo": "teamtailor",
+   "cfg": "career.kabal.com"
+  },
+  "obs": "Software para operações de óleo e gás; escritório no Rio."
  }
 ]
