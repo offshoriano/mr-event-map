@@ -1618,13 +1618,15 @@ fetch('anp/data/producao.json').then(r => r.json()).then(d => {
 }).catch(() => {});
 Promise.all([
   fetch('vagas/vagas.json').then(r => r.json()),
-  fetch('vagas/automaticas.json').then(r => r.json()).catch(() => ({vagas: []}))
-]).then(([v, a]) => {
+  fetch('vagas/automaticas.json').then(r => r.json()).catch(() => ({vagas: []})),
+  fetch('vagas/manuais.json').then(r => r.json()).catch(() => [])
+]).then(([v, a, m]) => {
   const hoje = new Date().toISOString().slice(0, 10);
   const ativas = v.filter(x => !x.inscricoesAte || x.inscricoesAte >= hoje);
   // Mesma conta da página de vagas: a vaga comentada não conta de novo na lista automática
   const comentadas = new Set(ativas.map(x => (x.empresa + x.titulo).toLowerCase()));
-  const n = ativas.length + a.vagas.filter(x => !comentadas.has((x.empresa + x.titulo).toLowerCase())).length;
+  const n = ativas.length + m.filter(x => !x.inscricoesAte || x.inscricoesAte >= hoje).length
+    + a.vagas.filter(x => !comentadas.has((x.empresa + x.titulo).toLowerCase())).length;
   document.getElementById('stat-vagas').textContent = n;
   document.getElementById('stat-vagas-l').textContent = n === 1 ? 'Vaga aberta' : 'Vagas abertas no setor';
 }).catch(() => {});
