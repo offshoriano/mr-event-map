@@ -27,7 +27,7 @@ MESES = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'a
 PAGINAS_FIXAS = [('', 'weekly', '1.0'), ('vagas/', 'daily', '0.9'), ('vagas/embarcado/', 'daily', '0.8'),
                  ('vagas/sem-experiencia/', 'daily', '0.8'), ('vagas/macae/', 'daily', '0.8'), ('vagas/rio-de-janeiro/', 'daily', '0.8'),
                  ('artigos/', 'weekly', '0.8'), ('radar/', 'weekly', '0.8'), ('guia/', 'monthly', '0.8'), ('sobre/', 'monthly', '0.6'),
-                 ('vagas/divulgar/', 'monthly', '0.5')]
+                 ('vagas/divulgar/', 'monthly', '0.5'), ('diagnostico/', 'monthly', '0.7')]
 
 def e(x):
     return html.escape(str(x or ''), quote=True)
