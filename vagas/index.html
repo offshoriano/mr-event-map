@@ -337,7 +337,9 @@ function render(){
 }
 const $ = s => document.querySelector(s);
 
-let AUTO = [], VIDS = {}, CAT = {}, QUAL = [], REG = '', mostrar = 30;
+let AUTO = [], INICIO = [], VIDS = {}, CAT = {}, QUAL = [], REG = '', mostrar = 30, mostrarI = 12;
+// Portas de entrada: aprendiz, estágio, trainee, ajudante. Ficam numa seção própria para quem está começando
+const ENTRADA = /trainee|est[aá]gi|aprendiz|apprentice|\bintern(ship)?\b|jovem|cadet|ajudante|homem de [aá]rea|sem experi|auxiliar de (plataforma|opera)/i;
 // Fontes diferentes escrevem o regime de jeitos diferentes; aqui vira Offshore, Onshore ou Remoto
 const tipoRegime = v => /embarc|offshore/i.test(v.regime || '') ? 'Offshore' : /remot/i.test(v.regime || '') ? 'Remoto' : 'Onshore';
 const linkVaga = v => location.origin + location.pathname + '#' + v.id;
@@ -354,7 +356,7 @@ function contar(id, tipo){
   const corpo = JSON.stringify({action:'clique', tipo, vaga:id, titulo:v.titulo, empresa:v.empresa});
   try { navigator.sendBeacon('../api/cliques.php', new Blob([corpo], {type:'application/json'})); } catch (e) {}
 }
-const todas = () => VAGAS.concat(AUTO, QUAL.map(q => ({...q, empresa: q.organizador})));
+const todas = () => VAGAS.concat(AUTO, INICIO, QUAL.map(q => ({...q, empresa: q.organizador})));
 
 function qualHTML(q){
   const abre = q.inscricoesDe && q.inscricoesDe > hoje;
@@ -414,6 +416,11 @@ function prepHTML(v){
       <div class="vid-frame"><img src="https://i.ytimg.com/vi/${esc(x.id)}/hqdefault.jpg" alt="" loading="lazy"><span class="vid-play"></span></div>
       <div class="vid-t">${esc(x.titulo)}</div><div class="vid-why">${esc(x.porque)}</div></button>`).join('')}</div></div>`;
 }
+function renderInicio(){
+  if (!$('#lista0')) return;
+  $('#lista0').innerHTML = INICIO.slice(0, mostrarI).map(rowHTML).join('') +
+    (INICIO.length > mostrarI ? `<button class="btn btn-ghost mais" id="mais-i">Ver mais ${Math.min(12, INICIO.length - mostrarI)} vagas para quem está começando</button>` : '');
+}
 function renderAuto(){
   if (!$('#lista2')) return;
   const q = $('#q2').value.toLowerCase(), em = $('#emp').value, ar = $('#ar2').value, rg = REG, bt = $('#bt').checked, sn = $('#sn').checked;
@@ -450,15 +457,20 @@ Promise.all([
     AUTO = auto.vagas.filter(v => !comentadas.has((v.empresa + v.titulo).toLowerCase()));
     // As que o robô acabou de achar sobem para o topo (sort estável: o resto mantém a ordem)
     AUTO.sort((a, b) => ehNova(b) - ehNova(a));
+    INICIO = AUTO.filter(v => ENTRADA.test(v.titulo));
+    AUTO = AUTO.filter(v => !ENTRADA.test(v.titulo));
   }
   const areas = [...new Set(VAGAS.map(v => v.area))].sort();
   const opc = (lista, rot) => `<option value="">${rot}</option>` + [...new Set(lista)].sort().map(x => `<option>${esc(x)}</option>`).join('');
   const atual = auto.atualizado ? new Date(auto.atualizado).toLocaleDateString('pt-BR') : '';
-  const atalhos = [QUAL.length && ['#qualificacao', 'Qualificação aberta', QUAL.length], VAGAS.length && ['#list', 'Vagas comentadas', VAGAS.length], AUTO.length && ['#setor', 'Vagas do setor', AUTO.length]].filter(Boolean);
+  const atalhos = [QUAL.length && ['#qualificacao', 'Qualificação aberta', QUAL.length], INICIO.length && ['#comecando', 'Para quem está começando', INICIO.length], VAGAS.length && ['#list', 'Vagas comentadas', VAGAS.length], AUTO.length && ['#setor', 'Com experiência', AUTO.length]].filter(Boolean);
   $('#app').innerHTML = `
     <div class="atalhos" role="navigation" aria-label="Seções">${atalhos.map(([h, t, n]) => `<a href="${h}">${t} <b>${n}</b></a>`).join('')}</div>
     ${QUAL.length ? `<div class="sec-h" id="qualificacao" style="scroll-margin-top:90px"><h2>Qualificação com inscrição aberta</h2><small>cursos e programas gratuitos do setor</small></div>
     ${QUAL.map(qualHTML).join('')}` : ''}
+    ${INICIO.length ? `<div class="sec-h" id="comecando" style="scroll-margin-top:90px"><h2>Vagas abertas agora para quem está começando</h2><small>${INICIO.length} vagas de aprendiz, estágio, trainee e ajudante</small></div>
+    <p class="sec-sub">Portas de entrada do setor, onde a empresa não pede experiência na função. Para as vagas embarcadas, chegue com o CBSP e o T-HUET em dia. <a href="../artigos/cbsp-e-huet/">Entenda os dois cursos</a>.</p>
+    <div id="lista0"></div>` : ''}
     ${VAGAS.length ? `<div class="sec-h"><h2>Vagas comentadas</h2><small>com análise e vídeos escolhidos a dedo</small></div>
     <div class="ctrl">
       <input type="search" id="q" placeholder="Buscar cargo, empresa ou cidade">
@@ -466,8 +478,8 @@ Promise.all([
       <span class="count" id="count"></span>
     </div>
     <div id="list"></div>` : ''}
-    ${AUTO.length ? `<div class="sec-h" id="setor" style="scroll-margin-top:90px"><h2>Vagas abertas no setor</h2><small id="count2"></small></div>
-    <p class="sec-sub">Direto dos sites de carreira de ${new Set(AUTO.map(v => v.empresa)).size} empresas${atual ? ', atualizado em ' + atual : ''}. A candidatura é feita no site da empresa.</p>
+    ${AUTO.length ? `<div class="sec-h" id="setor" style="scroll-margin-top:90px"><h2>Vagas para quem já tem experiência</h2><small id="count2"></small></div>
+    <p class="sec-sub">Direto dos sites de carreira de ${new Set(AUTO.concat(INICIO).map(v => v.empresa)).size} empresas${atual ? ', atualizado em ' + atual : ''}. A candidatura é feita no site da empresa.</p>
     <div class="seg" role="group" aria-label="Offshore ou onshore">${[['', 'Todas'], ['Offshore', 'Offshore'], ['Onshore', 'Onshore']].map(([k, t]) =>
       `<button type="button" data-reg="${k}" class="${k === REG ? 'on' : ''}">${t}<small>${k ? AUTO.filter(v => tipoRegime(v) === k).length : AUTO.length}</small></button>`).join('')}</div>
     <div class="ctrl2">
@@ -479,7 +491,7 @@ Promise.all([
     <label class="tg"><input type="checkbox" id="bt"> Esconder banco de talentos</label></div>
     <div id="lista2"></div>
     <p class="fontes">Buscas populares: <a href="embarcado/">vagas embarcado</a> · <a href="sem-experiencia/">vagas offshore sem experiência</a> · <a href="macae/">vagas offshore em Macaé</a> · <a href="rio-de-janeiro/">vagas offshore no Rio de Janeiro</a></p>
-    <p class="fontes">Empresas acompanhadas: ${[...new Set(AUTO.map(v => v.empresa))].sort().map(esc).join(', ')}.</p>` : ''}
+    <p class="fontes">Empresas acompanhadas: ${[...new Set(AUTO.concat(INICIO).map(v => v.empresa))].sort().map(esc).join(', ')}.</p>` : ''}
     <div class="empresas">
       <div><h3>Sua empresa está contratando?</h3><p>Divulgue a vaga para quem acompanha o Carreira Offshore, com conteúdo de preparação junto. O candidato chega mais pronto na entrevista.</p></div>
       <a class="btn btn-gold" href="divulgar/">Divulgar uma vaga</a>
@@ -495,9 +507,11 @@ Promise.all([
     $('#q2').oninput = re; ['#emp','#ar2','#bt','#sn'].forEach(id => $(id).onchange = re);
     renderAuto();
   }
+  renderInicio();
   jsonLd(VAGAS.concat(manuais));
   if (location.hash){
     const id = decodeURIComponent(location.hash.slice(1));
+    if (INICIO.some(v => v.id === id)){ mostrarI = INICIO.length; renderInicio(); }
     if (AUTO.some(v => v.id === id)){ $('#bt').checked = false; mostrar = AUTO.length; renderAuto(); }
     const el = document.getElementById(id);
     if (el){
@@ -534,13 +548,14 @@ Promise.all([
       const row = p.closest('.row'), aberto = row.querySelector('.prep');
       if (aberto){ row.querySelectorAll('.prep,.sobre').forEach(x => x.remove()); p.classList.remove('on'); }
       else {
-        row.insertAdjacentHTML('beforeend', prepHTML(AUTO.find(v => v.id === p.dataset.prep)));
+        row.insertAdjacentHTML('beforeend', prepHTML(AUTO.concat(INICIO).find(v => v.id === p.dataset.prep)));
         p.classList.add('on');
         if (window.gtag) gtag('event', 'vaga_preparar', {vaga:p.dataset.prep});
         contar(p.dataset.prep, 'preparar');
       }
     }
     if (e.target.id === 'mais'){ mostrar += 30; renderAuto(); }
+    if (e.target.id === 'mais-i'){ mostrarI += 12; renderInicio(); }
     const a = e.target.closest('[data-apply]');
     if (a){
       if (window.gtag) gtag('event', 'vaga_candidatura_click', {vaga:a.dataset.apply});
