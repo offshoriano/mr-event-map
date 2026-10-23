@@ -7,6 +7,7 @@ O corpo usa uma marcação simples:
     ## Título de seção / ### Subtítulo
     - item de lista / 1. item numerado
     **negrito**, [texto](link), > citação
+    Cabeçalho opcional foto: /caminho/no/site.jpg ou link, para a imagem de compartilhamento (sem ela usa a capa do 1º vídeo)
     {{video:ID_DO_YOUTUBE|Título do vídeo}}  vídeo do canal que abre no clique
     {{vagas:regex::Texto}}                   lista as vagas abertas cujo título bate com a regex
     [[pergunta para o Matheus]]              lacuna do rascunho, aparece destacada e nunca vai ao ar
@@ -16,6 +17,7 @@ Também regenera o sitemap.xml do site. Uso: python3 scripts/artigos/build.py"""
 import html, json, re
 from datetime import date
 from pathlib import Path
+import capa
 
 RAIZ = Path(__file__).resolve().parents[2]
 FONTE = Path(__file__).parent
@@ -132,7 +134,7 @@ def cabeca(titulo, desc, url, imagem, extra='', noindex=False):
 {'<meta name="robots" content="noindex, nofollow">' if noindex else ''}
 <link rel="icon" href="/favicon.ico" sizes="any"><link rel="apple-touch-icon" href="/assets/apple-touch-icon.png"><meta name="theme-color" content="#0D1117">
 <meta property="og:type" content="article"><meta property="og:site_name" content="MR Group"><meta property="og:url" content="{url}">
-<meta property="og:title" content="{e(titulo)}"><meta property="og:description" content="{e(desc)}"><meta property="og:image" content="{imagem}">
+<meta property="og:title" content="{e(titulo)}"><meta property="og:description" content="{e(desc)}"><meta property="og:image" content="{imagem}">{'<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">' if '/og/artigos/' in imagem else ''}
 <meta property="og:locale" content="pt_BR"><meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:opsz,wght@9..40,400..800&display=swap" rel="stylesheet">
@@ -163,7 +165,7 @@ def pagina_artigo(a):
     corpo, indice = converter(a['corpo'])
     pasta = ('rascunho-' if a['rascunho'] else '') + a['slug']
     url = f"{SITE}/artigos/{pasta}/"
-    imagem = a.get('imagem') or f'{SITE}/assets/og/home.jpg'
+    imagem = SITE + a['capa'] if a.get('capa') else f'{SITE}/assets/og/home.jpg'
     ld = {'@context': 'https://schema.org', '@type': 'BlogPosting', 'headline': a['titulo'], 'description': a['descricao'],
           'datePublished': a['data'], 'dateModified': a.get('atualizado') or a['data'], 'inLanguage': 'pt-BR',
           'mainEntityOfPage': url, 'image': imagem, 'keywords': a.get('palavras', ''),
@@ -190,7 +192,7 @@ def pagina_artigo(a):
 """ + RODAPE
 
 def pagina_lista(publicados):
-    itens = ''.join(f"""<a class="card" href="/artigos/{e(a['slug'])}/"><span class="tema">{e(a.get('tema', 'Carreira offshore'))}</span>
+    itens = ''.join(f"""<a class="card" href="/artigos/{e(a['slug'])}/">{f'<img src="{e(a["capa"])}" alt="" width="1200" height="630" loading="lazy">' if a.get('capa') else ''}<span class="tema">{e(a.get('tema', 'Carreira offshore'))}</span>
 <b>{e(a['titulo'])}</b><p>{e(a['descricao'])}</p><span class="data">{data_br(a.get('atualizado') or a['data'])}</span></a>""" for a in publicados)
     ld = {'@context': 'https://schema.org', '@type': 'Blog', 'name': 'Artigos MR Group', 'url': f'{SITE}/artigos/',
           'author': {'@type': 'Person', 'name': 'Matheus Rangel'}, 'inLanguage': 'pt-BR'}
@@ -218,6 +220,8 @@ def main():
         if not a['rascunho'] and '[[' in a['corpo']:
             raise SystemExit(f"{a['slug']}: ainda tem pergunta para o Matheus ([[...]]); continua como rascunho até ser respondida")
     publicados = sorted([a for a in artigos if not a['rascunho']], key=lambda a: a.get('atualizado') or a['data'], reverse=True)
+    for a in artigos:
+        a['capa'] = capa.gerar(a)
     for a in artigos:
         destino = RAIZ / 'artigos' / (('rascunho-' if a['rascunho'] else '') + a['slug']) / 'index.html'
         destino.parent.mkdir(parents=True, exist_ok=True)
