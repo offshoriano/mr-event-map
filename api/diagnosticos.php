@@ -23,9 +23,9 @@ if ($action === 'add') {
         'whats'     => clean($in['whats'] ?? '', 40),
         'respostas' => [
             'mercados'     => $lista($r['mercados'] ?? []),
-            'comprador'    => clean($r['comprador'] ?? '', 30),
+            'compradores'  => $lista($r['compradores'] ?? []),
             'regioes'      => $lista($r['regioes'] ?? []),
-            'objetivo'     => clean($r['objetivo'] ?? '', 30),
+            'objetivos'    => $lista($r['objetivos'] ?? []),
             'participacao' => clean($r['participacao'] ?? '', 30),
             'eventos_ano'  => clean($r['eventos_ano'] ?? '', 5),
             'orcamento_mil'=> clean($r['orcamento_mil'] ?? '', 6),

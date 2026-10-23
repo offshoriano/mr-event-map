@@ -266,7 +266,7 @@ function painelDiagnosticos(){
   $('#conteudo').innerHTML = '<p class="note">Carregando...</p>';
   const dpost = body => fetch('../api/diagnosticos.php', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(body)}).then(r => r.json());
   const NOMES = {perf:'Perfuração', fpso:'FPSO', subsea:'Subsea', gas:'LNG e gás', maritimo:'Marítimo', manut:'Manutenção', transicao:'Transição', decom:'Descomissionamento',
-    op:'Operadoras', epc:'FPSO/EPC', serv:'Prestadoras', estaleiro:'Estaleiros', br:'Brasil', gs:'Guiana/Suriname', am:'Américas', eu:'Europa', me:'Oriente Médio',
+    op:'Operadoras', epc:'EPCistas', sonda:'Perfuração', serv:'Prestadoras', plsv:'PLSV e apoio', estaleiro:'Estaleiros', br:'Brasil', gs:'Guiana/Suriname', am:'Américas', eu:'Europa', me:'Oriente Médio',
     reuniao:'Reunião com comprador', marca:'Marca', parceiro:'Parceiro internacional', lancar:'Lançar produto', conhecer:'Conhecer o mercado',
     visita:'Visitando', estande:'Estande', palestra:'Palestra', patrocinio:'Patrocínio'};
   const nm = x => NOMES[x] || x;
@@ -279,7 +279,7 @@ function painelDiagnosticos(){
         <td class="m">${new Date(d.data).toLocaleString('pt-BR', {dateStyle:'short', timeStyle:'short'})}</td>
         <td>${esc(d.nome)}<br><a href="mailto:${esc(d.email)}" style="color:var(--gold-l)">${esc(d.email)}</a>${d.whats ? `<br><a href="https://wa.me/55${esc(String(d.whats).replace(/\D/g, '').replace(/^55/, ''))}" target="_blank" style="color:var(--gold-l)">${esc(d.whats)}</a>` : ''}</td>
         <td>${esc(d.empresa)}${d.cargo ? `<br><span class="m">${esc(d.cargo)}</span>` : ''}</td>
-        <td class="m">${esc((a.mercados || []).map(nm).join(', '))}<br>Vende para: ${esc(nm(a.comprador))}<br>Regiões: ${esc((a.regioes || []).map(nm).join(', '))}<br>${esc(nm(a.objetivo))} · ${esc(nm(a.participacao))} · ${esc(a.eventos_ano)} eventos · até R$ ${esc(a.orcamento_mil)} mil</td>
+        <td class="m">${esc((a.mercados || []).map(nm).join(', '))}<br>Vende para: ${esc((a.compradores || [a.comprador]).filter(Boolean).map(x => x === 'fpso' ? 'Donas de FPSO' : nm(x)).join(', '))}<br>Regiões: ${esc((a.regioes || []).map(nm).join(', '))}<br>${esc((a.objetivos || [a.objetivo]).filter(Boolean).map(nm).join(', '))} · ${esc(nm(a.participacao))} · ${esc(a.eventos_ano)} eventos · até R$ ${esc(a.orcamento_mil)} mil</td>
         <td class="m">${(d.top || []).map(esc).join('<br>')}</td>
         <td><button class="del" data-id="${esc(d.id)}">remover</button></td></tr>`; }).join('')}</tbody></table>` : '<p style="padding:24px;color:var(--muted)">Nenhum diagnóstico ainda.</p>'}</div>`;
     $('#conteudo').onclick = e => {
