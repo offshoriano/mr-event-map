@@ -465,8 +465,8 @@
   ],
   "site": "http://www.halliburton.com/en-US/default.page",
   "ats": {
-   "tipo": "radancy",
-   "cfg": "careers.halliburton.com"
+   "tipo": "halliburton",
+   "cfg": "jobs.halliburton.com"
   }
  },
  {
