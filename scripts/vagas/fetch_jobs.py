@@ -276,7 +276,30 @@ def teamtailor(host):
         cidade = re.search(r'<tt:city>([^<]*)', it)
         yield dict(titulo=limpa(titulo), local=(cidade.group(1) if cidade else 'Brasil'), link=limpa(link))
 
-LEITORES = dict(teamtailor=teamtailor, pandape=pandape, workable=workable, solides=solides, recruitee=recruitee, brunel=brunel, airswift=airswift, atlas=atlas, mde=mde, beehire=beehire, inhire=inhire, gupy=gupy, rmk=rmk, workday=workday, oracle=oracle, radancy=radancy)
+# CEP que a Halliburton usa para cada base (o bairro e o estado do cadastro deles às vezes vêm trocados)
+HAL_CEP = {'27930': 'Macaé, RJ', '48110': 'Catu, BA', '59633': 'Mossoró, RN', '56600': 'Mossoró, RN', '20011': 'Rio de Janeiro, RJ', '21941': 'Rio de Janeiro, RJ'}
+
+def halliburton(host):
+    # jobs.halliburton.com é a origem das vagas; o careers.halliburton.com chega a ficar dias atrás
+    for i in rmk(host):
+        if not re.search(r',\s*BR\b', i['local']):
+            continue  # a busca por "Brazil" também traz vaga de fora que só cita o país no texto
+        cep = re.search(r'\b(\d{5})-?\d{3}\b', i['local'])
+        if cep and cep.group(1) in HAL_CEP:
+            i['local'] = HAL_CEP[cep.group(1)]
+        else:
+            i['local'] = re.sub(r',\s*BR\b.*$', '', i['local']).strip() or 'Brasil'
+            if i['local'] == 'RJ':
+                i['local'] = 'Rio de Janeiro, RJ'
+        t = i['titulo']
+        # "Brasil - RJ - Macaé: Cargo", "BR-Macaé-Cargo", "Brazil - Remote: Cargo" viram só "Cargo"
+        t2 = re.sub(r'^(Brasil|Brazil|BR)\b[^:]{0,40}:\s*', '', t)
+        if t2 == t:
+            t2 = re.sub(r'^(Brasil|Brazil|BR)\s*-\s*(?:[A-Z]{2}\s*-\s*)?[A-Za-zÀ-ú ]+?\s*-\s*', '', t)
+        i['titulo'] = t2 or t
+        yield i
+
+LEITORES = dict(halliburton=halliburton, teamtailor=teamtailor, pandape=pandape, workable=workable, solides=solides, recruitee=recruitee, brunel=brunel, airswift=airswift, atlas=atlas, mde=mde, beehire=beehire, inhire=inhire, gupy=gupy, rmk=rmk, workday=workday, oracle=oracle, radancy=radancy)
 
 def classifica(titulo):
     t = titulo.lower()
@@ -333,11 +356,13 @@ def slug(s):
 
 def main():
     hoje = date.today().isoformat()
-    anterior = {}
+    anterior, anterior_t = {}, {}
     if SAIDA.exists():
         try:
             for v in json.loads(SAIDA.read_text())['vagas']:
                 anterior[v['link']] = v.get('vistaEm', hoje)
+                # Se a empresa troca o link (ou o site de vagas), a vaga não volta como "nova"
+                anterior_t.setdefault((v['empresa'], v['titulo']), v.get('vistaEm', hoje))
         except Exception:
             pass
     vagas, status = [], []
@@ -355,7 +380,7 @@ def main():
                     titulo=i['titulo'].strip(' -|'), empresa=nome, local=arruma_local(i['local']), link=i['link'],
                     regime=regime(i['titulo'], i['local'], nome), area=VIDEOS['nomes'].get(area, 'Outras'), tema=area,
                     banco=bool(i.get('banco')) or 'banco de talentos' in i['titulo'].lower(),
-                    vistaEm=anterior.get(i['link'], hoje),
+                    vistaEm=anterior.get(i['link']) or anterior_t.get((nome, i['titulo'].strip(' -|')), hoje),
                     videos=escolha_videos.escolher(i['titulo'], nome)[0]))
             status.append(dict(empresa=nome, vagas=sum(1 for v in vagas if v['empresa'] == nome), ok=True))
             print(f'{nome:15} {status[-1]["vagas"]}', file=sys.stderr)

@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-10-23T15:15:25+00:00",
+ "atualizado": "2026-10-23T17:20:31+00:00",
  "fontes": [
   {
    "empresa": "PRIO",
@@ -23,7 +23,7 @@
   },
   {
    "empresa": "MODEC",
-   "vagas": 8,
+   "vagas": 9,
    "ok": true
   },
   {
@@ -73,7 +73,7 @@
   },
   {
    "empresa": "Camorim",
-   "vagas": 16,
+   "vagas": 15,
    "ok": true
   },
   {
@@ -113,7 +113,7 @@
   },
   {
    "empresa": "Baker Hughes",
-   "vagas": 16,
+   "vagas": 17,
    "ok": true
   },
   {
@@ -173,7 +173,7 @@
   },
   {
    "empresa": "Halliburton",
-   "vagas": 49,
+   "vagas": 53,
    "ok": true
   },
   {
@@ -188,8 +188,8 @@
   },
   {
    "empresa": "BW Energy",
-   "vagas": 18,
-   "ok": true
+   "vagas": 0,
+   "ok": false
   },
   {
    "empresa": "Manserv",
@@ -208,7 +208,7 @@
   },
   {
    "empresa": "Atlas NextWave",
-   "vagas": 43,
+   "vagas": 42,
    "ok": true
   },
   {
@@ -1790,11 +1790,11 @@
    ]
   },
   {
-   "id": "halliburton-t-cnico-de-manuten-o-master-wireline-perforating-34516",
+   "id": "halliburton-t-cnico-de-manuten-o-master-wireline-perforating-75203",
    "titulo": "Técnico de Manutenção Master - Wireline & Perforating",
    "empresa": "Halliburton",
    "local": "Macaé, RJ",
-   "link": "https://careers.halliburton.com/job/macae/brasil-rj-macae-tecnico-de-manutencao-master-wireline-and-perforating/543/102297198480",
+   "link": "https://jobs.halliburton.com/job/Macae-Brasil-RJ-Maca%C3%A9-T%C3%A9cnico-de-Manuten%C3%A7%C3%A3o-Master-Wireline-&amp;-Perforating-RJ-27930-070/1442838400/",
    "regime": "Offshore",
    "area": "Mecânica e manutenção",
    "tema": "mecanica",
@@ -1834,6 +1834,32 @@
     [
      "WP-YqW9rW3E",
      "Fala de oficial de náutica e DP, a função desta vaga."
+    ],
+    [
+     "7u0m6SwMtzc",
+     "Vídeo do canal sobre a MODEC. Ajuda a chegar preparado na entrevista."
+    ]
+   ]
+  },
+  {
+   "id": "modec-marinheiro-de-conv-s-ableseaman-77213",
+   "titulo": "MARINHEIRO DE CONVÉS / Ableseaman",
+   "empresa": "MODEC",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://modec-br.gupy.io/jobs/12072003",
+   "regime": "Offshore",
+   "area": "Marítimo",
+   "tema": "maritimo",
+   "banco": false,
+   "vistaEm": "2026-10-23",
+   "videos": [
+    [
+     "-Fg2KN6627E",
+     "Fala de operador de convés e marinheiro, a função desta vaga."
+    ],
+    [
+     "QBVn43MYbVw",
+     "Fala de operador de convés e marinheiro, a função desta vaga."
     ],
     [
      "7u0m6SwMtzc",
@@ -3792,32 +3818,6 @@
    ]
   },
   {
-   "id": "atlas-nextwave-assistente-administrativo-vaga-exclusiva-para-pcd-58936",
-   "titulo": "Assistente Administrativo (Vaga Exclusiva para PCD)",
-   "empresa": "Atlas NextWave",
-   "local": "Brasil",
-   "link": "https://atlasnextwave.com/job/assistente-administrativo-vaga-exclusiva-para-pcd/",
-   "regime": "Onshore",
-   "area": "Outras",
-   "tema": "geral",
-   "banco": false,
-   "vistaEm": "2026-10-15",
-   "videos": [
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ],
-    [
-     "eHqY18dRP8Q",
-     "As perguntas que mais aparecem na entrevista e como responder."
-    ],
-    [
-     "lttRYy_P8T8",
-     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
-    ]
-   ]
-  },
-  {
    "id": "atlas-nextwave-automation-coordinator-40012",
    "titulo": "Automation Coordinator",
    "empresa": "Atlas NextWave",
@@ -5006,6 +5006,32 @@
     [
      "AFQCQwo_5Kc",
      "Fala de mecânico e manutenção, a função desta vaga."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ]
+   ]
+  },
+  {
+   "id": "baker-hughes-jovem-aprendiz-2026-51965",
+   "titulo": "Jovem Aprendiz  - 2026",
+   "empresa": "Baker Hughes",
+   "local": "Macaé, RJ",
+   "link": "https://bakerhughes.wd5.myworkdayjobs.com/BakerHughes/job/BR-RJ-MACAE-LAGOMAR-AV-ARAXA-240/Jovem-Aprendiz---Maca---2026_R168735",
+   "regime": "Onshore",
+   "area": "Trainee e estágio",
+   "tema": "trainee",
+   "banco": false,
+   "vistaEm": "2026-10-23",
+   "videos": [
+    [
+     "iKkxsnu9rZ8",
+     "Fala de estágio, trainee e primeiro emprego, a função desta vaga."
+    ],
+    [
+     "4eWz_1hX3OI",
+     "Fala de estágio, trainee e primeiro emprego, a função desta vaga."
     ],
     [
      "sMTU-gjxcLU",
@@ -6834,58 +6860,6 @@
    ]
   },
   {
-   "id": "camorim-analista-de-sistemas-pleno-76657",
-   "titulo": "ANALISTA DE SISTEMAS PLENO",
-   "empresa": "Camorim",
-   "local": "Brasil",
-   "link": "https://camorim.inhire.com.br/vagas/6714ba1c-498f-4410-a04d-1c7d656fc5ea",
-   "regime": "Onshore",
-   "area": "Outras",
-   "tema": "geral",
-   "banco": false,
-   "vistaEm": "2026-10-15",
-   "videos": [
-    [
-     "jHvoPOebDx8",
-     "Vídeo do canal sobre a Camorim. Ajuda a chegar preparado na entrevista."
-    ],
-    [
-     "lttRYy_P8T8",
-     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
-    ],
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ]
-   ]
-  },
-  {
-   "id": "camorim-almoxarife-ii-87564",
-   "titulo": "Almoxarife II",
-   "empresa": "Camorim",
-   "local": "Brasil",
-   "link": "https://camorim.inhire.com.br/vagas/e54ff42d-a1de-4e79-bd95-89622b103b30",
-   "regime": "Onshore",
-   "area": "Outras",
-   "tema": "geral",
-   "banco": false,
-   "vistaEm": "2026-10-15",
-   "videos": [
-    [
-     "jHvoPOebDx8",
-     "Vídeo do canal sobre a Camorim. Ajuda a chegar preparado na entrevista."
-    ],
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ],
-    [
-     "eHqY18dRP8Q",
-     "As perguntas que mais aparecem na entrevista e como responder."
-    ]
-   ]
-  },
-  {
    "id": "camorim-analista-fiscal-pleno-41121",
    "titulo": "Analista Fiscal Pleno",
    "empresa": "Camorim",
@@ -6943,6 +6917,32 @@
    "empresa": "Camorim",
    "local": "Brasil",
    "link": "https://camorim.inhire.com.br/vagas/73792683-b68c-4bdb-9273-9628bc90159b",
+   "regime": "Onshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-15",
+   "videos": [
+    [
+     "jHvoPOebDx8",
+     "Vídeo do canal sobre a Camorim. Ajuda a chegar preparado na entrevista."
+    ],
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ]
+   ]
+  },
+  {
+   "id": "camorim-analista-de-projetos-de-ti-pleno-76657",
+   "titulo": "Analista de Projetos de TI Pleno",
+   "empresa": "Camorim",
+   "local": "Brasil",
+   "link": "https://camorim.inhire.com.br/vagas/6714ba1c-498f-4410-a04d-1c7d656fc5ea",
    "regime": "Onshore",
    "area": "Outras",
    "tema": "geral",
@@ -8238,11 +8238,11 @@
    ]
   },
   {
-   "id": "halliburton-analista-logistica-pleno-exporta-o-19839",
+   "id": "halliburton-analista-logistica-pleno-exporta-o-77237",
    "titulo": "ANALISTA LOGISTICA PLENO [Exportação]",
    "empresa": "Halliburton",
    "local": "Macaé, RJ",
-   "link": "https://careers.halliburton.com/job/macae/br-macae-analista-logistica-pleno-exportacao/543/102212567968",
+   "link": "https://jobs.halliburton.com/job/Macae-BR-Maca%C3%A9-ANALISTA-LOGISTICA-PLENO-Exporta%C3%A7%C3%A3o-RJ-27930-070/1441920500/",
    "regime": "Onshore",
    "area": "Outras",
    "tema": "geral",
@@ -8264,11 +8264,11 @@
    ]
   },
   {
-   "id": "halliburton-account-manager-40258",
+   "id": "halliburton-account-manager-95200",
    "titulo": "Account Manager",
    "empresa": "Halliburton",
    "local": "Rio de Janeiro, RJ",
-   "link": "https://careers.halliburton.com/job/rio-de-janeiro/brazil-rj-account-manager/543/102251354464",
+   "link": "https://jobs.halliburton.com/job/Rio-de-Janeiro-Brazil-RJ-Account-Manager-RJ-20011-000/1442260100/",
    "regime": "Onshore",
    "area": "Outras",
    "tema": "geral",
@@ -8290,11 +8290,11 @@
    ]
   },
   {
-   "id": "halliburton-assistente-de-opera-es-pipeline-and-process-services-30093",
+   "id": "halliburton-assistente-de-opera-es-pipeline-and-process-services-18618",
    "titulo": "Assistente de Operações ( Pipeline and Process Services)",
    "empresa": "Halliburton",
    "local": "Macaé, RJ",
-   "link": "https://careers.halliburton.com/job/macae/brasil-rj-macae-assistente-de-operacoes-pipeline-and-process-services/543/102293425904",
+   "link": "https://jobs.halliburton.com/job/Macae-Brasil-RJ-Maca%C3%A9-Assistente-de-Opera%C3%A7%C3%B5es-%28-Pipeline-and-Process-Services%29-RJ-27930-070/1442757300/",
    "regime": "Onshore",
    "area": "Operação e produção",
    "tema": "operacao",
@@ -8316,11 +8316,11 @@
    ]
   },
   {
-   "id": "halliburton-assistente-de-opera-es-pipeline-and-process-services-38972",
+   "id": "halliburton-assistente-de-opera-es-pipeline-and-process-services-56141",
    "titulo": "Assistente de Operações (Pipeline and Process Services)",
    "empresa": "Halliburton",
    "local": "Macaé, RJ",
-   "link": "https://careers.halliburton.com/job/macae/brasil-rj-macae-assistente-de-operacoes-pipeline-and-process-services/543/102330374400",
+   "link": "https://jobs.halliburton.com/job/Macae-Brasil-RJ-Maca%C3%A9-Assistente-de-Opera%C3%A7%C3%B5es-%28Pipeline-and-Process-Services%29-RJ-27930-070/1442557700/",
    "regime": "Onshore",
    "area": "Operação e produção",
    "tema": "operacao",
@@ -8342,11 +8342,11 @@
    ]
   },
   {
-   "id": "halliburton-assistente-de-opera-es-pipeline-and-process-services-22893",
+   "id": "halliburton-assistente-de-opera-es-pipeline-and-process-services-10404",
    "titulo": "Assistente de Operações (Pipeline and Process Services)",
    "empresa": "Halliburton",
    "local": "Macaé, RJ",
-   "link": "https://careers.halliburton.com/job/macae/brasil-rj-macae-assistente-de-operacoes-pipeline-and-process-services/543/102330374368",
+   "link": "https://jobs.halliburton.com/job/Macae-Brasil-RJ-Maca%C3%A9-Assistente-de-Opera%C3%A7%C3%B5es-%28Pipeline-and-Process-Services%29-RJ-27930-070/1442757700/",
    "regime": "Onshore",
    "area": "Operação e produção",
    "tema": "operacao",
@@ -8368,11 +8368,11 @@
    ]
   },
   {
-   "id": "halliburton-assistente-de-opera-es-pipeline-and-process-services-11941",
+   "id": "halliburton-assistente-de-opera-es-pipeline-and-process-services-64059",
    "titulo": "Assistente de Operações (Pipeline and Process Services)",
    "empresa": "Halliburton",
    "local": "Macaé, RJ",
-   "link": "https://careers.halliburton.com/job/macae/brasil-rj-macae-assistente-de-operacoes-pipeline-and-process-services/543/102330374176",
+   "link": "https://jobs.halliburton.com/job/Macae-Brasil-RJ-Maca%C3%A9-Assistente-de-Opera%C3%A7%C3%B5es-%28Pipeline-and-Process-Services%29-RJ-27930-070/1442928500/",
    "regime": "Onshore",
    "area": "Operação e produção",
    "tema": "operacao",
@@ -8394,11 +8394,11 @@
    ]
   },
   {
-   "id": "halliburton-assistente-de-opera-es-pipeline-and-process-services-75379",
+   "id": "halliburton-assistente-de-opera-es-pipeline-and-process-services-86926",
    "titulo": "Assistente de Operações (Pipeline and Process Services)",
    "empresa": "Halliburton",
    "local": "Macaé, RJ",
-   "link": "https://careers.halliburton.com/job/macae/brasil-rj-macae-assistente-de-operacoes-pipeline-and-process-services/543/102304929712",
+   "link": "https://jobs.halliburton.com/job/Macae-Brasil-RJ-Maca%C3%A9-Assistente-de-Opera%C3%A7%C3%B5es-%28Pipeline-and-Process-Services%29-RJ-27930-070/1442957300/",
    "regime": "Onshore",
    "area": "Operação e produção",
    "tema": "operacao",
@@ -8420,11 +8420,11 @@
    ]
   },
   {
-   "id": "halliburton-assistente-de-opera-es-pipeline-and-process-services-36038",
+   "id": "halliburton-assistente-de-opera-es-pipeline-and-process-services-40431",
    "titulo": "Assistente de Operações (Pipeline and Process Services)",
    "empresa": "Halliburton",
    "local": "Macaé, RJ",
-   "link": "https://careers.halliburton.com/job/macae/brasil-rj-macae-assistente-de-operacoes-pipeline-and-process-services/543/102304929632",
+   "link": "https://jobs.halliburton.com/job/Macae-Brasil-RJ-Maca%C3%A9-Assistente-de-Opera%C3%A7%C3%B5es-%28Pipeline-and-Process-Services%29-RJ-27930-070/1443091700/",
    "regime": "Onshore",
    "area": "Operação e produção",
    "tema": "operacao",
@@ -8446,16 +8446,16 @@
    ]
   },
   {
-   "id": "halliburton-assistente-de-opera-es-pipeline-and-process-services-86838",
+   "id": "halliburton-assistente-de-opera-es-pipeline-and-process-services-47424",
    "titulo": "Assistente de Operações (Pipeline and Process Services)",
    "empresa": "Halliburton",
    "local": "Macaé, RJ",
-   "link": "https://careers.halliburton.com/job/macae/brasil-rj-macae-assistente-de-operacoes-pipeline-and-process-services/543/102293425920",
+   "link": "https://jobs.halliburton.com/job/Macae-Brasil-RJ-Maca%C3%A9-Assistente-de-Opera%C3%A7%C3%B5es-%28Pipeline-and-Process-Services%29-RJ-27930-070/1443107900/",
    "regime": "Onshore",
    "area": "Operação e produção",
    "tema": "operacao",
    "banco": false,
-   "vistaEm": "2026-10-22",
+   "vistaEm": "2026-10-23",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -8472,16 +8472,16 @@
    ]
   },
   {
-   "id": "halliburton-assistente-de-opera-es-pipeline-and-process-services-32703",
+   "id": "halliburton-assistente-de-opera-es-pipeline-and-process-services-24433",
    "titulo": "Assistente de Operações (Pipeline and Process Services)",
    "empresa": "Halliburton",
    "local": "Macaé, RJ",
-   "link": "https://careers.halliburton.com/job/macae/brasil-rj-macae-assistente-de-operacoes-pipeline-and-process-services/543/102267525152",
+   "link": "https://jobs.halliburton.com/job/Macae-Brasil-RJ-Maca%C3%A9-Assistente-de-Opera%C3%A7%C3%B5es-%28Pipeline-and-Process-Services%29-RJ-27930-070/1443110300/",
    "regime": "Onshore",
    "area": "Operação e produção",
    "tema": "operacao",
    "banco": false,
-   "vistaEm": "2026-10-22",
+   "vistaEm": "2026-10-23",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -8498,16 +8498,16 @@
    ]
   },
   {
-   "id": "halliburton-assistente-de-opera-es-pipeline-and-process-services-94617",
+   "id": "halliburton-assistente-de-opera-es-pipeline-and-process-services-70295",
    "titulo": "Assistente de Operações (Pipeline and Process Services)",
    "empresa": "Halliburton",
    "local": "Macaé, RJ",
-   "link": "https://careers.halliburton.com/job/macae/brasil-rj-macae-assistente-de-operacoes-pipeline-and-process-services/543/102208748496",
+   "link": "https://jobs.halliburton.com/job/Macae-Brasil-RJ-Maca%C3%A9-Assistente-de-Opera%C3%A7%C3%B5es-%28Pipeline-and-Process-Services%29-RJ-27930-070/1441795500/",
    "regime": "Onshore",
    "area": "Operação e produção",
    "tema": "operacao",
    "banco": false,
-   "vistaEm": "2026-10-15",
+   "vistaEm": "2026-10-23",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -8524,11 +8524,11 @@
    ]
   },
   {
-   "id": "halliburton-assistente-de-opera-es-wireline-perforating-87811",
+   "id": "halliburton-assistente-de-opera-es-wireline-perforating-28607",
    "titulo": "Assistente de Operações - Wireline & Perforating",
    "empresa": "Halliburton",
-   "local": "Pioneiros, SP",
-   "link": "https://careers.halliburton.com/job/pioneiros/brasil-rj-macae-assistente-de-operacoes-wireline-and-perforating/543/102297198512",
+   "local": "Catu, BA",
+   "link": "https://jobs.halliburton.com/job/Catu-Brasil-BA-Catu-Assistente-de-Opera%C3%A7%C3%B5es-Wireline-&amp;-Perforating-BA-48110-000/1442948800/",
    "regime": "Onshore",
    "area": "Perfuração e poços",
    "tema": "pocos",
@@ -8550,11 +8550,37 @@
    ]
   },
   {
-   "id": "halliburton-associate-developer-77510",
+   "id": "halliburton-assistente-de-opera-es-wireline-perforating-67880",
+   "titulo": "Assistente de Operações - Wireline & Perforating",
+   "empresa": "Halliburton",
+   "local": "Catu, BA",
+   "link": "https://jobs.halliburton.com/job/Pioneiro-Brasil-RJ-Maca%C3%A9-Assistente-de-Opera%C3%A7%C3%B5es-Wireline-&amp;-Perforating-BA-48110-000/1442850000/",
+   "regime": "Onshore",
+   "area": "Perfuração e poços",
+   "tema": "pocos",
+   "banco": false,
+   "vistaEm": "2026-10-23",
+   "videos": [
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
+   "id": "halliburton-associate-developer-20111",
    "titulo": "Associate Developer",
    "empresa": "Halliburton",
    "local": "Rio de Janeiro, RJ",
-   "link": "https://careers.halliburton.com/job/rio-de-janeiro/brazil-remote-associate-developer/543/96215360720",
+   "link": "https://jobs.halliburton.com/job/Rio-de-Janeiro-Brazil-Remote-Associate-Developer-RJ-291941/1398078800/",
    "regime": "Onshore",
    "area": "Outras",
    "tema": "geral",
@@ -8576,11 +8602,11 @@
    ]
   },
   {
-   "id": "halliburton-consultor-opera-es-jr-cementing-78928",
+   "id": "halliburton-consultor-opera-es-jr-cementing-92050",
    "titulo": "Consultor Operações Jr - Cementing",
    "empresa": "Halliburton",
    "local": "Macaé, RJ",
-   "link": "https://careers.halliburton.com/job/macae/br-rj-macae-consultor-operacoes-jr-cementing/543/102297198624",
+   "link": "https://jobs.halliburton.com/job/Macae-BR-RJ-Macae-Consultor-Opera%C3%A7%C3%B5es-Jr-Cementing-RJ-27930-070/1442873900/",
    "regime": "Onshore",
    "area": "Outras",
    "tema": "geral",
@@ -8602,11 +8628,11 @@
    ]
   },
   {
-   "id": "halliburton-consultor-opera-es-jr-cementing-22135",
+   "id": "halliburton-consultor-opera-es-jr-cementing-46153",
    "titulo": "Consultor Operações Jr - Cementing",
    "empresa": "Halliburton",
    "local": "Macaé, RJ",
-   "link": "https://careers.halliburton.com/job/macae/br-rj-macae-consultor-operacoes-jr-cementing/543/102297198592",
+   "link": "https://jobs.halliburton.com/job/Macae-BR-RJ-Macae-Consultor-Opera%C3%A7%C3%B5es-Jr-Cementing-RJ-27930-070/1442858200/",
    "regime": "Onshore",
    "area": "Outras",
    "tema": "geral",
@@ -8628,11 +8654,11 @@
    ]
   },
   {
-   "id": "halliburton-consultor-de-opera-es-pipeline-and-process-services-93764",
+   "id": "halliburton-consultor-de-opera-es-pipeline-and-process-services-20556",
    "titulo": "Consultor de Operações (Pipeline and Process Services)",
    "empresa": "Halliburton",
    "local": "Macaé, RJ",
-   "link": "https://careers.halliburton.com/job/macae/brasil-rj-macae-consultor-de-operacoes-pipeline-and-process-services/543/102304929600",
+   "link": "https://jobs.halliburton.com/job/Macae-Brasil-RJ-Maca%C3%A9-Consultor-de-Opera%C3%A7%C3%B5es-%28Pipeline-and-Process-Services%29-RJ-27930-070/1442919800/",
    "regime": "Onshore",
    "area": "Operação e produção",
    "tema": "operacao",
@@ -8654,11 +8680,11 @@
    ]
   },
   {
-   "id": "halliburton-consultor-de-opera-es-testing-and-subsea-10979",
+   "id": "halliburton-consultor-de-opera-es-testing-and-subsea-95625",
    "titulo": "Consultor de Operações (Testing and Subsea)",
    "empresa": "Halliburton",
    "local": "Macaé, RJ",
-   "link": "https://careers.halliburton.com/job/macae/brasil-rj-macae-consultor-de-operacoes-testing-and-subsea/543/101359506656",
+   "link": "https://jobs.halliburton.com/job/Macae-Brasil-RJ-Maca%C3%A9-Consultor-de-Opera%C3%A7%C3%B5es-%28Testing-and-Subsea%29-RJ-27930-070/1435384400/",
    "regime": "Onshore",
    "area": "Outras",
    "tema": "geral",
@@ -8680,11 +8706,37 @@
    ]
   },
   {
-   "id": "halliburton-deep-program-brazil-2027-47657",
+   "id": "halliburton-consultor-de-opera-es-pleno-97899",
+   "titulo": "Consultor de operações Pleno",
+   "empresa": "Halliburton",
+   "local": "Catu, BA",
+   "link": "https://jobs.halliburton.com/job/Catu-BR-Catu-Consultor-de-opera%C3%A7%C3%B5es-Pleno-BA-48110-000/1441006300/",
+   "regime": "Onshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-23",
+   "videos": [
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
+   "id": "halliburton-deep-program-brazil-2027-49242",
    "titulo": "DEEP Program Brazil 2027",
    "empresa": "Halliburton",
    "local": "Macaé, RJ",
-   "link": "https://careers.halliburton.com/job/macae/deep-program-brazil-2027/543/101956951920",
+   "link": "https://jobs.halliburton.com/job/Macae-DEEP-Program-Brazil-2027-RJ-27930-070/1440144800/",
    "regime": "Onshore",
    "area": "Outras",
    "tema": "geral",
@@ -8706,11 +8758,11 @@
    ]
   },
   {
-   "id": "halliburton-directional-driller-sperry-drilling-svcs-21364",
+   "id": "halliburton-directional-driller-sperry-drilling-svcs-97186",
    "titulo": "Directional Driller - Sperry Drilling Svcs",
    "empresa": "Halliburton",
    "local": "Mossoró, RN",
-   "link": "https://careers.halliburton.com/job/mossoro/brazil-rn-mossoro-directional-driller-sperry-drilling-svcs/543/101052970784",
+   "link": "https://jobs.halliburton.com/job/Alto-Sumare-Brazil-RN-Mossor%C3%B3-Directional-Driller-Sperry-Drilling-Svcs-RN-59633-730/1433128700/",
    "regime": "Onshore",
    "area": "Perfuração e poços",
    "tema": "pocos",
@@ -8732,11 +8784,11 @@
    ]
   },
   {
-   "id": "halliburton-especialista-negocios-pleno-14556",
+   "id": "halliburton-especialista-negocios-pleno-79179",
    "titulo": "ESPECIALISTA NEGOCIOS PLENO",
    "empresa": "Halliburton",
    "local": "Macaé, RJ",
-   "link": "https://careers.halliburton.com/job/macae/brasil-rj-macae-especialista-negocios-pleno/543/102297198528",
+   "link": "https://jobs.halliburton.com/job/Macae-Brasil-RJ-Maca%C3%A9-ESPECIALISTA-NEGOCIOS-PLENO-RJ-27930-070/1442852600/",
    "regime": "Onshore",
    "area": "Outras",
    "tema": "geral",
@@ -8758,11 +8810,11 @@
    ]
   },
   {
-   "id": "halliburton-electrical-electronic-engineer-wireline-and-perforating-89640",
+   "id": "halliburton-electrical-electronic-engineer-wireline-and-perforating-52830",
    "titulo": "Electrical/Electronic Engineer - Wireline and Perforating",
    "empresa": "Halliburton",
    "local": "Rio de Janeiro, RJ",
-   "link": "https://careers.halliburton.com/job/rio-de-janeiro/brazil-rj-electrical-electronic-engineer-wireline-and-perforating/543/96215360672",
+   "link": "https://jobs.halliburton.com/job/Rio-de-Janeiro-Brazil-RJ-ElectricalElectronic-Engineer-Wireline-and-Perforating-RJ-291941/1398064400/",
    "regime": "Onshore",
    "area": "Elétrica e instrumentação",
    "tema": "eletrica",
@@ -8784,11 +8836,11 @@
    ]
   },
   {
-   "id": "halliburton-engineering-team-lead-digital-twin-20597",
+   "id": "halliburton-engineering-team-lead-digital-twin-15416",
    "titulo": "Engineering Team Lead (Digital Twin)",
    "empresa": "Halliburton",
    "local": "Rio de Janeiro, RJ",
-   "link": "https://careers.halliburton.com/job/rio-de-janeiro/brazil-remote-engineering-team-lead-digital-twin/543/96606602288",
+   "link": "https://jobs.halliburton.com/job/Rio-de-Janeiro-Brazil-Remote-Engineering-Team-Lead-%28Digital-Twin%29-RJ-291941/1401275400/",
    "regime": "Onshore",
    "area": "Engenharia",
    "tema": "engenharia",
@@ -8810,11 +8862,11 @@
    ]
   },
   {
-   "id": "halliburton-engineering-team-lead-digital-twin-platform-32958",
+   "id": "halliburton-engineering-team-lead-digital-twin-platform-36843",
    "titulo": "Engineering Team Lead - Digital Twin Platform",
    "empresa": "Halliburton",
    "local": "Rio de Janeiro, RJ",
-   "link": "https://careers.halliburton.com/job/rio-de-janeiro/brazil-remote-engineering-team-lead-digital-twin-platform/543/96606602304",
+   "link": "https://jobs.halliburton.com/job/Rio-de-Janeiro-Brazil-Remote-Engineering-Team-Lead-Digital-Twin-Platform-RJ-291941/1401279700/",
    "regime": "Onshore",
    "area": "Engenharia",
    "tema": "engenharia",
@@ -8836,505 +8888,11 @@
    ]
   },
   {
-   "id": "halliburton-especialista-de-servi-os-testing-subsea-52691",
-   "titulo": "Especialista de Serviços (Testing & Subsea)",
-   "empresa": "Halliburton",
-   "local": "Mossoró, RN",
-   "link": "https://careers.halliburton.com/job/mossoro/brasil-rn-mossoro-especialista-de-servicos-testing-and-subsea/543/98800501936",
-   "regime": "Onshore",
-   "area": "Outras",
-   "tema": "geral",
-   "banco": false,
-   "vistaEm": "2026-10-15",
-   "videos": [
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ],
-    [
-     "eHqY18dRP8Q",
-     "As perguntas que mais aparecem na entrevista e como responder."
-    ],
-    [
-     "lttRYy_P8T8",
-     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
-    ]
-   ]
-  },
-  {
-   "id": "halliburton-field-engineer-mlwd-sperry-drilling-svcs-97376",
-   "titulo": "Field Engineer MLWD - Sperry Drilling Svcs",
+   "id": "halliburton-especialista-de-controle-de-materiais-jr-pml-86232",
+   "titulo": "Especialista de Controle de Materiais Jr - PML",
    "empresa": "Halliburton",
    "local": "Macaé, RJ",
-   "link": "https://careers.halliburton.com/job/macae/brazil-rj-macae-field-engineer-mlwd-sperry-drilling-svcs/543/101922475408",
-   "regime": "Onshore",
-   "area": "Perfuração e poços",
-   "tema": "pocos",
-   "banco": false,
-   "vistaEm": "2026-10-15",
-   "videos": [
-    [
-     "9ZlICqIBUMg",
-     "Fala de engenharia, a função desta vaga."
-    ],
-    [
-     "0uMWC3VBm8A",
-     "Fala de engenharia, a função desta vaga."
-    ],
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ]
-   ]
-  },
-  {
-   "id": "halliburton-full-stack-ai-developer-57647",
-   "titulo": "Full Stack AI Developer",
-   "empresa": "Halliburton",
-   "local": "Rio de Janeiro, RJ",
-   "link": "https://careers.halliburton.com/job/rio-de-janeiro/brazil-remote-full-stack-ai-developer/543/96606602272",
-   "regime": "Onshore",
-   "area": "Outras",
-   "tema": "geral",
-   "banco": false,
-   "vistaEm": "2026-10-15",
-   "videos": [
-    [
-     "lttRYy_P8T8",
-     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
-    ],
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ],
-    [
-     "eHqY18dRP8Q",
-     "As perguntas que mais aparecem na entrevista e como responder."
-    ]
-   ]
-  },
-  {
-   "id": "halliburton-full-stack-scientific-developer-python-24670",
-   "titulo": "Full Stack/Scientific Developer (Python)",
-   "empresa": "Halliburton",
-   "local": "Rio de Janeiro, RJ",
-   "link": "https://careers.halliburton.com/job/rio-de-janeiro/brazil-remote-full-stack-scientific-developer-python/543/96606602256",
-   "regime": "Onshore",
-   "area": "Outras",
-   "tema": "geral",
-   "banco": false,
-   "vistaEm": "2026-10-15",
-   "videos": [
-    [
-     "lttRYy_P8T8",
-     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
-    ],
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ],
-    [
-     "eHqY18dRP8Q",
-     "As perguntas que mais aparecem na entrevista e como responder."
-    ]
-   ]
-  },
-  {
-   "id": "halliburton-jovem-aprendiz-wireline-and-perforating-93888",
-   "titulo": "Jovem Aprendiz (Wireline and Perforating)",
-   "empresa": "Halliburton",
-   "local": "Mossoró, RN",
-   "link": "https://careers.halliburton.com/job/mossoro/brasil-rn-mossoro-jovem-aprendiz-wireline-and-perforating/543/102287024128",
-   "regime": "Onshore",
-   "area": "Perfuração e poços",
-   "tema": "pocos",
-   "banco": false,
-   "vistaEm": "2026-10-22",
-   "videos": [
-    [
-     "iKkxsnu9rZ8",
-     "Fala de estágio, trainee e primeiro emprego, a função desta vaga."
-    ],
-    [
-     "4eWz_1hX3OI",
-     "Fala de estágio, trainee e primeiro emprego, a função desta vaga."
-    ],
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ]
-   ]
-  },
-  {
-   "id": "halliburton-mid-level-developer-9278",
-   "titulo": "Mid-Level Developer",
-   "empresa": "Halliburton",
-   "local": "Rio de Janeiro, RJ",
-   "link": "https://careers.halliburton.com/job/rio-de-janeiro/brazil-remote-mid-level-developer/543/96215360704",
-   "regime": "Onshore",
-   "area": "Outras",
-   "tema": "geral",
-   "banco": false,
-   "vistaEm": "2026-10-15",
-   "videos": [
-    [
-     "lttRYy_P8T8",
-     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
-    ],
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ],
-    [
-     "eHqY18dRP8Q",
-     "As perguntas que mais aparecem na entrevista e como responder."
-    ]
-   ]
-  },
-  {
-   "id": "halliburton-operador-de-servi-os-hwo-97257",
-   "titulo": "Operador de Serviços HWO",
-   "empresa": "Halliburton",
-   "local": "Macaé, RJ",
-   "link": "https://careers.halliburton.com/job/macae/brazil-macae-operador-de-servicos-hwo/543/102276293104",
-   "regime": "Onshore",
-   "area": "Operação e produção",
-   "tema": "operacao",
-   "banco": false,
-   "vistaEm": "2026-10-22",
-   "videos": [
-    [
-     "lttRYy_P8T8",
-     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
-    ],
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ],
-    [
-     "eHqY18dRP8Q",
-     "As perguntas que mais aparecem na entrevista e como responder."
-    ]
-   ]
-  },
-  {
-   "id": "halliburton-operador-de-servi-os-hwo-sondador-de-sph-63786",
-   "titulo": "Operador de Serviços HWO (Sondador de SPH)",
-   "empresa": "Halliburton",
-   "local": "Mossoró, RN",
-   "link": "https://careers.halliburton.com/job/mossoro/brazil-mossoro-operador-de-servicos-hwo-sondador-de-sph/543/102225216912",
-   "regime": "Onshore",
-   "area": "Perfuração e poços",
-   "tema": "pocos",
-   "banco": false,
-   "vistaEm": "2026-10-15",
-   "videos": [
-    [
-     "bFgYyXPn2Bc",
-     "Fala de sondador e equipe de perfuração, a função desta vaga."
-    ],
-    [
-     "NVZzQiqt8_w",
-     "Fala de sondador e equipe de perfuração, a função desta vaga."
-    ],
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ]
-   ]
-  },
-  {
-   "id": "halliburton-operador-de-servi-os-hwo-sondador-de-sph-64940",
-   "titulo": "Operador de Serviços HWO (Sondador de SPH)",
-   "empresa": "Halliburton",
-   "local": "Mossoró, RN",
-   "link": "https://careers.halliburton.com/job/mossoro/brazil-mossoro-operador-de-servicos-hwo-sondador-de-sph/543/102225216896",
-   "regime": "Onshore",
-   "area": "Perfuração e poços",
-   "tema": "pocos",
-   "banco": false,
-   "vistaEm": "2026-10-15",
-   "videos": [
-    [
-     "bFgYyXPn2Bc",
-     "Fala de sondador e equipe de perfuração, a função desta vaga."
-    ],
-    [
-     "NVZzQiqt8_w",
-     "Fala de sondador e equipe de perfuração, a função desta vaga."
-    ],
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ]
-   ]
-  },
-  {
-   "id": "halliburton-operador-de-servi-os-hwo-sondador-de-sph-77532",
-   "titulo": "Operador de Serviços HWO (Sondador de SPH)",
-   "empresa": "Halliburton",
-   "local": "Rio de Janeiro, RJ",
-   "link": "https://careers.halliburton.com/job/rio-de-janeiro/brazil-mossoro-operador-de-servicos-hwo-sondador-de-sph/543/102225216880",
-   "regime": "Onshore",
-   "area": "Perfuração e poços",
-   "tema": "pocos",
-   "banco": false,
-   "vistaEm": "2026-10-15",
-   "videos": [
-    [
-     "bFgYyXPn2Bc",
-     "Fala de sondador e equipe de perfuração, a função desta vaga."
-    ],
-    [
-     "NVZzQiqt8_w",
-     "Fala de sondador e equipe de perfuração, a função desta vaga."
-    ],
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ]
-   ]
-  },
-  {
-   "id": "halliburton-pl48-esg-logistics-specialist-96726",
-   "titulo": "PL48-ESG-Logistics Specialist",
-   "empresa": "Halliburton",
-   "local": "Macaé, RJ",
-   "link": "https://careers.halliburton.com/job/macae/pl48-esg-logistics-specialist/543/102255007984",
-   "regime": "Onshore",
-   "area": "Outras",
-   "tema": "geral",
-   "banco": false,
-   "vistaEm": "2026-10-22",
-   "videos": [
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ],
-    [
-     "eHqY18dRP8Q",
-     "As perguntas que mais aparecem na entrevista e como responder."
-    ],
-    [
-     "lttRYy_P8T8",
-     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
-    ]
-   ]
-  },
-  {
-   "id": "halliburton-senior-backend-engineer-python-20628",
-   "titulo": "Senior Backend Engineer (Python)",
-   "empresa": "Halliburton",
-   "local": "Rio de Janeiro, RJ",
-   "link": "https://careers.halliburton.com/job/rio-de-janeiro/brazil-remote-senior-backend-engineer-python/543/96606602144",
-   "regime": "Onshore",
-   "area": "Engenharia",
-   "tema": "engenharia",
-   "banco": false,
-   "vistaEm": "2026-10-15",
-   "videos": [
-    [
-     "9ZlICqIBUMg",
-     "Fala de engenharia, a função desta vaga."
-    ],
-    [
-     "0uMWC3VBm8A",
-     "Fala de engenharia, a função desta vaga."
-    ],
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ]
-   ]
-  },
-  {
-   "id": "halliburton-senior-backend-engineer-infrastructure-intelligence-20899",
-   "titulo": "Senior Backend Engineer - Infrastructure & Intelligence",
-   "empresa": "Halliburton",
-   "local": "Rio de Janeiro, RJ",
-   "link": "https://careers.halliburton.com/job/rio-de-janeiro/brazil-remote-senior-backend-engineer-infrastructure-and-intelligence/543/100228492736",
-   "regime": "Onshore",
-   "area": "Engenharia",
-   "tema": "engenharia",
-   "banco": false,
-   "vistaEm": "2026-10-15",
-   "videos": [
-    [
-     "9ZlICqIBUMg",
-     "Fala de engenharia, a função desta vaga."
-    ],
-    [
-     "0uMWC3VBm8A",
-     "Fala de engenharia, a função desta vaga."
-    ],
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ]
-   ]
-  },
-  {
-   "id": "halliburton-senior-logistics-specialist-imports-71996",
-   "titulo": "Senior Logistics Specialist - Imports",
-   "empresa": "Halliburton",
-   "local": "Macaé, RJ",
-   "link": "https://careers.halliburton.com/job/macae/br-macae-senior-logistics-specialist-imports/543/102051216144",
-   "regime": "Onshore",
-   "area": "Outras",
-   "tema": "geral",
-   "banco": false,
-   "vistaEm": "2026-10-15",
-   "videos": [
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ],
-    [
-     "eHqY18dRP8Q",
-     "As perguntas que mais aparecem na entrevista e como responder."
-    ],
-    [
-     "lttRYy_P8T8",
-     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
-    ]
-   ]
-  },
-  {
-   "id": "halliburton-senior-software-developer-91795",
-   "titulo": "Senior Software Developer",
-   "empresa": "Halliburton",
-   "local": "Rio de Janeiro, RJ",
-   "link": "https://careers.halliburton.com/job/rio-de-janeiro/brazil-remote-senior-software-developer/543/96039050816",
-   "regime": "Onshore",
-   "area": "Outras",
-   "tema": "geral",
-   "banco": false,
-   "vistaEm": "2026-10-15",
-   "videos": [
-    [
-     "lttRYy_P8T8",
-     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
-    ],
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ],
-    [
-     "eHqY18dRP8Q",
-     "As perguntas que mais aparecem na entrevista e como responder."
-    ]
-   ]
-  },
-  {
-   "id": "halliburton-senior-software-developer-platform-complex-systems-43564",
-   "titulo": "Senior Software Developer - Platform & Complex Systems",
-   "empresa": "Halliburton",
-   "local": "Rio de Janeiro, RJ",
-   "link": "https://careers.halliburton.com/job/rio-de-janeiro/brazil-hybrid-senior-software-developer-platform-and-complex-systems/543/93987126944",
-   "regime": "Onshore",
-   "area": "Outras",
-   "tema": "geral",
-   "banco": false,
-   "vistaEm": "2026-10-15",
-   "videos": [
-    [
-     "lttRYy_P8T8",
-     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
-    ],
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ],
-    [
-     "eHqY18dRP8Q",
-     "As perguntas que mais aparecem na entrevista e como responder."
-    ]
-   ]
-  },
-  {
-   "id": "halliburton-senior-software-solution-architect-37895",
-   "titulo": "Senior Software Solution Architect",
-   "empresa": "Halliburton",
-   "local": "Rio de Janeiro, RJ",
-   "link": "https://careers.halliburton.com/job/rio-de-janeiro/brazil-remote-senior-software-solution-architect/543/101922475424",
-   "regime": "Onshore",
-   "area": "Outras",
-   "tema": "geral",
-   "banco": false,
-   "vistaEm": "2026-10-15",
-   "videos": [
-    [
-     "lttRYy_P8T8",
-     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
-    ],
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ],
-    [
-     "eHqY18dRP8Q",
-     "As perguntas que mais aparecem na entrevista e como responder."
-    ]
-   ]
-  },
-  {
-   "id": "halliburton-software-development-team-lead-77685",
-   "titulo": "Software Development Team Lead",
-   "empresa": "Halliburton",
-   "local": "Rio de Janeiro, RJ",
-   "link": "https://careers.halliburton.com/job/rio-de-janeiro/brazil-remote-software-development-team-lead/543/98572265360",
-   "regime": "Onshore",
-   "area": "Outras",
-   "tema": "geral",
-   "banco": false,
-   "vistaEm": "2026-10-15",
-   "videos": [
-    [
-     "lttRYy_P8T8",
-     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
-    ],
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ],
-    [
-     "eHqY18dRP8Q",
-     "As perguntas que mais aparecem na entrevista e como responder."
-    ]
-   ]
-  },
-  {
-   "id": "halliburton-technical-planner-ii-baroid-57804",
-   "titulo": "Technical Planner II - Baroid",
-   "empresa": "Halliburton",
-   "local": "Macaé, RJ",
-   "link": "https://careers.halliburton.com/job/macae/brazil-rj-macae-technical-planner-ii-baroid/543/102262371600",
-   "regime": "Onshore",
-   "area": "Outras",
-   "tema": "geral",
-   "banco": false,
-   "vistaEm": "2026-10-22",
-   "videos": [
-    [
-     "lttRYy_P8T8",
-     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
-    ],
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ],
-    [
-     "eHqY18dRP8Q",
-     "As perguntas que mais aparecem na entrevista e como responder."
-    ]
-   ]
-  },
-  {
-   "id": "halliburton-tecnico-laboratorio-jr-cementing-50508",
-   "titulo": "Tecnico Laboratorio JR - Cementing",
-   "empresa": "Halliburton",
-   "local": "Macaé, RJ",
-   "link": "https://careers.halliburton.com/job/macae/brasil-rj-macae-tecnico-laboratorio-jr-cementing/543/102297198544",
+   "link": "https://jobs.halliburton.com/job/Macae-BR-Macae-Especialista-de-Controle-de-Materiais-Jr-PML-RJ-27930-070/1443209300/",
    "regime": "Onshore",
    "area": "Outras",
    "tema": "geral",
@@ -9356,11 +8914,557 @@
    ]
   },
   {
-   "id": "halliburton-t-cnico-de-manuten-o-t-cnico-de-mec-nica-de-sph-78087",
-   "titulo": "Técnico de Manutenção (Técnico de Mecânica de SPH)",
+   "id": "halliburton-especialista-de-servi-os-testing-subsea-27293",
+   "titulo": "Especialista de Serviços (Testing & Subsea)",
+   "empresa": "Halliburton",
+   "local": "Mossoró, RN",
+   "link": "https://jobs.halliburton.com/job/Alto-Sumare-Brasil-RN-Mossor%C3%B3-Especialista-de-Servi%C3%A7os-%28Testing-&amp;-Subsea%29-RN-56600-970/1416231700/",
+   "regime": "Onshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-15",
+   "videos": [
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ],
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ]
+   ]
+  },
+  {
+   "id": "halliburton-field-engineer-mlwd-sperry-drilling-svcs-55185",
+   "titulo": "Field Engineer MLWD - Sperry Drilling Svcs",
+   "empresa": "Halliburton",
+   "local": "Macaé, RJ",
+   "link": "https://jobs.halliburton.com/job/Macae-Brazil-RJ-Maca%C3%A9-Field-Engineer-MLWD-Sperry-Drilling-Svcs-RJ-27930-070/1439737900/",
+   "regime": "Onshore",
+   "area": "Perfuração e poços",
+   "tema": "pocos",
+   "banco": false,
+   "vistaEm": "2026-10-15",
+   "videos": [
+    [
+     "9ZlICqIBUMg",
+     "Fala de engenharia, a função desta vaga."
+    ],
+    [
+     "0uMWC3VBm8A",
+     "Fala de engenharia, a função desta vaga."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ]
+   ]
+  },
+  {
+   "id": "halliburton-full-stack-ai-developer-20509",
+   "titulo": "Full Stack AI Developer",
    "empresa": "Halliburton",
    "local": "Rio de Janeiro, RJ",
-   "link": "https://careers.halliburton.com/job/rio-de-janeiro/brazil-macae-tecnico-de-manutencao-tecnico-de-mecanica-de-sph/543/102225216864",
+   "link": "https://jobs.halliburton.com/job/Rio-de-Janeiro-Brazil-Remote-Full-Stack-AI-Developer-RJ-291941/1401272600/",
+   "regime": "Onshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-15",
+   "videos": [
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
+   "id": "halliburton-full-stack-scientific-developer-python-93519",
+   "titulo": "Full Stack/Scientific Developer (Python)",
+   "empresa": "Halliburton",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://jobs.halliburton.com/job/Rio-de-Janeiro-Brazil-Remote-Full-StackScientific-Developer-%28Python%29-RJ-291941/1401269800/",
+   "regime": "Onshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-15",
+   "videos": [
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
+   "id": "halliburton-jovem-aprendiz-wireline-and-perforating-72097",
+   "titulo": "Jovem Aprendiz (Wireline and Perforating)",
+   "empresa": "Halliburton",
+   "local": "Mossoró, RN",
+   "link": "https://jobs.halliburton.com/job/Alto-Sumare-Brasil-RN-Mossor%C3%B3-Jovem-Aprendiz-%28Wireline-and-Perforating%29-RN-59633-730/1442636500/",
+   "regime": "Onshore",
+   "area": "Perfuração e poços",
+   "tema": "pocos",
+   "banco": false,
+   "vistaEm": "2026-10-22",
+   "videos": [
+    [
+     "iKkxsnu9rZ8",
+     "Fala de estágio, trainee e primeiro emprego, a função desta vaga."
+    ],
+    [
+     "4eWz_1hX3OI",
+     "Fala de estágio, trainee e primeiro emprego, a função desta vaga."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ]
+   ]
+  },
+  {
+   "id": "halliburton-mid-level-developer-58269",
+   "titulo": "Mid-Level Developer",
+   "empresa": "Halliburton",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://jobs.halliburton.com/job/Rio-de-Janeiro-Brazil-Remote-Mid-Level-Developer-RJ-291941/1398072800/",
+   "regime": "Onshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-15",
+   "videos": [
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
+   "id": "halliburton-operador-de-servi-os-hwo-88813",
+   "titulo": "Operador de Serviços HWO",
+   "empresa": "Halliburton",
+   "local": "Macaé, RJ",
+   "link": "https://jobs.halliburton.com/job/Macae-Brazil-Maca%C3%A9-Operador-de-Servi%C3%A7os-HWO-RN-27930-070/1442101800/",
+   "regime": "Onshore",
+   "area": "Operação e produção",
+   "tema": "operacao",
+   "banco": false,
+   "vistaEm": "2026-10-22",
+   "videos": [
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
+   "id": "halliburton-operador-de-servi-os-hwo-sondador-de-sph-70493",
+   "titulo": "Operador de Serviços HWO (Sondador de SPH)",
+   "empresa": "Halliburton",
+   "local": "Mossoró, RN",
+   "link": "https://jobs.halliburton.com/job/Alto-Sumare-Brazil-Mossor%C3%B3-Operador-de-Servi%C3%A7os-HWO-%28Sondador-de-SPH%29-RJ-59633-730/1442099400/",
+   "regime": "Onshore",
+   "area": "Perfuração e poços",
+   "tema": "pocos",
+   "banco": false,
+   "vistaEm": "2026-10-15",
+   "videos": [
+    [
+     "bFgYyXPn2Bc",
+     "Fala de sondador e equipe de perfuração, a função desta vaga."
+    ],
+    [
+     "NVZzQiqt8_w",
+     "Fala de sondador e equipe de perfuração, a função desta vaga."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ]
+   ]
+  },
+  {
+   "id": "halliburton-operador-de-servi-os-hwo-sondador-de-sph-63781",
+   "titulo": "Operador de Serviços HWO (Sondador de SPH)",
+   "empresa": "Halliburton",
+   "local": "Mossoró, RN",
+   "link": "https://jobs.halliburton.com/job/Alto-Sumare-Brazil-Mossor%C3%B3-Operador-de-Servi%C3%A7os-HWO-%28Sondador-de-SPH%29-RN-59633-730/1442099600/",
+   "regime": "Onshore",
+   "area": "Perfuração e poços",
+   "tema": "pocos",
+   "banco": false,
+   "vistaEm": "2026-10-15",
+   "videos": [
+    [
+     "bFgYyXPn2Bc",
+     "Fala de sondador e equipe de perfuração, a função desta vaga."
+    ],
+    [
+     "NVZzQiqt8_w",
+     "Fala de sondador e equipe de perfuração, a função desta vaga."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ]
+   ]
+  },
+  {
+   "id": "halliburton-operador-de-servi-os-hwo-sondador-de-sph-46560",
+   "titulo": "Operador de Serviços HWO (Sondador de SPH)",
+   "empresa": "Halliburton",
+   "local": "Mossoró, RN",
+   "link": "https://jobs.halliburton.com/job/Alto-Sumare-Brazil-Mossor%C3%B3-Operador-de-Servi%C3%A7os-HWO-%28Sondador-de-SPH%29-RN-59633-730/1442099700/",
+   "regime": "Onshore",
+   "area": "Perfuração e poços",
+   "tema": "pocos",
+   "banco": false,
+   "vistaEm": "2026-10-15",
+   "videos": [
+    [
+     "bFgYyXPn2Bc",
+     "Fala de sondador e equipe de perfuração, a função desta vaga."
+    ],
+    [
+     "NVZzQiqt8_w",
+     "Fala de sondador e equipe de perfuração, a função desta vaga."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ]
+   ]
+  },
+  {
+   "id": "halliburton-pl48-esg-logistics-specialist-22006",
+   "titulo": "PL48-ESG-Logistics Specialist",
+   "empresa": "Halliburton",
+   "local": "Macaé, RJ",
+   "link": "https://jobs.halliburton.com/job/Macae-PL48-ESG-Logistics-Specialist-RJ-27930-070/1442403100/",
+   "regime": "Onshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-22",
+   "videos": [
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ],
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ]
+   ]
+  },
+  {
+   "id": "halliburton-senior-backend-engineer-python-15201",
+   "titulo": "Senior Backend Engineer (Python)",
+   "empresa": "Halliburton",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://jobs.halliburton.com/job/Rio-de-Janeiro-Brazil-Remote-Senior-Backend-Engineer-%28Python%29-RJ-291941/1401259500/",
+   "regime": "Onshore",
+   "area": "Engenharia",
+   "tema": "engenharia",
+   "banco": false,
+   "vistaEm": "2026-10-15",
+   "videos": [
+    [
+     "9ZlICqIBUMg",
+     "Fala de engenharia, a função desta vaga."
+    ],
+    [
+     "0uMWC3VBm8A",
+     "Fala de engenharia, a função desta vaga."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ]
+   ]
+  },
+  {
+   "id": "halliburton-senior-backend-engineer-infrastructure-intelligence-59062",
+   "titulo": "Senior Backend Engineer - Infrastructure & Intelligence",
+   "empresa": "Halliburton",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://jobs.halliburton.com/job/Rio-de-Janeiro-Brazil-Remote-Senior-Backend-Engineer-Infrastructure-&amp;-Intelligence-RJ-291941/1427136200/",
+   "regime": "Onshore",
+   "area": "Engenharia",
+   "tema": "engenharia",
+   "banco": false,
+   "vistaEm": "2026-10-15",
+   "videos": [
+    [
+     "9ZlICqIBUMg",
+     "Fala de engenharia, a função desta vaga."
+    ],
+    [
+     "0uMWC3VBm8A",
+     "Fala de engenharia, a função desta vaga."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ]
+   ]
+  },
+  {
+   "id": "halliburton-senior-logistics-specialist-imports-54434",
+   "titulo": "Senior Logistics Specialist - Imports",
+   "empresa": "Halliburton",
+   "local": "Macaé, RJ",
+   "link": "https://jobs.halliburton.com/job/Macae-BR-Maca%C3%A9-Senior-Logistics-Specialist-Imports-RJ-27930-070/1441009200/",
+   "regime": "Onshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-15",
+   "videos": [
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ],
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ]
+   ]
+  },
+  {
+   "id": "halliburton-senior-software-developer-13467",
+   "titulo": "Senior Software Developer",
+   "empresa": "Halliburton",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://jobs.halliburton.com/job/Rio-de-Janeiro-Brazil-Remote-Senior-Software-Developer-RJ-291941/1397237300/",
+   "regime": "Onshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-15",
+   "videos": [
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
+   "id": "halliburton-senior-software-developer-platform-complex-systems-56681",
+   "titulo": "Senior Software Developer - Platform & Complex Systems",
+   "empresa": "Halliburton",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://jobs.halliburton.com/job/Brazil-Hybrid-Senior-Software-Developer-Platform-&amp;-Complex-Systems-RJ/1382546100/",
+   "regime": "Onshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-15",
+   "videos": [
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
+   "id": "halliburton-senior-software-solution-architect-45745",
+   "titulo": "Senior Software Solution Architect",
+   "empresa": "Halliburton",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://jobs.halliburton.com/job/Rio-de-Janeiro-Brazil-Remote-Senior-Software-Solution-Architect-RJ-21941-907/1439749900/",
+   "regime": "Onshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-15",
+   "videos": [
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
+   "id": "halliburton-software-development-team-lead-21216",
+   "titulo": "Software Development Team Lead",
+   "empresa": "Halliburton",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://jobs.halliburton.com/job/Rio-de-Janeiro-Brazil-Remote-Software-Development-Team-Lead-RJ-291941/1414738300/",
+   "regime": "Onshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-15",
+   "videos": [
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
+   "id": "halliburton-technical-planner-ii-baroid-88533",
+   "titulo": "Technical Planner II - Baroid",
+   "empresa": "Halliburton",
+   "local": "Macaé, RJ",
+   "link": "https://jobs.halliburton.com/job/Macae-Brazil-RJ-Macae-Technical-Planner-II-Baroid-RJ-27930-070/1442448700/",
+   "regime": "Onshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-22",
+   "videos": [
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
+   "id": "halliburton-tecnico-laboratorio-jr-cementing-72686",
+   "titulo": "Tecnico Laboratorio JR - Cementing",
+   "empresa": "Halliburton",
+   "local": "Macaé, RJ",
+   "link": "https://jobs.halliburton.com/job/Macae-Brasil-RJ-Maca%C3%A9-Tecnico-Laboratorio-JR-Cementing-RJ-27930-070/1442854500/",
+   "regime": "Onshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-23",
+   "videos": [
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
+   "id": "halliburton-tecnico-laboratorio-jr-cementing-60691",
+   "titulo": "Tecnico Laboratorio Jr - Cementing",
+   "empresa": "Halliburton",
+   "local": "Catu, BA",
+   "link": "https://jobs.halliburton.com/job/Catu-Brasil-BA-Catu-Tecnico-Laboratorio-Jr-Cementing-BA-48110-000/1442856200/",
+   "regime": "Onshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-23",
+   "videos": [
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
+   "id": "halliburton-t-cnico-de-manuten-o-t-cnico-de-mec-nica-de-sph-17519",
+   "titulo": "Técnico de Manutenção (Técnico de Mecânica de SPH)",
+   "empresa": "Halliburton",
+   "local": "Mossoró, RN",
+   "link": "https://jobs.halliburton.com/job/Alto-Sumare-Brazil-Maca%C3%A9-T%C3%A9cnico-de-Manuten%C3%A7%C3%A3o-%28T%C3%A9cnico-de-Mec%C3%A2nica-de-SPH%29-RJ-59633-730/1442098700/",
    "regime": "Onshore",
    "area": "Mecânica e manutenção",
    "tema": "mecanica",
@@ -9382,11 +9486,11 @@
    ]
   },
   {
-   "id": "halliburton-t-cnico-de-manuten-o-t-cnico-de-mec-nica-de-sph-94062",
+   "id": "halliburton-t-cnico-de-manuten-o-t-cnico-de-mec-nica-de-sph-70122",
    "titulo": "Técnico de Manutenção (Técnico de Mecânica de SPH)",
    "empresa": "Halliburton",
-   "local": "Rio de Janeiro, RJ",
-   "link": "https://careers.halliburton.com/job/rio-de-janeiro/brazil-macae-tecnico-de-manutencao-tecnico-de-mecanica-de-sph/543/102225216848",
+   "local": "Mossoró, RN",
+   "link": "https://jobs.halliburton.com/job/Alto-Sumare-Brazil-Maca%C3%A9-T%C3%A9cnico-de-Manuten%C3%A7%C3%A3o-%28T%C3%A9cnico-de-Mec%C3%A2nica-de-SPH%29-RJ-59633-730/1442098600/",
    "regime": "Onshore",
    "area": "Mecânica e manutenção",
    "tema": "mecanica",
@@ -9408,11 +9512,11 @@
    ]
   },
   {
-   "id": "halliburton-t-cnico-de-manuten-o-eletr-nica-sperry-drilling-svcs-86599",
+   "id": "halliburton-t-cnico-de-manuten-o-eletr-nica-sperry-drilling-svcs-57616",
    "titulo": "Técnico de Manutenção Eletrônica - Sperry Drilling Svcs",
    "empresa": "Halliburton",
    "local": "Macaé, RJ",
-   "link": "https://careers.halliburton.com/job/macae/brazil-rj-macae-tecnico-de-manutencao-eletronica-sperry-drilling-svcs/543/101363416848",
+   "link": "https://jobs.halliburton.com/job/Macae-Brazil-RJ-Maca%C3%A9-T%C3%A9cnico-de-Manuten%C3%A7%C3%A3o-Eletr%C3%B4nica-Sperry-Drilling-Svcs-RJ-27930-070/1435428800/",
    "regime": "Onshore",
    "area": "Elétrica e instrumentação",
    "tema": "eletrica",
@@ -9434,11 +9538,11 @@
    ]
   },
   {
-   "id": "halliburton-well-design-consultant-sperry-drilling-svcs-8146",
+   "id": "halliburton-well-design-consultant-sperry-drilling-svcs-99089",
    "titulo": "Well Design Consultant - Sperry Drilling Svcs",
    "empresa": "Halliburton",
    "local": "Macaé, RJ",
-   "link": "https://careers.halliburton.com/job/macae/brazil-rj-macae-well-design-consultant-sperry-drilling-svcs/543/100984941456",
+   "link": "https://jobs.halliburton.com/job/Macae-Brazil-RJ-Maca%C3%A9-Well-Design-Consultant-Sperry-Drilling-Svcs-RJ-27930-070/1432375000/",
    "regime": "Onshore",
    "area": "Perfuração e poços",
    "tema": "pocos",
@@ -9460,11 +9564,11 @@
    ]
   },
   {
-   "id": "halliburton-well-engineer-52757",
+   "id": "halliburton-well-engineer-77425",
    "titulo": "Well Engineer",
    "empresa": "Halliburton",
    "local": "Macaé, RJ",
-   "link": "https://careers.halliburton.com/job/macae/brazil-rj-macae-well-engineer/543/96653023424",
+   "link": "https://jobs.halliburton.com/job/Macae-Brazil-RJ-Maca%C3%A9-Well-Engineer-RJ-27930-070/1401637600/",
    "regime": "Onshore",
    "area": "Perfuração e poços",
    "tema": "pocos",
