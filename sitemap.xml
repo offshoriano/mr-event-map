@@ -6,8 +6,10 @@
   <url><loc>https://mrgroup.com.br/vagas/sem-experiencia/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
   <url><loc>https://mrgroup.com.br/vagas/macae/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
   <url><loc>https://mrgroup.com.br/vagas/rio-de-janeiro/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mrgroup.com.br/artigos/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://mrgroup.com.br/radar/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://mrgroup.com.br/guia/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://mrgroup.com.br/sobre/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://mrgroup.com.br/vagas/divulgar/</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://mrgroup.com.br/artigos/cbsp-e-huet/</loc><lastmod>2026-10-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 </urlset>
