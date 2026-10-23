@@ -3,7 +3,7 @@ titulo: Margem Equatorial em 2026, o que já foi descoberto e onde vão surgir a
 descricao: A Petrobras achou petróleo duas vezes no poço Morpho, na costa do Amapá. Veja o que isso significa de verdade para quem quer trabalhar no setor, quais funções devem abrir primeiro e como se preparar.
 slug: margem-equatorial-empregos
 data: 2026-10-23
-rascunho: sim
+rascunho: não
 tema: Mercado
 palavras: margem equatorial, margem equatorial vagas, margem equatorial empregos, foz do amazonas petróleo, poço morpho, petrobras amapá, vagas amapá petróleo, vagas belém petróleo
 ---
@@ -27,7 +27,11 @@ A geologia é parente da que transformou a Guiana e o Suriname, nossos vizinhos,
 
 Agora a pergunta é outra: quanto petróleo existe ali e se vale a pena produzir. Ainda não há reserva confirmada. Pela própria estimativa da Petrobras, uma produção comercial pode levar de seis a sete anos para começar.
 
-[[Matheus, aqui entra a visão técnica do Pedroso na live #57. Quais foram os dois ou três pontos que ele trouxe que mais te marcaram sobre os desafios de perfurar e produzir lá (correnteza, distância, profundidade, licença ambiental)?]]
+Na live #57 eu conversei com o Carlos Alberto Pedroso, que tem 35 anos de construção de poços e operações em águas profundas. Um ponto que ficou marcado para mim derruba uma ideia que quase todo mundo tem: a empresa não tira 100% do petróleo de um reservatório. Na prática, ela recupera algo entre 15% e 25% do volume que está lá embaixo. O resto continua na rocha.
+
+É por isso que tanto dinheiro vai para tecnologia de recuperação, e é por isso que descobrir petróleo não é o mesmo que ter um campo que paga a conta. Na Margem Equatorial isso pesa ainda mais, porque o poço fica em águas ultraprofundas, longe da costa e numa região com correnteza forte e regras ambientais rígidas. Cada etapa custa caro, e cada decisão leva tempo.
+
+O outro lado da conversa foi o que mais interessa a quem está lendo: oportunidade. Se o campo se confirmar, a região ganha emprego, renda e uma cadeia inteira de fornecedores que hoje quase não existe no Norte.
 
 {{video:LsSDl8AvP7A|Live #57: Margem Equatorial, desafios e oportunidades, com Carlos Alberto Pedroso}}
 
@@ -41,8 +45,6 @@ Eu gosto de dividir em três fases, porque cada uma contrata um tipo de profissi
 
 Quem está contando com uma vaga na Margem Equatorial para o mês que vem vai se frustrar. Quem se prepara agora chega pronto quando a fase grande começar.
 
-[[Matheus, você concorda com essa divisão? Quer acrescentar alguma função que você vê abrindo antes?]]
-
 ## Onde vão ficar os empregos
 
 A Petrobras já usa **Belém** como principal base de apoio das operações no litoral do Amapá, por ter estrutura de porto e aeroporto mais desenvolvida que Oiapoque. Macapá e Oiapoque também entram como pontos de apoio.
@@ -53,14 +55,14 @@ Os dois estados já se mexem em qualificação. O Amapá anunciou até 50 mil va
 
 ## Quem sai na frente
 
-Pelo que eu vi acontecer na Guiana e no Suriname, quem sai na frente numa fronteira nova é quem já tem:
+Olhando o que aconteceu na Guiana e no Suriname, quem sai na frente numa fronteira nova é quem já tem:
 
 - **Os cursos básicos em dia:** CBSP e T-HUET OPITO. Sem eles, nem a triagem passa. Expliquei tudo neste artigo: [CBSP e T-HUET para trabalhar embarcado](/artigos/cbsp-e-huet/).
 - **Experiência em águas profundas:** quem trabalhou no pré-sal, em sonda ou em embarcação de apoio, é o primeiro a ser chamado.
 - **Disponibilidade para mobilizar:** as primeiras equipes costumam vir de fora e embarcar a partir de Belém.
 - **Inglês funcional:** muitas das empresas de serviço da fronteira são estrangeiras.
 
-[[Matheus, aqui cabe a sua experiência atuando na Guiana e no Suriname: o que você viu acontecer com o mercado de trabalho lá quando a produção começou, e que conselho você dá para quem é do Norte e quer aproveitar?]]
+Na Guiana, a produção começou em 2019 e o país criou uma lei de conteúdo local em 2021 que obriga as empresas a dar preferência a trabalhadores e fornecedores guianenses. Quem estava qualificado quando a lei chegou foi contratado primeiro. No Norte do Brasil a lógica tende a ser parecida: as empresas vão buscar gente da região, mas só vão contratar quem já tiver os cursos e a documentação em dia.
 
 {{video:z9S6SLoHFLs|Como aproveitar as oportunidades na Margem Equatorial}}
 
