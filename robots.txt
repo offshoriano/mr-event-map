@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /leads/
+Disallow: /api/
+Disallow: /data/
+Disallow: /scripts/
+
+Sitemap: https://mrgroup.com.br/sitemap.xml

@@ -3,8 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Onde o óleo e gás se encontra · MR Group</title>
-<meta name="description" content="Vagas abertas, agenda de eventos e dados do petróleo no Brasil. Tudo do setor offshore num lugar só.">
+<title>Eventos de óleo e gás 2026–2027 e vagas offshore · MR Group</title>
+<link rel="canonical" href="https://mrgroup.com.br/">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#0D1117">
+<meta name="description" content="Agenda de eventos de óleo e gás 2026 e 2027 (OTC, Rio Oil & Gas, FPSO Expo), mais de 600 vagas offshore e onshore atualizadas todo dia e a produção de petróleo do Brasil com dados da ANP.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="MR Group">
 <meta property="og:url" content="https://mrgroup.com.br/">
@@ -15,6 +19,8 @@
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="pt_BR">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300..800;1,9..40,300&display=swap" rel="stylesheet">
 <!-- Google Analytics 4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-BBGCSZ37C4"></script>
@@ -384,6 +390,16 @@ input[type="date"],input[type="time"]{color-scheme:dark;}
   border-radius:2px;color:var(--muted2);}
 .par-goer-chip strong{color:var(--white);font-weight:600;}
 </style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"Organization","@id":"https://mrgroup.com.br/#org","name":"MR Group","url":"https://mrgroup.com.br/","logo":"https://mrgroup.com.br/assets/icon-512.png",
+  "description":"Conecta conhecimento, pessoas e negócios à indústria de energia: comunicação B2B, conteúdo especializado, desenvolvimento de negócios e educação profissional.",
+  "founder":{"@type":"Person","name":"Matheus Rangel"},
+  "email":"mateus.rangel@mrgroup.com.br","telephone":"+55-22-98833-5183",
+  "sameAs":["https://www.youtube.com/@carreiraoffshore"]},
+ {"@type":"WebSite","@id":"https://mrgroup.com.br/#site","url":"https://mrgroup.com.br/","name":"MR Group","inLanguage":"pt-BR","publisher":{"@id":"https://mrgroup.com.br/#org"}}
+]}
+</script>
 </head>
 <body>
 
@@ -1631,6 +1647,28 @@ Promise.all([
   document.getElementById('stat-vagas-l').textContent = n === 1 ? 'Vaga aberta' : 'Vagas abertas no setor';
 }).catch(() => {});
 
+// Eventos da agenda em formato que o Google entende (resultado de evento em destaque na busca)
+(function eventosParaGoogle(){
+  const MESES = ['janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setembro','outubro','novembro','dezembro'];
+  const hoje = new Date().toISOString().slice(0, 10);
+  const pad = n => String(n).padStart(2, '0');
+  const itens = CONFERENCES.map(c => {
+    const m = MESES.indexOf(String(c.month || '').toLowerCase()) + 1;
+    const d = String(c.dates || '').match(/^(\d{1,2})(?:\s*[–-]\s*(\d{1,2}))?$/);
+    if (!m || !d || !c.year) return null;
+    const ini = `${c.year}-${pad(m)}-${pad(d[1])}`, fim = `${c.year}-${pad(m)}-${pad(d[2] || d[1])}`;
+    if (fim < hoje) return null;
+    return {'@context':'https://schema.org', '@type':'Event', name:c.name, startDate:ini, endDate:fim,
+      eventStatus:'https://schema.org/EventScheduled', eventAttendanceMode:'https://schema.org/OfflineEventAttendanceMode',
+      location:{'@type':'Place', name:String(c.location || '').split(/[,—]/)[0].trim(), address:String(c.location || '').replace(/\s*—\s*/g, ', ')},
+      url:c.link || 'https://mrgroup.com.br/', organizer:{'@type':'Organization', name:c.name, url:c.link || undefined},
+      description:`${c.name}, de ${c.dates} de ${c.month} de ${c.year}, em ${c.location}. Agenda de eventos de óleo e gás da MR Group.`,
+      image:'https://mrgroup.com.br/assets/og/home.jpg'};
+  }).filter(Boolean);
+  const s = document.createElement('script'); s.type = 'application/ld+json'; s.textContent = JSON.stringify(itens);
+  document.head.appendChild(s);
+})();
+
 function updateStats() {
   const totalNight = CONFERENCES.reduce((a, c) => a + c.parallel.length, 0);
   document.getElementById('stat-conf').textContent = CONFERENCES.length;
@@ -2072,8 +2110,10 @@ function initHeroAnimation() {
   function resize() {
     W = canvas.width  = hero.offsetWidth;
     H = canvas.height = hero.offsetHeight;
-    stars   = Array.from({length:160}, () => ({x:Math.random()*W, y:Math.random()*H*0.54, r:Math.random()*1.4+0.2, tw:Math.random()*Math.PI*2, op:Math.random()*0.5+0.1}));
-    bubbles = Array.from({length:50},  () => ({x:Math.random()*W, y:H*0.55+Math.random()*H*0.45, r:Math.random()*2.5+0.5, sp:Math.random()*0.35+0.08, drift:(Math.random()-0.5)*0.4, op:Math.random()*0.22+0.04}));
+    // No celular, menos estrelas e bolhas: o efeito é o mesmo e o processador agradece
+    const leve = W < 700;
+    stars   = Array.from({length: leve ? 60 : 160}, () => ({x:Math.random()*W, y:Math.random()*H*0.54, r:Math.random()*1.4+0.2, tw:Math.random()*Math.PI*2, op:Math.random()*0.5+0.1}));
+    bubbles = Array.from({length: leve ? 18 : 50},  () => ({x:Math.random()*W, y:H*0.55+Math.random()*H*0.45, r:Math.random()*2.5+0.5, sp:Math.random()*0.35+0.08, drift:(Math.random()-0.5)*0.4, op:Math.random()*0.22+0.04}));
     waveOff = WAVES.map(() => Math.random()*Math.PI*2);
   }
 
@@ -2228,12 +2268,27 @@ function initHeroAnimation() {
     ctx.fillStyle=ov; ctx.fillRect(0,0,W,H);
 
     t+=0.016;
-    requestAnimationFrame(draw);
   }
 
-  window.addEventListener('resize', resize);
+  // Só anima quando o topo está na tela e a aba está aberta; no celular, a 30 quadros por segundo.
+  // Quem pediu menos movimento no aparelho vê a cena parada.
+  const parado = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let visivel = true, ultimo = 0, rodando = false;
+  function loop(agora) {
+    if (!visivel || document.hidden) { rodando = false; return; }
+    const intervalo = W < 700 ? 33 : 16;
+    if (agora - ultimo >= intervalo) { ultimo = agora; draw(); }
+    requestAnimationFrame(loop);
+  }
+  function animar() { if (!rodando && !parado) { rodando = true; requestAnimationFrame(loop); } }
+  new IntersectionObserver(([e]) => { visivel = e.isIntersecting; if (visivel) animar(); }).observe(hero);
+  document.addEventListener('visibilitychange', () => { if (!document.hidden) animar(); });
+
+  window.addEventListener('resize', () => { resize(); if (parado) draw(); });
   resize();
   draw();
+  // Começa a animar depois que a página terminou de carregar, para não atrasar o primeiro clique
+  if (document.readyState === 'complete') setTimeout(animar, 1200); else addEventListener('load', () => setTimeout(animar, 1200));
 }
 
 document.addEventListener('click', () => {

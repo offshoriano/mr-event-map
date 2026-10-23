@@ -3,8 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Radar Offshore · O petróleo do Brasil em números</title>
-<meta name="description" content="Produção, plataformas, sondas e exploração com dados oficiais da ANP, atualizados toda semana.">
+<title>Produção de petróleo no Brasil 2026 (dados ANP) · Radar Offshore</title>
+<link rel="canonical" href="https://mrgroup.com.br/radar/">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#0D1117">
+<meta name="description" content="Produção de petróleo e gás no Brasil mês a mês, por campo, plataforma, FPSO e operadora, sondas em operação e blocos exploratórios. Dados oficiais da ANP atualizados toda semana.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="MR Group">
 <meta property="og:url" content="https://mrgroup.com.br/radar/">
@@ -15,6 +19,8 @@
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="pt_BR">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300..800;1,9..40,300&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-BBGCSZ37C4"></script>
@@ -166,6 +172,13 @@ footer{border-top:1px solid var(--border);padding:36px 48px;max-width:1240px;mar
   input[type=search]{min-width:0;width:100%;}
 }
 </style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Dataset","name":"Radar Offshore: produção de petróleo e gás no Brasil","url":"https://mrgroup.com.br/radar/",
+ "description":"Produção mensal de petróleo e gás natural no Brasil por campo, plataforma e operadora, sondas em operação, poços e blocos exploratórios, com dados públicos da ANP atualizados toda semana.",
+ "creator":{"@type":"Organization","name":"MR Group","url":"https://mrgroup.com.br/"},
+ "isBasedOn":"https://www.gov.br/anp/pt-br","license":"https://www.gov.br/anp/pt-br/acesso-a-informacao/dados-abertos",
+ "spatialCoverage":"Brasil","inLanguage":"pt-BR","keywords":["produção de petróleo","ANP","plataformas","FPSO","sondas","pré-sal"]}
+</script>
 </head>
 <body>
 
@@ -187,7 +200,7 @@ footer{border-top:1px solid var(--border);padding:36px 48px;max-width:1240px;mar
   <p class="hero-sub">Quanto o Brasil produz, quais campos e plataformas puxam o número, quantas sondas estão rodando e onde estão os próximos blocos. Tudo em um lugar, direto da base da ANP.</p>
 </header>
 
-<main id="app"><div class="loading">Carregando dados da ANP</div></main>
+<main id="app" style="min-height:120vh"><div class="loading">Carregando dados da ANP</div></main>
 
 <footer>
   <div class="foot-logo">MR Solutions <span>·</span> Radar Offshore</div>
