@@ -70,6 +70,15 @@ h2.sec{font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--g
 .top li{font-size:14px;color:var(--muted2);line-height:1.5;padding-left:16px;position:relative;}
 .top li::before{content:'';position:absolute;left:0;top:9px;width:7px;height:2px;background:var(--gold);}
 .top .custo{font-size:13px;color:var(--gold-l);margin-top:10px;}
+.top .prep{margin-top:12px;padding:12px 14px;background:var(--card2);border-radius:2px;}
+.top .prep b{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:6px;}
+.top .prep p{font-size:14px;color:var(--muted2);line-height:1.5;margin-top:4px;}
+.top .prep p span{display:inline-block;min-width:62px;color:var(--white);font-weight:700;font-size:12px;}
+.posts{display:grid;gap:10px;}
+.post{background:var(--card);border:1px solid var(--border);border-radius:3px;padding:16px 18px;}
+.post .pt{display:flex;justify-content:space-between;align-items:center;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
+.post p{font-size:15px;line-height:1.6;color:var(--white);}
+.copiar{font-family:inherit;font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;background:none;border:1px solid var(--border2);color:var(--muted2);padding:6px 10px;border-radius:2px;cursor:pointer;}
 .mapa{display:grid;gap:4px;}
 .mapa .ln{display:grid;grid-template-columns:96px 1fr 52px;gap:10px;align-items:center;font-size:14px;padding:8px 10px;border-radius:2px;background:var(--card);}
 .mapa .ln .d{color:var(--muted);font-size:12px;}
@@ -93,7 +102,7 @@ h2.sec{font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--g
 .acoes{display:flex;gap:10px;flex-wrap:wrap;margin-top:30px;}
 footer{text-align:center;font-size:12px;color:var(--muted);padding:30px 20px;border-top:1px solid var(--border);}
 @media(max-width:600px){h1{font-size:40px;}.campos{grid-template-columns:1fr;}.mapa .ln{grid-template-columns:70px 1fr 40px;font-size:13px;}.topo .l a{margin-left:12px;}}
-@media print{.topo,.acoes,.cta,footer{display:none;}body{background:#fff;color:#111;}.top,.mapa .ln,.cal,.pular div{background:#fff;border-color:#ccc;color:#111;}.lead,.meta,.top li,.mapa .ln .d,.mapa .ln span.loc,.pular div{color:#333;}}
+@media print{.topo,.acoes,.cta,footer,.copiar{display:none;}.post,.top .prep{background:#fff;border-color:#ccc;}.post p,.top .prep p span{color:#111;}body{background:#fff;color:#111;}.top,.mapa .ln,.cal,.pular div{background:#fff;border-color:#ccc;color:#111;}.lead,.meta,.top li,.mapa .ln .d,.mapa .ln span.loc,.pular div{color:#333;}}
 </style>
 </head>
 <body>
@@ -108,56 +117,56 @@ footer{text-align:center;font-size:12px;color:var(--muted);padding:30px 20px;bor
 // foco: o mercado em que o evento é especialista · mk: mercados · reg: região · comp: quem compra lá · tipo: feira, congresso, summit ou regional · porte: 1 a 3
 // Evento fora desta lista não entra no diagnóstico (ex.: a corrida e os eventos já passados).
 const PERFIL = {
-  adipec2026:{mk:['perf','fpso','gas','subsea','manut','transicao'],reg:'me',comp:['op','epc','serv'],tipo:'feira',porte:3,nota:'A maior feira do setor em público. Operadoras nacionais do Golfo e as grandes prestadoras do mundo no mesmo pavilhão.'},
-  adipec2027:{mk:['perf','fpso','gas','subsea','manut','transicao'],reg:'me',comp:['op','epc','serv'],tipo:'feira',porte:3,nota:'A maior feira do setor em público. Operadoras nacionais do Golfo e as grandes prestadoras do mundo no mesmo pavilhão.'},
-  mossoro2026:{foco:'perf',mk:['perf','manut'],reg:'br',comp:['op','serv'],tipo:'regional',porte:1,nota:'O onshore potiguar: operadoras independentes que compraram campos maduros da Petrobras e as prestadoras da região.'},
+  adipec2026:{mk:['perf','fpso','gas','subsea','manut','transicao'],reg:'me',comp:['op','fpso','epc','sonda','serv'],tipo:'feira',porte:3,nota:'A maior feira do setor em público. Operadoras nacionais do Golfo e as grandes prestadoras do mundo no mesmo pavilhão.'},
+  adipec2027:{mk:['perf','fpso','gas','subsea','manut','transicao'],reg:'me',comp:['op','fpso','epc','sonda','serv'],tipo:'feira',porte:3,nota:'A maior feira do setor em público. Operadoras nacionais do Golfo e as grandes prestadoras do mundo no mesmo pavilhão.'},
+  mossoro2026:{foco:'perf',mk:['perf','manut'],reg:'br',comp:['op','sonda','serv'],tipo:'regional',porte:1,nota:'O onshore potiguar: operadoras independentes que compraram campos maduros da Petrobras e as prestadoras da região.'},
   brazilwindpower2026:{foco:'transicao',mk:['transicao'],reg:'br',comp:['op','epc'],tipo:'feira',porte:2,nota:'O principal encontro de energia eólica do país e a porta de entrada para a eólica offshore no Brasil.'},
-  offshoreenergy2026:{mk:['transicao','decom','maritimo','subsea'],reg:'eu',comp:['epc','serv','estaleiro'],tipo:'feira',porte:2,nota:'Amsterdam reúne óleo e gás e eólica offshore do Mar do Norte, com forte presença de embarcações e serviços.'},
-  osea2026:{foco:'maritimo',mk:['maritimo','fpso','manut'],reg:'as',comp:['estaleiro','epc'],tipo:'feira',porte:2,nota:'O polo asiático de estaleiros, módulos e conversão de FPSOs.'},
-  subseasymposium2026:{foco:'subsea',mk:['subsea'],reg:'br',comp:['op','epc','serv'],tipo:'congresso',porte:2,nota:'Encontro técnico da SPE dedicado a subsea, com a engenharia da Petrobras e das grandes fornecedoras na plateia.'},
-  workboat2026:{foco:'maritimo',mk:['maritimo'],reg:'am',comp:['estaleiro','serv'],tipo:'feira',porte:2,nota:'A maior feira de embarcações de trabalho dos EUA: armadores, estaleiros e fornecedores de equipamentos navais.'},
-  guyana2027:{mk:['perf','fpso','subsea','maritimo','manut'],reg:'gs',comp:['op','epc','serv'],tipo:'feira',porte:2,nota:'A fronteira que mais cresce no mundo. ExxonMobil, SBM e a cadeia de fornecedores buscando parceiros com conteúdo local.'},
-  ibem2027:{mk:['perf','fpso','gas','manut','transicao'],reg:'br',comp:['op','epc','serv'],tipo:'summit',porte:2,nota:'Executivos de operadoras, governo e reguladores discutindo o mercado brasileiro.'},
+  offshoreenergy2026:{mk:['transicao','decom','maritimo','subsea'],reg:'eu',comp:['epc','serv','plsv','estaleiro'],tipo:'feira',porte:2,nota:'Amsterdam reúne óleo e gás e eólica offshore do Mar do Norte, com forte presença de embarcações e serviços.'},
+  osea2026:{foco:'maritimo',mk:['maritimo','fpso','manut'],reg:'as',comp:['estaleiro','fpso','epc','plsv'],tipo:'feira',porte:2,nota:'O polo asiático de estaleiros, módulos e conversão de FPSOs.'},
+  subseasymposium2026:{foco:'subsea',mk:['subsea'],reg:'br',comp:['op','epc','serv','plsv'],tipo:'congresso',porte:2,nota:'Encontro técnico da SPE dedicado a subsea, com a engenharia da Petrobras e das grandes fornecedoras na plateia.'},
+  workboat2026:{foco:'maritimo',mk:['maritimo'],reg:'am',comp:['plsv','estaleiro','serv'],tipo:'feira',porte:2,nota:'A maior feira de embarcações de trabalho dos EUA: armadores, estaleiros e fornecedores de equipamentos navais.'},
+  guyana2027:{mk:['perf','fpso','subsea','maritimo','manut'],reg:'gs',comp:['op','fpso','epc','sonda','serv','plsv'],tipo:'feira',porte:2,nota:'A fronteira que mais cresce no mundo. ExxonMobil, SBM e a cadeia de fornecedores buscando parceiros com conteúdo local.'},
+  ibem2027:{mk:['perf','fpso','gas','manut','transicao'],reg:'br',comp:['op','fpso','epc','serv'],tipo:'summit',porte:2,nota:'Executivos de operadoras, governo e reguladores discutindo o mercado brasileiro.'},
   ceraweek2027:{mk:['gas','transicao','perf'],reg:'am',comp:['op'],tipo:'summit',porte:3,nota:'Onde os CEOs de energia do mundo se encontram. Evento de relacionamento e estratégia, não de estande.'},
-  amazonasog2027:{foco:'gas',mk:['gas','perf','maritimo'],reg:'br',comp:['op','serv'],tipo:'regional',porte:1,nota:'Gás em terra e logística fluvial na Amazônia, com compradores locais e menos concorrência.'},
-  macae2027mar:{mk:['perf','fpso','subsea','manut','maritimo'],reg:'br',comp:['op','epc','serv'],tipo:'regional',porte:2,nota:'A feira da capital do petróleo, ao lado das bases que atendem a Bacia de Campos.'},
-  brasilogsummit2027:{mk:['perf','fpso','gas'],reg:'br',comp:['op','epc'],tipo:'summit',porte:1,nota:'Summit executivo no Rio, em formato menor, bom para conversa direta com decisores.'},
-  otc2027:{mk:['perf','subsea','fpso','gas','manut','decom'],reg:'am',comp:['op','epc','serv'],tipo:'feira',porte:3,nota:'A referência mundial em tecnologia offshore. Todo grande comprador do setor passa por Houston nessa semana.'},
-  fpsoexpo2027:{foco:'fpso',mk:['fpso','manut','subsea','maritimo'],reg:'br',comp:['op','epc','serv'],tipo:'feira',porte:2,nota:'Feira focada em FPSO: Petrobras, donas de FPSO e toda a cadeia de operação e manutenção.'},
+  amazonasog2027:{foco:'gas',mk:['gas','perf','maritimo'],reg:'br',comp:['op','serv','plsv'],tipo:'regional',porte:1,nota:'Gás em terra e logística fluvial na Amazônia, com compradores locais e menos concorrência.'},
+  macae2027mar:{mk:['perf','fpso','subsea','manut','maritimo'],reg:'br',comp:['op','fpso','epc','sonda','serv','plsv'],tipo:'regional',porte:2,nota:'A feira da capital do petróleo, ao lado das bases que atendem a Bacia de Campos.'},
+  brasilogsummit2027:{mk:['perf','fpso','gas'],reg:'br',comp:['op','fpso','epc'],tipo:'summit',porte:1,nota:'Summit executivo no Rio, em formato menor, bom para conversa direta com decisores.'},
+  otc2027:{mk:['perf','subsea','fpso','gas','manut','decom'],reg:'am',comp:['op','fpso','epc','sonda','serv','plsv'],tipo:'feira',porte:3,nota:'A referência mundial em tecnologia offshore. Todo grande comprador do setor passa por Houston nessa semana.'},
+  fpsoexpo2027:{foco:'fpso',mk:['fpso','manut','subsea','maritimo'],reg:'br',comp:['op','fpso','epc','serv'],tipo:'feira',porte:2,nota:'Feira focada em FPSO: Petrobras, donas de FPSO e toda a cadeia de operação e manutenção.'},
   gasnatural2027:{foco:'gas',mk:['gas'],reg:'br',comp:['op','epc'],tipo:'congresso',porte:1,nota:'Seminário do IBP sobre o mercado de gás natural no Brasil, com operadoras, distribuidoras e governo.'},
-  mwa2027:{foco:'maritimo',mk:['maritimo','gas'],reg:'am',comp:['estaleiro','serv'],tipo:'summit',porte:1,nota:'Shipping, combustíveis marítimos e logística nas Américas, no Panamá.'},
-  norshipping2027:{foco:'maritimo',mk:['maritimo','transicao'],reg:'eu',comp:['estaleiro'],tipo:'feira',porte:3,nota:'Uma das maiores feiras marítimas do mundo, com armadores e estaleiros de todos os continentes.'},
-  seogs2027:{mk:['fpso','perf','subsea','maritimo','manut'],reg:'gs',comp:['op','epc','serv'],tipo:'feira',porte:2,nota:'O Suriname caminha para o primeiro FPSO do país. Mercado novo, com fornecedores ainda se posicionando.'},
+  mwa2027:{foco:'maritimo',mk:['maritimo','gas'],reg:'am',comp:['plsv','estaleiro','serv'],tipo:'summit',porte:1,nota:'Shipping, combustíveis marítimos e logística nas Américas, no Panamá.'},
+  norshipping2027:{foco:'maritimo',mk:['maritimo','transicao'],reg:'eu',comp:['plsv','estaleiro'],tipo:'feira',porte:3,nota:'Uma das maiores feiras marítimas do mundo, com armadores e estaleiros de todos os continentes.'},
+  seogs2027:{mk:['fpso','perf','subsea','maritimo','manut'],reg:'gs',comp:['op','fpso','epc','sonda','serv','plsv'],tipo:'feira',porte:2,nota:'O Suriname caminha para o primeiro FPSO do país. Mercado novo, com fornecedores ainda se posicionando.'},
   opecseminar2027:{mk:['gas','perf'],reg:'eu',comp:['op'],tipo:'summit',porte:1,nota:'Ministros e CEOs discutindo política energética. Vale pela rede de contatos, não pela venda direta.'},
-  sog2027:{mk:['perf','gas','manut','maritimo'],reg:'br',comp:['op','serv'],tipo:'regional',porte:2,nota:'Sergipe com o projeto de águas profundas da Petrobras e o onshore em expansão.'},
+  sog2027:{mk:['perf','gas','manut','maritimo'],reg:'br',comp:['op','sonda','serv','plsv'],tipo:'regional',porte:2,nota:'Sergipe com o projeto de águas profundas da Petrobras e o onshore em expansão.'},
   mecshow2027:{mk:['manut','gas','fpso'],reg:'br',comp:['serv','op'],tipo:'regional',porte:1,nota:'Feira industrial do Espírito Santo com pavilhão de óleo e gás. Boa para manutenção e fornecimento local.'},
-  navalshore2027:{foco:'maritimo',mk:['maritimo','fpso'],reg:'br',comp:['estaleiro','epc'],tipo:'feira',porte:2,nota:'A maior feira da indústria naval da América Latina: estaleiros, armadores e integração de FPSOs.'},
-  offshoreeurope2027:{foco:'decom',mk:['perf','subsea','decom','transicao','manut'],reg:'eu',comp:['op','epc','serv'],tipo:'feira',porte:3,nota:'Mar do Norte, referência mundial em descomissionamento e campos maduros.'},
+  navalshore2027:{foco:'maritimo',mk:['maritimo','fpso'],reg:'br',comp:['estaleiro','plsv','fpso','epc'],tipo:'feira',porte:2,nota:'A maior feira da indústria naval da América Latina: estaleiros, armadores e integração de FPSOs.'},
+  offshoreeurope2027:{foco:'decom',mk:['perf','subsea','decom','transicao','manut'],reg:'eu',comp:['op','epc','sonda','serv','plsv'],tipo:'feira',porte:3,nota:'Mar do Norte, referência mundial em descomissionamento e campos maduros.'},
   gastech2027:{foco:'gas',mk:['gas'],reg:'am',comp:['op','epc'],tipo:'feira',porte:3,nota:'O maior evento de gás natural e LNG do mundo.'},
-  aog2027:{foco:'perf',mk:['perf','gas','manut'],reg:'am',comp:['op','serv'],tipo:'feira',porte:2,nota:'Vaca Muerta e o óleo e gás argentino, um dos mercados de perfuração que mais crescem nas Américas.'},
+  aog2027:{foco:'perf',mk:['perf','gas','manut'],reg:'am',comp:['op','sonda','serv'],tipo:'feira',porte:2,nota:'Vaca Muerta e o óleo e gás argentino, um dos mercados de perfuração que mais crescem nas Américas.'},
   riopipeline2027:{mk:['gas','manut'],reg:'br',comp:['op','epc','serv'],tipo:'congresso',porte:2,nota:'Dutos, integridade e inspeção, organizado pelo IBP.'},
-  otcbrasil2027:{mk:['perf','fpso','subsea','gas','manut','decom'],reg:'br',comp:['op','epc','serv'],tipo:'feira',porte:3,nota:'A OTC no Brasil, com foco em águas profundas e pré-sal. Os compradores da Petrobras e das donas de FPSO estão lá.'},
-  boge2027:{mk:['perf','gas','manut'],reg:'br',comp:['op','serv'],tipo:'regional',porte:2,nota:'Bahia, onshore e campos maduros, com as operadoras independentes do Recôncavo.'},
+  otcbrasil2027:{mk:['perf','fpso','subsea','gas','manut','decom'],reg:'br',comp:['op','fpso','epc','sonda','serv','plsv'],tipo:'feira',porte:3,nota:'A OTC no Brasil, com foco em águas profundas e pré-sal. Os compradores da Petrobras e das donas de FPSO estão lá.'},
+  boge2027:{mk:['perf','gas','manut'],reg:'br',comp:['op','sonda','serv'],tipo:'regional',porte:2,nota:'Bahia, onshore e campos maduros, com as operadoras independentes do Recôncavo.'},
 };
 
 const MERCADOS = {perf:'Perfuração e poços', fpso:'FPSO e produção', subsea:'Subsea', gas:'LNG e gás natural', maritimo:'Apoio marítimo e estaleiros', manut:'Manutenção e inspeção', transicao:'Eólica offshore e transição', decom:'Descomissionamento'};
 const REGIOES = {br:'Brasil', gs:'Guiana e Suriname', am:'EUA e Américas', eu:'Europa e Mar do Norte', me:'Oriente Médio', as:'Ásia'};
-const COMPRADORES = {op:'Operadoras', epc:'Donas de FPSO e EPCistas', serv:'Prestadoras de serviço', estaleiro:'Estaleiros e armadores'};
+const COMPRADORES = {op:'Operadoras', fpso:'Donas de FPSO', epc:'EPCistas e integradores', sonda:'Empresas de perfuração', serv:'Prestadoras de serviço', plsv:'Armadores de PLSV e apoio marítimo', estaleiro:'Estaleiros'};
 // Viagem, hospedagem e ingresso por pessoa, em R$ mil. Referência para planejar, não cotação.
 const CUSTO_VISITA = {br:[4,8], gs:[12,20], am:[20,35], eu:[25,40], me:[25,40], as:[30,45]};
 const CUSTO_ESTANDE = {br:[40,120], gs:[60,150], am:[150,400], eu:[150,400], me:[150,400], as:[150,400]};
 
 const PERGUNTAS = [
   {k:'mk', multi:true, t:'Em quais mercados sua empresa atua?', d:'Pode marcar mais de um.', ops:Object.entries(MERCADOS)},
-  {k:'comp', t:'Para quem você mais vende?', d:'O cliente que mais pesa no seu faturamento.', ops:[['op','Operadoras','Petrobras, Shell, Equinor, Prio...'],['epc','Donas de FPSO e EPCistas','SBM, Modec, BW, Yinson, Saipem...'],['serv','Prestadoras de serviço','Halliburton, SLB, Baker Hughes, Subsea 7...'],['estaleiro','Estaleiros e armadores','Construção, reparo e frota de apoio']]},
+  {k:'comp', multi:true, t:'Para quem você mais vende?', d:'Pode marcar mais de um.', ops:[['op','Operadoras','Petrobras, Shell, Equinor, Prio...'],['fpso','Donas de FPSO','SBM, Modec, BW Offshore, Yinson...'],['epc','EPCistas e integradores','Saipem, Seatrium, McDermott, Toyo...'],['sonda','Empresas de perfuração','Donas de sondas e navios-sonda: Transocean, Valaris, Constellation, Foresea...'],['serv','Prestadoras de serviço','Halliburton, SLB, Baker Hughes...'],['plsv','Armadores de PLSV e apoio marítimo','Subsea 7, TechnipFMC, OceanPact, DOF, Bram...'],['estaleiro','Estaleiros','Construção, conversão e reparo']]},
   {k:'reg', multi:true, t:'Onde você quer gerar negócio nos próximos 12 meses?', d:'Pode marcar mais de um.', ops:Object.entries(REGIOES).filter(([k]) => k !== 'as')},
-  {k:'obj', t:'O que você quer levar de um evento?', d:'Escolha o principal.', ops:[['reuniao','Reunião com comprador','Sair com conversas de compra marcadas'],['marca','Marca e visibilidade','Ser lembrado pelo mercado'],['parceiro','Parceiro internacional','Representante, sócio ou distribuidor lá fora'],['lancar','Lançar produto ou serviço','Mostrar algo novo para muita gente'],['conhecer','Conhecer o mercado','Entender antes de investir pesado']]},
+  {k:'obj', multi:true, max:3, t:'O que você quer levar de um evento?', d:'Marque até 3.', ops:[['reuniao','Reunião com comprador','Sair com conversas de compra marcadas'],['marca','Marca e visibilidade','Ser lembrado pelo mercado'],['parceiro','Parceiro internacional','Representante, sócio ou distribuidor lá fora'],['lancar','Lançar produto ou serviço','Mostrar algo novo para muita gente'],['conhecer','Conhecer o mercado','Entender antes de investir pesado']]},
   {k:'modo', t:'Como você pretende participar?', d:'Pense no formato mais provável.', ops:[['visita','Visitando','Agenda de reuniões, sem estande'],['estande','Com estande','Espaço próprio ou em pavilhão'],['palestra','Palestrando','Conteúdo técnico ou painel'],['patrocinio','Patrocinando','Cota de patrocínio do evento']]},
   {k:'freq', t:'Quantos eventos cabem no seu ano, e com qual orçamento?', d:'Somando todos os eventos do ano.', ops:[['2','1 a 2 eventos'],['4','3 a 5 eventos'],['6','6 ou mais']],
     sub:{k:'orc', t:'Orçamento total para eventos', ops:[['50','Até R$ 50 mil'],['150','R$ 50 a 150 mil'],['400','R$ 150 a 400 mil'],['800','Acima de R$ 400 mil']]}},
 ];
 
-const R = {mk:[], reg:[]};
+const R = {mk:[], reg:[], comp:[], obj:[]};
 let passo = -1;
 const $ = s => document.querySelector(s);
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -189,19 +198,22 @@ function pontuar(e){
   const foco = p.foco && R.mk.includes(p.foco);
   // Mercados (até 40): quanto do que você vende o evento cobre, e bônus quando ele é especialista num deles
   const mk = R.mk.length ? Math.min(40, comuns.length / R.mk.length * 28 + (foco ? 12 : 0)) : 20;
-  if (foco) por.push('Evento especializado em ' + MERCADOS[p.foco].toLowerCase());
-  else if (comuns.length) por.push('Cobre ' + comuns.map(m => MERCADOS[m].toLowerCase()).join(', '));
+  if (foco) por.push('Evento especializado em ' + lc(MERCADOS[p.foco]));
+  else if (comuns.length) por.push('Cobre ' + comuns.map(m => lc(MERCADOS[m])).join(', '));
   const reg = R.reg.includes(p.reg) ? 20 : (p.reg === 'am' && R.reg.includes('gs')) ? 6 : 0;
   if (reg === 20) por.push('Está na região onde você quer crescer');
-  const comp = p.comp.includes(R.comp) ? 15 : 0;
-  if (comp) por.push('Reúne ' + COMPRADORES[R.comp].toLowerCase() + ', o seu principal comprador');
+  const compra = R.comp.filter(c => p.comp.includes(c));
+  const comp = R.comp.length ? Math.round(compra.length / R.comp.length * 15) : 0;
+  if (compra.length) por.push('Reúne ' + juntar(compra.map(c => lc(COMPRADORES[c]))) + ', ' + (compra.length > 1 ? 'que estão entre os seus compradores' : 'um dos seus compradores'));
   const porte = {3:10, 2:6, 1:3}[p.porte];
   const fora = p.reg !== 'br';
-  const obj = {reuniao: foco ? 10 : ['summit','congresso'].includes(p.tipo) ? 8 : p.tipo === 'regional' ? 7 : 6,
+  const OBJ = {reuniao: foco ? 10 : ['summit','congresso'].includes(p.tipo) ? 8 : p.tipo === 'regional' ? 7 : 6,
                marca: p.porte === 3 ? 10 : p.porte === 2 ? 7 : 4,
                parceiro: fora ? 10 : 3,
                lancar: p.tipo === 'feira' ? (p.porte === 3 ? 10 : 8) : 4,
-               conhecer: p.porte === 3 ? 10 : p.porte === 2 ? 7 : 5}[R.obj] ?? 5;
+               conhecer: p.porte === 3 ? 10 : p.porte === 2 ? 7 : 5};
+  // Com mais de um objetivo, vale a média deles
+  const obj = R.obj.length ? R.obj.reduce((t, o) => t + (OBJ[o] ?? 5), 0) / R.obj.length : 5;
   // Orçamento (até 10): o custo mínimo do evento cabe na fatia de orçamento por evento?
   const porEvento = +R.orc / Math.max(1, +R.freq - (+R.freq > 2 ? 1 : 0));
   const c = custo(e);
@@ -210,12 +222,62 @@ function pontuar(e){
   let n = Math.round(mk + reg + comp + porte + obj + orc);
   // Sem nenhum mercado em comum o evento não passa de "baixa"
   if (R.mk.length && !comuns.length) n = Math.min(n, 40);
-  return {n, por, c, comuns};
+  return {n, por, c, comuns, compra};
 }
+const juntar = l => l.length > 1 ? l.slice(0, -1).join(', ') + ' e ' + l[l.length - 1] : l[0] || '';
 const faixa = n => n >= 70 ? 'alta' : n >= 45 ? 'media' : 'baixa';
 const fmtC = c => `R$ ${c[0]} a ${c[1]} mil`;
 const quando = e => /\d/.test(e.dates) ? `${e.dates} ${e.monthShort.toLowerCase()} ${e.year}` : MESES.includes(e.month) ? `${e.month.toLowerCase()} de ${e.year}, data a confirmar` : `${e.year}, data a confirmar`;
-const onde = e => e.location.split(' — ').pop();
+// "NRG Park, Houston, TX — EUA" vira cidade "Houston" e local "Houston, EUA"
+const cidade = e => {
+  const partes = e.location.split(' — ')[0].split(',').map(x => x.trim());
+  const uf = partes.findIndex(x => /^[A-Z]{2}$/.test(x));
+  return uf > 0 ? partes[uf - 1] : partes[partes.length - 1];
+};
+const onde = e => { const c = cidade(e), pais = e.location.split(' — ').pop(); return c === pais || !e.location.includes(' — ') ? c : `${c}, ${pais}`; };
+// Minúscula só na primeira letra, preservando siglas (FPSO, LNG, PLSV)
+const lc = t => /^[A-Z]{2,}/.test(t) ? t : t.charAt(0).toLowerCase() + t.slice(1);
+
+// ─── Como se preparar e posts para o LinkedIn ───────────────────────────────
+function preparo(e){
+  const p = e.p, dicas = [];
+  dicas.push(['Antes', {estande:'Feche o estande com pelo menos 6 meses de antecedência. Os melhores lugares saem primeiro.',
+    palestra:'Fique de olho na chamada de trabalhos. Ela costuma fechar de 6 a 9 meses antes do evento.',
+    patrocinio:'Negocie uma cota que inclua a lista de participantes e um espaço de fala.',
+    visita:'Peça a lista de expositores e marque as reuniões de 4 a 6 semanas antes.'}[R.modo]]);
+  if (p.reg === 'gs') dicas.push(['Antes', 'Chegue com um parceiro local ou um plano de conteúdo local. É a primeira coisa que as operadoras perguntam por lá.']);
+  else if (p.reg !== 'br') dicas.push(['Antes', 'Leve apresentação e material em inglês, e confira passaporte e visto com antecedência.']);
+  if (p.tipo === 'summit') dicas.push(['Antes', 'Estude a lista de palestrantes e peça apresentação para três decisores antes de chegar.']);
+  dicas.push(['Durante', {reuniao:'Monte a agenda em blocos de 30 minutos, perto dos estandes dos seus compradores.',
+    marca:'Publique todo dia do evento: bastidores, conversas e o que você aprendeu.',
+    parceiro:'Visite os pavilhões de países e as rodadas de negócio. É ali que aparece o parceiro internacional.',
+    lancar:'Faça a demonstração em horário fixo e avise nas redes antes.',
+    conhecer:'Assista às sessões técnicas e anote quem está comprando o quê.'}[R.obj[0]] || 'Chegue com a lista de quem você precisa encontrar.']);
+  dicas.push(['Depois', 'Faça o follow-up em até 48 horas, com um próximo passo claro para cada conversa.']);
+  return dicas;
+}
+const VISAO = {perf:'Perfuração voltou para a pauta das diretorias, e quem entra cedo nas conversas de campanha sai na frente.',
+  fpso:'O Brasil tem uma das maiores carteiras de FPSOs do mundo, e cada unidade nova abre anos de operação e manutenção.',
+  subsea:'Boa parte do valor do pré-sal está no fundo do mar, e é lá que as decisões técnicas mais caras acontecem.',
+  gas:'Gás natural saiu da conversa de engenharia e entrou na mesa de estratégia.',
+  maritimo:'Nenhuma plataforma produz sem a frota que leva gente, carga e equipamento até ela.',
+  manut:'Com mais unidades produzindo, manter a operação rodando virou prioridade de quem opera.',
+  transicao:'Eólica offshore saiu da fase de promessa e entrou na fase de planejamento.',
+  decom:'Descomissionar também é negócio, e o Brasil está só começando essa fila.'};
+function posts(top){
+  if (!top.length) return [];
+  const a = top[0], b = top[1], emp = R.empresa;
+  const mA = a.p.foco && R.mk.includes(a.p.foco) ? a.p.foco : (a.s.comuns[0] || R.mk[0]);
+  const mB = R.mk.find(m => m !== mA) || mA;
+  const nome = e => e.name.split(' — ')[0].replace(/\s*\(.*?\)\s*$/, '');
+  const mes = e => MESES.includes(e.month) ? e.month.toLowerCase() : 'breve';
+  const regiao = R.reg.includes('gs') ? 'A Guiana e o Suriname viraram a vizinhança mais disputada do setor.' : VISAO[mB];
+  return [
+    ['Antes do evento', `Em ${mes(a)} a ${emp} vai estar na ${nome(a)}, ${{'Rio de Janeiro':'no Rio de Janeiro', 'Cidade do Panamá':'na Cidade do Panamá'}[cidade(a)] || 'em ' + cidade(a)}.\n${VISAO[mA]}\nVai estar por lá também? Me chama aqui que a gente marca um café.`],
+    ['Visão de mercado', `${regiao}\nNos próximos meses a ${emp} vai acompanhar esse movimento de perto${b ? ` na ${nome(a)} e na ${nome(b)}` : ` na ${nome(a)}`}.\nQuem também está nessa, bora conversar.`],
+    ['Depois do evento', `Voltando da ${nome(a)} com a agenda cheia e algumas certezas sobre ${lc(MERCADOS[mA])}.\nO que mais ouvi nos corredores: [escreva aqui o principal aprendizado].\nObrigado a quem passou para conversar. Agora é transformar conversa em projeto.`],
+  ];
+}
 
 // ─── Telas ──────────────────────────────────────────────────────────────────
 function inicio(){
@@ -229,6 +291,7 @@ function inicio(){
       <li>Os 5 eventos que mais combinam com você, e o porquê</li>
       <li>Os que você pode pular sem medo</li>
       <li>Calendário sugerido dentro do seu orçamento</li>
+      <li>Como se preparar para cada evento e posts prontos para o seu LinkedIn</li>
     </ul>
     <button class="btn" id="go">Começar, leva 2 minutos</button>
   </div>`;
@@ -252,6 +315,7 @@ function pergunta(){
   document.querySelectorAll('.op').forEach(b => b.onclick = () => {
     const k = b.dataset.k, v = b.dataset.v;
     if (Array.isArray(R[k])) {
+      if (!R[k].includes(v) && q.max && R[k].length >= q.max) return;
       R[k] = R[k].includes(v) ? R[k].filter(x => x !== v) : R[k].concat(v);
       b.classList.toggle('on');
     } else {
@@ -313,9 +377,9 @@ function resultado(salvar){
   const mapa = [...lista].sort((a, b) => ordemData(a) - ordemData(b));
 
   if (salvar) {
-    track('diag_concluido', {comp:R.comp, obj:R.obj, modo:R.modo, orc:R.orc});
+    track('diag_concluido', {comp:R.comp.join(','), obj:R.obj.join(','), modo:R.modo, orc:R.orc});
     const corpo = {action:'add', site:$('#site')?.value || '', nome:R.nome, empresa:R.empresa, cargo:R.cargo, email:R.email, whats:R.whats,
-      respostas:{mercados:R.mk, comprador:R.comp, regioes:R.reg, objetivo:R.obj, participacao:R.modo, eventos_ano:R.freq, orcamento_mil:R.orc},
+      respostas:{mercados:R.mk, compradores:R.comp, regioes:R.reg, objetivos:R.obj, participacao:R.modo, eventos_ano:R.freq, orcamento_mil:R.orc},
       top:top.map(e => `${e.name} (${e.s.n})`)};
     fetch('/api/diagnosticos.php', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(corpo)}).catch(() => {});
   }
@@ -325,7 +389,7 @@ function resultado(salvar){
     <div class="res-h">
       <div class="eyebrow">Diagnóstico de eventos · ${esc(R.empresa)}</div>
       <h1>Onde a ${esc(R.empresa)}<br><span>tem mais chance</span></h1>
-      <p class="lead">${esc(R.nome.split(' ')[0])}, cruzamos o que você vende (${R.mk.map(m => MERCADOS[m].toLowerCase()).join(', ')}), para quem vende e onde quer crescer com os ${lista.length} eventos da nossa agenda.</p>
+      <p class="lead">${esc(R.nome.split(' ')[0])}, cruzamos o que você vende (${R.mk.map(m => lc(MERCADOS[m])).join(', ')}), para quem vende e onde quer crescer com os ${lista.length} eventos da nossa agenda.</p>
       <div class="legenda"><span><i style="background:var(--alta)"></i>Alta chance de negócio</span><span><i style="background:var(--media)"></i>Média</span><span><i style="background:var(--baixa)"></i>Baixa</span></div>
     </div>
 
@@ -334,6 +398,7 @@ function resultado(salvar){
       <div class="cab"><div><b>${i + 1}. ${esc(e.name)}</b><div class="meta">${esc(quando(e))} · ${esc(onde(e))}</div></div>
       <div class="nota">${e.s.n}<small>de 100</small></div></div>
       <ul>${e.s.por.filter(x => !/^Pesa/.test(x)).map(x => `<li>${esc(x)}</li>`).join('')}<li>${esc(e.p.nota)}</li></ul>
+      <div class="prep"><b>Como se preparar</b>${preparo(e).map(([q, t]) => `<p><span>${q}</span>${esc(t)}</p>`).join('')}</div>
       <div class="custo">Investimento estimado (${R.modo === 'estande' || R.modo === 'patrocinio' ? 'estande e duas pessoas' : 'duas pessoas'}): ${fmtC(e.s.c)}</div>
     </div>`).join('') : '<p class="lead">Nenhum evento da agenda passou de 45 pontos com essas respostas. Vale ampliar as regiões ou os mercados.</p>'}
 
@@ -342,18 +407,29 @@ function resultado(salvar){
       <div>${esc(e.name)}<span class="loc">${esc(onde(e))}</span></div><div class="n">${e.s.n}</div></div>`).join('')}</div>
 
     ${pular.length ? `<h2 class="sec">Pode pular sem medo</h2>
-    <div class="pular">${pular.map(e => `<div><b>${esc(e.name)}</b>. ${esc(!e.s.comuns.length ? 'Não cobre os mercados em que você atua.' : !R.reg.includes(e.p.reg) ? 'Fica fora das regiões onde você quer crescer.' : 'O seu comprador principal não é o público forte desse evento.')}</div>`).join('')}</div>` : ''}
+    <div class="pular">${pular.map(e => `<div><b>${esc(e.name)}</b>. ${esc(!e.s.comuns.length ? 'Não cobre os mercados em que você atua.' : !R.reg.includes(e.p.reg) ? 'Fica fora das regiões onde você quer crescer.' : 'Os seus compradores não são o público forte desse evento.')}</div>`).join('')}</div>` : ''}
 
     ${cal.length ? `<h2 class="sec">Calendário sugerido</h2>
     <div class="cal"><ul>${cal.map(e => `<li>${esc(e.name)}<span>${esc(quando(e))}</span></li>`).join('')}</ul>
       <div class="tot">Investimento estimado no ano: R$ ${soma[0]} a ${soma[1]} mil, com orçamento informado de ${PERGUNTAS[5].sub.ops.find(o => o[0] === R.orc)[1].replace(/^Até/, 'até')}.</div></div>
     <p class="aviso">Faixas de referência para planejamento: passagem, hospedagem e credencial por pessoa${R.modo === 'estande' || R.modo === 'patrocinio' ? ', mais estande montado' : ''}. Patrocínio e palestra têm valores próprios de cada organizador.</p>` : ''}
 
+    ${top.length ? `<h2 class="sec">Posts prontos para o seu LinkedIn</h2>
+    <p class="aviso" style="margin:-4px 0 14px">Curtos, no tom de quem vive o mercado. Ajuste o que quiser e publique no seu perfil.</p>
+    <div class="posts">${posts(top).map(([t, x], i) => `<div class="post"><div class="pt">${t}<button class="copiar" data-i="${i}">Copiar</button></div><p>${esc(x).replace(/\n/g, '<br>')}</p></div>`).join('')}</div>` : ''}
+
     <div class="cta"><h3>Quer ajuda para transformar isso em negócio?</h3>
       <p>A MR Group monta o plano de presença com você: agenda de reuniões com compradores, conteúdo antes e durante o evento e cobertura para as suas redes. Fala direto com o Matheus.</p>
       <a class="btn" href="${zap}" target="_blank" rel="noopener" id="zap">Falar com o Matheus no WhatsApp</a></div>
     <div class="acoes"><button class="btn ghost" onclick="window.print()">Salvar em PDF</button><button class="btn ghost" id="refazer">Refazer o diagnóstico</button></div>`;
   $('#zap').onclick = () => track('diag_whatsapp');
+  const textos = posts(top);
+  document.querySelectorAll('.copiar').forEach(b => b.onclick = () => {
+    const t = textos[+b.dataset.i][1];
+    (navigator.clipboard ? navigator.clipboard.writeText(t) : Promise.reject()).then(() => { b.textContent = 'Copiado'; setTimeout(() => b.textContent = 'Copiar', 1800); })
+      .catch(() => prompt('Copie o texto:', t));
+    track('diag_post_copiado', {post: textos[+b.dataset.i][0]});
+  });
   $('#refazer').onclick = () => { passo = 0; pergunta(); };
   window.scrollTo(0, 0);
 }
