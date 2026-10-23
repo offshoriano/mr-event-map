@@ -231,6 +231,14 @@ input::placeholder,textarea::placeholder{color:var(--muted);opacity:.5;}
 .submit-success .s-sub{font-size:14px;color:var(--muted);}
 
 /* REGISTER */
+.diag-cta{position:relative;z-index:2;display:grid;grid-template-columns:1fr auto;gap:4px 24px;align-items:center;max-width:1100px;margin:28px auto 0;padding:22px 26px;text-decoration:none;color:var(--white);
+  background:linear-gradient(135deg,rgba(201,147,58,.18),rgba(201,147,58,.05));border:1px solid rgba(201,147,58,.5);border-radius:3px;text-align:left;}
+.diag-cta:hover{border-color:var(--gold);}
+.diag-cta .dk{grid-column:1;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);}
+.diag-cta b{grid-column:1;font-size:21px;line-height:1.3;}
+.diag-cta .dp{grid-column:1;color:var(--muted2);font-size:14px;line-height:1.55;}
+.diag-cta .dbtn{grid-column:2;grid-row:1/4;background:var(--gold);color:var(--black);font-weight:800;font-size:12px;letter-spacing:.14em;text-transform:uppercase;padding:15px 22px;border-radius:2px;white-space:nowrap;}
+@media(max-width:700px){.diag-cta{grid-template-columns:1fr;}.diag-cta .dbtn{grid-column:1;grid-row:auto;text-align:center;margin-top:10px;}}
 #register{background:var(--black);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:100px 48px;}
 .register-inner{max-width:700px;margin:0 auto;text-align:center;}
 .reg-eyebrow{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;}
@@ -415,7 +423,7 @@ input[type="date"],input[type="time"]{color-scheme:dark;}
     <a href="radar/"><span class="l">Radar Offshore</span><span class="s">Radar</span></a>
     <a href="guia/"><span class="l">Guia 7 Passos</span><span class="s">Guia</span></a>
   </div>
-  <button class="nav-btn solid" onclick="openDiagModal()"><span class="l">Quero diagnóstico</span></button>
+  <button class="nav-btn solid" onclick="location.href='/diagnostico/'"><span class="l">Diagnóstico de eventos</span></button>
 </nav>
 
 <section id="hero">
@@ -440,6 +448,12 @@ input[type="date"],input[type="time"]{color-scheme:dark;}
     <div class="stat"><div class="stat-num" id="stat-oil">4,7 mi</div><div class="stat-label" id="stat-oil-l">Barris por dia no Brasil · ANP</div></div>
     <div class="stat"><div class="stat-num" id="stat-vagas">1</div><div class="stat-label" id="stat-vagas-l">Vagas abertas</div></div>
   </div>
+  <a class="diag-cta" href="/diagnostico/" onclick="track('diag_cta_home')">
+    <span class="dk">Para empresas · gratuito</span>
+    <b>Descubra quais eventos fazem sentido para a sua empresa</b>
+    <span class="dp">6 perguntas sobre o que você vende e onde quer crescer. No fim, um mapa de calor com a chance de negócio em cada evento da agenda.</span>
+    <span class="dbtn">Fazer o diagnóstico</span>
+  </a>
 </section>
 
 <main id="calendar-main">
@@ -457,15 +471,6 @@ input[type="date"],input[type="time"]{color-scheme:dark;}
   <div id="months-container"></div>
 </main>
 
-<section id="register">
-  <div class="register-inner">
-    <div class="reg-eyebrow">Diagnóstico estratégico · MR Solutions</div>
-    <h2 class="reg-title">Quais eventos fazem<br><span>sentido para você?</span></h2>
-    <p class="reg-sub">Responda algumas perguntas sobre sua empresa e seus objetivos. A MR Solutions entrega um diagnóstico personalizado indicando quais eventos têm mais aderência com o seu perfil, e uma estimativa de investimento real para cada um deles.</p>
-    <button class="btn btn-gold" style="font-size:13px;padding:18px 48px;" onclick="openDiagModal()">Iniciar meu diagnóstico gratuito →</button>
-  </div>
-</section>
-
 <section id="sponsors">
   <div class="sp-inner">
     <div class="sp-eyebrow">Patrocinadores &amp; apoio institucional</div>
@@ -473,11 +478,11 @@ input[type="date"],input[type="time"]{color-scheme:dark;}
       <div class="sp-card"><img src="assets/patrocinadores/mr-solutions.png" alt="MR Solutions" loading="lazy"></div>
       <div class="sp-card"><img src="assets/patrocinadores/qlp-group.png" alt="QLP Group" loading="lazy"></div>
       <div class="sp-card dark"><img src="assets/patrocinadores/techocean-services.png" alt="Techocean Services" loading="lazy"></div>
-      <div class="sp-card cta" onclick="openDiagModal()" role="button" tabindex="0">Anuncie<br>sua marca aqui</div>
+      <div class="sp-card cta" onclick="window.open('https://wa.me/5522988335183?text='+encodeURIComponent('Oi, Matheus! Quero falar sobre patrocínio e anúncio no site da MR Group.'),'_blank')" role="button" tabindex="0">Anuncie<br>sua marca aqui</div>
     </div>
     <div class="sp-foot">
       <p>Quer levar sua marca para o circuito de energia mais qualificado do Brasil?</p>
-      <button class="btn btn-gold" onclick="openDiagModal()">Falar sobre patrocínio</button>
+      <button class="btn btn-gold" onclick="window.open('https://wa.me/5522988335183?text='+encodeURIComponent('Oi, Matheus! Quero falar sobre patrocínio e anúncio no site da MR Group.'),'_blank')">Falar sobre patrocínio</button>
     </div>
   </div>
 </section>
@@ -486,130 +491,6 @@ input[type="date"],input[type="time"]{color-scheme:dark;}
   <div class="foot-logo">MR Group <span>·</span> Onde o óleo e gás se encontra</div>
   <div class="foot-copy"><a href="mailto:mateus.rangel@mrgroup.com.br" style="color:inherit">mateus.rangel@mrgroup.com.br</a> · <a href="https://wa.me/5522988335183" style="color:inherit" target="_blank" rel="noopener">(22) 98833-5183</a> · <a href="sobre/" style="color:inherit">Sobre a MR Group</a></div>
 </footer>
-
-<!-- MODAL: DIAGNOSTIC -->
-<div class="modal-overlay" id="diag-overlay">
-  <div class="modal" style="max-width:680px;">
-
-    <!-- STEP INDICATOR -->
-    <div id="diag-steps-wrap">
-      <div class="modal-head" style="flex-direction:column;align-items:flex-start;gap:16px;">
-        <div style="display:flex;justify-content:space-between;width:100%;align-items:center;">
-          <div class="modal-title">Diagnóstico <span>Estratégico</span></div>
-          <button class="modal-close" onclick="closeDiagModal()">✕</button>
-        </div>
-        <div style="display:flex;gap:6px;width:100%;align-items:center;" id="diag-progress-bar">
-          <div class="dprog" id="dp1" style="height:3px;flex:1;background:var(--gold);border-radius:2px;transition:.3s;"></div>
-          <div class="dprog" id="dp2" style="height:3px;flex:1;background:var(--border2);border-radius:2px;transition:.3s;"></div>
-          <div class="dprog" id="dp3" style="height:3px;flex:1;background:var(--border2);border-radius:2px;transition:.3s;"></div>
-          <div class="dprog" id="dp4" style="height:3px;flex:1;background:var(--border2);border-radius:2px;transition:.3s;"></div>
-          <span id="diag-step-label" style="font-size:10px;color:var(--muted);letter-spacing:.15em;text-transform:uppercase;white-space:nowrap;margin-left:8px;">Etapa 1 de 4</span>
-        </div>
-      </div>
-
-      <!-- STEP 1: Identificação -->
-      <div class="diag-step active" id="ds1">
-        <div class="modal-body">
-          <p class="modal-subtitle" style="font-size:15px;color:var(--white);font-weight:500;margin-bottom:6px;">Vamos nos conhecer</p>
-          <p class="modal-subtitle">Para entregar um diagnóstico preciso, precisamos entender quem é a sua empresa e com quem estamos falando.</p>
-          <div class="field"><label>Seu nome completo *</label><input type="text" id="d-name" placeholder="Nome completo"></div>
-          <div class="field"><label>Email profissional *</label><input type="email" id="d-email" placeholder="seu@empresa.com"></div>
-          <div class="field"><label>Nome da empresa *</label><input type="text" id="d-company" placeholder="Razão social ou nome fantasia"></div>
-          <div class="field"><label>Segmento da empresa *</label>
-            <div class="radio-row">
-              <label class="radio-pill" onclick="selectPill(this)"><input type="radio" name="d-segment" value="Operadora / E&P">Operadora / E&P</label>
-              <label class="radio-pill" onclick="selectPill(this)"><input type="radio" name="d-segment" value="Prestadora de Serviços">Prestadora de Serviços</label>
-              <label class="radio-pill" onclick="selectPill(this)"><input type="radio" name="d-segment" value="Fornecedora / Supply Chain">Fornecedora / Supply Chain</label>
-              <label class="radio-pill" onclick="selectPill(this)"><input type="radio" name="d-segment" value="Treinamento / Capacitação">Treinamento / Capacitação</label>
-              <label class="radio-pill" onclick="selectPill(this)"><input type="radio" name="d-segment" value="Tecnologia / Inovação">Tecnologia / Inovação</label>
-              <label class="radio-pill" onclick="selectPill(this)"><input type="radio" name="d-segment" value="Consultoria">Consultoria</label>
-            </div>
-          </div>
-        </div>
-        <div class="modal-footer"><button class="modal-submit" onclick="diagNext(2)">Continuar →</button></div>
-      </div>
-
-      <!-- STEP 2: Objetivos -->
-      <div class="diag-step" id="ds2">
-        <div class="modal-body">
-          <p class="modal-subtitle" style="font-size:15px;color:var(--white);font-weight:500;margin-bottom:6px;">Qual é a proposta da sua empresa nos eventos?</p>
-          <p class="modal-subtitle">Entender o seu objetivo principal nos ajuda a calcular o retorno esperado e identificar os eventos com maior aderência.</p>
-          <div class="field"><label>Objetivo principal nos eventos *</label>
-            <div class="radio-row">
-              <label class="radio-pill" onclick="selectPill(this)"><input type="radio" name="d-goal" value="Prospecção de clientes">Prospecção de clientes</label>
-              <label class="radio-pill" onclick="selectPill(this)"><input type="radio" name="d-goal" value="Visibilidade de marca">Visibilidade de marca</label>
-              <label class="radio-pill" onclick="selectPill(this)"><input type="radio" name="d-goal" value="Networking com executivos">Networking com executivos</label>
-              <label class="radio-pill" onclick="selectPill(this)"><input type="radio" name="d-goal" value="Lançamento de produto / serviço">Lançamento de produto / serviço</label>
-              <label class="radio-pill" onclick="selectPill(this)"><input type="radio" name="d-goal" value="Fechar parcerias comerciais">Fechar parcerias comerciais</label>
-            </div>
-          </div>
-          <div class="field"><label>Porte da empresa *</label>
-            <div class="radio-row">
-              <label class="radio-pill" onclick="selectPill(this)"><input type="radio" name="d-size" value="MEI / Autônomo">MEI / Autônomo</label>
-              <label class="radio-pill" onclick="selectPill(this)"><input type="radio" name="d-size" value="Pequena (até 50 func.)">Pequena (até 50 func.)</label>
-              <label class="radio-pill" onclick="selectPill(this)"><input type="radio" name="d-size" value="Média (50–500 func.)">Média (50–500 func.)</label>
-              <label class="radio-pill" onclick="selectPill(this)"><input type="radio" name="d-size" value="Grande (500+ func.)">Grande (500+ func.)</label>
-            </div>
-          </div>
-          <div class="field"><label>Já participou de algum evento do setor antes?</label>
-            <div class="radio-row">
-              <label class="radio-pill" onclick="selectPill(this)"><input type="radio" name="d-exp" value="Sim, com regularidade">Sim, com regularidade</label>
-              <label class="radio-pill" onclick="selectPill(this)"><input type="radio" name="d-exp" value="Sim, pontualmente">Sim, pontualmente</label>
-              <label class="radio-pill" onclick="selectPill(this)"><input type="radio" name="d-exp" value="Nunca participou">Nunca participou</label>
-            </div>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button class="modal-cancel" onclick="diagBack(1)">← Voltar</button>
-          <button class="modal-submit" onclick="diagNext(3)">Continuar →</button>
-        </div>
-      </div>
-
-      <!-- STEP 3: Estratégia e orçamento -->
-      <div class="diag-step" id="ds3">
-        <div class="modal-body">
-          <p class="modal-subtitle" style="font-size:15px;color:var(--white);font-weight:500;margin-bottom:6px;">Estratégia e orçamento</p>
-          <p class="modal-subtitle">Estas respostas são usadas para calibrar a estimativa de investimento e o nível de presença recomendado para cada evento.</p>
-          <div class="field"><label>Qual é a estratégia atual de comunicação da empresa?</label>
-            <div class="radio-row">
-              <label class="radio-pill" onclick="selectPill(this)"><input type="radio" name="d-comm" value="Ainda não temos estratégia definida">Ainda não temos estratégia definida</label>
-              <label class="radio-pill" onclick="selectPill(this)"><input type="radio" name="d-comm" value="Redes sociais próprias">Redes sociais próprias</label>
-              <label class="radio-pill" onclick="selectPill(this)"><input type="radio" name="d-comm" value="Agência / equipe de marketing">Agência / equipe de marketing</label>
-              <label class="radio-pill" onclick="selectPill(this)"><input type="radio" name="d-comm" value="Parcerias com criadores de conteúdo">Parcerias com criadores de conteúdo</label>
-            </div>
-          </div>
-          <div class="field"><label>Orçamento disponível para eventos em 2026 (USD) *</label>
-            <div class="radio-row">
-              <label class="radio-pill" onclick="selectPill(this)"><input type="radio" name="d-budget" value="Até $10.000">Até $10.000</label>
-              <label class="radio-pill" onclick="selectPill(this)"><input type="radio" name="d-budget" value="$10.000 – $30.000">$10k – $30k</label>
-              <label class="radio-pill" onclick="selectPill(this)"><input type="radio" name="d-budget" value="$30.000 – $80.000">$30k – $80k</label>
-              <label class="radio-pill" onclick="selectPill(this)"><input type="radio" name="d-budget" value="Acima de $80.000">Acima de $80k</label>
-            </div>
-          </div>
-          <div class="field"><label>Quais eventos você já tem em vista para 2026?</label>
-            <div id="diag-events-check" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px;"></div>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button class="modal-cancel" onclick="diagBack(2)">← Voltar</button>
-          <button class="modal-submit" onclick="diagNext(4)">Ver meu diagnóstico →</button>
-        </div>
-      </div>
-
-      <!-- STEP 4: RESULTADO -->
-      <div class="diag-step" id="ds4">
-        <div class="modal-body" id="diag-result-body">
-          <!-- Preenchido dinamicamente -->
-        </div>
-        <div class="modal-footer">
-          <button class="modal-cancel" onclick="closeDiagModal()">Fechar</button>
-          <button class="modal-submit" onclick="closeDiagModal()" style="background:var(--gold);color:var(--black);border-color:var(--gold);">✓ Entendido, obrigado!</button>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</div>
 
 <!-- MODAL: ADICIONAR EVENTO DO SETOR -->
 <div class="modal-overlay" id="add-event-overlay">
@@ -729,6 +610,7 @@ input[type="date"],input[type="time"]{color-scheme:dark;}
   </div>
 </div>
 
+<script src="/assets/eventos.js"></script>
 <script>
 // ─── DADOS ─────────────────────────────────────────────────────────────────
 // Helper de rastreamento — não quebra se GA4 não carregar
@@ -736,431 +618,8 @@ function track(event, params) {
   if (typeof gtag === 'function') gtag('event', event, params || {});
 }
 
-// Cada conferência tem: id, nome, datas, mês, local, tipo de acesso, link oficial, e lista de eventos paralelos (noite).
-const CONFERENCES = [
-
-  // ── EVENTOS PASSADOS 2026 ─────────────────────────────────────────────────
-  {
-    id:'guyana2026feb',
-    name:'Guyana Energy Conference & Supply Chain Expo',
-    dates:'17 – 19', month:'Fevereiro', monthShort:'FEV', year:2026,
-    location:'Georgetown — Guiana',
-    access:'public', link:'https://www.guyanaenergyconference.com/',
-    past:true,
-    parallel:[]
-  },
-  {
-    id:'macae2026mar',
-    name:'Macaé Energy',
-    dates:'17 – 19', month:'Março', monthShort:'MAR', year:2026,
-    location:'Centro de Convenções Jornalista Roberto Marinho, Macaé, RJ — Brasil',
-    access:'public', link:'https://macaeenergy.com.br/',
-    past:true,
-    parallel:[]
-  },
-  {
-    id:'vitoria2026apr',
-    name:'Vitória PetroShow',
-    dates:'14 – 16', month:'Abril', monthShort:'ABR', year:2026,
-    location:'Centro de Convenções de Vitória, ES — Brasil',
-    access:'public', link:'https://vitoriapetroshow.com.br/',
-    past:true,
-    parallel:[]
-  },
-  {
-    id:'nnlogistica2026apr',
-    name:'NN Logística — Supply Chain & Energia',
-    dates:'Abr · Em andamento', month:'Abril', monthShort:'ABR', year:2026,
-    location:'Brasil',
-    access:'public', link:'https://nnlogistica.com.br/',
-    past:false,
-    parallel:[]
-  },
-
-  // ── MAIO ──────────────────────────────────────────────────────────────────
-  {
-    id:'otc2026',
-    name:'OTC — Offshore Technology Conference',
-    dates:'4 – 7', month:'Maio', monthShort:'MAI', year:2026,
-    location:'NRG Park, Houston, TX — EUA',
-    access:'public', link:'https://2026.otcnet.org/',
-    past:false,
-    parallel:[
-      { day:'Sábado, 2 Mai', name:'Confraria do Vinho', desc:'Reunião informal da comunidade brasileira antes da abertura oficial da OTC. Tradição que antecede a semana maior.', access:'convite' },
-      { day:'Domingo, 3 Mai', name:'Churrasco dos Brasileiros', desc:'Encontro tradicional dos profissionais brasileiros no fim de semana pré-OTC. Alta concentração de executivos e decisores.', access:'convite' },
-      { day:'Segunda, 4 Mai · Noite', name:'Brasil Energy Meeting', desc:'Jantar de networking exclusivo para lideranças do setor energético brasileiro presentes na OTC.', access:'convite' },
-      { day:'Terça, 5 Mai · Noite', name:'M&O Networking — M&O Partners', desc:'Evento de networking exclusivo patrocinado pelos principais parceiros do setor. A MR Solutions estará presente. Alta concentração de lideranças e decisores da cadeia offshore.', access:'convite' },
-      { day:'Terça, 5 Mai · Noite', name:'LR Networking Reception', desc:'Evento noturno promovido pela Lloyd\'s Register durante a semana da OTC. Networking com profissionais técnicos e comerciais do setor de óleo e gás.', access:'convite' },
-      { day:'Quarta, 6 Mai · Noite', name:'Festa ABS', desc:'Evento social promovido pela American Bureau of Shipping. Presença de lideranças técnicas e comerciais.', access:'restrito' },
-      { day:'Quarta, 6 Mai · Noite', name:'Workshop DELP', desc:'Sessão técnica e networking. Foco em desenvolvimento e liderança no setor energético.', access:'restrito' },
-      { day:'Quarta, 6 Mai · Noite', name:'Festa Camorim', desc:'Confraternização tradicional da comunidade brasileira na OTC. Um dos eventos mais aguardados de toda a semana.', access:'convite' },
-    ]
-  },
-  {
-    id:'fpso2026',
-    name:'FPSO Expo Brasil — Epicentro Global (4ª Edição)',
-    dates:'19 – 21', month:'Maio', monthShort:'MAI', year:2026,
-    location:'ExpoRio Cidade Nova, Rio de Janeiro, RJ — Brasil',
-    access:'public', link:'https://fpsosexpor.com.br/',
-    past:false,
-    parallel:[]
-  },
-  {
-    id:'bahia2026',
-    name:'Bahia Oil & Gas Energy (BOGE)',
-    dates:'27 – 29', month:'Maio', monthShort:'MAI', year:2026,
-    location:'Centro de Convenções Salvador, BA — Brasil',
-    access:'public', link:'https://www.bahiaoilgasenergy.com.br/',
-    past:false,
-    parallel:[]
-  },
-
-  // ── JUNHO ─────────────────────────────────────────────────────────────────
-  {
-    id:'seogs2026',
-    name:'SEOGS — Suriname Energy, Oil & Gas Summit & Exhibition',
-    dates:'23 – 26', month:'Junho', monthShort:'JUN', year:2026,
-    location:'Paramaribo — Suriname',
-    access:'public', link:'https://suriname-energy.com/',
-    past:false,
-    parallel:[]
-  },
-  {
-    id:'sergipe2026',
-    name:'SOG.e — Sergipe Oil & Gas & Energy',
-    dates:'29 – 31', month:'Julho', monthShort:'JUL', year:2026,
-    location:'Centro de Convenções AM Malls, Aracaju, SE — Brasil',
-    access:'public', link:'https://sergipeoilgas.com.br/',
-    past:false,
-    parallel:[
-      { day:'28 Jul · Noite', name:'Welcome Drink SOG26', desc:'Recepção de boas-vindas destinada exclusivamente a patrocinadores e parceiros do evento.', access:'convite' },
-      { day:'30 Jul · Noite', name:'Celebra SOG26', desc:'Confraternização com atrações musicais e serviço all inclusive. Um dos destaques sociais do evento.', access:'convite' },
-    ]
-  },
-
-  // ── AGOSTO ────────────────────────────────────────────────────────────────
-  {
-    id:'navalshore2026',
-    name:'Navalshore — Feira da Indústria Marítima (20ª Ed.)',
-    dates:'18 – 20', month:'Agosto', monthShort:'AGO', year:2026,
-    location:'Rio de Janeiro, RJ — Brasil',
-    access:'public', link:'https://www.navalshore.com.br/',
-    past:false,
-    parallel:[]
-  },
-  {
-    id:'ons2026',
-    name:'ONS — Offshore Northern Seas',
-    dates:'24 – 27', month:'Agosto', monthShort:'AGO', year:2026,
-    location:'Stavanger — Noruega',
-    access:'public', link:'https://www.ons.no/',
-    past:false,
-    parallel:[]
-  },
-
-  // ── SETEMBRO ──────────────────────────────────────────────────────────────
-  {
-    id:'roge2026',
-    name:'ROG.e (IBP)',
-    dates:'21 – 24', month:'Setembro', monthShort:'SET', year:2026,
-    location:'Riocentro, Rio de Janeiro, RJ — Brasil',
-    access:'public', link:'https://roge.energy/',
-    past:false,
-    parallel:[]
-  },
-  {
-    id:'smm2026',
-    name:'SMM — Shipbuilding, Machinery & Marine Technology',
-    dates:'1 – 4', month:'Setembro', monthShort:'SET', year:2026,
-    location:'Hamburgo — Alemanha',
-    access:'public', link:'https://www.smm-hamburg.com/',
-    past:false,
-    parallel:[]
-  },
-
-  // ── NOVEMBRO ──────────────────────────────────────────────────────────────
-  {
-    id:'adipec2026',
-    name:'ADIPEC — Abu Dhabi International Petroleum Exhibition',
-    dates:'2 – 5', month:'Novembro', monthShort:'NOV', year:2026,
-    location:'Abu Dhabi — Emirados Árabes Unidos',
-    access:'public', link:'https://www.adipec.com/',
-    past:false,
-    parallel:[]
-  },
-  {
-    id:'mossoro2026',
-    name:'Mossoró Oil, Gas & Energy',
-    dates:'Nov · Sem. 4', month:'Novembro', monthShort:'NOV', year:2026,
-    location:'Mossoró, RN — Brasil',
-    access:'public', link:'https://www.mossorooilgas.com.br/',
-    past:false,
-    parallel:[]
-  },
-
-  // ── PRÓXIMOS: FIM DE 2026 E 2027 (base: Radar Global de Feiras QLP + sites oficiais) ──
-  {
-    id:'brazilwindpower2026',
-    name:'Brazil Windpower 2026',
-    dates:'27 – 29', month:'Outubro', monthShort:'OUT', year:2026,
-    location:'São Paulo, SP — Brasil',
-    access:'public', link:'https://www.brazilwindpower.com.br/',
-    past:false,
-    parallel:[]
-  },
-  {
-    id:'offshoreenergy2026',
-    name:'Offshore Energy Exhibition & Conference',
-    dates:'24 – 25', month:'Novembro', monthShort:'NOV', year:2026,
-    location:'Amsterdam — Países Baixos',
-    access:'public', link:'https://www.offshore-energy.biz/offshore-energy-exhibition-conference/',
-    past:false,
-    parallel:[]
-  },
-  {
-    id:'osea2026',
-    name:'OSEA 2026',
-    dates:'24 – 26', month:'Novembro', monthShort:'NOV', year:2026,
-    location:'Singapura',
-    access:'public', link:'https://www.osea-asia.com/',
-    past:false,
-    parallel:[]
-  },
-  {
-    id:'guyana2027',
-    name:'Guyana Energy Conference & Supply Chain Expo',
-    dates:'16 – 19', month:'Fevereiro', monthShort:'FEV', year:2027,
-    location:'Guyana Marriott, Georgetown — Guiana',
-    access:'public', link:'https://www.guyanaenergyconference.com/',
-    past:false,
-    parallel:[]
-  },
-  {
-    id:'ibem2027',
-    name:'iBEM27 — International Brazil Energy Meeting',
-    dates:'24 – 26', month:'Fevereiro', monthShort:'FEV', year:2027,
-    location:'Salvador Convention Center, Salvador, BA — Brasil',
-    access:'public', link:'https://www.ibemenergy.com/',
-    past:false,
-    parallel:[]
-  },
-  {
-    id:'otc2027',
-    name:'OTC — Offshore Technology Conference',
-    dates:'3 – 5', month:'Maio', monthShort:'MAI', year:2027,
-    location:'NRG Park, Houston, TX — EUA',
-    access:'public', link:'https://2027.otcnet.org/',
-    past:false,
-    parallel:[]
-  },
-  {
-    id:'fpsoexpo2027',
-    name:'FPSO Expo Brasil — Epicentro Global (5ª Edição)',
-    dates:'18 – 20', month:'Maio', monthShort:'MAI', year:2027,
-    location:'ExpoRio Cidade Nova, Rio de Janeiro, RJ — Brasil',
-    access:'public', link:'https://fpsosexpor.com.br/',
-    past:false,
-    parallel:[]
-  },
-  {
-    id:'norshipping2027',
-    name:'Nor-Shipping 2027',
-    dates:'7 – 11', month:'Junho', monthShort:'JUN', year:2027,
-    location:'Lillestrøm, Oslo — Noruega',
-    access:'public', link:'https://nor-shipping.com/',
-    past:false,
-    parallel:[]
-  },
-  {
-    id:'sog2027',
-    name:'SOG.e — Sergipe Oil & Gas & Energy',
-    dates:'28 – 30', month:'Julho', monthShort:'JUL', year:2027,
-    location:'AM Malls Convention Center, Aracaju, SE — Brasil',
-    access:'public', link:'https://sergipeoilgas.com.br/',
-    past:false,
-    parallel:[]
-  },
-  {
-    id:'navalshore2027',
-    name:'Navalshore 2027',
-    dates:'Ago · Data a confirmar', month:'Agosto', monthShort:'AGO', year:2027,
-    location:'Rio de Janeiro, RJ — Brasil',
-    access:'public', link:'https://www.navalshore.com.br/',
-    past:false,
-    parallel:[]
-  },
-  {
-    id:'offshoreeurope2027',
-    name:'SPE Offshore Europe 2027',
-    dates:'7 – 9', month:'Setembro', monthShort:'SET', year:2027,
-    location:'Aberdeen — Reino Unido',
-    access:'public', link:'https://www.offshore-europe.co.uk/',
-    past:false,
-    parallel:[]
-  },
-  {
-    id:'gastech2027',
-    name:'Gastech 2027',
-    dates:'14 – 17', month:'Setembro', monthShort:'SET', year:2027,
-    location:'Houston, TX — EUA',
-    access:'public', link:'https://www.gastechevent.com/',
-    past:false,
-    parallel:[]
-  },
-  {
-    id:'otcbrasil2027',
-    name:'OTC Brasil 2027',
-    dates:'26 – 28', month:'Outubro', monthShort:'OUT', year:2027,
-    location:'Rio de Janeiro, RJ — Brasil',
-    access:'public', link:'https://otcbrasil.org/',
-    past:false,
-    parallel:[]
-  },
-  {
-    id:'boge2027',
-    name:'Bahia Oil & Gas Energy (BOGE27)',
-    dates:'Data a confirmar', month:'A confirmar', monthShort:'—', year:2027,
-    location:'Salvador Convention Center, Salvador, BA — Brasil',
-    access:'public', link:'https://www.bahiaoilgasenergy.com.br/',
-    past:false,
-    parallel:[]
-  },
-  {
-    id:'adipec2027',
-    name:'ADIPEC 2027',
-    dates:'Data a confirmar', month:'A confirmar', monthShort:'—', year:2027,
-    location:'ADNEC, Abu Dhabi — Emirados Árabes Unidos',
-    access:'public', link:'https://www.adipec.com/',
-    past:false,
-    parallel:[]
-  },
-  {
-    id:'gasnatural2027',
-    name:'Seminário de Gás Natural (IBP) — 22ª Edição',
-    dates:'12 – 13', month:'Maio', monthShort:'MAI', year:2027,
-    location:'Rio de Janeiro, RJ — Brasil',
-    access:'public', link:'https://seminariodegasnatural.ibp.org.br/',
-    past:false,
-    parallel:[]
-  },
-  {
-    id:'subseasymposium2026',
-    name:'SPE Brazil Subsea Symposium & Exhibition',
-    dates:'17 – 18', month:'Novembro', monthShort:'NOV', year:2026,
-    location:'Windsor Barra Hotel, Rio de Janeiro, RJ — Brasil',
-    access:'public', link:'https://subsea-symposium.spebrasil.org/',
-    past:false,
-    parallel:[]
-  },
-  {
-    id:'workboat2026',
-    name:'International WorkBoat Show',
-    dates:'2 – 4', month:'Dezembro', monthShort:'DEZ', year:2026,
-    location:'Morial Convention Center, Nova Orleans, LA — EUA',
-    access:'public', link:'https://www.workboatshow.com/',
-    past:false,
-    parallel:[]
-  },
-  {
-    id:'corridaengenheiro2026',
-    name:'Corrida do Engenheiro',
-    dates:'13', month:'Dezembro', monthShort:'DEZ', year:2026,
-    location:'Clube Cidade do Sol, Macaé, RJ — Brasil',
-    access:'public', link:'https://corridadoengenheiro.com.br/',
-    past:false,
-    parallel:[]
-  },
-  {
-    id:'ceraweek2027',
-    name:'CERAWeek 2027',
-    dates:'8 – 12', month:'Março', monthShort:'MAR', year:2027,
-    location:'Houston, TX — EUA',
-    access:'public', link:'https://www.ceraweek.com/',
-    past:false,
-    parallel:[]
-  },
-  {
-    id:'amazonasog2027',
-    name:'Amazonas Óleo, Gás & Energia 2027',
-    dates:'9 – 11', month:'Março', monthShort:'MAR', year:2027,
-    location:'Manaus, AM — Brasil',
-    access:'public', link:'https://amazonasoleogasenergia.com.br/',
-    past:false,
-    parallel:[]
-  },
-  {
-    id:'macae2027mar',
-    name:'Macaé Energy 2027',
-    dates:'Mar · Data a confirmar', month:'Março', monthShort:'MAR', year:2027,
-    location:'Macaé, RJ — Brasil',
-    access:'public', link:'https://macaeenergy.com.br/',
-    past:false,
-    parallel:[]
-  },
-  {
-    id:'brasilogsummit2027',
-    name:'Brasil Oil & Gas Summit (4ª edição)',
-    dates:'13 – 14', month:'Abril', monthShort:'ABR', year:2027,
-    location:'Windsor Florida Hotel, Rio de Janeiro, RJ — Brasil',
-    access:'public', link:'',
-    past:false,
-    parallel:[]
-  },
-  {
-    id:'mwa2027',
-    name:'Maritime Week Americas 2027',
-    dates:'17 – 20', month:'Maio', monthShort:'MAI', year:2027,
-    location:'Cidade do Panamá — Panamá',
-    access:'public', link:'https://ship.energy/conference/maritime-week-americas-2027/',
-    past:false,
-    parallel:[]
-  },
-  {
-    id:'seogs2027',
-    name:'SEOGS — Suriname Energy, Oil & Gas Summit & Exhibition',
-    dates:'22 – 25', month:'Junho', monthShort:'JUN', year:2027,
-    location:'Paramaribo — Suriname',
-    access:'public', link:'https://suriname-energy.com/',
-    past:false,
-    parallel:[]
-  },
-  {
-    id:'opecseminar2027',
-    name:'10º Seminário Internacional da OPEP',
-    dates:'7 – 8', month:'Julho', monthShort:'JUL', year:2027,
-    location:'Imperial Hofburg Palace, Viena — Áustria',
-    access:'public', link:'https://www.opec.org/',
-    past:false,
-    parallel:[]
-  },
-  {
-    id:'mecshow2027',
-    name:'Mec Show + ES Oil & Gas Energy 2027',
-    dates:'Ago · Data a confirmar', month:'Agosto', monthShort:'AGO', year:2027,
-    location:'Carapina, Serra, ES — Brasil',
-    access:'public', link:'https://www.mecshow.com.br/',
-    past:false,
-    parallel:[]
-  },
-  {
-    id:'aog2027',
-    name:'XV Argentina Oil & Gas Expo (AOG)',
-    dates:'20 – 23', month:'Setembro', monthShort:'SET', year:2027,
-    location:'Buenos Aires — Argentina',
-    access:'public', link:'https://aog.com.ar/',
-    past:false,
-    parallel:[]
-  },
-  {
-    id:'riopipeline2027',
-    name:'Rio Pipeline 2027 (IBP)',
-    dates:'14 – 16', month:'Setembro', monthShort:'SET', year:2027,
-    location:'Rio de Janeiro, RJ — Brasil',
-    access:'public', link:'https://www.riopipeline.com.br/',
-    past:false,
-    parallel:[]
-  }
-];
+// A agenda fica em /assets/eventos.js (carregado antes deste script)
+const CONFERENCES = window.CONFERENCES;
 
 // Assign stable IDs and goer arrays to pre-existing parallel events
 CONFERENCES.forEach(conf => {
@@ -1786,217 +1245,6 @@ function updateStats() {
   document.getElementById('stat-night').textContent = totalNight;
 }
 
-// ─── DIAGNOSTIC MODAL ────────────────────────────────────────────────────────
-
-function openDiagModal() {
-  // Populate events checklist on step 3 (do it once)
-  const grid = document.getElementById('diag-events-check');
-  if (grid && grid.children.length === 0) {
-    CONFERENCES.forEach(c => {
-      const lbl = document.createElement('label');
-      lbl.className = 'radio-pill';
-      lbl.style.cssText = 'justify-content:flex-start;';
-      lbl.innerHTML = `<input type="checkbox" name="d-events" value="${c.name}">
-        <span style="font-size:12px;">${c.name.split('—')[0].trim()} <span style="color:var(--muted);font-size:11px;">${c.month}</span></span>`;
-      lbl.onclick = function() { this.classList.toggle('sel'); };
-      grid.appendChild(lbl);
-    });
-  }
-  document.getElementById('diag-overlay').classList.add('open');
-  document.body.style.overflow = 'hidden';
-  diagGoStep(1);
-  track('diagnostic_start');
-}
-
-function closeDiagModal() {
-  document.getElementById('diag-overlay').classList.remove('open');
-  document.body.style.overflow = '';
-}
-
-function diagGoStep(n) {
-  [1,2,3,4].forEach(i => {
-    document.getElementById('ds'+i).classList.toggle('active', i===n);
-    const bar = document.getElementById('dp'+i);
-    if (bar) bar.style.background = i <= n ? 'var(--gold)' : 'var(--border2)';
-  });
-  document.getElementById('diag-step-label').textContent = `Etapa ${n} de 4`;
-}
-
-function diagNext(to) {
-  clearDiagError();
-  if (to === 2) {
-    if (!document.getElementById('d-name').value.trim()) { showDiagError('Informe seu nome completo.'); return; }
-    if (!document.getElementById('d-email').value.trim()) { showDiagError('Informe seu email profissional.'); return; }
-    if (!document.getElementById('d-company').value.trim()) { showDiagError('Informe o nome da empresa.'); return; }
-    if (!document.querySelector('input[name="d-segment"]:checked')) { showDiagError('Selecione o segmento da empresa para continuar.'); return; }
-  }
-  if (to === 3) {
-    if (!document.querySelector('input[name="d-goal"]:checked')) { showDiagError('Selecione seu objetivo principal nos eventos.'); return; }
-    if (!document.querySelector('input[name="d-size"]:checked')) { showDiagError('Selecione o porte da empresa.'); return; }
-  }
-  if (to === 4) {
-    if (!document.querySelector('input[name="d-budget"]:checked')) { showDiagError('Selecione uma faixa de orçamento para gerar o diagnóstico.'); return; }
-    buildDiagnostic();
-  }
-  diagGoStep(to);
-}
-
-function showDiagError(msg) {
-  let el = document.getElementById('diag-inline-error');
-  if (!el) {
-    el = document.createElement('div');
-    el.id = 'diag-inline-error';
-    el.style.cssText = 'margin:0 32px 16px;padding:12px 18px;border-radius:2px;font-size:13px;border:1px solid rgba(239,68,68,.35);background:rgba(239,68,68,.08);color:#FCA5A5;';
-    // Insert before the active step's footer
-    const activeFooter = document.querySelector('.diag-step.active .modal-footer');
-    if (activeFooter) activeFooter.parentNode.insertBefore(el, activeFooter);
-  }
-  el.textContent = '⚠ ' + msg;
-  el.style.display = 'block';
-}
-
-function clearDiagError() {
-  const el = document.getElementById('diag-inline-error');
-  if (el) el.style.display = 'none';
-}
-
-function diagBack(to) { diagGoStep(to); }
-
-// ─── MONTAR DIAGNÓSTICO ───────────────────────────────────────────────────────
-function buildDiagnostic() {
-  const name    = document.getElementById('d-name').value.trim();
-  const company = document.getElementById('d-company').value.trim();
-  const segment = document.querySelector('input[name="d-segment"]:checked')?.value || '';
-  const goal    = document.querySelector('input[name="d-goal"]:checked')?.value || '';
-  const size    = document.querySelector('input[name="d-size"]:checked')?.value || '';
-  const budget  = document.querySelector('input[name="d-budget"]:checked')?.value || '';
-  const comm    = document.querySelector('input[name="d-comm"]:checked')?.value || 'Não informado';
-
-  // Escolhe eventos recomendados com base no segmento
-  const recommendations = getEventRecs(segment, goal);
-  track('diagnostic_complete', { segment, goal, size, budget });
-
-  // Estima investimento baseado no orçamento declarado e perfil
-  const invest = getInvestmentBreakdown(budget, size, goal);
-
-  const body = document.getElementById('diag-result-body');
-  body.innerHTML = `
-    <div style="background:linear-gradient(135deg,rgba(201,147,58,.08),rgba(26,107,138,.06));border:1px solid rgba(201,147,58,.2);padding:24px;border-radius:2px;margin-bottom:24px;">
-      <div style="font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;">Diagnóstico para</div>
-      <div style="font-family:'Bebas Neue',sans-serif;font-size:32px;color:var(--white);line-height:1;">${company.toUpperCase()}</div>
-      <div style="font-size:12px;color:var(--muted);margin-top:4px;">${segment} · ${goal}</div>
-    </div>
-
-    <div style="margin-bottom:24px;">
-      <div style="font-family:'DM Sans',sans-serif;font-weight:700;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border);">Eventos recomendados</div>
-      ${recommendations.map((r,i) => `
-        <div style="display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--border);align-items:flex-start;">
-          <div style="font-family:'Bebas Neue',sans-serif;font-size:28px;color:var(--gold);min-width:32px;line-height:1;">0${i+1}</div>
-          <div style="flex:1;">
-            <div style="font-family:'DM Sans',sans-serif;font-weight:700;font-size:14px;color:var(--white);">${r.name}</div>
-            <div style="font-size:12px;color:var(--muted);margin-top:3px;line-height:1.5;">${r.reason}</div>
-          </div>
-          <div style="font-size:11px;font-family:'DM Sans',sans-serif;font-weight:700;color:var(--gold);background:rgba(201,147,58,.1);border:1px solid rgba(201,147,58,.2);padding:4px 12px;border-radius:2px;white-space:nowrap;">${r.score}% fit</div>
-        </div>`).join('')}
-    </div>
-
-    <div style="margin-bottom:24px;">
-      <div style="font-family:'DM Sans',sans-serif;font-weight:700;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border);">Estimativa de investimento por evento</div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px;">
-        ${invest.map(item => `
-          <div style="background:var(--deep);border:1px solid var(--border);padding:18px;border-radius:2px;">
-            <div style="font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;">${item.label}</div>
-            <div style="font-family:'Bebas Neue',sans-serif;font-size:28px;color:var(--white);line-height:1;">${item.value}</div>
-            <div style="font-size:11px;color:var(--muted);margin-top:4px;">${item.desc}</div>
-          </div>`).join('')}
-      </div>
-    </div>
-
-    <div style="background:rgba(26,107,138,.08);border:1px solid rgba(33,150,181,.2);padding:20px 24px;border-radius:2px;">
-      <div style="font-family:'DM Sans',sans-serif;font-weight:700;font-size:13px;color:var(--white);margin-bottom:8px;">Como a MR Solutions atua junto com <span style="color:var(--gold);">${company}</span></div>
-      <div style="font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:16px;">Produzimos conteúdo antes, durante e depois de cada evento para amplificar sua presença e converter visibilidade em relacionamento comercial. Nossa audiência no setor offshore conecta sua marca com profissionais técnicos e gestores de operações — exatamente o público dos eventos que você precisa estar.</div>
-      <div style="font-size:12px;color:var(--blue-l);">→ Um consultor da MR Solutions entrará em contato com <strong style="color:var(--white);">${name}</strong> em até 48 horas para detalhar a proposta.</div>
-    </div>
-
-    <!-- PASSO 1: Botão de compartilhamento WhatsApp -->
-    <div style="margin-top:20px;padding:20px 24px;background:rgba(37,211,102,.06);border:1px solid rgba(37,211,102,.2);border-radius:2px;">
-      <div style="font-family:'DM Sans',sans-serif;font-weight:700;font-size:12px;color:#4ADE80;letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px;">📲 Compartilhe seu diagnóstico</div>
-      <div style="font-size:13px;color:var(--muted);margin-bottom:16px;line-height:1.6;">
-        Conhece algum colega que também deveria mapear os eventos certos para a empresa dele? Compartilha o MR Solutions Event Map no WhatsApp.
-      </div>
-      <button onclick="shareWhatsApp('${company}','${segment}','${goal}',${JSON.stringify(recommendations.map(r=>r.name))})"
-        style="display:inline-flex;align-items:center;gap:10px;background:#25D366;color:#000;border:none;padding:12px 24px;border-radius:2px;cursor:pointer;font-family:'DM Sans',sans-serif;font-weight:700;font-size:11px;letter-spacing:.15em;text-transform:uppercase;transition:.2s;"
-        onmouseover="this.style.background='#1ebe5a'" onmouseout="this.style.background='#25D366'">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.555 4.122 1.528 5.856L.057 23.882l6.186-1.622A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.884 0-3.656-.49-5.197-1.346l-.373-.22-3.873 1.015 1.034-3.773-.242-.389A9.956 9.956 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
-        Compartilhar no WhatsApp
-      </button>
-    </div>`;
-}
-
-function getEventRecs(segment, goal) {
-  const all = [
-    { name:'OTC Houston (Mai 4–7)', reason:'Maior evento offshore do mundo. Alta densidade de operadoras, decisores e contratos internacionais.', score:97 },
-    { name:'Brasil FPSO Epicentro Global (Mai)', reason:'Principal hub de decisão para contratos FPSO no Brasil. Concentração de operadoras nacionais e internacionais.', score:94 },
-    { name:'ONS Stavanger (Ago)', reason:'Referência técnica mundial em offshore. Posicionamento como empresa com padrão internacional.', score:89 },
-    { name:'ADIPEC Abu Dhabi (Nov)', reason:'Maior evento de energia do Oriente Médio. Expansão internacional e benchmarking com as melhores práticas globais.', score:85 },
-    { name:'Sergipe Oengás & Energy (Jul)', reason:'Relevante para empresas com foco no mercado nordestino e na bacia de Sergipe-Alagoas.', score:80 },
-  ];
-  if (segment === 'Treinamento / Capacitação') {
-    all[1].reason = 'Alta concentração de profissionais buscando qualificação e certificação offshore.';
-    all[1].score = 96;
-  }
-  if (goal === 'Networking com executivos') {
-    all[0].reason += ' Os eventos noturnos paralelos são onde os contratos realmente acontecem.';
-  }
-  return all.slice(0, 4);
-}
-
-function getInvestmentBreakdown(budget, size, goal) {
-  // Valores base ajustados por porte e objetivo
-  const isSmall = size.includes('MEI') || size.includes('Pequena');
-  const isIntl = goal.includes('Lançamento') || goal.includes('parcerias');
-
-  const inscricao = isSmall ? '$800 – $2.500' : '$2.500 – $8.000';
-  const logistica = isSmall ? '$3.000 – $6.000' : '$8.000 – $20.000';
-  const marketing = isIntl  ? '$10.000 – $30.000' : '$5.000 – $15.000';
-  const presenca  = '$3.500 – $12.000';
-
-  return [
-    { label:'Inscrição / Acesso', value: inscricao, desc:'Por evento, por pessoa' },
-    { label:'Logística & Hospedagem', value: logistica, desc:'Passagem + hotel + deslocamento' },
-    { label:'Marketing & Conteúdo', value: marketing, desc:'Produção antes, durante e pós-evento' },
-    { label:'Presença de Marca (MR Solutions)', value: presenca, desc:'Amplificação com criador de conteúdo especializado' },
-  ];
-}
-
-// ─── PASSO 1: COMPARTILHAMENTO WHATSAPP ─────────────────────────────────────
-function shareWhatsApp(company, segment, goal, eventNames) {
-  const topEvents = eventNames.slice(0, 3).map((n, i) => `  ${i+1}. ${n}`).join('\n');
-  const msg = [
-    `🛢️ *MR Solutions — Event Map 2026*`,
-    ``,
-    `Acabei de gerar o diagnóstico estratégico de eventos para *${company}*:`,
-    ``,
-    `📌 Segmento: ${segment}`,
-    `🎯 Objetivo: ${goal}`,
-    ``,
-    `✅ *Top eventos recomendados:*`,
-    topEvents,
-    ``,
-    `Acesse e gere o diagnóstico da sua empresa também 👇`,
-    `👉 ${window.location.href}`,
-  ].join('\n');
-
-  const encoded = encodeURIComponent(msg);
-  // Tenta abrir o app WhatsApp nativo primeiro; se falhar, abre o WhatsApp Web
-  const waApp  = `whatsapp://send?text=${encoded}`;
-  const waWeb  = `https://web.whatsapp.com/send?text=${encoded}`;
-  const waMobile = `https://api.whatsapp.com/send?text=${encoded}`;
-
-  track('whatsapp_share', { company, segment, goal });
-  window.open('https://wa.me/?text=' + encodeURIComponent(msg), '_blank');
-}
-
 // ─── PASSO 2: TAG "NOVO" NOS EVENTOS PARALELOS ───────────────────────────────
 // Cada evento recebe um timestamp ao ser adicionado.
 // Cards adicionados nos últimos 7 dias ganham uma tag "NOVO" destacada.
@@ -2101,9 +1349,6 @@ function showAddEventError(msg) {
   setTimeout(() => { el.style.display = 'none'; }, 5000);
 }
 
-document.getElementById('diag-overlay').addEventListener('click', function(e) {
-  if (e.target === this) closeDiagModal();
-});
 
 // ─── API PERSISTENCE ─────────────────────────────────────────────────────────
 const API = 'api/events.php';
