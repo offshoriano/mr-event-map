@@ -393,6 +393,13 @@ def main():
                                      fontes=status, videos=VIDEOS['videos'],
                                      catalogo=escolha_videos.catalogo({x[0] for v in unicas for x in v.get('videos', [])}), vagas=unicas), ensure_ascii=False, indent=1) + '\n')
     print(f'{len(unicas)} vagas gravadas', file=sys.stderr)
+    # Páginas fixas por busca (Macaé, Rio, sem experiência, embarcado), para o Google
+    try:
+        import paginas
+        manuais = json.loads((RAIZ / 'vagas' / 'manuais.json').read_text()) if (RAIZ / 'vagas' / 'manuais.json').exists() else []
+        paginas.gerar(unicas, [m for m in manuais if not m.get('inscricoesAte') or m['inscricoesAte'] >= hoje])
+    except Exception as erro:
+        print(f'páginas por busca não geradas: {erro}', file=sys.stderr)
     if not any(s['ok'] for s in status):
         sys.exit(1)
 

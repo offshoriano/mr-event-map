@@ -3,8 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vagas de óleo e gás, offshore e onshore · MR Group</title>
-<meta name="description" content="Vagas embarcadas e em terra de PRIO, SBM, MODEC, Subsea7, Baker Hughes, Halliburton e outras, direto do site de cada empresa. Com vídeo para você se preparar antes de se candidatar.">
+<title>Vagas offshore e embarcado 2026, atualizadas todo dia · MR Group</title>
+<link rel="canonical" href="https://mrgroup.com.br/vagas/">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#0D1117">
+<meta name="description" content="Vagas offshore, embarcado e onshore de PRIO, SBM, MODEC, Subsea7, Halliburton e mais 50 empresas, em Macaé, Rio de Janeiro e todo o Brasil. Tem vaga sem experiência e vídeo para se preparar.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="MR Group">
 <meta property="og:url" content="https://mrgroup.com.br/vagas/">
@@ -15,6 +19,8 @@
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="pt_BR">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300..800;1,9..40,300&display=swap" rel="stylesheet">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-BBGCSZ37C4"></script>
 <script>
@@ -312,10 +318,10 @@ function jsonLd(lista){
   s.type = 'application/ld+json';
   s.textContent = JSON.stringify(lista.map(v => ({
     '@context':'https://schema.org/', '@type':'JobPosting',
-    title:v.titulo, description:`<p>${v.resumo}</p><ul>${(v.atividades||[]).map(a=>`<li>${a}</li>`).join('')}</ul><p>Requisitos:</p><ul>${(v.requisitos||[]).map(a=>`<li>${a}</li>`).join('')}</ul>`,
+    title:v.titulo, description: v.descricao ? `<p>${v.descricao.replace(/\n+/g, '</p><p>')}</p>` : `<p>${v.resumo}</p><ul>${(v.atividades||[]).map(a=>`<li>${a}</li>`).join('')}</ul><p>Requisitos:</p><ul>${(v.requisitos||[]).map(a=>`<li>${a}</li>`).join('')}</ul>`,
     datePosted:v.publicada, validThrough:v.inscricoesAte ? v.inscricoesAte + 'T23:59' : undefined,
     employmentType:'FULL_TIME', hiringOrganization:{'@type':'Organization', name:v.empresa},
-    jobLocation:{'@type':'Place', address:{'@type':'PostalAddress', addressLocality:v.local.split(',')[0], addressRegion:(v.local.split(',')[1]||'').trim(), addressCountry:'BR'}},
+    jobLocation:{'@type':'Place', address: v.local === 'Brasil' ? {'@type':'PostalAddress', addressCountry:'BR'} : {'@type':'PostalAddress', addressLocality:v.local.split(',')[0], addressRegion:(v.local.split(',')[1]||'').trim(), addressCountry:'BR'}},
     directApply:false, url:location.origin + location.pathname + '#' + v.id
   })));
   document.head.appendChild(s);
@@ -471,6 +477,7 @@ Promise.all([
     <div style="display:flex;gap:22px;flex-wrap:wrap"><label class="tg"><input type="checkbox" id="sn"> Só as novas (${AUTO.filter(ehNova).length} nos últimos 3 dias)</label>
     <label class="tg"><input type="checkbox" id="bt"> Esconder banco de talentos</label></div>
     <div id="lista2"></div>
+    <p class="fontes">Buscas populares: <a href="embarcado/">vagas embarcado</a> · <a href="sem-experiencia/">vagas offshore sem experiência</a> · <a href="macae/">vagas offshore em Macaé</a> · <a href="rio-de-janeiro/">vagas offshore no Rio de Janeiro</a></p>
     <p class="fontes">Empresas acompanhadas: ${[...new Set(AUTO.map(v => v.empresa))].sort().map(esc).join(', ')}.</p>` : ''}
     <div class="empresas">
       <div><h3>Sua empresa está contratando?</h3><p>Divulgue a vaga para quem acompanha o Carreira Offshore, com conteúdo de preparação junto. O candidato chega mais pronto na entrevista.</p></div>
@@ -487,7 +494,7 @@ Promise.all([
     $('#q2').oninput = re; ['#emp','#ar2','#bt','#sn'].forEach(id => $(id).onchange = re);
     renderAuto();
   }
-  jsonLd(VAGAS);
+  jsonLd(VAGAS.concat(manuais));
   if (location.hash){
     const id = decodeURIComponent(location.hash.slice(1));
     if (AUTO.some(v => v.id === id)){ $('#bt').checked = false; mostrar = AUTO.length; renderAuto(); }
