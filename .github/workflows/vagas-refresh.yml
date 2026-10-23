@@ -31,11 +31,14 @@ jobs:
       - name: Buscar vagas nos sites de carreira
         run: python3 scripts/vagas/fetch_jobs.py
 
+      - name: Atualizar artigos (as caixas de vagas dentro deles)
+        run: python3 scripts/artigos/build.py
+
       - name: Publicar só se alguma vaga mudou
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add vagas/automaticas.json vagas/macae vagas/rio-de-janeiro vagas/sem-experiencia vagas/embarcado scripts/vagas/empresas.json
+          git add vagas/automaticas.json vagas/macae vagas/rio-de-janeiro vagas/sem-experiencia vagas/embarcado scripts/vagas/empresas.json artigos sitemap.xml
           if git diff --cached --quiet; then
             echo "Nenhuma vaga nova ou encerrada hoje"
           else
