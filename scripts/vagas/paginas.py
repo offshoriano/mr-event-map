@@ -22,7 +22,7 @@ RECORTES = [
     dict(slug='sem-experiencia', titulo='Vagas offshore sem experiência', h1='Vagas offshore para quem ainda não tem experiência',
          filtro=lambda v: re.search(r'trainee|est[aá]gi|aprendiz|apprentice|\bintern\b|jovem|cadet|ajudante|homem de [aá]rea|sem experi|auxiliar de (plataforma|opera)', v['titulo'], re.I),
          intro='Trainee, estágio, jovem aprendiz, ajudante e homem de área: as portas de entrada do setor. '
-               'Para a primeira vaga embarcada, o caminho costuma ser curso básico (CBSP e HUET), currículo alinhado e uma dessas funções.'),
+               'Para a primeira vaga embarcada, o caminho costuma ser curso básico (CBSP e T-HUET), currículo alinhado e uma dessas funções.'),
     dict(slug='embarcado', titulo='Vagas embarcado (offshore)', h1='Vagas para trabalhar embarcado',
          filtro=lambda v: v.get('regime') == 'Offshore',
          intro='Vagas a bordo de plataformas, FPSOs, sondas e embarcações de apoio, em escala de embarque. '
