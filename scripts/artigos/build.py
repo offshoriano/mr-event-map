@@ -10,9 +10,11 @@ O corpo usa uma marcação simples:
     Cabeçalho opcional foto: /caminho/no/site.jpg ou link, para a imagem de compartilhamento (sem ela usa a capa do 1º vídeo)
     {{video:ID_DO_YOUTUBE|Título do vídeo}}  vídeo do canal que abre no clique
     {{vagas:regex::Texto}}                   lista as vagas abertas cujo título bate com a regex
+    {{vagas:regex!!excluir::Texto}}          o mesmo, tirando os títulos que batem com a segunda regex
     [[pergunta para o Matheus]]              lacuna do rascunho, aparece destacada e nunca vai ao ar
 
 Rascunho vai para /artigos/rascunho-<slug>/ com noindex e fica fora da lista e do sitemap.
+Artigo pronto com data futura fica agendado: prévia no mesmo endereço até o dia, e publica sozinho na data.
 Também regenera o sitemap.xml do site. Uso: python3 scripts/artigos/build.py"""
 import html, json, re
 from datetime import date
@@ -44,7 +46,10 @@ def ler(arq):
         if ':' in linha:
             k, v = linha.split(':', 1)
             meta[k.strip()] = v.strip()
-    meta['rascunho'] = meta.get('rascunho', 'não').lower() in ('sim', 'true', '1')
+    meta['revisao'] = meta.get('rascunho', 'não').lower() in ('sim', 'true', '1')
+    # Pronto, mas com data futura: fica como prévia e vai ao ar sozinho no dia (o robô diário roda este script)
+    meta['agendado'] = not meta['revisao'] and meta.get('data', '') > date.today().isoformat()
+    meta['rascunho'] = meta['revisao'] or meta['agendado']
     meta['corpo'] = m.group(2).strip()
     return meta
 
@@ -72,10 +77,14 @@ def bloco_video(vid, titulo):
             f'<span class="vt">{e(titulo)}</span><span class="vs">Vídeo do canal Carreira Offshore</span></button>')
 
 def bloco_vagas(rx, texto):
+    # "incluir!!excluir": a segunda regex tira do bloco os títulos que não servem (ex.: supervisor, sênior)
+    rx, _, ex = rx.partition('!!')
     try:
-        lista = [v for v in vagas_abertas() if re.search(rx, v['titulo'], re.I)][:8]
+        lista = [v for v in vagas_abertas() if re.search(rx, v['titulo'], re.I) and not (ex and re.search(ex, v['titulo'], re.I))]
     except re.error:
         lista = []
+    # Embarcadas primeiro, que é o que o leitor dos artigos procura
+    lista = sorted(lista, key=lambda v: v.get('regime') != 'Offshore')[:8]
     if not lista:
         return f'<p class="vagas-vazio">Nenhuma vaga aberta agora para esse perfil. <a href="/vagas/">Veja todas as vagas</a>.</p>'
     itens = ''.join(f'<li><a href="/vagas/#{e(v["id"])}"><b>{e(v["titulo"])}</b><span>{e(v["empresa"])} · {e(v["local"])}</span></a></li>' for v in lista)
@@ -161,7 +170,7 @@ document.addEventListener('click', ev => {
 </html>
 """
 
-def pagina_artigo(a):
+def pagina_artigo(a, publicados=()):
     corpo, indice = converter(a['corpo'])
     pasta = ('rascunho-' if a['rascunho'] else '') + a['slug']
     url = f"{SITE}/artigos/{pasta}/"
@@ -173,9 +182,16 @@ def pagina_artigo(a):
                      'jobTitle': 'Fundador da MR Group, 14 anos de experiência offshore', 'sameAs': ['https://www.youtube.com/@carreiraoffshore']},
           'publisher': {'@type': 'Organization', 'name': 'MR Group', 'logo': {'@type': 'ImageObject', 'url': f'{SITE}/assets/icon-512.png'}}}
     extra = f'<script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>'
-    aviso = ('<div class="rascunho">Rascunho para revisão do Matheus. Não aparece no Google nem na lista de artigos. '
+    aviso = (f'<div class="rascunho">Agendado para {data_br(a["data"])}. Esta é a prévia: o artigo vai ao ar sozinho nesse dia.</div>' if a['agendado'] else
+             '<div class="rascunho">Rascunho para revisão do Matheus. Não aparece no Google nem na lista de artigos. '
              'Os trechos destacados em amarelo são perguntas para você responder.</div>') if a['rascunho'] else ''
     sumario = ('<div class="sumario" role="navigation" aria-label="Neste artigo"><b>Neste artigo</b>' + ''.join(f'<a href="#{ancora}">{e(t)}</a>' for ancora, t in indice) + '</div>') if len(indice) > 2 else ''
+    minutos = max(2, round(len(re.sub(r'\{\{.*?\}\}', '', a['corpo']).split()) / 200))
+    # Continue lendo: até 3 artigos publicados, primeiro os do mesmo tema
+    outros = sorted([x for x in publicados if x['slug'] != a['slug']], key=lambda x: x.get('tema') != a.get('tema'))[:3]
+    continuar = ('<section class="continuar"><h2>Continue lendo</h2><div class="cards">' + ''.join(
+        f'<a class="card" href="/artigos/{e(x["slug"])}/">' + (f'<img src="{e(x["capa"])}" alt="" width="1200" height="630" loading="lazy">' if x.get('capa') else '')
+        + f'<span class="tema">{e(x.get("tema", "Carreira offshore"))}</span><b>{e(x["titulo"])}</b></a>' for x in outros) + '</div></section>') if outros else ''
     atualizado = f" · atualizado em {data_br(a['atualizado'])}" if a.get('atualizado') and a['atualizado'] != a['data'] else ''
     return cabeca(f"{a['titulo']} · MR Group", a['descricao'], url, imagem, extra, noindex=a['rascunho']) + f"""
 <main class="artigo">
@@ -183,11 +199,13 @@ def pagina_artigo(a):
 <a class="voltar" href="/artigos/">Artigos</a>
 <h1>{e(a['titulo'])}</h1>
 <p class="lead">{e(a['descricao'])}</p>
-<div class="autor"><img src="/guia/img/matheus-embarcado.jpg" alt="Matheus Rangel" width="48" height="48"><div><b>Matheus Rangel</b><span>14 anos offshore · {data_br(a['data'])}{atualizado}</span></div></div>
+<div class="autor"><img src="/guia/img/matheus-embarcado.jpg" alt="Matheus Rangel" width="48" height="48"><div><b>Matheus Rangel</b><span>14 anos offshore · {data_br(a['data'])}{atualizado} · {minutos} min de leitura</span></div></div>
 {sumario}
 <article>{corpo}</article>
 <aside class="cta"><b>Quer o caminho completo, na ordem certa?</b><p>O Guia 7 Passos junta cursos, currículo, LinkedIn, inglês e entrevista num plano só, do zero ao primeiro embarque.</p>
 <a class="btn" href="/guia/?origem=artigo-{e(a['slug'])}">Conhecer o guia</a> <a class="btn ghost" href="/vagas/">Ver vagas abertas</a></aside>
+{continuar}
+<div class="atalhos-fim" role="navigation" aria-label="Mais no site"><a href="/vagas/sem-experiencia/">Vagas sem experiência</a><a href="/vagas/embarcado/">Vagas embarcado</a><a href="/vagas/macae/">Vagas em Macaé</a><a href="/radar/">Radar Offshore</a><a href="/#calendar-main">Agenda de eventos</a></div>
 </main>
 """ + RODAPE
 
@@ -217,7 +235,7 @@ def sitemap(publicados):
 def main():
     artigos = [ler(p) for p in sorted(FONTE.glob('*.md'))]
     for a in artigos:
-        if not a['rascunho'] and '[[' in a['corpo']:
+        if not a['revisao'] and '[[' in a['corpo']:
             raise SystemExit(f"{a['slug']}: ainda tem pergunta para o Matheus ([[...]]); continua como rascunho até ser respondida")
     publicados = sorted([a for a in artigos if not a['rascunho']], key=lambda a: a.get('atualizado') or a['data'], reverse=True)
     for a in artigos:
@@ -225,7 +243,7 @@ def main():
     for a in artigos:
         destino = RAIZ / 'artigos' / (('rascunho-' if a['rascunho'] else '') + a['slug']) / 'index.html'
         destino.parent.mkdir(parents=True, exist_ok=True)
-        destino.write_text(pagina_artigo(a))
+        destino.write_text(pagina_artigo(a, publicados))
         # Artigo que saiu de rascunho: apaga a cópia de revisão
         if not a['rascunho']:
             velho = RAIZ / 'artigos' / f"rascunho-{a['slug']}" / 'index.html'
@@ -233,7 +251,8 @@ def main():
                 velho.unlink(); velho.parent.rmdir()
     (RAIZ / 'artigos' / 'index.html').write_text(pagina_lista(publicados))
     sitemap(publicados)
-    print(f"{len(publicados)} publicados, {len(artigos) - len(publicados)} rascunhos")
+    agendados = sorted(a['data'] for a in artigos if a['agendado'])
+    print(f"{len(publicados)} publicados, {len(agendados)} agendados {agendados}, {len(artigos) - len(publicados) - len(agendados)} rascunhos")
 
 if __name__ == '__main__':
     main()
