@@ -85,7 +85,7 @@ function login(msg){
   $('#f').onsubmit = e => { e.preventDefault(); senha = $('#pw').value; carregar(); };
 }
 
-let VG = [], AVISO = '', aba = ({'#vagas':'vagas', '#ranking':'ranking', '#empresas':'empresas'})[location.hash] || 'contatos', avisou = false;
+let VG = [], AVISO = '', aba = ({'#vagas':'vagas', '#ranking':'ranking', '#empresas':'empresas', '#diagnosticos':'diagnosticos'})[location.hash] || 'contatos', avisou = false;
 const AREAS = {seguranca:'Segurança', eletrica:'Elétrica e instrumentação', mecanica:'Mecânica e manutenção', pocos:'Perfuração e poços',
   maritimo:'Marítimo', hotelaria:'Hotelaria', operacao:'Operação e produção', engenharia:'Engenharia', trainee:'Trainee e estágio', geral:'Outras'};
 const VAPI = '../api/vagas-enviadas.php';
@@ -124,10 +124,11 @@ function painel(){
       <button class="tab ${aba === 'vagas' ? 'on' : ''}" data-aba="vagas">Vagas enviadas${n ? `<span class="badge">${n}</span>` : ''}</button>
       <button class="tab ${aba === 'ranking' ? 'on' : ''}" data-aba="ranking">Ranking de cliques</button>
       <button class="tab ${aba === 'empresas' ? 'on' : ''}" data-aba="empresas">Empresas</button>
+      <button class="tab ${aba === 'diagnosticos' ? 'on' : ''}" data-aba="diagnosticos">Diagnósticos</button>
     </div>
     <div id="conteudo"></div></div>`;
   document.querySelectorAll('.tab').forEach(t => t.onclick = () => { aba = t.dataset.aba; history.replaceState(null, '', aba === 'contatos' ? '#' : '#' + aba); painel(); });
-  aba === 'vagas' ? painelVagas() : aba === 'ranking' ? painelRanking() : aba === 'empresas' ? painelEmpresas() : painelContatos();
+  aba === 'diagnosticos' ? painelDiagnosticos() : aba === 'vagas' ? painelVagas() : aba === 'ranking' ? painelRanking() : aba === 'empresas' ? painelEmpresas() : painelContatos();
 }
 
 function painelVagas(){
@@ -258,6 +259,35 @@ function painelEmpresas(){
       };
       $('#qe').oninput = draw; $('#oe').onchange = draw; $('#se').onchange = draw; draw();
     }).catch(() => { $('#conteudo').innerHTML = '<p class="note">Não foi possível carregar o cadastro.</p>'; });
+}
+
+// Empresas que fizeram o diagnóstico de eventos em /diagnostico/
+function painelDiagnosticos(){
+  $('#conteudo').innerHTML = '<p class="note">Carregando...</p>';
+  const dpost = body => fetch('../api/diagnosticos.php', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(body)}).then(r => r.json());
+  const NOMES = {perf:'Perfuração', fpso:'FPSO', subsea:'Subsea', gas:'LNG e gás', maritimo:'Marítimo', manut:'Manutenção', transicao:'Transição', decom:'Descomissionamento',
+    op:'Operadoras', epc:'EPCistas', sonda:'Perfuração', serv:'Prestadoras', plsv:'PLSV e apoio', estaleiro:'Estaleiros', br:'Brasil', gs:'Guiana/Suriname', am:'Américas', eu:'Europa', me:'Oriente Médio',
+    reuniao:'Reunião com comprador', marca:'Marca', parceiro:'Parceiro internacional', lancar:'Lançar produto', conhecer:'Conhecer o mercado',
+    visita:'Visitando', estande:'Estande', palestra:'Palestra', patrocinio:'Patrocínio'};
+  const nm = x => NOMES[x] || x;
+  dpost({action:'list', senha}).then(r => {
+    const D = r.diagnosticos || [];
+    $('#conteudo').innerHTML = `<p class="sub" style="margin-top:16px">Empresas que fizeram o diagnóstico de eventos. Cada uma é um lead para plano de presença.</p>
+      <div class="kpis"><div class="kpi"><b>${D.length}</b><span>Diagnósticos</span></div>
+      <div class="kpi"><b>${D.filter(d => Date.now() - new Date(d.data) < 7 * 864e5).length}</b><span>Últimos 7 dias</span></div></div>
+      <div class="tbl">${D.length ? `<table><thead><tr><th>Data</th><th>Contato</th><th>Empresa</th><th>Perfil</th><th>Top eventos</th><th></th></tr></thead><tbody>${D.map(d => { const a = d.respostas || {}; return `<tr>
+        <td class="m">${new Date(d.data).toLocaleString('pt-BR', {dateStyle:'short', timeStyle:'short'})}</td>
+        <td>${esc(d.nome)}<br><a href="mailto:${esc(d.email)}" style="color:var(--gold-l)">${esc(d.email)}</a>${d.whats ? `<br><a href="https://wa.me/55${esc(String(d.whats).replace(/\D/g, '').replace(/^55/, ''))}" target="_blank" style="color:var(--gold-l)">${esc(d.whats)}</a>` : ''}</td>
+        <td>${esc(d.empresa)}${d.cargo ? `<br><span class="m">${esc(d.cargo)}</span>` : ''}</td>
+        <td class="m">${esc((a.mercados || []).map(nm).join(', '))}<br>Vende para: ${esc((a.compradores || [a.comprador]).filter(Boolean).map(x => x === 'fpso' ? 'Donas de FPSO' : nm(x)).join(', '))}<br>Regiões: ${esc((a.regioes || []).map(nm).join(', '))}<br>${esc((a.objetivos || [a.objetivo]).filter(Boolean).map(nm).join(', '))} · ${esc(nm(a.participacao))} · ${esc(a.eventos_ano)} eventos · até R$ ${esc(a.orcamento_mil)} mil</td>
+        <td class="m">${(d.top || []).map(esc).join('<br>')}</td>
+        <td><button class="del" data-id="${esc(d.id)}">remover</button></td></tr>`; }).join('')}</tbody></table>` : '<p style="padding:24px;color:var(--muted)">Nenhum diagnóstico ainda.</p>'}</div>`;
+    $('#conteudo').onclick = e => {
+      const b = e.target.closest('.del'); if (!b) return;
+      if (!confirm('Remover este diagnóstico de vez?')) return;
+      dpost({action:'delete', senha, id:b.dataset.id}).then(() => painelDiagnosticos());
+    };
+  }).catch(() => { $('#conteudo').innerHTML = '<p class="note">Não foi possível carregar os diagnósticos.</p>'; });
 }
 
 function painelContatos(){
