@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-10-24T14:04:25+00:00",
+ "atualizado": "2026-10-24T15:02:02+00:00",
  "fontes": [
   {
    "empresa": "PRIO",
@@ -64,6 +64,11 @@
   {
    "empresa": "Macnor Marine",
    "vagas": 7,
+   "ok": true
+  },
+  {
+   "empresa": "Ferroport",
+   "vagas": 11,
    "ok": true
   },
   {
@@ -188,8 +193,8 @@
   },
   {
    "empresa": "BW Energy",
-   "vagas": 18,
-   "ok": true
+   "vagas": 0,
+   "ok": false
   },
   {
    "empresa": "Manserv",
@@ -7948,6 +7953,188 @@
     [
      "hxboMKFt9Ho",
      "Vídeo do canal sobre a Delp. Ajuda a chegar preparado na entrevista."
+    ]
+   ]
+  },
+  {
+   "id": "ferroport-coordenador-a-de-manuten-o-mec-nica-92702",
+   "titulo": "Coordenador (a) de Manutenção Mecânica",
+   "empresa": "Ferroport",
+   "local": "São João da Barra, RJ",
+   "link": "https://ferroport.inhire.com.br/vagas/4f937d6a-db03-45ef-9338-7688046e0850",
+   "regime": "Onshore",
+   "area": "Mecânica e manutenção",
+   "tema": "mecanica",
+   "banco": false,
+   "vistaEm": "2026-10-24",
+   "videos": [
+    [
+     "3yOdA-HnSeg",
+     "Fala de mecânico e manutenção, a função desta vaga."
+    ],
+    [
+     "AFQCQwo_5Kc",
+     "Fala de mecânico e manutenção, a função desta vaga."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ]
+   ]
+  },
+  {
+   "id": "ferroport-engenheiro-de-manuten-o-el-trica-sr-66119",
+   "titulo": "Engenheiro de Manutenção Elétrica Sr",
+   "empresa": "Ferroport",
+   "local": "São João da Barra, RJ",
+   "link": "https://ferroport.inhire.com.br/vagas/f47afcf3-4d43-4159-917e-d5d5dfb68cf9",
+   "regime": "Onshore",
+   "area": "Elétrica e instrumentação",
+   "tema": "eletrica",
+   "banco": false,
+   "vistaEm": "2026-10-24",
+   "videos": [
+    [
+     "-35oTYToV2A",
+     "Fala de eletricista, a função desta vaga."
+    ],
+    [
+     "TSUnVzxiBjU",
+     "Fala de eletricista, a função desta vaga."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ]
+   ]
+  },
+  {
+   "id": "ferroport-engenheiro-de-manuten-o-sr-18162",
+   "titulo": "Engenheiro de Manutenção Sr",
+   "empresa": "Ferroport",
+   "local": "São João da Barra, RJ",
+   "link": "https://ferroport.inhire.com.br/vagas/22c6f6e3-4c38-4bc7-a359-a9c9efb99fbc",
+   "regime": "Onshore",
+   "area": "Mecânica e manutenção",
+   "tema": "mecanica",
+   "banco": false,
+   "vistaEm": "2026-10-24",
+   "videos": [
+    [
+     "3yOdA-HnSeg",
+     "Fala de mecânico e manutenção, a função desta vaga."
+    ],
+    [
+     "AFQCQwo_5Kc",
+     "Fala de mecânico e manutenção, a função desta vaga."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ]
+   ]
+  },
+  {
+   "id": "ferroport-tecnico-automacao-controle-processo-iii-86567",
+   "titulo": "TECNICO AUTOMACAO CONTROLE PROCESSO III",
+   "empresa": "Ferroport",
+   "local": "São João da Barra, RJ",
+   "link": "https://ferroport.inhire.com.br/vagas/c2c34f00-1c1d-4d47-91fc-8837662575b2",
+   "regime": "Onshore",
+   "area": "Elétrica e instrumentação",
+   "tema": "eletrica",
+   "banco": false,
+   "vistaEm": "2026-10-24",
+   "videos": [
+    [
+     "-35oTYToV2A",
+     "Fala de eletricista, área vizinha desta vaga."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
+   "id": "ferroport-tecnico-de-mecanica-especialista-81606",
+   "titulo": "Tecnico de Mecanica Especialista",
+   "empresa": "Ferroport",
+   "local": "São João da Barra, RJ",
+   "link": "https://ferroport.inhire.com.br/vagas/7f94affe-609b-4aed-b870-86d6bc8ca1a1",
+   "regime": "Onshore",
+   "area": "Mecânica e manutenção",
+   "tema": "mecanica",
+   "banco": false,
+   "vistaEm": "2026-10-24",
+   "videos": [
+    [
+     "3yOdA-HnSeg",
+     "Fala de mecânico e manutenção, a função desta vaga."
+    ],
+    [
+     "AFQCQwo_5Kc",
+     "Fala de mecânico e manutenção, a função desta vaga."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ]
+   ]
+  },
+  {
+   "id": "ferroport-tecnico-de-seguran-a-do-trabalho-i-afirmativa-para-mulheres-33814",
+   "titulo": "Tecnico de Segurança do Trabalho I - Afirmativa para mulheres",
+   "empresa": "Ferroport",
+   "local": "São João da Barra, RJ",
+   "link": "https://ferroport.inhire.com.br/vagas/60f7d044-99d2-4e9b-93b7-c5b15670ee7c",
+   "regime": "Onshore",
+   "area": "Segurança",
+   "tema": "seguranca",
+   "banco": false,
+   "vistaEm": "2026-10-24",
+   "videos": [
+    [
+     "VzHXNdUlHVA",
+     "Fala de técnico de segurança, a função desta vaga."
+    ],
+    [
+     "0uMWC3VBm8A",
+     "Fala de técnico de segurança, a função desta vaga."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ]
+   ]
+  },
+  {
+   "id": "ferroport-t-cnico-de-mec-nica-iii-1313",
+   "titulo": "Técnico de Mecânica III",
+   "empresa": "Ferroport",
+   "local": "São João da Barra, RJ",
+   "link": "https://ferroport.inhire.com.br/vagas/224ade2d-8303-4272-9b4f-472f38607b3c",
+   "regime": "Onshore",
+   "area": "Mecânica e manutenção",
+   "tema": "mecanica",
+   "banco": false,
+   "vistaEm": "2026-10-24",
+   "videos": [
+    [
+     "3yOdA-HnSeg",
+     "Fala de mecânico e manutenção, a função desta vaga."
+    ],
+    [
+     "AFQCQwo_5Kc",
+     "Fala de mecânico e manutenção, a função desta vaga."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
     ]
    ]
   },
@@ -16542,6 +16729,110 @@
    "tema": "maritimo",
    "banco": true,
    "vistaEm": "2026-10-15",
+   "videos": [
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
+   "id": "ferroport-banco-de-talentos-de-pcd-99516",
+   "titulo": "Banco de Talentos de PcD",
+   "empresa": "Ferroport",
+   "local": "São João da Barra, RJ",
+   "link": "https://ferroport.inhire.com.br/vagas/8f69c921-3934-44f4-aff0-d1d2e78a7342",
+   "regime": "Onshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": true,
+   "vistaEm": "2026-10-24",
+   "videos": [
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ],
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ]
+   ]
+  },
+  {
+   "id": "ferroport-banco-de-talentos-diversidade-racial-51203",
+   "titulo": "Banco de Talentos diversidade Racial",
+   "empresa": "Ferroport",
+   "local": "São João da Barra, RJ",
+   "link": "https://ferroport.inhire.com.br/vagas/83426077-e3a0-44df-a627-11f351d42741",
+   "regime": "Onshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": true,
+   "vistaEm": "2026-10-24",
+   "videos": [
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
+   "id": "ferroport-banco-de-talentos-lgbtqiapn-72443",
+   "titulo": "Banco de Talentos | LGBTQIAPN+",
+   "empresa": "Ferroport",
+   "local": "São João da Barra, RJ",
+   "link": "https://ferroport.inhire.com.br/vagas/38715c34-c336-4493-8940-8c3c263b270f",
+   "regime": "Onshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": true,
+   "vistaEm": "2026-10-24",
+   "videos": [
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
+   "id": "ferroport-banco-de-talentos-mulheres-58013",
+   "titulo": "Banco de Talentos | Mulheres",
+   "empresa": "Ferroport",
+   "local": "São João da Barra, RJ",
+   "link": "https://ferroport.inhire.com.br/vagas/8072adb5-c724-4126-8151-cf2f31bf11cf",
+   "regime": "Onshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": true,
+   "vistaEm": "2026-10-24",
    "videos": [
     [
      "lttRYy_P8T8",

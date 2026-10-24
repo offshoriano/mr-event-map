@@ -16,6 +16,9 @@ UA = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chr
 # scripts/vagas/mapear.py descobre sozinho o sistema de vagas de quem ainda não tem.
 CADASTRO = Path(__file__).parent / 'empresas.json'
 
+# Cidade usada quando o sistema de vagas não informa o local (campo "local_padrao" no cadastro)
+LOCAL_PADRAO = {}
+
 def carregar_empresas():
     """(tipo, nome, cfg, somente óleo e gás) das empresas com sistema de vagas que sabemos ler."""
     out = []
@@ -24,6 +27,8 @@ def carregar_empresas():
         if ats.get('tipo') in LEITORES and not e.get('pausada'):
             cfg = tuple(ats['cfg']) if isinstance(ats['cfg'], list) else ats['cfg']
             out.append((ats['tipo'], e['nome'], cfg, bool(e.get('somente_og'))))
+            if e.get('local_padrao'):
+                LOCAL_PADRAO[e['nome']] = e['local_padrao']
     return out
 
 OG = re.compile(r'offshore|embarc|plataforma|fpso|sonda|navio|mar[ií]tim|rebocador|conv[eé]s|m[aá]quinas|'
@@ -372,6 +377,8 @@ def main():
             if filtro:
                 itens = [i for i in itens if OG.search(i['titulo'] + ' ' + i.get('area', ''))]
             for i in itens:
+                if i.get('local', 'Brasil') == 'Brasil' and nome in LOCAL_PADRAO:
+                    i['local'] = LOCAL_PADRAO[nome]
                 if not re.search(r'bra[sz]il|,\s*(rj|sp|es|ba|se|rn|ce|am|mg|pr|sc|rs|pe|al|ma|pa)\b|^BR-|maca[eé]|rio de janeiro|niter[oó]i|vit[oó]ria|santos|remoto|itagua[ií]|aracaju|salvador|mossor[oó]|s[aã]o paulo|angra|campos|serra', arruma_local(i['local']), re.I):
                     continue
                 area = classifica(i['titulo'])

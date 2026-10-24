@@ -156,6 +156,18 @@
   }
  },
  {
+  "nome": "Ferroport",
+  "origem": [
+   "MR"
+  ],
+  "site": "https://www.ferroport.com.br/",
+  "local_padrao": "São João da Barra, RJ",
+  "ats": {
+   "tipo": "inhire",
+   "cfg": "ferroport"
+  }
+ },
+ {
   "nome": "OceanPact",
   "origem": [
    "MR",
