@@ -59,3 +59,11 @@ blockquote{border-left:3px solid var(--gold);background:var(--card);padding:14px
 .btn.ghost{background:transparent;color:var(--white);border:1px solid var(--border2);}
 footer{text-align:center;font-size:13px;color:var(--muted);padding:30px 20px;border-top:1px solid var(--border);}
 @media(max-width:640px){nav .links a{margin:0 12px 0 0;}article p,article li{font-size:17px;}.video{grid-template-columns:120px 1fr;}main{padding:30px 16px 60px;}}
+
+.continuar{margin-top:44px;}
+.continuar h2{font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:4px;}
+.continuar .cards{grid-template-columns:repeat(auto-fill,minmax(220px,1fr));margin-top:14px;}
+.continuar .card b{font-size:17px;}
+.atalhos-fim{display:flex;flex-wrap:wrap;gap:8px;margin-top:30px;}
+.atalhos-fim a{font-size:13px;color:var(--muted2);text-decoration:none;border:1px solid var(--border2);padding:8px 12px;border-radius:2px;}
+.atalhos-fim a:hover{color:var(--white);border-color:var(--gold);}
