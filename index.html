@@ -1222,6 +1222,17 @@ Promise.all([
   const MESES = ['janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setembro','outubro','novembro','dezembro'];
   const hoje = new Date().toISOString().slice(0, 10);
   const pad = n => String(n).padStart(2, '0');
+  // "Riocentro, Rio de Janeiro, RJ — Brasil" vira endereço estruturado: local, cidade, estado e país (código ISO)
+  const PAISES = {'Brasil':'BR','EUA':'US','Guiana':'GY','Suriname':'SR','Emirados Árabes Unidos':'AE','Reino Unido':'GB','Noruega':'NO','Países Baixos':'NL','Alemanha':'DE','Argentina':'AR','Panamá':'PA','Áustria':'AT','Singapura':'SG'};
+  const lugar = loc => {
+    const [antes, pais] = String(loc || '').split(/\s*—\s*/);
+    const partes = antes.split(',').map(x => x.trim()).filter(Boolean);
+    const uf = partes.findIndex(x => /^[A-Z]{2}$/.test(x));
+    const cidade = uf > 0 ? partes[uf - 1] : partes[partes.length - 1];
+    const address = {'@type':'PostalAddress', addressLocality:cidade, addressCountry:PAISES[pais || cidade] || pais || cidade};
+    if (uf > 0) address.addressRegion = partes[uf];
+    return {'@type':'Place', name:partes[0] || cidade, address};
+  };
   const itens = CONFERENCES.map(c => {
     const m = MESES.indexOf(String(c.month || '').toLowerCase()) + 1;
     const d = String(c.dates || '').match(/^(\d{1,2})(?:\s*[–-]\s*(\d{1,2}))?$/);
@@ -1230,7 +1241,7 @@ Promise.all([
     if (fim < hoje) return null;
     return {'@context':'https://schema.org', '@type':'Event', name:c.name, startDate:ini, endDate:fim,
       eventStatus:'https://schema.org/EventScheduled', eventAttendanceMode:'https://schema.org/OfflineEventAttendanceMode',
-      location:{'@type':'Place', name:String(c.location || '').split(/[,—]/)[0].trim(), address:String(c.location || '').replace(/\s*—\s*/g, ', ')},
+      location:lugar(c.location),
       url:c.link || 'https://mrgroup.com.br/', organizer:{'@type':'Organization', name:c.name, url:c.link || undefined},
       description:`${c.name}, de ${c.dates} de ${c.month} de ${c.year}, em ${c.location}. Agenda de eventos de óleo e gás da MR Group.`,
       image:'https://mrgroup.com.br/assets/og/home.jpg'};

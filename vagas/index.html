@@ -314,6 +314,16 @@ function jobHTML(v){
 }
 
 // Marcação JobPosting para a busca de vagas do Google
+// Endereço da vaga para o Google. Rua e CEP entram quando a vaga traz (campos endereco e cep);
+// vaga sem cidade definida usa a cidade da base informada em "base", ou só o país.
+function endereco(v){
+  const local = v.local === 'Brasil' && v.base ? v.base : v.local;
+  const a = {'@type':'PostalAddress', addressCountry:'BR'};
+  if (local && local !== 'Brasil') { a.addressLocality = local.split(',')[0].trim(); a.addressRegion = (local.split(',')[1] || '').trim() || undefined; }
+  if (v.endereco) a.streetAddress = v.endereco;
+  if (v.cep) a.postalCode = v.cep;
+  return a;
+}
 function jsonLd(lista){
   const s = document.createElement('script');
   s.type = 'application/ld+json';
@@ -322,7 +332,12 @@ function jsonLd(lista){
     title:v.titulo, description: v.descricao ? `<p>${v.descricao.replace(/\n+/g, '</p><p>')}</p>` : `<p>${v.resumo}</p><ul>${(v.atividades||[]).map(a=>`<li>${a}</li>`).join('')}</ul><p>Requisitos:</p><ul>${(v.requisitos||[]).map(a=>`<li>${a}</li>`).join('')}</ul>`,
     datePosted:v.publicada, validThrough:v.inscricoesAte ? v.inscricoesAte + 'T23:59' : undefined,
     employmentType:'FULL_TIME', hiringOrganization:{'@type':'Organization', name:v.empresa},
-    jobLocation:{'@type':'Place', address: v.local === 'Brasil' ? {'@type':'PostalAddress', addressCountry:'BR'} : {'@type':'PostalAddress', addressLocality:v.local.split(',')[0], addressRegion:(v.local.split(',')[1]||'').trim(), addressCountry:'BR'}},
+    jobLocation:{'@type':'Place', address: endereco(v)},
+    // Salário só entra quando a empresa divulgou (campo salario: {min, max, unidade} no JSON da vaga)
+    baseSalary: v.salario ? {'@type':'MonetaryAmount', currency:'BRL', value:{'@type':'QuantitativeValue',
+      ...(v.salario.max && v.salario.max !== v.salario.min ? {minValue:v.salario.min, maxValue:v.salario.max} : {value:v.salario.min}),
+      unitText:v.salario.unidade || 'MONTH'}} : undefined,
+    identifier:{'@type':'PropertyValue', name:v.empresa, value:v.id},
     directApply:false, url:location.origin + location.pathname + '#' + v.id
   })));
   document.head.appendChild(s);
