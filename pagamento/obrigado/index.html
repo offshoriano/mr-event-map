@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pagamento recebido · MR Group</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<meta name="theme-color" content="#0D1117">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:opsz,wght@9..40,400..800&display=swap" rel="stylesheet">
+<style>
+:root{--black:#090C10;--deep:#0D1117;--card:#111820;--border:#1C2733;--gold:#C9933A;--gold-l:#E8B86D;--white:#EEE9E2;--muted:#7A8FA6;--muted2:#A0B2C4;}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'DM Sans',system-ui,sans-serif;background:var(--deep);color:var(--white);min-height:100vh;display:flex;flex-direction:column}
+.topo{padding:14px 24px;border-bottom:1px solid var(--border);background:var(--black)}
+.topo img{height:28px;display:block}
+main{flex:1;max-width:640px;margin:0 auto;padding:70px 20px;text-align:center}
+.eyebrow{font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--gold)}
+h1{font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:52px;line-height:1;margin:12px 0 16px}
+p{color:var(--muted2);font-size:17px;line-height:1.65}
+p+p{margin-top:12px}
+.btn{display:inline-block;margin-top:28px;background:var(--gold);color:var(--black);font-weight:800;font-size:13px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;padding:16px 26px;border-radius:2px}
+a{color:var(--gold-l)}
+footer{text-align:center;font-size:12px;color:var(--muted);padding:24px;border-top:1px solid var(--border)}
+footer a{color:inherit}
+</style>
+</head>
+<body>
+<div class="topo"><a href="/"><img src="/assets/mr-solutions-branco.png" alt="MR Group, página inicial" width="72" height="28"></a></div>
+<main>
+  <div class="eyebrow">MR Group</div>
+  <h1 id="t">Recebemos o seu pedido</h1>
+  <p id="m">Estamos confirmando o pagamento com a Stripe.</p>
+  <p>Qualquer dúvida, fale com a gente pelo <a href="https://wa.me/5522988335183">WhatsApp (22) 98833-5183</a> ou pelo <a href="/contato/">formulário de contato</a>.</p>
+  <a class="btn" href="/vagas/">Ver as vagas de hoje</a>
+</main>
+<footer>MR Group · mrgroup.com.br · <a href="/privacidade/">Privacidade</a> · <a href="/termos/">Termos de uso</a></footer>
+<script>
+const s = new URLSearchParams(location.search).get('s') || '';
+const $ = id => document.getElementById(id);
+const esc = v => String(v ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+if (s) fetch('/api/pagamento.php', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({action:'status', s})})
+  .then(r => r.json()).then(d => {
+    const nome = d.nome ? esc(d.nome) + ', ' : '';
+    if (d.situacao === 'paid') {
+      $('t').textContent = 'Pagamento confirmado';
+      $('m').innerHTML = `${nome}o seu pagamento${d.produto ? ' do <strong>' + esc(d.produto) + '</strong>' : ''} foi confirmado. Você vai receber as próximas instruções por e-mail em instantes.`;
+      if (window.gtag) gtag('event', 'purchase', {currency:'BRL', items:[{item_name:d.produto}]});
+    } else if (d.situacao === 'unpaid') {
+      $('t').textContent = 'Falta pouco';
+      $('m').innerHTML = `${nome}o pedido${d.produto ? ' do <strong>' + esc(d.produto) + '</strong>' : ''} foi registrado. Se você pagou por Pix ou boleto, a confirmação chega por e-mail assim que o banco compensar.`;
+    }
+  }).catch(() => {});
+</script>
+</body>
+</html>
