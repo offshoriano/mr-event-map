@@ -83,3 +83,74 @@ Os que a vaga pede vêm primeiro. Curso vencido entra só quando a empresa pedir
 - Lembrete de envio: assunto do e-mail com o título da vaga e um texto de apresentação no corpo. E-mail sem assunto e sem texto vai para o fim da fila.
 - Sugestões para o LinkedIn: o recrutador clica no link antes de ligar e olha foto, título, o que a pessoa publica e comenta.
 - Nota antes e depois e a lista do que ainda falta para a vaga (curso, idioma, experiência), sem prometer contratação.
+
+## O padrão dos currículos já feitos
+
+Análise de 315 currículos reformulados pelo Matheus entre 2020 e 2026 (pastas do Drive, sem dados pessoais copiados para cá). O gerador imita este padrão, com os ajustes da live por cima.
+
+### Ordem e títulos
+Em 2 de cada 3 currículos a ordem é exatamente esta, com estes títulos:
+
+    OBJETIVO
+    RESUMO PROFISSIONAL
+    IDIOMAS
+    FORMAÇÃO
+    EXPERIÊNCIA PROFISSIONAL
+    QUALIFICAÇÕES
+    OUTRAS INFORMAÇÕES
+
+Tamanho típico: 470 palavras (de 280 a 660), ou seja, de 1 a 2 páginas.
+
+### Objetivo
+O nome da vaga. Quando a pessoa mira duas funções vizinhas, as duas separadas por barra vertical: "Homem de Área | Rigger", "Operador de Convés | Rigger", "Engenheiro Trainee / Engenheiro Júnior".
+
+### Resumo profissional: a fórmula
+Um parágrafo de 4 a 6 linhas, em primeira pessoa, sempre em quatro movimentos:
+
+1. Abertura com a formação ou o tempo de estrada. Os começos mais usados:
+   - "Formado como Técnico em Mecânica, possuo 8 anos de experiência em..." (o mais comum, 4 em cada 10);
+   - "Graduado como Engenheiro de Petróleo..." ou "Estudante de Engenharia Elétrica...";
+   - "Qualificado como Homem de Área / Taifeiro / Pintor Industrial..." para quem fez curso livre;
+   - "Desde 2012 atuando no setor offshore..." para quem tem muita estrada.
+2. Onde: "tive oportunidade de atuar por empresas como: A, B e atualmente na C", e o tipo de unidade (sonda terrestre, navio sonda, semissubmersível, FPSO, PLSV).
+3. O que domina, com nome técnico: "desenvolvi forte conhecimento em manobras de tubo, montagem de BHA, movimentação de cargas", "forte experiência com guinchos MDL e tensionadores".
+4. Fechamento com comportamento e segurança: "Durante esses anos desenvolvi competências como: trabalho em equipe, comunicação, busca por aprendizado contínuo e uma forte cultura de segurança." A "forte cultura de segurança" fecha quase todos. O gerador varia as outras competências conforme a vaga, para os currículos não ficarem iguais entre si.
+
+Quem não tem experiência no setor transfere a de fora: limpeza urbana vira movimentação de materiais, hotelaria vira arrumação e higienização para taifeiro, manutenção automotiva vira manutenção preventiva e corretiva.
+
+### Experiência
+Formato fixo para cada uma:
+
+    Junho de 2017 até os dias atuais – Empresa – Cidade, UF
+    Posição: Técnico em Elétrica Offshore
+    Principais Atividades: Como técnico em elétrica, atuo diretamente em...
+
+As atividades são um parágrafo corrido que começa com "Como [função], atuo/atuava diretamente..." e traz equipamento, sistema e segurança (reunião pré-tarefa, avaliação de riscos, inspeção de cintas e eslingas, bloqueio elétrico). Promoções dentro da mesma empresa são contadas em sequência ("em 2010 iniciei como homem de área... em 2012 fui promovido... em 2015 me tornei guindasteiro").
+
+Para estudante sem experiência, a experiência é a própria escola:
+
+    De 2013 a 2018 – Universidade X – Cidade, UF
+    Posição: Estudante Universitário (ou Estudante Técnico)
+    Principais Atividades: o que estudou, ajudou colegas, projetos, feiras.
+
+### Idiomas
+Uma linha por idioma: "Inglês Intermediário (Fala, Escrita e Compreensão) – Cursando", "Espanhol Básico (Somente Fala)". "Disponível para ser testado" quando o inglês é avançado.
+
+### Qualificações
+Uma linha por curso: "NR-10 (40h) – Instituição". Os do setor primeiro (CBSP, T-HUET, NRs, IRATA), depois os de fabricante e os técnicos, depois informática.
+
+### Outras informações
+As linhas que mais aparecem, nesta ordem de frequência:
+- Disponível para mudança de estado e cidade (e país, quando for o caso)
+- Disponível para viagens
+- CFT ativo / CREA ativo
+- Passaporte válido
+- CNH AB / CNH B
+- Experiência com projetos offshore / experiência no exterior
+- Visto americano (B1/B2), quando houver
+
+### Onde a regra da live corrige o padrão antigo
+Os currículos mais antigos ainda trazem idade, estado civil, data de nascimento, endereço completo e telefone de recado de parente, e só metade traz a validade dos cursos. O gerador segue a regra da live:
+- dados pessoais só com nome, cidade e estado, telefone, e-mail e LinkedIn (idade e nacionalidade só se a vaga for internacional);
+- todo curso com validade quando o certificado tiver validade (CBSP, T-HUET, NRs, IRATA);
+- "HUET" vira "T-HUET".
