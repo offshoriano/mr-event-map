@@ -85,7 +85,7 @@ function login(msg){
   $('#f').onsubmit = e => { e.preventDefault(); senha = $('#pw').value; carregar(); };
 }
 
-let VG = [], AVISO = '', aba = ({'#vagas':'vagas', '#ranking':'ranking', '#empresas':'empresas', '#diagnosticos':'diagnosticos', '#mensagens':'mensagens', '#alertas':'alertas', '#curriculo':'curriculo'})[location.hash] || 'contatos', avisou = false;
+let VG = [], AVISO = '', aba = ({'#vagas':'vagas', '#ranking':'ranking', '#empresas':'empresas', '#diagnosticos':'diagnosticos', '#mensagens':'mensagens', '#alertas':'alertas', '#curriculo':'curriculo', '#pagamentos':'pagamentos'})[location.hash] || 'contatos', avisou = false;
 const AREAS = {seguranca:'Segurança', eletrica:'Elétrica e instrumentação', mecanica:'Mecânica e manutenção', pocos:'Perfuração e poços',
   maritimo:'Marítimo', hotelaria:'Hotelaria', operacao:'Operação e produção', engenharia:'Engenharia', trainee:'Trainee e estágio', geral:'Outras'};
 const VAPI = '../api/vagas-enviadas.php';
@@ -128,10 +128,11 @@ function painel(){
       <button class="tab ${aba === 'mensagens' ? 'on' : ''}" data-aba="mensagens">Mensagens</button>
       <button class="tab ${aba === 'alertas' ? 'on' : ''}" data-aba="alertas">Alertas de vagas</button>
       <button class="tab ${aba === 'curriculo' ? 'on' : ''}" data-aba="curriculo">Currículo</button>
+      <button class="tab ${aba === 'pagamentos' ? 'on' : ''}" data-aba="pagamentos">Pagamentos</button>
     </div>
     <div id="conteudo"></div></div>`;
   document.querySelectorAll('.tab').forEach(t => t.onclick = () => { aba = t.dataset.aba; history.replaceState(null, '', aba === 'contatos' ? '#' : '#' + aba); painel(); });
-  aba === 'curriculo' ? painelCurriculo() : aba === 'alertas' ? painelAlertas() : aba === 'mensagens' ? painelMensagens() : aba === 'diagnosticos' ? painelDiagnosticos() : aba === 'vagas' ? painelVagas() : aba === 'ranking' ? painelRanking() : aba === 'empresas' ? painelEmpresas() : painelContatos();
+  aba === 'pagamentos' ? painelPagamentos() : aba === 'curriculo' ? painelCurriculo() : aba === 'alertas' ? painelAlertas() : aba === 'mensagens' ? painelMensagens() : aba === 'diagnosticos' ? painelDiagnosticos() : aba === 'vagas' ? painelVagas() : aba === 'ranking' ? painelRanking() : aba === 'empresas' ? painelEmpresas() : painelContatos();
 }
 
 function painelVagas(){
@@ -314,6 +315,81 @@ function painelMensagens(){
       cpost({action:'delete', senha, id:b.dataset.id}).then(() => painelMensagens());
     };
   }).catch(() => { $('#conteudo').innerHTML = '<p class="note">Não foi possível carregar as mensagens.</p>'; });
+}
+
+// Stripe: chave, produtos à venda, faturas para empresas e pagamentos recebidos
+function painelPagamentos(){
+  $('#conteudo').innerHTML = '<p class="note">Carregando...</p>';
+  const ppost = body => fetch('../api/pagamento.php', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(Object.assign({senha}, body))})
+    .then(async r => ({ok:r.ok, data:await r.json().catch(() => ({}))}));
+  const brl = v => Number(v || 0).toLocaleString('pt-BR', {style:'currency', currency:'BRL'});
+  const dt = d => d ? new Date(d).toLocaleDateString('pt-BR') : '';
+  const SIT = {pago:'Pago', aguardando:'Aguardando', falhou:'Falhou', paid:'Paga', open:'Em aberto', void:'Cancelada', draft:'Rascunho', uncollectible:'Não paga'};
+  ppost({action:'painel'}).then(({ok, data:d}) => {
+    if (!ok) { $('#conteudo').innerHTML = `<p class="note">${esc(d.error || 'Não foi possível carregar.')}</p>`; return; }
+    const P = d.pagamentos || [], F = d.faturas || [];
+    const pagos = P.filter(p => p.situacao === 'pago');
+    $('#conteudo').innerHTML = `<p class="sub" style="margin-top:16px">Pagamentos pela Stripe: produtos vendidos no site e faturas para empresas.</p>
+      <div class="aviso">${d.configurada
+        ? `<p><b style="color:var(--white)">Conectado à Stripe</b> · ${esc(d.conta || 'conta')} · modo <b style="color:${d.modo === 'teste' ? 'var(--gold-l)' : '#7fdc7f'}">${esc(d.modo)}</b> · chave final ${esc(d.final)} · ${d.webhook ? 'avisos de pagamento ligados' : '<span style="color:#ef7a7a">avisos de pagamento desligados, salve a chave de novo</span>'}</p>`
+        : '<p>Cole a chave secreta da Stripe (começa com sk_ ou rk_). Ela fica guardada no servidor, fora do site.</p>'}
+        <input type="password" id="pg-chave" placeholder="${d.configurada ? 'Trocar a chave (opcional)' : 'sk_test_... ou rk_test_...'}" autocomplete="off">
+        <button class="btn" id="pg-salvar" type="button">Salvar chave</button><span class="note" id="pg-msg" style="margin:0"></span></div>
+      ${d.configurada ? `
+      <h2 class="sec">À venda no site</h2>
+      <p class="note" style="margin:0 0 10px">Só os produtos marcados abrem o pagamento. Os outros mostram "ainda não está à venda".</p>
+      <div class="bar">${Object.entries(d.produtos).map(([k, n]) => `<label style="display:flex;gap:8px;align-items:center;font-size:14px"><input type="checkbox" class="pg-ab" value="${esc(k)}" style="width:auto" ${(d.abertos || []).includes(k) ? 'checked' : ''}> ${esc(n)}</label>`).join('')}</div>
+      <h2 class="sec">Nova fatura para empresa</h2>
+      <div class="vg"><div class="g">
+        <div><label>Cliente (empresa ou pessoa)</label><input id="ft-nome"></div>
+        <div><label>E-mail de cobrança</label><input id="ft-email" type="email"></div>
+        <div><label>CNPJ ou CPF (opcional)</label><input id="ft-doc"></div>
+        <div><label>Valor (R$)</label><input id="ft-valor" inputmode="decimal" placeholder="1500,00"></div>
+        <div><label>Descrição</label><input id="ft-desc" placeholder="Cobertura do evento X, anúncio no site em novembro..."></div>
+        <div><label>Vence em (dias)</label><input id="ft-dias" type="number" value="7" min="1" max="60"></div></div>
+        <div class="vg-acts"><button class="btn" id="ft-criar" type="button">Criar e enviar fatura</button><span class="note" id="ft-msg" style="margin:0"></span></div></div>
+      <div class="kpis"><div class="kpi"><b>${pagos.length}</b><span>Pagamentos confirmados</span></div>
+        <div class="kpi"><b>${brl(pagos.reduce((a, p) => a + p.valor, 0))}</b><span>Recebido pelo site</span></div>
+        <div class="kpi"><b>${F.filter(f => f.situacao === 'open').length}</b><span>Faturas em aberto</span></div>
+        <div class="kpi"><b>${brl(F.filter(f => f.situacao === 'open').reduce((a, f) => a + f.valor, 0))}</b><span>A receber</span></div></div>
+      <h2 class="sec">Faturas</h2>
+      <div class="tbl">${F.length ? `<table><thead><tr><th>Criada</th><th>Cliente</th><th>Descrição</th><th>Valor</th><th>Situação</th><th></th></tr></thead><tbody>${F.map(f => `<tr>
+        <td class="m">${dt(f.criada)}${f.vence ? `<br>vence ${dt(f.vence)}` : ''}</td>
+        <td>${esc(f.cliente)}<br><span class="m">${esc(f.email)}</span></td><td class="m">${esc(f.descricao)}${f.numero ? `<br>${esc(f.numero)}` : ''}</td>
+        <td>${brl(f.valor)}</td><td><span class="tag ${f.situacao === 'paid' ? 'sim' : 'nao'}">${esc(SIT[f.situacao] || f.situacao)}</span></td>
+        <td>${f.link ? `<a href="${esc(f.link)}" target="_blank" style="color:var(--gold-l);font-size:12px">abrir</a>` : ''}${f.situacao === 'open' ? `<br><button class="del" data-void="${esc(f.id)}">cancelar</button>` : ''}</td></tr>`).join('')}</tbody></table>` : '<p style="padding:24px;color:var(--muted)">Nenhuma fatura ainda.</p>'}</div>
+      <h2 class="sec">Pagamentos do site</h2>
+      <div class="tbl">${P.length ? `<table><thead><tr><th>Data</th><th>Cliente</th><th>O quê</th><th>Valor</th><th>Situação</th></tr></thead><tbody>${P.map(p => `<tr>
+        <td class="m">${dt(p.data)}${p.modo === 'teste' ? '<br>teste' : ''}</td><td>${esc(p.nome)}<br><a href="mailto:${esc(p.email)}" style="color:var(--gold-l)">${esc(p.email)}</a></td>
+        <td>${esc(p.descricao)}</td><td>${brl(p.valor)}</td><td><span class="tag ${p.situacao === 'pago' ? 'sim' : 'nao'}">${esc(SIT[p.situacao] || p.situacao)}</span></td></tr>`).join('')}</tbody></table>` : '<p style="padding:24px;color:var(--muted)">Nenhum pagamento ainda.</p>'}</div>` : ''}`;
+    $('#pg-salvar').onclick = () => {
+      const chave = $('#pg-chave').value.trim(); if (!chave) return;
+      $('#pg-msg').textContent = 'Conferindo com a Stripe...';
+      ppost({action:'config', chave}).then(r => {
+        if (!r.ok) { $('#pg-msg').textContent = r.data.error || 'Erro ao salvar'; return; }
+        if (r.data.aviso) alert('Chave salva, mas o aviso de pagamento não foi criado: ' + r.data.aviso);
+        painelPagamentos();
+      });
+    };
+    document.querySelectorAll('.pg-ab').forEach(c => c.onchange = () =>
+      ppost({action:'config', abertos:[...document.querySelectorAll('.pg-ab:checked')].map(x => x.value)}));
+    if ($('#ft-criar')) $('#ft-criar').onclick = () => {
+      const b = {action:'fatura', nome:$('#ft-nome').value, email:$('#ft-email').value, documento:$('#ft-doc').value, valor:$('#ft-valor').value, descricao:$('#ft-desc').value, dias:$('#ft-dias').value};
+      $('#ft-msg').textContent = 'Criando...'; $('#ft-criar').disabled = true;
+      ppost(b).then(r => {
+        $('#ft-criar').disabled = false;
+        if (!r.ok) { $('#ft-msg').textContent = r.data.error || 'Erro ao criar a fatura'; return; }
+        try { navigator.clipboard.writeText(r.data.link); } catch (e) {}
+        alert(`Fatura ${r.data.numero} criada${r.data.enviada ? ' e enviada por e-mail' : ''}. O link de pagamento foi copiado para você mandar no WhatsApp também.`);
+        painelPagamentos();
+      });
+    };
+    $('#conteudo').onclick = e => {
+      const b = e.target.closest('[data-void]'); if (!b) return;
+      if (!confirm('Cancelar esta fatura? O cliente não vai mais conseguir pagar por ela.')) return;
+      ppost({action:'cancelar', id:b.dataset.void}).then(() => painelPagamentos());
+    };
+  }).catch(() => { $('#conteudo').innerHTML = '<p class="note">Não foi possível carregar.</p>'; });
 }
 
 // Lista de espera do Currículo Sob Medida (/curriculo/)
