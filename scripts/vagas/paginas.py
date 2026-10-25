@@ -89,7 +89,7 @@ def pagina(r, lista, hoje, todos):
 <div class="guia"><b style="color:var(--white)">Ainda não embarcou?</b> O Guia 7 Passos mostra o caminho na ordem certa: cursos, currículo, LinkedIn e entrevista. <a href="../../guia/">Conhecer o guia</a></div>
 <h2>Outras buscas</h2><div class="outras">{outras}</div>
 </main>
-<footer>MR Group · Vagas puxadas direto dos sites das empresas. A candidatura é feita com a empresa, sem custo.<p style="margin-top:8px;font-size:12px"><a href="/privacidade/" style="color:inherit">Privacidade</a> · <a href="/termos/" style="color:inherit">Termos de uso</a></p></footer>
+<footer>MR Group · Vagas puxadas direto dos sites das empresas. A candidatura é feita com a empresa, sem custo.<p style="margin-top:10px;font-size:12px;line-height:2"><a href="https://www.instagram.com/matheus_rangel/" target="_blank" rel="noopener" style="color:inherit">Instagram</a> · <a href="https://www.linkedin.com/in/omatheusrangel/" target="_blank" rel="noopener" style="color:inherit">LinkedIn</a> · <a href="https://www.youtube.com/@carreiraoffshore" target="_blank" rel="noopener" style="color:inherit">YouTube</a> · <a href="/contato/" style="color:inherit">Fale com a gente</a> · <a href="/privacidade/" style="color:inherit">Privacidade</a> · <a href="/termos/" style="color:inherit">Termos de uso</a></p></footer>
 </body>
 </html>
 """

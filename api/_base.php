@@ -55,6 +55,12 @@ function limitar($nome, $max = 10, $janela = 3600) {
     flock($fp, LOCK_UN);
     if ($estourou) out(429, ['error' => 'Muitos envios seguidos. Tente de novo mais tarde.']);
 }
+// mail() do Hostinger. O remetente precisa ser do próprio domínio para não cair no spam.
+function avisar($para, $assunto, $texto) {
+    if (!filter_var($para, FILTER_VALIDATE_EMAIL)) return false;
+    $h = "From: MR Group <adm@mrgroup.com.br>\r\nContent-Type: text/plain; charset=UTF-8\r\n";
+    return @mail($para, '=?UTF-8?B?' . base64_encode($assunto) . '?=', $texto, $h, '-f adm@mrgroup.com.br');
+}
 function auth($in) {
     if (!password_verify((string)($in['senha'] ?? ''), SENHA_HASH)) {
         // Cada senha errada conta: 10 erros em 15 minutos bloqueiam o IP por um tempo (contra quem tenta adivinhar)

@@ -36,12 +36,6 @@ function campos($in) {
         'inscricoesAte' => preg_match('/^\d{4}-\d{2}-\d{2}$/', $ate) ? $ate : date('Y-m-d', strtotime('+30 days')),
     ];
 }
-// mail() do Hostinger. O remetente precisa ser do próprio domínio para não cair no spam.
-function avisar($para, $assunto, $texto) {
-    if (!filter_var($para, FILTER_VALIDATE_EMAIL)) return false;
-    $h = "From: MR Group <adm@mrgroup.com.br>\r\nContent-Type: text/plain; charset=UTF-8\r\n";
-    return @mail($para, '=?UTF-8?B?' . base64_encode($assunto) . '?=', $texto, $h, '-f adm@mrgroup.com.br');
-}
 // Chave secreta guardada só no servidor. Assina os botões do e-mail para ninguém aprovar vaga sem ele.
 function segredo() {
     global $configFile;
