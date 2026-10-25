@@ -85,7 +85,7 @@ function login(msg){
   $('#f').onsubmit = e => { e.preventDefault(); senha = $('#pw').value; carregar(); };
 }
 
-let VG = [], AVISO = '', aba = ({'#vagas':'vagas', '#ranking':'ranking', '#empresas':'empresas', '#diagnosticos':'diagnosticos'})[location.hash] || 'contatos', avisou = false;
+let VG = [], AVISO = '', aba = ({'#vagas':'vagas', '#ranking':'ranking', '#empresas':'empresas', '#diagnosticos':'diagnosticos', '#mensagens':'mensagens'})[location.hash] || 'contatos', avisou = false;
 const AREAS = {seguranca:'Segurança', eletrica:'Elétrica e instrumentação', mecanica:'Mecânica e manutenção', pocos:'Perfuração e poços',
   maritimo:'Marítimo', hotelaria:'Hotelaria', operacao:'Operação e produção', engenharia:'Engenharia', trainee:'Trainee e estágio', geral:'Outras'};
 const VAPI = '../api/vagas-enviadas.php';
@@ -125,10 +125,11 @@ function painel(){
       <button class="tab ${aba === 'ranking' ? 'on' : ''}" data-aba="ranking">Ranking de cliques</button>
       <button class="tab ${aba === 'empresas' ? 'on' : ''}" data-aba="empresas">Empresas</button>
       <button class="tab ${aba === 'diagnosticos' ? 'on' : ''}" data-aba="diagnosticos">Diagnósticos</button>
+      <button class="tab ${aba === 'mensagens' ? 'on' : ''}" data-aba="mensagens">Mensagens</button>
     </div>
     <div id="conteudo"></div></div>`;
   document.querySelectorAll('.tab').forEach(t => t.onclick = () => { aba = t.dataset.aba; history.replaceState(null, '', aba === 'contatos' ? '#' : '#' + aba); painel(); });
-  aba === 'diagnosticos' ? painelDiagnosticos() : aba === 'vagas' ? painelVagas() : aba === 'ranking' ? painelRanking() : aba === 'empresas' ? painelEmpresas() : painelContatos();
+  aba === 'mensagens' ? painelMensagens() : aba === 'diagnosticos' ? painelDiagnosticos() : aba === 'vagas' ? painelVagas() : aba === 'ranking' ? painelRanking() : aba === 'empresas' ? painelEmpresas() : painelContatos();
 }
 
 function painelVagas(){
@@ -259,6 +260,28 @@ function painelEmpresas(){
       };
       $('#qe').oninput = draw; $('#oe').onchange = draw; $('#se').onchange = draw; draw();
     }).catch(() => { $('#conteudo').innerHTML = '<p class="note">Não foi possível carregar o cadastro.</p>'; });
+}
+
+// Mensagens do formulário "Fale com a gente" (/contato/)
+function painelMensagens(){
+  $('#conteudo').innerHTML = '<p class="note">Carregando...</p>';
+  const cpost = body => fetch('../api/contato.php', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(body)}).then(r => r.json());
+  cpost({action:'list', senha}).then(r => {
+    const M = r.mensagens || [];
+    $('#conteudo').innerHTML = `<p class="sub" style="margin-top:16px">Mensagens enviadas pelo formulário Fale com a gente. Cada uma também chega no seu e-mail.</p>
+      <div class="kpis"><div class="kpi"><b>${M.length}</b><span>Mensagens</span></div>
+      <div class="kpi"><b>${M.filter(m => Date.now() - new Date(m.data) < 7 * 864e5).length}</b><span>Últimos 7 dias</span></div></div>
+      <div class="tbl">${M.length ? `<table><thead><tr><th>Data</th><th>Contato</th><th>Assunto e mensagem</th><th></th></tr></thead><tbody>${M.map(m => `<tr>
+        <td class="m">${new Date(m.data).toLocaleString('pt-BR', {dateStyle:'short', timeStyle:'short'})}</td>
+        <td>${esc(m.nome)}<br><a href="mailto:${esc(m.email)}?subject=${encodeURIComponent('Re: ' + m.assunto)}" style="color:var(--gold-l)">${esc(m.email)}</a>${m.telefone ? `<br><a href="https://wa.me/55${esc(String(m.telefone).replace(/\D/g, '').replace(/^55/, ''))}" target="_blank" style="color:var(--gold-l)">${esc(m.telefone)}</a>` : ''}</td>
+        <td><b>${esc(m.assunto)}</b><br><span class="m" style="white-space:pre-wrap">${esc(m.mensagem)}</span></td>
+        <td><button class="del" data-id="${esc(m.id)}">remover</button></td></tr>`).join('')}</tbody></table>` : '<p style="padding:24px;color:var(--muted)">Nenhuma mensagem ainda.</p>'}</div>`;
+    $('#conteudo').onclick = e => {
+      const b = e.target.closest('.del'); if (!b) return;
+      if (!confirm('Remover esta mensagem de vez?')) return;
+      cpost({action:'delete', senha, id:b.dataset.id}).then(() => painelMensagens());
+    };
+  }).catch(() => { $('#conteudo').innerHTML = '<p class="note">Não foi possível carregar as mensagens.</p>'; });
 }
 
 // Empresas que fizeram o diagnóstico de eventos em /diagnostico/
