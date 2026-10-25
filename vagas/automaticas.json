@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-10-25T14:29:30+00:00",
+ "atualizado": "2026-10-25T21:01:53+00:00",
  "fontes": [
   {
    "empresa": "PRIO",
@@ -193,7 +193,12 @@
   },
   {
    "empresa": "BW Energy",
-   "vagas": 18,
+   "vagas": 0,
+   "ok": false
+  },
+  {
+   "empresa": "Mota-Engil",
+   "vagas": 10,
    "ok": true
   },
   {
@@ -399,6 +404,11 @@
   {
    "empresa": "Kabal",
    "vagas": 1,
+   "ok": true
+  },
+  {
+   "empresa": "Vinci Energies",
+   "vagas": 25,
    "ok": true
   }
  ],
@@ -2571,6 +2581,32 @@
     [
      "eHqY18dRP8Q",
      "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
+   "id": "vinci-energies-respons-vel-de-neg-cios-offshore-66502",
+   "titulo": "Responsável de Negócios Offshore",
+   "empresa": "Vinci Energies",
+   "local": "Macaé, RJ",
+   "link": "https://vinci-energies.gupy.io/jobs/12434551",
+   "regime": "Offshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-25",
+   "videos": [
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ],
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
     ]
    ]
   },
@@ -11233,6 +11269,266 @@
    ]
   },
   {
+   "id": "mota-engil-analista-de-comunica-o-60831",
+   "titulo": "Analista de Comunicação",
+   "empresa": "Mota-Engil",
+   "local": "Macaé, RJ",
+   "link": "https://careers.mota-engil.com/job/Maca%C3%A9-Analista-de-Comunica%C3%A7%C3%A3o-RJ/1444051333/",
+   "regime": "Onshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-25",
+   "videos": [
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
+   "id": "mota-engil-assistente-administrativo-20570",
+   "titulo": "Assistente Administrativo",
+   "empresa": "Mota-Engil",
+   "local": "Itaboraí, RJ",
+   "link": "https://careers.mota-engil.com/job/Itabora%C3%AD-Assistente-Administrativo-RJ/1435466533/",
+   "regime": "Onshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-25",
+   "videos": [
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
+   "id": "mota-engil-coordenador-a-de-planejamento-71209",
+   "titulo": "Coordenador(a) de Planejamento",
+   "empresa": "Mota-Engil",
+   "local": "Santos / Guarujá, SP",
+   "link": "https://careers.mota-engil.com/job/Santos-Guaruj%C3%A1-Coordenador%28a%29-de-Planejamento-SP/1446164933/",
+   "regime": "Onshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-25",
+   "videos": [
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
+   "id": "mota-engil-coordenador-a-de-sms-4972",
+   "titulo": "Coordenador(a) de SMS",
+   "empresa": "Mota-Engil",
+   "local": "Macaé, RJ",
+   "link": "https://careers.mota-engil.com/job/Maca%C3%A9-Coordenador%28a%29-de-SMS-RJ/1445180733/",
+   "regime": "Onshore",
+   "area": "Segurança",
+   "tema": "seguranca",
+   "banco": false,
+   "vistaEm": "2026-10-25",
+   "videos": [
+    [
+     "VzHXNdUlHVA",
+     "Fala de técnico de segurança, a função desta vaga."
+    ],
+    [
+     "0uMWC3VBm8A",
+     "Fala de técnico de segurança, a função desta vaga."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ]
+   ]
+  },
+  {
+   "id": "mota-engil-coordenador-a-constru-o-e-montagem-15597",
+   "titulo": "Coordenador/a Construção e Montagem",
+   "empresa": "Mota-Engil",
+   "local": "Itaboraí, RJ",
+   "link": "https://careers.mota-engil.com/job/Itabora%C3%AD-Coordenadora-Constru%C3%A7%C3%A3o-e-Montagem-RJ/1449565233/",
+   "regime": "Onshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-25",
+   "videos": [
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
+   "id": "mota-engil-engenheiro-de-seguran-a-do-trabalho-bras-lia-49313",
+   "titulo": "Engenheiro de Segurança do Trabalho - Brasília",
+   "empresa": "Mota-Engil",
+   "local": "Brasilia, DF",
+   "link": "https://careers.mota-engil.com/job/Brasilia-Engenheiro-de-Seguran%C3%A7a-do-Trabalho-Bras%C3%ADlia-DF/1445831833/",
+   "regime": "Onshore",
+   "area": "Segurança",
+   "tema": "seguranca",
+   "banco": false,
+   "vistaEm": "2026-10-25",
+   "videos": [
+    [
+     "VzHXNdUlHVA",
+     "Fala de técnico de segurança, a função desta vaga."
+    ],
+    [
+     "0uMWC3VBm8A",
+     "Fala de técnico de segurança, a função desta vaga."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ]
+   ]
+  },
+  {
+   "id": "mota-engil-engenheiro-a-de-planejamento-suprimentos-67483",
+   "titulo": "Engenheiro/a de Planejamento (Suprimentos)",
+   "empresa": "Mota-Engil",
+   "local": "Itaboraí, RJ",
+   "link": "https://careers.mota-engil.com/job/Itabora%C3%AD-Engenheiroa-de-Planejamento-%28Suprimentos%29-RJ/1449575233/",
+   "regime": "Onshore",
+   "area": "Engenharia",
+   "tema": "engenharia",
+   "banco": false,
+   "vistaEm": "2026-10-25",
+   "videos": [
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ],
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ]
+   ]
+  },
+  {
+   "id": "mota-engil-gerente-de-comissionamento-8569",
+   "titulo": "Gerente de Comissionamento",
+   "empresa": "Mota-Engil",
+   "local": "Macaé, RJ",
+   "link": "https://careers.mota-engil.com/job/Maca%C3%A9-Gerente-de-Comissionamento-RJ/1435457133/",
+   "regime": "Onshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-25",
+   "videos": [
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
+   "id": "mota-engil-supervisor-a-de-manuten-o-de-equipamentos-pesados-68961",
+   "titulo": "Supervisor(a) de Manutenção de Equipamentos Pesados",
+   "empresa": "Mota-Engil",
+   "local": "Salvador, BA",
+   "link": "https://careers.mota-engil.com/job/Salvador-Supervisor%28a%29-de-Manuten%C3%A7%C3%A3o-de-Equipamentos-Pesados-BA/1444056433/",
+   "regime": "Onshore",
+   "area": "Mecânica e manutenção",
+   "tema": "mecanica",
+   "banco": false,
+   "vistaEm": "2026-10-25",
+   "videos": [
+    [
+     "3yOdA-HnSeg",
+     "Fala de mecânico e manutenção, a função desta vaga."
+    ],
+    [
+     "AFQCQwo_5Kc",
+     "Fala de mecânico e manutenção, a função desta vaga."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ]
+   ]
+  },
+  {
+   "id": "mota-engil-supervisor-a-de-produ-o-15381",
+   "titulo": "Supervisor(a) de Produção",
+   "empresa": "Mota-Engil",
+   "local": "Macaé, RJ",
+   "link": "https://careers.mota-engil.com/job/Maca%C3%A9-Supervisor%28a%29-de-Produ%C3%A7%C3%A3o-RJ/1435455233/",
+   "regime": "Onshore",
+   "area": "Operação e produção",
+   "tema": "operacao",
+   "banco": false,
+   "vistaEm": "2026-10-25",
+   "videos": [
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
    "id": "nov-analista-fiscal-i-tempor-rio-32017",
    "titulo": "Analista Fiscal I - Temporário",
    "empresa": "NOV",
@@ -15965,6 +16261,214 @@
    ]
   },
   {
+   "id": "vinci-energies-analista-de-controladoria-53685",
+   "titulo": "Analista de Controladoria",
+   "empresa": "Vinci Energies",
+   "local": "Macaé, RJ",
+   "link": "https://vinci-energies.gupy.io/jobs/11607898",
+   "regime": "Onshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-25",
+   "videos": [
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
+   "id": "vinci-energies-analista-de-meio-ambiente-55110",
+   "titulo": "Analista de Meio Ambiente",
+   "empresa": "Vinci Energies",
+   "local": "Macaé, RJ",
+   "link": "https://vinci-energies.gupy.io/jobs/12625881",
+   "regime": "Onshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-25",
+   "videos": [
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
+   "id": "vinci-energies-analista-de-meio-ambiente-e-sustentabilidade-87344",
+   "titulo": "Analista de Meio Ambiente e Sustentabilidade",
+   "empresa": "Vinci Energies",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://vinci-energies.gupy.io/jobs/12637604",
+   "regime": "Onshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-25",
+   "videos": [
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
+   "id": "vinci-energies-assistente-de-treinamento-99569",
+   "titulo": "Assistente de Treinamento",
+   "empresa": "Vinci Energies",
+   "local": "Macaé, RJ",
+   "link": "https://vinci-energies.gupy.io/jobs/12758859",
+   "regime": "Onshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-25",
+   "videos": [
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
+   "id": "vinci-energies-comprador-83758",
+   "titulo": "COMPRADOR",
+   "empresa": "Vinci Energies",
+   "local": "Macaé, RJ",
+   "link": "https://vinci-energies.gupy.io/jobs/12415825",
+   "regime": "Onshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-25",
+   "videos": [
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
+   "id": "vinci-energies-especialista-de-controladoria-46821",
+   "titulo": "Especialista de Controladoria",
+   "empresa": "Vinci Energies",
+   "local": "Macaé, RJ",
+   "link": "https://vinci-energies.gupy.io/jobs/12692878",
+   "regime": "Onshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-25",
+   "videos": [
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
+   "id": "vinci-energies-orcamentista-90461",
+   "titulo": "ORCAMENTISTA",
+   "empresa": "Vinci Energies",
+   "local": "Macaé, RJ",
+   "link": "https://vinci-energies.gupy.io/jobs/12200827",
+   "regime": "Onshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-25",
+   "videos": [
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
+   "id": "vinci-energies-vaga-afirmativa-para-mulheres-supervisor-de-escalada-n3-71062",
+   "titulo": "VAGA AFIRMATIVA PARA MULHERES - SUPERVISOR DE ESCALADA N3",
+   "empresa": "Vinci Energies",
+   "local": "Macaé, RJ",
+   "link": "https://vinci-energies.gupy.io/jobs/12490578",
+   "regime": "Onshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-25",
+   "videos": [
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
    "id": "wilhelmsen-ship-management-husbandry-agent-71992",
    "titulo": "Husbandry Agent",
    "empresa": "Wilhelmsen Ship Management",
@@ -18093,6 +18597,422 @@
     [
      "lttRYy_P8T8",
      "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ]
+   ]
+  },
+  {
+   "id": "vinci-energies-analista-desenvolvedor-43057",
+   "titulo": "Analista Desenvolvedor",
+   "empresa": "Vinci Energies",
+   "local": "Macaé, RJ",
+   "link": "https://vinci-energies.gupy.io/jobs/12022490",
+   "regime": "Onshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": true,
+   "vistaEm": "2026-10-25",
+   "videos": [
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
+   "id": "vinci-energies-banco-de-talentos-caldeireiro-escalador-n1-9397",
+   "titulo": "BANCO DE TALENTOS - CALDEIREIRO ESCALADOR N1",
+   "empresa": "Vinci Energies",
+   "local": "Macaé, RJ",
+   "link": "https://vinci-energies.gupy.io/jobs/11571010",
+   "regime": "Onshore",
+   "area": "Mecânica e manutenção",
+   "tema": "mecanica",
+   "banco": true,
+   "vistaEm": "2026-10-25",
+   "videos": [
+    [
+     "89nmfX5NnpI",
+     "Fala de soldador, caldeireiro e acesso por corda, a função desta vaga."
+    ],
+    [
+     "1xePUBawZBU",
+     "Fala de soldador, caldeireiro e acesso por corda, a função desta vaga."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ]
+   ]
+  },
+  {
+   "id": "vinci-energies-banco-de-talentos-pintora-industrial-escaladora-afirmativa-femini-38933",
+   "titulo": "BANCO DE TALENTOS - PINTORA INDUSTRIAL - ESCALADORA (afirmativa feminina)",
+   "empresa": "Vinci Energies",
+   "local": "Macaé, RJ",
+   "link": "https://vinci-energies.gupy.io/jobs/11742802",
+   "regime": "Onshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": true,
+   "vistaEm": "2026-10-25",
+   "videos": [
+    [
+     "89nmfX5NnpI",
+     "Fala de soldador, caldeireiro e acesso por corda, a função desta vaga."
+    ],
+    [
+     "1xePUBawZBU",
+     "Fala de soldador, caldeireiro e acesso por corda, a função desta vaga."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ]
+   ]
+  },
+  {
+   "id": "vinci-energies-banco-de-talentos-supervisor-de-escalada-n3-61801",
+   "titulo": "Banco de talentos - Supervisor de Escalada N3",
+   "empresa": "Vinci Energies",
+   "local": "Macaé, RJ",
+   "link": "https://vinci-energies.gupy.io/jobs/12029035",
+   "regime": "Onshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": true,
+   "vistaEm": "2026-10-25",
+   "videos": [
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
+   "id": "vinci-energies-banco-de-talentos-supervisor-de-escalada-n3-el-trica-11253",
+   "titulo": "Banco de talentos - Supervisor de Escalada N3 - Elétrica",
+   "empresa": "Vinci Energies",
+   "local": "Macaé, RJ",
+   "link": "https://vinci-energies.gupy.io/jobs/12582575",
+   "regime": "Onshore",
+   "area": "Elétrica e instrumentação",
+   "tema": "eletrica",
+   "banco": true,
+   "vistaEm": "2026-10-25",
+   "videos": [
+    [
+     "-35oTYToV2A",
+     "Fala de eletricista, a função desta vaga."
+    ],
+    [
+     "TSUnVzxiBjU",
+     "Fala de eletricista, a função desta vaga."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ]
+   ]
+  },
+  {
+   "id": "vinci-energies-banco-de-talentos-supervisor-de-escalada-n3-instrumenta-o-74807",
+   "titulo": "Banco de talentos - Supervisor de Escalada N3 - Instrumentação",
+   "empresa": "Vinci Energies",
+   "local": "Macaé, RJ",
+   "link": "https://vinci-energies.gupy.io/jobs/12583255",
+   "regime": "Onshore",
+   "area": "Elétrica e instrumentação",
+   "tema": "eletrica",
+   "banco": true,
+   "vistaEm": "2026-10-25",
+   "videos": [
+    [
+     "-35oTYToV2A",
+     "Fala de eletricista, área vizinha desta vaga."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
+   "id": "vinci-energies-banco-de-talentos-supervisor-de-escalada-n3-mec-nica-68836",
+   "titulo": "Banco de talentos - Supervisor de Escalada N3 - Mecânica",
+   "empresa": "Vinci Energies",
+   "local": "Macaé, RJ",
+   "link": "https://vinci-energies.gupy.io/jobs/12577342",
+   "regime": "Onshore",
+   "area": "Mecânica e manutenção",
+   "tema": "mecanica",
+   "banco": true,
+   "vistaEm": "2026-10-25",
+   "videos": [
+    [
+     "3yOdA-HnSeg",
+     "Fala de mecânico e manutenção, a função desta vaga."
+    ],
+    [
+     "AFQCQwo_5Kc",
+     "Fala de mecânico e manutenção, a função desta vaga."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ]
+   ]
+  },
+  {
+   "id": "vinci-energies-banco-de-talentos-t-cnico-mec-nica-47139",
+   "titulo": "Banco de talentos - Técnico Mecânica",
+   "empresa": "Vinci Energies",
+   "local": "Macaé, RJ",
+   "link": "https://vinci-energies.gupy.io/jobs/12574800",
+   "regime": "Onshore",
+   "area": "Mecânica e manutenção",
+   "tema": "mecanica",
+   "banco": true,
+   "vistaEm": "2026-10-25",
+   "videos": [
+    [
+     "3yOdA-HnSeg",
+     "Fala de mecânico e manutenção, a função desta vaga."
+    ],
+    [
+     "AFQCQwo_5Kc",
+     "Fala de mecânico e manutenção, a função desta vaga."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ]
+   ]
+  },
+  {
+   "id": "vinci-energies-banco-de-talentos-t-cnico-mec-nica-usinagem-55152",
+   "titulo": "Banco de talentos - Técnico Mecânica - Usinagem",
+   "empresa": "Vinci Energies",
+   "local": "Macaé, RJ",
+   "link": "https://vinci-energies.gupy.io/jobs/12576111",
+   "regime": "Onshore",
+   "area": "Mecânica e manutenção",
+   "tema": "mecanica",
+   "banco": true,
+   "vistaEm": "2026-10-25",
+   "videos": [
+    [
+     "3yOdA-HnSeg",
+     "Fala de mecânico e manutenção, a função desta vaga."
+    ],
+    [
+     "AFQCQwo_5Kc",
+     "Fala de mecânico e manutenção, a função desta vaga."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ]
+   ]
+  },
+  {
+   "id": "vinci-energies-banco-de-talentos-t-cnico-mec-nico-de-refrigera-o-61364",
+   "titulo": "Banco de talentos - Técnico Mecânico de Refrigeração",
+   "empresa": "Vinci Energies",
+   "local": "Macaé, RJ",
+   "link": "https://vinci-energies.gupy.io/jobs/12576297",
+   "regime": "Onshore",
+   "area": "Mecânica e manutenção",
+   "tema": "mecanica",
+   "banco": true,
+   "vistaEm": "2026-10-25",
+   "videos": [
+    [
+     "3yOdA-HnSeg",
+     "Fala de mecânico e manutenção, a função desta vaga."
+    ],
+    [
+     "AFQCQwo_5Kc",
+     "Fala de mecânico e manutenção, a função desta vaga."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ]
+   ]
+  },
+  {
+   "id": "vinci-energies-banco-de-talentos-t-cnico-de-el-trica-79982",
+   "titulo": "Banco de talentos - Técnico de Elétrica",
+   "empresa": "Vinci Energies",
+   "local": "Macaé, RJ",
+   "link": "https://vinci-energies.gupy.io/jobs/12575274",
+   "regime": "Onshore",
+   "area": "Elétrica e instrumentação",
+   "tema": "eletrica",
+   "banco": true,
+   "vistaEm": "2026-10-25",
+   "videos": [
+    [
+     "-35oTYToV2A",
+     "Fala de eletricista, a função desta vaga."
+    ],
+    [
+     "TSUnVzxiBjU",
+     "Fala de eletricista, a função desta vaga."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ]
+   ]
+  },
+  {
+   "id": "vinci-energies-banco-de-talentos-t-cnico-de-el-trica-escalador-n1-51058",
+   "titulo": "Banco de talentos - Técnico de Elétrica Escalador N1",
+   "empresa": "Vinci Energies",
+   "local": "Macaé, RJ",
+   "link": "https://vinci-energies.gupy.io/jobs/12575821",
+   "regime": "Onshore",
+   "area": "Elétrica e instrumentação",
+   "tema": "eletrica",
+   "banco": true,
+   "vistaEm": "2026-10-25",
+   "videos": [
+    [
+     "89nmfX5NnpI",
+     "Fala de soldador, caldeireiro e acesso por corda, a função desta vaga."
+    ],
+    [
+     "1xePUBawZBU",
+     "Fala de soldador, caldeireiro e acesso por corda, a função desta vaga."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ]
+   ]
+  },
+  {
+   "id": "vinci-energies-banco-de-talentos-t-cnico-de-instrumenta-o-16984",
+   "titulo": "Banco de talentos - Técnico de Instrumentação",
+   "empresa": "Vinci Energies",
+   "local": "Macaé, RJ",
+   "link": "https://vinci-energies.gupy.io/jobs/12574299",
+   "regime": "Onshore",
+   "area": "Elétrica e instrumentação",
+   "tema": "eletrica",
+   "banco": true,
+   "vistaEm": "2026-10-25",
+   "videos": [
+    [
+     "-35oTYToV2A",
+     "Fala de eletricista, área vizinha desta vaga."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
+   "id": "vinci-energies-banco-de-talentos-t-cnico-de-instrumenta-o-home-office-72872",
+   "titulo": "Banco de talentos - Técnico de Instrumentação - Home Office",
+   "empresa": "Vinci Energies",
+   "local": "Macaé, RJ",
+   "link": "https://vinci-energies.gupy.io/jobs/12584552",
+   "regime": "Onshore",
+   "area": "Elétrica e instrumentação",
+   "tema": "eletrica",
+   "banco": true,
+   "vistaEm": "2026-10-25",
+   "videos": [
+    [
+     "-35oTYToV2A",
+     "Fala de eletricista, área vizinha desta vaga."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
+   "id": "vinci-energies-banco-de-talentos-t-cnico-de-instrumenta-o-escalador-n1-5959",
+   "titulo": "Banco de talentos - Técnico de Instrumentação Escalador N1",
+   "empresa": "Vinci Energies",
+   "local": "Macaé, RJ",
+   "link": "https://vinci-energies.gupy.io/jobs/12304852",
+   "regime": "Onshore",
+   "area": "Elétrica e instrumentação",
+   "tema": "eletrica",
+   "banco": true,
+   "vistaEm": "2026-10-25",
+   "videos": [
+    [
+     "89nmfX5NnpI",
+     "Fala de soldador, caldeireiro e acesso por corda, a função desta vaga."
+    ],
+    [
+     "1xePUBawZBU",
+     "Fala de soldador, caldeireiro e acesso por corda, a função desta vaga."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ]
+   ]
+  },
+  {
+   "id": "vinci-energies-banco-de-talentos-t-cnico-de-mec-nica-escalador-n1-99936",
+   "titulo": "Banco de talentos - Técnico de Mecânica Escalador N1",
+   "empresa": "Vinci Energies",
+   "local": "Macaé, RJ",
+   "link": "https://vinci-energies.gupy.io/jobs/12574528",
+   "regime": "Onshore",
+   "area": "Mecânica e manutenção",
+   "tema": "mecanica",
+   "banco": true,
+   "vistaEm": "2026-10-25",
+   "videos": [
+    [
+     "89nmfX5NnpI",
+     "Fala de soldador, caldeireiro e acesso por corda, a função desta vaga."
+    ],
+    [
+     "1xePUBawZBU",
+     "Fala de soldador, caldeireiro e acesso por corda, a função desta vaga."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
     ]
    ]
   },
