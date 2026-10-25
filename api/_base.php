@@ -41,8 +41,26 @@ function mexer($f, callable $fn, $padrao = []) {
     flock($fp, LOCK_UN);
     return $ok ? ($r ?? true) : false;
 }
+// Limite de envios por IP numa janela de tempo, contra robôs que enchem formulário
+function limitar($nome, $max = 10, $janela = 3600) {
+    global $dataDir;
+    $f = $dataDir . '/limite-' . preg_replace('/[^a-z0-9-]/', '', $nome) . '.json';
+    $ip = hash('sha256', ($_SERVER['REMOTE_ADDR'] ?? '') . $nome);
+    $agora = time();
+    $fp = fopen($f . '.lock', 'c'); flock($fp, LOCK_EX);
+    $d = readJson($f);
+    foreach ($d as $k => $l) { $d[$k] = array_values(array_filter((array)$l, fn($t) => $agora - $t < $janela)); if (!$d[$k]) unset($d[$k]); }
+    $estourou = count($d[$ip] ?? []) >= $max;
+    if (!$estourou) { $d[$ip][] = $agora; writeJson($f, $d); }
+    flock($fp, LOCK_UN);
+    if ($estourou) out(429, ['error' => 'Muitos envios seguidos. Tente de novo mais tarde.']);
+}
 function auth($in) {
-    if (!password_verify((string)($in['senha'] ?? ''), SENHA_HASH)) { sleep(1); out(401, ['error' => 'Senha incorreta']); }
+    if (!password_verify((string)($in['senha'] ?? ''), SENHA_HASH)) {
+        // Cada senha errada conta: 10 erros em 15 minutos bloqueiam o IP por um tempo (contra quem tenta adivinhar)
+        limitar('login', 10, 900);
+        sleep(1); out(401, ['error' => 'Senha incorreta']);
+    }
 }
 function entrada() {
     if ($_SERVER['REQUEST_METHOD'] !== 'POST') out(405, ['error' => 'Use POST']);

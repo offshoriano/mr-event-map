@@ -24,7 +24,7 @@
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  try{window.mrCk=localStorage.getItem('mr-cookies')}catch(e){}gtag('consent','default',{analytics_storage:window.mrCk==='sim'?'granted':'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});gtag('js', new Date());</script><script src="/assets/consentimento.js" defer></script><script>
   gtag('config', 'G-BBGCSZ37C4');
   gtag('config', 'G-0NWBT6GP5Q');
 </script>
@@ -413,7 +413,7 @@ footer a{color:var(--muted2);}
 <footer><div class="wrap">
   <div>Matheus Rangel · Carreira Offshore · MR Solutions</div>
   <div><a href="https://www.youtube.com/@carreiraoffshore" target="_blank" rel="noopener">YouTube</a> · <a href="../vagas/">Vagas offshore</a> · <a href="../">Event Map</a></div>
-</div></footer>
+</div><p style="margin-top:8px;font-size:12px"><a href="/privacidade/" style="color:inherit">Privacidade</a> · <a href="/termos/" style="color:inherit">Termos de uso</a></p></footer>
 
 <div class="sticky" id="sticky">
   <div class="p"><b>R$ 97</b>ou até 12x · 7 dias de garantia</div>

@@ -27,7 +27,7 @@
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  try{window.mrCk=localStorage.getItem('mr-cookies')}catch(e){}gtag('consent','default',{analytics_storage:window.mrCk==='sim'?'granted':'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});gtag('js', new Date());</script><script src="/assets/consentimento.js" defer></script><script>
   gtag('config', 'G-BBGCSZ37C4');
   gtag('config', 'G-0NWBT6GP5Q');
 </script>
@@ -490,7 +490,7 @@ input[type="date"],input[type="time"]{color-scheme:dark;}
 <footer>
   <div class="foot-logo">MR Group <span>·</span> Onde o óleo e gás se encontra</div>
   <div class="foot-copy"><a href="mailto:mateus.rangel@mrgroup.com.br" style="color:inherit">mateus.rangel@mrgroup.com.br</a> · <a href="https://wa.me/5522988335183" style="color:inherit" target="_blank" rel="noopener">(22) 98833-5183</a> · <a href="sobre/" style="color:inherit">Sobre a MR Group</a></div>
-</footer>
+<p style="margin-top:8px;font-size:12px"><a href="/privacidade/" style="color:inherit">Privacidade</a> · <a href="/termos/" style="color:inherit">Termos de uso</a></p></footer>
 
 <!-- MODAL: ADICIONAR EVENTO DO SETOR -->
 <div class="modal-overlay" id="add-event-overlay">
@@ -1364,11 +1364,36 @@ function showAddEventError(msg) {
 // ─── API PERSISTENCE ─────────────────────────────────────────────────────────
 const API = 'api/events.php';
 
+// O que vem da API foi digitado por visitantes: escapa todo texto antes de ir para a tela,
+// aceita só ids simples e links http(s), para ninguém conseguir injetar código na agenda
+const escHTML = v => String(v ?? '').replace(/[&<>"'`]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;','`':'&#96;'}[c]));
+const idSeguro = (v, prefixo) => /^[A-Za-z0-9_-]{1,80}$/.test(String(v || '')) ? String(v) : prefixo + Math.random().toString(36).slice(2, 10);
+function limparRemoto(data){
+  const txt = v => escHTML(String(v ?? '').slice(0, 300));
+  const conferences = (data.conferences || []).map(c => ({
+    id: idSeguro(c.id, 'user_'), name: txt(c.name), dates: txt(c.dates || 'A confirmar'), month: txt(c.month),
+    monthShort: txt(c.monthShort || String(c.month || '').slice(0, 3).toUpperCase()), year: +c.year || new Date().getFullYear(),
+    location: txt(c.location), access: ['public', 'convite', 'restrito'].includes(c.access) ? c.access : 'public',
+    link: /^https?:\/\//i.test(c.link || '') ? encodeURI(String(c.link)).replace(/'/g, '%27') : '', past: false, parallel: [], goers: []
+  }));
+  const parallels = (data.parallels || []).map(p => ({
+    confId: String(p.confId || ''), id: idSeguro(p.id, 'p_'), dateIso: /^\d{4}-\d{2}-\d{2}$/.test(p.dateIso || '') ? p.dateIso : '',
+    timeVal: /^\d{2}:\d{2}$/.test(p.timeVal || '') ? p.timeVal : '', day: txt(p.day || 'A confirmar'), name: txt(p.name), desc: txt(p.desc),
+    access: ['convite', 'aberto', 'restrito'].includes(p.access) ? p.access : 'convite',
+    attendees: (Array.isArray(p.attendees) ? p.attendees : []).slice(0, 30).map(txt), ts: +p.ts || undefined
+  }));
+  const goers = (data.goers || []).map(g => ({
+    eventType: g.eventType === 'parallel' ? 'parallel' : 'conference', confId: String(g.confId || ''), eventKey: String(g.eventKey || ''),
+    name: txt(String(g.name || '').slice(0, 80)), company: txt(String(g.company || '').slice(0, 80)), ts: +g.ts || 0
+  }));
+  return {conferences, parallels, goers};
+}
+
 async function loadRemoteEvents() {
   try {
     const res = await fetch(API);
     if (!res.ok) return;
-    const data = await res.json();
+    const data = limparRemoto(await res.json());
     let changed = false;
 
     if (data.conferences && data.conferences.length > 0) {

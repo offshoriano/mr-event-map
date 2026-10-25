@@ -29,7 +29,7 @@ MESES = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'a
 PAGINAS_FIXAS = [('', 'weekly', '1.0'), ('vagas/', 'daily', '0.9'), ('vagas/embarcado/', 'daily', '0.8'),
                  ('vagas/sem-experiencia/', 'daily', '0.8'), ('vagas/macae/', 'daily', '0.8'), ('vagas/rio-de-janeiro/', 'daily', '0.8'),
                  ('artigos/', 'weekly', '0.8'), ('radar/', 'weekly', '0.8'), ('guia/', 'monthly', '0.8'), ('sobre/', 'monthly', '0.6'),
-                 ('vagas/divulgar/', 'monthly', '0.5'), ('diagnostico/', 'monthly', '0.7')]
+                 ('vagas/divulgar/', 'monthly', '0.5'), ('diagnostico/', 'monthly', '0.7'), ('privacidade/', 'yearly', '0.2'), ('termos/', 'yearly', '0.2')]
 
 def e(x):
     return html.escape(str(x or ''), quote=True)
@@ -148,7 +148,7 @@ def cabeca(titulo, desc, url, imagem, extra='', noindex=False):
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:opsz,wght@9..40,400..800&display=swap" rel="stylesheet">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-BBGCSZ37C4"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}gtag('js',new Date());gtag('config','G-BBGCSZ37C4');gtag('config','G-0NWBT6GP5Q');</script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}try{{window.mrCk=localStorage.getItem('mr-cookies')}}catch(e){{}}gtag('consent','default',{{analytics_storage:window.mrCk==='sim'?'granted':'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'}});gtag('js',new Date());</script><script src="/assets/consentimento.js" defer></script><script>gtag('config','G-BBGCSZ37C4');gtag('config','G-0NWBT6GP5Q');</script>
 {extra}
 <style>{CSS}</style>
 </head>
@@ -157,7 +157,7 @@ def cabeca(titulo, desc, url, imagem, extra='', noindex=False):
 <div class="links"><a href="/artigos/">Artigos</a><a href="/vagas/">Vagas</a><a href="/#calendar-main">Agenda</a><a href="/guia/">Guia</a></div></nav>
 """
 
-RODAPE = """<footer>MR Group · Conhecimento que conecta. <a href="/sobre/">Sobre</a> · <a href="/vagas/">Vagas</a> · <a href="/artigos/">Artigos</a></footer>
+RODAPE = """<footer>MR Group · Conhecimento que conecta. <a href="/sobre/">Sobre</a> · <a href="/vagas/">Vagas</a> · <a href="/artigos/">Artigos</a><p style="margin-top:8px;font-size:12px"><a href="/privacidade/" style="color:inherit">Privacidade</a> · <a href="/termos/" style="color:inherit">Termos de uso</a></p></footer>
 <script>
 document.addEventListener('click', ev => {
   const b = ev.target.closest('.video'); if (!b || b.classList.contains('on')) return;

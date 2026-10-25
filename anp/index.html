@@ -27,7 +27,7 @@
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  try{window.mrCk=localStorage.getItem('mr-cookies')}catch(e){}gtag('consent','default',{analytics_storage:window.mrCk==='sim'?'granted':'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});gtag('js', new Date());</script><script src="/assets/consentimento.js" defer></script><script>
   gtag('config', 'G-BBGCSZ37C4');
   gtag('config', 'G-0NWBT6GP5Q');
 </script>
@@ -205,7 +205,7 @@ footer{border-top:1px solid var(--border);padding:36px 48px;max-width:1240px;mar
 <footer>
   <div class="foot-logo">MR Solutions <span>·</span> Radar Offshore</div>
   <div class="foot-copy">Fonte: Agência Nacional do Petróleo, Gás Natural e Biocombustíveis (ANP), painéis dinâmicos de Produção (Boletim Mensal), Instalações Marítimas, Poços na Fase de Produção e Fase de Exploração. Leitura, organização e análise: MR Solutions.</div>
-</footer>
+<p style="margin-top:8px;font-size:12px"><a href="/privacidade/" style="color:inherit">Privacidade</a> · <a href="/termos/" style="color:inherit">Termos de uso</a></p></footer>
 
 <div id="tip"></div>
 

@@ -7,6 +7,13 @@ RewriteCond %{HTTP_HOST} ^(www\.)?mreventmap\.com\.br$ [NC,OR]
 RewriteCond %{HTTP_HOST} ^www\.mrgroup\.com\.br$ [NC]
 RewriteRule ^(.*)$ https://mrgroup.com.br/$1 [R=301,L]
 
+# Sempre HTTPS (o CDN da Hostinger informa o protocolo original nesse cabeçalho)
+RewriteCond %{HTTP:X-Forwarded-Proto} =http
+RewriteRule ^(.*)$ https://mrgroup.com.br/$1 [R=301,L]
+
+# Página própria para endereço que não existe
+ErrorDocument 404 /404.html
+
 # Radar Offshore em /radar (os arquivos continuam na pasta anp/)
 RewriteRule ^radar$ /radar/ [R=301,L]
 RewriteRule ^radar/(.*)$ anp/$1 [L]
@@ -33,3 +40,17 @@ RewriteRule ^radar/(.*)$ anp/$1 [L]
 # /anp/ é o mesmo conteúdo de /radar/: manda para o endereço oficial para o Google não ver página duplicada
 RewriteCond %{THE_REQUEST} \s/anp/?(\s|\?) [NC]
 RewriteRule ^anp/?$ /radar/ [R=301,L]
+
+# Segurança: cabeçalhos que dizem ao navegador para não aceitar truques comuns
+<IfModule mod_headers.c>
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=()"
+</IfModule>
+
+# Arquivos internos que não devem ser baixados por ninguém
+<FilesMatch "\.(md|py|lock|tmp|log|sh|yml|yaml)$">
+  Require all denied
+</FilesMatch>

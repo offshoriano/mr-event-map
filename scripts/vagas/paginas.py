@@ -72,7 +72,7 @@ def pagina(r, lista, hoje, todos):
 <meta property="og:title" content="{e(titulo)}"><meta property="og:description" content="{e(desc)}">
 <meta property="og:image" content="{SITE}/assets/og/vagas.jpg"><meta name="twitter:card" content="summary_large_image">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-BBGCSZ37C4"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}gtag('js',new Date());gtag('config','G-BBGCSZ37C4');gtag('config','G-0NWBT6GP5Q');</script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}try{{window.mrCk=localStorage.getItem('mr-cookies')}}catch(e){{}}gtag('consent','default',{{analytics_storage:window.mrCk==='sim'?'granted':'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'}});gtag('js',new Date());</script><script src="/assets/consentimento.js" defer></script><script>gtag('config','G-BBGCSZ37C4');gtag('config','G-0NWBT6GP5Q');</script>
 <script type="application/ld+json">{lista_ld}</script>
 <style>{CSS}</style>
 </head>
@@ -89,7 +89,7 @@ def pagina(r, lista, hoje, todos):
 <div class="guia"><b style="color:var(--white)">Ainda não embarcou?</b> O Guia 7 Passos mostra o caminho na ordem certa: cursos, currículo, LinkedIn e entrevista. <a href="../../guia/">Conhecer o guia</a></div>
 <h2>Outras buscas</h2><div class="outras">{outras}</div>
 </main>
-<footer>MR Group · Vagas puxadas direto dos sites das empresas. A candidatura é feita com a empresa, sem custo.</footer>
+<footer>MR Group · Vagas puxadas direto dos sites das empresas. A candidatura é feita com a empresa, sem custo.<p style="margin-top:8px;font-size:12px"><a href="/privacidade/" style="color:inherit">Privacidade</a> · <a href="/termos/" style="color:inherit">Termos de uso</a></p></footer>
 </body>
 </html>
 """
