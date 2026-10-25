@@ -205,6 +205,14 @@ footer{border-top:1px solid var(--border);padding:36px 48px;max-width:1080px;mar
 .atalhos a{font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--muted2);text-decoration:none;border:1px solid var(--border2);padding:9px 14px;border-radius:2px;}
 .atalhos a:hover{color:var(--white);border-color:var(--gold);}
 .atalhos a b{color:var(--gold-l);}
+.alerta{margin:14px 0 6px;background:linear-gradient(135deg,rgba(201,147,58,.13),rgba(17,24,32,.9));border:1px solid rgba(201,147,58,.45);border-radius:3px;padding:18px 20px;}
+.al-t b{display:block;font-size:17px;color:var(--white);}.al-t span{font-size:14px;color:var(--muted2);}
+.al-c{display:grid;grid-template-columns:1.1fr 1.4fr .9fr auto;gap:8px;margin-top:12px;align-items:center;}
+.al-c input,.al-c select{font-family:inherit;font-size:14px;background:var(--card);border:1px solid var(--border2);color:var(--white);padding:11px 12px;border-radius:2px;width:100%;}
+.al-ck{grid-column:1/-1;font-size:13px;color:var(--muted2);display:flex;gap:8px;align-items:center;}
+.al-ck input{width:auto;}
+.al-msg{font-size:14px;margin-top:8px;min-height:18px;}.al-msg.ok{color:#4ADE80;}.al-msg.erro{color:#F08A80;}
+@media(max-width:800px){.al-c{grid-template-columns:1fr;}}
 .qual{background:var(--card);border:1px solid rgba(127,220,127,.35);border-radius:2px;margin-bottom:16px;overflow:hidden;scroll-margin-top:90px;}
 .qual .job-head{padding:22px 24px 10px;}
 .qual .job-body{padding:0 24px 20px;}
@@ -481,6 +489,18 @@ Promise.all([
   const atalhos = [QUAL.length && ['#qualificacao', 'Qualificação aberta', QUAL.length], INICIO.length && ['#comecando', 'Para quem está começando', INICIO.length], VAGAS.length && ['#list', 'Vagas comentadas', VAGAS.length], AUTO.length && ['#setor', 'Com experiência', AUTO.length]].filter(Boolean);
   $('#app').innerHTML = `
     <div class="atalhos" role="navigation" aria-label="Seções">${atalhos.map(([h, t, n]) => `<a href="${h}">${t} <b>${n}</b></a>`).join('')}</div>
+    <form class="alerta" id="alerta" novalidate>
+      <div class="al-t"><b>Receba as vagas novas no seu e-mail</b><span>Toda segunda, só as que combinam com você. Grátis, e você sai quando quiser.</span></div>
+      <div class="al-c">
+        <input type="email" id="al-email" placeholder="Seu e-mail" autocomplete="email" aria-label="Seu e-mail">
+        <input id="al-fun" placeholder="Funções (ex.: mecânico, ROV, técnico de segurança)" aria-label="Funções que você procura">
+        <select id="al-reg" aria-label="Tipo de vaga"><option value="Ambos">Embarcado e em terra</option><option value="Offshore">Só embarcado</option><option value="Onshore">Só em terra</option></select>
+        <label class="al-ck"><input type="checkbox" id="al-ini"> Quero vagas para quem está começando</label>
+        <input id="al-site" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
+        <button class="btn btn-gold" id="al-ok" type="submit">Criar alerta</button>
+      </div>
+      <p class="al-msg" id="al-msg" role="status"></p>
+    </form>
     ${QUAL.length ? `<div class="sec-h" id="qualificacao" style="scroll-margin-top:90px"><h2>Qualificação com inscrição aberta</h2><small>cursos e programas gratuitos do setor</small></div>
     ${QUAL.map(qualHTML).join('')}` : ''}
     ${INICIO.length ? `<div class="sec-h" id="comecando" style="scroll-margin-top:90px"><h2>Vagas abertas agora para quem está começando</h2><small>${INICIO.length} vagas de aprendiz, estágio, trainee e ajudante</small></div>
@@ -511,6 +531,21 @@ Promise.all([
       <div><h3>Sua empresa está contratando?</h3><p>Divulgue a vaga para quem acompanha o Carreira Offshore, com conteúdo de preparação junto. O candidato chega mais pronto na entrevista.</p></div>
       <a class="btn btn-gold" href="divulgar/">Divulgar uma vaga</a>
     </div>`;
+  if ($('#alerta')) $('#alerta').onsubmit = e => {
+    e.preventDefault();
+    const m = $('#al-msg'); m.className = 'al-msg';
+    const d = {action:'inscrever', email:$('#al-email').value.trim(), funcoes:$('#al-fun').value.trim(), regime:$('#al-reg').value, iniciante:$('#al-ini').checked, site:$('#al-site').value};
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(d.email)) { m.classList.add('erro'); m.textContent = 'Coloque um e-mail válido.'; return; }
+    if (!d.funcoes && !d.iniciante) { m.classList.add('erro'); m.textContent = 'Diga as funções que você procura ou marque "quem está começando".'; return; }
+    $('#al-ok').disabled = true;
+    fetch('../api/alertas.php', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(d)})
+      .then(r => r.json().then(j => ({ok:r.ok, j}))).then(({ok, j}) => {
+        if (!ok) throw new Error(j.error || 'erro');
+        m.classList.add('ok'); m.textContent = j.ativo ? 'Alerta atualizado.' : 'Quase lá: confirme no e-mail que acabamos de enviar.';
+        if (window.gtag) gtag('event', 'alerta_vagas_inscricao', {regime:d.regime, iniciante:d.iniciante});
+      }).catch(err => { m.classList.add('erro'); m.textContent = err.message !== 'erro' ? err.message : 'Não foi possível agora. Tente de novo em instantes.'; })
+      .finally(() => { $('#al-ok').disabled = false; });
+  };
   if ($('#q')){ $('#q').oninput = render; $('#area').onchange = render; render(); }
   if ($('#q2')){
     const re = () => { mostrar = 30; renderAuto(); };
