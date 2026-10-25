@@ -11,6 +11,7 @@ $action = $in['action'] ?? 'add';
 
 if ($action === 'add') {
     if (!empty($in['site'])) out(200, ['ok' => true]); // campo isca contra robôs
+    limitar('leads', 20);
     $lead = [
         'id'          => bin2hex(random_bytes(6)),
         'data'        => date('c'),

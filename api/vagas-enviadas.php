@@ -154,6 +154,7 @@ $action = $in['action'] ?? '';
 
 if ($action === 'enviar') {
     if (!empty($in['site'])) out(200, ['ok' => true]); // campo isca contra robôs
+    limitar('vagas-enviadas', 10);
     $v = campos($in) + [
         'id'       => 'enviada-' . bin2hex(random_bytes(5)),
         'status'   => 'pendente',

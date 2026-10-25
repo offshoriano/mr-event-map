@@ -26,7 +26,7 @@
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  try{window.mrCk=localStorage.getItem('mr-cookies')}catch(e){}gtag('consent','default',{analytics_storage:window.mrCk==='sim'?'granted':'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});gtag('js', new Date());</script><script src="/assets/consentimento.js" defer></script><script>
   gtag('config', 'G-BBGCSZ37C4');
   gtag('config', 'G-0NWBT6GP5Q');
 </script>
@@ -266,7 +266,7 @@ footer{border-top:1px solid var(--border);padding:32px 48px;max-width:1080px;mar
   <p class="assin">MR Group. Conhecimento que conecta.<br><span>Conexões que geram oportunidades.</span></p>
 </main>
 
-<footer>MR Group · mrgroup.com.br</footer>
+<footer>MR Group · mrgroup.com.br<p style="margin-top:8px;font-size:12px"><a href="/privacidade/" style="color:inherit">Privacidade</a> · <a href="/termos/" style="color:inherit">Termos de uso</a></p></footer>
 
 <script>
 // Os atalhos do topo abrem a divisão correspondente

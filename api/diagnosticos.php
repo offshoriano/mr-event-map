@@ -11,6 +11,7 @@ $action = $in['action'] ?? 'add';
 
 if ($action === 'add') {
     if (!empty($in['site'])) out(200, ['ok' => true]); // campo isca contra robôs
+    limitar('diagnosticos', 20);
     $r = is_array($in['respostas'] ?? null) ? $in['respostas'] : [];
     $lista = fn($v) => array_slice(array_map(fn($x) => clean($x, 30), is_array($v) ? $v : []), 0, 10);
     $d = [
