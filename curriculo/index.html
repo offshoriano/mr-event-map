@@ -75,6 +75,11 @@ strong{color:var(--white)}
 .cv p{font-size:15px;line-height:1.6;color:var(--muted2);font-family:ui-monospace,Menlo,Consolas,monospace}
 .cv p+p{margin-top:10px}
 
+.metodo{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:26px;counter-reset:m}
+.metodo div{background:var(--card);border:1px solid var(--border);border-radius:3px;padding:18px}
+.metodo b{display:block;font-size:15px;margin-bottom:6px}
+.metodo b::before{counter-increment:m;content:counter(m) ". ";color:var(--gold)}
+.metodo span{font-size:14px;line-height:1.55;color:var(--muted2)}
 .passos{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:28px;counter-reset:p}
 .passo{background:var(--card);border:1px solid var(--border);border-radius:3px;padding:22px 20px}
 .passo::before{counter-increment:p;content:counter(p);display:block;font-family:'Bebas Neue',sans-serif;font-size:42px;color:var(--gold);line-height:1;margin-bottom:10px}
@@ -126,10 +131,10 @@ footer a{color:inherit}
   nav{padding:12px 16px}.nav-logo span{display:none}
   .nav-links{overflow-x:auto;max-width:62vw}.nav-links a{padding:8px 10px}
   .wrap{padding:0 16px}
-  .passos{grid-template-columns:1fr 1fr}
+  .passos,.metodo{grid-template-columns:1fr 1fr}
   .antes,.recebe,.perfis,.preco{grid-template-columns:1fr}
 }
-@media(max-width:480px){.passos{grid-template-columns:1fr}}
+@media(max-width:480px){.passos,.metodo{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -166,12 +171,28 @@ footer a{color:inherit}
     <div class="cv ruim"><h3>Como chega</h3>
       <p>Objetivo: trabalhar na área offshore.</p>
       <p>Cursos: diversos cursos na área de segurança.</p>
-      <p>Experiência: manutenção em empresa do ramo.</p></div>
+      <p>Experiência: Empresa X, 2021 a 2024.</p></div>
     <div class="cv bom"><h3>Como sai</h3>
-      <p>Mecânico de manutenção | Bombas centrífugas e compressores | CBSP e T-HUET válidos até 2028</p>
-      <p>NR-10, NR-33 e NR-35 em dia.</p>
-      <p>Manutenção preventiva e corretiva em 14 bombas de processo, com redução de paradas não programadas.</p></div>
+      <p>Objetivo: Mecânico de Manutenção Offshore</p>
+      <p>CBSP · validade abr/2029<br>T-HUET · validade abr/2029<br>NR-35 · validade mar/2027</p>
+      <p>Manutenção preventiva e corretiva de bombas centrífugas e compressores, com permissão de trabalho e análise de risco.</p></div>
   </div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>O método do currículo magnético</h2>
+  <p>A vaga é o ferro e o seu currículo é o ímã. É assim que o Matheus Rangel monta currículo há anos, com a validação de recrutadoras do setor. Oito partes, nesta ordem, para quem contrata achar o que procura sem rolar a página.</p>
+  <div class="metodo">
+    <div><b>Dados pessoais</b><span>Nome, cidade, telefone, e-mail e LinkedIn. Sem CPF, RG nem endereço completo.</span></div>
+    <div><b>Objetivo</b><span>Uma linha, com o nome exato da vaga.</span></div>
+    <div><b>Resumo profissional</b><span>O trailer da sua carreira em até seis linhas. É onde a recrutadora decide se continua lendo.</span></div>
+    <div><b>Idiomas</b><span>Nível em fala, escrita e compreensão, logo no começo.</span></div>
+    <div><b>Formação</b><span>Curso, escola e mês e ano de conclusão.</span></div>
+    <div><b>Experiências</b><span>As três últimas, escritas com as palavras da vaga, incluindo segurança.</span></div>
+    <div><b>Qualificações</b><span>Um curso por linha, com instituição e validade.</span></div>
+    <div><b>Informações adicionais</b><span>Unidades em que trabalhou, registro no conselho, passaporte e disponibilidade.</span></div>
+  </div>
+  <p style="margin-top:22px">No formato simples que o sistema de triagem lê: Word para cadastrar em plataformas como a Gupy e PDF para mandar por e-mail. Sem Canva, sem foto, sem gráfico. E com no máximo duas páginas, mesmo para quem tem 20 anos de estrada.</p>
 </div></section>
 
 <section id="como"><div class="wrap">
