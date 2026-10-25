@@ -29,7 +29,7 @@ MESES = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'a
 PAGINAS_FIXAS = [('', 'weekly', '1.0'), ('vagas/', 'daily', '0.9'), ('vagas/embarcado/', 'daily', '0.8'),
                  ('vagas/sem-experiencia/', 'daily', '0.8'), ('vagas/macae/', 'daily', '0.8'), ('vagas/rio-de-janeiro/', 'daily', '0.8'),
                  ('artigos/', 'weekly', '0.8'), ('radar/', 'weekly', '0.8'), ('guia/', 'monthly', '0.8'), ('sobre/', 'monthly', '0.6'),
-                 ('vagas/divulgar/', 'monthly', '0.5'), ('diagnostico/', 'monthly', '0.7'), ('privacidade/', 'yearly', '0.2'), ('termos/', 'yearly', '0.2'), ('contato/', 'yearly', '0.4')]
+                 ('vagas/divulgar/', 'monthly', '0.5'), ('diagnostico/', 'monthly', '0.7'), ('curriculo/', 'monthly', '0.7'), ('privacidade/', 'yearly', '0.2'), ('termos/', 'yearly', '0.2'), ('contato/', 'yearly', '0.4')]
 
 def e(x):
     return html.escape(str(x or ''), quote=True)
@@ -154,7 +154,7 @@ def cabeca(titulo, desc, url, imagem, extra='', noindex=False):
 </head>
 <body>
 <nav><a class="logo" href="/"><img src="/assets/mr-solutions-branco.png" alt="MR Group" width="34" height="28"><span>Artigos</span></a>
-<div class="links"><a href="/artigos/">Artigos</a><a href="/vagas/">Vagas</a><a href="/#calendar-main">Agenda</a><a href="/guia/">Guia</a></div></nav>
+<div class="links"><a href="/artigos/">Artigos</a><a href="/vagas/">Vagas</a><a href="/curriculo/">Currículo</a><a href="/#calendar-main">Agenda</a><a href="/guia/">Guia</a></div></nav>
 """
 
 RODAPE = """<footer>MR Group · Conhecimento que conecta. <a href="/sobre/">Sobre</a> · <a href="/vagas/">Vagas</a> · <a href="/artigos/">Artigos</a><p style="margin-top:10px;font-size:12px;line-height:2"><a href="https://www.instagram.com/matheus_rangel/" target="_blank" rel="noopener" style="color:inherit">Instagram</a> · <a href="https://www.linkedin.com/in/omatheusrangel/" target="_blank" rel="noopener" style="color:inherit">LinkedIn</a> · <a href="https://www.youtube.com/@carreiraoffshore" target="_blank" rel="noopener" style="color:inherit">YouTube</a> · <a href="/contato/" style="color:inherit">Fale com a gente</a> · <a href="/privacidade/" style="color:inherit">Privacidade</a> · <a href="/termos/" style="color:inherit">Termos de uso</a></p></footer>
