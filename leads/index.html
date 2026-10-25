@@ -85,7 +85,7 @@ function login(msg){
   $('#f').onsubmit = e => { e.preventDefault(); senha = $('#pw').value; carregar(); };
 }
 
-let VG = [], AVISO = '', aba = ({'#vagas':'vagas', '#ranking':'ranking', '#empresas':'empresas', '#diagnosticos':'diagnosticos', '#mensagens':'mensagens', '#alertas':'alertas'})[location.hash] || 'contatos', avisou = false;
+let VG = [], AVISO = '', aba = ({'#vagas':'vagas', '#ranking':'ranking', '#empresas':'empresas', '#diagnosticos':'diagnosticos', '#mensagens':'mensagens', '#alertas':'alertas', '#curriculo':'curriculo'})[location.hash] || 'contatos', avisou = false;
 const AREAS = {seguranca:'Segurança', eletrica:'Elétrica e instrumentação', mecanica:'Mecânica e manutenção', pocos:'Perfuração e poços',
   maritimo:'Marítimo', hotelaria:'Hotelaria', operacao:'Operação e produção', engenharia:'Engenharia', trainee:'Trainee e estágio', geral:'Outras'};
 const VAPI = '../api/vagas-enviadas.php';
@@ -127,10 +127,11 @@ function painel(){
       <button class="tab ${aba === 'diagnosticos' ? 'on' : ''}" data-aba="diagnosticos">Diagnósticos</button>
       <button class="tab ${aba === 'mensagens' ? 'on' : ''}" data-aba="mensagens">Mensagens</button>
       <button class="tab ${aba === 'alertas' ? 'on' : ''}" data-aba="alertas">Alertas de vagas</button>
+      <button class="tab ${aba === 'curriculo' ? 'on' : ''}" data-aba="curriculo">Currículo</button>
     </div>
     <div id="conteudo"></div></div>`;
   document.querySelectorAll('.tab').forEach(t => t.onclick = () => { aba = t.dataset.aba; history.replaceState(null, '', aba === 'contatos' ? '#' : '#' + aba); painel(); });
-  aba === 'alertas' ? painelAlertas() : aba === 'mensagens' ? painelMensagens() : aba === 'diagnosticos' ? painelDiagnosticos() : aba === 'vagas' ? painelVagas() : aba === 'ranking' ? painelRanking() : aba === 'empresas' ? painelEmpresas() : painelContatos();
+  aba === 'curriculo' ? painelCurriculo() : aba === 'alertas' ? painelAlertas() : aba === 'mensagens' ? painelMensagens() : aba === 'diagnosticos' ? painelDiagnosticos() : aba === 'vagas' ? painelVagas() : aba === 'ranking' ? painelRanking() : aba === 'empresas' ? painelEmpresas() : painelContatos();
 }
 
 function painelVagas(){
@@ -313,6 +314,38 @@ function painelMensagens(){
       cpost({action:'delete', senha, id:b.dataset.id}).then(() => painelMensagens());
     };
   }).catch(() => { $('#conteudo').innerHTML = '<p class="note">Não foi possível carregar as mensagens.</p>'; });
+}
+
+// Lista de espera do Currículo Sob Medida (/curriculo/)
+function painelCurriculo(){
+  $('#conteudo').innerHTML = '<p class="note">Carregando...</p>';
+  const cpost = body => fetch('../api/curriculo.php', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(body)}).then(r => r.json());
+  cpost({action:'list', senha}).then(r => {
+    const L = r.inscritos || [];
+    const sim = L.filter(x => x.experiencia === 'sim').length;
+    $('#conteudo').innerHTML = `<p class="sub" style="margin-top:16px">Quem entrou na lista de espera do Currículo Sob Medida. Cada inscrição nova também chega no seu e-mail.</p>
+      <div class="kpis"><div class="kpi"><b>${L.length}</b><span>Na lista</span></div>
+      <div class="kpi"><b>${L.filter(x => Date.now() - new Date(x.data) < 7 * 864e5).length}</b><span>Últimos 7 dias</span></div>
+      <div class="kpi"><b>${sim}</b><span>Já embarcaram</span></div><div class="kpi"><b>${L.length - sim}</b><span>Ainda não</span></div></div>
+      <div class="bar"><button class="btn ghost" id="cv-csv" type="button">Baixar planilha</button></div>
+      <div class="tbl">${L.length ? `<table><thead><tr><th>Data</th><th>Contato</th><th>Função</th><th>Embarcou</th><th>Origem</th><th></th></tr></thead><tbody>${L.map(x => `<tr>
+        <td class="m">${new Date(x.data).toLocaleString('pt-BR', {dateStyle:'short', timeStyle:'short'})}</td>
+        <td>${esc(x.nome)}<br><a href="mailto:${esc(x.email)}" style="color:var(--gold-l)">${esc(x.email)}</a>${x.whats ? `<br><a href="https://wa.me/55${esc(String(x.whats).replace(/\D/g, '').replace(/^55/, ''))}" target="_blank" style="color:var(--gold-l)">${esc(x.whats)}</a>` : ''}</td>
+        <td>${esc(x.funcao)}</td>
+        <td><span class="tag ${x.experiencia === 'sim' ? 'sim' : 'nao'}">${x.experiencia === 'sim' ? 'Sim' : 'Ainda não'}</span></td>
+        <td class="m">${esc(x.origem || 'direto')}</td>
+        <td><button class="del" data-id="${esc(x.id)}">remover</button></td></tr>`).join('')}</tbody></table>` : '<p style="padding:24px;color:var(--muted)">Ninguém na lista ainda.</p>'}</div>`;
+    $('#cv-csv').onclick = () => {
+      const q = v => '"' + String(v ?? '').replace(/"/g, '""') + '"';
+      const csv = ['Data;Nome;E-mail;WhatsApp;Função;Embarcou;Origem'].concat(L.map(x => [x.data, x.nome, x.email, x.whats, x.funcao, x.experiencia, x.origem].map(q).join(';'))).join('\n');
+      const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob(['\ufeff' + csv], {type:'text/csv'})); a.download = 'lista-curriculo.csv'; a.click();
+    };
+    $('#conteudo').onclick = e => {
+      const b = e.target.closest('.del'); if (!b) return;
+      if (!confirm('Remover esta pessoa da lista de vez?')) return;
+      cpost({action:'delete', senha, id:b.dataset.id}).then(() => painelCurriculo());
+    };
+  }).catch(() => { $('#conteudo').innerHTML = '<p class="note">Não foi possível carregar a lista.</p>'; });
 }
 
 // Empresas que fizeram o diagnóstico de eventos em /diagnostico/

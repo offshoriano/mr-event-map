@@ -75,3 +75,16 @@ function entrada() {
     if (!is_array($in)) out(400, ['error' => 'JSON inválido']);
     return $in;
 }
+// E-mail em HTML pela Resend, com a chave guardada no painel (aba Alertas de vagas). Sem chave, não envia.
+function resendEnviar($para, $assunto, $html, $texto = '') {
+    global $dataDir;
+    $cfg = readJson($dataDir . '/alertas-config.json');
+    if (empty($cfg['chave']) || !filter_var($para, FILTER_VALIDATE_EMAIL) || !function_exists('curl_init')) return false;
+    $ch = curl_init('https://api.resend.com/emails');
+    curl_setopt_array($ch, [CURLOPT_POST => true, CURLOPT_RETURNTRANSFER => true, CURLOPT_TIMEOUT => 20,
+        CURLOPT_HTTPHEADER => ['Authorization: Bearer ' . $cfg['chave'], 'Content-Type: application/json'],
+        CURLOPT_POSTFIELDS => json_encode(['from' => 'Matheus Rangel · MR Group <matheus@mrgroup.com.br>', 'reply_to' => 'mateus.rangel@mrgroup.com.br',
+            'to' => [$para], 'subject' => $assunto, 'html' => $html, 'text' => $texto ?: strip_tags($html)], JSON_UNESCAPED_UNICODE)]);
+    curl_exec($ch); $code = curl_getinfo($ch, CURLINFO_HTTP_CODE); curl_close($ch);
+    return $code >= 200 && $code < 300;
+}
