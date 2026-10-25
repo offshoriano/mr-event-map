@@ -392,14 +392,139 @@ function painelPagamentos(){
   }).catch(() => { $('#conteudo').innerHTML = '<p class="note">Não foi possível carregar.</p>'; });
 }
 
-// Lista de espera do Currículo Sob Medida (/curriculo/)
+// Currículo Sob Medida: chave da Anthropic, teste do gerador, revisão dos pedidos e lista de espera
+let cvAberto = '';
 function painelCurriculo(){
   $('#conteudo').innerHTML = '<p class="note">Carregando...</p>';
-  const cpost = body => fetch('../api/curriculo.php', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(body)}).then(r => r.json());
+  const cj = body => fetch('../api/curriculo.php', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(Object.assign({senha}, body))})
+    .then(async r => ({ok:r.ok, data:await r.json().catch(() => ({}))}));
+  const SIT = {aguardando_pagamento:'Aguardando pagamento', na_fila:'Na fila', gerando:'Gerando...', revisar:'Para revisar', entregue:'Entregue', erro:'Erro', arquivado:'Arquivado'};
+  const dt = d => d ? new Date(d).toLocaleString('pt-BR', {dateStyle:'short', timeStyle:'short'}) : '';
+  cj({action:'pedidos'}).then(({ok, data:d}) => {
+    if (!ok) { $('#conteudo').innerHTML = `<p class="note">${esc(d.error || 'Não foi possível carregar.')}</p>`; return; }
+    const P = d.pedidos || [];
+    window.cvCache = Object.fromEntries(P.filter(p => p.resultado).map(p => [p.id, p.resultado]));
+    const ocupado = P.some(p => p.situacao === 'na_fila' || p.situacao === 'gerando');
+    $('#conteudo').innerHTML = `<p class="sub" style="margin-top:16px">Gerador do Currículo Sob Medida. Todo currículo passa pela sua revisão antes de chegar ao cliente.</p>
+      <div class="aviso">${d.configurada ? `<p><b style="color:var(--white)">Gerador ligado</b> · chave da Anthropic final ${esc(d.final)} · vendas ${d.aberto ? '<b style="color:#7fdc7f">abertas</b>' : 'fechadas (abra na aba Pagamentos)'}</p>`
+        : '<p>Cole a chave da Anthropic (começa com sk-ant-). Ela fica guardada no servidor, fora do site.</p>'}
+        <input type="password" id="cv-chave" placeholder="${d.configurada ? 'Trocar a chave (opcional)' : 'sk-ant-...'}" autocomplete="off">
+        <button class="btn" id="cv-salvar" type="button">Salvar chave</button><span class="note" id="cv-msg" style="margin:0"></span></div>
+      ${d.configurada ? `<h2 class="sec">Testar o gerador</h2>
+      <form class="vg" id="cv-teste"><div class="g">
+        <div><label>Nome da pessoa</label><input name="nome"></div>
+        <div><label>Já embarcou?</label><select name="experiencia"><option value="nao">Ainda não</option><option value="sim">Sim</option></select></div>
+        <div><label>Currículo atual (PDF ou Word .docx)</label><input type="file" name="cv" accept=".pdf,.docx" required></div>
+        <div><label>PDF do LinkedIn (opcional)</label><input type="file" name="linkedin" accept=".pdf"></div></div>
+        <label>Texto da vaga</label><textarea name="vaga" required placeholder="Cole o anúncio completo: atividades, requisitos, local..."></textarea>
+        <div class="vg-acts"><button class="btn" type="submit">Gerar currículo</button><span class="note" id="cv-tmsg" style="margin:0">Leva de 1 a 3 minutos. Custa centavos de dólar.</span></div></form>` : ''}
+      <h2 class="sec">Pedidos${ocupado ? ' <span class="note" style="font-weight:400">atualizando sozinho enquanto gera...</span>' : ''}</h2>
+      ${P.length ? P.map(p => `<div class="vg ${p.situacao === 'revisar' ? 'pend' : ''}">
+        <div class="vg-line"><div><b>${esc(p.nome)}</b> <span class="tag ${p.situacao === 'entregue' ? 'sim' : 'nao'}">${esc(SIT[p.situacao] || p.situacao)}</span>
+          ${p.origem === 'painel' ? '<span class="tag nao">teste</span>' : ''}</div><span class="note" style="margin:0">${dt(p.data)}</span></div>
+        <div class="vg-meta">${esc(p.email || '')}${p.whats ? ' · ' + esc(p.whats) : ''} · já embarcou: ${p.experiencia === 'sim' ? 'sim' : 'não'}${p.uso ? ` · ${p.uso.entrada + p.uso.saida} tokens` : ''}<br>
+          <b>Vaga:</b> ${esc(String(p.vaga || '').slice(0, 220))}${String(p.vaga || '').length > 220 ? '...' : ''}
+          ${p.erro ? `<br><span style="color:#ef7a7a">${esc(p.erro)}</span>` : ''}</div>
+        <div class="vg-acts">
+          ${p.resultado ? `<button class="btn" data-abrir="${esc(p.id)}" type="button">${cvAberto === p.id ? 'Fechar' : p.situacao === 'entregue' ? 'Ver' : 'Revisar'}</button>` : ''}
+          ${(p.arquivos || {}).cv ? `<button class="btn ghost" data-arq="${esc(p.id)}" data-qual="cv" type="button">Currículo original</button>` : ''}
+          ${p.resultado ? `<button class="btn ghost" data-arq="${esc(p.id)}" data-qual="docx" type="button">Word</button><button class="btn ghost" data-arq="${esc(p.id)}" data-qual="pdf" type="button">PDF</button>` : ''}
+          ${p.situacao === 'erro' ? `<button class="btn" data-gerar="${esc(p.id)}" type="button">Tentar de novo</button>` : ''}
+          ${p.situacao === 'entregue' ? `<a class="btn ghost" href="${esc(p.link)}" target="_blank">Página do cliente</a>` : ''}
+          <button class="del" data-apagar="${esc(p.id)}" type="button">apagar</button></div>
+        ${cvAberto === p.id && p.resultado ? editorCurriculo(p) : ''}</div>`).join('') : '<p class="note">Nenhum pedido ainda.</p>'}
+      <div id="cv-lista"></div>`;
+    painelListaEspera($('#cv-lista'));
+    if (ocupado) setTimeout(() => { if (aba === 'curriculo') painelCurriculo(); }, 15000);
+    $('#cv-salvar').onclick = () => {
+      const chave = $('#cv-chave').value.trim(); if (!chave) return;
+      $('#cv-msg').textContent = 'Conferindo com a Anthropic...';
+      cj({action:'config', chave}).then(r => r.ok ? painelCurriculo() : ($('#cv-msg').textContent = r.data.error || 'Erro ao salvar'));
+    };
+    if ($('#cv-teste')) $('#cv-teste').onsubmit = e => {
+      e.preventDefault();
+      const f = new FormData(e.target); f.append('action', 'teste'); f.append('senha', senha);
+      $('#cv-tmsg').textContent = 'Enviando...';
+      fetch('../api/curriculo.php', {method:'POST', body:f}).then(r => r.json()).then(r => {
+        if (r.error) { $('#cv-tmsg').textContent = r.error; return; }
+        painelCurriculo();
+      }).catch(() => $('#cv-tmsg').textContent = 'Erro ao enviar');
+    };
+    $('#conteudo').onclick = e => {
+      const b = e.target.closest('button'); if (!b || !b.dataset) return;
+      if (b.dataset.abrir) { cvAberto = cvAberto === b.dataset.abrir ? '' : b.dataset.abrir; painelCurriculo(); }
+      if (b.dataset.gerar) cj({action:'gerar', id:b.dataset.gerar}).then(() => setTimeout(painelCurriculo, 800));
+      if (b.dataset.apagar && confirm('Apagar este pedido e os arquivos de vez?')) cj({action:'apagar', id:b.dataset.apagar}).then(painelCurriculo);
+      if (b.dataset.arq) fetch('../api/curriculo.php', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({action:'arquivo', senha, id:b.dataset.arq, qual:b.dataset.qual})})
+        .then(r => r.ok ? r.blob() : Promise.reject()).then(bl => { const a = document.createElement('a'); a.href = URL.createObjectURL(bl);
+          a.download = b.dataset.qual + '-' + b.dataset.arq + (b.dataset.qual === 'docx' ? '.docx' : '.pdf'); a.click(); }).catch(() => alert('Arquivo não encontrado'));
+      if (b.dataset.salvar || b.dataset.aprovar || b.dataset.refazer) {
+        const id = b.dataset.salvar || b.dataset.aprovar || b.dataset.refazer;
+        if (b.dataset.refazer) {
+          const nota = prompt('O que a nova versão deve mudar? (opcional)') ;
+          if (nota === null) return;
+          cj({action:'gerar', id, nota}).then(() => { cvAberto = ''; setTimeout(painelCurriculo, 800); }); return;
+        }
+        const r = lerEditor(id);
+        cj({action:'salvar', id, resultado:r}).then(s => {
+          if (!s.ok) { alert(s.data.error || 'Erro ao salvar'); return; }
+          if (!b.dataset.aprovar) { alert('Revisão salva. Word e PDF atualizados.'); return; }
+          if (!confirm('Aprovar e mandar o link de entrega para o cliente?')) return;
+          cj({action:'aprovar', id}).then(a => { alert(a.ok ? (a.data.enviado ? 'Entregue. O cliente recebeu o e-mail.' : 'Entregue, mas o e-mail não saiu. Mande este link: ' + a.data.link) : (a.data.error || 'Erro')); cvAberto = ''; painelCurriculo(); });
+        });
+      }
+    };
+  }).catch(() => { $('#conteudo').innerHTML = '<p class="note">Não foi possível carregar.</p>'; });
+}
+
+// Editor da revisão: cada parte do currículo vira um campo. Listas ficam uma por linha.
+function editorCurriculo(p){
+  const r = p.resultado, id = p.id, L = a => esc((a || []).join('\n'));
+  const campo = (k, rot, v, alto) => `<div style="margin-bottom:10px"><label>${rot}</label><textarea data-k="${k}" style="min-height:${alto || 70}px">${v}</textarea></div>`;
+  const ent = (k, rot, v) => `<div><label>${rot}</label><input data-k="${k}" value="${esc(v)}"></div>`;
+  return `<div id="ed-${esc(id)}" style="margin-top:16px;border-top:1px solid var(--border);padding-top:16px">
+    ${(r.avisos_revisao || []).length ? `<div class="aviso" style="border-color:rgba(201,147,58,.45)"><p><b style="color:var(--gold-l)">Para conferir antes de aprovar:</b><br>${r.avisos_revisao.map(esc).join('<br>')}</p></div>` : ''}
+    <p class="note" style="margin:0 0 12px">Nota antes ${esc(r.nota_antes)} → depois ${esc(r.nota_depois)}</p>
+    <div class="g">${ent('dados.nome', 'Nome', r.dados.nome)}${ent('dados.cidade', 'Cidade', r.dados.cidade)}${ent('dados.telefone', 'Telefone', r.dados.telefone)}${ent('dados.email', 'E-mail', r.dados.email)}${ent('dados.linkedin', 'LinkedIn', r.dados.linkedin)}${ent('objetivo', 'Objetivo', r.objetivo)}</div>
+    ${campo('resumo', 'Resumo profissional', esc(r.resumo), 120)}
+    ${campo('idiomas', 'Idiomas (um por linha)', L(r.idiomas))}
+    ${campo('formacao', 'Formação (um por linha)', L(r.formacao))}
+    <label>Experiências</label>${(r.experiencias || []).map((e, i) => `<div class="vg" style="padding:12px;margin:6px 0"><div class="g">
+      ${ent(`exp.${i}.periodo`, 'Período', e.periodo)}${ent(`exp.${i}.empresa`, 'Empresa', e.empresa)}${ent(`exp.${i}.local`, 'Local', e.local)}${ent(`exp.${i}.posicao`, 'Posição', e.posicao)}</div>
+      ${campo(`exp.${i}.atividades`, 'Principais atividades', esc(e.atividades), 110)}</div>`).join('')}
+    ${campo('qualificacoes', 'Qualificações (uma por linha)', L(r.qualificacoes), 110)}
+    ${campo('outras', 'Outras informações (uma por linha)', L(r.outras))}
+    ${campo('carta', 'Carta de apresentação', esc(r.carta), 140)}
+    ${ent('linkedin.titulo', 'LinkedIn: título', r.linkedin.titulo)}
+    ${campo('linkedin.sobre', 'LinkedIn: sobre', esc(r.linkedin.sobre), 120)}
+    ${campo('linkedin.competencias', 'LinkedIn: competências (uma por linha)', L(r.linkedin.competencias))}
+    ${campo('faltando', 'O que ainda falta para a vaga (um por linha)', L(r.faltando))}
+    <div class="vg-acts"><button class="btn ghost" data-salvar="${esc(id)}" type="button">Salvar revisão</button>
+      <button class="btn ghost" data-refazer="${esc(id)}" type="button">Gerar outra versão</button>
+      <button class="btn" data-aprovar="${esc(id)}" type="button">${p.situacao === 'entregue' ? 'Salvar e reenviar' : 'Aprovar e entregar'}</button></div></div>`;
+}
+function lerEditor(id){
+  const ed = document.getElementById('ed-' + id), v = k => (ed.querySelector(`[data-k="${k}"]`) || {}).value || '';
+  const linhas = k => v(k).split('\n').map(x => x.trim()).filter(Boolean);
+  const n = ed.querySelectorAll('[data-k$=".atividades"]').length;
+  const antes = (window.cvCache || {})[id] || {};
+  return {
+    dados:{nome:v('dados.nome'), cidade:v('dados.cidade'), telefone:v('dados.telefone'), email:v('dados.email'), linkedin:v('dados.linkedin')},
+    objetivo:v('objetivo'), resumo:v('resumo'), idiomas:linhas('idiomas'), formacao:linhas('formacao'),
+    experiencias:[...Array(n).keys()].map(i => ({periodo:v(`exp.${i}.periodo`), empresa:v(`exp.${i}.empresa`), local:v(`exp.${i}.local`), posicao:v(`exp.${i}.posicao`), atividades:v(`exp.${i}.atividades`)})),
+    qualificacoes:linhas('qualificacoes'), outras:linhas('outras'), carta:v('carta'),
+    linkedin:{titulo:v('linkedin.titulo'), sobre:v('linkedin.sobre'), competencias:linhas('linkedin.competencias')},
+    nota_antes:antes.nota_antes ?? null, nota_depois:antes.nota_depois ?? null, faltando:linhas('faltando'), avisos_revisao:antes.avisos_revisao || []
+  };
+}
+
+// Lista de espera do Currículo Sob Medida (/curriculo/), embaixo dos pedidos
+function painelListaEspera(alvo){
+    const cpost = body => fetch('../api/curriculo.php', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(body)}).then(r => r.json());
   cpost({action:'list', senha}).then(r => {
     const L = r.inscritos || [];
     const sim = L.filter(x => x.experiencia === 'sim').length;
-    $('#conteudo').innerHTML = `<p class="sub" style="margin-top:16px">Quem entrou na lista de espera do Currículo Sob Medida. Cada inscrição nova também chega no seu e-mail.</p>
+    alvo.innerHTML = `<h2 class="sec">Lista de espera</h2><p class="sub">Quem entrou na lista de espera do Currículo Sob Medida. Cada inscrição nova também chega no seu e-mail.</p>
       <div class="kpis"><div class="kpi"><b>${L.length}</b><span>Na lista</span></div>
       <div class="kpi"><b>${L.filter(x => Date.now() - new Date(x.data) < 7 * 864e5).length}</b><span>Últimos 7 dias</span></div>
       <div class="kpi"><b>${sim}</b><span>Já embarcaram</span></div><div class="kpi"><b>${L.length - sim}</b><span>Ainda não</span></div></div>
@@ -416,12 +541,12 @@ function painelCurriculo(){
       const csv = ['Data;Nome;E-mail;WhatsApp;Função;Embarcou;Origem'].concat(L.map(x => [x.data, x.nome, x.email, x.whats, x.funcao, x.experiencia, x.origem].map(q).join(';'))).join('\n');
       const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob(['\ufeff' + csv], {type:'text/csv'})); a.download = 'lista-curriculo.csv'; a.click();
     };
-    $('#conteudo').onclick = e => {
+    alvo.onclick = e => {
       const b = e.target.closest('.del'); if (!b) return;
       if (!confirm('Remover esta pessoa da lista de vez?')) return;
-      cpost({action:'delete', senha, id:b.dataset.id}).then(() => painelCurriculo());
+      cpost({action:'delete', senha, id:b.dataset.id}).then(() => painelListaEspera(alvo));
     };
-  }).catch(() => { $('#conteudo').innerHTML = '<p class="note">Não foi possível carregar a lista.</p>'; });
+  }).catch(() => { alvo.innerHTML = '<p class="note">Não foi possível carregar a lista.</p>'; });
 }
 
 // Empresas que fizeram o diagnóstico de eventos em /diagnostico/

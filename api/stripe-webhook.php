@@ -32,6 +32,17 @@ if (strpos($tipo, 'checkout.session.') === 0) {
     }
 }
 
+// Currículo pago: o pedido entra na fila e é gerado logo depois de responder à Stripe
+if (in_array($tipo, ['checkout.session.completed', 'checkout.session.async_payment_succeeded'], true)
+    && ($o['metadata']['produto'] ?? '') === 'curriculo' && ($o['payment_status'] ?? '') === 'paid') {
+    require_once __DIR__ . '/_pedidos.php';
+    $ped = pedido((string)($o['metadata']['ref'] ?? ''));
+    if ($ped && $ped['situacao'] === 'aguardando_pagamento') {
+        atualizarPedido($ped['id'], ['situacao' => 'na_fila', 'pago_em' => date('c')]);
+        responderEContinuar(['ok' => true], fn() => processarPedido($ped['id']));
+    }
+}
+
 if ($tipo === 'invoice.paid') {
     $p = ['id' => $o['id'], 'tipo' => 'fatura', 'descricao' => clean($o['lines']['data'][0]['description'] ?? 'Fatura', 200),
         'nome' => clean($o['customer_name'] ?? '', 120), 'email' => clean($o['customer_email'] ?? '', 160), 'valor' => ($o['amount_paid'] ?? 0) / 100,

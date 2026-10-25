@@ -269,6 +269,26 @@ footer a{color:inherit}
     <p class="msg" id="msg" role="status"></p>
     <p class="legal">Usamos seus dados só para avisar sobre o Currículo Sob Medida e conteúdos de carreira em óleo e gás. Você pode pedir para apagar quando quiser. <a href="/privacidade/">Política de privacidade</a>.</p>
   </form>
+  <form id="fp" novalidate hidden enctype="multipart/form-data">
+    <h2 style="margin-bottom:4px">Faça o seu pedido</h2>
+    <p style="font-size:15px">Preencha, pague e receba em até 24 horas úteis no seu e-mail.</p>
+    <label for="p-nome">Nome</label><input id="p-nome" name="nome" autocomplete="name" required>
+    <label for="p-email">E-mail</label><input id="p-email" name="email" type="email" autocomplete="email" inputmode="email" required>
+    <label for="p-whats">WhatsApp <span class="opc">(opcional)</span></label><input id="p-whats" name="whats" type="tel" autocomplete="tel">
+    <label>Você já trabalhou embarcado?</label>
+    <div class="opts"><button type="button" class="opt" data-pexp="sim">Sim, já embarquei</button><button type="button" class="opt" data-pexp="nao">Ainda não</button></div>
+    <label for="p-vaga">Texto completo da vaga</label>
+    <textarea id="p-vaga" name="vaga" required placeholder="Abra o anúncio, copie tudo (atividades, requisitos, local) e cole aqui." style="width:100%;min-height:150px;font-family:inherit;font-size:15px;background:var(--card);border:1px solid var(--border2);color:var(--white);padding:13px 14px;border-radius:3px"></textarea>
+    <label for="p-cv">Seu currículo atual <span class="opc">(PDF ou Word .docx, até 8 MB)</span></label><input id="p-cv" name="cv" type="file" accept=".pdf,.docx" required>
+    <label for="p-li">PDF do seu LinkedIn <span class="opc">(opcional: no perfil, Mais > Salvar em PDF)</span></label><input id="p-li" name="linkedin" type="file" accept=".pdf">
+    <label for="p-obs">Algo que a gente precisa saber? <span class="opc">(opcional)</span></label><input id="p-obs" name="obs" placeholder="Ex: curso de CBSP feito em 2024, validade até 2029">
+    <input class="hp" name="site" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <label style="display:flex;gap:10px;align-items:flex-start;margin-top:16px;font-size:13px;line-height:1.5"><input type="checkbox" id="p-aceite" style="width:auto;margin-top:3px">
+      <span>Autorizo a MR Group a usar o meu currículo e os meus dados só para fazer este serviço. Os arquivos são apagados em até 30 dias depois da entrega. <a href="/privacidade/">Política de privacidade</a>.</span></label>
+    <button class="btn gold" id="p-enviar" type="submit" style="margin-top:20px;width:100%">Ir para o pagamento · R$ 97</button>
+    <p class="msg" id="p-msg" role="status"></p>
+    <p class="legal">Pagamento seguro pela Stripe. Se o currículo ainda não tiver sido entregue, devolvemos o valor integral a pedido. Depois da entrega, você tem direito a uma revisão sem custo.</p>
+  </form>
 </div></section>
 
 <section class="faq"><div class="wrap">
@@ -318,6 +338,37 @@ $('#f').onsubmit = e => {
       if (window.gtag) gtag('event', 'curriculo_lista', {experiencia:exp});
     })
     .catch(err => { msg.classList.add('erro'); msg.textContent = err.message; $('#enviar').disabled = false; });
+};
+
+// Quando as vendas abrem no painel, a lista de espera dá lugar ao pedido
+let pexp = '';
+fetch('/api/curriculo.php', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({action:'aberto'})})
+  .then(r => r.json()).then(d => {
+    if (!d.aberto) return;
+    $('#f').hidden = true; $('#fp').hidden = false;
+    document.querySelectorAll('a[href="#lista"]').forEach(a => a.textContent = 'Fazer o meu currículo');
+    const n = document.querySelector('.hero .nota'); if (n) n.textContent = 'R$ 97 por vaga, entregue em até 24 horas úteis. Revisado por uma pessoa do nosso time antes de chegar a você.';
+  }).catch(() => {});
+document.querySelectorAll('[data-pexp]').forEach(b => b.onclick = () => {
+  pexp = b.dataset.pexp; document.querySelectorAll('[data-pexp]').forEach(x => x.classList.toggle('on', x === b));
+});
+$('#fp').onsubmit = e => {
+  e.preventDefault();
+  const msg = $('#p-msg'); msg.className = 'msg';
+  const erro = t => { msg.classList.add('erro'); msg.textContent = t; };
+  if (!$('#p-nome').value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test($('#p-email').value.trim())) return erro('Preencha nome e e-mail.');
+  if (!pexp) return erro('Diga se você já trabalhou embarcado.');
+  if ($('#p-vaga').value.trim().length < 120) return erro('Cole o texto completo da vaga, com atividades e requisitos.');
+  if (!$('#p-cv').files.length) return erro('Anexe o seu currículo atual.');
+  if (!$('#p-aceite').checked) return erro('Marque a autorização para usarmos o seu currículo.');
+  const f = new FormData($('#fp')); f.append('action', 'pedido'); f.append('experiencia', pexp); f.append('aceite', 'sim');
+  $('#p-enviar').disabled = true; msg.textContent = 'Enviando os arquivos...';
+  fetch('/api/curriculo.php', {method:'POST', body:f}).then(async r => ({ok:r.ok, d:await r.json().catch(() => ({}))}))
+    .then(({ok, d}) => {
+      if (!ok || !d.url) throw new Error(d.error || 'Não deu certo agora. Tente de novo em instantes.');
+      if (window.gtag) gtag('event', 'begin_checkout', {currency:'BRL', value:97, items:[{item_name:'Currículo Sob Medida'}]});
+      location.href = d.url;
+    }).catch(err => { erro(err.message); $('#p-enviar').disabled = false; });
 };
 </script>
 </body>

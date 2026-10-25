@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seu currículo · Currículo Sob Medida · MR Group</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<meta name="theme-color" content="#0D1117">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:opsz,wght@9..40,400..800&display=swap" rel="stylesheet">
+<style>
+:root{--black:#090C10;--deep:#0D1117;--card:#111820;--card2:#141D27;--border:#1C2733;--border2:#243040;--gold:#C9933A;--gold-l:#E8B86D;--white:#EEE9E2;--muted:#7A8FA6;--muted2:#A0B2C4;}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'DM Sans',system-ui,sans-serif;background:var(--deep);color:var(--white)}
+.topo{padding:14px 24px;border-bottom:1px solid var(--border);background:var(--black)}
+.topo img{height:28px;display:block}
+main{max-width:760px;margin:0 auto;padding:44px 16px 80px}
+.eyebrow{font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--gold)}
+h1{font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:48px;line-height:1;margin:10px 0 12px}
+h2{font-size:18px;margin:34px 0 12px}
+p,li{color:var(--muted2);font-size:16px;line-height:1.65}
+.notas{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:24px 0}
+.nota{background:var(--card);border:1px solid var(--border);border-radius:3px;padding:18px;text-align:center}
+.nota b{display:block;font-family:'Bebas Neue',sans-serif;font-size:54px;line-height:1}
+.nota span{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.nota.depois{border-color:var(--gold)}.nota.depois b{color:var(--gold-l)}
+.baixar{display:flex;gap:10px;flex-wrap:wrap}
+.btn{display:inline-block;font-family:inherit;font-weight:800;font-size:13px;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;border:none;padding:15px 22px;border-radius:2px;cursor:pointer;background:var(--gold);color:var(--black)}
+.btn.ghost{background:transparent;color:var(--white);border:1px solid var(--border2)}
+.caixa{background:var(--card);border:1px solid var(--border);border-radius:3px;padding:18px 20px;white-space:pre-wrap;color:var(--white);font-size:15px;line-height:1.65;position:relative}
+.copiar{margin-top:8px;font-family:inherit;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:none;border:1px solid var(--border2);color:var(--muted2);padding:8px 12px;border-radius:2px;cursor:pointer}
+.rot{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:16px 0 6px}
+ul{margin:8px 0 0 20px}
+.dica{background:rgba(201,147,58,.08);border:1px solid rgba(201,147,58,.35);border-radius:3px;padding:16px 18px;margin-top:30px}
+footer{text-align:center;font-size:12px;color:var(--muted);padding:24px;border-top:1px solid var(--border)}
+footer a{color:inherit}
+a{color:var(--gold-l)}
+@media(max-width:520px){.notas{grid-template-columns:1fr 1fr}.nota b{font-size:42px}}
+</style>
+</head>
+<body>
+<div class="topo"><a href="/"><img src="/assets/mr-solutions-branco.png" alt="MR Group, página inicial" width="72" height="28"></a></div>
+<main id="app"><p>Carregando o seu currículo...</p></main>
+<footer>MR Group · Currículo Sob Medida · <a href="/privacidade/">Privacidade</a> · <a href="/contato/">Fale com a gente</a></footer>
+<script>
+const t = new URLSearchParams(location.search).get('t') || '';
+const esc = v => String(v ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const app = document.getElementById('app');
+const copiar = (b, texto) => { navigator.clipboard.writeText(texto).then(() => { b.textContent = 'Copiado'; setTimeout(() => b.textContent = 'Copiar', 1800); }); };
+fetch('/api/curriculo.php', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({action:'entrega', t})})
+  .then(async r => ({status:r.status, d:await r.json().catch(() => ({}))}))
+  .then(({status, d}) => {
+    if (status !== 200 || !d.pronto) {
+      app.innerHTML = `<div class="eyebrow">Currículo Sob Medida</div><h1>${status === 202 ? 'Quase pronto' : 'Link indisponível'}</h1>
+        <p>${status === 202 ? 'O seu currículo ainda está em revisão. Você recebe um e-mail assim que ele for liberado.' : esc(d.error || 'Confira se o link do e-mail foi copiado inteiro.')}</p>
+        <p style="margin-top:12px">Precisa de ajuda? <a href="/contato/">Fale com a gente</a>.</p>`;
+      return;
+    }
+    const li = d.linkedin || {};
+    const exp = new Date(d.expira).toLocaleDateString('pt-BR');
+    app.innerHTML = `<div class="eyebrow">Currículo Sob Medida</div>
+      <h1>${esc(d.nome)}, o seu currículo está pronto</h1>
+      <p>Feito para a vaga de <strong style="color:var(--white)">${esc(d.objetivo)}</strong>. Os arquivos ficam disponíveis até ${exp}.</p>
+      ${d.nota_antes != null ? `<div class="notas"><div class="nota"><b>${esc(d.nota_antes)}</b><span>Combinava com a vaga</span></div><div class="nota depois"><b>${esc(d.nota_depois)}</b><span>Combina agora</span></div></div>` : ''}
+      <div class="baixar"><a class="btn" href="/api/curriculo.php?baixar=docx&t=${encodeURIComponent(t)}">Baixar em Word</a>
+        <a class="btn ghost" href="/api/curriculo.php?baixar=pdf&t=${encodeURIComponent(t)}">Baixar em PDF</a></div>
+      <p style="font-size:14px;margin-top:10px">Word para cadastrar em plataformas como a Gupy. PDF para mandar por e-mail.</p>
+      <h2>Carta de apresentação</h2>
+      <div class="caixa" id="carta">${esc(d.carta)}</div><button class="copiar" data-c="carta">Copiar</button>
+      <h2>Ajustes no LinkedIn</h2>
+      <div class="rot">Título</div><div class="caixa" id="li-t">${esc(li.titulo)}</div><button class="copiar" data-c="li-t">Copiar</button>
+      <div class="rot">Sobre</div><div class="caixa" id="li-s">${esc(li.sobre)}</div><button class="copiar" data-c="li-s">Copiar</button>
+      <div class="rot">Competências para adicionar</div><div class="caixa" id="li-c">${esc((li.competencias || []).join('\n'))}</div><button class="copiar" data-c="li-c">Copiar</button>
+      ${(d.faltando || []).length ? `<h2>O que ainda falta para esta vaga</h2><p>Isso a gente não coloca no currículo, porque você ainda não tem. Mas é o caminho para ficar mais forte na próxima.</p><ul>${d.faltando.map(f => `<li>${esc(f)}</li>`).join('')}</ul>` : ''}
+      <div class="dica"><p><strong style="color:var(--white)">Na hora de enviar:</strong> se for por e-mail, coloque o nome da vaga no assunto e a carta no corpo da mensagem. E-mail sem assunto e sem texto vai para o fim da fila.</p></div>
+      <h2>Próximos passos</h2>
+      <p>Veja as <a href="/vagas/">vagas abertas hoje</a> e leia <a href="/artigos/curriculo-alinhado-vaga-offshore/">como deixar o currículo alinhado à vaga</a>. Para outra vaga, faça um <a href="/curriculo/">novo Currículo Sob Medida</a>.</p>`;
+    app.querySelectorAll('.copiar').forEach(b => b.onclick = () => copiar(b, document.getElementById(b.dataset.c).textContent));
+  }).catch(() => { app.innerHTML = '<p>Não foi possível carregar agora. Tente de novo em instantes.</p>'; });
+</script>
+</body>
+</html>

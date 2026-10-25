@@ -44,3 +44,24 @@ function registrarPagamento($p) {
 }
 // Avisa por e-mail só na primeira vez que o pagamento aparece como pago (a Stripe repete avisos)
 function pagouAgora($anterior, $situacao) { return $anterior !== false && $anterior !== 'pago' && $situacao === 'pago'; }
+
+// Abre o pagamento de um produto liberado no painel. Devolve [true, url, id da sessão] ou [false, erro]
+function abrirCheckout($produto, $email = '', $ref = '') {
+    $cfg = stripeCfg();
+    if (!isset(PRODUTOS[$produto]) || !in_array($produto, $cfg['abertos'] ?? [], true)) return [false, 'Este produto ainda não está à venda'];
+    $preco = stripe('GET', 'prices', ['lookup_keys' => [$produto], 'active' => 'true', 'limit' => 1]);
+    $price = $preco[1]['data'][0]['id'] ?? '';
+    if ($price === '') return [false, 'Preço não encontrado na Stripe'];
+    $p = [
+        'mode' => 'payment', 'locale' => 'pt-BR',
+        'line_items' => [['price' => $price, 'quantity' => 1]],
+        'success_url' => 'https://mrgroup.com.br/pagamento/obrigado/?s={CHECKOUT_SESSION_ID}',
+        'cancel_url' => 'https://mrgroup.com.br' . PRODUTOS[$produto]['voltar'],
+        'allow_promotion_codes' => 'true',
+        'metadata' => ['produto' => $produto, 'ref' => $ref],
+        'payment_intent_data' => ['metadata' => ['produto' => $produto, 'ref' => $ref]],
+    ];
+    if (filter_var($email, FILTER_VALIDATE_EMAIL)) $p['customer_email'] = $email;
+    $r = stripe('POST', 'checkout/sessions', $p);
+    return empty($r[1]['url']) ? [false, stripeErro($r)] : [true, $r[1]['url'], $r[1]['id']];
+}

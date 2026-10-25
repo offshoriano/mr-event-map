@@ -13,26 +13,8 @@ $action = $in['action'] ?? '';
 
 if ($action === 'checkout') {
     limitar('checkout', 20);
-    $produto = (string)($in['produto'] ?? '');
-    $cfg = stripeCfg();
-    if (!isset(PRODUTOS[$produto]) || !in_array($produto, $cfg['abertos'] ?? [], true)) out(404, ['error' => 'Este produto ainda não está à venda']);
-    $preco = stripe('GET', 'prices', ['lookup_keys' => [$produto], 'active' => 'true', 'limit' => 1]);
-    $price = $preco[1]['data'][0]['id'] ?? '';
-    if ($price === '') out(502, ['error' => 'Preço não encontrado na Stripe']);
-    $email = clean($in['email'] ?? '', 160);
-    $p = [
-        'mode' => 'payment', 'locale' => 'pt-BR',
-        'line_items' => [['price' => $price, 'quantity' => 1]],
-        'success_url' => 'https://mrgroup.com.br/pagamento/obrigado/?s={CHECKOUT_SESSION_ID}',
-        'cancel_url' => 'https://mrgroup.com.br' . PRODUTOS[$produto]['voltar'],
-        'allow_promotion_codes' => 'true',
-        'metadata' => ['produto' => $produto, 'ref' => clean($in['ref'] ?? '', 120)],
-        'payment_intent_data' => ['metadata' => ['produto' => $produto]],
-    ];
-    if (filter_var($email, FILTER_VALIDATE_EMAIL)) $p['customer_email'] = $email;
-    $r = stripe('POST', 'checkout/sessions', $p);
-    if (empty($r[1]['url'])) out(502, ['error' => stripeErro($r)]);
-    out(200, ['url' => $r[1]['url']]);
+    $r = abrirCheckout((string)($in['produto'] ?? ''), clean($in['email'] ?? '', 160), clean($in['ref'] ?? '', 120));
+    out($r[0] ? 200 : 404, $r[0] ? ['url' => $r[1]] : ['error' => $r[1]]);
 }
 
 if ($action === 'status') {
