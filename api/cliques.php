@@ -12,6 +12,15 @@ $in = entrada();
 $action = $in['action'] ?? '';
 
 if ($action === 'clique') {
+    // Segunda a partir das 9h: o primeiro clique da semana dispara o alerta de vagas por e-mail, depois de responder
+    if (date('N') == 1 && (int)date('G') >= 9) {
+        require_once __DIR__ . '/alertas.php';
+        register_shutdown_function(function () {
+            if (function_exists('fastcgi_finish_request')) fastcgi_finish_request();
+            ignore_user_abort(true); set_time_limit(300);
+            alertaSemanal();
+        });
+    }
     $tipo = in_array($in['tipo'] ?? '', TIPOS, true) ? $in['tipo'] : 'candidatar';
     $vaga = clean($in['vaga'] ?? '', 120);
     $empresa = clean($in['empresa'] ?? '', 100);

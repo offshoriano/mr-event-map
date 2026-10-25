@@ -2,6 +2,7 @@
 // Peças comuns das APIs (contatos e vagas enviadas). Não responde nada sozinho.
 if (basename($_SERVER['SCRIPT_FILENAME'] ?? '') === basename(__FILE__)) { http_response_code(404); exit; }
 
+date_default_timezone_set('America/Sao_Paulo');
 header('Content-Type: application/json; charset=utf-8');
 header('Cache-Control: no-store');
 

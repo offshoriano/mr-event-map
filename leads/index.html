@@ -85,7 +85,7 @@ function login(msg){
   $('#f').onsubmit = e => { e.preventDefault(); senha = $('#pw').value; carregar(); };
 }
 
-let VG = [], AVISO = '', aba = ({'#vagas':'vagas', '#ranking':'ranking', '#empresas':'empresas', '#diagnosticos':'diagnosticos', '#mensagens':'mensagens'})[location.hash] || 'contatos', avisou = false;
+let VG = [], AVISO = '', aba = ({'#vagas':'vagas', '#ranking':'ranking', '#empresas':'empresas', '#diagnosticos':'diagnosticos', '#mensagens':'mensagens', '#alertas':'alertas'})[location.hash] || 'contatos', avisou = false;
 const AREAS = {seguranca:'Segurança', eletrica:'Elétrica e instrumentação', mecanica:'Mecânica e manutenção', pocos:'Perfuração e poços',
   maritimo:'Marítimo', hotelaria:'Hotelaria', operacao:'Operação e produção', engenharia:'Engenharia', trainee:'Trainee e estágio', geral:'Outras'};
 const VAPI = '../api/vagas-enviadas.php';
@@ -126,10 +126,11 @@ function painel(){
       <button class="tab ${aba === 'empresas' ? 'on' : ''}" data-aba="empresas">Empresas</button>
       <button class="tab ${aba === 'diagnosticos' ? 'on' : ''}" data-aba="diagnosticos">Diagnósticos</button>
       <button class="tab ${aba === 'mensagens' ? 'on' : ''}" data-aba="mensagens">Mensagens</button>
+      <button class="tab ${aba === 'alertas' ? 'on' : ''}" data-aba="alertas">Alertas de vagas</button>
     </div>
     <div id="conteudo"></div></div>`;
   document.querySelectorAll('.tab').forEach(t => t.onclick = () => { aba = t.dataset.aba; history.replaceState(null, '', aba === 'contatos' ? '#' : '#' + aba); painel(); });
-  aba === 'mensagens' ? painelMensagens() : aba === 'diagnosticos' ? painelDiagnosticos() : aba === 'vagas' ? painelVagas() : aba === 'ranking' ? painelRanking() : aba === 'empresas' ? painelEmpresas() : painelContatos();
+  aba === 'alertas' ? painelAlertas() : aba === 'mensagens' ? painelMensagens() : aba === 'diagnosticos' ? painelDiagnosticos() : aba === 'vagas' ? painelVagas() : aba === 'ranking' ? painelRanking() : aba === 'empresas' ? painelEmpresas() : painelContatos();
 }
 
 function painelVagas(){
@@ -260,6 +261,36 @@ function painelEmpresas(){
       };
       $('#qe').oninput = draw; $('#oe').onchange = draw; $('#se').onchange = draw; draw();
     }).catch(() => { $('#conteudo').innerHTML = '<p class="note">Não foi possível carregar o cadastro.</p>'; });
+}
+
+// Alerta de vagas por e-mail e resumo para o canal do WhatsApp
+function painelAlertas(){
+  $('#conteudo').innerHTML = '<p class="note">Carregando...</p>';
+  const apost = body => fetch('../api/alertas.php', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(body)}).then(r => r.json());
+  apost({action:'painel', senha}).then(r => {
+    const I = r.inscritos || [], c = r.config || {}, w = r.whatsapp || {};
+    const ativos = I.filter(i => i.status === 'ativo').length, pend = I.filter(i => i.status === 'pendente').length;
+    $('#conteudo').innerHTML = `
+      <div class="kpis"><div class="kpi"><b>${ativos}</b><span>Inscritos ativos</span></div><div class="kpi"><b>${pend}</b><span>Esperando confirmar</span></div>
+      <div class="kpi"><b>${c.ultimo_envio ? new Date(c.ultimo_envio).toLocaleDateString('pt-BR') : '—'}</b><span>Último envio${c.ultimo_total != null ? ' (' + c.ultimo_total + ' e-mails)' : ''}</span></div></div>
+      <h2 class="sec">Configuração do envio</h2>
+      <p class="note">${c.tem_chave ? 'Chave da Resend salva. O alerta sai sozinho toda segunda a partir das 9h.' : 'Falta a chave da Resend. Sem ela as inscrições ficam guardadas, mas nenhum e-mail sai.'}</p>
+      <div class="bar"><input type="password" id="rk" placeholder="${c.tem_chave ? 'Trocar a chave da Resend (re_...)' : 'Chave da Resend (re_...)'}" autocomplete="off">
+      <input id="rr" value="${esc(c.remetente || '')}" placeholder="Remetente"><button class="btn" id="rs">Salvar</button><button class="btn" id="re">Enviar alerta agora</button></div>
+      <p class="note" id="rmsg"></p>
+      <h2 class="sec">Resumo para o canal do WhatsApp (${w.total || 0} vagas novas desde ontem)</h2>
+      <textarea id="wtxt" style="width:100%;min-height:220px;background:var(--card);color:var(--white);border:1px solid var(--border);padding:12px;font-family:inherit;font-size:13px">${esc(w.texto || '')}</textarea>
+      <div class="bar"><button class="btn" id="wc">Copiar texto</button></div>
+      <h2 class="sec">Inscritos</h2>
+      <div class="tbl">${I.length ? `<table><thead><tr><th>Data</th><th>E-mail</th><th>Funções</th><th>Tipo</th><th>Situação</th><th></th></tr></thead><tbody>${I.map(i => `<tr>
+        <td class="m">${new Date(i.data).toLocaleDateString('pt-BR')}</td><td>${esc(i.email)}</td><td class="m">${esc(i.funcoes || '')}${i.iniciante ? (i.funcoes ? ' + ' : '') + 'iniciante' : ''}</td>
+        <td class="m">${esc(i.regime)}</td><td class="m">${esc(i.status)}</td><td><button class="del" data-e="${esc(i.email)}">remover</button></td></tr>`).join('')}</tbody></table>` : '<p style="padding:24px;color:var(--muted)">Nenhum inscrito ainda.</p>'}</div>`;
+    $('#rs').onclick = () => apost({action:'config', senha, chave:$('#rk').value.trim(), remetente:$('#rr').value.trim()}).then(() => painelAlertas());
+    $('#re').onclick = () => { if (!confirm('Enviar o alerta da semana agora para todos os inscritos ativos?')) return; $('#rmsg').textContent = 'Enviando...';
+      apost({action:'enviar', senha}).then(x => { $('#rmsg').textContent = x.erro ? x.erro : `Enviado para ${x.enviados || 0} inscritos.`; }); };
+    $('#wc').onclick = () => { navigator.clipboard.writeText($('#wtxt').value).then(() => { $('#wc').textContent = 'Copiado'; setTimeout(() => $('#wc').textContent = 'Copiar texto', 1500); }); };
+    $('#conteudo').querySelectorAll('.del').forEach(b => b.onclick = () => { if (confirm('Remover este inscrito?')) apost({action:'remover', senha, email:b.dataset.e}).then(() => painelAlertas()); });
+  }).catch(() => { $('#conteudo').innerHTML = '<p class="note">Não foi possível carregar os alertas.</p>'; });
 }
 
 // Mensagens do formulário "Fale com a gente" (/contato/)
