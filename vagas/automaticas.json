@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-10-24T15:02:02+00:00",
+ "atualizado": "2026-10-25T14:29:30+00:00",
  "fontes": [
   {
    "empresa": "PRIO",
@@ -108,7 +108,7 @@
   },
   {
    "empresa": "Subsea7",
-   "vagas": 25,
+   "vagas": 27,
    "ok": true
   },
   {
@@ -118,7 +118,7 @@
   },
   {
    "empresa": "Baker Hughes",
-   "vagas": 19,
+   "vagas": 18,
    "ok": true
   },
   {
@@ -158,12 +158,12 @@
   },
   {
    "empresa": "NOV",
-   "vagas": 18,
+   "vagas": 16,
    "ok": true
   },
   {
    "empresa": "Seadrill",
-   "vagas": 3,
+   "vagas": 2,
    "ok": true
   },
   {
@@ -193,8 +193,8 @@
   },
   {
    "empresa": "BW Energy",
-   "vagas": 0,
-   "ok": false
+   "vagas": 18,
+   "ok": true
   },
   {
    "empresa": "Manserv",
@@ -2285,32 +2285,6 @@
     [
      "fqj2M7KTR0U",
      "Vídeo do canal sobre a SBM Offshore. Ajuda a chegar preparado na entrevista."
-    ]
-   ]
-  },
-  {
-   "id": "seadrill-main-driller-rio-de-janeiro-br-3432",
-   "titulo": "Main Driller || Rio de Janeiro/BR",
-   "empresa": "Seadrill",
-   "local": "Rio de Janeiro, RJ",
-   "link": "https://fa-eykz-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/1617",
-   "regime": "Offshore",
-   "area": "Perfuração e poços",
-   "tema": "pocos",
-   "banco": false,
-   "vistaEm": "2026-10-15",
-   "videos": [
-    [
-     "bFgYyXPn2Bc",
-     "Fala de sondador e equipe de perfuração, a função desta vaga."
-    ],
-    [
-     "NVZzQiqt8_w",
-     "Fala de sondador e equipe de perfuração, a função desta vaga."
-    ],
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
     ]
    ]
   },
@@ -5327,32 +5301,6 @@
     [
      "sMTU-gjxcLU",
      "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ]
-   ]
-  },
-  {
-   "id": "baker-hughes-service-delivery-coordinator-36221",
-   "titulo": "Service Delivery Coordinator",
-   "empresa": "Baker Hughes",
-   "local": "Macaé, RJ",
-   "link": "https://bakerhughes.wd5.myworkdayjobs.com/BakerHughes/job/BR-RJ-MACAE-LAGOMAR-AV-ARAXA-240/Service-Delivery-Coordinator_R170007",
-   "regime": "Onshore",
-   "area": "Outras",
-   "tema": "geral",
-   "banco": false,
-   "vistaEm": "2026-10-15",
-   "videos": [
-    [
-     "lttRYy_P8T8",
-     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
-    ],
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ],
-    [
-     "eHqY18dRP8Q",
-     "As perguntas que mais aparecem na entrevista e como responder."
     ]
    ]
   },
@@ -8555,141 +8503,11 @@
    ]
   },
   {
-   "id": "halliburton-assistente-de-opera-es-pipeline-and-process-services-47424",
-   "titulo": "Assistente de Operações (Pipeline and Process Services)",
-   "empresa": "Halliburton",
-   "local": "Macaé, RJ",
-   "link": "https://jobs.halliburton.com/job/Macae-Brasil-RJ-Maca%C3%A9-Assistente-de-Opera%C3%A7%C3%B5es-%28Pipeline-and-Process-Services%29-RJ-27930-070/1443107900/",
-   "regime": "Onshore",
-   "area": "Operação e produção",
-   "tema": "operacao",
-   "banco": false,
-   "vistaEm": "2026-10-23",
-   "videos": [
-    [
-     "lttRYy_P8T8",
-     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
-    ],
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ],
-    [
-     "eHqY18dRP8Q",
-     "As perguntas que mais aparecem na entrevista e como responder."
-    ]
-   ]
-  },
-  {
    "id": "halliburton-assistente-de-opera-es-pipeline-and-process-services-24433",
    "titulo": "Assistente de Operações (Pipeline and Process Services)",
    "empresa": "Halliburton",
    "local": "Macaé, RJ",
    "link": "https://jobs.halliburton.com/job/Macae-Brasil-RJ-Maca%C3%A9-Assistente-de-Opera%C3%A7%C3%B5es-%28Pipeline-and-Process-Services%29-RJ-27930-070/1443110300/",
-   "regime": "Onshore",
-   "area": "Operação e produção",
-   "tema": "operacao",
-   "banco": false,
-   "vistaEm": "2026-10-23",
-   "videos": [
-    [
-     "lttRYy_P8T8",
-     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
-    ],
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ],
-    [
-     "eHqY18dRP8Q",
-     "As perguntas que mais aparecem na entrevista e como responder."
-    ]
-   ]
-  },
-  {
-   "id": "halliburton-assistente-de-opera-es-pipeline-and-process-services-40431",
-   "titulo": "Assistente de Operações (Pipeline and Process Services)",
-   "empresa": "Halliburton",
-   "local": "Macaé, RJ",
-   "link": "https://jobs.halliburton.com/job/Macae-Brasil-RJ-Maca%C3%A9-Assistente-de-Opera%C3%A7%C3%B5es-%28Pipeline-and-Process-Services%29-RJ-27930-070/1443091700/",
-   "regime": "Onshore",
-   "area": "Operação e produção",
-   "tema": "operacao",
-   "banco": false,
-   "vistaEm": "2026-10-23",
-   "videos": [
-    [
-     "lttRYy_P8T8",
-     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
-    ],
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ],
-    [
-     "eHqY18dRP8Q",
-     "As perguntas que mais aparecem na entrevista e como responder."
-    ]
-   ]
-  },
-  {
-   "id": "halliburton-assistente-de-opera-es-pipeline-and-process-services-10404",
-   "titulo": "Assistente de Operações (Pipeline and Process Services)",
-   "empresa": "Halliburton",
-   "local": "Macaé, RJ",
-   "link": "https://jobs.halliburton.com/job/Macae-Brasil-RJ-Maca%C3%A9-Assistente-de-Opera%C3%A7%C3%B5es-%28Pipeline-and-Process-Services%29-RJ-27930-070/1442757700/",
-   "regime": "Onshore",
-   "area": "Operação e produção",
-   "tema": "operacao",
-   "banco": false,
-   "vistaEm": "2026-10-23",
-   "videos": [
-    [
-     "lttRYy_P8T8",
-     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
-    ],
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ],
-    [
-     "eHqY18dRP8Q",
-     "As perguntas que mais aparecem na entrevista e como responder."
-    ]
-   ]
-  },
-  {
-   "id": "halliburton-assistente-de-opera-es-pipeline-and-process-services-64059",
-   "titulo": "Assistente de Operações (Pipeline and Process Services)",
-   "empresa": "Halliburton",
-   "local": "Macaé, RJ",
-   "link": "https://jobs.halliburton.com/job/Macae-Brasil-RJ-Maca%C3%A9-Assistente-de-Opera%C3%A7%C3%B5es-%28Pipeline-and-Process-Services%29-RJ-27930-070/1442928500/",
-   "regime": "Onshore",
-   "area": "Operação e produção",
-   "tema": "operacao",
-   "banco": false,
-   "vistaEm": "2026-10-23",
-   "videos": [
-    [
-     "lttRYy_P8T8",
-     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
-    ],
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ],
-    [
-     "eHqY18dRP8Q",
-     "As perguntas que mais aparecem na entrevista e como responder."
-    ]
-   ]
-  },
-  {
-   "id": "halliburton-assistente-de-opera-es-pipeline-and-process-services-70295",
-   "titulo": "Assistente de Operações (Pipeline and Process Services)",
-   "empresa": "Halliburton",
-   "local": "Macaé, RJ",
-   "link": "https://jobs.halliburton.com/job/Macae-Brasil-RJ-Maca%C3%A9-Assistente-de-Opera%C3%A7%C3%B5es-%28Pipeline-and-Process-Services%29-RJ-27930-070/1441795500/",
    "regime": "Onshore",
    "area": "Operação e produção",
    "tema": "operacao",
@@ -8737,6 +8555,110 @@
    ]
   },
   {
+   "id": "halliburton-assistente-de-opera-es-pipeline-and-process-services-47424",
+   "titulo": "Assistente de Operações (Pipeline and Process Services)",
+   "empresa": "Halliburton",
+   "local": "Macaé, RJ",
+   "link": "https://jobs.halliburton.com/job/Macae-Brasil-RJ-Maca%C3%A9-Assistente-de-Opera%C3%A7%C3%B5es-%28Pipeline-and-Process-Services%29-RJ-27930-070/1443107900/",
+   "regime": "Onshore",
+   "area": "Operação e produção",
+   "tema": "operacao",
+   "banco": false,
+   "vistaEm": "2026-10-23",
+   "videos": [
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
+   "id": "halliburton-assistente-de-opera-es-pipeline-and-process-services-40431",
+   "titulo": "Assistente de Operações (Pipeline and Process Services)",
+   "empresa": "Halliburton",
+   "local": "Macaé, RJ",
+   "link": "https://jobs.halliburton.com/job/Macae-Brasil-RJ-Maca%C3%A9-Assistente-de-Opera%C3%A7%C3%B5es-%28Pipeline-and-Process-Services%29-RJ-27930-070/1443091700/",
+   "regime": "Onshore",
+   "area": "Operação e produção",
+   "tema": "operacao",
+   "banco": false,
+   "vistaEm": "2026-10-23",
+   "videos": [
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
+   "id": "halliburton-assistente-de-opera-es-pipeline-and-process-services-70295",
+   "titulo": "Assistente de Operações (Pipeline and Process Services)",
+   "empresa": "Halliburton",
+   "local": "Macaé, RJ",
+   "link": "https://jobs.halliburton.com/job/Macae-Brasil-RJ-Maca%C3%A9-Assistente-de-Opera%C3%A7%C3%B5es-%28Pipeline-and-Process-Services%29-RJ-27930-070/1441795500/",
+   "regime": "Onshore",
+   "area": "Operação e produção",
+   "tema": "operacao",
+   "banco": false,
+   "vistaEm": "2026-10-23",
+   "videos": [
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
+   "id": "halliburton-assistente-de-opera-es-pipeline-and-process-services-10404",
+   "titulo": "Assistente de Operações (Pipeline and Process Services)",
+   "empresa": "Halliburton",
+   "local": "Macaé, RJ",
+   "link": "https://jobs.halliburton.com/job/Macae-Brasil-RJ-Maca%C3%A9-Assistente-de-Opera%C3%A7%C3%B5es-%28Pipeline-and-Process-Services%29-RJ-27930-070/1442757700/",
+   "regime": "Onshore",
+   "area": "Operação e produção",
+   "tema": "operacao",
+   "banco": false,
+   "vistaEm": "2026-10-23",
+   "videos": [
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
    "id": "halliburton-assistente-de-opera-es-pipeline-and-process-services-56141",
    "titulo": "Assistente de Operações (Pipeline and Process Services)",
    "empresa": "Halliburton",
@@ -8763,14 +8685,14 @@
    ]
   },
   {
-   "id": "halliburton-assistente-de-opera-es-wireline-perforating-67880",
-   "titulo": "Assistente de Operações - Wireline & Perforating",
+   "id": "halliburton-assistente-de-opera-es-pipeline-and-process-services-64059",
+   "titulo": "Assistente de Operações (Pipeline and Process Services)",
    "empresa": "Halliburton",
-   "local": "Catu, BA",
-   "link": "https://jobs.halliburton.com/job/Pioneiro-Brasil-RJ-Maca%C3%A9-Assistente-de-Opera%C3%A7%C3%B5es-Wireline-&amp;-Perforating-BA-48110-000/1442850000/",
+   "local": "Macaé, RJ",
+   "link": "https://jobs.halliburton.com/job/Macae-Brasil-RJ-Maca%C3%A9-Assistente-de-Opera%C3%A7%C3%B5es-%28Pipeline-and-Process-Services%29-RJ-27930-070/1442928500/",
    "regime": "Onshore",
-   "area": "Perfuração e poços",
-   "tema": "pocos",
+   "area": "Operação e produção",
+   "tema": "operacao",
    "banco": false,
    "vistaEm": "2026-10-23",
    "videos": [
@@ -8794,6 +8716,32 @@
    "empresa": "Halliburton",
    "local": "Catu, BA",
    "link": "https://jobs.halliburton.com/job/Catu-Brasil-BA-Catu-Assistente-de-Opera%C3%A7%C3%B5es-Wireline-&amp;-Perforating-BA-48110-000/1442948800/",
+   "regime": "Onshore",
+   "area": "Perfuração e poços",
+   "tema": "pocos",
+   "banco": false,
+   "vistaEm": "2026-10-23",
+   "videos": [
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
+   "id": "halliburton-assistente-de-opera-es-wireline-perforating-67880",
+   "titulo": "Assistente de Operações - Wireline & Perforating",
+   "empresa": "Halliburton",
+   "local": "Catu, BA",
+   "link": "https://jobs.halliburton.com/job/Pioneiro-Brasil-RJ-Maca%C3%A9-Assistente-de-Opera%C3%A7%C3%B5es-Wireline-&amp;-Perforating-BA-48110-000/1442850000/",
    "regime": "Onshore",
    "area": "Perfuração e poços",
    "tema": "pocos",
@@ -8841,11 +8789,11 @@
    ]
   },
   {
-   "id": "halliburton-consultor-opera-es-jr-cementing-92050",
+   "id": "halliburton-consultor-opera-es-jr-cementing-46153",
    "titulo": "Consultor Operações Jr - Cementing",
    "empresa": "Halliburton",
    "local": "Macaé, RJ",
-   "link": "https://jobs.halliburton.com/job/Macae-BR-RJ-Macae-Consultor-Opera%C3%A7%C3%B5es-Jr-Cementing-RJ-27930-070/1442873900/",
+   "link": "https://jobs.halliburton.com/job/Macae-BR-RJ-Macae-Consultor-Opera%C3%A7%C3%B5es-Jr-Cementing-RJ-27930-070/1442858200/",
    "regime": "Onshore",
    "area": "Outras",
    "tema": "geral",
@@ -8867,11 +8815,11 @@
    ]
   },
   {
-   "id": "halliburton-consultor-opera-es-jr-cementing-46153",
+   "id": "halliburton-consultor-opera-es-jr-cementing-92050",
    "titulo": "Consultor Operações Jr - Cementing",
    "empresa": "Halliburton",
    "local": "Macaé, RJ",
-   "link": "https://jobs.halliburton.com/job/Macae-BR-RJ-Macae-Consultor-Opera%C3%A7%C3%B5es-Jr-Cementing-RJ-27930-070/1442858200/",
+   "link": "https://jobs.halliburton.com/job/Macae-BR-RJ-Macae-Consultor-Opera%C3%A7%C3%B5es-Jr-Cementing-RJ-27930-070/1442873900/",
    "regime": "Onshore",
    "area": "Outras",
    "tema": "geral",
@@ -9803,11 +9751,11 @@
    ]
   },
   {
-   "id": "halliburton-t-cnico-de-manuten-o-t-cnico-de-mec-nica-de-sph-70122",
+   "id": "halliburton-t-cnico-de-manuten-o-t-cnico-de-mec-nica-de-sph-17519",
    "titulo": "Técnico de Manutenção (Técnico de Mecânica de SPH)",
    "empresa": "Halliburton",
    "local": "Mossoró, RN",
-   "link": "https://jobs.halliburton.com/job/Alto-Sumare-Brazil-Maca%C3%A9-T%C3%A9cnico-de-Manuten%C3%A7%C3%A3o-%28T%C3%A9cnico-de-Mec%C3%A2nica-de-SPH%29-RJ-59633-730/1442098600/",
+   "link": "https://jobs.halliburton.com/job/Alto-Sumare-Brazil-Maca%C3%A9-T%C3%A9cnico-de-Manuten%C3%A7%C3%A3o-%28T%C3%A9cnico-de-Mec%C3%A2nica-de-SPH%29-RJ-59633-730/1442098700/",
    "regime": "Onshore",
    "area": "Mecânica e manutenção",
    "tema": "mecanica",
@@ -9829,11 +9777,11 @@
    ]
   },
   {
-   "id": "halliburton-t-cnico-de-manuten-o-t-cnico-de-mec-nica-de-sph-17519",
+   "id": "halliburton-t-cnico-de-manuten-o-t-cnico-de-mec-nica-de-sph-70122",
    "titulo": "Técnico de Manutenção (Técnico de Mecânica de SPH)",
    "empresa": "Halliburton",
    "local": "Mossoró, RN",
-   "link": "https://jobs.halliburton.com/job/Alto-Sumare-Brazil-Maca%C3%A9-T%C3%A9cnico-de-Manuten%C3%A7%C3%A3o-%28T%C3%A9cnico-de-Mec%C3%A2nica-de-SPH%29-RJ-59633-730/1442098700/",
+   "link": "https://jobs.halliburton.com/job/Alto-Sumare-Brazil-Maca%C3%A9-T%C3%A9cnico-de-Manuten%C3%A7%C3%A3o-%28T%C3%A9cnico-de-Mec%C3%A2nica-de-SPH%29-RJ-59633-730/1442098600/",
    "regime": "Onshore",
    "area": "Mecânica e manutenção",
    "tema": "mecanica",
@@ -11415,32 +11363,6 @@
    ]
   },
   {
-   "id": "nov-electrical-engineer-plant-projects-27672",
-   "titulo": "Electrical Engineer – Plant Projects",
-   "empresa": "NOV",
-   "local": "São João da Barra, RJ",
-   "link": "https://egay.fa.us6.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2001/job/43317",
-   "regime": "Onshore",
-   "area": "Elétrica e instrumentação",
-   "tema": "eletrica",
-   "banco": false,
-   "vistaEm": "2026-10-15",
-   "videos": [
-    [
-     "-35oTYToV2A",
-     "Fala de eletricista, a função desta vaga."
-    ],
-    [
-     "TSUnVzxiBjU",
-     "Fala de eletricista, a função desta vaga."
-    ],
-    [
-     "wj-tFC2Qpxs",
-     "Vídeo do canal sobre a NOV. Ajuda a chegar preparado na entrevista."
-    ]
-   ]
-  },
-  {
    "id": "nov-engenheiro-de-processo-53518",
    "titulo": "Engenheiro de Processo",
    "empresa": "NOV",
@@ -11697,32 +11619,6 @@
     [
      "wj-tFC2Qpxs",
      "Vídeo do canal sobre a NOV. Ajuda a chegar preparado na entrevista."
-    ]
-   ]
-  },
-  {
-   "id": "nov-t-cnico-de-planejamento-de-manuten-o-vaga-exclusiva-para-pcd-73898",
-   "titulo": "Técnico de Planejamento de Manutenção (Vaga Exclusiva para PCD)",
-   "empresa": "NOV",
-   "local": "São João da Barra, RJ",
-   "link": "https://egay.fa.us6.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2001/job/44365",
-   "regime": "Onshore",
-   "area": "Mecânica e manutenção",
-   "tema": "mecanica",
-   "banco": false,
-   "vistaEm": "2026-10-15",
-   "videos": [
-    [
-     "wj-tFC2Qpxs",
-     "Vídeo do canal sobre a NOV. Ajuda a chegar preparado na entrevista."
-    ],
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ],
-    [
-     "eHqY18dRP8Q",
-     "As perguntas que mais aparecem na entrevista e como responder."
     ]
    ]
   },
@@ -15081,6 +14977,32 @@
    ]
   },
   {
+   "id": "subsea7-lead-eic-engineer-24442",
+   "titulo": "Lead EIC Engineer",
+   "empresa": "Subsea7",
+   "local": "Brasil",
+   "link": "https://careers.subsea7.com/job/Dubai-Lead-EIC-Engineer/1374293155/",
+   "regime": "Onshore",
+   "area": "Engenharia",
+   "tema": "engenharia",
+   "banco": false,
+   "vistaEm": "2026-10-25",
+   "videos": [
+    [
+     "9ZlICqIBUMg",
+     "Fala de engenharia, a função desta vaga."
+    ],
+    [
+     "0uMWC3VBm8A",
+     "Fala de engenharia, a função desta vaga."
+    ],
+    [
+     "kxMbpcGcYks",
+     "Vídeo do canal sobre a Subsea7. Ajuda a chegar preparado na entrevista."
+    ]
+   ]
+  },
+  {
    "id": "subsea7-operations-engineer-25956",
    "titulo": "Operations Engineer",
    "empresa": "Subsea7",
@@ -15259,6 +15181,32 @@
     [
      "sMTU-gjxcLU",
      "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ]
+   ]
+  },
+  {
+   "id": "subsea7-senior-quality-advisor-59179",
+   "titulo": "Senior Quality Advisor",
+   "empresa": "Subsea7",
+   "local": "Brasil",
+   "link": "https://careers.subsea7.com/job/Kuala-Lumpur-Senior-Quality-Advisor/1374293655/",
+   "regime": "Onshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-25",
+   "videos": [
+    [
+     "YTu30XI9rhg",
+     "Fala de inspeção e qualidade, a função desta vaga."
+    ],
+    [
+     "nmu4AyYiBC0",
+     "Fala de inspeção e qualidade, a função desta vaga."
+    ],
+    [
+     "kxMbpcGcYks",
+     "Vídeo do canal sobre a Subsea7. Ajuda a chegar preparado na entrevista."
     ]
    ]
   },
