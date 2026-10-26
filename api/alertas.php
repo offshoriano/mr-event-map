@@ -23,7 +23,12 @@ function resend($cfg, $payload) {
     $r = curl_exec($ch); $code = curl_getinfo($ch, CURLINFO_HTTP_CODE); curl_close($ch);
     return $code >= 200 && $code < 300;
 }
-function remetente($cfg) { return $cfg['remetente'] ?? 'MR Group Vagas <alertas@mrgroup.com.br>'; }
+// Remetente no formato "Nome <email@mrgroup.com.br>". Se no painel vier só o nome, completa com o e-mail padrão.
+function remetente($cfg) {
+    $r = trim((string)($cfg['remetente'] ?? ''));
+    if ($r === '') return 'MR Group Vagas <alertas@mrgroup.com.br>';
+    return strpos($r, '@') === false ? $r . ' <alertas@mrgroup.com.br>' : $r;
+}
 function emailConfirmacao($cfg, $email, $token) {
     return resend($cfg, ['from' => remetente($cfg), 'to' => [$email], 'subject' => 'Confirme o seu alerta de vagas',
         'html' => moldura('Falta só confirmar', '<p style="color:#A0B2C4;font-size:15px;line-height:1.6">Clique no botão para começar a receber, toda segunda, as vagas novas que combinam com você.</p>'
@@ -176,6 +181,12 @@ if ($action === 'config') {
         foreach (readJson($alertasFile) as $i) if (($i['status'] ?? '') === 'pendente' && emailConfirmacao($cfg, $i['email'], $i['token'])) $enviados++;
     }
     out(200, ['ok' => true, 'confirmacoes' => $enviados]);
+}
+// Reenvia a confirmação para quem ainda não confirmou (por exemplo, quem se inscreveu quando a chave não estava funcionando)
+if ($action === 'confirmar_pendentes') {
+    $cfg = readJson($alertasCfg); $enviados = 0; $falhas = 0;
+    foreach (readJson($alertasFile) as $i) if (($i['status'] ?? '') === 'pendente') emailConfirmacao($cfg, $i['email'], $i['token']) ? $enviados++ : $falhas++;
+    out(200, ['ok' => true, 'enviados' => $enviados, 'falhas' => $falhas]);
 }
 if ($action === 'enviar') {
     out(200, alertaSemanal(true));
