@@ -367,8 +367,8 @@ function render(){
 const $ = s => document.querySelector(s);
 
 let AUTO = [], INICIO = [], VIDS = {}, CAT = {}, QUAL = [], REG = '', mostrar = 30, mostrarI = 12;
-// Portas de entrada: aprendiz, estágio, trainee, ajudante. Ficam numa seção própria para quem está começando
-const ENTRADA = /trainee|est[aá]gi|aprendiz|apprentice|\bintern(ship)?\b|jovem|cadet|ajudante|homem de [aá]rea|sem experi|auxiliar de (plataforma|opera)/i;
+// Portas de entrada: aprendiz, estágio, trainee, ajudante, auxiliar e assistente de operações. Ficam numa seção própria para quem está começando
+const ENTRADA = /trainee|est[aá]gi|aprendiz|apprentice|\bintern(ship)?\b|jovem|cadet|ajudante|homem de [aá]rea|sem experi|auxiliar|assistente (de )?(opera|mec[aâ]nic|materiais|controle de materiais)/i;
 // Fontes diferentes escrevem o regime de jeitos diferentes; aqui vira Offshore, Onshore ou Remoto
 const tipoRegime = v => /embarc|offshore/i.test(v.regime || '') ? 'Offshore' : /remot/i.test(v.regime || '') ? 'Remoto' : 'Onshore';
 const linkVaga = v => location.origin + location.pathname + '#' + v.id;
