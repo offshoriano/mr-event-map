@@ -18,6 +18,8 @@ CADASTRO = Path(__file__).parent / 'empresas.json'
 
 # Cidade usada quando o sistema de vagas não informa o local (campo "local_padrao" no cadastro)
 LOCAL_PADRAO = {}
+# Empresas de vários setores: fica só a vaga cujo local bate com "manter_local" ou cujo título é de óleo e gás
+MANTER_LOCAL = {}
 
 def carregar_empresas():
     """(tipo, nome, cfg, somente óleo e gás) das empresas com sistema de vagas que sabemos ler."""
@@ -29,6 +31,8 @@ def carregar_empresas():
             out.append((ats['tipo'], e['nome'], cfg, bool(e.get('somente_og'))))
             if e.get('local_padrao'):
                 LOCAL_PADRAO[e['nome']] = e['local_padrao']
+            if e.get('manter_local'):
+                MANTER_LOCAL[e['nome']] = re.compile(e['manter_local'], re.I)
     return out
 
 OG = re.compile(r'offshore|embarc|plataforma|fpso|sonda|navio|mar[ií]tim|rebocador|conv[eé]s|m[aá]quinas|'
@@ -304,7 +308,28 @@ def halliburton(host):
         i['titulo'] = t2 or t
         yield i
 
-LEITORES = dict(halliburton=halliburton, teamtailor=teamtailor, pandape=pandape, workable=workable, solides=solides, recruitee=recruitee, brunel=brunel, airswift=airswift, atlas=atlas, mde=mde, beehire=beehire, inhire=inhire, gupy=gupy, rmk=rmk, workday=workday, oracle=oracle, radancy=radancy)
+# Mota-Engil (SuccessFactors): a busca por Brasil traz vagas de Portugal junto, então filtra pelo país de cada linha
+def motaengil(host):
+    vistos = set()
+    for start in range(0, 300, 25):
+        s = get(f'https://{host}/search/?q=&locationsearch=Brazil&searchResultView=LIST&startrow={start}')
+        novos = 0
+        for m in re.finditer(r'data-url="(/job/[^"]+)"', s):
+            href = m.group(1)
+            if href in vistos:
+                continue
+            vistos.add(href); novos += 1
+            txt = ' '.join(re.sub(r'<[^>]+>', ' ', s[m.end():m.end() + 4000]).split())
+            r = re.search(r'Title (.+?) Company .+? City (.+?) Country (\S+)', txt)
+            if not r or r.group(3).lower() not in ('brasil', 'brazil'):
+                continue
+            uf = re.search(r'-([A-Z]{2})/\d+/?$', href)
+            local = limpa(r.group(2)) + (f', {uf.group(1)}' if uf else '')
+            yield dict(titulo=limpa(r.group(1)), local=local, link=f'https://{host}{href}')
+        if not novos:
+            break
+
+LEITORES = dict(motaengil=motaengil, halliburton=halliburton, teamtailor=teamtailor, pandape=pandape, workable=workable, solides=solides, recruitee=recruitee, brunel=brunel, airswift=airswift, atlas=atlas, mde=mde, beehire=beehire, inhire=inhire, gupy=gupy, rmk=rmk, workday=workday, oracle=oracle, radancy=radancy)
 
 def classifica(titulo):
     t = titulo.lower()
@@ -380,6 +405,8 @@ def main():
                 if i.get('local', 'Brasil') == 'Brasil' and nome in LOCAL_PADRAO:
                     i['local'] = LOCAL_PADRAO[nome]
                 if not re.search(r'bra[sz]il|,\s*(rj|sp|es|ba|se|rn|ce|am|mg|pr|sc|rs|pe|al|ma|pa)\b|^BR-|maca[eé]|rio de janeiro|niter[oó]i|vit[oó]ria|santos|remoto|itagua[ií]|aracaju|salvador|mossor[oó]|s[aã]o paulo|angra|campos|serra', arruma_local(i['local']), re.I):
+                    continue
+                if nome in MANTER_LOCAL and not (MANTER_LOCAL[nome].search(i['local']) or OG.search(i['titulo'])):
                     continue
                 area = classifica(i['titulo'])
                 vagas.append(dict(

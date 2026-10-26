@@ -16,14 +16,29 @@ const ENTRADA_RX = '/trainee|est[aá]gi|aprendiz|apprentice|\bintern(ship)?\b|jo
 
 function resend($cfg, $payload) {
     if (empty($cfg['chave'])) return false;
+    $payload += ['reply_to' => EMAIL_SITE]; // resposta do inscrito cai numa caixa que existe
     $ch = curl_init('https://api.resend.com/emails');
     curl_setopt_array($ch, [CURLOPT_POST => true, CURLOPT_RETURNTRANSFER => true, CURLOPT_TIMEOUT => 20,
         CURLOPT_HTTPHEADER => ['Authorization: Bearer ' . $cfg['chave'], 'Content-Type: application/json'],
         CURLOPT_POSTFIELDS => json_encode($payload, JSON_UNESCAPED_UNICODE)]);
-    $r = curl_exec($ch); $code = curl_getinfo($ch, CURLINFO_HTTP_CODE); curl_close($ch);
-    return $code >= 200 && $code < 300;
+    $r = curl_exec($ch); $code = curl_getinfo($ch, CURLINFO_HTTP_CODE); $rede = curl_error($ch); curl_close($ch);
+    // Guarda o motivo da última falha para o painel mostrar (chave errada, domínio não verificado, remetente inválido...)
+    global $ultimoErroResend;
+    $ultimoErroResend = $code >= 200 && $code < 300 ? '' : ($r === false ? 'Sem conexão com a Resend: ' . $rede : 'Resend ' . $code . ': ' . (json_decode((string)$r, true)['message'] ?? substr((string)$r, 0, 200)));
+    return $ultimoErroResend === '';
 }
-function remetente($cfg) { return $cfg['remetente'] ?? 'MR Group Vagas <alertas@mrgroup.com.br>'; }
+// Remetente no formato "Nome <email@mrgroup.com.br>". Se no painel vier só o nome, completa com a caixa do site.
+function remetente($cfg) {
+    $r = trim((string)($cfg['remetente'] ?? ''));
+    if ($r === '') return 'MR Group Vagas <' . EMAIL_SITE . '>';
+    return strpos($r, '@') === false ? $r . ' <' . EMAIL_SITE . '>' : $r;
+}
+function emailConfirmacao($cfg, $email, $token) {
+    return resend($cfg, ['from' => remetente($cfg), 'to' => [$email], 'subject' => 'Confirme o seu alerta de vagas',
+        'html' => moldura('Falta só confirmar', '<p style="color:#A0B2C4;font-size:15px;line-height:1.6">Clique no botão para começar a receber, toda segunda, as vagas novas que combinam com você.</p>'
+            . '<a href="' . ALERTA_SITE . '/api/alertas.php?c=' . $token . '" style="display:inline-block;margin-top:10px;background:#C9933A;color:#090C10;font-weight:bold;text-decoration:none;padding:13px 20px;border-radius:3px">Confirmar inscrição</a>'
+            . '<p style="color:#7A8FA6;font-size:13px;margin-top:16px">Se não foi você, é só ignorar este e-mail.</p>')]);
+}
 function h($s) { return htmlspecialchars((string)$s, ENT_QUOTES, 'UTF-8'); }
 function moldura($titulo, $miolo, $sair = '') {
     return '<div style="background:#0D1117;padding:24px 12px;font-family:Arial,sans-serif"><div style="max-width:600px;margin:0 auto;background:#111820;border:1px solid #1C2733;border-radius:6px;padding:28px">'
@@ -146,12 +161,7 @@ if ($action === 'inscrever') {
         $t[] = ['email' => $email, 'token' => $token, 'status' => 'pendente', 'data' => date('c')] + $dados;
     });
     $cfg = readJson($alertasCfg);
-    if (!$ativo) {
-        resend($cfg, ['from' => remetente($cfg), 'to' => [$email], 'subject' => 'Confirme o seu alerta de vagas',
-            'html' => moldura('Falta só confirmar', '<p style="color:#A0B2C4;font-size:15px;line-height:1.6">Clique no botão para começar a receber, toda segunda, as vagas novas que combinam com você.</p>'
-                . '<a href="' . ALERTA_SITE . '/api/alertas.php?c=' . $token . '" style="display:inline-block;margin-top:10px;background:#C9933A;color:#090C10;font-weight:bold;text-decoration:none;padding:13px 20px;border-radius:3px">Confirmar inscrição</a>'
-                . '<p style="color:#7A8FA6;font-size:13px;margin-top:16px">Se não foi você, é só ignorar este e-mail.</p>')]);
-    }
+    if (!$ativo) emailConfirmacao($cfg, $email, $token);
     out(200, ['ok' => true, 'ativo' => $ativo]);
 }
 
@@ -164,10 +174,34 @@ if ($action === 'painel') {
         'whatsapp' => resumoWhatsApp()]);
 }
 if ($action === 'config') {
-    $chave = trim((string)($in['chave'] ?? ''));
+    $chave = preg_replace('/\s+/', '', (string)($in['chave'] ?? ''));
+    if ($chave !== '' && !preg_match('/^re_[A-Za-z0-9_]{20,}$/', $chave)) out(422, ['error' => 'Essa não parece uma chave da Resend. Ela começa com re_ e só aparece uma vez, na hora em que é criada.']);
     $rem = clean($in['remetente'] ?? '', 120);
+    $tinha = !empty(readJson($alertasCfg)['chave']);
     mexer($alertasCfg, function (&$c) use ($chave, $rem) { if ($chave !== '') $c['chave'] = $chave; if ($rem !== '') $c['remetente'] = $rem; });
-    out(200, ['ok' => true]);
+    // Quem se inscreveu antes de a chave existir nunca recebeu a confirmação: manda agora, uma vez
+    $enviados = 0;
+    if (!$tinha && $chave !== '') {
+        $cfg = readJson($alertasCfg);
+        foreach (readJson($alertasFile) as $i) if (($i['status'] ?? '') === 'pendente' && emailConfirmacao($cfg, $i['email'], $i['token'])) $enviados++;
+    }
+    out(200, ['ok' => true, 'confirmacoes' => $enviados]);
+}
+// Manda um e-mail de teste para o endereço informado no painel e devolve o motivo, se falhar
+if ($action === 'testar') {
+    $cfg = readJson($alertasCfg); $para = clean($in['para'] ?? '', 160);
+    if (!filter_var($para, FILTER_VALIDATE_EMAIL)) out(422, ['error' => 'E-mail inválido']);
+    $ok = resend($cfg, ['from' => remetente($cfg), 'to' => [$para], 'subject' => 'Teste do alerta de vagas',
+        'html' => moldura('Funcionou', '<p style="color:#A0B2C4;font-size:15px">Se você recebeu este e-mail, a Resend está ligada ao site.</p>')]);
+    global $ultimoErroResend;
+    out(200, ['ok' => $ok, 'erro' => $ultimoErroResend ?? '', 'remetente' => remetente($cfg)]);
+}
+// Reenvia a confirmação para quem ainda não confirmou (por exemplo, quem se inscreveu quando a chave não estava funcionando)
+if ($action === 'confirmar_pendentes') {
+    $cfg = readJson($alertasCfg); $enviados = 0; $falhas = 0;
+    foreach (readJson($alertasFile) as $i) if (($i['status'] ?? '') === 'pendente') emailConfirmacao($cfg, $i['email'], $i['token']) ? $enviados++ : $falhas++;
+    global $ultimoErroResend;
+    out(200, ['ok' => true, 'enviados' => $enviados, 'falhas' => $falhas, 'erro' => $ultimoErroResend ?? '', 'remetente' => remetente($cfg)]);
 }
 if ($action === 'enviar') {
     out(200, alertaSemanal(true));

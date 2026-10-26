@@ -56,6 +56,10 @@ nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-co
 .nav-links a:hover{color:var(--white);border-color:var(--border2);}
 
 header.hero{max-width:1080px;margin:0 auto;padding:72px 48px 36px;}
+.cv-aviso{display:flex;flex-direction:column;gap:4px;margin-top:24px;max-width:640px;text-decoration:none;background:rgba(201,147,58,.08);border:1px solid rgba(201,147,58,.35);border-left:3px solid var(--gold);border-radius:3px;padding:14px 18px;}
+.cv-aviso b{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);}
+.cv-aviso span{font-size:15px;line-height:1.5;color:var(--white);}
+.cv-aviso:hover{border-color:var(--gold);}
 .eyebrow{display:inline-block;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);
   border:1px solid rgba(201,147,58,.3);padding:7px 18px;border-radius:2px;background:rgba(201,147,58,.05);margin-bottom:22px;}
 h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(56px,9vw,104px);line-height:.9;letter-spacing:.02em;}
@@ -246,6 +250,7 @@ footer{border-top:1px solid var(--border);padding:36px 48px;max-width:1080px;mar
     <a href="../sobre/">Sobre</a>
     <a href="../#calendar-main">Agenda</a>
     <a href="./" class="on">Vagas</a>
+    <a href="../curriculo/">Currículo</a>
     <a href="../artigos/">Artigos</a>
     <a href="../radar/">Radar Offshore</a>
     <a href="../guia/">Guia 7 Passos</a>
@@ -257,13 +262,14 @@ footer{border-top:1px solid var(--border);padding:36px 48px;max-width:1080px;mar
   <h1>Vagas offshore<br><span class="l2">com preparação junto</span></h1>
   <p class="hero-terra">E também vagas em terra, para quem quer trabalhar no setor sem embarcar.</p>
   <p class="hero-sub">Juntei as vagas abertas no Brasil das empresas de óleo e gás, puxadas direto do site de cada uma. Quer embarcar? Filtra <b>Offshore</b>. Prefere trabalhar em terra, na base, no escritório ou na oficina? Filtra <b>Onshore</b>. Cada vaga vem com os vídeos que eu indicaria antes de você se candidatar.</p>
+  <a class="cv-aviso" href="/curriculo/?origem=vagas-topo"><b>Novo · Currículo Sob Medida</b><span>Seu currículo adaptado para a vaga que você escolheu, com as palavras que o filtro procura. Entre na lista de espera.</span></a>
 </header>
 
 <main id="app"><div class="empty">Carregando vagas</div></main>
 
 <footer>
   <div class="foot-logo">MR Solutions <span>·</span> Vagas Offshore</div>
-  <div class="foot-copy">As vagas são divulgadas pelas próprias empresas. A candidatura é feita no site de cada empresa, e a MR Solutions não cobra nada do candidato. Vídeos do canal Carreira Offshore, de Matheus Rangel.</div>
+  <div class="foot-copy">As vagas são divulgadas pelas próprias empresas. A candidatura é feita no site de cada empresa, e a MR Solutions não cobra nada do candidato pelas vagas. Vídeos do canal Carreira Offshore, de Matheus Rangel.</div>
 <p style="margin-top:10px;font-size:12px;line-height:2"><a href="https://www.instagram.com/matheus_rangel/" target="_blank" rel="noopener" style="color:inherit">Instagram</a> · <a href="https://www.linkedin.com/in/omatheusrangel/" target="_blank" rel="noopener" style="color:inherit">LinkedIn</a> · <a href="https://www.youtube.com/@carreiraoffshore" target="_blank" rel="noopener" style="color:inherit">YouTube</a> · <a href="/contato/" style="color:inherit">Fale com a gente</a> · <a href="/privacidade/" style="color:inherit">Privacidade</a> · <a href="/termos/" style="color:inherit">Termos de uso</a></p></footer>
 
 <div class="ov" id="ov" role="dialog" aria-modal="true" aria-labelledby="md-t">

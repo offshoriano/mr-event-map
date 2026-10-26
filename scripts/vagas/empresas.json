@@ -821,7 +821,11 @@
    "ABESPetro"
   ],
   "site": "mota-engil.com",
-  "obs": "Sem sistema de vagas legível na última checagem; divulga vagas pelo LinkedIn ou formulário próprio.",
+  "ats": {
+   "tipo": "motaengil",
+   "cfg": "careers.mota-engil.com"
+  },
+  "obs": "Só as vagas do Brasil (o site mistura Portugal, México e África).",
   "mapeado_em": "2026-10-21",
   "linkedin": "https://www.linkedin.com/company/mota-engil"
  },
@@ -6625,5 +6629,18 @@
    "cfg": "career.kabal.com"
   },
   "obs": "Software para operações de óleo e gás; escritório no Rio."
+ },
+ {
+  "nome": "Vinci Energies",
+  "origem": [
+   "MR"
+  ],
+  "site": "vinci-energies.com.br",
+  "ats": {
+   "tipo": "gupy",
+   "cfg": "vinci-energies"
+  },
+  "manter_local": ", (RJ|ES)$",
+  "obs": "Inclui Actemium e Omexom; base offshore em Macaé."
  }
 ]

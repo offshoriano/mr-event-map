@@ -78,7 +78,7 @@ def pagina(r, lista, hoje, todos):
 </head>
 <body>
 <nav><a href="../../"><img src="../../assets/mr-solutions-branco.png" alt="MR Group" width="34" height="28"></a>
-<div class="l"><a href="../">Todas as vagas</a><a href="../../guia/">Guia 7 Passos</a></div></nav>
+<div class="l"><a href="../">Todas as vagas</a><a href="../../curriculo/">Currículo</a><a href="../../guia/">Guia 7 Passos</a></div></nav>
 <main>
 <div class="eyebrow">Atualizado em {hoje.strftime('%d/%m/%Y')}</div>
 <h1>{e(r['h1'])}</h1>

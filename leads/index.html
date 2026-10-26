@@ -85,7 +85,7 @@ function login(msg){
   $('#f').onsubmit = e => { e.preventDefault(); senha = $('#pw').value; carregar(); };
 }
 
-let VG = [], AVISO = '', aba = ({'#vagas':'vagas', '#ranking':'ranking', '#empresas':'empresas', '#diagnosticos':'diagnosticos', '#mensagens':'mensagens', '#alertas':'alertas'})[location.hash] || 'contatos', avisou = false;
+let VG = [], AVISO = '', aba = ({'#vagas':'vagas', '#ranking':'ranking', '#empresas':'empresas', '#diagnosticos':'diagnosticos', '#mensagens':'mensagens', '#alertas':'alertas', '#curriculo':'curriculo', '#pagamentos':'pagamentos'})[location.hash] || 'contatos', avisou = false;
 const AREAS = {seguranca:'Segurança', eletrica:'Elétrica e instrumentação', mecanica:'Mecânica e manutenção', pocos:'Perfuração e poços',
   maritimo:'Marítimo', hotelaria:'Hotelaria', operacao:'Operação e produção', engenharia:'Engenharia', trainee:'Trainee e estágio', geral:'Outras'};
 const VAPI = '../api/vagas-enviadas.php';
@@ -127,10 +127,12 @@ function painel(){
       <button class="tab ${aba === 'diagnosticos' ? 'on' : ''}" data-aba="diagnosticos">Diagnósticos</button>
       <button class="tab ${aba === 'mensagens' ? 'on' : ''}" data-aba="mensagens">Mensagens</button>
       <button class="tab ${aba === 'alertas' ? 'on' : ''}" data-aba="alertas">Alertas de vagas</button>
+      <button class="tab ${aba === 'curriculo' ? 'on' : ''}" data-aba="curriculo">Currículo</button>
+      <button class="tab ${aba === 'pagamentos' ? 'on' : ''}" data-aba="pagamentos">Pagamentos</button>
     </div>
     <div id="conteudo"></div></div>`;
   document.querySelectorAll('.tab').forEach(t => t.onclick = () => { aba = t.dataset.aba; history.replaceState(null, '', aba === 'contatos' ? '#' : '#' + aba); painel(); });
-  aba === 'alertas' ? painelAlertas() : aba === 'mensagens' ? painelMensagens() : aba === 'diagnosticos' ? painelDiagnosticos() : aba === 'vagas' ? painelVagas() : aba === 'ranking' ? painelRanking() : aba === 'empresas' ? painelEmpresas() : painelContatos();
+  aba === 'pagamentos' ? painelPagamentos() : aba === 'curriculo' ? painelCurriculo() : aba === 'alertas' ? painelAlertas() : aba === 'mensagens' ? painelMensagens() : aba === 'diagnosticos' ? painelDiagnosticos() : aba === 'vagas' ? painelVagas() : aba === 'ranking' ? painelRanking() : aba === 'empresas' ? painelEmpresas() : painelContatos();
 }
 
 function painelVagas(){
@@ -276,7 +278,7 @@ function painelAlertas(){
       <h2 class="sec">Configuração do envio</h2>
       <p class="note">${c.tem_chave ? 'Chave da Resend salva. O alerta sai sozinho toda segunda a partir das 9h.' : 'Falta a chave da Resend. Sem ela as inscrições ficam guardadas, mas nenhum e-mail sai.'}</p>
       <div class="bar"><input type="password" id="rk" placeholder="${c.tem_chave ? 'Trocar a chave da Resend (re_...)' : 'Chave da Resend (re_...)'}" autocomplete="off">
-      <input id="rr" value="${esc(c.remetente || '')}" placeholder="Remetente"><button class="btn" id="rs">Salvar</button><button class="btn" id="re">Enviar alerta agora</button></div>
+      <input id="rr" value="${esc(c.remetente || '')}" placeholder="Remetente"><button class="btn" id="rs">Salvar</button><button class="btn" id="re">Enviar alerta agora</button><button class="btn ghost" id="rc">Reenviar confirmações</button><button class="btn ghost" id="rt">Testar envio</button></div>
       <p class="note" id="rmsg"></p>
       <h2 class="sec">Resumo para o canal do WhatsApp (${w.total || 0} vagas novas desde ontem)</h2>
       <textarea id="wtxt" style="width:100%;min-height:220px;background:var(--card);color:var(--white);border:1px solid var(--border);padding:12px;font-family:inherit;font-size:13px">${esc(w.texto || '')}</textarea>
@@ -285,7 +287,15 @@ function painelAlertas(){
       <div class="tbl">${I.length ? `<table><thead><tr><th>Data</th><th>E-mail</th><th>Funções</th><th>Tipo</th><th>Situação</th><th></th></tr></thead><tbody>${I.map(i => `<tr>
         <td class="m">${new Date(i.data).toLocaleDateString('pt-BR')}</td><td>${esc(i.email)}</td><td class="m">${esc(i.funcoes || '')}${i.iniciante ? (i.funcoes ? ' + ' : '') + 'iniciante' : ''}</td>
         <td class="m">${esc(i.regime)}</td><td class="m">${esc(i.status)}</td><td><button class="del" data-e="${esc(i.email)}">remover</button></td></tr>`).join('')}</tbody></table>` : '<p style="padding:24px;color:var(--muted)">Nenhum inscrito ainda.</p>'}</div>`;
-    $('#rs').onclick = () => apost({action:'config', senha, chave:$('#rk').value.trim(), remetente:$('#rr').value.trim()}).then(() => painelAlertas());
+    $('#rc').onclick = () => apost({action:'confirmar_pendentes', senha}).then(r => alert(`${r.enviados || 0} e-mail(s) de confirmação enviados.${r.falhas ? `\n${r.falhas} falharam.\nMotivo: ${r.erro}\nRemetente usado: ${r.remetente}` : ''}`));
+    $('#rt').onclick = () => { const para = prompt('Mandar um e-mail de teste para qual endereço?', 'matheus.rangel@mrgroup.com.br'); if (!para) return;
+      apost({action:'testar', senha, para}).then(r => alert(r.ok ? `Enviado para ${para}. Confira a caixa de entrada e o spam.` : `Não saiu.\nMotivo: ${r.erro || r.error}\nRemetente usado: ${r.remetente || ''}`)); };
+    $('#rs').onclick = () => apost({action:'config', senha, chave:$('#rk').value.trim(), remetente:$('#rr').value.trim()}).then(r => {
+      if (r && r.error) { alert(r.error); return; }
+      const n = (r && (r.confirmacoes ?? (r.data || {}).confirmacoes)) || 0;
+      if (n) alert(`Chave salva. ${n} pessoa${n > 1 ? 's' : ''} que se inscreveu no alerta antes da chave recebeu agora o e-mail de confirmação.`);
+      painelAlertas();
+    });
     $('#re').onclick = () => { if (!confirm('Enviar o alerta da semana agora para todos os inscritos ativos?')) return; $('#rmsg').textContent = 'Enviando...';
       apost({action:'enviar', senha}).then(x => { $('#rmsg').textContent = x.erro ? x.erro : `Enviado para ${x.enviados || 0} inscritos.`; }); };
     $('#wc').onclick = () => { navigator.clipboard.writeText($('#wtxt').value).then(() => { $('#wc').textContent = 'Copiado'; setTimeout(() => $('#wc').textContent = 'Copiar texto', 1500); }); };
@@ -313,6 +323,239 @@ function painelMensagens(){
       cpost({action:'delete', senha, id:b.dataset.id}).then(() => painelMensagens());
     };
   }).catch(() => { $('#conteudo').innerHTML = '<p class="note">Não foi possível carregar as mensagens.</p>'; });
+}
+
+// Stripe: chave, produtos à venda, faturas para empresas e pagamentos recebidos
+function painelPagamentos(){
+  $('#conteudo').innerHTML = '<p class="note">Carregando...</p>';
+  const ppost = body => fetch('../api/pagamento.php', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(Object.assign({senha}, body))})
+    .then(async r => ({ok:r.ok, data:await r.json().catch(() => ({}))}));
+  const brl = v => Number(v || 0).toLocaleString('pt-BR', {style:'currency', currency:'BRL'});
+  const dt = d => d ? new Date(d).toLocaleDateString('pt-BR') : '';
+  const SIT = {pago:'Pago', aguardando:'Aguardando', falhou:'Falhou', paid:'Paga', open:'Em aberto', void:'Cancelada', draft:'Rascunho', uncollectible:'Não paga'};
+  ppost({action:'painel'}).then(({ok, data:d}) => {
+    if (!ok) { $('#conteudo').innerHTML = `<p class="note">${esc(d.error || 'Não foi possível carregar.')}</p>`; return; }
+    const P = d.pagamentos || [], F = d.faturas || [];
+    const pagos = P.filter(p => p.situacao === 'pago');
+    $('#conteudo').innerHTML = `<p class="sub" style="margin-top:16px">Pagamentos pela Stripe: produtos vendidos no site e faturas para empresas.</p>
+      <div class="aviso">${d.configurada
+        ? `<p><b style="color:var(--white)">Conectado à Stripe</b> · ${esc(d.conta || 'conta')} · modo <b style="color:${d.modo === 'teste' ? 'var(--gold-l)' : '#7fdc7f'}">${esc(d.modo)}</b> · chave final ${esc(d.final)} · ${d.webhook ? 'avisos de pagamento ligados' : '<span style="color:#ef7a7a">avisos de pagamento desligados, salve a chave de novo</span>'}</p>`
+        : '<p>Cole a chave secreta da Stripe (começa com sk_ ou rk_). Ela fica guardada no servidor, fora do site.</p>'}
+        <input type="password" id="pg-chave" placeholder="${d.configurada ? 'Trocar a chave (opcional)' : 'sk_test_... ou rk_test_...'}" autocomplete="off">
+        <button class="btn" id="pg-salvar" type="button">Salvar chave</button><span class="note" id="pg-msg" style="margin:0"></span></div>
+      ${d.configurada ? `
+      <h2 class="sec">À venda no site</h2>
+      <p class="note" style="margin:0 0 10px">Só os produtos marcados abrem o pagamento. Os outros mostram "ainda não está à venda".</p>
+      <div class="bar">${Object.entries(d.produtos).map(([k, n]) => `<label style="display:flex;gap:8px;align-items:center;font-size:14px"><input type="checkbox" class="pg-ab" value="${esc(k)}" style="width:auto" ${(d.abertos || []).includes(k) ? 'checked' : ''}> ${esc(n)}</label>`).join('')}</div>
+      <h2 class="sec">Nova fatura para empresa</h2>
+      <div class="vg"><div class="g">
+        <div><label>Cliente (empresa ou pessoa)</label><input id="ft-nome"></div>
+        <div><label>E-mail de cobrança</label><input id="ft-email" type="email"></div>
+        <div><label>CNPJ ou CPF (opcional)</label><input id="ft-doc"></div>
+        <div><label>Valor (R$)</label><input id="ft-valor" inputmode="decimal" placeholder="1500,00"></div>
+        <div><label>Descrição</label><input id="ft-desc" placeholder="Cobertura do evento X, anúncio no site em novembro..."></div>
+        <div><label>Vence em (dias)</label><input id="ft-dias" type="number" value="7" min="1" max="60"></div></div>
+        <div class="vg-acts"><button class="btn" id="ft-criar" type="button">Criar e enviar fatura</button><span class="note" id="ft-msg" style="margin:0"></span></div></div>
+      <div class="kpis"><div class="kpi"><b>${pagos.length}</b><span>Pagamentos confirmados</span></div>
+        <div class="kpi"><b>${brl(pagos.reduce((a, p) => a + p.valor, 0))}</b><span>Recebido pelo site</span></div>
+        <div class="kpi"><b>${F.filter(f => f.situacao === 'open').length}</b><span>Faturas em aberto</span></div>
+        <div class="kpi"><b>${brl(F.filter(f => f.situacao === 'open').reduce((a, f) => a + f.valor, 0))}</b><span>A receber</span></div></div>
+      <h2 class="sec">Faturas</h2>
+      <div class="tbl">${F.length ? `<table><thead><tr><th>Criada</th><th>Cliente</th><th>Descrição</th><th>Valor</th><th>Situação</th><th></th></tr></thead><tbody>${F.map(f => `<tr>
+        <td class="m">${dt(f.criada)}${f.vence ? `<br>vence ${dt(f.vence)}` : ''}</td>
+        <td>${esc(f.cliente)}<br><span class="m">${esc(f.email)}</span></td><td class="m">${esc(f.descricao)}${f.numero ? `<br>${esc(f.numero)}` : ''}</td>
+        <td>${brl(f.valor)}</td><td><span class="tag ${f.situacao === 'paid' ? 'sim' : 'nao'}">${esc(SIT[f.situacao] || f.situacao)}</span></td>
+        <td>${f.link ? `<a href="${esc(f.link)}" target="_blank" style="color:var(--gold-l);font-size:12px">abrir</a>` : ''}${f.situacao === 'open' ? `<br><button class="del" data-void="${esc(f.id)}">cancelar</button>` : ''}</td></tr>`).join('')}</tbody></table>` : '<p style="padding:24px;color:var(--muted)">Nenhuma fatura ainda.</p>'}</div>
+      <h2 class="sec">Pagamentos do site</h2>
+      <div class="tbl">${P.length ? `<table><thead><tr><th>Data</th><th>Cliente</th><th>O quê</th><th>Valor</th><th>Situação</th></tr></thead><tbody>${P.map(p => `<tr>
+        <td class="m">${dt(p.data)}${p.modo === 'teste' ? '<br>teste' : ''}</td><td>${esc(p.nome)}<br><a href="mailto:${esc(p.email)}" style="color:var(--gold-l)">${esc(p.email)}</a></td>
+        <td>${esc(p.descricao)}</td><td>${brl(p.valor)}</td><td><span class="tag ${p.situacao === 'pago' ? 'sim' : 'nao'}">${esc(SIT[p.situacao] || p.situacao)}</span></td></tr>`).join('')}</tbody></table>` : '<p style="padding:24px;color:var(--muted)">Nenhum pagamento ainda.</p>'}</div>` : ''}`;
+    $('#pg-salvar').onclick = () => {
+      const chave = $('#pg-chave').value.trim(); if (!chave) return;
+      $('#pg-msg').textContent = 'Conferindo com a Stripe...';
+      ppost({action:'config', chave}).then(r => {
+        if (!r.ok) { $('#pg-msg').textContent = r.data.error || 'Erro ao salvar'; return; }
+        if (r.data.aviso) alert('Chave salva, mas o aviso de pagamento não foi criado: ' + r.data.aviso);
+        if ((r.data.produtos_criados || []).length) alert('Produtos criados nesta conta da Stripe: ' + r.data.produtos_criados.join(', '));
+        painelPagamentos();
+      });
+    };
+    document.querySelectorAll('.pg-ab').forEach(c => c.onchange = () =>
+      ppost({action:'config', abertos:[...document.querySelectorAll('.pg-ab:checked')].map(x => x.value)}));
+    if ($('#ft-criar')) $('#ft-criar').onclick = () => {
+      const b = {action:'fatura', nome:$('#ft-nome').value, email:$('#ft-email').value, documento:$('#ft-doc').value, valor:$('#ft-valor').value, descricao:$('#ft-desc').value, dias:$('#ft-dias').value};
+      $('#ft-msg').textContent = 'Criando...'; $('#ft-criar').disabled = true;
+      ppost(b).then(r => {
+        $('#ft-criar').disabled = false;
+        if (!r.ok) { $('#ft-msg').textContent = r.data.error || 'Erro ao criar a fatura'; return; }
+        try { navigator.clipboard.writeText(r.data.link); } catch (e) {}
+        alert(`Fatura ${r.data.numero} criada${r.data.enviada ? ' e enviada por e-mail' : ''}. O link de pagamento foi copiado para você mandar no WhatsApp também.`);
+        painelPagamentos();
+      });
+    };
+    $('#conteudo').onclick = e => {
+      const b = e.target.closest('[data-void]'); if (!b) return;
+      if (!confirm('Cancelar esta fatura? O cliente não vai mais conseguir pagar por ela.')) return;
+      ppost({action:'cancelar', id:b.dataset.void}).then(() => painelPagamentos());
+    };
+  }).catch(() => { $('#conteudo').innerHTML = '<p class="note">Não foi possível carregar.</p>'; });
+}
+
+// Currículo Sob Medida: chave da Anthropic, teste do gerador, revisão dos pedidos e lista de espera
+let cvAberto = '';
+function painelCurriculo(){
+  $('#conteudo').innerHTML = '<p class="note">Carregando...</p>';
+  const cj = body => fetch('../api/curriculo.php', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(Object.assign({senha}, body))})
+    .then(async r => ({ok:r.ok, data:await r.json().catch(() => ({}))}));
+  const SIT = {aguardando_pagamento:'Aguardando pagamento', na_fila:'Na fila', gerando:'Gerando...', revisar:'Para revisar', entregue:'Entregue', erro:'Erro', arquivado:'Arquivado'};
+  const dt = d => d ? new Date(d).toLocaleString('pt-BR', {dateStyle:'short', timeStyle:'short'}) : '';
+  cj({action:'pedidos'}).then(({ok, data:d}) => {
+    if (!ok) { $('#conteudo').innerHTML = `<p class="note">${esc(d.error || 'Não foi possível carregar.')}</p>`; return; }
+    const P = d.pedidos || [];
+    window.cvCache = Object.fromEntries(P.filter(p => p.resultado).map(p => [p.id, p.resultado]));
+    const ocupado = P.some(p => p.situacao === 'na_fila' || p.situacao === 'gerando');
+    $('#conteudo').innerHTML = `<p class="sub" style="margin-top:16px">Gerador do Currículo Sob Medida. Todo currículo passa pela sua revisão antes de chegar ao cliente.</p>
+      <div class="aviso">${d.configurada ? `<p><b style="color:var(--white)">Gerador ligado</b> · chave da Anthropic final ${esc(d.final)} · vendas ${d.aberto ? '<b style="color:#7fdc7f">abertas</b>' : 'fechadas (abra na aba Pagamentos)'}</p>`
+        : '<p>Cole a chave da Anthropic (começa com sk-ant-). Ela fica guardada no servidor, fora do site.</p>'}
+        <input type="password" id="cv-chave" placeholder="${d.configurada ? 'Trocar a chave (opcional)' : 'sk-ant-...'}" autocomplete="off">
+        <button class="btn" id="cv-salvar" type="button">Salvar chave</button><span class="note" id="cv-msg" style="margin:0"></span></div>
+      ${d.configurada ? `<h2 class="sec">Testar o gerador</h2>
+      <form class="vg" id="cv-teste"><div class="g">
+        <div><label>Nome da pessoa</label><input name="nome"></div>
+        <div><label>Já embarcou?</label><select name="experiencia"><option value="nao">Ainda não</option><option value="sim">Sim</option></select></div>
+        <div><label>Currículo atual (PDF ou Word .docx)</label><input type="file" name="cv" accept=".pdf,.docx" required></div>
+        <div><label>PDF do LinkedIn (opcional)</label><input type="file" name="linkedin" accept=".pdf"></div></div>
+        <label>Texto da vaga</label><textarea name="vaga" required placeholder="Cole o anúncio completo: atividades, requisitos, local..."></textarea>
+        <div class="vg-acts"><button class="btn" type="submit">Gerar currículo</button><span class="note" id="cv-tmsg" style="margin:0">Leva de 1 a 3 minutos. Custa centavos de dólar.</span></div></form>` : ''}
+      <h2 class="sec">Pedidos${ocupado ? ' <span class="note" style="font-weight:400">atualizando sozinho enquanto gera...</span>' : ''}</h2>
+      ${P.length ? P.map(p => `<div class="vg ${p.situacao === 'revisar' ? 'pend' : ''}">
+        <div class="vg-line"><div><b>${esc(p.nome)}</b> <span class="tag ${p.situacao === 'entregue' ? 'sim' : 'nao'}">${esc(SIT[p.situacao] || p.situacao)}</span>
+          ${p.origem === 'painel' ? '<span class="tag nao">teste</span>' : ''}</div><span class="note" style="margin:0">${dt(p.data)}</span></div>
+        <div class="vg-meta">${esc(p.email || '')}${p.whats ? ' · ' + esc(p.whats) : ''} · já embarcou: ${p.experiencia === 'sim' ? 'sim' : 'não'}${p.uso ? ` · ${p.uso.entrada + p.uso.saida} tokens` : ''}<br>
+          <b>Vaga:</b> ${esc(String(p.vaga || '').slice(0, 220))}${String(p.vaga || '').length > 220 ? '...' : ''}
+          ${p.erro ? `<br><span style="color:#ef7a7a">${esc(p.erro)}</span>` : ''}</div>
+        <div class="vg-acts">
+          ${p.resultado ? `<button class="btn" data-abrir="${esc(p.id)}" type="button">${cvAberto === p.id ? 'Fechar' : p.situacao === 'entregue' ? 'Ver' : 'Revisar'}</button>` : ''}
+          ${(p.arquivos || {}).cv ? `<button class="btn ghost" data-arq="${esc(p.id)}" data-qual="cv" type="button">Currículo original</button>` : ''}
+          ${p.resultado ? `<button class="btn ghost" data-arq="${esc(p.id)}" data-qual="docx" type="button">Word</button><button class="btn ghost" data-arq="${esc(p.id)}" data-qual="pdf" type="button">PDF</button>` : ''}
+          ${p.situacao === 'erro' ? `<button class="btn" data-gerar="${esc(p.id)}" type="button">Tentar de novo</button>` : ''}
+          ${p.situacao === 'entregue' ? `<a class="btn ghost" href="${esc(p.link)}" target="_blank">Página do cliente</a>` : ''}
+          <button class="del" data-apagar="${esc(p.id)}" type="button">apagar</button></div>
+        ${cvAberto === p.id && p.resultado ? editorCurriculo(p) : ''}</div>`).join('') : '<p class="note">Nenhum pedido ainda.</p>'}
+      <div id="cv-lista"></div>`;
+    painelListaEspera($('#cv-lista'));
+    if (ocupado) setTimeout(() => { if (aba === 'curriculo') painelCurriculo(); }, 15000);
+    $('#cv-salvar').onclick = () => {
+      const chave = $('#cv-chave').value.trim(); if (!chave) return;
+      $('#cv-msg').textContent = 'Conferindo com a Anthropic...';
+      cj({action:'config', chave}).then(r => r.ok ? painelCurriculo() : ($('#cv-msg').textContent = r.data.error || 'Erro ao salvar'));
+    };
+    if ($('#cv-teste')) $('#cv-teste').onsubmit = e => {
+      e.preventDefault();
+      const f = new FormData(e.target); f.append('action', 'teste'); f.append('senha', senha);
+      $('#cv-tmsg').textContent = 'Enviando...';
+      fetch('../api/curriculo.php', {method:'POST', body:f}).then(r => r.json()).then(r => {
+        if (r.error) { $('#cv-tmsg').textContent = r.error; return; }
+        painelCurriculo();
+      }).catch(() => $('#cv-tmsg').textContent = 'Erro ao enviar');
+    };
+    $('#conteudo').onclick = e => {
+      const b = e.target.closest('button'); if (!b || !b.dataset) return;
+      if (b.dataset.abrir) { cvAberto = cvAberto === b.dataset.abrir ? '' : b.dataset.abrir; painelCurriculo(); }
+      if (b.dataset.gerar) cj({action:'gerar', id:b.dataset.gerar}).then(() => setTimeout(painelCurriculo, 800));
+      if (b.dataset.apagar && confirm('Apagar este pedido e os arquivos de vez?')) cj({action:'apagar', id:b.dataset.apagar}).then(painelCurriculo);
+      if (b.dataset.arq) fetch('../api/curriculo.php', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({action:'arquivo', senha, id:b.dataset.arq, qual:b.dataset.qual})})
+        .then(r => r.ok ? r.blob() : Promise.reject()).then(bl => { const a = document.createElement('a'); a.href = URL.createObjectURL(bl);
+          a.download = b.dataset.qual + '-' + b.dataset.arq + (b.dataset.qual === 'docx' ? '.docx' : '.pdf'); a.click(); }).catch(() => alert('Arquivo não encontrado'));
+      if (b.dataset.salvar || b.dataset.aprovar || b.dataset.refazer) {
+        const id = b.dataset.salvar || b.dataset.aprovar || b.dataset.refazer;
+        if (b.dataset.refazer) {
+          const nota = prompt('O que a nova versão deve mudar? (opcional)') ;
+          if (nota === null) return;
+          cj({action:'gerar', id, nota}).then(() => { cvAberto = ''; setTimeout(painelCurriculo, 800); }); return;
+        }
+        const r = lerEditor(id);
+        cj({action:'salvar', id, resultado:r}).then(s => {
+          if (!s.ok) { alert(s.data.error || 'Erro ao salvar'); return; }
+          if (!b.dataset.aprovar) { alert('Revisão salva. Word e PDF atualizados.'); return; }
+          if (!confirm('Aprovar e mandar o link de entrega para o cliente?')) return;
+          cj({action:'aprovar', id}).then(a => { alert(a.ok ? (a.data.enviado ? 'Entregue. O cliente recebeu o e-mail.' : 'Entregue, mas o e-mail não saiu. Mande este link: ' + a.data.link) : (a.data.error || 'Erro')); cvAberto = ''; painelCurriculo(); });
+        });
+      }
+    };
+  }).catch(() => { $('#conteudo').innerHTML = '<p class="note">Não foi possível carregar.</p>'; });
+}
+
+// Editor da revisão: cada parte do currículo vira um campo. Listas ficam uma por linha.
+function editorCurriculo(p){
+  const r = p.resultado, id = p.id, L = a => esc((a || []).join('\n'));
+  const campo = (k, rot, v, alto) => `<div style="margin-bottom:10px"><label>${rot}</label><textarea data-k="${k}" style="min-height:${alto || 70}px">${v}</textarea></div>`;
+  const ent = (k, rot, v) => `<div><label>${rot}</label><input data-k="${k}" value="${esc(v)}"></div>`;
+  return `<div id="ed-${esc(id)}" style="margin-top:16px;border-top:1px solid var(--border);padding-top:16px">
+    ${(r.avisos_revisao || []).length ? `<div class="aviso" style="border-color:rgba(201,147,58,.45)"><p><b style="color:var(--gold-l)">Para conferir antes de aprovar:</b><br>${r.avisos_revisao.map(esc).join('<br>')}</p></div>` : ''}
+    <p class="note" style="margin:0 0 12px">Nota antes ${esc(r.nota_antes)} → depois ${esc(r.nota_depois)}</p>
+    <div class="g">${ent('dados.nome', 'Nome', r.dados.nome)}${ent('dados.cidade', 'Cidade', r.dados.cidade)}${ent('dados.telefone', 'Telefone', r.dados.telefone)}${ent('dados.email', 'E-mail', r.dados.email)}${ent('dados.linkedin', 'LinkedIn', r.dados.linkedin)}${ent('objetivo', 'Objetivo', r.objetivo)}</div>
+    ${campo('resumo', 'Resumo profissional', esc(r.resumo), 120)}
+    ${campo('idiomas', 'Idiomas (um por linha)', L(r.idiomas))}
+    ${campo('formacao', 'Formação (um por linha)', L(r.formacao))}
+    <label>Experiências</label>${(r.experiencias || []).map((e, i) => `<div class="vg" style="padding:12px;margin:6px 0"><div class="g">
+      ${ent(`exp.${i}.periodo`, 'Período', e.periodo)}${ent(`exp.${i}.empresa`, 'Empresa', e.empresa)}${ent(`exp.${i}.local`, 'Local', e.local)}${ent(`exp.${i}.posicao`, 'Posição', e.posicao)}</div>
+      ${campo(`exp.${i}.atividades`, 'Principais atividades', esc(e.atividades), 110)}</div>`).join('')}
+    ${campo('qualificacoes', 'Qualificações (uma por linha)', L(r.qualificacoes), 110)}
+    ${campo('outras', 'Outras informações (uma por linha)', L(r.outras))}
+    ${campo('carta', 'Carta de apresentação', esc(r.carta), 140)}
+    ${ent('linkedin.titulo', 'LinkedIn: título', r.linkedin.titulo)}
+    ${campo('linkedin.sobre', 'LinkedIn: sobre', esc(r.linkedin.sobre), 120)}
+    ${campo('linkedin.competencias', 'LinkedIn: competências (uma por linha)', L(r.linkedin.competencias))}
+    ${campo('faltando', 'O que ainda falta para a vaga (um por linha)', L(r.faltando))}
+    <div class="vg-acts"><button class="btn ghost" data-salvar="${esc(id)}" type="button">Salvar revisão</button>
+      <button class="btn ghost" data-refazer="${esc(id)}" type="button">Gerar outra versão</button>
+      <button class="btn" data-aprovar="${esc(id)}" type="button">${p.situacao === 'entregue' ? 'Salvar e reenviar' : 'Aprovar e entregar'}</button></div></div>`;
+}
+function lerEditor(id){
+  const ed = document.getElementById('ed-' + id), v = k => (ed.querySelector(`[data-k="${k}"]`) || {}).value || '';
+  const linhas = k => v(k).split('\n').map(x => x.trim()).filter(Boolean);
+  const n = ed.querySelectorAll('[data-k$=".atividades"]').length;
+  const antes = (window.cvCache || {})[id] || {};
+  return {
+    dados:{nome:v('dados.nome'), cidade:v('dados.cidade'), telefone:v('dados.telefone'), email:v('dados.email'), linkedin:v('dados.linkedin')},
+    objetivo:v('objetivo'), resumo:v('resumo'), idiomas:linhas('idiomas'), formacao:linhas('formacao'),
+    experiencias:[...Array(n).keys()].map(i => ({periodo:v(`exp.${i}.periodo`), empresa:v(`exp.${i}.empresa`), local:v(`exp.${i}.local`), posicao:v(`exp.${i}.posicao`), atividades:v(`exp.${i}.atividades`)})),
+    qualificacoes:linhas('qualificacoes'), outras:linhas('outras'), carta:v('carta'),
+    linkedin:{titulo:v('linkedin.titulo'), sobre:v('linkedin.sobre'), competencias:linhas('linkedin.competencias')},
+    nota_antes:antes.nota_antes ?? null, nota_depois:antes.nota_depois ?? null, faltando:linhas('faltando'), avisos_revisao:antes.avisos_revisao || []
+  };
+}
+
+// Lista de espera do Currículo Sob Medida (/curriculo/), embaixo dos pedidos
+function painelListaEspera(alvo){
+    const cpost = body => fetch('../api/curriculo.php', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(body)}).then(r => r.json());
+  cpost({action:'list', senha}).then(r => {
+    const L = r.inscritos || [];
+    const sim = L.filter(x => x.experiencia === 'sim').length;
+    alvo.innerHTML = `<h2 class="sec">Lista de espera</h2><p class="sub">Quem entrou na lista de espera do Currículo Sob Medida. Cada inscrição nova também chega no seu e-mail.</p>
+      <div class="kpis"><div class="kpi"><b>${L.length}</b><span>Na lista</span></div>
+      <div class="kpi"><b>${L.filter(x => Date.now() - new Date(x.data) < 7 * 864e5).length}</b><span>Últimos 7 dias</span></div>
+      <div class="kpi"><b>${sim}</b><span>Já embarcaram</span></div><div class="kpi"><b>${L.length - sim}</b><span>Ainda não</span></div></div>
+      <div class="bar"><button class="btn ghost" id="cv-csv" type="button">Baixar planilha</button></div>
+      <div class="tbl">${L.length ? `<table><thead><tr><th>Data</th><th>Contato</th><th>Função</th><th>Embarcou</th><th>Origem</th><th></th></tr></thead><tbody>${L.map(x => `<tr>
+        <td class="m">${new Date(x.data).toLocaleString('pt-BR', {dateStyle:'short', timeStyle:'short'})}</td>
+        <td>${esc(x.nome)}<br><a href="mailto:${esc(x.email)}" style="color:var(--gold-l)">${esc(x.email)}</a>${x.whats ? `<br><a href="https://wa.me/55${esc(String(x.whats).replace(/\D/g, '').replace(/^55/, ''))}" target="_blank" style="color:var(--gold-l)">${esc(x.whats)}</a>` : ''}</td>
+        <td>${esc(x.funcao)}</td>
+        <td><span class="tag ${x.experiencia === 'sim' ? 'sim' : 'nao'}">${x.experiencia === 'sim' ? 'Sim' : 'Ainda não'}</span></td>
+        <td class="m">${esc(x.origem || 'direto')}</td>
+        <td><button class="del" data-id="${esc(x.id)}">remover</button></td></tr>`).join('')}</tbody></table>` : '<p style="padding:24px;color:var(--muted)">Ninguém na lista ainda.</p>'}</div>`;
+    $('#cv-csv').onclick = () => {
+      const q = v => '"' + String(v ?? '').replace(/"/g, '""') + '"';
+      const csv = ['Data;Nome;E-mail;WhatsApp;Função;Embarcou;Origem'].concat(L.map(x => [x.data, x.nome, x.email, x.whats, x.funcao, x.experiencia, x.origem].map(q).join(';'))).join('\n');
+      const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob(['\ufeff' + csv], {type:'text/csv'})); a.download = 'lista-curriculo.csv'; a.click();
+    };
+    alvo.onclick = e => {
+      const b = e.target.closest('.del'); if (!b) return;
+      if (!confirm('Remover esta pessoa da lista de vez?')) return;
+      cpost({action:'delete', senha, id:b.dataset.id}).then(() => painelListaEspera(alvo));
+    };
+  }).catch(() => { alvo.innerHTML = '<p class="note">Não foi possível carregar a lista.</p>'; });
 }
 
 // Empresas que fizeram o diagnóstico de eventos em /diagnostico/

@@ -18,7 +18,7 @@ ErrorDocument 404 /404.html
 RewriteRule ^radar$ /radar/ [R=301,L]
 RewriteRule ^radar/(.*)$ anp/$1 [L]
 
-# Velocidade: compressão e cache no navegador (imagens e fontes por 30 dias; dados de vagas e páginas sempre conferidos)
+# Velocidade: compressão e cache no navegador (imagens e fontes por 30 dias; páginas, dados e scripts sempre conferidos, para a agenda nova aparecer na hora)
 <IfModule mod_deflate.c>
   AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json image/svg+xml text/xml application/xml text/plain
 </IfModule>
@@ -32,9 +32,16 @@ RewriteRule ^radar/(.*)$ anp/$1 [L]
   ExpiresByType video/mp4 "access plus 30 days"
   ExpiresByType font/woff2 "access plus 30 days"
   ExpiresByType text/css "access plus 7 days"
-  ExpiresByType application/javascript "access plus 7 days"
+  ExpiresByType application/javascript "access plus 0 seconds"
   ExpiresByType application/json "access plus 0 seconds"
   ExpiresByType text/html "access plus 0 seconds"
+</IfModule>
+
+# Scripts sempre conferidos com o servidor (resposta 304 rápida quando nada mudou), para a agenda nova aparecer na hora
+<IfModule mod_headers.c>
+  <FilesMatch "\.js$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
 </IfModule>
 
 # /anp/ é o mesmo conteúdo de /radar/: manda para o endereço oficial para o Google não ver página duplicada

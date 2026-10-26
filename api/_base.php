@@ -56,11 +56,13 @@ function limitar($nome, $max = 10, $janela = 3600) {
     flock($fp, LOCK_UN);
     if ($estourou) out(429, ['error' => 'Muitos envios seguidos. Tente de novo mais tarde.']);
 }
+// Caixa de e-mail que existe de verdade no Hostinger: remetente dos avisos e endereço de resposta dos e-mails da Resend
+const EMAIL_SITE = 'administracao@mrgroup.com.br';
 // mail() do Hostinger. O remetente precisa ser do próprio domínio para não cair no spam.
 function avisar($para, $assunto, $texto) {
     if (!filter_var($para, FILTER_VALIDATE_EMAIL)) return false;
-    $h = "From: MR Group <adm@mrgroup.com.br>\r\nContent-Type: text/plain; charset=UTF-8\r\n";
-    return @mail($para, '=?UTF-8?B?' . base64_encode($assunto) . '?=', $texto, $h, '-f adm@mrgroup.com.br');
+    $h = "From: MR Group <" . EMAIL_SITE . ">\r\nContent-Type: text/plain; charset=UTF-8\r\n";
+    return @mail($para, '=?UTF-8?B?' . base64_encode($assunto) . '?=', $texto, $h, '-f ' . EMAIL_SITE);
 }
 function auth($in) {
     if (!password_verify((string)($in['senha'] ?? ''), SENHA_HASH)) {
@@ -74,4 +76,17 @@ function entrada() {
     $in = json_decode((string)file_get_contents('php://input'), true);
     if (!is_array($in)) out(400, ['error' => 'JSON inválido']);
     return $in;
+}
+// E-mail em HTML pela Resend, com a chave guardada no painel (aba Alertas de vagas). Sem chave, não envia.
+function resendEnviar($para, $assunto, $html, $texto = '') {
+    global $dataDir;
+    $cfg = readJson($dataDir . '/alertas-config.json');
+    if (empty($cfg['chave']) || !filter_var($para, FILTER_VALIDATE_EMAIL) || !function_exists('curl_init')) return false;
+    $ch = curl_init('https://api.resend.com/emails');
+    curl_setopt_array($ch, [CURLOPT_POST => true, CURLOPT_RETURNTRANSFER => true, CURLOPT_TIMEOUT => 20,
+        CURLOPT_HTTPHEADER => ['Authorization: Bearer ' . $cfg['chave'], 'Content-Type: application/json'],
+        CURLOPT_POSTFIELDS => json_encode(['from' => 'Matheus Rangel · MR Group <' . EMAIL_SITE . '>', 'reply_to' => EMAIL_SITE,
+            'to' => [$para], 'subject' => $assunto, 'html' => $html, 'text' => $texto ?: strip_tags($html)], JSON_UNESCAPED_UNICODE)]);
+    curl_exec($ch); $code = curl_getinfo($ch, CURLINFO_HTTP_CODE); curl_close($ch);
+    return $code >= 200 && $code < 300;
 }
