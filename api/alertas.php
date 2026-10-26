@@ -24,6 +24,12 @@ function resend($cfg, $payload) {
     return $code >= 200 && $code < 300;
 }
 function remetente($cfg) { return $cfg['remetente'] ?? 'MR Group Vagas <alertas@mrgroup.com.br>'; }
+function emailConfirmacao($cfg, $email, $token) {
+    return resend($cfg, ['from' => remetente($cfg), 'to' => [$email], 'subject' => 'Confirme o seu alerta de vagas',
+        'html' => moldura('Falta só confirmar', '<p style="color:#A0B2C4;font-size:15px;line-height:1.6">Clique no botão para começar a receber, toda segunda, as vagas novas que combinam com você.</p>'
+            . '<a href="' . ALERTA_SITE . '/api/alertas.php?c=' . $token . '" style="display:inline-block;margin-top:10px;background:#C9933A;color:#090C10;font-weight:bold;text-decoration:none;padding:13px 20px;border-radius:3px">Confirmar inscrição</a>'
+            . '<p style="color:#7A8FA6;font-size:13px;margin-top:16px">Se não foi você, é só ignorar este e-mail.</p>')]);
+}
 function h($s) { return htmlspecialchars((string)$s, ENT_QUOTES, 'UTF-8'); }
 function moldura($titulo, $miolo, $sair = '') {
     return '<div style="background:#0D1117;padding:24px 12px;font-family:Arial,sans-serif"><div style="max-width:600px;margin:0 auto;background:#111820;border:1px solid #1C2733;border-radius:6px;padding:28px">'
@@ -146,12 +152,7 @@ if ($action === 'inscrever') {
         $t[] = ['email' => $email, 'token' => $token, 'status' => 'pendente', 'data' => date('c')] + $dados;
     });
     $cfg = readJson($alertasCfg);
-    if (!$ativo) {
-        resend($cfg, ['from' => remetente($cfg), 'to' => [$email], 'subject' => 'Confirme o seu alerta de vagas',
-            'html' => moldura('Falta só confirmar', '<p style="color:#A0B2C4;font-size:15px;line-height:1.6">Clique no botão para começar a receber, toda segunda, as vagas novas que combinam com você.</p>'
-                . '<a href="' . ALERTA_SITE . '/api/alertas.php?c=' . $token . '" style="display:inline-block;margin-top:10px;background:#C9933A;color:#090C10;font-weight:bold;text-decoration:none;padding:13px 20px;border-radius:3px">Confirmar inscrição</a>'
-                . '<p style="color:#7A8FA6;font-size:13px;margin-top:16px">Se não foi você, é só ignorar este e-mail.</p>')]);
-    }
+    if (!$ativo) emailConfirmacao($cfg, $email, $token);
     out(200, ['ok' => true, 'ativo' => $ativo]);
 }
 
@@ -166,8 +167,15 @@ if ($action === 'painel') {
 if ($action === 'config') {
     $chave = trim((string)($in['chave'] ?? ''));
     $rem = clean($in['remetente'] ?? '', 120);
+    $tinha = !empty(readJson($alertasCfg)['chave']);
     mexer($alertasCfg, function (&$c) use ($chave, $rem) { if ($chave !== '') $c['chave'] = $chave; if ($rem !== '') $c['remetente'] = $rem; });
-    out(200, ['ok' => true]);
+    // Quem se inscreveu antes de a chave existir nunca recebeu a confirmação: manda agora, uma vez
+    $enviados = 0;
+    if (!$tinha && $chave !== '') {
+        $cfg = readJson($alertasCfg);
+        foreach (readJson($alertasFile) as $i) if (($i['status'] ?? '') === 'pendente' && emailConfirmacao($cfg, $i['email'], $i['token'])) $enviados++;
+    }
+    out(200, ['ok' => true, 'confirmacoes' => $enviados]);
 }
 if ($action === 'enviar') {
     out(200, alertaSemanal(true));
