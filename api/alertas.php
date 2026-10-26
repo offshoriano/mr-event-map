@@ -20,8 +20,11 @@ function resend($cfg, $payload) {
     curl_setopt_array($ch, [CURLOPT_POST => true, CURLOPT_RETURNTRANSFER => true, CURLOPT_TIMEOUT => 20,
         CURLOPT_HTTPHEADER => ['Authorization: Bearer ' . $cfg['chave'], 'Content-Type: application/json'],
         CURLOPT_POSTFIELDS => json_encode($payload, JSON_UNESCAPED_UNICODE)]);
-    $r = curl_exec($ch); $code = curl_getinfo($ch, CURLINFO_HTTP_CODE); curl_close($ch);
-    return $code >= 200 && $code < 300;
+    $r = curl_exec($ch); $code = curl_getinfo($ch, CURLINFO_HTTP_CODE); $rede = curl_error($ch); curl_close($ch);
+    // Guarda o motivo da última falha para o painel mostrar (chave errada, domínio não verificado, remetente inválido...)
+    global $ultimoErroResend;
+    $ultimoErroResend = $code >= 200 && $code < 300 ? '' : ($r === false ? 'Sem conexão com a Resend: ' . $rede : 'Resend ' . $code . ': ' . (json_decode((string)$r, true)['message'] ?? substr((string)$r, 0, 200)));
+    return $ultimoErroResend === '';
 }
 // Remetente no formato "Nome <email@mrgroup.com.br>". Se no painel vier só o nome, completa com o e-mail padrão.
 function remetente($cfg) {
@@ -182,11 +185,21 @@ if ($action === 'config') {
     }
     out(200, ['ok' => true, 'confirmacoes' => $enviados]);
 }
+// Manda um e-mail de teste para o endereço informado no painel e devolve o motivo, se falhar
+if ($action === 'testar') {
+    $cfg = readJson($alertasCfg); $para = clean($in['para'] ?? '', 160);
+    if (!filter_var($para, FILTER_VALIDATE_EMAIL)) out(422, ['error' => 'E-mail inválido']);
+    $ok = resend($cfg, ['from' => remetente($cfg), 'to' => [$para], 'subject' => 'Teste do alerta de vagas',
+        'html' => moldura('Funcionou', '<p style="color:#A0B2C4;font-size:15px">Se você recebeu este e-mail, a Resend está ligada ao site.</p>')]);
+    global $ultimoErroResend;
+    out(200, ['ok' => $ok, 'erro' => $ultimoErroResend ?? '', 'remetente' => remetente($cfg)]);
+}
 // Reenvia a confirmação para quem ainda não confirmou (por exemplo, quem se inscreveu quando a chave não estava funcionando)
 if ($action === 'confirmar_pendentes') {
     $cfg = readJson($alertasCfg); $enviados = 0; $falhas = 0;
     foreach (readJson($alertasFile) as $i) if (($i['status'] ?? '') === 'pendente') emailConfirmacao($cfg, $i['email'], $i['token']) ? $enviados++ : $falhas++;
-    out(200, ['ok' => true, 'enviados' => $enviados, 'falhas' => $falhas]);
+    global $ultimoErroResend;
+    out(200, ['ok' => true, 'enviados' => $enviados, 'falhas' => $falhas, 'erro' => $ultimoErroResend ?? '', 'remetente' => remetente($cfg)]);
 }
 if ($action === 'enviar') {
     out(200, alertaSemanal(true));

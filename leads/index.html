@@ -278,7 +278,7 @@ function painelAlertas(){
       <h2 class="sec">Configuração do envio</h2>
       <p class="note">${c.tem_chave ? 'Chave da Resend salva. O alerta sai sozinho toda segunda a partir das 9h.' : 'Falta a chave da Resend. Sem ela as inscrições ficam guardadas, mas nenhum e-mail sai.'}</p>
       <div class="bar"><input type="password" id="rk" placeholder="${c.tem_chave ? 'Trocar a chave da Resend (re_...)' : 'Chave da Resend (re_...)'}" autocomplete="off">
-      <input id="rr" value="${esc(c.remetente || '')}" placeholder="Remetente"><button class="btn" id="rs">Salvar</button><button class="btn" id="re">Enviar alerta agora</button><button class="btn ghost" id="rc">Reenviar confirmações</button></div>
+      <input id="rr" value="${esc(c.remetente || '')}" placeholder="Remetente"><button class="btn" id="rs">Salvar</button><button class="btn" id="re">Enviar alerta agora</button><button class="btn ghost" id="rc">Reenviar confirmações</button><button class="btn ghost" id="rt">Testar envio</button></div>
       <p class="note" id="rmsg"></p>
       <h2 class="sec">Resumo para o canal do WhatsApp (${w.total || 0} vagas novas desde ontem)</h2>
       <textarea id="wtxt" style="width:100%;min-height:220px;background:var(--card);color:var(--white);border:1px solid var(--border);padding:12px;font-family:inherit;font-size:13px">${esc(w.texto || '')}</textarea>
@@ -287,7 +287,9 @@ function painelAlertas(){
       <div class="tbl">${I.length ? `<table><thead><tr><th>Data</th><th>E-mail</th><th>Funções</th><th>Tipo</th><th>Situação</th><th></th></tr></thead><tbody>${I.map(i => `<tr>
         <td class="m">${new Date(i.data).toLocaleDateString('pt-BR')}</td><td>${esc(i.email)}</td><td class="m">${esc(i.funcoes || '')}${i.iniciante ? (i.funcoes ? ' + ' : '') + 'iniciante' : ''}</td>
         <td class="m">${esc(i.regime)}</td><td class="m">${esc(i.status)}</td><td><button class="del" data-e="${esc(i.email)}">remover</button></td></tr>`).join('')}</tbody></table>` : '<p style="padding:24px;color:var(--muted)">Nenhum inscrito ainda.</p>'}</div>`;
-    $('#rc').onclick = () => apost({action:'confirmar_pendentes', senha}).then(r => alert(`${r.enviados || 0} e-mail(s) de confirmação enviados.${r.falhas ? ` ${r.falhas} falharam: confira a chave e o remetente.` : ''}`));
+    $('#rc').onclick = () => apost({action:'confirmar_pendentes', senha}).then(r => alert(`${r.enviados || 0} e-mail(s) de confirmação enviados.${r.falhas ? `\n${r.falhas} falharam.\nMotivo: ${r.erro}\nRemetente usado: ${r.remetente}` : ''}`));
+    $('#rt').onclick = () => { const para = prompt('Mandar um e-mail de teste para qual endereço?', 'mateus.rangel@mrgroup.com.br'); if (!para) return;
+      apost({action:'testar', senha, para}).then(r => alert(r.ok ? `Enviado para ${para}. Confira a caixa de entrada e o spam.` : `Não saiu.\nMotivo: ${r.erro || r.error}\nRemetente usado: ${r.remetente || ''}`)); };
     $('#rs').onclick = () => apost({action:'config', senha, chave:$('#rk').value.trim(), remetente:$('#rr').value.trim()}).then(r => {
       const n = (r && (r.confirmacoes ?? (r.data || {}).confirmacoes)) || 0;
       if (n) alert(`Chave salva. ${n} pessoa${n > 1 ? 's' : ''} que se inscreveu no alerta antes da chave recebeu agora o e-mail de confirmação.`);
