@@ -8,7 +8,7 @@ require_once __DIR__ . '/_docs.php';
 
 $pedidosFile = $dataDir . '/curriculo-pedidos.json';
 $pedidosDir = $dataDir . '/curriculo-pedidos';
-const AVISO_CURRICULO_PEDIDO = 'mateus.rangel@mrgroup.com.br';
+const AVISO_CURRICULO_PEDIDO = 'matheus.rangel@mrgroup.com.br';
 
 function pastaPedido($id) { global $pedidosDir; return $pedidosDir . '/' . preg_replace('/[^a-f0-9]/', '', $id); }
 function pedido($id) { global $pedidosFile; foreach (readJson($pedidosFile) as $p) if ($p['id'] === $id) return $p; return null; }

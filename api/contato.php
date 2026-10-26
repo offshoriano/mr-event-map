@@ -5,7 +5,7 @@
 // POST {action:"delete", senha, id}   remove uma mensagem (protegido)
 require __DIR__ . '/_base.php';
 $dataFile = $dataDir . '/contato.json';
-const AVISO_CONTATO = 'mateus.rangel@mrgroup.com.br';
+const AVISO_CONTATO = 'matheus.rangel@mrgroup.com.br';
 
 $in = entrada();
 $action = $in['action'] ?? 'add';
