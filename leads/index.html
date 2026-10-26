@@ -287,7 +287,11 @@ function painelAlertas(){
       <div class="tbl">${I.length ? `<table><thead><tr><th>Data</th><th>E-mail</th><th>Funções</th><th>Tipo</th><th>Situação</th><th></th></tr></thead><tbody>${I.map(i => `<tr>
         <td class="m">${new Date(i.data).toLocaleDateString('pt-BR')}</td><td>${esc(i.email)}</td><td class="m">${esc(i.funcoes || '')}${i.iniciante ? (i.funcoes ? ' + ' : '') + 'iniciante' : ''}</td>
         <td class="m">${esc(i.regime)}</td><td class="m">${esc(i.status)}</td><td><button class="del" data-e="${esc(i.email)}">remover</button></td></tr>`).join('')}</tbody></table>` : '<p style="padding:24px;color:var(--muted)">Nenhum inscrito ainda.</p>'}</div>`;
-    $('#rs').onclick = () => apost({action:'config', senha, chave:$('#rk').value.trim(), remetente:$('#rr').value.trim()}).then(() => painelAlertas());
+    $('#rs').onclick = () => apost({action:'config', senha, chave:$('#rk').value.trim(), remetente:$('#rr').value.trim()}).then(r => {
+      const n = (r && (r.confirmacoes ?? (r.data || {}).confirmacoes)) || 0;
+      if (n) alert(`Chave salva. ${n} pessoa${n > 1 ? 's' : ''} que se inscreveu no alerta antes da chave recebeu agora o e-mail de confirmação.`);
+      painelAlertas();
+    });
     $('#re').onclick = () => { if (!confirm('Enviar o alerta da semana agora para todos os inscritos ativos?')) return; $('#rmsg').textContent = 'Enviando...';
       apost({action:'enviar', senha}).then(x => { $('#rmsg').textContent = x.erro ? x.erro : `Enviado para ${x.enviados || 0} inscritos.`; }); };
     $('#wc').onclick = () => { navigator.clipboard.writeText($('#wtxt').value).then(() => { $('#wc').textContent = 'Copiado'; setTimeout(() => $('#wc').textContent = 'Copiar texto', 1500); }); };
