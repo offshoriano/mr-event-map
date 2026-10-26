@@ -16,6 +16,7 @@ const ENTRADA_RX = '/trainee|est[aá]gi|aprendiz|apprentice|\bintern(ship)?\b|jo
 
 function resend($cfg, $payload) {
     if (empty($cfg['chave'])) return false;
+    $payload += ['reply_to' => EMAIL_SITE]; // resposta do inscrito cai numa caixa que existe
     $ch = curl_init('https://api.resend.com/emails');
     curl_setopt_array($ch, [CURLOPT_POST => true, CURLOPT_RETURNTRANSFER => true, CURLOPT_TIMEOUT => 20,
         CURLOPT_HTTPHEADER => ['Authorization: Bearer ' . $cfg['chave'], 'Content-Type: application/json'],
@@ -26,11 +27,11 @@ function resend($cfg, $payload) {
     $ultimoErroResend = $code >= 200 && $code < 300 ? '' : ($r === false ? 'Sem conexão com a Resend: ' . $rede : 'Resend ' . $code . ': ' . (json_decode((string)$r, true)['message'] ?? substr((string)$r, 0, 200)));
     return $ultimoErroResend === '';
 }
-// Remetente no formato "Nome <email@mrgroup.com.br>". Se no painel vier só o nome, completa com o e-mail padrão.
+// Remetente no formato "Nome <email@mrgroup.com.br>". Se no painel vier só o nome, completa com a caixa do site.
 function remetente($cfg) {
     $r = trim((string)($cfg['remetente'] ?? ''));
-    if ($r === '') return 'MR Group Vagas <alertas@mrgroup.com.br>';
-    return strpos($r, '@') === false ? $r . ' <alertas@mrgroup.com.br>' : $r;
+    if ($r === '') return 'MR Group Vagas <' . EMAIL_SITE . '>';
+    return strpos($r, '@') === false ? $r . ' <' . EMAIL_SITE . '>' : $r;
 }
 function emailConfirmacao($cfg, $email, $token) {
     return resend($cfg, ['from' => remetente($cfg), 'to' => [$email], 'subject' => 'Confirme o seu alerta de vagas',
