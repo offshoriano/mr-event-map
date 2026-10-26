@@ -375,6 +375,7 @@ function painelPagamentos(){
       ppost({action:'config', chave}).then(r => {
         if (!r.ok) { $('#pg-msg').textContent = r.data.error || 'Erro ao salvar'; return; }
         if (r.data.aviso) alert('Chave salva, mas o aviso de pagamento não foi criado: ' + r.data.aviso);
+        if ((r.data.produtos_criados || []).length) alert('Produtos criados nesta conta da Stripe: ' + r.data.produtos_criados.join(', '));
         painelPagamentos();
       });
     };

@@ -55,12 +55,13 @@ if ($action === 'config') {
         $lista = stripe('GET', 'webhook_endpoints', ['limit' => 100], $chave);
         foreach ($lista[1]['data'] ?? [] as $w) if ($w['url'] === STRIPE_WEBHOOK_URL) stripe('DELETE', 'webhook_endpoints/' . $w['id'], [], $chave);
         $w = stripe('POST', 'webhook_endpoints', ['url' => STRIPE_WEBHOOK_URL, 'enabled_events' => STRIPE_EVENTOS, 'description' => 'Site mrgroup.com.br'], $chave);
+        $produtosCriados = garantirProdutos($chave);
         $cfg = array_merge($cfg, ['chave' => $chave, 'conta' => $conta[1]['business_profile']['name'] ?? ($conta[1]['settings']['dashboard']['display_name'] ?? ''),
             'webhook' => $w[1]['secret'] ?? '', 'webhook_erro' => empty($w[1]['secret']) ? stripeErro($w) : '']);
     }
     if (isset($in['abertos']) && is_array($in['abertos'])) $cfg['abertos'] = array_values(array_intersect(array_keys(PRODUTOS), $in['abertos']));
     $ok = mexer($stripeCfgFile, function (&$c) use ($cfg) { $c = $cfg; });
-    out($ok ? 200 : 500, ['ok' => (bool)$ok, 'webhook' => !empty($cfg['webhook']), 'aviso' => $cfg['webhook_erro'] ?? '']);
+    out($ok ? 200 : 500, ['ok' => (bool)$ok, 'webhook' => !empty($cfg['webhook']), 'aviso' => $cfg['webhook_erro'] ?? '', 'produtos_criados' => $produtosCriados ?? []]);
 }
 
 if ($action === 'fatura') {
