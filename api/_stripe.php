@@ -11,9 +11,25 @@ const STRIPE_EVENTOS = ['checkout.session.completed', 'checkout.session.async_pa
 
 // Produtos vendidos pelo site: o preço vem da Stripe pelo lookup_key, a página de volta é a do produto
 const PRODUTOS = [
-    'curriculo'   => ['nome' => 'Currículo Sob Medida', 'voltar' => '/curriculo/'],
-    'diagnostico' => ['nome' => 'Diagnóstico de eventos', 'voltar' => '/diagnostico/'],
+    'curriculo'   => ['nome' => 'Currículo Sob Medida', 'voltar' => '/curriculo/', 'centavos' => 9700,
+                      'descricao' => 'Currículo adaptado à vaga escolhida, carta de apresentação, ajustes no LinkedIn e nota antes e depois.'],
+    'diagnostico' => ['nome' => 'Diagnóstico de eventos', 'voltar' => '/diagnostico/', 'centavos' => 14700,
+                      'descricao' => 'Diagnóstico de eventos do setor de óleo, gás e energia para a sua empresa.'],
 ];
+
+// Cria na Stripe os produtos que ainda não existem (a conta de produção começa vazia). O preço é achado pelo lookup_key.
+function garantirProdutos($chave) {
+    $criados = [];
+    foreach (PRODUTOS as $k => $p) {
+        $r = stripe('GET', 'prices', ['lookup_keys' => [$k], 'limit' => 1], $chave);
+        if (!empty($r[1]['data'])) continue;
+        $prod = stripe('POST', 'products', ['name' => $p['nome'], 'description' => $p['descricao'], 'metadata' => ['produto' => $k]], $chave);
+        if (empty($prod[1]['id'])) continue;
+        $preco = stripe('POST', 'prices', ['product' => $prod[1]['id'], 'currency' => 'brl', 'unit_amount' => $p['centavos'], 'lookup_key' => $k], $chave);
+        if (!empty($preco[1]['id'])) $criados[] = $p['nome'];
+    }
+    return $criados;
+}
 
 function stripeCfg() { global $stripeCfgFile; return readJson($stripeCfgFile); }
 
