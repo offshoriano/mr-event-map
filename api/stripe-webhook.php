@@ -2,7 +2,7 @@
 // Avisos da Stripe (webhook): pagamento confirmado, Pix ou boleto compensado, fatura paga.
 // A Stripe assina cada aviso; sem a assinatura certa, nada é gravado.
 require __DIR__ . '/_stripe.php';
-const AVISO_PAGAMENTO = 'mateus.rangel@mrgroup.com.br';
+const AVISO_PAGAMENTO = 'matheus.rangel@mrgroup.com.br';
 
 $corpo = (string)file_get_contents('php://input');
 $segredo = stripeCfg()['webhook'] ?? '';

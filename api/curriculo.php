@@ -19,7 +19,7 @@
 require __DIR__ . '/_stripe.php';
 require __DIR__ . '/_pedidos.php';
 $dataFile = $dataDir . '/curriculo.json';
-const AVISO_CURRICULO = 'mateus.rangel@mrgroup.com.br';
+const AVISO_CURRICULO = 'matheus.rangel@mrgroup.com.br';
 
 // Download do currículo entregue
 if (($_SERVER['REQUEST_METHOD'] ?? '') === 'GET' && isset($_GET['baixar'])) {

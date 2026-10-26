@@ -13,7 +13,7 @@ $vagasFile = $dataDir . '/vagas-enviadas.json';
 $configFile = $dataDir . '/config.json';
 const SITE = 'https://mrgroup.com.br';
 // Recebe o aviso enquanto nenhum outro e-mail for salvo no painel
-const AVISO_PADRAO = 'mateus.rangel@mrgroup.com.br';
+const AVISO_PADRAO = 'matheus.rangel@mrgroup.com.br';
 
 function linkCandidatura($v) {
     $v = trim((string)$v);

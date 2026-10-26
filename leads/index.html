@@ -288,7 +288,7 @@ function painelAlertas(){
         <td class="m">${new Date(i.data).toLocaleDateString('pt-BR')}</td><td>${esc(i.email)}</td><td class="m">${esc(i.funcoes || '')}${i.iniciante ? (i.funcoes ? ' + ' : '') + 'iniciante' : ''}</td>
         <td class="m">${esc(i.regime)}</td><td class="m">${esc(i.status)}</td><td><button class="del" data-e="${esc(i.email)}">remover</button></td></tr>`).join('')}</tbody></table>` : '<p style="padding:24px;color:var(--muted)">Nenhum inscrito ainda.</p>'}</div>`;
     $('#rc').onclick = () => apost({action:'confirmar_pendentes', senha}).then(r => alert(`${r.enviados || 0} e-mail(s) de confirmação enviados.${r.falhas ? `\n${r.falhas} falharam.\nMotivo: ${r.erro}\nRemetente usado: ${r.remetente}` : ''}`));
-    $('#rt').onclick = () => { const para = prompt('Mandar um e-mail de teste para qual endereço?', 'mateus.rangel@mrgroup.com.br'); if (!para) return;
+    $('#rt').onclick = () => { const para = prompt('Mandar um e-mail de teste para qual endereço?', 'matheus.rangel@mrgroup.com.br'); if (!para) return;
       apost({action:'testar', senha, para}).then(r => alert(r.ok ? `Enviado para ${para}. Confira a caixa de entrada e o spam.` : `Não saiu.\nMotivo: ${r.erro || r.error}\nRemetente usado: ${r.remetente || ''}`)); };
     $('#rs').onclick = () => apost({action:'config', senha, chave:$('#rk').value.trim(), remetente:$('#rr').value.trim()}).then(r => {
       const n = (r && (r.confirmacoes ?? (r.data || {}).confirmacoes)) || 0;
