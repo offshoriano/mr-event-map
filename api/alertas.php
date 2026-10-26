@@ -174,7 +174,8 @@ if ($action === 'painel') {
         'whatsapp' => resumoWhatsApp()]);
 }
 if ($action === 'config') {
-    $chave = trim((string)($in['chave'] ?? ''));
+    $chave = preg_replace('/\s+/', '', (string)($in['chave'] ?? ''));
+    if ($chave !== '' && !preg_match('/^re_[A-Za-z0-9_]{20,}$/', $chave)) out(422, ['error' => 'Essa não parece uma chave da Resend. Ela começa com re_ e só aparece uma vez, na hora em que é criada.']);
     $rem = clean($in['remetente'] ?? '', 120);
     $tinha = !empty(readJson($alertasCfg)['chave']);
     mexer($alertasCfg, function (&$c) use ($chave, $rem) { if ($chave !== '') $c['chave'] = $chave; if ($rem !== '') $c['remetente'] = $rem; });
