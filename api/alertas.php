@@ -12,7 +12,7 @@ require_once __DIR__ . '/_base.php';
 $alertasFile = $dataDir . '/alertas.json';
 $alertasCfg = $dataDir . '/alertas-config.json';
 const ALERTA_SITE = 'https://mrgroup.com.br';
-const ENTRADA_RX = '/trainee|est[aá]gi|aprendiz|apprentice|\bintern(ship)?\b|jovem|cadet|ajudante|homem de [aá]rea|sem experi|auxiliar de (plataforma|opera)/iu';
+const ENTRADA_RX = '/trainee|est[aá]gi|aprendiz|apprentice|\bintern(ship)?\b|jovem|cadet|ajudante|homem de [aá]rea|sem experi|auxiliar|assistente (de )?(opera|mec[aâ]nic|materiais|controle de materiais)/iu';
 
 function resend($cfg, $payload) {
     if (empty($cfg['chave'])) return false;

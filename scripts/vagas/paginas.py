@@ -20,8 +20,8 @@ RECORTES = [
          intro='As sedes das operadoras, das donas de FPSO e das grandes prestadoras de serviço ficam no Rio. '
                'Aqui estão as vagas abertas hoje na capital, para quem quer embarcar e para quem quer trabalhar em terra.'),
     dict(slug='sem-experiencia', titulo='Vagas offshore sem experiência', h1='Vagas offshore para quem ainda não tem experiência',
-         filtro=lambda v: re.search(r'trainee|est[aá]gi|aprendiz|apprentice|\bintern\b|jovem|cadet|ajudante|homem de [aá]rea|sem experi|auxiliar de (plataforma|opera)', v['titulo'], re.I),
-         intro='Trainee, estágio, jovem aprendiz, ajudante e homem de área: as portas de entrada do setor. '
+         filtro=lambda v: re.search(r'trainee|est[aá]gi|aprendiz|apprentice|\bintern\b|jovem|cadet|ajudante|homem de [aá]rea|sem experi|auxiliar|assistente (de )?(opera|mec[aâ]nic|materiais|controle de materiais)', v['titulo'], re.I),
+         intro='Trainee, estágio, jovem aprendiz, ajudante, auxiliar e assistente de operações: as portas de entrada do setor. '
                'Para a primeira vaga embarcada, o caminho costuma ser curso básico (CBSP e T-HUET), currículo alinhado e uma dessas funções.'),
     dict(slug='embarcado', titulo='Vagas embarcado (offshore)', h1='Vagas para trabalhar embarcado',
          filtro=lambda v: v.get('regime') == 'Offshore',
