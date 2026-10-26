@@ -291,6 +291,7 @@ function painelAlertas(){
     $('#rt').onclick = () => { const para = prompt('Mandar um e-mail de teste para qual endereço?', 'matheus.rangel@mrgroup.com.br'); if (!para) return;
       apost({action:'testar', senha, para}).then(r => alert(r.ok ? `Enviado para ${para}. Confira a caixa de entrada e o spam.` : `Não saiu.\nMotivo: ${r.erro || r.error}\nRemetente usado: ${r.remetente || ''}`)); };
     $('#rs').onclick = () => apost({action:'config', senha, chave:$('#rk').value.trim(), remetente:$('#rr').value.trim()}).then(r => {
+      if (r && r.error) { alert(r.error); return; }
       const n = (r && (r.confirmacoes ?? (r.data || {}).confirmacoes)) || 0;
       if (n) alert(`Chave salva. ${n} pessoa${n > 1 ? 's' : ''} que se inscreveu no alerta antes da chave recebeu agora o e-mail de confirmação.`);
       painelAlertas();
