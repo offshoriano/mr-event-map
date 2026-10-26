@@ -150,7 +150,11 @@ window.CONFERENCES = [
     location:'Abu Dhabi — Emirados Árabes Unidos',
     access:'public', link:'https://www.adipec.com/',
     past:false,
-    parallel:[]
+    parallel:[
+      { day:'Segunda, 2 Nov · 19h', dateIso:'2026-11-02', name:'The ADIPEC Backyard BBQ', desc:'Churrasco informal da comunidade norueguesa depois do primeiro dia de feira, com Norwegian Business Council, Innovation Norway, Nor-Shipping e MDE. Stock Burger, Holiday Inn Abu Dhabi, a partir das 18h30.', access:'aberto', link:'https://www.norwegianbusinesscouncil.com/event-details/the-adipec-backyard-bbq-2026' },
+      { day:'Quarta, 4 Nov · 18h', dateIso:'2026-11-04', name:'ABS Reception at ADIPEC', desc:'Recepção da ABS, a classificadora americana, com Matthew Tremblay (SVP Global Offshore) e Dheeraj Sharma (VP Marine & Offshore, Oriente Médio e África). Splash Garden, Aloft Hotel, ADNEC. Confirmação até 29 de outubro com Grace Paca (gpaca@eagle.org).', access:'convite' },
+      { day:'Quarta, 4 Nov · 18h30', dateIso:'2026-11-04', name:'Rystad Energy Market Briefing', desc:'Briefing de mercado da Rystad Energy, uma das principais consultorias de dados de energia do mundo, seguido de networking. Ritz-Carlton Grand Mosque, Abu Dhabi, das 18h30 às 21h30.', access:'inscricao', link:'https://pages.rystadenergy.com/Rystad-Energy-Market-Briefing-ADIPEC-2026' }
+    ]
   },
   {
     id:'mossoro2026',
