@@ -14,7 +14,7 @@ from paginas import RECORTES  # noqa: E402
 
 SITE = 'https://mrgroup.com.br'
 CANAL_WHATSAPP = 'https://whatsapp.com/channel/0029VbEcI5T6hENgxY9hl10L'
-CANAL_TELEGRAM = 'https://t.me/+fYuxIvFkRvY3NzAx'
+CANAL_TELEGRAM = 'https://t.me/mrgroupvagas'
 MAX_VAGAS = 15
 ENTRADA = next(r['filtro'] for r in RECORTES if r['slug'] == 'sem-experiencia')
 MESES = {m: i + 1 for i, m in enumerate(['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho',
