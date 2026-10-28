@@ -563,18 +563,23 @@ function painelListaEspera(alvo){
       <div class="kpis"><div class="kpi"><b>${L.length}</b><span>Na lista</span></div>
       <div class="kpi"><b>${L.filter(x => Date.now() - new Date(x.data) < 7 * 864e5).length}</b><span>Últimos 7 dias</span></div>
       <div class="kpi"><b>${sim}</b><span>Já embarcaram</span></div><div class="kpi"><b>${L.length - sim}</b><span>Ainda não</span></div></div>
-      <div class="bar"><button class="btn ghost" id="cv-csv" type="button">Baixar planilha</button></div>
+      <div class="bar">${L.some(x => !x.avisado) ? `<button class="btn" id="cv-av" type="button" style="margin-left:0">Avisar que abriu (${L.filter(x => !x.avisado).length})</button>` : ''}<button class="btn ghost" id="cv-csv" type="button">Baixar planilha</button></div>
       <div class="tbl">${L.length ? `<table><thead><tr><th>Data</th><th>Contato</th><th>Função</th><th>Embarcou</th><th>Origem</th><th></th></tr></thead><tbody>${L.map(x => `<tr>
         <td class="m">${new Date(x.data).toLocaleString('pt-BR', {dateStyle:'short', timeStyle:'short'})}</td>
         <td>${esc(x.nome)}<br><a href="mailto:${esc(x.email)}" style="color:var(--gold-l)">${esc(x.email)}</a>${x.whats ? `<br><a href="https://wa.me/55${esc(String(x.whats).replace(/\D/g, '').replace(/^55/, ''))}" target="_blank" style="color:var(--gold-l)">${esc(x.whats)}</a>` : ''}</td>
         <td>${esc(x.funcao)}</td>
         <td><span class="tag ${x.experiencia === 'sim' ? 'sim' : 'nao'}">${x.experiencia === 'sim' ? 'Sim' : 'Ainda não'}</span></td>
-        <td class="m">${esc(x.origem || 'direto')}</td>
+        <td class="m">${esc(x.origem || 'direto')}${x.avisado ? '<br>avisado em ' + new Date(x.avisado).toLocaleDateString('pt-BR') : ''}</td>
         <td><button class="del" data-id="${esc(x.id)}">remover</button></td></tr>`).join('')}</tbody></table>` : '<p style="padding:24px;color:var(--muted)">Ninguém na lista ainda.</p>'}</div>`;
     $('#cv-csv').onclick = () => {
       const q = v => '"' + String(v ?? '').replace(/"/g, '""') + '"';
       const csv = ['Data;Nome;E-mail;WhatsApp;Função;Embarcou;Origem'].concat(L.map(x => [x.data, x.nome, x.email, x.whats, x.funcao, x.experiencia, x.origem].map(q).join(';'))).join('\n');
       const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob(['\ufeff' + csv], {type:'text/csv'})); a.download = 'lista-curriculo.csv'; a.click();
+    };
+    if ($('#cv-av')) $('#cv-av').onclick = () => {
+      if (!confirm('Mandar o e-mail avisando que o Currículo Sob Medida abriu para quem está na lista e ainda não foi avisado?')) return;
+      $('#cv-av').textContent = 'Enviando...';
+      cpost({action:'avisar_lista', senha}).then(r => { alert(r.error || `${r.enviados} e-mail(s) enviados.${r.falhas && r.falhas.length ? '\nNão saiu para: ' + r.falhas.join(', ') : ''}`); painelListaEspera(alvo); });
     };
     alvo.onclick = e => {
       const b = e.target.closest('.del'); if (!b) return;

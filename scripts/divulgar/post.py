@@ -67,11 +67,19 @@ def eventos_da_semana(dia):
     return [(d, n.replace(' — ', ', '), q, l) for d, n, q, l in sorted(itens)]
 
 
+# Ordem do post: embarcado, porta de entrada, área técnica do setor, perto das bases (RJ, ES, RN, BA). TI e escritório no fim.
+REGIAO = re.compile(r'maca[eé]|rio das ostras|rio de janeiro|niter[oó]i|a[cç]u|campos|esp[ií]rito santo|vit[oó]ria|, (RJ|ES|RN|BA)$', re.I)
+ESCRITORIO = re.compile(r'devops|software|desenvolvedor|developer|dados|data |observabilidade|\bti\b|fiscal|cont[aá]bil|auditoria|jur[ií]dic|marketing|comercial|vendas|sales|sourcing|procurement|compras|recursos humanos|\brh\b', re.I)
+def peso(v):
+    return (4 * (v.get('regime') == 'Offshore') + 3 * bool(ENTRADA(v)) + 2 * (v.get('area') not in ('Outras', None))
+            + 1 * bool(REGIAO.search(v.get('local', ''))) - 4 * bool(ESCRITORIO.search(v['titulo'])))
+
+
 def montar(hoje):
     auto = ler('vagas/automaticas.json', {}).get('vagas', [])
     comentadas = [v for v in ler('vagas/vagas.json', []) if v.get('publicada') == hoje.isoformat()]
     novas = [v for v in auto if v.get('vistaEm') == hoje.isoformat()]
-    novas.sort(key=lambda v: (not ENTRADA(v), v.get('regime') != 'Offshore'))
+    novas.sort(key=lambda v: -peso(v))
     cursos = [q for q in ler('vagas/qualificacao.json', [])
               if q.get('inscricoesDe') == hoje.isoformat() or q.get('inscricoesAte') == (hoje + timedelta(days=1)).isoformat()]
     artigos = artigos_de(hoje)
@@ -88,7 +96,7 @@ def montar(hoje):
         linhas = []
         for v in novas[:MAX_VAGAS]:
             tipo = 'Embarcado' if v.get('regime') == 'Offshore' else 'Em terra'
-            linhas += [f"*{v['titulo']}*" + (' (para quem está começando)' if ENTRADA(v) else ''),
+            linhas += [f"*{v['titulo'].replace(' — ', ', ').replace('—', '-')}*" + (' (para quem está começando)' if ENTRADA(v) else ''),
                        f"{v['empresa']} · {v['local']} · {tipo}", f"{SITE}/vagas/#{v['id']}", '']
         resto = len(novas) - MAX_VAGAS
         linhas.append(f"E mais {resto} vagas novas em {SITE}/vagas/" if resto > 0 else f"Todas as vagas abertas em {SITE}/vagas/")
