@@ -300,7 +300,7 @@ function painelAlertas(){
   }).catch(() => { $('#conteudo').innerHTML = '<p class="note">Não foi possível carregar os alertas.</p>'; });
 }
 
-// Post do dia: sai sozinho no canal do Telegram; o do WhatsApp chega no e-mail e fica aqui para copiar
+// Post do dia: sai sozinho no canal do Telegram; o do WhatsApp chega no e-mail e fica aqui para copiar e colar no canal
 function painelDivulgar(){
   $('#conteudo').innerHTML = '<p class="note">Carregando...</p>';
   const dpost = body => fetch('../api/divulgar.php', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(body)}).then(r => r.json());
@@ -311,11 +311,11 @@ function painelDivulgar(){
       <div class="kpi"><b>${d.ultimo ? new Date(d.ultimo + 'T12:00').toLocaleDateString('pt-BR') : '—'}</b><span>Último post publicado</span></div>
       <div class="kpi"><b>${deHoje ? (p.vagas || 0) : '—'}</b><span>Vagas novas hoje</span></div></div>
       ${res.quando ? `<p class="note">Último envio em ${new Date(res.quando).toLocaleString('pt-BR')}: Telegram ${esc(res.telegram)}, e-mail do WhatsApp ${res.email ? 'enviado' : 'não saiu'}.</p>` : ''}
-      <h2 class="sec">Post de hoje para a comunidade do WhatsApp</h2>
+      <h2 class="sec">Post de hoje para o canal do WhatsApp</h2>
       ${!deHoje ? '<p class="note">O post de hoje ainda não foi montado. O robô das vagas roda de manhã e monta o post logo depois.</p>'
         : p.vazio ? '<p class="note">Hoje não entrou nada novo no site, então não tem post.</p>'
         : `<textarea id="wtxt" style="width:100%;min-height:260px;background:var(--card);color:var(--white);border:1px solid var(--border);padding:12px;font-family:inherit;font-size:13px">${esc(p.whatsapp)}</textarea>
-      <div class="bar"><a class="btn" style="text-decoration:none;margin-left:0" href="${esc(d.link_whatsapp)}" target="_blank" rel="noopener">Abrir no WhatsApp</a><button class="btn ghost" id="wc">Copiar texto</button>${d.telegram ? '<button class="btn ghost" id="dr">Publicar de novo no Telegram</button>' : ''}</div>`}
+      <div class="bar"><button class="btn" style="margin-left:0" id="wc">Copiar texto</button><a class="btn ghost" style="text-decoration:none;margin-left:0" href="${esc(d.canal_whatsapp)}" target="_blank" rel="noopener">Abrir o canal</a>${d.telegram ? '<button class="btn ghost" id="dr">Publicar de novo no Telegram</button>' : ''}</div>`}
       <h2 class="sec">Canal do Telegram</h2>
       <p class="note">${d.telegram ? `Bot ${esc(d.bot)} publicando em ${esc(d.nome_canal)} (${esc(d.canal)}). O post sai sozinho todo dia, assim que o robô das vagas termina.` : 'Cole a chave do bot que o BotFather entregou e o endereço do canal (ex.: t.me/seucanal). O bot precisa estar no canal como administrador.'}</p>
       <div class="bar"><input type="password" id="tk" placeholder="${d.bot ? 'Trocar a chave do bot' : 'Chave do bot (123456:ABC...)'}" autocomplete="off">

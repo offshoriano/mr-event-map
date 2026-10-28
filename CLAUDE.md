@@ -17,7 +17,7 @@ Matheus não programa. Explique em português simples, sem jargão, e diga o que
 
 - `vagas-refresh.yml`, todo dia por volta das 10h UTC (costuma atrasar): `mapear.py`, `fetch_jobs.py` (vagas + páginas de busca via `paginas.py`) e `build.py` (artigos e sitemap). Faz commit no `main`.
 - `anp-refresh.yml`, toda segunda: dados do Radar Offshore (`scripts/anp/`).
-- Post do dia: o `vagas-refresh.yml` roda `scripts/divulgar/post.py` (vagas novas, vaga comentada, curso abrindo ou fechando, artigo do dia e, às segundas, eventos da semana) e grava `vagas/post-do-dia.json`. Depois chama `api/divulgar.php` (`publicar`, uma vez por dia), que posta no canal do Telegram e manda o texto do WhatsApp para o e-mail do Matheus com o botão que abre o WhatsApp. O WhatsApp não aceita postagem automática; não use serviço não oficial. Reserva: o primeiro clique em vaga depois das 9h também chama `publicar`.
+- Post do dia: o `vagas-refresh.yml` roda `scripts/divulgar/post.py` (vagas novas, vaga comentada, curso abrindo ou fechando, artigo do dia e, às segundas, eventos da semana) e grava `vagas/post-do-dia.json`. Depois chama `api/divulgar.php` (`publicar`, uma vez por dia), que posta no canal do Telegram e manda o texto do WhatsApp para o e-mail do Matheus, que copia e cola no canal (link em `CANAL_WHATSAPP`, em `divulgar.php` e `post.py`; o botão "Seguir o canal" fica em `vagas/index.html` e nos artigos via `build.py`). O WhatsApp não aceita postagem automática; não use serviço não oficial. Reserva: o primeiro clique em vaga depois das 9h também chama `publicar`.
 
 ## Onde fica cada coisa
 

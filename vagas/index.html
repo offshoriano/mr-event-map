@@ -210,6 +210,10 @@ footer{border-top:1px solid var(--border);padding:36px 48px;max-width:1080px;mar
 .atalhos a{font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--muted2);text-decoration:none;border:1px solid var(--border2);padding:9px 14px;border-radius:2px;}
 .atalhos a:hover{color:var(--white);border-color:var(--gold);}
 .atalhos a b{color:var(--gold-l);}
+.canal-zap{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin:14px 0 0;padding:14px 20px;border:1px solid rgba(37,211,102,.45);border-radius:3px;background:rgba(37,211,102,.07);color:var(--white);text-decoration:none;}
+.canal-zap span{font-size:14px;color:var(--muted2,#A0B2C4);line-height:1.5;}
+.canal-zap b{display:block;color:var(--white);font-size:15px;}
+.canal-zap em{font-style:normal;font-weight:700;font-size:12px;letter-spacing:.14em;text-transform:uppercase;background:#25D366;color:#08130c;padding:11px 18px;border-radius:3px;white-space:nowrap;}
 .alerta{margin:14px 0 6px;background:linear-gradient(135deg,rgba(201,147,58,.13),rgba(17,24,32,.9));border:1px solid rgba(201,147,58,.45);border-radius:3px;padding:18px 20px;}
 .al-t b{display:block;font-size:17px;color:var(--white);}.al-t span{font-size:14px;color:var(--muted2);}
 .al-c{display:grid;grid-template-columns:1.1fr 1.4fr .9fr auto;gap:8px;margin-top:12px;align-items:center;}
@@ -499,6 +503,7 @@ Promise.all([
     <div class="atalhos" role="navigation" aria-label="Seções">${atalhos.map(([h, t, n]) => `<a href="${h}">${t} <b>${n}</b></a>`).join('')}</div>
     ${VAGAS.some(v => v.destaque) ? `<div class="sec-h" id="destaque" style="margin-top:28px;scroll-margin-top:90px"><h2>Em destaque</h2><small>oportunidade escolhida a dedo</small></div>
     ${VAGAS.filter(v => v.destaque).map(jobHTML).join('')}` : ''}
+    <a class="canal-zap" href="https://whatsapp.com/channel/0029VbEcI5T6hENgxY9hl10L" target="_blank" rel="noopener" data-canal="vagas"><span><b>Vagas novas todo dia no WhatsApp</b>Siga o canal da MR Group e receba as vagas, os artigos e os eventos do setor.</span><em>Seguir o canal</em></a>
     <form class="alerta" id="alerta" novalidate>
       <div class="al-t"><b>Receba as vagas novas no seu e-mail</b><span>Toda segunda, só as que combinam com você. Grátis, e você sai quando quiser.</span></div>
       <div class="al-c">
