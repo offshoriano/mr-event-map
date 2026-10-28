@@ -80,6 +80,7 @@ select,input[type=search]{font-family:'DM Sans',sans-serif;font-size:13px;backgr
 input[type=search]{min-width:260px;}
 .count{font-size:12px;color:var(--muted);letter-spacing:.08em;margin-left:auto;}
 
+.job.dest{border-color:var(--gold);box-shadow:0 0 0 1px var(--gold) inset;}
 .job{background:var(--card);border:1px solid var(--border);border-radius:2px;margin-bottom:16px;overflow:hidden;scroll-margin-top:90px;}
 .job:target,.job.hl{border-color:rgba(201,147,58,.5);}
 .job-head{display:flex;gap:18px;padding:24px 26px 18px;align-items:flex-start;}
@@ -289,7 +290,7 @@ let VAGAS = [];
 function jobHTML(v){
   const d = v.inscricoesAte ? diasAte(v.inscricoesAte) : null;
   const prazo = d == null ? '' : d <= 3 ? `<span class="chip warn">Últimos ${d + 1} dia${d ? 's' : ''}</span>` : `<span class="chip">Inscrições até ${fmt(v.inscricoesAte)}</span>`;
-  return `<article class="job" id="${esc(v.id)}">
+  return `<article class="job${v.destaque ? ' dest' : ''}" id="${esc(v.id)}">
     <div class="job-head">
       ${v.logo ? `<img class="job-logo" src="${esc(v.logo)}" alt="${esc(v.empresa)}">` : ''}
       <div>
@@ -358,8 +359,9 @@ function jsonLd(lista){
 }
 
 function render(){
+  if (!$('#list')) return;
   const q = ($('#q').value || '').toLowerCase(), area = $('#area').value;
-  const lista = VAGAS.filter(v => (!area || v.area === area) && (!q || (v.titulo + ' ' + v.empresa + ' ' + v.local + ' ' + v.area).toLowerCase().includes(q)));
+  const lista = VAGAS.filter(v => !v.destaque && (!area || v.area === area) && (!q || (v.titulo + ' ' + v.empresa + ' ' + v.local + ' ' + v.area).toLowerCase().includes(q)));
   $('#count').textContent = `${lista.length} vaga${lista.length === 1 ? '' : 's'} aberta${lista.length === 1 ? '' : 's'}`;
   $('#list').innerHTML = lista.length ? lista.map(jobHTML).join('') :
     '<div class="empty">Nenhuma vaga com esse filtro agora. Volte em breve ou siga o canal para saber das próximas.</div>';
@@ -492,9 +494,11 @@ Promise.all([
   const areas = [...new Set(VAGAS.map(v => v.area))].sort();
   const opc = (lista, rot) => `<option value="">${rot}</option>` + [...new Set(lista)].sort().map(x => `<option>${esc(x)}</option>`).join('');
   const atual = auto.atualizado ? new Date(auto.atualizado).toLocaleDateString('pt-BR') : '';
-  const atalhos = [QUAL.length && ['#qualificacao', 'Qualificação aberta', QUAL.length], INICIO.length && ['#comecando', 'Para quem está começando', INICIO.length], VAGAS.length && ['#list', 'Vagas comentadas', VAGAS.length], AUTO.length && ['#setor', 'Com experiência', AUTO.length]].filter(Boolean);
+  const atalhos = [QUAL.length && ['#qualificacao', 'Qualificação aberta', QUAL.length], INICIO.length && ['#comecando', 'Para quem está começando', INICIO.length], VAGAS.some(v => !v.destaque) && ['#list', 'Vagas comentadas', VAGAS.filter(v => !v.destaque).length], AUTO.length && ['#setor', 'Com experiência', AUTO.length]].filter(Boolean);
   $('#app').innerHTML = `
     <div class="atalhos" role="navigation" aria-label="Seções">${atalhos.map(([h, t, n]) => `<a href="${h}">${t} <b>${n}</b></a>`).join('')}</div>
+    ${VAGAS.some(v => v.destaque) ? `<div class="sec-h" id="destaque" style="margin-top:28px;scroll-margin-top:90px"><h2>Em destaque</h2><small>oportunidade escolhida a dedo</small></div>
+    ${VAGAS.filter(v => v.destaque).map(jobHTML).join('')}` : ''}
     <form class="alerta" id="alerta" novalidate>
       <div class="al-t"><b>Receba as vagas novas no seu e-mail</b><span>Toda segunda, só as que combinam com você. Grátis, e você sai quando quiser.</span></div>
       <div class="al-c">
@@ -512,7 +516,7 @@ Promise.all([
     ${INICIO.length ? `<div class="sec-h" id="comecando" style="scroll-margin-top:90px"><h2>Vagas abertas agora para quem está começando</h2><small>${INICIO.length} vagas de aprendiz, estágio, trainee e ajudante</small></div>
     <p class="sec-sub">Portas de entrada do setor, onde a empresa não pede experiência na função. Para as vagas embarcadas, chegue com o CBSP e o T-HUET em dia. <a href="../artigos/cbsp-e-huet/">Entenda os dois cursos</a>.</p>
     <div id="lista0"></div>` : ''}
-    ${VAGAS.length ? `<div class="sec-h"><h2>Vagas comentadas</h2><small>com análise e vídeos escolhidos a dedo</small></div>
+    ${VAGAS.some(v => !v.destaque) ? `<div class="sec-h"><h2>Vagas comentadas</h2><small>com análise e vídeos escolhidos a dedo</small></div>
     <div class="ctrl">
       <input type="search" id="q" placeholder="Buscar cargo, empresa ou cidade">
       <select id="area"><option value="">Todas as áreas</option>${areas.map(a => `<option>${esc(a)}</option>`).join('')}</select>

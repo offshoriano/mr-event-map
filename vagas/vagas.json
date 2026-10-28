@@ -1,5 +1,53 @@
 [
   {
+    "id": "halliburton-deep-program-2027",
+    "titulo": "DEEP Program Brazil 2027 (programa para recém-formados)",
+    "empresa": "Halliburton",
+    "logo": "",
+    "local": "Macaé, RJ, com mudança e viagens pelo Brasil",
+    "regime": "Onshore, com viagens",
+    "contrato": "Tempo integral",
+    "area": "Engenharia",
+    "nivel": "Recém-formado (até 2 anos)",
+    "publicada": "2026-10-14",
+    "destaque": true,
+    "link": "https://careers.halliburton.com/job/macae/deep-program-brazil-2027/543/101956951920",
+    "resumo": "O DEEP é o programa da Halliburton para quem acabou de se formar em engenharia, geologia, geofísica, TI ou outra área de exatas. Você passa por várias linhas de serviço da empresa, aprende com quem está na operação e tem mentor. É uma das poucas portas de entrada de multinacional de serviços que não pede experiência. O filtro está em outro lugar: inglês avançado, até 2 anos de formado e disponibilidade para mudar de cidade e viajar. Se você se encaixa, não deixa para a última semana.",
+    "atividades": [
+      "Passar por várias linhas de serviço e áreas de apoio da Halliburton",
+      "Trabalhar na operação e no negócio ao lado de profissionais experientes",
+      "Ter mentoria de especialistas e líderes da empresa",
+      "Desenvolver base técnica, operacional e de liderança",
+      "Usar inteligência artificial e tecnologia para resolver problemas do dia a dia"
+    ],
+    "requisitos": [
+      "Formado há até 2 anos em engenharia (petróleo, química, mecânica, civil, ambiental, eletrônica, eletromecânica, computação), TI, geologia, geofísica, geociências, matemática ou área de exatas",
+      "Inglês avançado",
+      "Disponibilidade para mudar de cidade dentro do Brasil e viajar pelo país",
+      "Dedicação em tempo integral",
+      "Morar no Brasil"
+    ],
+    "beneficios": [],
+    "pcd": false,
+    "videos": [
+      {
+        "id": "9ZlICqIBUMg",
+        "titulo": "Como conquistar uma vaga de engenheiro trainee offshore",
+        "porque": "O que as empresas olham no currículo de quem acabou de se formar."
+      },
+      {
+        "id": "ZEIQ2xRUfqQ",
+        "titulo": "O inglês que todo trabalhador offshore fala",
+        "porque": "O programa pede inglês avançado, e ele é cobrado já na entrevista."
+      },
+      {
+        "id": "_JguAbT9zDs",
+        "titulo": "Como se dar bem em uma entrevista para vaga offshore",
+        "porque": "Postura e respostas que fazem diferença na reta final do processo."
+      }
+    ]
+  },
+  {
     "id": "newinter-homem-de-area-movimentacao-carga",
     "titulo": "Homem de Área - Movimentação de Carga (Rigger)",
     "empresa": "Newinter",
