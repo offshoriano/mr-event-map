@@ -312,6 +312,15 @@ window.CONFERENCES = [
     parallel:[]
   },
   {
+    id:'fatc2026',
+    name:'FATC, SPE Brazil Flow Assurance Technology Congress',
+    dates:'4 – 6', month:'Novembro', monthShort:'NOV', year:2026,
+    location:'Hotel Hilton Copacabana, Rio de Janeiro, RJ — Brasil',
+    access:'public', link:'https://www.sympla.com.br/evento/fatc-spe-brazil-flow-assurance-technology-congress-2026/3329823',
+    past:false,
+    parallel:[]
+  },
+  {
     id:'subseasymposium2026',
     name:'SPE Brazil Subsea Symposium & Exhibition',
     dates:'17 – 18', month:'Novembro', monthShort:'NOV', year:2026,
