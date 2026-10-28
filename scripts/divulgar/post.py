@@ -1,4 +1,4 @@
-"""Monta o post do dia para o canal do Telegram e a comunidade do WhatsApp.
+"""Monta o post do dia para o canal do Telegram e o canal do WhatsApp.
 
 Junta o que entrou no site hoje: vagas novas (as de quem está começando primeiro), vaga comentada,
 curso com inscrição abrindo ou fechando, artigo publicado e, às segundas, os eventos da semana.
@@ -13,6 +13,7 @@ sys.path.insert(0, str(RAIZ / 'scripts' / 'vagas'))
 from paginas import RECORTES  # noqa: E402
 
 SITE = 'https://mrgroup.com.br'
+CANAL_WHATSAPP = 'https://whatsapp.com/channel/0029VbEcI5T6hENgxY9hl10L'
 MAX_VAGAS = 15
 ENTRADA = next(r['filtro'] for r in RECORTES if r['slug'] == 'sem-experiencia')
 MESES = {m: i + 1 for i, m in enumerate(['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho',
@@ -102,7 +103,8 @@ def montar(hoje):
         blocos.append(('Eventos desta semana', linhas))
 
     cabeca = f"MR Group · {hoje.strftime('%d/%m')}"
-    rodape = 'Cada vaga no site tem vídeo do canal Carreira Offshore para você se preparar antes de se candidatar.'
+    rodape = ('Cada vaga no site tem vídeo do canal Carreira Offshore para você se preparar antes de se candidatar.\n\n'
+              f'Conhece alguém procurando vaga? Manda o canal: {CANAL_WHATSAPP}')
     zap = f"*{cabeca}*\n\n" + '\n\n'.join(f"*{t.upper()}*\n" + '\n'.join(l).rstrip() for t, l in blocos) + f"\n\n{rodape}"
 
     def tg(linha):

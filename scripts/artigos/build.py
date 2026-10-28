@@ -203,7 +203,8 @@ def pagina_artigo(a, publicados=()):
 {sumario}
 <article>{corpo}</article>
 <aside class="cta"><b>Quer o caminho completo, na ordem certa?</b><p>O Guia 7 Passos junta cursos, currículo, LinkedIn, inglês e entrevista num plano só, do zero ao primeiro embarque.</p>
-<a class="btn" href="/guia/?origem=artigo-{e(a['slug'])}">Conhecer o guia</a> <a class="btn ghost" href="/vagas/">Ver vagas abertas</a></aside>
+<a class="btn" href="/guia/?origem=artigo-{e(a['slug'])}">Conhecer o guia</a> <a class="btn ghost" href="/vagas/">Ver vagas abertas</a>
+<p class="canal">Vagas novas, artigos e eventos todo dia no WhatsApp. <a href="https://whatsapp.com/channel/0029VbEcI5T6hENgxY9hl10L" target="_blank" rel="noopener">Seguir o canal da MR Group</a></p></aside>
 {continuar}
 <div class="atalhos-fim" role="navigation" aria-label="Mais no site"><a href="/vagas/sem-experiencia/">Vagas sem experiência</a><a href="/vagas/embarcado/">Vagas embarcado</a><a href="/vagas/macae/">Vagas em Macaé</a><a href="/radar/">Radar Offshore</a><a href="/#calendar-main">Agenda de eventos</a></div>
 </main>

@@ -1,5 +1,5 @@
 <?php
-// Post do dia no canal do Telegram e na comunidade do WhatsApp.
+// Post do dia no canal do Telegram e no canal do WhatsApp.
 // O robô diário grava vagas/post-do-dia.json. Aqui o post sai no Telegram (sozinho) e vai para o e-mail
 // do Matheus com o botão que abre o WhatsApp com o texto pronto (o WhatsApp não aceita postagem automática).
 // POST {action:"publicar"}                          publica o post de hoje, uma vez por dia (público; o robô chama depois de atualizar)
@@ -10,6 +10,7 @@
 require_once __DIR__ . '/_base.php';
 $divulgarCfg = $dataDir . '/divulgar-config.json';
 const AVISO_DIVULGAR = 'matheus.rangel@mrgroup.com.br';
+const CANAL_WHATSAPP = 'https://whatsapp.com/channel/0029VbEcI5T6hENgxY9hl10L';
 
 function postDoDia() { return json_decode((string)@file_get_contents(dirname(__DIR__) . '/vagas/post-do-dia.json'), true) ?: []; }
 
@@ -24,15 +25,13 @@ function telegram($token, $metodo, $params = []) {
 }
 
 function emailWhatsApp($post) {
-    $zap = 'https://wa.me/?text=' . rawurlencode($post['whatsapp']);
     $html = '<div style="background:#0D1117;padding:24px 12px;font-family:Arial,sans-serif"><div style="max-width:600px;margin:0 auto;background:#111820;border:1px solid #1C2733;border-radius:6px;padding:24px;color:#C9D3DD;font-size:15px;line-height:1.6">'
-        . '<p>O post de hoje está pronto. Toque no botão, escolha a comunidade e envie.</p>'
-        . '<p style="margin:20px 0"><a href="' . htmlspecialchars($zap) . '" style="background:#25D366;color:#08130c;text-decoration:none;font-weight:bold;padding:13px 22px;border-radius:3px;display:inline-block">Postar no WhatsApp</a></p>'
-        . '<p style="color:#7A8FA6;font-size:13px">Se o botão não abrir a comunidade, copie o texto abaixo e cole lá.</p>'
+        . '<p>O post de hoje está pronto. Segure o dedo no texto abaixo, copie, toque em "Abrir o canal" e cole como nova atualização.</p>'
+        . '<p style="margin:20px 0"><a href="' . CANAL_WHATSAPP . '" style="background:#25D366;color:#08130c;text-decoration:none;font-weight:bold;padding:13px 22px;border-radius:3px;display:inline-block">Abrir o canal</a></p>'
         . '<pre style="white-space:pre-wrap;font-family:Arial,sans-serif;font-size:14px;background:#0D1117;border:1px solid #1C2733;padding:14px;color:#EEE9E2">' . htmlspecialchars($post['whatsapp']) . '</pre></div></div>';
     $assunto = 'Post do dia ' . date('d/m') . ($post['vagas'] ? " · {$post['vagas']} vagas novas" : '');
-    return resendEnviar(AVISO_DIVULGAR, $assunto, $html, "Post do dia pronto para o WhatsApp:\n\n{$post['whatsapp']}\n\nAbrir no WhatsApp: $zap\n")
-        || avisar(AVISO_DIVULGAR, $assunto, "Post do dia pronto para o WhatsApp:\n\n{$post['whatsapp']}\n\nAbrir no WhatsApp: $zap\n");
+    return resendEnviar(AVISO_DIVULGAR, $assunto, $html, "Post do dia pronto. Copie o texto e cole no canal: " . CANAL_WHATSAPP . "\n\n{$post['whatsapp']}\n")
+        || avisar(AVISO_DIVULGAR, $assunto, "Post do dia pronto. Copie o texto e cole no canal: " . CANAL_WHATSAPP . "\n\n{$post['whatsapp']}\n");
 }
 
 // Publica o post de hoje uma vez só. Sem post de hoje (o robô ainda não rodou) ou sem nada novo, não faz nada.
@@ -76,7 +75,7 @@ if ($action === 'painel') {
     out(200, ['post' => $post, 'hoje' => date('Y-m-d'), 'telegram' => !empty($cfg['token']) && !empty($cfg['canal']),
         'canal' => $cfg['canal'] ?? '', 'nome_canal' => $cfg['nome_canal'] ?? '', 'bot' => $cfg['bot'] ?? '',
         'ultimo' => $cfg['ultimo'] ?? '', 'resultado' => $cfg['resultado'] ?? null,
-        'link_whatsapp' => !empty($post['whatsapp']) ? 'https://wa.me/?text=' . rawurlencode($post['whatsapp']) : '']);
+        'canal_whatsapp' => CANAL_WHATSAPP]);
 }
 
 if ($action === 'config') {
