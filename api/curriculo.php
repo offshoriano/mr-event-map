@@ -3,6 +3,7 @@
 // Lista de espera:
 //   POST {action:"add", ...}                      grava a pessoa na lista e avisa por e-mail (público)
 //   POST {action:"list", senha} / {action:"delete", senha, id}       lista e remove inscritos (protegido)
+//   POST {action:"avisar_lista", senha}          avisa por e-mail quem está na lista que as vendas abriram, uma vez por pessoa (protegido)
 // Venda e entrega:
 //   POST {action:"aberto"}                        se o produto está à venda (público)
 //   POST multipart {action:"pedido", ...}         cria o pedido com os arquivos e abre o pagamento (público)
@@ -111,6 +112,32 @@ if ($action === 'entrega') {
 auth($in);
 
 if ($action === 'list') out(200, ['inscritos' => array_reverse(readJson($dataFile))]);
+
+if ($action === 'avisar_lista') {
+    if (!in_array('curriculo', stripeCfg()['abertos'] ?? [], true) || empty(curriculoCfg()['chave'])) out(422, ['error' => 'Abra as vendas do Currículo na aba Pagamentos antes de avisar a lista']);
+    @set_time_limit(300);
+    $env = 0; $falhas = [];
+    foreach (readJson($dataFile) as $p) {
+        if (!empty($p['avisado']) || !filter_var($p['email'], FILTER_VALIDATE_EMAIL)) continue;
+        $nome = htmlspecialchars(explode(' ', trim($p['nome']))[0]);
+        $link = 'https://mrgroup.com.br/curriculo/?origem=lista-espera';
+        $caso = $p['experiencia'] === 'sim'
+            ? 'Como você já embarcou, o trabalho é colocar a sua experiência na linguagem da vaga que você quer agora, com as palavras que o filtro do RH procura.'
+            : 'Como você ainda não embarcou, o trabalho é mostrar o que você já fez em terra com as palavras que a vaga offshore procura. Muita gente tem a experiência certa e escreve do jeito errado.';
+        $html = '<div style="background:#0D1117;padding:24px 12px;font-family:Arial,sans-serif"><div style="max-width:600px;margin:0 auto;background:#111820;border:1px solid #1C2733;border-radius:6px;padding:28px;color:#C9D3DD;font-size:16px;line-height:1.65">'
+            . "<p>Oi, $nome.</p><p>Você entrou na lista de espera do Currículo Sob Medida, e ele abriu hoje.</p>"
+            . '<p>Funciona assim: você escolhe a vaga (pode ser uma do nosso site), manda o seu currículo atual e recebe em até 24 horas úteis o currículo adaptado para essa vaga, em Word e PDF, a carta de apresentação e os ajustes para o seu LinkedIn.</p>'
+            . "<p>$caso</p><p>Nada é inventado. Curso, certificado ou experiência que você não tem não entra no currículo, e eu reviso cada um antes de ir para você.</p>"
+            . '<p style="margin:24px 0"><a href="' . $link . '" style="background:#C9933A;color:#090C10;text-decoration:none;font-weight:bold;padding:13px 22px;border-radius:3px;display:inline-block">Deixar meu currículo sob medida</a></p>'
+            . '<p>R$ 97 por vaga. Se tiver dúvida, é só responder este e-mail.</p><p>Matheus Rangel<br><span style="color:#7A8FA6">MR Group · 14 anos offshore</span></p></div></div>';
+        if (resendEnviar($p['email'], "$nome, o Currículo Sob Medida abriu", $html)) {
+            $env++;
+            mexer($dataFile, function (&$t) use ($p) { foreach ($t as &$x) if ($x['id'] === $p['id']) $x['avisado'] = date('c'); });
+        } else $falhas[] = $p['nome'];
+        usleep(300000);
+    }
+    out(200, ['enviados' => $env, 'falhas' => $falhas]);
+}
 
 if ($action === 'delete') {
     $id = (string)($in['id'] ?? '');
