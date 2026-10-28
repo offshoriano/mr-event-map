@@ -317,9 +317,9 @@ function painelDivulgar(){
         : `<textarea id="wtxt" style="width:100%;min-height:260px;background:var(--card);color:var(--white);border:1px solid var(--border);padding:12px;font-family:inherit;font-size:13px">${esc(p.whatsapp)}</textarea>
       <div class="bar"><button class="btn" style="margin-left:0" id="wc">Copiar texto</button><a class="btn ghost" style="text-decoration:none;margin-left:0" href="${esc(d.canal_whatsapp)}" target="_blank" rel="noopener">Abrir o canal</a>${d.telegram ? '<button class="btn ghost" id="dr">Publicar de novo no Telegram</button>' : ''}</div>`}
       <h2 class="sec">Canal do Telegram</h2>
-      <p class="note">${d.telegram ? `Bot ${esc(d.bot)} publicando em ${esc(d.nome_canal)} (${esc(d.canal)}). O post sai sozinho todo dia, assim que o robô das vagas termina.` : 'Cole a chave do bot que o BotFather entregou e o endereço do canal (ex.: t.me/seucanal). O bot precisa estar no canal como administrador.'}</p>
+      <p class="note">${d.telegram ? `Bot ${esc(d.bot)} publicando em ${esc(d.nome_canal)}. O post sai sozinho todo dia, assim que o robô das vagas termina.` : 'Cole a chave do bot que o BotFather entregou e o link do canal (pode ser o link de convite, t.me/+...). Antes, coloque o bot no canal como administrador.'}</p>
       <div class="bar"><input type="password" id="tk" placeholder="${d.bot ? 'Trocar a chave do bot' : 'Chave do bot (123456:ABC...)'}" autocomplete="off">
-      <input id="tc" value="${esc(d.canal || '')}" placeholder="Canal (t.me/seucanal)"><button class="btn" id="ts">Salvar</button>${d.telegram ? '<button class="btn ghost" id="tt">Mandar teste</button>' : ''}</div>
+      <input id="tc" value="${esc(d.convite || d.canal || '')}" placeholder="Link do canal (t.me/...)"><button class="btn" id="ts">Salvar</button>${d.telegram ? '<button class="btn ghost" id="tt">Mandar teste</button>' : ''}</div>
       <p class="note" id="tmsg"></p>`;
     if ($('#wc')) $('#wc').onclick = () => navigator.clipboard.writeText($('#wtxt').value).then(() => { $('#wc').textContent = 'Copiado'; setTimeout(() => $('#wc').textContent = 'Copiar texto', 1500); });
     if ($('#dr')) $('#dr').onclick = () => { if (confirm('Publicar o post de hoje de novo no Telegram?')) dpost({action:'reenviar', senha}).then(r => { alert(r.telegram ? 'Telegram: ' + r.telegram : (r.motivo || 'Feito')); painelDivulgar(); }); };

@@ -73,7 +73,7 @@ auth($in);
 if ($action === 'painel') {
     $cfg = readJson($divulgarCfg); $post = postDoDia();
     out(200, ['post' => $post, 'hoje' => date('Y-m-d'), 'telegram' => !empty($cfg['token']) && !empty($cfg['canal']),
-        'canal' => $cfg['canal'] ?? '', 'nome_canal' => $cfg['nome_canal'] ?? '', 'bot' => $cfg['bot'] ?? '',
+        'canal' => $cfg['canal'] ?? '', 'nome_canal' => $cfg['nome_canal'] ?? '', 'convite' => $cfg['convite'] ?? '', 'bot' => $cfg['bot'] ?? '',
         'ultimo' => $cfg['ultimo'] ?? '', 'resultado' => $cfg['resultado'] ?? null,
         'canal_whatsapp' => CANAL_WHATSAPP]);
 }
@@ -82,13 +82,28 @@ if ($action === 'config') {
     $cfg = readJson($divulgarCfg);
     $token = preg_replace('/\s+/', '', (string)($in['token'] ?? ''));
     $canal = trim((string)($in['canal'] ?? ''));
-    if (preg_match('~(?:t\.me/|telegram\.me/)([A-Za-z0-9_]{5,})~', $canal, $m)) $canal = '@' . $m[1];
+    // Canal privado (link de convite t.me/+...): o endereço não identifica o canal, então procura o aviso
+    // que o Telegram manda ao bot quando ele vira administrador
+    $convite = preg_match('~t(?:elegram)?\.me/(?:\+|joinchat/)~', $canal) ? $canal : '';
+    if ($convite !== '' && $convite === ($cfg['convite'] ?? '') && !empty($cfg['canal'])) { $canal = $cfg['canal']; $convite = ''; }
+    elseif ($convite !== '') $canal = '';
+    elseif (preg_match('~(?:t\.me/|telegram\.me/)([A-Za-z0-9_]{5,})~', $canal, $m)) $canal = '@' . $m[1];
     elseif ($canal !== '' && $canal[0] !== '@' && !preg_match('/^-?\d+$/', $canal)) $canal = '@' . $canal;
     if ($token !== '') {
         if (!preg_match('/^\d{6,}:[A-Za-z0-9_-]{30,}$/', $token)) out(422, ['error' => 'Essa não parece a chave de um bot do Telegram (número, dois pontos e letras, como o BotFather entrega)']);
         [$ok, $r] = telegram($token, 'getMe');
         if (!$ok) out(422, ['error' => 'O Telegram recusou a chave: ' . $r]);
         $cfg['token'] = $token; $cfg['bot'] = '@' . ($r['username'] ?? '');
+    }
+    if ($convite !== '') {
+        if (empty($cfg['token'])) out(422, ['error' => 'Salve primeiro a chave do bot']);
+        [$ok, $r] = telegram($cfg['token'], 'getUpdates', ['allowed_updates' => ['my_chat_member', 'channel_post']]);
+        foreach (array_reverse($ok ? $r : []) as $u) {
+            $chat = $u['my_chat_member']['chat'] ?? $u['channel_post']['chat'] ?? null;
+            if (($chat['type'] ?? '') === 'channel') { $canal = (string)$chat['id']; break; }
+        }
+        if ($canal === '') out(422, ['error' => 'Não achei o canal. Coloque o bot como administrador do canal (se já colocou, tire e coloque de novo) e clique em Salvar em seguida.']);
+        $cfg['convite'] = $convite;
     }
     if ($canal !== '') {
         if (empty($cfg['token'])) out(422, ['error' => 'Salve primeiro a chave do bot']);
