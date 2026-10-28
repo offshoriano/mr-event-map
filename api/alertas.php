@@ -3,7 +3,7 @@
 // POST {action:"inscrever", email, funcoes, regime, iniciante}   inscreve e manda o e-mail de confirmação (público)
 // GET  ?c=TOKEN                                                  confirma a inscrição (link do e-mail)
 // GET  ?sair=TOKEN                                               cancela a inscrição (link de todo e-mail)
-// POST {action:"painel", senha}                                  inscritos, configuração e resumo para o WhatsApp (protegido)
+// POST {action:"painel", senha}                                  inscritos e configuração (protegido)
 // POST {action:"config", senha, chave, remetente}                guarda a chave da Resend (protegido)
 // POST {action:"enviar", senha, teste?}                          dispara o alerta da semana agora (protegido)
 // POST {action:"remover", senha, email}                          remove um inscrito (protegido)
@@ -104,20 +104,6 @@ function alertaSemanal($forcar = false) {
     flock($fp, LOCK_UN);
     return ['enviados' => $env];
 }
-// Resumo das vagas novas de ontem e hoje, pronto para colar no canal do WhatsApp
-function resumoWhatsApp() {
-    $vagas = json_decode((string)@file_get_contents(dirname(__DIR__) . '/vagas/automaticas.json'), true)['vagas'] ?? [];
-    $desde = date('Y-m-d', strtotime('-1 day'));
-    $novas = array_values(array_filter($vagas, fn($v) => ($v['vistaEm'] ?? '') >= $desde));
-    usort($novas, fn($a, $b) => (($b['regime'] ?? '') === 'Offshore') <=> (($a['regime'] ?? '') === 'Offshore'));
-    $txt = "*Vagas novas no setor de óleo e gás*\n" . date('d/m') . "\n\n";
-    foreach (array_slice($novas, 0, 12) as $v) {
-        $txt .= "*{$v['titulo']}*\n{$v['empresa']} · {$v['local']} · " . ($v['regime'] === 'Offshore' ? 'Embarcado' : 'Em terra') . "\n" . ALERTA_SITE . "/vagas/#{$v['id']}\n\n";
-    }
-    $txt .= count($novas) > 12 ? 'E mais ' . (count($novas) - 12) . " vagas novas em mrgroup.com.br/vagas\n" : "Todas as vagas em mrgroup.com.br/vagas\n";
-    return ['texto' => $txt, 'total' => count($novas)];
-}
-
 // Quando incluído por outro arquivo (cliques.php), só disponibiliza as funções
 if (basename($_SERVER['SCRIPT_FILENAME'] ?? '') !== 'alertas.php') return;
 
@@ -170,8 +156,7 @@ auth($in);
 if ($action === 'painel') {
     $t = readJson($alertasFile); $cfg = readJson($alertasCfg);
     out(200, ['inscritos' => array_reverse(array_map(fn($i) => array_diff_key($i, ['token' => 1]), $t)),
-        'config' => ['tem_chave' => !empty($cfg['chave']), 'remetente' => remetente($cfg), 'ultimo_envio' => $cfg['ultimo_envio'] ?? null, 'ultimo_total' => $cfg['ultimo_total'] ?? null],
-        'whatsapp' => resumoWhatsApp()]);
+        'config' => ['tem_chave' => !empty($cfg['chave']), 'remetente' => remetente($cfg), 'ultimo_envio' => $cfg['ultimo_envio'] ?? null, 'ultimo_total' => $cfg['ultimo_total'] ?? null]]);
 }
 if ($action === 'config') {
     $chave = preg_replace('/\s+/', '', (string)($in['chave'] ?? ''));

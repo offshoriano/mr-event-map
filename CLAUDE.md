@@ -17,23 +17,24 @@ Matheus não programa. Explique em português simples, sem jargão, e diga o que
 
 - `vagas-refresh.yml`, todo dia por volta das 10h UTC (costuma atrasar): `mapear.py`, `fetch_jobs.py` (vagas + páginas de busca via `paginas.py`) e `build.py` (artigos e sitemap). Faz commit no `main`.
 - `anp-refresh.yml`, toda segunda: dados do Radar Offshore (`scripts/anp/`).
+- Post do dia: o `vagas-refresh.yml` roda `scripts/divulgar/post.py` (vagas novas, vaga comentada, curso abrindo ou fechando, artigo do dia e, às segundas, eventos da semana) e grava `vagas/post-do-dia.json`. Depois chama `api/divulgar.php` (`publicar`, uma vez por dia), que posta no canal do Telegram e manda o texto do WhatsApp para o e-mail do Matheus com o botão que abre o WhatsApp. O WhatsApp não aceita postagem automática; não use serviço não oficial. Reserva: o primeiro clique em vaga depois das 9h também chama `publicar`.
 
 ## Onde fica cada coisa
 
 - `index.html`: página inicial e agenda. Eventos em `assets/eventos.js` (`window.CONFERENCES`, com `parallel` para os eventos noturnos; campos `day`, `dateIso`, `name`, `desc`, `access` convite/aberto/inscricao/restrito, `link`). Ao mudar a agenda, troque o `?v=` do `<script src="/assets/eventos.js?v=...">` em `index.html` e `diagnostico/index.html`.
-- `vagas/`: página de vagas. `automaticas.json` é gerado pelo robô; `manuais.json` (vagas enviadas e aprovadas no painel); `qualificacao.json` (cursos e programas com inscrição aberta).
+- `vagas/`: página de vagas. `automaticas.json` é gerado pelo robô; `manuais.json` (vagas enviadas e aprovadas no painel); `qualificacao.json` (cursos e programas com inscrição aberta). `vagas.json` são as vagas comentadas (resumo e vídeos); com `destaque: true` a vaga sobe para a seção "Em destaque" no topo. A seção "para quem está começando" usa a regex `ENTRADA` no título, repetida em `vagas/index.html`, `scripts/vagas/paginas.py` e `api/alertas.php`: mude nas três.
 - `scripts/vagas/empresas.json`: cadastro das empresas acompanhadas. Leitores em `fetch_jobs.py` (`LEITORES`: gupy, rmk, workday, inhire, halliburton, motaengil...). Campos úteis: `local_padrao`, `manter_local` (empresas de vários setores), `somente_og`, `pausada`. Edite o JSON por linha, sem `json.dump` (reformata o arquivo todo).
 - `scripts/artigos/*.md` → `build.py` gera `artigos/`. Front matter: titulo, descricao, slug, data, rascunho, tema, palavras. Data futura = prévia noindex em `/artigos/rascunho-<slug>/`, publicada pelo robô no dia. Atalhos: `{{video:ID|Título}}`, `{{vagas:regex!!excluir::Título}}`, `[[pergunta]]` (lacuna para o Matheus). `capa.py` gera a imagem de compartilhamento. Todo artigo leva vídeo do canal, link do Guia e vagas relacionadas.
 - `diagnostico/`: diagnóstico de eventos para empresas (`perfil.js` tem o perfil pesquisado de cada evento). Gratuito na fase de validação.
 - `curriculo/`: Currículo Sob Medida. Lista de espera; vira formulário de pedido quando o produto é liberado no painel. `curriculo/entrega/` é a página que o cliente recebe.
 - `scripts/curriculo/regras.md`: regras do gerador de currículo (método do Matheus + padrão de 315 currículos dele). É o prompt de sistema do gerador.
-- `leads/`: painel protegido por senha. Abas: Contatos, Vagas enviadas, Ranking, Empresas, Diagnósticos, Mensagens, Alertas de vagas, Currículo, Pagamentos.
-- `api/` (PHP): `_base.php` (dados, limite por IP, `avisar()`, `resendEnviar()`, `EMAIL_SITE`), `_stripe.php` + `pagamento.php` + `stripe-webhook.php`, `_claude.php` + `_docs.php` + `_pedidos.php` + `curriculo.php` (gerador), `alertas.php` (alerta semanal), `contato.php`, `leads.php`, `diagnosticos.php`, `events.php`, `vagas-enviadas.php`, `cliques.php`.
+- `leads/`: painel protegido por senha. Abas: Contatos, Vagas enviadas, Ranking, Empresas, Diagnósticos, Mensagens, Alertas de vagas, Currículo, Pagamentos, Telegram e WhatsApp.
+- `api/` (PHP): `_base.php` (dados, limite por IP, `avisar()`, `resendEnviar()`, `EMAIL_SITE`), `_stripe.php` + `pagamento.php` + `stripe-webhook.php`, `_claude.php` + `_docs.php` + `_pedidos.php` + `curriculo.php` (gerador), `alertas.php` (alerta semanal), `divulgar.php` (post do dia), `contato.php`, `leads.php`, `diagnosticos.php`, `events.php`, `vagas-enviadas.php`, `cliques.php`.
 - Dados ficam fora da pasta pública (`../mr-dados`); `data/` é o reserva e é bloqueado. `.htaccess` bloqueia `.md`, `.py`, `.yml` e afins.
 
 ## Chaves e e-mails
 
-- Chaves (Stripe, Resend, Anthropic) são coladas pelo Matheus no painel e ficam só no servidor. Nunca no código, no GitHub ou neste arquivo. Se ele mandar uma chave no chat, avise e peça para colar no painel.
+- Chaves (Stripe, Resend, Anthropic, bot do Telegram) são coladas pelo Matheus no painel e ficam só no servidor. Nunca no código, no GitHub ou neste arquivo. Se ele mandar uma chave no chat, avise e peça para colar no painel.
 - Todo e-mail do site sai de **administracao@mrgroup.com.br** (constante `EMAIL_SITE`). É a única caixa criada na Hostinger.
 - Os avisos internos vão para **matheus.rangel@mrgroup.com.br** (com "th"). É também o contato público.
 - Resend: domínio mrgroup.com.br verificado. Stripe: conta MR AGENCY LTDA, ainda em modo teste. Produtos com `lookup_key` `curriculo` (R$ 97) e `diagnostico` (R$ 147); o painel cria os produtos sozinho quando recebe uma chave nova. Nada fica à venda até ser marcado na aba Pagamentos.
