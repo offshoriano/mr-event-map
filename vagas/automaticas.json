@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-10-28T14:50:07+00:00",
+ "atualizado": "2026-10-28T16:46:24+00:00",
  "fontes": [
   {
    "empresa": "PRIO",
@@ -63,7 +63,7 @@
   },
   {
    "empresa": "Macnor Marine",
-   "vagas": 7,
+   "vagas": 8,
    "ok": true
   },
   {
@@ -248,7 +248,7 @@
   },
   {
    "empresa": "CLAM ENGENHARIA",
-   "vagas": 33,
+   "vagas": 34,
    "ok": true
   },
   {
@@ -6849,6 +6849,32 @@
    ]
   },
   {
+   "id": "clam-engenharia-assistente-administrativo-belo-horizonte-mg-82044",
+   "titulo": "Assistente Administrativo - Belo Horizonte MG",
+   "empresa": "CLAM ENGENHARIA",
+   "local": "Brasil",
+   "link": "https://clam.inhire.com.br/vagas/5d083b43-c7e9-4aac-a6e0-7e9207513238",
+   "regime": "Onshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-28",
+   "videos": [
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
    "id": "clam-engenharia-assistente-de-qualidade-sgi-belo-horizonte-mg-75487",
    "titulo": "Assistente de Qualidade (SGI) - Belo Horizonte MG",
    "empresa": "CLAM ENGENHARIA",
@@ -10827,6 +10853,32 @@
    ]
   },
   {
+   "id": "macnor-marine-auxiliar-de-mec-nico-77644",
+   "titulo": "Auxiliar de Mecânico",
+   "empresa": "Macnor Marine",
+   "local": "Niterói, RJ",
+   "link": "https://macnor.gupy.io/jobs/12797886",
+   "regime": "Onshore",
+   "area": "Mecânica e manutenção",
+   "tema": "mecanica",
+   "banco": false,
+   "vistaEm": "2026-10-28",
+   "videos": [
+    [
+     "3yOdA-HnSeg",
+     "Fala de mecânico e manutenção, a função desta vaga."
+    ],
+    [
+     "AFQCQwo_5Kc",
+     "Fala de mecânico e manutenção, a função desta vaga."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ]
+   ]
+  },
+  {
    "id": "macnor-marine-supervisor-de-servi-os-5899",
    "titulo": "Supervisor de Serviços",
    "empresa": "Macnor Marine",
@@ -13739,8 +13791,8 @@
    ]
   },
   {
-   "id": "oceaneering-analista-de-invent-rio-tempor-rio-56649",
-   "titulo": "Analista de Inventário (Temporário)",
+   "id": "oceaneering-analista-de-invent-rio-gest-o-e-controle-de-estoques-vaga-tempor-ria-56649",
+   "titulo": "Analista de Inventário (Gestão e Controle de Estoques) - Vaga Temporária",
    "empresa": "Oceaneering",
    "local": "Niteroi, RJ",
    "link": "https://ebfr.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/11695",
@@ -13751,16 +13803,16 @@
    "vistaEm": "2026-10-15",
    "videos": [
     [
-     "lttRYy_P8T8",
-     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
-    ],
-    [
      "sMTU-gjxcLU",
      "Ajuste o currículo para esta vaga antes de clicar em candidatar."
     ],
     [
      "eHqY18dRP8Q",
      "As perguntas que mais aparecem na entrevista e como responder."
+    ],
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
     ]
    ]
   },
