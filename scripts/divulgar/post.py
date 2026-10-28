@@ -14,6 +14,7 @@ from paginas import RECORTES  # noqa: E402
 
 SITE = 'https://mrgroup.com.br'
 CANAL_WHATSAPP = 'https://whatsapp.com/channel/0029VbEcI5T6hENgxY9hl10L'
+CANAL_TELEGRAM = 'https://t.me/+fYuxIvFkRvY3NzAx'
 MAX_VAGAS = 15
 ENTRADA = next(r['filtro'] for r in RECORTES if r['slug'] == 'sem-experiencia')
 MESES = {m: i + 1 for i, m in enumerate(['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho',
@@ -104,7 +105,7 @@ def montar(hoje):
 
     cabeca = f"MR Group · {hoje.strftime('%d/%m')}"
     rodape = ('Cada vaga no site tem vídeo do canal Carreira Offshore para você se preparar antes de se candidatar.\n\n'
-              f'Conhece alguém procurando vaga? Manda o canal: {CANAL_WHATSAPP}')
+              f'Conhece alguém procurando vaga? Manda o canal.\nWhatsApp: {CANAL_WHATSAPP}\nTelegram: {CANAL_TELEGRAM}')
     zap = f"*{cabeca}*\n\n" + '\n\n'.join(f"*{t.upper()}*\n" + '\n'.join(l).rstrip() for t, l in blocos) + f"\n\n{rodape}"
 
     def tg(linha):
