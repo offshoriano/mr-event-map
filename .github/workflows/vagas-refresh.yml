@@ -36,11 +36,14 @@ jobs:
           pip install --quiet pillow
           python3 scripts/artigos/build.py
 
+      - name: Montar o post do dia (Telegram e WhatsApp)
+        run: python3 scripts/divulgar/post.py
+
       - name: Publicar só se alguma vaga mudou
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add vagas/automaticas.json vagas/macae vagas/rio-de-janeiro vagas/sem-experiencia vagas/embarcado scripts/vagas/empresas.json artigos assets/og/artigos sitemap.xml
+          git add vagas/automaticas.json vagas/macae vagas/rio-de-janeiro vagas/sem-experiencia vagas/embarcado scripts/vagas/empresas.json artigos assets/og/artigos sitemap.xml vagas/post-do-dia.json
           if git diff --cached --quiet; then
             echo "Nenhuma vaga nova ou encerrada hoje"
           else
@@ -50,3 +53,12 @@ jobs:
             # Push feito com GITHUB_TOKEN não dispara o deploy.yml, então repassa aqui
             git push origin HEAD:refs/heads/claude/event-map-platform-db2gk
           fi
+
+      - name: Publicar o post do dia no Telegram e mandar o do WhatsApp por e-mail
+        # Espera o Hostinger receber a atualização (até 20 minutos). O site só publica uma vez por dia.
+        run: |
+          for i in $(seq 1 20); do
+            r=$(curl -s -X POST https://mrgroup.com.br/api/divulgar.php -H 'Content-Type: application/json' -d '{"action":"publicar"}' || true)
+            echo "$r"
+            case "$r" in *aguardando*|*ocupado*|"") sleep 60 ;; *) exit 0 ;; esac
+          done

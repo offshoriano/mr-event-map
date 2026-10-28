@@ -21,6 +21,15 @@ if ($action === 'clique') {
             alertaSemanal();
         });
     }
+    // Reserva do post do dia: se o robô não conseguiu avisar, o primeiro clique depois das 9h publica (uma vez por dia)
+    if ((int)date('G') >= 9) {
+        require_once __DIR__ . '/divulgar.php';
+        register_shutdown_function(function () {
+            if (function_exists('fastcgi_finish_request')) fastcgi_finish_request();
+            ignore_user_abort(true); set_time_limit(120);
+            publicarDia();
+        });
+    }
     $tipo = in_array($in['tipo'] ?? '', TIPOS, true) ? $in['tipo'] : 'candidatar';
     $vaga = clean($in['vaga'] ?? '', 120);
     $empresa = clean($in['empresa'] ?? '', 100);

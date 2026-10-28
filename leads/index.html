@@ -85,7 +85,7 @@ function login(msg){
   $('#f').onsubmit = e => { e.preventDefault(); senha = $('#pw').value; carregar(); };
 }
 
-let VG = [], AVISO = '', aba = ({'#vagas':'vagas', '#ranking':'ranking', '#empresas':'empresas', '#diagnosticos':'diagnosticos', '#mensagens':'mensagens', '#alertas':'alertas', '#curriculo':'curriculo', '#pagamentos':'pagamentos'})[location.hash] || 'contatos', avisou = false;
+let VG = [], AVISO = '', aba = ({'#vagas':'vagas', '#ranking':'ranking', '#empresas':'empresas', '#diagnosticos':'diagnosticos', '#mensagens':'mensagens', '#alertas':'alertas', '#curriculo':'curriculo', '#pagamentos':'pagamentos', '#divulgar':'divulgar'})[location.hash] || 'contatos', avisou = false;
 const AREAS = {seguranca:'Segurança', eletrica:'Elétrica e instrumentação', mecanica:'Mecânica e manutenção', pocos:'Perfuração e poços',
   maritimo:'Marítimo', hotelaria:'Hotelaria', operacao:'Operação e produção', engenharia:'Engenharia', trainee:'Trainee e estágio', geral:'Outras'};
 const VAPI = '../api/vagas-enviadas.php';
@@ -129,10 +129,11 @@ function painel(){
       <button class="tab ${aba === 'alertas' ? 'on' : ''}" data-aba="alertas">Alertas de vagas</button>
       <button class="tab ${aba === 'curriculo' ? 'on' : ''}" data-aba="curriculo">Currículo</button>
       <button class="tab ${aba === 'pagamentos' ? 'on' : ''}" data-aba="pagamentos">Pagamentos</button>
+      <button class="tab ${aba === 'divulgar' ? 'on' : ''}" data-aba="divulgar">Telegram e WhatsApp</button>
     </div>
     <div id="conteudo"></div></div>`;
   document.querySelectorAll('.tab').forEach(t => t.onclick = () => { aba = t.dataset.aba; history.replaceState(null, '', aba === 'contatos' ? '#' : '#' + aba); painel(); });
-  aba === 'pagamentos' ? painelPagamentos() : aba === 'curriculo' ? painelCurriculo() : aba === 'alertas' ? painelAlertas() : aba === 'mensagens' ? painelMensagens() : aba === 'diagnosticos' ? painelDiagnosticos() : aba === 'vagas' ? painelVagas() : aba === 'ranking' ? painelRanking() : aba === 'empresas' ? painelEmpresas() : painelContatos();
+  aba === 'divulgar' ? painelDivulgar() : aba === 'pagamentos' ? painelPagamentos() : aba === 'curriculo' ? painelCurriculo() : aba === 'alertas' ? painelAlertas() : aba === 'mensagens' ? painelMensagens() : aba === 'diagnosticos' ? painelDiagnosticos() : aba === 'vagas' ? painelVagas() : aba === 'ranking' ? painelRanking() : aba === 'empresas' ? painelEmpresas() : painelContatos();
 }
 
 function painelVagas(){
@@ -270,7 +271,7 @@ function painelAlertas(){
   $('#conteudo').innerHTML = '<p class="note">Carregando...</p>';
   const apost = body => fetch('../api/alertas.php', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(body)}).then(r => r.json());
   apost({action:'painel', senha}).then(r => {
-    const I = r.inscritos || [], c = r.config || {}, w = r.whatsapp || {};
+    const I = r.inscritos || [], c = r.config || {};
     const ativos = I.filter(i => i.status === 'ativo').length, pend = I.filter(i => i.status === 'pendente').length;
     $('#conteudo').innerHTML = `
       <div class="kpis"><div class="kpi"><b>${ativos}</b><span>Inscritos ativos</span></div><div class="kpi"><b>${pend}</b><span>Esperando confirmar</span></div>
@@ -280,9 +281,6 @@ function painelAlertas(){
       <div class="bar"><input type="password" id="rk" placeholder="${c.tem_chave ? 'Trocar a chave da Resend (re_...)' : 'Chave da Resend (re_...)'}" autocomplete="off">
       <input id="rr" value="${esc(c.remetente || '')}" placeholder="Remetente"><button class="btn" id="rs">Salvar</button><button class="btn" id="re">Enviar alerta agora</button><button class="btn ghost" id="rc">Reenviar confirmações</button><button class="btn ghost" id="rt">Testar envio</button></div>
       <p class="note" id="rmsg"></p>
-      <h2 class="sec">Resumo para o canal do WhatsApp (${w.total || 0} vagas novas desde ontem)</h2>
-      <textarea id="wtxt" style="width:100%;min-height:220px;background:var(--card);color:var(--white);border:1px solid var(--border);padding:12px;font-family:inherit;font-size:13px">${esc(w.texto || '')}</textarea>
-      <div class="bar"><button class="btn" id="wc">Copiar texto</button></div>
       <h2 class="sec">Inscritos</h2>
       <div class="tbl">${I.length ? `<table><thead><tr><th>Data</th><th>E-mail</th><th>Funções</th><th>Tipo</th><th>Situação</th><th></th></tr></thead><tbody>${I.map(i => `<tr>
         <td class="m">${new Date(i.data).toLocaleDateString('pt-BR')}</td><td>${esc(i.email)}</td><td class="m">${esc(i.funcoes || '')}${i.iniciante ? (i.funcoes ? ' + ' : '') + 'iniciante' : ''}</td>
@@ -298,9 +296,37 @@ function painelAlertas(){
     });
     $('#re').onclick = () => { if (!confirm('Enviar o alerta da semana agora para todos os inscritos ativos?')) return; $('#rmsg').textContent = 'Enviando...';
       apost({action:'enviar', senha}).then(x => { $('#rmsg').textContent = x.erro ? x.erro : `Enviado para ${x.enviados || 0} inscritos.`; }); };
-    $('#wc').onclick = () => { navigator.clipboard.writeText($('#wtxt').value).then(() => { $('#wc').textContent = 'Copiado'; setTimeout(() => $('#wc').textContent = 'Copiar texto', 1500); }); };
     $('#conteudo').querySelectorAll('.del').forEach(b => b.onclick = () => { if (confirm('Remover este inscrito?')) apost({action:'remover', senha, email:b.dataset.e}).then(() => painelAlertas()); });
   }).catch(() => { $('#conteudo').innerHTML = '<p class="note">Não foi possível carregar os alertas.</p>'; });
+}
+
+// Post do dia: sai sozinho no canal do Telegram; o do WhatsApp chega no e-mail e fica aqui para copiar
+function painelDivulgar(){
+  $('#conteudo').innerHTML = '<p class="note">Carregando...</p>';
+  const dpost = body => fetch('../api/divulgar.php', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(body)}).then(r => r.json());
+  dpost({action:'painel', senha}).then(d => {
+    const p = d.post || {}, res = d.resultado || {}, deHoje = p.data === d.hoje;
+    $('#conteudo').innerHTML = `
+      <div class="kpis"><div class="kpi"><b>${d.telegram ? 'Ligado' : 'Desligado'}</b><span>Telegram${d.nome_canal ? ' · ' + esc(d.nome_canal) : ''}</span></div>
+      <div class="kpi"><b>${d.ultimo ? new Date(d.ultimo + 'T12:00').toLocaleDateString('pt-BR') : '—'}</b><span>Último post publicado</span></div>
+      <div class="kpi"><b>${deHoje ? (p.vagas || 0) : '—'}</b><span>Vagas novas hoje</span></div></div>
+      ${res.quando ? `<p class="note">Último envio em ${new Date(res.quando).toLocaleString('pt-BR')}: Telegram ${esc(res.telegram)}, e-mail do WhatsApp ${res.email ? 'enviado' : 'não saiu'}.</p>` : ''}
+      <h2 class="sec">Post de hoje para a comunidade do WhatsApp</h2>
+      ${!deHoje ? '<p class="note">O post de hoje ainda não foi montado. O robô das vagas roda de manhã e monta o post logo depois.</p>'
+        : p.vazio ? '<p class="note">Hoje não entrou nada novo no site, então não tem post.</p>'
+        : `<textarea id="wtxt" style="width:100%;min-height:260px;background:var(--card);color:var(--white);border:1px solid var(--border);padding:12px;font-family:inherit;font-size:13px">${esc(p.whatsapp)}</textarea>
+      <div class="bar"><a class="btn" style="text-decoration:none;margin-left:0" href="${esc(d.link_whatsapp)}" target="_blank" rel="noopener">Abrir no WhatsApp</a><button class="btn ghost" id="wc">Copiar texto</button>${d.telegram ? '<button class="btn ghost" id="dr">Publicar de novo no Telegram</button>' : ''}</div>`}
+      <h2 class="sec">Canal do Telegram</h2>
+      <p class="note">${d.telegram ? `Bot ${esc(d.bot)} publicando em ${esc(d.nome_canal)} (${esc(d.canal)}). O post sai sozinho todo dia, assim que o robô das vagas termina.` : 'Cole a chave do bot que o BotFather entregou e o endereço do canal (ex.: t.me/seucanal). O bot precisa estar no canal como administrador.'}</p>
+      <div class="bar"><input type="password" id="tk" placeholder="${d.bot ? 'Trocar a chave do bot' : 'Chave do bot (123456:ABC...)'}" autocomplete="off">
+      <input id="tc" value="${esc(d.canal || '')}" placeholder="Canal (t.me/seucanal)"><button class="btn" id="ts">Salvar</button>${d.telegram ? '<button class="btn ghost" id="tt">Mandar teste</button>' : ''}</div>
+      <p class="note" id="tmsg"></p>`;
+    if ($('#wc')) $('#wc').onclick = () => navigator.clipboard.writeText($('#wtxt').value).then(() => { $('#wc').textContent = 'Copiado'; setTimeout(() => $('#wc').textContent = 'Copiar texto', 1500); });
+    if ($('#dr')) $('#dr').onclick = () => { if (confirm('Publicar o post de hoje de novo no Telegram?')) dpost({action:'reenviar', senha}).then(r => { alert(r.telegram ? 'Telegram: ' + r.telegram : (r.motivo || 'Feito')); painelDivulgar(); }); };
+    $('#ts').onclick = () => { $('#tmsg').textContent = 'Conferindo com o Telegram...';
+      dpost({action:'config', senha, token:$('#tk').value.trim(), canal:$('#tc').value.trim()}).then(r => { if (r.error) { $('#tmsg').textContent = r.error; return; } painelDivulgar(); }); };
+    if ($('#tt')) $('#tt').onclick = () => dpost({action:'testar', senha}).then(r => alert(r.ok ? 'Mensagem de teste enviada. Confira o canal.' : 'Não saiu: ' + r.erro));
+  }).catch(() => { $('#conteudo').innerHTML = '<p class="note">Não foi possível carregar.</p>'; });
 }
 
 // Mensagens do formulário "Fale com a gente" (/contato/)
