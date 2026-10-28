@@ -48,6 +48,55 @@
     ]
   },
   {
+    "id": "macnor-auxiliar-de-mecanico-niteroi",
+    "titulo": "Auxiliar de Mecânico",
+    "empresa": "Macnor Marine",
+    "logo": "",
+    "local": "Niterói, RJ",
+    "regime": "Oficina e a bordo, com embarques eventuais",
+    "contrato": "A confirmar com a empresa",
+    "area": "Mecânica e manutenção",
+    "nivel": "Ensino médio e técnico em andamento",
+    "publicada": "2026-10-28",
+    "inscricoesAte": "2026-11-27",
+    "link": "https://macnor.gupy.io/jobs/12797886",
+    "resumo": "A Macnor Marine faz manutenção e assistência técnica em embarcações e unidades offshore, e abriu vaga de auxiliar de mecânico na equipe de propulsão, em Niterói. Não pede experiência. Pede ensino médio e técnico em mecânica, eletromecânica ou manutenção, que pode estar em andamento. O trabalho é em oficina e a bordo, com embarques eventuais, e quem já tem CBSP, T-HUET e CNH sai na frente. É uma porta de entrada real para quem quer chegar na praça de máquinas.",
+    "atividades": [
+      "Auxiliar na desmontagem, inspeção, limpeza, medição de folgas e montagem de equipamentos",
+      "Ajudar nas manutenções preventivas e corretivas, a bordo ou na oficina",
+      "Organizar e preparar ferramentas manuais, pneumáticas, elétricas e instrumentos de medição (paquímetro, micrômetro, relógio comparador)",
+      "Manter a oficina e a praça de máquinas limpas e organizadas",
+      "Cumprir as normas de segurança do setor naval, como a NR-34 e o uso de EPI"
+    ],
+    "requisitos": [
+      "Ensino médio completo",
+      "Técnico em mecânica, eletromecânica, manutenção ou área parecida, em andamento ou concluído (SENAI é bem-vindo)",
+      "Não exige experiência; manutenção industrial, automotiva pesada ou naval conta ponto",
+      "Noção de desenho técnico mecânico, instrumentos de medição e motor a combustão",
+      "Disponibilidade para embarques eventuais, emergências e serviço em estaleiros e portos",
+      "Diferencial: CBSP e T-HUET válidos e CNH"
+    ],
+    "beneficios": [],
+    "pcd": false,
+    "videos": [
+      {
+        "id": "AFQCQwo_5Kc",
+        "titulo": "Mecânico offshore, como embarcar do absoluto zero",
+        "porque": "O caminho de quem começa como auxiliar e quer chegar no embarque."
+      },
+      {
+        "id": "3yOdA-HnSeg",
+        "titulo": "Se você é mecânico, precisa ver esse vídeo",
+        "porque": "O que não pode faltar no currículo de mecânico para passar na triagem."
+      },
+      {
+        "id": "Vn2yBVRC-t0",
+        "titulo": "CBSP, o curso básico para trabalhar embarcado",
+        "porque": "A vaga cita CBSP e T-HUET como diferencial. Veja como tirar."
+      }
+    ]
+  },
+  {
     "id": "newinter-homem-de-area-movimentacao-carga",
     "titulo": "Homem de Área - Movimentação de Carga (Rigger)",
     "empresa": "Newinter",
