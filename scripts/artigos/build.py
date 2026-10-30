@@ -9,6 +9,7 @@ O corpo usa uma marcação simples:
     **negrito**, [texto](link), > citação
     Cabeçalho opcional foto: /caminho/no/site.jpg ou link, para a imagem de compartilhamento (sem ela usa a capa do 1º vídeo)
     {{video:ID_DO_YOUTUBE|Título do vídeo}}  vídeo do canal que abre no clique
+    {{imagem:/caminho.jpg|Legenda|Crédito}}  foto com legenda e crédito da fonte (sempre dê o crédito)
     {{vagas:regex::Texto}}                   lista as vagas abertas cujo título bate com a regex
     {{vagas:regex!!excluir::Texto}}          o mesmo, tirando os títulos que batem com a segunda regex
     [[pergunta para o Matheus]]              lacuna do rascunho, aparece destacada e nunca vai ao ar
@@ -76,6 +77,10 @@ def bloco_video(vid, titulo):
             f'<img src="https://i.ytimg.com/vi/{e(vid)}/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><i></i></span>'
             f'<span class="vt">{e(titulo)}</span><span class="vs">Vídeo do canal Carreira Offshore</span></button>')
 
+def bloco_imagem(src, legenda, credito):
+    return (f'<figure><img src="{e(src)}" alt="{e(legenda)}" loading="lazy"><figcaption>{inline(legenda)}'
+            + (f' <span class="credito">{inline(credito)}</span>' if credito else '') + '</figcaption></figure>')
+
 def bloco_vagas(rx, texto):
     # "incluir!!excluir": a segunda regex tira do bloco os títulos que não servem (ex.: supervisor, sênior)
     rx, _, ex = rx.partition('!!')
@@ -105,6 +110,9 @@ def converter(corpo):
         s = linha.strip()
         v = re.fullmatch(r'\{\{video:([\w-]+)\|(.+?)\}\}', s)
         g = re.fullmatch(r'\{\{vagas:(.+?)::(.+?)\}\}', s)
+        f = re.fullmatch(r'\{\{imagem:([^|}]+)\|([^|}]+)(?:\|([^}]+))?\}\}', s)
+        if f:
+            fecha_par(); fecha_lista(); out.append(bloco_imagem(f.group(1).strip(), f.group(2).strip(), (f.group(3) or '').strip())); continue
         if not s:
             fecha_par(); fecha_lista(); continue
         if v or g:
