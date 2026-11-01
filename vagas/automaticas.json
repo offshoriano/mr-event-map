@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-10-31T15:49:25+00:00",
+ "atualizado": "2026-11-01T16:58:09+00:00",
  "fontes": [
   {
    "empresa": "PRIO",
@@ -8,7 +8,7 @@
   },
   {
    "empresa": "Brava Energia",
-   "vagas": 28,
+   "vagas": 25,
    "ok": true
   },
   {
@@ -113,12 +113,12 @@
   },
   {
    "empresa": "Yinson",
-   "vagas": 4,
+   "vagas": 1,
    "ok": true
   },
   {
    "empresa": "Baker Hughes",
-   "vagas": 21,
+   "vagas": 20,
    "ok": true
   },
   {
@@ -178,7 +178,7 @@
   },
   {
    "empresa": "Halliburton",
-   "vagas": 36,
+   "vagas": 35,
    "ok": true
   },
   {
@@ -208,7 +208,7 @@
   },
   {
    "empresa": "Brunel",
-   "vagas": 8,
+   "vagas": 7,
    "ok": true
   },
   {
@@ -302,6 +302,11 @@
    "ok": true
   },
   {
+   "empresa": "Rystad",
+   "vagas": 0,
+   "ok": true
+  },
+  {
    "empresa": "Supergasbras Energia",
    "vagas": 3,
    "ok": true
@@ -319,6 +324,41 @@
   {
    "empresa": "Trackfy",
    "vagas": 6,
+   "ok": true
+  },
+  {
+   "empresa": "American Bureau of Shipping",
+   "vagas": 6,
+   "ok": true
+  },
+  {
+   "empresa": "Campos Mello Advogados",
+   "vagas": 11,
+   "ok": true
+  },
+  {
+   "empresa": "Damen",
+   "vagas": 0,
+   "ok": true
+  },
+  {
+   "empresa": "DNV",
+   "vagas": 6,
+   "ok": true
+  },
+  {
+   "empresa": "Jotun",
+   "vagas": 0,
+   "ok": true
+  },
+  {
+   "empresa": "MHWIRTH DO BRASIL EQUIPAMENTOS LTDA.",
+   "vagas": 0,
+   "ok": false
+  },
+  {
+   "empresa": "NOV INTERVENTION AND STIMULATION EQUIPMENT",
+   "vagas": 13,
    "ok": true
   },
   {
@@ -393,7 +433,7 @@
   },
   {
    "empresa": "Fluxo Soluções Integradas",
-   "vagas": 8,
+   "vagas": 6,
    "ok": true
   },
   {
@@ -631,7 +671,8 @@
   "sUpavBK4AFM": "De enfermeiro à piloto de ROV",
   "soNSsLJtOdo": "Piloto de ROV trainee - processo seletivo da fugro",
   "wNai9-JZxOI": "LIVE 29: desvendando o programa trainee foresea (antiga ocyan)",
-  "wj-tFC2Qpxs": "Como trabalhar na nov flextubos?"
+  "wj-tFC2Qpxs": "Como trabalhar na nov flextubos?",
+  "yTeMvIeKy14": "FPSO anita garibaldi parte para bacia de campos!"
  },
  "vagas": [
   {
@@ -1155,32 +1196,6 @@
    ]
   },
   {
-   "id": "brava-energia-bombeador-offshore-85035",
-   "titulo": "Bombeador Offshore",
-   "empresa": "Brava Energia",
-   "local": "Rio de Janeiro, RJ",
-   "link": "https://bravaenergia.gupy.io/jobs/12401067",
-   "regime": "Offshore",
-   "area": "Outras",
-   "tema": "geral",
-   "banco": false,
-   "vistaEm": "2026-10-15",
-   "videos": [
-    [
-     "kJZqpRE1bvY",
-     "Fala de operador de produção, a função desta vaga."
-    ],
-    [
-     "1XXSSAG18CE",
-     "Fala de operador de produção, a função desta vaga."
-    ],
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ]
-   ]
-  },
-  {
    "id": "brava-energia-superintendente-de-manuten-o-offshore-11045",
    "titulo": "Superintendente de Manutenção Offshore",
    "empresa": "Brava Energia",
@@ -1251,32 +1266,6 @@
     [
      "WP-YqW9rW3E",
      "Fala de oficial de náutica e DP, a função desta vaga."
-    ],
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ]
-   ]
-  },
-  {
-   "id": "brava-energia-supervisor-a-de-mec-nica-offshore-16631",
-   "titulo": "Supervisor (a) de Mecânica Offshore",
-   "empresa": "Brava Energia",
-   "local": "Rio de Janeiro, RJ",
-   "link": "https://bravaenergia.gupy.io/jobs/12400733",
-   "regime": "Offshore",
-   "area": "Mecânica e manutenção",
-   "tema": "mecanica",
-   "banco": false,
-   "vistaEm": "2026-10-15",
-   "videos": [
-    [
-     "3yOdA-HnSeg",
-     "Fala de mecânico e manutenção, a função desta vaga."
-    ],
-    [
-     "AFQCQwo_5Kc",
-     "Fala de mecânico e manutenção, a função desta vaga."
     ],
     [
      "sMTU-gjxcLU",
@@ -2741,188 +2730,6 @@
    ]
   },
   {
-   "id": "yinson-radio-operator-9664",
-   "titulo": "Radio Operator",
-   "empresa": "Yinson",
-   "local": "Brasil",
-   "link": "https://careers.yinson.com/job/Rio-de-Janeiro-Radio-Operator/1356020155/",
-   "regime": "Offshore",
-   "area": "Operação e produção",
-   "tema": "operacao",
-   "banco": false,
-   "vistaEm": "2026-10-15",
-   "videos": [
-    [
-     "kJZqpRE1bvY",
-     "Fala de operador de produção, área vizinha desta vaga."
-    ],
-    [
-     "lfLBkaSj0p4",
-     "Vídeo do canal sobre a Yinson. Ajuda a chegar preparado na entrevista."
-    ],
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ]
-   ]
-  },
-  {
-   "id": "abs-american-bureau-of-shipping-contractor-auditor-inspector-55748",
-   "titulo": "Contractor, Auditor/Inspector",
-   "empresa": "ABS (American Bureau of Shipping)",
-   "local": "Barueri, SP",
-   "link": "https://hbbq.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/4847",
-   "regime": "Onshore",
-   "area": "Outras",
-   "tema": "geral",
-   "banco": false,
-   "vistaEm": "2026-10-15",
-   "videos": [
-    [
-     "YTu30XI9rhg",
-     "Fala de inspeção e qualidade, a função desta vaga."
-    ],
-    [
-     "nmu4AyYiBC0",
-     "Fala de inspeção e qualidade, a função desta vaga."
-    ],
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ]
-   ]
-  },
-  {
-   "id": "abs-american-bureau-of-shipping-engineer-i-naval-architect-9460",
-   "titulo": "Engineer I - Naval Architect",
-   "empresa": "ABS (American Bureau of Shipping)",
-   "local": "Rio de Janeiro, RJ",
-   "link": "https://hbbq.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/4900",
-   "regime": "Onshore",
-   "area": "Engenharia",
-   "tema": "engenharia",
-   "banco": false,
-   "vistaEm": "2026-10-22",
-   "videos": [
-    [
-     "9ZlICqIBUMg",
-     "Fala de engenharia, a função desta vaga."
-    ],
-    [
-     "0uMWC3VBm8A",
-     "Fala de engenharia, a função desta vaga."
-    ],
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ]
-   ]
-  },
-  {
-   "id": "abs-american-bureau-of-shipping-engineer-i-senior-structural-engineer-4082",
-   "titulo": "Engineer I, Senior / Structural Engineer",
-   "empresa": "ABS (American Bureau of Shipping)",
-   "local": "Rio de Janeiro, RJ",
-   "link": "https://hbbq.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/4846",
-   "regime": "Onshore",
-   "area": "Engenharia",
-   "tema": "engenharia",
-   "banco": false,
-   "vistaEm": "2026-10-15",
-   "videos": [
-    [
-     "9ZlICqIBUMg",
-     "Fala de engenharia, a função desta vaga."
-    ],
-    [
-     "0uMWC3VBm8A",
-     "Fala de engenharia, a função desta vaga."
-    ],
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ]
-   ]
-  },
-  {
-   "id": "abs-american-bureau-of-shipping-engineer-senior-i-electric-41319",
-   "titulo": "Engineer, Senior I / Electric",
-   "empresa": "ABS (American Bureau of Shipping)",
-   "local": "Rio de Janeiro, RJ",
-   "link": "https://hbbq.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/4877",
-   "regime": "Onshore",
-   "area": "Elétrica e instrumentação",
-   "tema": "eletrica",
-   "banco": false,
-   "vistaEm": "2026-10-15",
-   "videos": [
-    [
-     "-35oTYToV2A",
-     "Fala de eletricista, a função desta vaga."
-    ],
-    [
-     "TSUnVzxiBjU",
-     "Fala de eletricista, a função desta vaga."
-    ],
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ]
-   ]
-  },
-  {
-   "id": "abs-american-bureau-of-shipping-senior-associate-finance-payroll-92026",
-   "titulo": "Senior Associate, Finance / Payroll",
-   "empresa": "ABS (American Bureau of Shipping)",
-   "local": "Rio de Janeiro, RJ",
-   "link": "https://hbbq.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/4782",
-   "regime": "Onshore",
-   "area": "Outras",
-   "tema": "geral",
-   "banco": false,
-   "vistaEm": "2026-10-15",
-   "videos": [
-    [
-     "lttRYy_P8T8",
-     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
-    ],
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ],
-    [
-     "eHqY18dRP8Q",
-     "As perguntas que mais aparecem na entrevista e como responder."
-    ]
-   ]
-  },
-  {
-   "id": "abs-american-bureau-of-shipping-senior-director-technical-decommissioning-10976",
-   "titulo": "Senior Director, Technical Decommissioning",
-   "empresa": "ABS (American Bureau of Shipping)",
-   "local": "Rio de Janeiro, RJ",
-   "link": "https://hbbq.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/4916",
-   "regime": "Onshore",
-   "area": "Outras",
-   "tema": "geral",
-   "banco": false,
-   "vistaEm": "2026-10-15",
-   "videos": [
-    [
-     "lttRYy_P8T8",
-     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
-    ],
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ],
-    [
-     "eHqY18dRP8Q",
-     "As perguntas que mais aparecem na entrevista e como responder."
-    ]
-   ]
-  },
-  {
    "id": "airswift-assistente-administrativo-8219",
    "titulo": "Assistente Administrativo",
    "empresa": "Airswift",
@@ -3777,6 +3584,162 @@
     [
      "kJZqpRE1bvY",
      "Vídeo do canal sobre a Altera&Ocyan. Ajuda a chegar preparado na entrevista."
+    ]
+   ]
+  },
+  {
+   "id": "american-bureau-of-shipping-contractor-auditor-inspector-55748",
+   "titulo": "Contractor, Auditor/Inspector",
+   "empresa": "American Bureau of Shipping",
+   "local": "Barueri, SP",
+   "link": "https://hbbq.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/4847",
+   "regime": "Onshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-15",
+   "videos": [
+    [
+     "YTu30XI9rhg",
+     "Fala de inspeção e qualidade, a função desta vaga."
+    ],
+    [
+     "nmu4AyYiBC0",
+     "Fala de inspeção e qualidade, a função desta vaga."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ]
+   ]
+  },
+  {
+   "id": "american-bureau-of-shipping-engineer-i-naval-architect-9460",
+   "titulo": "Engineer I - Naval Architect",
+   "empresa": "American Bureau of Shipping",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://hbbq.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/4900",
+   "regime": "Onshore",
+   "area": "Engenharia",
+   "tema": "engenharia",
+   "banco": false,
+   "vistaEm": "2026-10-22",
+   "videos": [
+    [
+     "9ZlICqIBUMg",
+     "Fala de engenharia, a função desta vaga."
+    ],
+    [
+     "0uMWC3VBm8A",
+     "Fala de engenharia, a função desta vaga."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ]
+   ]
+  },
+  {
+   "id": "american-bureau-of-shipping-engineer-i-senior-structural-engineer-4082",
+   "titulo": "Engineer I, Senior / Structural Engineer",
+   "empresa": "American Bureau of Shipping",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://hbbq.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/4846",
+   "regime": "Onshore",
+   "area": "Engenharia",
+   "tema": "engenharia",
+   "banco": false,
+   "vistaEm": "2026-10-15",
+   "videos": [
+    [
+     "9ZlICqIBUMg",
+     "Fala de engenharia, a função desta vaga."
+    ],
+    [
+     "0uMWC3VBm8A",
+     "Fala de engenharia, a função desta vaga."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ]
+   ]
+  },
+  {
+   "id": "american-bureau-of-shipping-engineer-senior-i-electric-41319",
+   "titulo": "Engineer, Senior I / Electric",
+   "empresa": "American Bureau of Shipping",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://hbbq.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/4877",
+   "regime": "Onshore",
+   "area": "Elétrica e instrumentação",
+   "tema": "eletrica",
+   "banco": false,
+   "vistaEm": "2026-10-15",
+   "videos": [
+    [
+     "-35oTYToV2A",
+     "Fala de eletricista, a função desta vaga."
+    ],
+    [
+     "TSUnVzxiBjU",
+     "Fala de eletricista, a função desta vaga."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ]
+   ]
+  },
+  {
+   "id": "american-bureau-of-shipping-senior-associate-finance-payroll-92026",
+   "titulo": "Senior Associate, Finance / Payroll",
+   "empresa": "American Bureau of Shipping",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://hbbq.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/4782",
+   "regime": "Onshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-15",
+   "videos": [
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
+   "id": "american-bureau-of-shipping-senior-director-technical-decommissioning-10976",
+   "titulo": "Senior Director, Technical Decommissioning",
+   "empresa": "American Bureau of Shipping",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://hbbq.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/4916",
+   "regime": "Onshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-15",
+   "videos": [
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
     ]
    ]
   },
@@ -5419,32 +5382,6 @@
    ]
   },
   {
-   "id": "baker-hughes-sourcing-professional-buying-procurement-78772",
-   "titulo": "Sourcing Professional - Buying/Procurement",
-   "empresa": "Baker Hughes",
-   "local": "Macaé, RJ",
-   "link": "https://bakerhughes.wd5.myworkdayjobs.com/BakerHughes/job/BR-RJ-MACAE-LAGOMAR-AV-ARAXA-240/Sourcing-Professional---Buying-Procurement_R171035",
-   "regime": "Onshore",
-   "area": "Outras",
-   "tema": "geral",
-   "banco": false,
-   "vistaEm": "2026-10-28",
-   "videos": [
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ],
-    [
-     "eHqY18dRP8Q",
-     "As perguntas que mais aparecem na entrevista e como responder."
-    ],
-    [
-     "lttRYy_P8T8",
-     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
-    ]
-   ]
-  },
-  {
    "id": "baker-hughes-sr-subsea-well-access-intervention-engineer-87131",
    "titulo": "Sr. Subsea Well Access & Intervention Engineer",
    "empresa": "Baker Hughes",
@@ -5887,32 +5824,6 @@
    ]
   },
   {
-   "id": "brava-energia-ge-logo-a-s-nior-63701",
-   "titulo": "Geólogo (a) Sênior",
-   "empresa": "Brava Energia",
-   "local": "Rio de Janeiro, RJ",
-   "link": "https://bravaenergia.gupy.io/jobs/12401320",
-   "regime": "Onshore",
-   "area": "Outras",
-   "tema": "geral",
-   "banco": false,
-   "vistaEm": "2026-10-15",
-   "videos": [
-    [
-     "lttRYy_P8T8",
-     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
-    ],
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ],
-    [
-     "eHqY18dRP8Q",
-     "As perguntas que mais aparecem na entrevista e como responder."
-    ]
-   ]
-  },
-  {
    "id": "brava-energia-operador-de-facilidades-96663",
    "titulo": "Operador de Facilidades",
    "empresa": "Brava Energia",
@@ -6221,32 +6132,6 @@
     [
      "eHqY18dRP8Q",
      "As perguntas que mais aparecem na entrevista e como responder."
-    ]
-   ]
-  },
-  {
-   "id": "brunel-analista-de-qualidade-95312",
-   "titulo": "Analista de Qualidade",
-   "empresa": "Brunel",
-   "local": "Rio de Janeiro, RJ",
-   "link": "https://www.brunel.net/en/jobs/analista-de-qualidade-tr-303444",
-   "regime": "Onshore",
-   "area": "Outras",
-   "tema": "geral",
-   "banco": false,
-   "vistaEm": "2026-10-15",
-   "videos": [
-    [
-     "YTu30XI9rhg",
-     "Fala de inspeção e qualidade, a função desta vaga."
-    ],
-    [
-     "nmu4AyYiBC0",
-     "Fala de inspeção e qualidade, a função desta vaga."
-    ],
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
     ]
    ]
   },
@@ -7499,6 +7384,214 @@
    ]
   },
   {
+   "id": "campos-mello-advogados-advogado-a-j-nior-contencioso-de-volume-89500",
+   "titulo": "Advogado(a) Júnior - Contencioso de Volume",
+   "empresa": "Campos Mello Advogados",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://vemprocma.gupy.io/jobs/12569623",
+   "regime": "Onshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-11-01",
+   "videos": [
+    [
+     "yTeMvIeKy14",
+     "Vídeo do canal sobre a Campos Mello Advogados. Ajuda a chegar preparado na entrevista."
+    ],
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ]
+   ]
+  },
+  {
+   "id": "campos-mello-advogados-advogado-a-j-nior-controladoria-jur-dica-68730",
+   "titulo": "Advogado(a) Júnior - Controladoria Jurídica",
+   "empresa": "Campos Mello Advogados",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://vemprocma.gupy.io/jobs/12700012",
+   "regime": "Onshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-11-01",
+   "videos": [
+    [
+     "yTeMvIeKy14",
+     "Vídeo do canal sobre a Campos Mello Advogados. Ajuda a chegar preparado na entrevista."
+    ],
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ]
+   ]
+  },
+  {
+   "id": "campos-mello-advogados-advogado-a-pleno-tribut-rio-consultivo-indiretos-19570",
+   "titulo": "Advogado(a) Pleno - Tributário Consultivo | Indiretos",
+   "empresa": "Campos Mello Advogados",
+   "local": "São Paulo, SP",
+   "link": "https://vemprocma.gupy.io/jobs/12420818",
+   "regime": "Onshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-11-01",
+   "videos": [
+    [
+     "yTeMvIeKy14",
+     "Vídeo do canal sobre a Campos Mello Advogados. Ajuda a chegar preparado na entrevista."
+    ],
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ]
+   ]
+  },
+  {
+   "id": "campos-mello-advogados-advogado-a-pleno-tribut-rio-consultivo-indiretos-38806",
+   "titulo": "Advogado(a) Pleno - Tributário Consultivo | Indiretos",
+   "empresa": "Campos Mello Advogados",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://vemprocma.gupy.io/jobs/12420762",
+   "regime": "Onshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-11-01",
+   "videos": [
+    [
+     "yTeMvIeKy14",
+     "Vídeo do canal sobre a Campos Mello Advogados. Ajuda a chegar preparado na entrevista."
+    ],
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ]
+   ]
+  },
+  {
+   "id": "campos-mello-advogados-advogado-a-pleno-s-nior-tribut-rio-consultivo-diretos-87424",
+   "titulo": "Advogado(a) Pleno/ Sênior - Tributário Consultivo | Diretos",
+   "empresa": "Campos Mello Advogados",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://vemprocma.gupy.io/jobs/12420901",
+   "regime": "Onshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-11-01",
+   "videos": [
+    [
+     "yTeMvIeKy14",
+     "Vídeo do canal sobre a Campos Mello Advogados. Ajuda a chegar preparado na entrevista."
+    ],
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ]
+   ]
+  },
+  {
+   "id": "campos-mello-advogados-advogado-a-pleno-s-nior-tribut-rio-consultivo-diretos-62763",
+   "titulo": "Advogado(a) Pleno/ Sênior - Tributário Consultivo | Diretos",
+   "empresa": "Campos Mello Advogados",
+   "local": "São Paulo, SP",
+   "link": "https://vemprocma.gupy.io/jobs/12420862",
+   "regime": "Onshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-11-01",
+   "videos": [
+    [
+     "yTeMvIeKy14",
+     "Vídeo do canal sobre a Campos Mello Advogados. Ajuda a chegar preparado na entrevista."
+    ],
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ]
+   ]
+  },
+  {
+   "id": "campos-mello-advogados-analista-de-faturamento-j-nior-58893",
+   "titulo": "Analista de Faturamento Júnior",
+   "empresa": "Campos Mello Advogados",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://vemprocma.gupy.io/jobs/12804697",
+   "regime": "Onshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-11-01",
+   "videos": [
+    [
+     "yTeMvIeKy14",
+     "Vídeo do canal sobre a Campos Mello Advogados. Ajuda a chegar preparado na entrevista."
+    ],
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ]
+   ]
+  },
+  {
+   "id": "campos-mello-advogados-assessor-a-67698",
+   "titulo": "Assessor(a)",
+   "empresa": "Campos Mello Advogados",
+   "local": "São Paulo, SP",
+   "link": "https://vemprocma.gupy.io/jobs/12634047",
+   "regime": "Onshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-11-01",
+   "videos": [
+    [
+     "yTeMvIeKy14",
+     "Vídeo do canal sobre a Campos Mello Advogados. Ajuda a chegar preparado na entrevista."
+    ],
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ]
+   ]
+  },
+  {
    "id": "cladtek-analista-fiscal-jr-contr-determinado-36588",
    "titulo": "Analista Fiscal JR - CONTR. DETERMINADO",
    "empresa": "Cladtek",
@@ -7889,9 +7982,9 @@
    ]
   },
   {
-   "id": "dnv-gl-classifica-o-certifica-o-e-consultoria-brasil-ltda-accounting-intern-est--80407",
+   "id": "dnv-accounting-intern-est-gio-em-contabilidade-80407",
    "titulo": "Accounting Intern - Estágio em Contabilidade",
-   "empresa": "DNV GL Classificação, Certificação e Consultoria Brasil LTDA.",
+   "empresa": "DNV",
    "local": "Rio de Janeiro, RJ",
    "link": "https://ecyq.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/7697",
    "regime": "Onshore",
@@ -7915,9 +8008,9 @@
    ]
   },
   {
-   "id": "dnv-gl-classifica-o-certifica-o-e-consultoria-brasil-ltda-area-business-developm-38429",
+   "id": "dnv-area-business-development-manager-south-america-38429",
    "titulo": "Area Business Development Manager - South America",
-   "empresa": "DNV GL Classificação, Certificação e Consultoria Brasil LTDA.",
+   "empresa": "DNV",
    "local": "Rio de Janeiro, RJ",
    "link": "https://ecyq.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/7533",
    "regime": "Onshore",
@@ -7941,9 +8034,9 @@
    ]
   },
   {
-   "id": "dnv-gl-classifica-o-certifica-o-e-consultoria-brasil-ltda-engineering-intern-tec-55677",
+   "id": "dnv-engineering-intern-technical-advisory-55677",
    "titulo": "Engineering Intern – Technical Advisory",
-   "empresa": "DNV GL Classificação, Certificação e Consultoria Brasil LTDA.",
+   "empresa": "DNV",
    "local": "Rio de Janeiro, RJ",
    "link": "https://ecyq.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/7758",
    "regime": "Onshore",
@@ -7967,9 +8060,9 @@
    ]
   },
   {
-   "id": "dnv-gl-classifica-o-certifica-o-e-consultoria-brasil-ltda-nb-cmc-surveyor-43680",
+   "id": "dnv-nb-cmc-surveyor-43680",
    "titulo": "NB/CMC Surveyor",
-   "empresa": "DNV GL Classificação, Certificação e Consultoria Brasil LTDA.",
+   "empresa": "DNV",
    "local": "Rio de Janeiro, RJ",
    "link": "https://ecyq.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/7644",
    "regime": "Onshore",
@@ -7993,9 +8086,9 @@
    ]
   },
   {
-   "id": "dnv-gl-classifica-o-certifica-o-e-consultoria-brasil-ltda-process-safety-coordin-63460",
+   "id": "dnv-process-safety-coordinator-63460",
    "titulo": "Process Safety Coordinator",
-   "empresa": "DNV GL Classificação, Certificação e Consultoria Brasil LTDA.",
+   "empresa": "DNV",
    "local": "Rio de Janeiro, RJ",
    "link": "https://ecyq.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/7866",
    "regime": "Onshore",
@@ -8019,9 +8112,9 @@
    ]
   },
   {
-   "id": "dnv-gl-classifica-o-certifica-o-e-consultoria-brasil-ltda-sr-accounting-analyst--9370",
+   "id": "dnv-sr-accounting-analyst-temporary-position-9370",
    "titulo": "Sr Accounting Analyst (Temporary Position)",
-   "empresa": "DNV GL Classificação, Certificação e Consultoria Brasil LTDA.",
+   "empresa": "DNV",
    "local": "Rio de Janeiro, RJ",
    "link": "https://ecyq.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/7756",
    "regime": "Onshore",
@@ -8487,32 +8580,6 @@
    ]
   },
   {
-   "id": "fluxo-solu-es-integradas-assistente-de-planejamento-santa-catarina-sc-81641",
-   "titulo": "ASSISTENTE DE PLANEJAMENTO - SANTA CATARINA (SC)",
-   "empresa": "Fluxo Soluções Integradas",
-   "local": "Guaramirim, SC",
-   "link": "https://fluxo.gupy.io/jobs/12495374",
-   "regime": "Onshore",
-   "area": "Outras",
-   "tema": "geral",
-   "banco": false,
-   "vistaEm": "2026-10-15",
-   "videos": [
-    [
-     "lttRYy_P8T8",
-     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
-    ],
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ],
-    [
-     "eHqY18dRP8Q",
-     "As perguntas que mais aparecem na entrevista e como responder."
-    ]
-   ]
-  },
-  {
    "id": "fluxo-solu-es-integradas-assistente-de-planejamento-santana-de-parna-ba-sp-99795",
    "titulo": "ASSISTENTE DE PLANEJAMENTO - SANTANA DE PARNAÍBA (SP)",
    "empresa": "Fluxo Soluções Integradas",
@@ -8535,32 +8602,6 @@
     [
      "eHqY18dRP8Q",
      "As perguntas que mais aparecem na entrevista e como responder."
-    ]
-   ]
-  },
-  {
-   "id": "fluxo-solu-es-integradas-caldeireiro-santana-de-parna-ba-sp-33210",
-   "titulo": "CALDEIREIRO - SANTANA DE PARNAÍBA (SP)",
-   "empresa": "Fluxo Soluções Integradas",
-   "local": "Santana de Parnaíba, SP",
-   "link": "https://fluxo.gupy.io/jobs/12394520",
-   "regime": "Onshore",
-   "area": "Mecânica e manutenção",
-   "tema": "mecanica",
-   "banco": false,
-   "vistaEm": "2026-10-15",
-   "videos": [
-    [
-     "89nmfX5NnpI",
-     "Fala de soldador, caldeireiro e acesso por corda, a função desta vaga."
-    ],
-    [
-     "1xePUBawZBU",
-     "Fala de soldador, caldeireiro e acesso por corda, a função desta vaga."
-    ],
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
     ]
    ]
   },
@@ -9445,32 +9486,6 @@
     [
      "eHqY18dRP8Q",
      "As perguntas que mais aparecem na entrevista e como responder."
-    ]
-   ]
-  },
-  {
-   "id": "halliburton-operador-de-servi-os-testing-subsea-71508",
-   "titulo": "Operador de Serviços (Testing & Subsea)",
-   "empresa": "Halliburton",
-   "local": "Macaé, RJ",
-   "link": "https://jobs.halliburton.com/job/Macae-Brasil-RJ-Maca%C3%A9-Operador-de-Servi%C3%A7os-%28Testing-&amp;-Subsea%29-RJ-27930-070/1443593300/",
-   "regime": "Onshore",
-   "area": "Operação e produção",
-   "tema": "operacao",
-   "banco": false,
-   "vistaEm": "2026-10-26",
-   "videos": [
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ],
-    [
-     "eHqY18dRP8Q",
-     "As perguntas que mais aparecem na entrevista e como responder."
-    ],
-    [
-     "lttRYy_P8T8",
-     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
     ]
    ]
   },
@@ -16469,58 +16484,6 @@
    ]
   },
   {
-   "id": "yinson-field-operator-trainee-4675",
-   "titulo": "Field Operator Trainee",
-   "empresa": "Yinson",
-   "local": "Brasil",
-   "link": "https://careers.yinson.com/job/Rio-de-Janeiro-Field-Operator-Trainee/1367631355/",
-   "regime": "Onshore",
-   "area": "Operação e produção",
-   "tema": "operacao",
-   "banco": false,
-   "vistaEm": "2026-10-15",
-   "videos": [
-    [
-     "kJZqpRE1bvY",
-     "Fala de operador de produção, a função desta vaga."
-    ],
-    [
-     "1XXSSAG18CE",
-     "Fala de operador de produção, a função desta vaga."
-    ],
-    [
-     "lfLBkaSj0p4",
-     "Vídeo do canal sobre a Yinson. Ajuda a chegar preparado na entrevista."
-    ]
-   ]
-  },
-  {
-   "id": "yinson-operations-intern-37411",
-   "titulo": "Operations Intern",
-   "empresa": "Yinson",
-   "local": "Brasil",
-   "link": "https://careers.yinson.com/job/Rio-de-Janeiro-Operations-Intern-RJ/1368781055/",
-   "regime": "Onshore",
-   "area": "Trainee e estágio",
-   "tema": "trainee",
-   "banco": false,
-   "vistaEm": "2026-10-15",
-   "videos": [
-    [
-     "iKkxsnu9rZ8",
-     "Fala de estágio, trainee e primeiro emprego, a função desta vaga."
-    ],
-    [
-     "4eWz_1hX3OI",
-     "Fala de estágio, trainee e primeiro emprego, a função desta vaga."
-    ],
-    [
-     "lfLBkaSj0p4",
-     "Vídeo do canal sobre a Yinson. Ajuda a chegar preparado na entrevista."
-    ]
-   ]
-  },
-  {
    "id": "altave-holding-s-a-operador-de-sistemas-de-ia-banco-de-talentos-78956",
    "titulo": "Operador de Sistemas de IA (Banco de Talentos)",
    "empresa": "Altave Holding S.A.",
@@ -16777,6 +16740,84 @@
     [
      "lttRYy_P8T8",
      "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ]
+   ]
+  },
+  {
+   "id": "campos-mello-advogados-banco-de-talentos-backoffice-61608",
+   "titulo": "Banco de Talentos | Backoffice",
+   "empresa": "Campos Mello Advogados",
+   "local": "Brasil",
+   "link": "https://vemprocma.gupy.io/jobs/3227225",
+   "regime": "Onshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": true,
+   "vistaEm": "2026-11-01",
+   "videos": [
+    [
+     "yTeMvIeKy14",
+     "Vídeo do canal sobre a Campos Mello Advogados. Ajuda a chegar preparado na entrevista."
+    ],
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ]
+   ]
+  },
+  {
+   "id": "campos-mello-advogados-banco-de-talentos-jur-dico-advogado-a-28050",
+   "titulo": "Banco de Talentos | Jurídico - Advogado(a)",
+   "empresa": "Campos Mello Advogados",
+   "local": "Brasil",
+   "link": "https://vemprocma.gupy.io/jobs/3165615",
+   "regime": "Onshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": true,
+   "vistaEm": "2026-11-01",
+   "videos": [
+    [
+     "yTeMvIeKy14",
+     "Vídeo do canal sobre a Campos Mello Advogados. Ajuda a chegar preparado na entrevista."
+    ],
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ]
+   ]
+  },
+  {
+   "id": "campos-mello-advogados-banco-de-talentos-jur-dico-est-gio-784",
+   "titulo": "Banco de Talentos | Jurídico - Estágio",
+   "empresa": "Campos Mello Advogados",
+   "local": "Brasil",
+   "link": "https://vemprocma.gupy.io/jobs/3226228",
+   "regime": "Onshore",
+   "area": "Trainee e estágio",
+   "tema": "trainee",
+   "banco": true,
+   "vistaEm": "2026-11-01",
+   "videos": [
+    [
+     "iKkxsnu9rZ8",
+     "Fala de estágio, trainee e primeiro emprego, a função desta vaga."
+    ],
+    [
+     "4eWz_1hX3OI",
+     "Fala de estágio, trainee e primeiro emprego, a função desta vaga."
+    ],
+    [
+     "yTeMvIeKy14",
+     "Vídeo do canal sobre a Campos Mello Advogados. Ajuda a chegar preparado na entrevista."
     ]
    ]
   },
