@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-01T16:58:09+00:00",
+ "atualizado": "2026-11-02T20:27:33+00:00",
  "fontes": [
   {
    "empresa": "PRIO",
@@ -8,12 +8,12 @@
   },
   {
    "empresa": "Brava Energia",
-   "vagas": 25,
+   "vagas": 23,
    "ok": true
   },
   {
    "empresa": "Ocyan",
-   "vagas": 14,
+   "vagas": 13,
    "ok": true
   },
   {
@@ -98,7 +98,7 @@
   },
   {
    "empresa": "SBM Offshore",
-   "vagas": 15,
+   "vagas": 14,
    "ok": true
   },
   {
@@ -108,7 +108,7 @@
   },
   {
    "empresa": "Subsea7",
-   "vagas": 28,
+   "vagas": 29,
    "ok": true
   },
   {
@@ -118,7 +118,7 @@
   },
   {
    "empresa": "Baker Hughes",
-   "vagas": 20,
+   "vagas": 19,
    "ok": true
   },
   {
@@ -163,7 +163,7 @@
   },
   {
    "empresa": "Seadrill",
-   "vagas": 1,
+   "vagas": 0,
    "ok": true
   },
   {
@@ -418,7 +418,7 @@
   },
   {
    "empresa": "MFX",
-   "vagas": 8,
+   "vagas": 9,
    "ok": true
   },
   {
@@ -1300,32 +1300,6 @@
    ]
   },
   {
-   "id": "brava-energia-t-cnico-de-mec-nica-offshore-10094",
-   "titulo": "Técnico de Mecânica Offshore",
-   "empresa": "Brava Energia",
-   "local": "Rio de Janeiro, RJ",
-   "link": "https://bravaenergia.gupy.io/jobs/12409493",
-   "regime": "Offshore",
-   "area": "Mecânica e manutenção",
-   "tema": "mecanica",
-   "banco": false,
-   "vistaEm": "2026-10-15",
-   "videos": [
-    [
-     "3yOdA-HnSeg",
-     "Fala de mecânico e manutenção, a função desta vaga."
-    ],
-    [
-     "AFQCQwo_5Kc",
-     "Fala de mecânico e manutenção, a função desta vaga."
-    ],
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ]
-   ]
-  },
-  {
    "id": "camorim-condutor-de-m-quinas-portu-rio-21639",
    "titulo": "Condutor de Máquinas (Portuário)",
    "empresa": "Camorim",
@@ -2184,32 +2158,6 @@
    ]
   },
   {
-   "id": "seadrill-assistant-driller-pool-rio-de-janeiro-30349",
-   "titulo": "Assistant Driller (Pool) || Rio de Janeiro",
-   "empresa": "Seadrill",
-   "local": "Rio de Janeiro, RJ",
-   "link": "https://fa-eykz-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/1639",
-   "regime": "Offshore",
-   "area": "Perfuração e poços",
-   "tema": "pocos",
-   "banco": false,
-   "vistaEm": "2026-10-28",
-   "videos": [
-    [
-     "bFgYyXPn2Bc",
-     "Fala de sondador e equipe de perfuração, a função desta vaga."
-    ],
-    [
-     "NVZzQiqt8_w",
-     "Fala de sondador e equipe de perfuração, a função desta vaga."
-    ],
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ]
-   ]
-  },
-  {
    "id": "subsea7-coordenador-de-projetos-opera-es-com-rov-54766",
    "titulo": "Coordenador de Projetos (Operações com ROV)",
    "empresa": "Subsea7",
@@ -2362,32 +2310,6 @@
     [
      "kxMbpcGcYks",
      "Vídeo do canal sobre a Subsea7. Ajuda a chegar preparado na entrevista."
-    ]
-   ]
-  },
-  {
-   "id": "subsea7-vessel-superintendent-62889",
-   "titulo": "Vessel Superintendent",
-   "empresa": "Subsea7",
-   "local": "Brasil",
-   "link": "https://careers.subsea7.com/job/Aberdeen-%28Westhill%29-Vessel-Superintendent/1365706955/",
-   "regime": "Offshore",
-   "area": "Outras",
-   "tema": "geral",
-   "banco": false,
-   "vistaEm": "2026-10-28",
-   "videos": [
-    [
-     "kxMbpcGcYks",
-     "Vídeo do canal sobre a Subsea7. Ajuda a chegar preparado na entrevista."
-    ],
-    [
-     "lttRYy_P8T8",
-     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
-    ],
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
     ]
    ]
   },
@@ -5408,32 +5330,6 @@
    ]
   },
   {
-   "id": "baker-hughes-tecnico-de-manuten-o-57846",
-   "titulo": "Tecnico de Manutenção",
-   "empresa": "Baker Hughes",
-   "local": "Niterói, RJ",
-   "link": "https://bakerhughes.wd5.myworkdayjobs.com/BakerHughes/job/BR-RJ-NITEROI-PRACA-ALCIDES-PEREIRA/Tecnico-de-Manuteno_R165739",
-   "regime": "Onshore",
-   "area": "Mecânica e manutenção",
-   "tema": "mecanica",
-   "banco": false,
-   "vistaEm": "2026-10-29",
-   "videos": [
-    [
-     "3yOdA-HnSeg",
-     "Fala de mecânico e manutenção, a função desta vaga."
-    ],
-    [
-     "AFQCQwo_5Kc",
-     "Fala de mecânico e manutenção, a função desta vaga."
-    ],
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ]
-   ]
-  },
-  {
    "id": "baker-hughes-t-cnico-em-manuten-o-pcd-66840",
    "titulo": "Técnico em Manutenção - PCD",
    "empresa": "Baker Hughes",
@@ -5548,32 +5444,6 @@
    "tema": "geral",
    "banco": false,
    "vistaEm": "2026-10-27",
-   "videos": [
-    [
-     "lttRYy_P8T8",
-     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
-    ],
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ],
-    [
-     "eHqY18dRP8Q",
-     "As perguntas que mais aparecem na entrevista e como responder."
-    ]
-   ]
-  },
-  {
-   "id": "brava-energia-analista-de-treinamento-normativo-j-nior-68271",
-   "titulo": "Analista de Treinamento Normativo Júnior",
-   "empresa": "Brava Energia",
-   "local": "Rio de Janeiro, RJ",
-   "link": "https://bravaenergia.gupy.io/jobs/12660114",
-   "regime": "Onshore",
-   "area": "Outras",
-   "tema": "geral",
-   "banco": false,
-   "vistaEm": "2026-10-15",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -10088,6 +9958,32 @@
    ]
   },
   {
+   "id": "mfx-t-cnico-de-planejamento-sr-76317",
+   "titulo": "Técnico de Planejamento SR",
+   "empresa": "MFX",
+   "local": "Brasil",
+   "link": "https://mfx.inhire.com.br/vagas/aa5dedbb-6c4f-4371-b41a-c3acb28ab72e",
+   "regime": "Onshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-11-02",
+   "videos": [
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
    "id": "mi-electric-brasil-analista-de-rh-jr-hrbp-14020",
    "titulo": "Analista de RH Jr - HRBP",
    "empresa": "MI Electric Brasil",
@@ -13702,32 +13598,6 @@
    ]
   },
   {
-   "id": "ocyan-mso-analista-de-rh-jr-tempor-rio-90-dias-23548",
-   "titulo": "MSO - Analista de RH Jr - Temporário (90 dias)",
-   "empresa": "Ocyan",
-   "local": "Macaé, RJ",
-   "link": "https://ocyan.gupy.io/jobs/12541951",
-   "regime": "Onshore",
-   "area": "Outras",
-   "tema": "geral",
-   "banco": false,
-   "vistaEm": "2026-10-15",
-   "videos": [
-    [
-     "kJZqpRE1bvY",
-     "Vídeo do canal sobre a Ocyan. Ajuda a chegar preparado na entrevista."
-    ],
-    [
-     "lttRYy_P8T8",
-     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
-    ],
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ]
-   ]
-  },
-  {
    "id": "ocyan-mso-engenheiro-a-de-integridade-especialista-em-inspe-o-e-reparos-97278",
    "titulo": "MSO - Engenheiro(a) de Integridade (Especialista em Inspeção e Reparos)",
    "empresa": "Ocyan",
@@ -14846,32 +14716,6 @@
    ]
   },
   {
-   "id": "sbm-offshore-project-regulatory-engineer-84423",
-   "titulo": "Project Regulatory Engineer",
-   "empresa": "SBM Offshore",
-   "local": "Rio de Janeiro, RJ",
-   "link": "https://careers.sbmoffshore.com/job/Rio-de-Janeiro-Project-Regulatory-Engineer-20021-290/1375151857/",
-   "regime": "Onshore",
-   "area": "Engenharia",
-   "tema": "engenharia",
-   "banco": false,
-   "vistaEm": "2026-10-15",
-   "videos": [
-    [
-     "9ZlICqIBUMg",
-     "Fala de engenharia, a função desta vaga."
-    ],
-    [
-     "0uMWC3VBm8A",
-     "Fala de engenharia, a função desta vaga."
-    ],
-    [
-     "fqj2M7KTR0U",
-     "Vídeo do canal sobre a SBM Offshore. Ajuda a chegar preparado na entrevista."
-    ]
-   ]
-  },
-  {
    "id": "sbm-offshore-reliability-engineer-47917",
    "titulo": "Reliability Engineer",
    "empresa": "SBM Offshore",
@@ -15028,28 +14872,28 @@
    ]
   },
   {
-   "id": "subsea7-1st-officer-43883",
-   "titulo": "1st Officer",
+   "id": "subsea7-accounting-trainee-33859",
+   "titulo": "Accounting Trainee",
    "empresa": "Subsea7",
    "local": "Brasil",
-   "link": "https://careers.subsea7.com/job/Offshore-1st-Officer/1374894855/",
+   "link": "https://careers.subsea7.com/job/Merida-Accounting-Trainee/1375438355/",
    "regime": "Onshore",
-   "area": "Outras",
-   "tema": "geral",
+   "area": "Trainee e estágio",
+   "tema": "trainee",
    "banco": false,
-   "vistaEm": "2026-10-29",
+   "vistaEm": "2026-11-02",
    "videos": [
+    [
+     "iKkxsnu9rZ8",
+     "Fala de estágio, trainee e primeiro emprego, a função desta vaga."
+    ],
+    [
+     "4eWz_1hX3OI",
+     "Fala de estágio, trainee e primeiro emprego, a função desta vaga."
+    ],
     [
      "kxMbpcGcYks",
      "Vídeo do canal sobre a Subsea7. Ajuda a chegar preparado na entrevista."
-    ],
-    [
-     "lttRYy_P8T8",
-     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
-    ],
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
     ]
    ]
   },
@@ -15444,6 +15288,32 @@
    ]
   },
   {
+   "id": "subsea7-project-controls-manager-45143",
+   "titulo": "Project Controls Manager",
+   "empresa": "Subsea7",
+   "local": "Brasil",
+   "link": "https://careers.subsea7.com/job/Dubai-Project-Controls-Manager/1375316455/",
+   "regime": "Onshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-11-02",
+   "videos": [
+    [
+     "-35oTYToV2A",
+     "Fala de eletricista, área vizinha desta vaga."
+    ],
+    [
+     "kxMbpcGcYks",
+     "Vídeo do canal sobre a Subsea7. Ajuda a chegar preparado na entrevista."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ]
+   ]
+  },
+  {
    "id": "subsea7-quality-lead-project-delivery-manager-11301",
    "titulo": "Quality Lead (Project Delivery Manager)",
    "empresa": "Subsea7",
@@ -15462,6 +15332,32 @@
     [
      "nmu4AyYiBC0",
      "Fala de inspeção e qualidade, a função desta vaga."
+    ],
+    [
+     "kxMbpcGcYks",
+     "Vídeo do canal sobre a Subsea7. Ajuda a chegar preparado na entrevista."
+    ]
+   ]
+  },
+  {
+   "id": "subsea7-senior-principal-structural-engineer-51426",
+   "titulo": "Senior / Principal Structural Engineer",
+   "empresa": "Subsea7",
+   "local": "Brasil",
+   "link": "https://careers.subsea7.com/job/Kuala-Lumpur-Senior-Principal-Structural-Engineer/1375438955/",
+   "regime": "Onshore",
+   "area": "Engenharia",
+   "tema": "engenharia",
+   "banco": false,
+   "vistaEm": "2026-11-02",
+   "videos": [
+    [
+     "9ZlICqIBUMg",
+     "Fala de engenharia, a função desta vaga."
+    ],
+    [
+     "0uMWC3VBm8A",
+     "Fala de engenharia, a função desta vaga."
     ],
     [
      "kxMbpcGcYks",
