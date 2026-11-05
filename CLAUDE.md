@@ -37,7 +37,7 @@ Matheus não programa. Explique em português simples, sem jargão, e diga o que
 - Chaves (Stripe, Resend, Anthropic, bot do Telegram) são coladas pelo Matheus no painel e ficam só no servidor. Nunca no código, no GitHub ou neste arquivo. Se ele mandar uma chave no chat, avise e peça para colar no painel.
 - Todo e-mail do site sai de **administracao@mrgroup.com.br** (constante `EMAIL_SITE`). É a única caixa criada na Hostinger.
 - Os avisos internos vão para **matheus.rangel@mrgroup.com.br** (com "th"). É também o contato público.
-- Resend: domínio mrgroup.com.br verificado. Stripe: conta MR AGENCY LTDA, ainda em modo teste. Produtos com `lookup_key` `curriculo` (R$ 97) e `diagnostico` (R$ 147); o painel cria os produtos sozinho quando recebe uma chave nova. Nada fica à venda até ser marcado na aba Pagamentos.
+- Resend: domínio mrgroup.com.br verificado. Stripe: conta MR AGENCY LTDA em produção desde 28/10/2026, com o Currículo Sob Medida à venda. Produtos com `lookup_key` `curriculo` (R$ 97) e `diagnostico` (R$ 147); o painel cria os produtos sozinho quando recebe uma chave nova. Nada fica à venda até ser marcado na aba Pagamentos.
 - Gerador de currículo: modelo `claude-opus-5-5`, saída em JSON estruturado, chamada direta por curl (a hospedagem não instala bibliotecas). Todo currículo passa por revisão humana no painel antes da entrega.
 
 ## Decisões já tomadas
