@@ -48,6 +48,54 @@
     ]
   },
   {
+    "id": "nsg-engenharia-18-vagas-subsea-offshore",
+    "titulo": "18 vagas de engenharia subsea e offshore (júnior, pleno e sênior)",
+    "empresa": "NSG Engenharia",
+    "logo": "",
+    "local": "Rio de Janeiro, RJ",
+    "regime": "Escritório de engenharia",
+    "contrato": "A confirmar com a empresa",
+    "area": "Engenharia",
+    "nivel": "Júnior, pleno e sênior",
+    "publicada": "2026-11-06",
+    "inscricoesAte": "2026-12-06",
+    "link": "mailto:cv@nsgeng.com?subject=Candidatura%20-%20(coloque%20aqui%20o%20nome%20da%20vaga)",
+    "resumo": "A NSG Engenharia abriu 18 vagas nas equipes de engenharia subsea e offshore, no Rio de Janeiro. Tem vaga de júnior a sênior, então serve tanto para quem se formou há pouco quanto para quem já tem estrada em análise de instalação, operações submarinas e estrutura offshore. A candidatura é por e-mail: mande o currículo para cv@nsgeng.com com o nome exato da vaga no assunto. Um currículo para cada vaga, ajustado para ela, faz diferença aqui.",
+    "atividades": [
+      "Subsea Installation Analysis Engineer: júnior (1), pleno (1) e sênior (1)",
+      "Subsea Operations Engineer: júnior (1), pleno (1) e sênior (1)",
+      "Subsea Project Engineer (2)",
+      "Offshore Structural Engineer, análise e projeto: júnior (1), pleno (2) e sênior (1)",
+      "Offshore Project Engineer (2)",
+      "Projetista sênior 2D e 3D: 2 no subsea e 2 no offshore"
+    ],
+    "requisitos": [
+      "Formação em engenharia para as vagas de engenheiro; projetista com experiência em 2D e 3D para as de desenho",
+      "Nível de experiência de acordo com a vaga: júnior, pleno ou sênior",
+      "Inglês: o anúncio é todo em inglês, então espere que seja cobrado",
+      "Enviar o currículo para cv@nsgeng.com com o nome da vaga no assunto do e-mail"
+    ],
+    "beneficios": [],
+    "pcd": false,
+    "videos": [
+      {
+        "id": "9ZlICqIBUMg",
+        "titulo": "Como conquistar uma vaga de engenheiro trainee offshore",
+        "porque": "O que as empresas olham no currículo de engenharia, principalmente no nível júnior."
+      },
+      {
+        "id": "sMTU-gjxcLU",
+        "titulo": "Como alinhar meu currículo para uma vaga offshore",
+        "porque": "São vagas diferentes na mesma empresa. Ajuste o currículo para a que você escolher."
+      },
+      {
+        "id": "ZEIQ2xRUfqQ",
+        "titulo": "O inglês que todo trabalhador offshore fala",
+        "porque": "O anúncio é em inglês. Chegue preparado para a entrevista."
+      }
+    ]
+  },
+  {
     "id": "macnor-auxiliar-de-mecanico-niteroi",
     "titulo": "Auxiliar de Mecânico",
     "empresa": "Macnor Marine",
