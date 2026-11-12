@@ -1,14 +1,14 @@
 {
- "atualizado": "2026-11-11T17:58:58+00:00",
+ "atualizado": "2026-11-12T18:28:57+00:00",
  "fontes": [
   {
    "empresa": "PRIO",
-   "vagas": 7,
+   "vagas": 8,
    "ok": true
   },
   {
    "empresa": "Brava Energia",
-   "vagas": 23,
+   "vagas": 24,
    "ok": true
   },
   {
@@ -18,12 +18,12 @@
   },
   {
    "empresa": "Foresea",
-   "vagas": 11,
+   "vagas": 10,
    "ok": true
   },
   {
    "empresa": "MODEC",
-   "vagas": 4,
+   "vagas": 7,
    "ok": true
   },
   {
@@ -38,7 +38,7 @@
   },
   {
    "empresa": "Constellation",
-   "vagas": 11,
+   "vagas": 10,
    "ok": true
   },
   {
@@ -48,7 +48,7 @@
   },
   {
    "empresa": "Origem Energia",
-   "vagas": 12,
+   "vagas": 11,
    "ok": true
   },
   {
@@ -58,7 +58,7 @@
   },
   {
    "empresa": "Kaefer",
-   "vagas": 2,
+   "vagas": 4,
    "ok": true
   },
   {
@@ -73,7 +73,7 @@
   },
   {
    "empresa": "OceanPact",
-   "vagas": 66,
+   "vagas": 65,
    "ok": true
   },
   {
@@ -83,7 +83,7 @@
   },
   {
    "empresa": "PetroReconcavo",
-   "vagas": 5,
+   "vagas": 6,
    "ok": true
   },
   {
@@ -98,17 +98,17 @@
   },
   {
    "empresa": "SBM Offshore",
-   "vagas": 14,
+   "vagas": 13,
    "ok": true
   },
   {
    "empresa": "TechnipFMC",
-   "vagas": 15,
+   "vagas": 19,
    "ok": true
   },
   {
    "empresa": "Subsea7",
-   "vagas": 27,
+   "vagas": 26,
    "ok": true
   },
   {
@@ -118,12 +118,12 @@
   },
   {
    "empresa": "Baker Hughes",
-   "vagas": 18,
+   "vagas": 17,
    "ok": true
   },
   {
    "empresa": "Shell",
-   "vagas": 2,
+   "vagas": 3,
    "ok": true
   },
   {
@@ -173,12 +173,12 @@
   },
   {
    "empresa": "Oceaneering",
-   "vagas": 14,
+   "vagas": 15,
    "ok": true
   },
   {
    "empresa": "Halliburton",
-   "vagas": 45,
+   "vagas": 36,
    "ok": true
   },
   {
@@ -198,7 +198,7 @@
   },
   {
    "empresa": "Mota-Engil",
-   "vagas": 6,
+   "vagas": 7,
    "ok": true
   },
   {
@@ -208,7 +208,7 @@
   },
   {
    "empresa": "Brunel",
-   "vagas": 8,
+   "vagas": 7,
    "ok": true
   },
   {
@@ -218,7 +218,7 @@
   },
   {
    "empresa": "Atlas NextWave",
-   "vagas": 35,
+   "vagas": 33,
    "ok": true
   },
   {
@@ -248,7 +248,7 @@
   },
   {
    "empresa": "CLAM ENGENHARIA",
-   "vagas": 23,
+   "vagas": 25,
    "ok": true
   },
   {
@@ -328,7 +328,7 @@
   },
   {
    "empresa": "American Bureau of Shipping",
-   "vagas": 4,
+   "vagas": 5,
    "ok": true
   },
   {
@@ -403,7 +403,7 @@
   },
   {
    "empresa": "ABS (American Bureau of Shipping)",
-   "vagas": 4,
+   "vagas": 5,
    "ok": true
   },
   {
@@ -1248,6 +1248,32 @@
    ]
   },
   {
+   "id": "brava-energia-t-cnico-de-mec-nica-offshore-10094",
+   "titulo": "Técnico de Mecânica Offshore",
+   "empresa": "Brava Energia",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://bravaenergia.gupy.io/jobs/12409493",
+   "regime": "Offshore",
+   "area": "Mecânica e manutenção",
+   "tema": "mecanica",
+   "banco": false,
+   "vistaEm": "2026-11-12",
+   "videos": [
+    [
+     "3yOdA-HnSeg",
+     "Fala de mecânico e manutenção, a função desta vaga."
+    ],
+    [
+     "AFQCQwo_5Kc",
+     "Fala de mecânico e manutenção, a função desta vaga."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ]
+   ]
+  },
+  {
    "id": "camorim-condutor-de-m-quinas-portu-rio-21639",
    "titulo": "Condutor de Máquinas (Portuário)",
    "empresa": "Camorim",
@@ -1344,32 +1370,6 @@
     [
      "QBVn43MYbVw",
      "Fala de operador de convés e marinheiro, a função desta vaga."
-    ],
-    [
-     "jurHKwqu7lg",
-     "Vídeo do canal sobre a Constellation. Ajuda a chegar preparado na entrevista."
-    ]
-   ]
-  },
-  {
-   "id": "constellation-imediato-25184",
-   "titulo": "Imediato",
-   "empresa": "Constellation",
-   "local": "Rio das Ostras, RJ",
-   "link": "https://theconstellation.gupy.io/jobs/12446487",
-   "regime": "Offshore",
-   "area": "Marítimo",
-   "tema": "maritimo",
-   "banco": false,
-   "vistaEm": "2026-10-15",
-   "videos": [
-    [
-     "IVGvdu3BEwI",
-     "Fala de oficial de náutica e DP, a função desta vaga."
-    ],
-    [
-     "WP-YqW9rW3E",
-     "Fala de oficial de náutica e DP, a função desta vaga."
     ],
     [
      "jurHKwqu7lg",
@@ -2206,6 +2206,32 @@
     [
      "kxMbpcGcYks",
      "Vídeo do canal sobre a Subsea7. Ajuda a chegar preparado na entrevista."
+    ]
+   ]
+  },
+  {
+   "id": "technipfmc-t-cnico-servi-os-offshore-i-e-ii-3606",
+   "titulo": "Técnico Serviços Offshore I e II",
+   "empresa": "TechnipFMC",
+   "local": "Macaé, RJ",
+   "link": "https://careers.technipfmc.com/job/Maca%C3%A9-T%C3%A9cnico-Servi%C3%A7os-Offshore-I-e-II-RJ-27970-020/1449999200/",
+   "regime": "Offshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-11-12",
+   "videos": [
+    [
+     "0uMWC3VBm8A",
+     "Vídeo do canal sobre a TechnipFMC. Ajuda a chegar preparado na entrevista."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
     ]
    ]
   },
@@ -3484,6 +3510,32 @@
    ]
   },
   {
+   "id": "american-bureau-of-shipping-apprentice-aprendiz-90153",
+   "titulo": "Apprentice/ Aprendiz",
+   "empresa": "American Bureau of Shipping",
+   "local": "Sao Paulo, SP",
+   "link": "https://hbbq.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/4986",
+   "regime": "Onshore",
+   "area": "Trainee e estágio",
+   "tema": "trainee",
+   "banco": false,
+   "vistaEm": "2026-11-09",
+   "videos": [
+    [
+     "iKkxsnu9rZ8",
+     "Fala de estágio, trainee e primeiro emprego, a função desta vaga."
+    ],
+    [
+     "4eWz_1hX3OI",
+     "Fala de estágio, trainee e primeiro emprego, a função desta vaga."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ]
+   ]
+  },
+  {
    "id": "american-bureau-of-shipping-apprentice-aprendiz-38588",
    "titulo": "Apprentice/ Aprendiz",
    "empresa": "American Bureau of Shipping",
@@ -3610,32 +3662,6 @@
     [
      "eHqY18dRP8Q",
      "As perguntas que mais aparecem na entrevista e como responder."
-    ]
-   ]
-  },
-  {
-   "id": "atlas-nextwave-almoxarife-32759",
-   "titulo": "Almoxarife",
-   "empresa": "Atlas NextWave",
-   "local": "Brasil",
-   "link": "https://atlasnextwave.com/job/almoxarife/",
-   "regime": "Onshore",
-   "area": "Outras",
-   "tema": "geral",
-   "banco": false,
-   "vistaEm": "2026-10-24",
-   "videos": [
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ],
-    [
-     "eHqY18dRP8Q",
-     "As perguntas que mais aparecem na entrevista e como responder."
-    ],
-    [
-     "lttRYy_P8T8",
-     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
     ]
    ]
   },
@@ -4052,32 +4078,6 @@
     [
      "eHqY18dRP8Q",
      "As perguntas que mais aparecem na entrevista e como responder."
-    ]
-   ]
-  },
-  {
-   "id": "atlas-nextwave-t-cnico-em-manuten-o-topside-91225",
-   "titulo": "Técnico em Manutenção Topside",
-   "empresa": "Atlas NextWave",
-   "local": "Brasil",
-   "link": "https://atlasnextwave.com/job/tecnico-em-manutencao-topside/",
-   "regime": "Onshore",
-   "area": "Mecânica e manutenção",
-   "tema": "mecanica",
-   "banco": false,
-   "vistaEm": "2026-10-28",
-   "videos": [
-    [
-     "3yOdA-HnSeg",
-     "Fala de mecânico e manutenção, a função desta vaga."
-    ],
-    [
-     "AFQCQwo_5Kc",
-     "Fala de mecânico e manutenção, a função desta vaga."
-    ],
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
     ]
    ]
   },
@@ -4806,32 +4806,6 @@
     [
      "eHqY18dRP8Q",
      "As perguntas que mais aparecem na entrevista e como responder."
-    ]
-   ]
-  },
-  {
-   "id": "baker-hughes-inspetor-de-equipamentos-t-a-14518",
-   "titulo": "Inspetor de Equipamentos (T&A)",
-   "empresa": "Baker Hughes",
-   "local": "BR-Parana-Curitiba-Rua Paul Garfunkel No. 1245, Bairro Cidade Industrial",
-   "link": "https://bakerhughes.wd5.myworkdayjobs.com/BakerHughes/job/BR-Parana-Curitiba-Rua-Paul-Garfunkel-No-1245-Bairro-Cidade-Industrial/Inspetor-de-Equipamentos--T-A-_R168233",
-   "regime": "Onshore",
-   "area": "Outras",
-   "tema": "geral",
-   "banco": false,
-   "vistaEm": "2026-11-10",
-   "videos": [
-    [
-     "YTu30XI9rhg",
-     "Fala de inspeção e qualidade, a função desta vaga."
-    ],
-    [
-     "nmu4AyYiBC0",
-     "Fala de inspeção e qualidade, a função desta vaga."
-    ],
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
     ]
    ]
   },
@@ -5824,32 +5798,6 @@
    ]
   },
   {
-   "id": "brunel-analista-de-treinamento-e-desenvolvimento-pleno-70841",
-   "titulo": "Analista de Treinamento e Desenvolvimento Pleno",
-   "empresa": "Brunel",
-   "local": "Rio de Janeiro, RJ",
-   "link": "https://www.brunel.net/en/jobs/analista-de-treinamento-e-desenvolvimento-pleno-tr-305043",
-   "regime": "Onshore",
-   "area": "Outras",
-   "tema": "geral",
-   "banco": false,
-   "vistaEm": "2026-10-15",
-   "videos": [
-    [
-     "lttRYy_P8T8",
-     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
-    ],
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ],
-    [
-     "eHqY18dRP8Q",
-     "As perguntas que mais aparecem na entrevista e como responder."
-    ]
-   ]
-  },
-  {
    "id": "brunel-engenheiro-de-planejamento-e-controle-80744",
    "titulo": "Engenheiro de Planejamento e Controle",
    "empresa": "Brunel",
@@ -6110,6 +6058,32 @@
    ]
   },
   {
+   "id": "clam-engenharia-analista-ambiental-j-nior-belo-horizonte-mg-85596",
+   "titulo": "Analista Ambiental Júnior - Belo Horizonte MG",
+   "empresa": "CLAM ENGENHARIA",
+   "local": "Brasil",
+   "link": "https://clam.inhire.com.br/vagas/2388bbc8-499b-4f08-a2fb-01157f31e358",
+   "regime": "Onshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-11-12",
+   "videos": [
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
    "id": "clam-engenharia-analista-ambiental-pleno-espeleologia-campo-belo-horizonte-74237",
    "titulo": "Analista Ambiental Pleno (Espeleologia - Campo) - Belo Horizonte",
    "empresa": "CLAM ENGENHARIA",
@@ -6276,6 +6250,32 @@
    "tema": "geral",
    "banco": false,
    "vistaEm": "2026-10-27",
+   "videos": [
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
+   "id": "clam-engenharia-assistente-administrativo-belo-horizonte-mg-63456",
+   "titulo": "Assistente Administrativo - Belo Horizonte MG",
+   "empresa": "CLAM ENGENHARIA",
+   "local": "Brasil",
+   "link": "https://clam.inhire.com.br/vagas/2190c5b7-46a9-48b9-9869-8198f06e7538",
+   "regime": "Onshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-11-12",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -8060,32 +8060,6 @@
    ]
   },
   {
-   "id": "foresea-analista-de-suprimentos-ii-aquisi-o-de-materiais-supply-chain-analyst-ii-47749",
-   "titulo": "Analista de Suprimentos II (Aquisição de Materiais) | Supply Chain Analyst II",
-   "empresa": "Foresea",
-   "local": "Macaé, RJ",
-   "link": "https://foresea.gupy.io/jobs/12777429",
-   "regime": "Onshore",
-   "area": "Outras",
-   "tema": "geral",
-   "banco": false,
-   "vistaEm": "2026-10-24",
-   "videos": [
-    [
-     "wNai9-JZxOI",
-     "Vídeo do canal sobre a Foresea. Ajuda a chegar preparado na entrevista."
-    ],
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ],
-    [
-     "eHqY18dRP8Q",
-     "As perguntas que mais aparecem na entrevista e como responder."
-    ]
-   ]
-  },
-  {
    "id": "foresea-supervisor-de-subsea-s-nior-senior-subsea-supervisor-33490",
    "titulo": "Supervisor de Subsea Sênior | Senior Subsea Supervisor",
    "empresa": "Foresea",
@@ -8290,32 +8264,6 @@
     [
      "sMTU-gjxcLU",
      "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ]
-   ]
-  },
-  {
-   "id": "halliburton-analista-logistica-pleno-exporta-o-77237",
-   "titulo": "ANALISTA LOGISTICA PLENO [Exportação]",
-   "empresa": "Halliburton",
-   "local": "Macaé, RJ",
-   "link": "https://jobs.halliburton.com/job/Macae-BR-Maca%C3%A9-ANALISTA-LOGISTICA-PLENO-Exporta%C3%A7%C3%A3o-RJ-27930-070/1441920500/",
-   "regime": "Onshore",
-   "area": "Outras",
-   "tema": "geral",
-   "banco": false,
-   "vistaEm": "2026-10-15",
-   "videos": [
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ],
-    [
-     "eHqY18dRP8Q",
-     "As perguntas que mais aparecem na entrevista e como responder."
-    ],
-    [
-     "lttRYy_P8T8",
-     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
     ]
    ]
   },
@@ -8580,32 +8528,6 @@
    ]
   },
   {
-   "id": "halliburton-especialista-em-servi-os-hwo-production-solutions-57791",
-   "titulo": "Especialista em Serviços HWO (Production Solutions)",
-   "empresa": "Halliburton",
-   "local": "Mossoró, RN",
-   "link": "https://jobs.halliburton.com/job/Alto-Sumare-Brasil-RN-Mossor%C3%B3-Especialista-em-Servi%C3%A7os-HWO-%28Production-Solutions%29-RN-59633-730/1448361500/",
-   "regime": "Onshore",
-   "area": "Operação e produção",
-   "tema": "operacao",
-   "banco": false,
-   "vistaEm": "2026-11-06",
-   "videos": [
-    [
-     "lttRYy_P8T8",
-     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
-    ],
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ],
-    [
-     "eHqY18dRP8Q",
-     "As perguntas que mais aparecem na entrevista e como responder."
-    ]
-   ]
-  },
-  {
    "id": "halliburton-field-engineer-mlwd-sperry-drilling-svcs-55185",
    "titulo": "Field Engineer MLWD - Sperry Drilling Svcs",
    "empresa": "Halliburton",
@@ -8658,37 +8580,37 @@
    ]
   },
   {
-   "id": "halliburton-jovem-aprendiz-production-enhancement-69984",
-   "titulo": "Jovem Aprendiz (Production Enhancement)",
-   "empresa": "Halliburton",
-   "local": "Catu, BA",
-   "link": "https://jobs.halliburton.com/job/Catu-Brasil-BA-Catu-Jovem-Aprendiz-%28Production-Enhancement%29-BA-48110-000/1448272000/",
-   "regime": "Onshore",
-   "area": "Operação e produção",
-   "tema": "operacao",
-   "banco": false,
-   "vistaEm": "2026-11-06",
-   "videos": [
-    [
-     "iKkxsnu9rZ8",
-     "Fala de estágio, trainee e primeiro emprego, a função desta vaga."
-    ],
-    [
-     "4eWz_1hX3OI",
-     "Fala de estágio, trainee e primeiro emprego, a função desta vaga."
-    ],
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ]
-   ]
-  },
-  {
    "id": "halliburton-landmark-57194",
    "titulo": "Landmark",
    "empresa": "Halliburton",
    "local": "Rio de Janeiro, RJ",
    "link": "https://jobs.halliburton.com/job/Rio-de-Janeiro-Brazil-RJ-Geology-Consultant-Landmark-RJ-20011-000/1449783200/",
+   "regime": "Onshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-11-11",
+   "videos": [
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
+   "id": "halliburton-landmark-59080",
+   "titulo": "Landmark",
+   "empresa": "Halliburton",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://jobs.halliburton.com/job/Rio-de-Janeiro-Brazil-RJ-Data-Management-Consultant-Landmark-RJ-20011-000/1450023000/",
    "regime": "Onshore",
    "area": "Outras",
    "tema": "geral",
@@ -8810,58 +8732,6 @@
     [
      "sMTU-gjxcLU",
      "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ]
-   ]
-  },
-  {
-   "id": "halliburton-operador-de-servi-os-i-hwo-production-solutions-68046",
-   "titulo": "Operador de Serviços I HWO (Production Solutions)",
-   "empresa": "Halliburton",
-   "local": "Macaé, RJ",
-   "link": "https://jobs.halliburton.com/job/Macae-Brasil-RJ-Maca%C3%A9-Operador-de-Servi%C3%A7os-I-HWO-%28Production-Solutions%29-RJ-27930-070/1448362600/",
-   "regime": "Onshore",
-   "area": "Operação e produção",
-   "tema": "operacao",
-   "banco": false,
-   "vistaEm": "2026-11-05",
-   "videos": [
-    [
-     "lttRYy_P8T8",
-     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
-    ],
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ],
-    [
-     "eHqY18dRP8Q",
-     "As perguntas que mais aparecem na entrevista e como responder."
-    ]
-   ]
-  },
-  {
-   "id": "halliburton-operador-de-servi-os-i-hwo-production-solutions-22384",
-   "titulo": "Operador de Serviços I HWO (Production Solutions)",
-   "empresa": "Halliburton",
-   "local": "Macaé, RJ",
-   "link": "https://jobs.halliburton.com/job/Macae-Brasil-RJ-Maca%C3%A9-Operador-de-Servi%C3%A7os-I-HWO-%28Production-Solutions%29-RJ-27930-070/1448355600/",
-   "regime": "Onshore",
-   "area": "Operação e produção",
-   "tema": "operacao",
-   "banco": false,
-   "vistaEm": "2026-11-05",
-   "videos": [
-    [
-     "lttRYy_P8T8",
-     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
-    ],
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ],
-    [
-     "eHqY18dRP8Q",
-     "As perguntas que mais aparecem na entrevista e como responder."
     ]
    ]
   },
@@ -9032,110 +8902,6 @@
    "tema": "geral",
    "banco": false,
    "vistaEm": "2026-10-15",
-   "videos": [
-    [
-     "lttRYy_P8T8",
-     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
-    ],
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ],
-    [
-     "eHqY18dRP8Q",
-     "As perguntas que mais aparecem na entrevista e como responder."
-    ]
-   ]
-  },
-  {
-   "id": "halliburton-software-development-team-lead-21216",
-   "titulo": "Software Development Team Lead",
-   "empresa": "Halliburton",
-   "local": "Rio de Janeiro, RJ",
-   "link": "https://jobs.halliburton.com/job/Rio-de-Janeiro-Brazil-Remote-Software-Development-Team-Lead-RJ-291941/1414738300/",
-   "regime": "Onshore",
-   "area": "Outras",
-   "tema": "geral",
-   "banco": false,
-   "vistaEm": "2026-10-15",
-   "videos": [
-    [
-     "lttRYy_P8T8",
-     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
-    ],
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ],
-    [
-     "eHqY18dRP8Q",
-     "As perguntas que mais aparecem na entrevista e como responder."
-    ]
-   ]
-  },
-  {
-   "id": "halliburton-supervisor-de-servi-os-ii-hwo-production-solutions-87446",
-   "titulo": "Supervisor de Serviços II HWO (Production Solutions)",
-   "empresa": "Halliburton",
-   "local": "Catu, BA",
-   "link": "https://jobs.halliburton.com/job/Catu-Brasil-BA-Catu-Supervisor-de-Servi%C3%A7os-II-HWO-%28Production-Solutions%29-BA-48110-000/1448356200/",
-   "regime": "Onshore",
-   "area": "Operação e produção",
-   "tema": "operacao",
-   "banco": false,
-   "vistaEm": "2026-11-06",
-   "videos": [
-    [
-     "lttRYy_P8T8",
-     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
-    ],
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ],
-    [
-     "eHqY18dRP8Q",
-     "As perguntas que mais aparecem na entrevista e como responder."
-    ]
-   ]
-  },
-  {
-   "id": "halliburton-supervisor-de-servi-os-ii-hwo-production-solutions-97020",
-   "titulo": "Supervisor de Serviços II HWO (Production Solutions)",
-   "empresa": "Halliburton",
-   "local": "Mossoró, RN",
-   "link": "https://jobs.halliburton.com/job/Alto-Sumare-Brasil-RN-Mossor%C3%B3-Supervisor-de-Servi%C3%A7os-II-HWO-%28Production-Solutions%29-RN-59633-730/1448358400/",
-   "regime": "Onshore",
-   "area": "Operação e produção",
-   "tema": "operacao",
-   "banco": false,
-   "vistaEm": "2026-11-06",
-   "videos": [
-    [
-     "lttRYy_P8T8",
-     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
-    ],
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ],
-    [
-     "eHqY18dRP8Q",
-     "As perguntas que mais aparecem na entrevista e como responder."
-    ]
-   ]
-  },
-  {
-   "id": "halliburton-supervisor-de-servi-os-iii-hwo-production-solutions-27844",
-   "titulo": "Supervisor de Serviços III HWO (Production Solutions)",
-   "empresa": "Halliburton",
-   "local": "Mossoró, RN",
-   "link": "https://jobs.halliburton.com/job/Alto-Sumare-Brasil-RN-Mossor%C3%B3-Supervisor-de-Servi%C3%A7os-III-HWO-%28Production-Solutions%29-RN-59633-730/1448359700/",
-   "regime": "Onshore",
-   "area": "Operação e produção",
-   "tema": "operacao",
-   "banco": false,
-   "vistaEm": "2026-11-06",
    "videos": [
     [
      "lttRYy_P8T8",
@@ -9360,32 +9126,6 @@
    ]
   },
   {
-   "id": "halliburton-t-cnico-em-manuten-o-completion-tools-7169",
-   "titulo": "Técnico em Manutenção (Completion Tools)",
-   "empresa": "Halliburton",
-   "local": "Macaé, RJ",
-   "link": "https://jobs.halliburton.com/job/Macae-Brasil-RJ-Maca%C3%A9-T%C3%A9cnico-em-Manuten%C3%A7%C3%A3o-%28Completion-Tools%29-RJ-27930-070/1447608300/",
-   "regime": "Onshore",
-   "area": "Mecânica e manutenção",
-   "tema": "mecanica",
-   "banco": false,
-   "vistaEm": "2026-11-04",
-   "videos": [
-    [
-     "3yOdA-HnSeg",
-     "Fala de mecânico e manutenção, a função desta vaga."
-    ],
-    [
-     "AFQCQwo_5Kc",
-     "Fala de mecânico e manutenção, a função desta vaga."
-    ],
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ]
-   ]
-  },
-  {
    "id": "halliburton-well-design-consultant-sperry-drilling-svcs-99089",
    "titulo": "Well Design Consultant - Sperry Drilling Svcs",
    "empresa": "Halliburton",
@@ -9464,11 +9204,63 @@
    ]
   },
   {
+   "id": "kaefer-analista-de-suprimentos-indaiatuba-sp-44133",
+   "titulo": "Analista de Suprimentos - Indaiatuba/SP",
+   "empresa": "Kaefer",
+   "local": "Indaiatuba, SP",
+   "link": "https://kaeferbrasil.gupy.io/jobs/12874163",
+   "regime": "Onshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-11-12",
+   "videos": [
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ],
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ]
+   ]
+  },
+  {
    "id": "kaefer-auxiliar-de-almoxarifado-indaiatuba-sp-42266",
    "titulo": "Auxiliar de Almoxarifado - Indaiatuba/SP",
    "empresa": "Kaefer",
    "local": "Indaiatuba, SP",
    "link": "https://kaeferbrasil.gupy.io/jobs/12697376",
+   "regime": "Onshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-15",
+   "videos": [
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ],
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ]
+   ]
+  },
+  {
+   "id": "kaefer-auxiliar-de-almoxarifado-indaiatuba-sp-87376",
+   "titulo": "Auxiliar de Almoxarifado - Indaiatuba/SP",
+   "empresa": "Kaefer",
+   "local": "Indaiatuba, SP",
+   "link": "https://kaeferbrasil.gupy.io/jobs/12874857",
    "regime": "Onshore",
    "area": "Outras",
    "tema": "geral",
@@ -10058,6 +9850,84 @@
     [
      "7u0m6SwMtzc",
      "Vídeo do canal sobre a MODEC. Ajuda a chegar preparado na entrevista."
+    ]
+   ]
+  },
+  {
+   "id": "modec-especialista-em-controle-de-trabalho-cow-specialist-35714",
+   "titulo": "ESPECIALISTA EM CONTROLE DE TRABALHO / COW Specialist",
+   "empresa": "MODEC",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://modec-br.gupy.io/jobs/11486799",
+   "regime": "Onshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-11-12",
+   "videos": [
+    [
+     "7u0m6SwMtzc",
+     "Vídeo do canal sobre a MODEC. Ajuda a chegar preparado na entrevista."
+    ],
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ]
+   ]
+  },
+  {
+   "id": "modec-supervisor-de-integridade-integrity-supervisor-26108",
+   "titulo": "SUPERVISOR DE INTEGRIDADE / Integrity Supervisor",
+   "empresa": "MODEC",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://modec-br.gupy.io/jobs/12878372",
+   "regime": "Onshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-11-12",
+   "videos": [
+    [
+     "7u0m6SwMtzc",
+     "Vídeo do canal sobre a MODEC. Ajuda a chegar preparado na entrevista."
+    ],
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ]
+   ]
+  },
+  {
+   "id": "modec-supervisor-de-pra-a-de-m-quinas-engine-room-supervisor-87935",
+   "titulo": "SUPERVISOR DE PRAÇA DE MÁQUINAS / Engine Room Supervisor",
+   "empresa": "MODEC",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://modec-br.gupy.io/jobs/12878380",
+   "regime": "Onshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-15",
+   "videos": [
+    [
+     "7u0m6SwMtzc",
+     "Vídeo do canal sobre a MODEC. Ajuda a chegar preparado na entrevista."
+    ],
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
     ]
    ]
   },
@@ -10816,6 +10686,32 @@
    ]
   },
   {
+   "id": "mota-engil-controller-57501",
+   "titulo": "Controller",
+   "empresa": "Mota-Engil",
+   "local": "São Paulo, SP",
+   "link": "https://careers.mota-engil.com/job/S%C3%A3o-Paulo-Controller-SP/1456990333/",
+   "regime": "Onshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-11-12",
+   "videos": [
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
    "id": "mota-engil-coordenador-a-manuten-o-72315",
    "titulo": "Coordenador/a Manutenção",
    "empresa": "Mota-Engil",
@@ -10894,11 +10790,11 @@
    ]
   },
   {
-   "id": "mota-engil-engenheiro-a-de-planejamento-74919",
+   "id": "mota-engil-engenheiro-a-de-planejamento-51869",
    "titulo": "Engenheiro/a de Planejamento",
    "empresa": "Mota-Engil",
    "local": "Macaé, RJ",
-   "link": "https://careers.mota-engil.com/job/Maca%C3%A9-Engenheiroa-de-Planejamento-RJ/1454919133/",
+   "link": "https://careers.mota-engil.com/job/Maca%C3%A9-Engenheiroa-de-Planejamento-RJ/1454920033/",
    "regime": "Onshore",
    "area": "Engenharia",
    "tema": "engenharia",
@@ -10920,11 +10816,11 @@
    ]
   },
   {
-   "id": "mota-engil-engenheiro-a-de-planejamento-51869",
+   "id": "mota-engil-engenheiro-a-de-planejamento-74919",
    "titulo": "Engenheiro/a de Planejamento",
    "empresa": "Mota-Engil",
    "local": "Macaé, RJ",
-   "link": "https://careers.mota-engil.com/job/Maca%C3%A9-Engenheiroa-de-Planejamento-RJ/1454920033/",
+   "link": "https://careers.mota-engil.com/job/Maca%C3%A9-Engenheiroa-de-Planejamento-RJ/1454919133/",
    "regime": "Onshore",
    "area": "Engenharia",
    "tema": "engenharia",
@@ -12610,32 +12506,6 @@
    ]
   },
   {
-   "id": "oceanpact-t-cnico-em-eletr-nica-36565",
-   "titulo": "Técnico em Eletrônica",
-   "empresa": "OceanPact",
-   "local": "Niterói, RJ",
-   "link": "https://oceanpact.inhire.com.br/vagas/3e26b546-72d0-42b7-a400-2d6ae1017e68",
-   "regime": "Onshore",
-   "area": "Elétrica e instrumentação",
-   "tema": "eletrica",
-   "banco": false,
-   "vistaEm": "2026-10-15",
-   "videos": [
-    [
-     "lttRYy_P8T8",
-     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
-    ],
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ],
-    [
-     "eHqY18dRP8Q",
-     "As perguntas que mais aparecem na entrevista e como responder."
-    ]
-   ]
-  },
-  {
    "id": "oceanpact-t-cnico-em-seguran-a-do-trabalho-onshore-63617",
    "titulo": "Técnico em Segurança do Trabalho (ONSHORE)",
    "empresa": "OceanPact",
@@ -12736,6 +12606,32 @@
     [
      "eHqY18dRP8Q",
      "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
+   "id": "oceaneering-buyer-ii-64118",
+   "titulo": "Buyer II",
+   "empresa": "Oceaneering",
+   "local": "Niteroi, RJ",
+   "link": "https://ebfr.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/11909",
+   "regime": "Onshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-11-12",
+   "videos": [
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ],
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
     ]
    ]
   },
@@ -13390,32 +13286,6 @@
    ]
   },
   {
-   "id": "origem-energia-engenheiro-s-nior-de-reservat-rio-matriz-rio-de-janeiro-6514",
-   "titulo": "Engenheiro Sênior de Reservatório  - Matriz (Rio de Janeiro)",
-   "empresa": "Origem Energia",
-   "local": "Rio de Janeiro, RJ",
-   "link": "https://origemenergia.gupy.io/jobs/12784659",
-   "regime": "Onshore",
-   "area": "Engenharia",
-   "tema": "engenharia",
-   "banco": false,
-   "vistaEm": "2026-10-27",
-   "videos": [
-    [
-     "9ZlICqIBUMg",
-     "Fala de engenharia, a função desta vaga."
-    ],
-    [
-     "0uMWC3VBm8A",
-     "Fala de engenharia, a função desta vaga."
-    ],
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ]
-   ]
-  },
-  {
    "id": "origem-energia-engenheiro-de-manuten-o-matriz-rio-de-janeiro-77830",
    "titulo": "Engenheiro de Manutenção - Matriz (Rio de Janeiro)",
    "empresa": "Origem Energia",
@@ -13464,6 +13334,32 @@
     [
      "eHqY18dRP8Q",
      "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
+   "id": "prio-analista-de-comunica-o-externa-jr-redes-sociais-52362",
+   "titulo": "Analista de Comunicação Externa JR (Redes Sociais)",
+   "empresa": "PRIO",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://prio.gupy.io/jobs/12880893",
+   "regime": "Onshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-11-12",
+   "videos": [
+    [
+     "bY0r9BqrwYw",
+     "Vídeo do canal sobre a PRIO. Ajuda a chegar preparado na entrevista."
+    ],
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
     ]
    ]
   },
@@ -13754,6 +13650,32 @@
    ]
   },
   {
+   "id": "petroreconcavo-coordenador-a-de-produ-o-polo-sabi-91682",
+   "titulo": "Coordenador (a) de Produção - Polo Sabiá",
+   "empresa": "PetroReconcavo",
+   "local": "Brasil",
+   "link": "https://petroreconcavo.inhire.com.br/processoseletivointerno/vagas/20d8d693-c114-47c8-8bd8-aa7756120067",
+   "regime": "Onshore",
+   "area": "Operação e produção",
+   "tema": "operacao",
+   "banco": false,
+   "vistaEm": "2026-11-12",
+   "videos": [
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
    "id": "petroreconcavo-engenheiro-a-de-seguran-a-do-trabalho-ii-77184",
    "titulo": "Engenheiro(a) de Segurança do Trabalho II",
    "empresa": "PetroReconcavo",
@@ -13941,32 +13863,6 @@
    "empresa": "SBM Offshore",
    "local": "Santos, SP",
    "link": "https://careers.sbmoffshore.com/job/Santos-Buyer-11035-260/1376209157/",
-   "regime": "Onshore",
-   "area": "Outras",
-   "tema": "geral",
-   "banco": false,
-   "vistaEm": "2026-10-29",
-   "videos": [
-    [
-     "fqj2M7KTR0U",
-     "Vídeo do canal sobre a SBM Offshore. Ajuda a chegar preparado na entrevista."
-    ],
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ],
-    [
-     "eHqY18dRP8Q",
-     "As perguntas que mais aparecem na entrevista e como responder."
-    ]
-   ]
-  },
-  {
-   "id": "sbm-offshore-buyer-91870",
-   "titulo": "Buyer",
-   "empresa": "SBM Offshore",
-   "local": "Rio de Janeiro, RJ",
-   "link": "https://careers.sbmoffshore.com/job/Rio-de-Janeiro-Buyer-20021-290/1376207557/",
    "regime": "Onshore",
    "area": "Outras",
    "tema": "geral",
@@ -14300,6 +14196,32 @@
    ]
   },
   {
+   "id": "shell-sc-commercial-specialist-29661",
+   "titulo": "SC Commercial Specialist",
+   "empresa": "Shell",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://shell.wd3.myworkdayjobs.com/ShellCareers/job/Rio-De-Janeiro---Ventura-Office/SC-Commercial-Specialist_R211187-1",
+   "regime": "Onshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-11-12",
+   "videos": [
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
    "id": "shell-sc-supply-base-lead-53184",
    "titulo": "SC Supply Base Lead",
    "empresa": "Shell",
@@ -14374,6 +14296,32 @@
     [
      "lttRYy_P8T8",
      "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ]
+   ]
+  },
+  {
+   "id": "subsea7-ab-crane-operator-51480",
+   "titulo": "AB/Crane Operator",
+   "empresa": "Subsea7",
+   "local": "Brasil",
+   "link": "https://careers.subsea7.com/job/Offshore-ABCrane-Operator/1367967655/",
+   "regime": "Onshore",
+   "area": "Operação e produção",
+   "tema": "operacao",
+   "banco": false,
+   "vistaEm": "2026-11-12",
+   "videos": [
+    [
+     "8UKg6ApoNcw",
+     "Fala de guindasteiro e movimentação de carga, a função desta vaga."
+    ],
+    [
+     "S3f4xuHKtQM",
+     "Fala de guindasteiro e movimentação de carga, a função desta vaga."
+    ],
+    [
+     "kxMbpcGcYks",
+     "Vídeo do canal sobre a Subsea7. Ajuda a chegar preparado na entrevista."
     ]
    ]
   },
@@ -14456,6 +14404,84 @@
    ]
   },
   {
+   "id": "subsea7-consultor-recursos-humanos-55130",
+   "titulo": "Consultor Recursos Humanos",
+   "empresa": "Subsea7",
+   "local": "Brasil",
+   "link": "https://careers.subsea7.com/job/Rio-de-Janeiro-Consultor-Recursos-Humanos/1373523355/",
+   "regime": "Onshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-11-12",
+   "videos": [
+    [
+     "kxMbpcGcYks",
+     "Vídeo do canal sobre a Subsea7. Ajuda a chegar preparado na entrevista."
+    ],
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ]
+   ]
+  },
+  {
+   "id": "subsea7-customized-solutions-project-specialist-26007",
+   "titulo": "Customized Solutions Project Specialist",
+   "empresa": "Subsea7",
+   "local": "Brasil",
+   "link": "https://careers.subsea7.com/job/Houston-Customized-Solutions-Project-Specialist-TX-77001/1376596955/",
+   "regime": "Onshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-11-12",
+   "videos": [
+    [
+     "kxMbpcGcYks",
+     "Vídeo do canal sobre a Subsea7. Ajuda a chegar preparado na entrevista."
+    ],
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ]
+   ]
+  },
+  {
+   "id": "subsea7-drafting-intern-33749",
+   "titulo": "Drafting Intern",
+   "empresa": "Subsea7",
+   "local": "Brasil",
+   "link": "https://careers.subsea7.com/job/Houston-Drafting-Intern-TX-77001/1376594555/",
+   "regime": "Onshore",
+   "area": "Trainee e estágio",
+   "tema": "trainee",
+   "banco": false,
+   "vistaEm": "2026-11-12",
+   "videos": [
+    [
+     "iKkxsnu9rZ8",
+     "Fala de estágio, trainee e primeiro emprego, a função desta vaga."
+    ],
+    [
+     "4eWz_1hX3OI",
+     "Fala de estágio, trainee e primeiro emprego, a função desta vaga."
+    ],
+    [
+     "kxMbpcGcYks",
+     "Vídeo do canal sobre a Subsea7. Ajuda a chegar preparado na entrevista."
+    ]
+   ]
+  },
+  {
    "id": "subsea7-engenheira-o-s-nior-de-instala-o-42307",
    "titulo": "Engenheira(o) Sênior de Instalação",
    "empresa": "Subsea7",
@@ -14508,16 +14534,16 @@
    ]
   },
   {
-   "id": "subsea7-engenheiro-sr-pr-comissionamento-23436",
-   "titulo": "Engenheiro Sr - Pré-Comissionamento",
+   "id": "subsea7-engineer-level-i-projects-237",
+   "titulo": "Engineer Level I - Projects",
    "empresa": "Subsea7",
    "local": "Brasil",
-   "link": "https://careers.subsea7.com/job/Rio-de-Janeiro-Engenheiro-Sr-Pr%C3%A9-Comissionamento/1366995155/",
+   "link": "https://careers.subsea7.com/job/Merida-Engineer-Level-I-Projects/1376592055/",
    "regime": "Onshore",
    "area": "Engenharia",
    "tema": "engenharia",
    "banco": false,
-   "vistaEm": "2026-10-31",
+   "vistaEm": "2026-11-12",
    "videos": [
     [
      "9ZlICqIBUMg",
@@ -14534,16 +14560,16 @@
    ]
   },
   {
-   "id": "subsea7-engineer-level-ii-structures-29390",
-   "titulo": "Engineer Level II - Structures",
+   "id": "subsea7-engineer-level-i-structures-15939",
+   "titulo": "Engineer Level I - Structures",
    "empresa": "Subsea7",
    "local": "Brasil",
-   "link": "https://careers.subsea7.com/job/Houston-Engineer-Level-II-Structures-TX-77001/1376592655/",
+   "link": "https://careers.subsea7.com/job/Merida-Engineer-Level-I-Structures/1376602755/",
    "regime": "Onshore",
    "area": "Engenharia",
    "tema": "engenharia",
    "banco": false,
-   "vistaEm": "2026-11-11",
+   "vistaEm": "2026-11-12",
    "videos": [
     [
      "9ZlICqIBUMg",
@@ -14556,6 +14582,32 @@
     [
      "kxMbpcGcYks",
      "Vídeo do canal sobre a Subsea7. Ajuda a chegar preparado na entrevista."
+    ]
+   ]
+  },
+  {
+   "id": "subsea7-equipment-administrator-32271",
+   "titulo": "Equipment Administrator",
+   "empresa": "Subsea7",
+   "local": "Brasil",
+   "link": "https://careers.subsea7.com/job/Glasgow-Equipment-Administrator/1376686855/",
+   "regime": "Onshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-11-12",
+   "videos": [
+    [
+     "kxMbpcGcYks",
+     "Vídeo do canal sobre a Subsea7. Ajuda a chegar preparado na entrevista."
+    ],
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
     ]
    ]
   },
@@ -14608,32 +14660,6 @@
     [
      "kxMbpcGcYks",
      "Vídeo do canal sobre a Subsea7. Ajuda a chegar preparado na entrevista."
-    ]
-   ]
-  },
-  {
-   "id": "subsea7-hr-advisor-hrbp-offshore-delivery-56223",
-   "titulo": "HR Advisor (HRBP Offshore Delivery)",
-   "empresa": "Subsea7",
-   "local": "Brasil",
-   "link": "https://careers.subsea7.com/job/Rio-de-Janeiro-HR-Advisor-%28HRBP-Offshore-Delivery%29/1373523355/",
-   "regime": "Onshore",
-   "area": "Outras",
-   "tema": "geral",
-   "banco": false,
-   "vistaEm": "2026-10-15",
-   "videos": [
-    [
-     "kxMbpcGcYks",
-     "Vídeo do canal sobre a Subsea7. Ajuda a chegar preparado na entrevista."
-    ],
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ],
-    [
-     "eHqY18dRP8Q",
-     "As perguntas que mais aparecem na entrevista e como responder."
     ]
    ]
   },
@@ -14716,32 +14742,6 @@
    ]
   },
   {
-   "id": "subsea7-mechanical-engineer-customized-solutions-91868",
-   "titulo": "Mechanical Engineer - Customized Solutions",
-   "empresa": "Subsea7",
-   "local": "Brasil",
-   "link": "https://careers.subsea7.com/job/Houston-Mechanical-Engineer-Customized-Solutions-TX-77001/1376598155/",
-   "regime": "Onshore",
-   "area": "Mecânica e manutenção",
-   "tema": "mecanica",
-   "banco": false,
-   "vistaEm": "2026-11-11",
-   "videos": [
-    [
-     "3yOdA-HnSeg",
-     "Fala de mecânico e manutenção, a função desta vaga."
-    ],
-    [
-     "AFQCQwo_5Kc",
-     "Fala de mecânico e manutenção, a função desta vaga."
-    ],
-    [
-     "kxMbpcGcYks",
-     "Vídeo do canal sobre a Subsea7. Ajuda a chegar preparado na entrevista."
-    ]
-   ]
-  },
-  {
    "id": "subsea7-operations-engineer-ii-ubu-55581",
    "titulo": "Operations Engineer II - UBU",
    "empresa": "Subsea7",
@@ -14794,32 +14794,6 @@
    ]
   },
   {
-   "id": "subsea7-project-engineer-ii-82843",
-   "titulo": "Project Engineer II",
-   "empresa": "Subsea7",
-   "local": "Brasil",
-   "link": "https://careers.subsea7.com/job/Houston-Project-Engineer-II-TX-77001/1376593355/",
-   "regime": "Onshore",
-   "area": "Engenharia",
-   "tema": "engenharia",
-   "banco": false,
-   "vistaEm": "2026-11-11",
-   "videos": [
-    [
-     "9ZlICqIBUMg",
-     "Fala de engenharia, a função desta vaga."
-    ],
-    [
-     "0uMWC3VBm8A",
-     "Fala de engenharia, a função desta vaga."
-    ],
-    [
-     "kxMbpcGcYks",
-     "Vídeo do canal sobre a Subsea7. Ajuda a chegar preparado na entrevista."
-    ]
-   ]
-  },
-  {
    "id": "subsea7-quality-lead-project-delivery-manager-11301",
    "titulo": "Quality Lead (Project Delivery Manager)",
    "empresa": "Subsea7",
@@ -14846,72 +14820,20 @@
    ]
   },
   {
-   "id": "subsea7-senior-engineer-fabrication-60084",
-   "titulo": "Senior Engineer - Fabrication",
-   "empresa": "Subsea7",
-   "local": "Brasil",
-   "link": "https://careers.subsea7.com/job/Houston-Senior-Engineer-Fabrication-TX-77001/1376572955/",
-   "regime": "Onshore",
-   "area": "Engenharia",
-   "tema": "engenharia",
-   "banco": false,
-   "vistaEm": "2026-11-11",
-   "videos": [
-    [
-     "9ZlICqIBUMg",
-     "Fala de engenharia, a função desta vaga."
-    ],
-    [
-     "0uMWC3VBm8A",
-     "Fala de engenharia, a função desta vaga."
-    ],
-    [
-     "kxMbpcGcYks",
-     "Vídeo do canal sobre a Subsea7. Ajuda a chegar preparado na entrevista."
-    ]
-   ]
-  },
-  {
-   "id": "subsea7-senior-engineer-mooring-45797",
-   "titulo": "Senior Engineer Mooring",
-   "empresa": "Subsea7",
-   "local": "Brasil",
-   "link": "https://careers.subsea7.com/job/Houston-Senior-Engineer-Mooring-TX-77001/1376599355/",
-   "regime": "Onshore",
-   "area": "Engenharia",
-   "tema": "engenharia",
-   "banco": false,
-   "vistaEm": "2026-11-11",
-   "videos": [
-    [
-     "9ZlICqIBUMg",
-     "Fala de engenharia, a função desta vaga."
-    ],
-    [
-     "0uMWC3VBm8A",
-     "Fala de engenharia, a função desta vaga."
-    ],
-    [
-     "kxMbpcGcYks",
-     "Vídeo do canal sobre a Subsea7. Ajuda a chegar preparado na entrevista."
-    ]
-   ]
-  },
-  {
-   "id": "subsea7-senior-hr-advisor-35820",
-   "titulo": "Senior HR Advisor",
-   "empresa": "Subsea7",
-   "local": "Brasil",
-   "link": "https://careers.subsea7.com/job/Istanbul-Senior-HR-Advisor/1376551755/",
+   "id": "technipfmc-anl-planejamento-jr-51701",
+   "titulo": "ANL PLANEJAMENTO JR",
+   "empresa": "TechnipFMC",
+   "local": "Macaé, RJ",
+   "link": "https://careers.technipfmc.com/job/Maca%C3%A9-ANL-PLANEJAMENTO-JR-RJ-27970-020/1450141600/",
    "regime": "Onshore",
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-11-11",
+   "vistaEm": "2026-11-12",
    "videos": [
     [
-     "kxMbpcGcYks",
-     "Vídeo do canal sobre a Subsea7. Ajuda a chegar preparado na entrevista."
+     "0uMWC3VBm8A",
+     "Vídeo do canal sobre a TechnipFMC. Ajuda a chegar preparado na entrevista."
     ],
     [
      "lttRYy_P8T8",
@@ -14920,6 +14842,32 @@
     [
      "sMTU-gjxcLU",
      "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ]
+   ]
+  },
+  {
+   "id": "technipfmc-anl-planejamento-jr-afirmativa-pcd-25624",
+   "titulo": "ANL PLANEJAMENTO JR - AFIRMATIVA PcD",
+   "empresa": "TechnipFMC",
+   "local": "Macaé, RJ",
+   "link": "https://careers.technipfmc.com/job/Maca%C3%A9-ANL-PLANEJAMENTO-JR-AFIRMATIVA-PcD-RJ-27970-020/1450152500/",
+   "regime": "Onshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-11-12",
+   "videos": [
+    [
+     "0uMWC3VBm8A",
+     "Vídeo do canal sobre a TechnipFMC. Ajuda a chegar preparado na entrevista."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
     ]
    ]
   },
@@ -15080,16 +15028,16 @@
    ]
   },
   {
-   "id": "technipfmc-operador-cnc-i-61038",
-   "titulo": "Operador CNC I",
+   "id": "technipfmc-project-controller-sr-81673",
+   "titulo": "PROJECT CONTROLLER SR",
    "empresa": "TechnipFMC",
    "local": "Rio de Janeiro, RJ",
-   "link": "https://careers.technipfmc.com/job/Rio-de-Janeiro-Operador-CNC-I-RJ-21535-510/1447282100/",
+   "link": "https://careers.technipfmc.com/job/Rio-de-Janeiro-PROJECT-CONTROLLER-SR-RJ-20210-912/1449961100/",
    "regime": "Onshore",
-   "area": "Operação e produção",
-   "tema": "operacao",
+   "area": "Outras",
+   "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-11-03",
+   "vistaEm": "2026-11-12",
    "videos": [
     [
      "0uMWC3VBm8A",
@@ -15284,6 +15232,32 @@
     [
      "eHqY18dRP8Q",
      "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
+   "id": "technipfmc-t-cnico-de-opera-es-i-87284",
+   "titulo": "Técnico de Operações I",
+   "empresa": "TechnipFMC",
+   "local": "Vitória, Espirito Santo",
+   "link": "https://careers.technipfmc.com/job/Vit%C3%B3ria-T%C3%A9cnico-de-Opera%C3%A7%C3%B5es-I-Espi-29020-300/1450128900/",
+   "regime": "Onshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-11-12",
+   "videos": [
+    [
+     "0uMWC3VBm8A",
+     "Vídeo do canal sobre a TechnipFMC. Ajuda a chegar preparado na entrevista."
+    ],
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
     ]
    ]
   },
@@ -18044,11 +18018,11 @@
    ]
   },
   {
-   "id": "supergasbras-energia-oportunidades-supergasbras-banco-de-talentos-88624",
+   "id": "supergasbras-energia-oportunidades-supergasbras-banco-de-talentos-43973",
    "titulo": "Oportunidades Supergasbras | Banco de Talentos",
    "empresa": "Supergasbras Energia",
-   "local": "Paulínia, SP",
-   "link": "https://supergasbras.gupy.io/jobs/4929077",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://supergasbras.gupy.io/jobs/476849",
    "regime": "Onshore",
    "area": "Outras",
    "tema": "geral",
@@ -18070,11 +18044,11 @@
    ]
   },
   {
-   "id": "supergasbras-energia-oportunidades-supergasbras-banco-de-talentos-43973",
+   "id": "supergasbras-energia-oportunidades-supergasbras-banco-de-talentos-88624",
    "titulo": "Oportunidades Supergasbras | Banco de Talentos",
    "empresa": "Supergasbras Energia",
-   "local": "Rio de Janeiro, RJ",
-   "link": "https://supergasbras.gupy.io/jobs/476849",
+   "local": "Paulínia, SP",
+   "link": "https://supergasbras.gupy.io/jobs/4929077",
    "regime": "Onshore",
    "area": "Outras",
    "tema": "geral",
