@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-13T15:28:48+00:00",
+ "atualizado": "2026-11-13T17:56:06+00:00",
  "fontes": [
   {
    "empresa": "PRIO",
@@ -108,7 +108,7 @@
   },
   {
    "empresa": "Subsea7",
-   "vagas": 24,
+   "vagas": 23,
    "ok": true
   },
   {
@@ -118,7 +118,7 @@
   },
   {
    "empresa": "Baker Hughes",
-   "vagas": 18,
+   "vagas": 19,
    "ok": true
   },
   {
@@ -173,7 +173,7 @@
   },
   {
    "empresa": "Oceaneering",
-   "vagas": 14,
+   "vagas": 15,
    "ok": true
   },
   {
@@ -193,8 +193,8 @@
   },
   {
    "empresa": "BW Energy",
-   "vagas": 0,
-   "ok": false
+   "vagas": 22,
+   "ok": true
   },
   {
    "empresa": "Mota-Engil",
@@ -5227,6 +5227,32 @@
     [
      "sMTU-gjxcLU",
      "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ]
+   ]
+  },
+  {
+   "id": "baker-hughes-s-op-and-capacity-planning-leader-37794",
+   "titulo": "S&OP and Capacity Planning Leader",
+   "empresa": "Baker Hughes",
+   "local": "Macaé, RJ",
+   "link": "https://bakerhughes.wd5.myworkdayjobs.com/BakerHughes/job/BR-RJ-MACAE-ESTRADA-DE-FAZENDA-SAO-JOSE-DO-MUTUM-200/S-OP-and-Capacity-Planning-Leader_R170756",
+   "regime": "Onshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-11-13",
+   "videos": [
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
     ]
    ]
   },
@@ -13343,6 +13369,32 @@
    ]
   },
   {
+   "id": "oceaneering-estagi-rio-de-engenharia-74227",
+   "titulo": "Estagiário de Engenharia",
+   "empresa": "Oceaneering",
+   "local": "Macaé, RJ",
+   "link": "https://ebfr.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/11959",
+   "regime": "Onshore",
+   "area": "Engenharia",
+   "tema": "engenharia",
+   "banco": false,
+   "vistaEm": "2026-11-13",
+   "videos": [
+    [
+     "iKkxsnu9rZ8",
+     "Fala de estágio, trainee e primeiro emprego, a função desta vaga."
+    ],
+    [
+     "4eWz_1hX3OI",
+     "Fala de estágio, trainee e primeiro emprego, a função desta vaga."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ]
+   ]
+  },
+  {
    "id": "oceaneering-estagi-rio-de-engenharia-p-d-7612",
    "titulo": "Estagiário de Engenharia - P&D",
    "empresa": "Oceaneering",
@@ -15055,32 +15107,6 @@
     [
      "eHqY18dRP8Q",
      "As perguntas que mais aparecem na entrevista e como responder."
-    ]
-   ]
-  },
-  {
-   "id": "subsea7-consultor-recursos-humanos-55130",
-   "titulo": "Consultor Recursos Humanos",
-   "empresa": "Subsea7",
-   "local": "Brasil",
-   "link": "https://careers.subsea7.com/job/Rio-de-Janeiro-Consultor-Recursos-Humanos/1373523355/",
-   "regime": "Onshore",
-   "area": "Outras",
-   "tema": "geral",
-   "banco": false,
-   "vistaEm": "2026-11-12",
-   "videos": [
-    [
-     "kxMbpcGcYks",
-     "Vídeo do canal sobre a Subsea7. Ajuda a chegar preparado na entrevista."
-    ],
-    [
-     "lttRYy_P8T8",
-     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
-    ],
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
     ]
    ]
   },
