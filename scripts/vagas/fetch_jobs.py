@@ -72,6 +72,25 @@ def gupy(sub):
         yield dict(titulo=j['title'], local=local or 'Brasil', link=f'https://{sub}.gupy.io/jobs/{j["id"]}',
                    banco=j.get('type') == 'vacancy_type_talent_pool', area=j.get('department') or '')
 
+# Títulos que o sistema da empresa grava em CAIXA ALTA viram "Operador de Processo - Offshore - Ceará"
+UFS = set('AC AL AP AM BA CE DF ES GO MA MT MS MG PA PB PR PE PI RJ RN RS RO RR SC SP SE TO'.split())
+MINUSC = {'de', 'da', 'do', 'das', 'dos', 'e', 'em', 'para', 'a', 'o'}
+def caixa(t):
+    if t != t.upper():
+        return t
+    return ' '.join(w.lower() if i and w.lower() in MINUSC else w if (re.search(r'\d', w) and len(w) <= 3) or w in UFS else w.capitalize()
+                    for i, w in enumerate(t.split(' ')))
+
+def totvs(slug):
+    # TOTVS Atração de Talentos (atracaodetalentos.totvs.app/<empresa>): a lista vem pronta no HTML
+    s = get(f'https://atracaodetalentos.totvs.app/{slug}/extended')
+    for m in re.finditer(r'data-city-name="([^"]*)"\s+data-state-small-name="([^"]*)"\s+data-title="([^"]+)"\s+data-code="(\d+)"', s):
+        cidade, uf, tit, cod = (limpa(x) for x in m.groups())
+        link = re.search(rf'href="(https://atracaodetalentos\.totvs\.app/{re.escape(slug)}/{cod}/[^"]+)"', s)
+        yield dict(titulo=caixa(tit), local=', '.join(x for x in (cidade, uf) if x) or 'Brasil',
+                   link=link.group(1) if link else f'https://atracaodetalentos.totvs.app/{slug}/{cod}',
+                   banco=bool(re.search(r'banco de talentos', tit, re.I)))
+
 def rmk(host):
     vistos = set()
     for start in range(0, 200, 25):
@@ -329,7 +348,7 @@ def motaengil(host):
         if not novos:
             break
 
-LEITORES = dict(motaengil=motaengil, halliburton=halliburton, teamtailor=teamtailor, pandape=pandape, workable=workable, solides=solides, recruitee=recruitee, brunel=brunel, airswift=airswift, atlas=atlas, mde=mde, beehire=beehire, inhire=inhire, gupy=gupy, rmk=rmk, workday=workday, oracle=oracle, radancy=radancy)
+LEITORES = dict(totvs=totvs, motaengil=motaengil, halliburton=halliburton, teamtailor=teamtailor, pandape=pandape, workable=workable, solides=solides, recruitee=recruitee, brunel=brunel, airswift=airswift, atlas=atlas, mde=mde, beehire=beehire, inhire=inhire, gupy=gupy, rmk=rmk, workday=workday, oracle=oracle, radancy=radancy)
 
 def classifica(titulo):
     t = titulo.lower()
