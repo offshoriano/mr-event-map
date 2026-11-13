@@ -1,14 +1,14 @@
 {
- "atualizado": "2026-11-12T18:28:57+00:00",
+ "atualizado": "2026-11-13T15:28:48+00:00",
  "fontes": [
   {
    "empresa": "PRIO",
-   "vagas": 8,
+   "vagas": 9,
    "ok": true
   },
   {
    "empresa": "Brava Energia",
-   "vagas": 24,
+   "vagas": 25,
    "ok": true
   },
   {
@@ -38,7 +38,7 @@
   },
   {
    "empresa": "Constellation",
-   "vagas": 10,
+   "vagas": 8,
    "ok": true
   },
   {
@@ -78,7 +78,7 @@
   },
   {
    "empresa": "Camorim",
-   "vagas": 16,
+   "vagas": 17,
    "ok": true
   },
   {
@@ -98,7 +98,7 @@
   },
   {
    "empresa": "SBM Offshore",
-   "vagas": 13,
+   "vagas": 12,
    "ok": true
   },
   {
@@ -108,7 +108,7 @@
   },
   {
    "empresa": "Subsea7",
-   "vagas": 26,
+   "vagas": 24,
    "ok": true
   },
   {
@@ -118,12 +118,12 @@
   },
   {
    "empresa": "Baker Hughes",
-   "vagas": 17,
+   "vagas": 18,
    "ok": true
   },
   {
    "empresa": "Shell",
-   "vagas": 3,
+   "vagas": 2,
    "ok": true
   },
   {
@@ -158,7 +158,7 @@
   },
   {
    "empresa": "NOV",
-   "vagas": 13,
+   "vagas": 12,
    "ok": true
   },
   {
@@ -173,7 +173,7 @@
   },
   {
    "empresa": "Oceaneering",
-   "vagas": 15,
+   "vagas": 14,
    "ok": true
   },
   {
@@ -193,12 +193,12 @@
   },
   {
    "empresa": "BW Energy",
-   "vagas": 22,
-   "ok": true
+   "vagas": 0,
+   "ok": false
   },
   {
    "empresa": "Mota-Engil",
-   "vagas": 7,
+   "vagas": 8,
    "ok": true
   },
   {
@@ -218,7 +218,7 @@
   },
   {
    "empresa": "Atlas NextWave",
-   "vagas": 33,
+   "vagas": 32,
    "ok": true
   },
   {
@@ -248,7 +248,7 @@
   },
   {
    "empresa": "CLAM ENGENHARIA",
-   "vagas": 25,
+   "vagas": 23,
    "ok": true
   },
   {
@@ -269,6 +269,11 @@
   {
    "empresa": "Falconi Consultores LTDA",
    "vagas": 0,
+   "ok": true
+  },
+  {
+   "empresa": "Forship",
+   "vagas": 29,
    "ok": true
   },
   {
@@ -358,7 +363,7 @@
   },
   {
    "empresa": "NOV INTERVENTION AND STIMULATION EQUIPMENT",
-   "vagas": 13,
+   "vagas": 12,
    "ok": true
   },
   {
@@ -368,7 +373,7 @@
   },
   {
    "empresa": "Wilhelmsen Ship Management",
-   "vagas": 1,
+   "vagas": 0,
    "ok": true
   },
   {
@@ -448,7 +453,7 @@
   },
   {
    "empresa": "Vinci Energies",
-   "vagas": 27,
+   "vagas": 28,
    "ok": true
   }
  ],
@@ -858,32 +863,6 @@
    ]
   },
   {
-   "id": "atlas-nextwave-enfermeiro-offshore-31876",
-   "titulo": "Enfermeiro Offshore",
-   "empresa": "Atlas NextWave",
-   "local": "Brasil",
-   "link": "https://atlasnextwave.com/job/enfermeiro-offshore/",
-   "regime": "Offshore",
-   "area": "Outras",
-   "tema": "geral",
-   "banco": false,
-   "vistaEm": "2026-10-15",
-   "videos": [
-    [
-     "LeI6KBdvdQc",
-     "Fala de enfermagem offshore, a função desta vaga."
-    ],
-    [
-     "sUpavBK4AFM",
-     "Fala de enfermagem offshore, a função desta vaga."
-    ],
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ]
-   ]
-  },
-  {
    "id": "atlas-nextwave-main-driller-19227",
    "titulo": "Main Driller",
    "empresa": "Atlas NextWave",
@@ -1274,6 +1253,32 @@
    ]
   },
   {
+   "id": "brava-energia-t-cnico-de-seguran-a-offshore-93537",
+   "titulo": "Técnico de Segurança Offshore",
+   "empresa": "Brava Energia",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://bravaenergia.gupy.io/jobs/12879866",
+   "regime": "Offshore",
+   "area": "Segurança",
+   "tema": "seguranca",
+   "banco": false,
+   "vistaEm": "2026-11-13",
+   "videos": [
+    [
+     "VzHXNdUlHVA",
+     "Fala de técnico de segurança, a função desta vaga."
+    ],
+    [
+     "0uMWC3VBm8A",
+     "Fala de técnico de segurança, a função desta vaga."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ]
+   ]
+  },
+  {
    "id": "camorim-condutor-de-m-quinas-portu-rio-21639",
    "titulo": "Condutor de Máquinas (Portuário)",
    "empresa": "Camorim",
@@ -1322,32 +1327,6 @@
     [
      "jHvoPOebDx8",
      "Vídeo do canal sobre a Camorim. Ajuda a chegar preparado na entrevista."
-    ]
-   ]
-  },
-  {
-   "id": "constellation-1-oficial-de-m-quinas-28334",
-   "titulo": "1º Oficial de Máquinas",
-   "empresa": "Constellation",
-   "local": "Rio das Ostras, RJ",
-   "link": "https://theconstellation.gupy.io/jobs/11244973",
-   "regime": "Offshore",
-   "area": "Marítimo",
-   "tema": "maritimo",
-   "banco": false,
-   "vistaEm": "2026-10-15",
-   "videos": [
-    [
-     "WP-YqW9rW3E",
-     "Fala de oficial e marinheiro de máquinas, a função desta vaga."
-    ],
-    [
-     "mXqvw28koz4",
-     "Fala de oficial e marinheiro de máquinas, a função desta vaga."
-    ],
-    [
-     "jurHKwqu7lg",
-     "Vídeo do canal sobre a Constellation. Ajuda a chegar preparado na entrevista."
     ]
    ]
   },
@@ -1504,6 +1483,396 @@
     [
      "wNai9-JZxOI",
      "Vídeo do canal sobre a Foresea. Ajuda a chegar preparado na entrevista."
+    ]
+   ]
+  },
+  {
+   "id": "forship-auxiliar-de-movimenta-o-de-cargas-offshore-1815",
+   "titulo": "Auxiliar de Movimentação de Cargas | Offshore",
+   "empresa": "Forship",
+   "local": "Macaé, RJ",
+   "link": "https://atracaodetalentos.totvs.app/forshipvagas/111/auxiliar-de-movimentacao-de-cargas-offshore",
+   "regime": "Offshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-11-13",
+   "videos": [
+    [
+     "8UKg6ApoNcw",
+     "Fala de guindasteiro e movimentação de carga, a função desta vaga."
+    ],
+    [
+     "S3f4xuHKtQM",
+     "Fala de guindasteiro e movimentação de carga, a função desta vaga."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ]
+   ]
+  },
+  {
+   "id": "forship-caldeireiro-offshore-cear-46065",
+   "titulo": "Caldeireiro - Offshore - Ceará",
+   "empresa": "Forship",
+   "local": "Paracuru, CE",
+   "link": "https://atracaodetalentos.totvs.app/forshipvagas/157/caldeireiro-offshore-ceara",
+   "regime": "Offshore",
+   "area": "Mecânica e manutenção",
+   "tema": "mecanica",
+   "banco": false,
+   "vistaEm": "2026-11-13",
+   "videos": [
+    [
+     "89nmfX5NnpI",
+     "Fala de soldador, caldeireiro e acesso por corda, a função desta vaga."
+    ],
+    [
+     "1xePUBawZBU",
+     "Fala de soldador, caldeireiro e acesso por corda, a função desta vaga."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ]
+   ]
+  },
+  {
+   "id": "forship-caldeireiro-offshore-rio-grande-do-norte-91476",
+   "titulo": "Caldeireiro - Offshore - Rio Grande do Norte",
+   "empresa": "Forship",
+   "local": "Guamaré, RN",
+   "link": "https://atracaodetalentos.totvs.app/forshipvagas/156/caldeireiro-offshore-rio-grande-do-norte",
+   "regime": "Offshore",
+   "area": "Mecânica e manutenção",
+   "tema": "mecanica",
+   "banco": false,
+   "vistaEm": "2026-11-13",
+   "videos": [
+    [
+     "89nmfX5NnpI",
+     "Fala de soldador, caldeireiro e acesso por corda, a função desta vaga."
+    ],
+    [
+     "1xePUBawZBU",
+     "Fala de soldador, caldeireiro e acesso por corda, a função desta vaga."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ]
+   ]
+  },
+  {
+   "id": "forship-marinheiro-de-conv-s-offshore-aracaju-31886",
+   "titulo": "Marinheiro de Convés - Offshore - Aracaju",
+   "empresa": "Forship",
+   "local": "Aracaju, SE",
+   "link": "https://atracaodetalentos.totvs.app/forshipvagas/238/marinheiro-de-conves-offshore-aracaju",
+   "regime": "Offshore",
+   "area": "Marítimo",
+   "tema": "maritimo",
+   "banco": false,
+   "vistaEm": "2026-11-13",
+   "videos": [
+    [
+     "-Fg2KN6627E",
+     "Fala de operador de convés e marinheiro, a função desta vaga."
+    ],
+    [
+     "QBVn43MYbVw",
+     "Fala de operador de convés e marinheiro, a função desta vaga."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ]
+   ]
+  },
+  {
+   "id": "forship-marinheiro-de-conv-s-offshore-ce-e-rn-40047",
+   "titulo": "Marinheiro de Convés - Offshore - CE e RN",
+   "empresa": "Forship",
+   "local": "Paracuru, CE",
+   "link": "https://atracaodetalentos.totvs.app/forshipvagas/234/marinheiro-de-conves-offshore-ce-e-rn",
+   "regime": "Offshore",
+   "area": "Marítimo",
+   "tema": "maritimo",
+   "banco": false,
+   "vistaEm": "2026-11-13",
+   "videos": [
+    [
+     "-Fg2KN6627E",
+     "Fala de operador de convés e marinheiro, a função desta vaga."
+    ],
+    [
+     "QBVn43MYbVw",
+     "Fala de operador de convés e marinheiro, a função desta vaga."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ]
+   ]
+  },
+  {
+   "id": "forship-mestre-de-cabotagem-offshore-aracaju-66603",
+   "titulo": "Mestre de Cabotagem - Offshore - Aracaju",
+   "empresa": "Forship",
+   "local": "Aracaju, SE",
+   "link": "https://atracaodetalentos.totvs.app/forshipvagas/237/mestre-de-cabotagem-offshore-aracaju",
+   "regime": "Offshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-11-13",
+   "videos": [
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ],
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ]
+   ]
+  },
+  {
+   "id": "forship-montador-de-andaime-offshore-cear-69442",
+   "titulo": "Montador de Andaime - Offshore - Ceará",
+   "empresa": "Forship",
+   "local": "Paracuru, CE",
+   "link": "https://atracaodetalentos.totvs.app/forshipvagas/170/montador-de-andaime-offshore-ceara",
+   "regime": "Offshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-11-13",
+   "videos": [
+    [
+     "89nmfX5NnpI",
+     "Fala de soldador, caldeireiro e acesso por corda, a função desta vaga."
+    ],
+    [
+     "1xePUBawZBU",
+     "Fala de soldador, caldeireiro e acesso por corda, a função desta vaga."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ]
+   ]
+  },
+  {
+   "id": "forship-montador-de-andaime-offshore-rio-grande-do-norte-32459",
+   "titulo": "Montador de Andaime - Offshore - Rio Grande do Norte",
+   "empresa": "Forship",
+   "local": "Guamaré, RN",
+   "link": "https://atracaodetalentos.totvs.app/forshipvagas/169/montador-de-andaime-offshore-rio-grande-do-norte",
+   "regime": "Offshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-11-13",
+   "videos": [
+    [
+     "89nmfX5NnpI",
+     "Fala de soldador, caldeireiro e acesso por corda, a função desta vaga."
+    ],
+    [
+     "1xePUBawZBU",
+     "Fala de soldador, caldeireiro e acesso por corda, a função desta vaga."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ]
+   ]
+  },
+  {
+   "id": "forship-operador-de-processo-offshore-cear-52793",
+   "titulo": "Operador de Processo - Offshore - Ceará",
+   "empresa": "Forship",
+   "local": "Paracuru, CE",
+   "link": "https://atracaodetalentos.totvs.app/forshipvagas/125/operador-de-processo-offshore-ceara",
+   "regime": "Offshore",
+   "area": "Operação e produção",
+   "tema": "operacao",
+   "banco": false,
+   "vistaEm": "2026-11-13",
+   "videos": [
+    [
+     "kJZqpRE1bvY",
+     "Fala de operador de produção, a função desta vaga."
+    ],
+    [
+     "1XXSSAG18CE",
+     "Fala de operador de produção, a função desta vaga."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ]
+   ]
+  },
+  {
+   "id": "forship-operador-de-processo-offshore-rio-grande-do-norte-81296",
+   "titulo": "Operador de Processo - Offshore - Rio Grande do Norte",
+   "empresa": "Forship",
+   "local": "Guamaré, RN",
+   "link": "https://atracaodetalentos.totvs.app/forshipvagas/129/operador-de-processo-offshore-rio-grande-do-norte",
+   "regime": "Offshore",
+   "area": "Operação e produção",
+   "tema": "operacao",
+   "banco": false,
+   "vistaEm": "2026-11-13",
+   "videos": [
+    [
+     "kJZqpRE1bvY",
+     "Fala de operador de produção, a função desta vaga."
+    ],
+    [
+     "1XXSSAG18CE",
+     "Fala de operador de produção, a função desta vaga."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ]
+   ]
+  },
+  {
+   "id": "forship-supervisor-de-instrumenta-o-e-automa-o-offshore-ce-76999",
+   "titulo": "Supervisor de Instrumentação e Automação - Offshore - CE",
+   "empresa": "Forship",
+   "local": "Paracuru, CE",
+   "link": "https://atracaodetalentos.totvs.app/forshipvagas/247/supervisor-de-instrumentacao-e-automacao-offshore-ce",
+   "regime": "Offshore",
+   "area": "Elétrica e instrumentação",
+   "tema": "eletrica",
+   "banco": false,
+   "vistaEm": "2026-11-13",
+   "videos": [
+    [
+     "-35oTYToV2A",
+     "Fala de eletricista, área vizinha desta vaga."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
+   "id": "forship-supervisor-de-manuten-o-el-trica-instrumenta-o-e-automa-o-offshore-cear-52225",
+   "titulo": "Supervisor de Manutenção Elétrica, Instrumentação e Automação - Offshore - Ceará",
+   "empresa": "Forship",
+   "local": "Paracuru, CE",
+   "link": "https://atracaodetalentos.totvs.app/forshipvagas/146/supervisor-de-manutencao-eletrica-instrumentacao-e-automacao-offshore-ceara",
+   "regime": "Offshore",
+   "area": "Elétrica e instrumentação",
+   "tema": "eletrica",
+   "banco": false,
+   "vistaEm": "2026-11-13",
+   "videos": [
+    [
+     "-35oTYToV2A",
+     "Fala de eletricista, área vizinha desta vaga."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
+   "id": "forship-supervisor-de-manuten-o-el-trica-instrumenta-o-e-automa-o-offshore-rio-g-32842",
+   "titulo": "Supervisor de Manutenção Elétrica, Instrumentação e Automação - Offshore - Rio Grande do Norte",
+   "empresa": "Forship",
+   "local": "Guamaré, RN",
+   "link": "https://atracaodetalentos.totvs.app/forshipvagas/147/supervisor-de-manutencao-eletrica-instrumentacao-e-automacao-offshore-rio-grande-do-norte",
+   "regime": "Offshore",
+   "area": "Elétrica e instrumentação",
+   "tema": "eletrica",
+   "banco": false,
+   "vistaEm": "2026-11-13",
+   "videos": [
+    [
+     "-35oTYToV2A",
+     "Fala de eletricista, área vizinha desta vaga."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
+   "id": "forship-t-cnico-de-seguran-a-do-trabalho-offshore-cear-62953",
+   "titulo": "Técnico de Segurança do Trabalho - Offshore - Ceará",
+   "empresa": "Forship",
+   "local": "Paracuru, CE",
+   "link": "https://atracaodetalentos.totvs.app/forshipvagas/135/tecnico-de-seguranca-do-trabalho-offshore-ceara",
+   "regime": "Offshore",
+   "area": "Segurança",
+   "tema": "seguranca",
+   "banco": false,
+   "vistaEm": "2026-11-13",
+   "videos": [
+    [
+     "VzHXNdUlHVA",
+     "Fala de técnico de segurança, a função desta vaga."
+    ],
+    [
+     "0uMWC3VBm8A",
+     "Fala de técnico de segurança, a função desta vaga."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ]
+   ]
+  },
+  {
+   "id": "forship-t-cnico-de-seguran-a-do-trabalho-offshore-rio-grande-do-norte-83964",
+   "titulo": "Técnico de Segurança do Trabalho - Offshore - Rio Grande do Norte",
+   "empresa": "Forship",
+   "local": "Guamaré, RN",
+   "link": "https://atracaodetalentos.totvs.app/forshipvagas/136/tecnico-de-seguranca-do-trabalho-offshore-rio-grande-do-norte",
+   "regime": "Offshore",
+   "area": "Segurança",
+   "tema": "seguranca",
+   "banco": false,
+   "vistaEm": "2026-11-13",
+   "videos": [
+    [
+     "VzHXNdUlHVA",
+     "Fala de técnico de segurança, a função desta vaga."
+    ],
+    [
+     "0uMWC3VBm8A",
+     "Fala de técnico de segurança, a função desta vaga."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
     ]
    ]
   },
@@ -2080,32 +2449,6 @@
    ]
   },
   {
-   "id": "sbm-offshore-radio-operator-95685",
-   "titulo": "Radio Operator",
-   "empresa": "SBM Offshore",
-   "local": "Rio de Janeiro, RJ",
-   "link": "https://careers.sbmoffshore.com/job/Rio-de-Janeiro-Radio-Operator-20021-290/1376205257/",
-   "regime": "Offshore",
-   "area": "Operação e produção",
-   "tema": "operacao",
-   "banco": false,
-   "vistaEm": "2026-10-29",
-   "videos": [
-    [
-     "kJZqpRE1bvY",
-     "Fala de operador de produção, área vizinha desta vaga."
-    ],
-    [
-     "fqj2M7KTR0U",
-     "Vídeo do canal sobre a SBM Offshore. Ajuda a chegar preparado na entrevista."
-    ],
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ]
-   ]
-  },
-  {
    "id": "subsea7-coordenador-de-projetos-coordena-o-t-cnica-de-opera-es-rov-80742",
    "titulo": "Coordenador de Projetos (Coordenação Técnica de Operações ROV)",
    "empresa": "Subsea7",
@@ -2184,24 +2527,24 @@
    ]
   },
   {
-   "id": "subsea7-t-cnico-de-seguran-a-do-trabalho-offshore-tempor-rio-10064",
-   "titulo": "Técnico de Segurança do Trabalho Offshore (Temporário)",
+   "id": "subsea7-t-cnica-o-de-el-trica-offshore-12645",
+   "titulo": "Técnica(o) de Elétrica Offshore",
    "empresa": "Subsea7",
    "local": "Brasil",
-   "link": "https://careers.subsea7.com/job/Offshore-T%C3%A9cnico-de-Seguran%C3%A7a-do-Trabalho-Offshore-%28Tempor%C3%A1rio%29/1374911455/",
+   "link": "https://careers.subsea7.com/job/Offshore-T%C3%A9cnica%28o%29-de-El%C3%A9trica-Offshore/1368680155/",
    "regime": "Offshore",
-   "area": "Segurança",
-   "tema": "seguranca",
+   "area": "Elétrica e instrumentação",
+   "tema": "eletrica",
    "banco": false,
-   "vistaEm": "2026-10-29",
+   "vistaEm": "2026-11-13",
    "videos": [
     [
-     "VzHXNdUlHVA",
-     "Fala de técnico de segurança, a função desta vaga."
+     "-35oTYToV2A",
+     "Fala de eletricista, a função desta vaga."
     ],
     [
-     "0uMWC3VBm8A",
-     "Fala de técnico de segurança, a função desta vaga."
+     "TSUnVzxiBjU",
+     "Fala de eletricista, a função desta vaga."
     ],
     [
      "kxMbpcGcYks",
@@ -4784,28 +5127,28 @@
    ]
   },
   {
-   "id": "baker-hughes-field-specialist-iii-sps-378",
-   "titulo": "Field Specialist III - SPS",
+   "id": "baker-hughes-gerente-s-nior-de-manuten-o-7459",
+   "titulo": "Gerente Sênior de Manutenção",
    "empresa": "Baker Hughes",
-   "local": "Macaé, RJ",
-   "link": "https://bakerhughes.wd5.myworkdayjobs.com/BakerHughes/job/BR-RJ-MACAE-ESTRADA-DE-FAZENDA-SAO-JOSE-DO-MUTUM-200/Field-Specialist-III---SPS_R170960-1",
+   "local": "Niterói, RJ",
+   "link": "https://bakerhughes.wd5.myworkdayjobs.com/BakerHughes/job/BR-RJ-NITEROI-PRACA-ALCIDES-PEREIRA/Gerente-Snior-de-Manuteno_R169500",
    "regime": "Onshore",
-   "area": "Outras",
-   "tema": "geral",
+   "area": "Mecânica e manutenção",
+   "tema": "mecanica",
    "banco": false,
-   "vistaEm": "2026-10-30",
+   "vistaEm": "2026-11-13",
    "videos": [
     [
-     "lttRYy_P8T8",
-     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+     "3yOdA-HnSeg",
+     "Fala de mecânico e manutenção, a função desta vaga."
+    ],
+    [
+     "AFQCQwo_5Kc",
+     "Fala de mecânico e manutenção, a função desta vaga."
     ],
     [
      "sMTU-gjxcLU",
      "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ],
-    [
-     "eHqY18dRP8Q",
-     "As perguntas que mais aparecem na entrevista e como responder."
     ]
    ]
   },
@@ -5118,6 +5461,32 @@
     [
      "eHqY18dRP8Q",
      "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
+   "id": "baker-hughes-t-cnico-de-seguran-a-do-trabalho-44777",
+   "titulo": "Técnico de Segurança do Trabalho",
+   "empresa": "Baker Hughes",
+   "local": "Niterói, RJ",
+   "link": "https://bakerhughes.wd5.myworkdayjobs.com/BakerHughes/job/BR-RJ-NITEROI-PRACA-ALCIDES-PEREIRA/Tcnico-de-Segurana-do-Trabalho_R169092",
+   "regime": "Onshore",
+   "area": "Segurança",
+   "tema": "seguranca",
+   "banco": false,
+   "vistaEm": "2026-11-13",
+   "videos": [
+    [
+     "VzHXNdUlHVA",
+     "Fala de técnico de segurança, a função desta vaga."
+    ],
+    [
+     "0uMWC3VBm8A",
+     "Fala de técnico de segurança, a função desta vaga."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
     ]
    ]
   },
@@ -6006,32 +6375,6 @@
    ]
   },
   {
-   "id": "clam-engenharia-analista-ambiental-j-nior-socioambiental-belo-horizonte-mg-82685",
-   "titulo": "Analista Ambiental Júnior (Socioambiental) - Belo Horizonte MG",
-   "empresa": "CLAM ENGENHARIA",
-   "local": "Brasil",
-   "link": "https://clam.inhire.com.br/vagas/4ced3fd6-0bc0-442c-81d0-baeefe320b7a",
-   "regime": "Onshore",
-   "area": "Outras",
-   "tema": "geral",
-   "banco": false,
-   "vistaEm": "2026-10-15",
-   "videos": [
-    [
-     "lttRYy_P8T8",
-     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
-    ],
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ],
-    [
-     "eHqY18dRP8Q",
-     "As perguntas que mais aparecem na entrevista e como responder."
-    ]
-   ]
-  },
-  {
    "id": "clam-engenharia-analista-ambiental-j-nior-socioeconomia-belo-horizonte-mg-60814",
    "titulo": "Analista Ambiental Júnior (Socioeconomia) - Belo Horizonte MG",
    "empresa": "CLAM ENGENHARIA",
@@ -6141,32 +6484,6 @@
    "empresa": "CLAM ENGENHARIA",
    "local": "Brasil",
    "link": "https://clam.inhire.com.br/vagas/b6262f6f-8480-4fc6-a9fb-0887e58304ca",
-   "regime": "Onshore",
-   "area": "Outras",
-   "tema": "geral",
-   "banco": false,
-   "vistaEm": "2026-10-15",
-   "videos": [
-    [
-     "lttRYy_P8T8",
-     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
-    ],
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ],
-    [
-     "eHqY18dRP8Q",
-     "As perguntas que mais aparecem na entrevista e como responder."
-    ]
-   ]
-  },
-  {
-   "id": "clam-engenharia-analista-ambiental-pleno-meio-f-sico-belo-horizonte-mg-33251",
-   "titulo": "Analista Ambiental Pleno (Meio Físico) — Belo Horizonte MG",
-   "empresa": "CLAM ENGENHARIA",
-   "local": "Brasil",
-   "link": "https://clam.inhire.com.br/vagas/f9f7533a-0764-4f4c-b403-26cfca078b8c",
    "regime": "Onshore",
    "area": "Outras",
    "tema": "geral",
@@ -6666,6 +6983,32 @@
    "tema": "geral",
    "banco": false,
    "vistaEm": "2026-10-15",
+   "videos": [
+    [
+     "jHvoPOebDx8",
+     "Vídeo do canal sobre a Camorim. Ajuda a chegar preparado na entrevista."
+    ],
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ]
+   ]
+  },
+  {
+   "id": "camorim-assistente-administrativo-gest-o-de-frotas-28471",
+   "titulo": "Assistente Administrativo - Gestão de Frotas",
+   "empresa": "Camorim",
+   "local": "Brasil",
+   "link": "https://camorim.inhire.com.br/vagas/3a6dc49a-84da-47f2-b497-ce86a0b1c2c2",
+   "regime": "Onshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-11-13",
    "videos": [
     [
      "jHvoPOebDx8",
@@ -7212,32 +7555,6 @@
    "tema": "trainee",
    "banco": false,
    "vistaEm": "2026-10-29",
-   "videos": [
-    [
-     "iKkxsnu9rZ8",
-     "Fala de estágio, trainee e primeiro emprego, a função desta vaga."
-    ],
-    [
-     "4eWz_1hX3OI",
-     "Fala de estágio, trainee e primeiro emprego, a função desta vaga."
-    ],
-    [
-     "jurHKwqu7lg",
-     "Vídeo do canal sobre a Constellation. Ajuda a chegar preparado na entrevista."
-    ]
-   ]
-  },
-  {
-   "id": "constellation-estagi-rio-de-engenharia-naval-68814",
-   "titulo": "Estagiário de Engenharia Naval",
-   "empresa": "Constellation",
-   "local": "Rio de Janeiro, RJ",
-   "link": "https://theconstellation.gupy.io/jobs/12428510",
-   "regime": "Onshore",
-   "area": "Engenharia",
-   "tema": "engenharia",
-   "banco": false,
-   "vistaEm": "2026-10-15",
    "videos": [
     [
      "iKkxsnu9rZ8",
@@ -8112,6 +8429,344 @@
    ]
   },
   {
+   "id": "forship-assistente-administrativo-51593",
+   "titulo": "Assistente Administrativo",
+   "empresa": "Forship",
+   "local": "Santos, SP",
+   "link": "https://atracaodetalentos.totvs.app/forshipvagas/201/assistente-administrativo",
+   "regime": "Onshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-11-13",
+   "videos": [
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
+   "id": "forship-assistente-de-departamento-pessoal-99183",
+   "titulo": "Assistente de Departamento Pessoal",
+   "empresa": "Forship",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://atracaodetalentos.totvs.app/forshipvagas/203/assistente-de-departamento-pessoal",
+   "regime": "Onshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-11-13",
+   "videos": [
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
+   "id": "forship-auxiliar-de-servi-os-gerais-itaborai-72681",
+   "titulo": "Auxiliar de Serviços Gerais - Itaborai",
+   "empresa": "Forship",
+   "local": "Itaboraí, RJ",
+   "link": "https://atracaodetalentos.totvs.app/forshipvagas/246/auxiliar-de-servicos-gerais-itaborai",
+   "regime": "Onshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-11-13",
+   "videos": [
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
+   "id": "forship-eletricista-58055",
+   "titulo": "Eletricista",
+   "empresa": "Forship",
+   "local": "Santos, SP",
+   "link": "https://atracaodetalentos.totvs.app/forshipvagas/242/eletricista",
+   "regime": "Onshore",
+   "area": "Elétrica e instrumentação",
+   "tema": "eletrica",
+   "banco": false,
+   "vistaEm": "2026-11-13",
+   "videos": [
+    [
+     "-35oTYToV2A",
+     "Fala de eletricista, a função desta vaga."
+    ],
+    [
+     "TSUnVzxiBjU",
+     "Fala de eletricista, a função desta vaga."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ]
+   ]
+  },
+  {
+   "id": "forship-estagiario-de-engenharia-santos-60777",
+   "titulo": "Estagiario de Engenharia - Santos",
+   "empresa": "Forship",
+   "local": "Santos, SP",
+   "link": "https://atracaodetalentos.totvs.app/forshipvagas/241/estagiario-de-engenharia-santos",
+   "regime": "Onshore",
+   "area": "Engenharia",
+   "tema": "engenharia",
+   "banco": false,
+   "vistaEm": "2026-11-13",
+   "videos": [
+    [
+     "iKkxsnu9rZ8",
+     "Fala de estágio, trainee e primeiro emprego, a função desta vaga."
+    ],
+    [
+     "4eWz_1hX3OI",
+     "Fala de estágio, trainee e primeiro emprego, a função desta vaga."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ]
+   ]
+  },
+  {
+   "id": "forship-jovem-aprendiz-maca-39075",
+   "titulo": "Jovem Aprendiz - Macaé",
+   "empresa": "Forship",
+   "local": "Macaé, RJ",
+   "link": "https://atracaodetalentos.totvs.app/forshipvagas/222/jovem-aprendiz-macae",
+   "regime": "Onshore",
+   "area": "Trainee e estágio",
+   "tema": "trainee",
+   "banco": false,
+   "vistaEm": "2026-11-13",
+   "videos": [
+    [
+     "iKkxsnu9rZ8",
+     "Fala de estágio, trainee e primeiro emprego, a função desta vaga."
+    ],
+    [
+     "4eWz_1hX3OI",
+     "Fala de estágio, trainee e primeiro emprego, a função desta vaga."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ]
+   ]
+  },
+  {
+   "id": "forship-operador-de-ro-adeira-25916",
+   "titulo": "Operador de Roçadeira",
+   "empresa": "Forship",
+   "local": "Itaboraí, RJ",
+   "link": "https://atracaodetalentos.totvs.app/forshipvagas/243/operador-de-rocadeira",
+   "regime": "Onshore",
+   "area": "Operação e produção",
+   "tema": "operacao",
+   "banco": false,
+   "vistaEm": "2026-11-13",
+   "videos": [
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
+   "id": "forship-tecnico-de-mecanica-itaborai-rj-80826",
+   "titulo": "Tecnico de Mecanica - Itaborai - RJ",
+   "empresa": "Forship",
+   "local": "Itaboraí, RJ",
+   "link": "https://atracaodetalentos.totvs.app/forshipvagas/227/tecnico-de-mecanica-itaborai-rj",
+   "regime": "Onshore",
+   "area": "Mecânica e manutenção",
+   "tema": "mecanica",
+   "banco": false,
+   "vistaEm": "2026-11-13",
+   "videos": [
+    [
+     "3yOdA-HnSeg",
+     "Fala de mecânico e manutenção, a função desta vaga."
+    ],
+    [
+     "AFQCQwo_5Kc",
+     "Fala de mecânico e manutenção, a função desta vaga."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ]
+   ]
+  },
+  {
+   "id": "forship-tecnico-de-seguran-a-do-trabalho-santos-47846",
+   "titulo": "Tecnico de Segurança do Trabalho - Santos",
+   "empresa": "Forship",
+   "local": "Santos, SP",
+   "link": "https://atracaodetalentos.totvs.app/forshipvagas/245/tecnico-de-seguranca-do-trabalho-santos",
+   "regime": "Onshore",
+   "area": "Segurança",
+   "tema": "seguranca",
+   "banco": false,
+   "vistaEm": "2026-11-13",
+   "videos": [
+    [
+     "VzHXNdUlHVA",
+     "Fala de técnico de segurança, a função desta vaga."
+    ],
+    [
+     "0uMWC3VBm8A",
+     "Fala de técnico de segurança, a função desta vaga."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ]
+   ]
+  },
+  {
+   "id": "forship-t-cnico-de-enfermagem-do-trabalho-21979",
+   "titulo": "Técnico de Enfermagem do Trabalho",
+   "empresa": "Forship",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://atracaodetalentos.totvs.app/forshipvagas/240/tecnico-de-enfermagem-do-trabalho",
+   "regime": "Onshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-11-13",
+   "videos": [
+    [
+     "LeI6KBdvdQc",
+     "Fala de enfermagem offshore, a função desta vaga."
+    ],
+    [
+     "sUpavBK4AFM",
+     "Fala de enfermagem offshore, a função desta vaga."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ]
+   ]
+  },
+  {
+   "id": "forship-t-cnico-de-instrumenta-o-itaborai-rj-48768",
+   "titulo": "Técnico de Instrumentação - Itaborai - RJ",
+   "empresa": "Forship",
+   "local": "Itaboraí, RJ",
+   "link": "https://atracaodetalentos.totvs.app/forshipvagas/188/tecnico-de-instrumentacao-itaborai-rj",
+   "regime": "Onshore",
+   "area": "Elétrica e instrumentação",
+   "tema": "eletrica",
+   "banco": false,
+   "vistaEm": "2026-11-13",
+   "videos": [
+    [
+     "-35oTYToV2A",
+     "Fala de eletricista, área vizinha desta vaga."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
+   "id": "forship-t-cnico-de-manuten-o-mec-nica-preditiva-62060",
+   "titulo": "Técnico de Manutenção Mecânica – Preditiva",
+   "empresa": "Forship",
+   "local": "Itaboraí, RJ",
+   "link": "https://atracaodetalentos.totvs.app/forshipvagas/208/tecnico-de-manutencao-mecanica-preditiva",
+   "regime": "Onshore",
+   "area": "Mecânica e manutenção",
+   "tema": "mecanica",
+   "banco": false,
+   "vistaEm": "2026-11-13",
+   "videos": [
+    [
+     "3yOdA-HnSeg",
+     "Fala de mecânico e manutenção, a função desta vaga."
+    ],
+    [
+     "AFQCQwo_5Kc",
+     "Fala de mecânico e manutenção, a função desta vaga."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ]
+   ]
+  },
+  {
+   "id": "forship-t-cnico-de-manuten-o-mec-nica-preditiva-20973",
+   "titulo": "Técnico de Manutenção Mecânica – Preditiva",
+   "empresa": "Forship",
+   "local": "Itaboraí, RJ",
+   "link": "https://atracaodetalentos.totvs.app/forshipvagas/244/tecnico-de-manutencao-mecanica-preditiva",
+   "regime": "Onshore",
+   "area": "Mecânica e manutenção",
+   "tema": "mecanica",
+   "banco": false,
+   "vistaEm": "2026-11-13",
+   "videos": [
+    [
+     "3yOdA-HnSeg",
+     "Fala de mecânico e manutenção, a função desta vaga."
+    ],
+    [
+     "AFQCQwo_5Kc",
+     "Fala de mecânico e manutenção, a função desta vaga."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ]
+   ]
+  },
+  {
    "id": "fugro-analista-t-cnico-de-tooling-41547",
    "titulo": "Analista Técnico de Tooling",
    "empresa": "Fugro",
@@ -8580,11 +9235,11 @@
    ]
   },
   {
-   "id": "halliburton-landmark-57194",
+   "id": "halliburton-landmark-34577",
    "titulo": "Landmark",
    "empresa": "Halliburton",
    "local": "Rio de Janeiro, RJ",
-   "link": "https://jobs.halliburton.com/job/Rio-de-Janeiro-Brazil-RJ-Geology-Consultant-Landmark-RJ-20011-000/1449783200/",
+   "link": "https://jobs.halliburton.com/job/Rio-de-Janeiro-Brazil-RJ-Geomechanics-Consultant-Landmark-RJ-20011-000/1449788600/",
    "regime": "Onshore",
    "area": "Outras",
    "tema": "geral",
@@ -8632,11 +9287,11 @@
    ]
   },
   {
-   "id": "halliburton-landmark-34577",
+   "id": "halliburton-landmark-57194",
    "titulo": "Landmark",
    "empresa": "Halliburton",
    "local": "Rio de Janeiro, RJ",
-   "link": "https://jobs.halliburton.com/job/Rio-de-Janeiro-Brazil-RJ-Geomechanics-Consultant-Landmark-RJ-20011-000/1449788600/",
+   "link": "https://jobs.halliburton.com/job/Rio-de-Janeiro-Brazil-RJ-Geology-Consultant-Landmark-RJ-20011-000/1449783200/",
    "regime": "Onshore",
    "area": "Outras",
    "tema": "geral",
@@ -10660,6 +11315,32 @@
    ]
   },
   {
+   "id": "mota-engil-analista-de-ti-72356",
+   "titulo": "Analista de TI",
+   "empresa": "Mota-Engil",
+   "local": "Belo Horizonte, MG",
+   "link": "https://careers.mota-engil.com/job/Belo-Horizonte-Analista-de-TI-MG/1457261533/",
+   "regime": "Onshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-11-13",
+   "videos": [
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
    "id": "mota-engil-aprendiz-41425",
    "titulo": "Aprendiz",
    "empresa": "Mota-Engil",
@@ -11124,32 +11805,6 @@
     [
      "wj-tFC2Qpxs",
      "Vídeo do canal sobre a NOV. Ajuda a chegar preparado na entrevista."
-    ]
-   ]
-  },
-  {
-   "id": "nov-repair-project-supervisor-62297",
-   "titulo": "Repair Project Supervisor",
-   "empresa": "NOV",
-   "local": "Macaé, RJ",
-   "link": "https://egay.fa.us6.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2001/job/45184",
-   "regime": "Onshore",
-   "area": "Outras",
-   "tema": "geral",
-   "banco": false,
-   "vistaEm": "2026-10-26",
-   "videos": [
-    [
-     "wj-tFC2Qpxs",
-     "Vídeo do canal sobre a NOV. Ajuda a chegar preparado na entrevista."
-    ],
-    [
-     "lttRYy_P8T8",
-     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
-    ],
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
     ]
    ]
   },
@@ -12844,32 +13499,6 @@
    ]
   },
   {
-   "id": "oceaneering-survey-operations-manager-44463",
-   "titulo": "Survey Operations Manager",
-   "empresa": "Oceaneering",
-   "local": "Macaé, RJ",
-   "link": "https://ebfr.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/11726",
-   "regime": "Onshore",
-   "area": "Outras",
-   "tema": "geral",
-   "banco": false,
-   "vistaEm": "2026-10-15",
-   "videos": [
-    [
-     "lttRYy_P8T8",
-     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
-    ],
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ],
-    [
-     "eHqY18dRP8Q",
-     "As perguntas que mais aparecem na entrevista e como responder."
-    ]
-   ]
-  },
-  {
    "id": "oceaneering-workshop-service-technician-v-95089",
    "titulo": "Workshop Service Technician V",
    "empresa": "Oceaneering",
@@ -13520,6 +14149,32 @@
    ]
   },
   {
+   "id": "prio-operador-de-produ-o-mantenedor-77436",
+   "titulo": "Operador de Produção Mantenedor",
+   "empresa": "PRIO",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://prio.gupy.io/jobs/12590845",
+   "regime": "Onshore",
+   "area": "Operação e produção",
+   "tema": "operacao",
+   "banco": false,
+   "vistaEm": "2026-11-13",
+   "videos": [
+    [
+     "kJZqpRE1bvY",
+     "Fala de operador de produção, a função desta vaga."
+    ],
+    [
+     "1XXSSAG18CE",
+     "Fala de operador de produção, a função desta vaga."
+    ],
+    [
+     "bY0r9BqrwYw",
+     "Vídeo do canal sobre a PRIO. Ajuda a chegar preparado na entrevista."
+    ]
+   ]
+  },
+  {
    "id": "perbras-auxiliar-operador-de-terminal-tesc-28454",
    "titulo": "AUXILIAR OPERADOR DE TERMINAL (TESC)",
    "empresa": "Perbras",
@@ -13858,32 +14513,6 @@
    ]
   },
   {
-   "id": "sbm-offshore-buyer-71927",
-   "titulo": "Buyer",
-   "empresa": "SBM Offshore",
-   "local": "Santos, SP",
-   "link": "https://careers.sbmoffshore.com/job/Santos-Buyer-11035-260/1376209157/",
-   "regime": "Onshore",
-   "area": "Outras",
-   "tema": "geral",
-   "banco": false,
-   "vistaEm": "2026-10-29",
-   "videos": [
-    [
-     "fqj2M7KTR0U",
-     "Vídeo do canal sobre a SBM Offshore. Ajuda a chegar preparado na entrevista."
-    ],
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ],
-    [
-     "eHqY18dRP8Q",
-     "As perguntas que mais aparecem na entrevista e como responder."
-    ]
-   ]
-  },
-  {
    "id": "sbm-offshore-construction-structural-supervisor-9094",
    "titulo": "Construction Structural Supervisor",
    "empresa": "SBM Offshore",
@@ -14010,6 +14639,32 @@
     [
      "fqj2M7KTR0U",
      "Vídeo do canal sobre a SBM Offshore. Ajuda a chegar preparado na entrevista."
+    ]
+   ]
+  },
+  {
+   "id": "sbm-offshore-modern-workplace-specialist-4446",
+   "titulo": "Modern Workplace Specialist",
+   "empresa": "SBM Offshore",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://careers.sbmoffshore.com/job/Rio-de-Janeiro-Modern-Workplace-Specialist-20021-290/1377178457/",
+   "regime": "Onshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-11-13",
+   "videos": [
+    [
+     "fqj2M7KTR0U",
+     "Vídeo do canal sobre a SBM Offshore. Ajuda a chegar preparado na entrevista."
+    ],
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
     ]
    ]
   },
@@ -14196,32 +14851,6 @@
    ]
   },
   {
-   "id": "shell-sc-commercial-specialist-29661",
-   "titulo": "SC Commercial Specialist",
-   "empresa": "Shell",
-   "local": "Rio de Janeiro, RJ",
-   "link": "https://shell.wd3.myworkdayjobs.com/ShellCareers/job/Rio-De-Janeiro---Ventura-Office/SC-Commercial-Specialist_R211187-1",
-   "regime": "Onshore",
-   "area": "Outras",
-   "tema": "geral",
-   "banco": false,
-   "vistaEm": "2026-11-12",
-   "videos": [
-    [
-     "lttRYy_P8T8",
-     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
-    ],
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ],
-    [
-     "eHqY18dRP8Q",
-     "As perguntas que mais aparecem na entrevista e como responder."
-    ]
-   ]
-  },
-  {
    "id": "shell-sc-supply-base-lead-53184",
    "titulo": "SC Supply Base Lead",
    "empresa": "Shell",
@@ -14322,6 +14951,32 @@
     [
      "kxMbpcGcYks",
      "Vídeo do canal sobre a Subsea7. Ajuda a chegar preparado na entrevista."
+    ]
+   ]
+  },
+  {
+   "id": "subsea7-accountant-94225",
+   "titulo": "Accountant",
+   "empresa": "Subsea7",
+   "local": "Brasil",
+   "link": "https://careers.subsea7.com/job/Kuala-Lumpur-Accountant/1364916755/",
+   "regime": "Onshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-11-13",
+   "videos": [
+    [
+     "kxMbpcGcYks",
+     "Vídeo do canal sobre a Subsea7. Ajuda a chegar preparado na entrevista."
+    ],
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
     ]
    ]
   },
@@ -14430,16 +15085,16 @@
    ]
   },
   {
-   "id": "subsea7-customized-solutions-project-specialist-26007",
-   "titulo": "Customized Solutions Project Specialist",
+   "id": "subsea7-document-controller-53356",
+   "titulo": "Document Controller",
    "empresa": "Subsea7",
    "local": "Brasil",
-   "link": "https://careers.subsea7.com/job/Houston-Customized-Solutions-Project-Specialist-TX-77001/1376596955/",
+   "link": "https://careers.subsea7.com/job/Kuala-Lumpur-Document-Controller/1376874855/",
    "regime": "Onshore",
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-11-12",
+   "vistaEm": "2026-11-13",
    "videos": [
     [
      "kxMbpcGcYks",
@@ -14452,32 +15107,6 @@
     [
      "sMTU-gjxcLU",
      "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ]
-   ]
-  },
-  {
-   "id": "subsea7-drafting-intern-33749",
-   "titulo": "Drafting Intern",
-   "empresa": "Subsea7",
-   "local": "Brasil",
-   "link": "https://careers.subsea7.com/job/Houston-Drafting-Intern-TX-77001/1376594555/",
-   "regime": "Onshore",
-   "area": "Trainee e estágio",
-   "tema": "trainee",
-   "banco": false,
-   "vistaEm": "2026-11-12",
-   "videos": [
-    [
-     "iKkxsnu9rZ8",
-     "Fala de estágio, trainee e primeiro emprego, a função desta vaga."
-    ],
-    [
-     "4eWz_1hX3OI",
-     "Fala de estágio, trainee e primeiro emprego, a função desta vaga."
-    ],
-    [
-     "kxMbpcGcYks",
-     "Vídeo do canal sobre a Subsea7. Ajuda a chegar preparado na entrevista."
     ]
    ]
   },
@@ -14534,58 +15163,6 @@
    ]
   },
   {
-   "id": "subsea7-engineer-level-i-projects-237",
-   "titulo": "Engineer Level I - Projects",
-   "empresa": "Subsea7",
-   "local": "Brasil",
-   "link": "https://careers.subsea7.com/job/Merida-Engineer-Level-I-Projects/1376592055/",
-   "regime": "Onshore",
-   "area": "Engenharia",
-   "tema": "engenharia",
-   "banco": false,
-   "vistaEm": "2026-11-12",
-   "videos": [
-    [
-     "9ZlICqIBUMg",
-     "Fala de engenharia, a função desta vaga."
-    ],
-    [
-     "0uMWC3VBm8A",
-     "Fala de engenharia, a função desta vaga."
-    ],
-    [
-     "kxMbpcGcYks",
-     "Vídeo do canal sobre a Subsea7. Ajuda a chegar preparado na entrevista."
-    ]
-   ]
-  },
-  {
-   "id": "subsea7-engineer-level-i-structures-15939",
-   "titulo": "Engineer Level I - Structures",
-   "empresa": "Subsea7",
-   "local": "Brasil",
-   "link": "https://careers.subsea7.com/job/Merida-Engineer-Level-I-Structures/1376602755/",
-   "regime": "Onshore",
-   "area": "Engenharia",
-   "tema": "engenharia",
-   "banco": false,
-   "vistaEm": "2026-11-12",
-   "videos": [
-    [
-     "9ZlICqIBUMg",
-     "Fala de engenharia, a função desta vaga."
-    ],
-    [
-     "0uMWC3VBm8A",
-     "Fala de engenharia, a função desta vaga."
-    ],
-    [
-     "kxMbpcGcYks",
-     "Vídeo do canal sobre a Subsea7. Ajuda a chegar preparado na entrevista."
-    ]
-   ]
-  },
-  {
    "id": "subsea7-equipment-administrator-32271",
    "titulo": "Equipment Administrator",
    "empresa": "Subsea7",
@@ -14596,6 +15173,32 @@
    "tema": "geral",
    "banco": false,
    "vistaEm": "2026-11-12",
+   "videos": [
+    [
+     "kxMbpcGcYks",
+     "Vídeo do canal sobre a Subsea7. Ajuda a chegar preparado na entrevista."
+    ],
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ]
+   ]
+  },
+  {
+   "id": "subsea7-especialista-financeiro-tesouraria-73925",
+   "titulo": "Especialista Financeiro (Tesouraria)",
+   "empresa": "Subsea7",
+   "local": "Brasil",
+   "link": "https://careers.subsea7.com/job/Rio-Das-Ostras-Especialista-Financeiro-%28Tesouraria%29/1376891955/",
+   "regime": "Onshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-11-13",
    "videos": [
     [
      "kxMbpcGcYks",
@@ -14664,28 +15267,28 @@
    ]
   },
   {
-   "id": "subsea7-hydraulic-mechanical-technician-14406",
-   "titulo": "Hydraulic/Mechanical Technician",
+   "id": "subsea7-lider-contabilidade-77643",
+   "titulo": "Lider Contabilidade",
    "empresa": "Subsea7",
    "local": "Brasil",
-   "link": "https://careers.subsea7.com/job/Houston-HydraulicMechanical-Technician-TX-77001/1376574855/",
+   "link": "https://careers.subsea7.com/job/Rio-Das-Ostras-Lider-Contabilidade/1376891855/",
    "regime": "Onshore",
-   "area": "Mecânica e manutenção",
-   "tema": "mecanica",
+   "area": "Outras",
+   "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-11-11",
+   "vistaEm": "2026-11-13",
    "videos": [
-    [
-     "3yOdA-HnSeg",
-     "Fala de mecânico e manutenção, a função desta vaga."
-    ],
-    [
-     "AFQCQwo_5Kc",
-     "Fala de mecânico e manutenção, a função desta vaga."
-    ],
     [
      "kxMbpcGcYks",
      "Vídeo do canal sobre a Subsea7. Ajuda a chegar preparado na entrevista."
+    ],
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
     ]
    ]
   },
@@ -14752,32 +15355,6 @@
    "tema": "engenharia",
    "banco": false,
    "vistaEm": "2026-11-10",
-   "videos": [
-    [
-     "9ZlICqIBUMg",
-     "Fala de engenharia, a função desta vaga."
-    ],
-    [
-     "0uMWC3VBm8A",
-     "Fala de engenharia, a função desta vaga."
-    ],
-    [
-     "kxMbpcGcYks",
-     "Vídeo do canal sobre a Subsea7. Ajuda a chegar preparado na entrevista."
-    ]
-   ]
-  },
-  {
-   "id": "subsea7-principal-engineer-projects-39167",
-   "titulo": "Principal Engineer - Projects",
-   "empresa": "Subsea7",
-   "local": "Brasil",
-   "link": "https://careers.subsea7.com/job/Houston-Principal-Engineer-Projects-TX-77001/1376593655/",
-   "regime": "Onshore",
-   "area": "Engenharia",
-   "tema": "engenharia",
-   "banco": false,
-   "vistaEm": "2026-11-11",
    "videos": [
     [
      "9ZlICqIBUMg",
@@ -14894,58 +15471,6 @@
     [
      "eHqY18dRP8Q",
      "As perguntas que mais aparecem na entrevista e como responder."
-    ]
-   ]
-  },
-  {
-   "id": "technipfmc-ajustador-produ-o-afirmativa-pcd-58612",
-   "titulo": "Ajustador Produção - Afirmativa PcD",
-   "empresa": "TechnipFMC",
-   "local": "Macaé, RJ",
-   "link": "https://careers.technipfmc.com/job/Maca%C3%A9-Ajustador-Produ%C3%A7%C3%A3o-Afirmativa-PcD-RJ-27970-020/1447353800/",
-   "regime": "Onshore",
-   "area": "Mecânica e manutenção",
-   "tema": "mecanica",
-   "banco": false,
-   "vistaEm": "2026-11-04",
-   "videos": [
-    [
-     "0uMWC3VBm8A",
-     "Vídeo do canal sobre a TechnipFMC. Ajuda a chegar preparado na entrevista."
-    ],
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ],
-    [
-     "eHqY18dRP8Q",
-     "As perguntas que mais aparecem na entrevista e como responder."
-    ]
-   ]
-  },
-  {
-   "id": "technipfmc-control-automation-devops-engineer-4311",
-   "titulo": "Control & Automation Devops Engineer",
-   "empresa": "TechnipFMC",
-   "local": "Rio de Janeiro, RJ",
-   "link": "https://careers.technipfmc.com/job/Rio-de-Janeiro-Control-&amp;-Automation-Devops-Engineer-RJ-21941-850/1434774800/",
-   "regime": "Onshore",
-   "area": "Engenharia",
-   "tema": "engenharia",
-   "banco": false,
-   "vistaEm": "2026-11-03",
-   "videos": [
-    [
-     "-35oTYToV2A",
-     "Fala de eletricista, área vizinha desta vaga."
-    ],
-    [
-     "0uMWC3VBm8A",
-     "Vídeo do canal sobre a TechnipFMC. Ajuda a chegar preparado na entrevista."
-    ],
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
     ]
    ]
   },
@@ -15128,6 +15653,58 @@
     [
      "sMTU-gjxcLU",
      "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ]
+   ]
+  },
+  {
+   "id": "technipfmc-senior-1-operator-heavy-equipment-5830",
+   "titulo": "Senior 1 Operator, Heavy Equipment",
+   "empresa": "TechnipFMC",
+   "local": "Vitória, Espirito Santo",
+   "link": "https://careers.technipfmc.com/job/Vit%C3%B3ria-Senior-1-Operator%2C-Heavy-Equipment-Espi-29020-300/1450446400/",
+   "regime": "Onshore",
+   "area": "Operação e produção",
+   "tema": "operacao",
+   "banco": false,
+   "vistaEm": "2026-11-13",
+   "videos": [
+    [
+     "0uMWC3VBm8A",
+     "Vídeo do canal sobre a TechnipFMC. Ajuda a chegar preparado na entrevista."
+    ],
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ]
+   ]
+  },
+  {
+   "id": "technipfmc-senior-1-technician-workshop-50361",
+   "titulo": "Senior 1 Technician, Workshop",
+   "empresa": "TechnipFMC",
+   "local": "Vitória, Espirito Santo",
+   "link": "https://careers.technipfmc.com/job/Vit%C3%B3ria-Senior-1-Technician%2C-Workshop-Espi-29020-300/1450446600/",
+   "regime": "Onshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-11-13",
+   "videos": [
+    [
+     "3yOdA-HnSeg",
+     "Fala de mecânico e manutenção, a função desta vaga."
+    ],
+    [
+     "AFQCQwo_5Kc",
+     "Fala de mecânico e manutenção, a função desta vaga."
+    ],
+    [
+     "0uMWC3VBm8A",
+     "Vídeo do canal sobre a TechnipFMC. Ajuda a chegar preparado na entrevista."
     ]
    ]
   },
@@ -15600,6 +16177,32 @@
    ]
   },
   {
+   "id": "vinci-energies-analista-de-rh-enfase-em-dho-15916",
+   "titulo": "ANALISTA DE RH - ENFASE EM DHO",
+   "empresa": "Vinci Energies",
+   "local": "Macaé, RJ",
+   "link": "https://vinci-energies.gupy.io/jobs/12883059",
+   "regime": "Onshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-11-13",
+   "videos": [
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
    "id": "vinci-energies-analista-de-meio-ambiente-55110",
    "titulo": "Analista de Meio Ambiente",
    "empresa": "Vinci Energies",
@@ -16004,32 +16607,6 @@
     [
      "-35oTYToV2A",
      "Fala de eletricista, área vizinha desta vaga."
-    ],
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ],
-    [
-     "eHqY18dRP8Q",
-     "As perguntas que mais aparecem na entrevista e como responder."
-    ]
-   ]
-  },
-  {
-   "id": "wilhelmsen-ship-management-husbandry-agent-75133",
-   "titulo": "Husbandry Agent",
-   "empresa": "Wilhelmsen Ship Management",
-   "local": "Santos, SP",
-   "link": "https://wilhelmsen.wd3.myworkdayjobs.com/Wilhelmsen/job/Santos/Husbandry-Agent_JOBREQ_13360",
-   "regime": "Onshore",
-   "area": "Outras",
-   "tema": "geral",
-   "banco": false,
-   "vistaEm": "2026-10-23",
-   "videos": [
-    [
-     "lttRYy_P8T8",
-     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
     ],
     [
      "sMTU-gjxcLU",
@@ -16992,6 +17569,32 @@
     [
      "wNai9-JZxOI",
      "Vídeo do canal sobre a Foresea. Ajuda a chegar preparado na entrevista."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
+   "id": "forship-1-banco-de-talentos-56386",
+   "titulo": "1_banco de Talentos",
+   "empresa": "Forship",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://atracaodetalentos.totvs.app/forshipvagas/12/1-banco-de-talentos",
+   "regime": "Onshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": true,
+   "vistaEm": "2026-11-13",
+   "videos": [
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
     ],
     [
      "sMTU-gjxcLU",
@@ -18018,11 +18621,11 @@
    ]
   },
   {
-   "id": "supergasbras-energia-oportunidades-supergasbras-banco-de-talentos-43973",
+   "id": "supergasbras-energia-oportunidades-supergasbras-banco-de-talentos-88624",
    "titulo": "Oportunidades Supergasbras | Banco de Talentos",
    "empresa": "Supergasbras Energia",
-   "local": "Rio de Janeiro, RJ",
-   "link": "https://supergasbras.gupy.io/jobs/476849",
+   "local": "Paulínia, SP",
+   "link": "https://supergasbras.gupy.io/jobs/4929077",
    "regime": "Onshore",
    "area": "Outras",
    "tema": "geral",
@@ -18044,11 +18647,11 @@
    ]
   },
   {
-   "id": "supergasbras-energia-oportunidades-supergasbras-banco-de-talentos-88624",
+   "id": "supergasbras-energia-oportunidades-supergasbras-banco-de-talentos-43973",
    "titulo": "Oportunidades Supergasbras | Banco de Talentos",
    "empresa": "Supergasbras Energia",
-   "local": "Paulínia, SP",
-   "link": "https://supergasbras.gupy.io/jobs/4929077",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://supergasbras.gupy.io/jobs/476849",
    "regime": "Onshore",
    "area": "Outras",
    "tema": "geral",

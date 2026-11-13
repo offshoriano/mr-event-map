@@ -2562,7 +2562,11 @@
    "ABESPetro"
   ],
   "site": "https://www.forship.com/pt-BR/index.html",
-  "mapeado_em": "2026-11-01"
+  "mapeado_em": "2026-11-01",
+  "ats": {
+   "tipo": "totvs",
+   "cfg": "forshipvagas"
+  }
  },
  {
   "nome": "Framo Do Brasil Ltda",
