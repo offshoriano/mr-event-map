@@ -3,7 +3,7 @@ titulo: O que minha primeira expedição à China mudou na minha forma de enxerg
 descricao: Sete dias entre as ruas de Xangai, estaleiros, reuniões e uma apresentação que me lembrou por que comunicar bem faz diferença nos negócios. O relato da missão Invest in Brasil Shipbuilding & Offshore na China.
 slug: missao-china-estaleiros
 data: 2026-11-17
-rascunho: sim
+rascunho: não
 tema: Mercado
 foto: /assets/artigos/missao-china-2026/capa.jpg
 capa_pronta: /assets/artigos/missao-china-2026/capa-compartilhamento.jpg
