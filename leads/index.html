@@ -85,7 +85,7 @@ function login(msg){
   $('#f').onsubmit = e => { e.preventDefault(); senha = $('#pw').value; carregar(); };
 }
 
-let VG = [], AVISO = '', aba = ({'#vagas':'vagas', '#ranking':'ranking', '#empresas':'empresas', '#diagnosticos':'diagnosticos', '#mensagens':'mensagens', '#alertas':'alertas', '#curriculo':'curriculo', '#pagamentos':'pagamentos', '#divulgar':'divulgar'})[location.hash] || 'contatos', avisou = false;
+let VG = [], AVISO = '', aba = ({'#vagas':'vagas', '#ranking':'ranking', '#empresas':'empresas', '#diagnosticos':'diagnosticos', '#mensagens':'mensagens', '#alertas':'alertas', '#curriculo':'curriculo', '#pagamentos':'pagamentos', '#divulgar':'divulgar', '#comentarios':'comentarios'})[location.hash] || 'contatos', avisou = false;
 const AREAS = {seguranca:'Segurança', eletrica:'Elétrica e instrumentação', mecanica:'Mecânica e manutenção', pocos:'Perfuração e poços',
   maritimo:'Marítimo', hotelaria:'Hotelaria', operacao:'Operação e produção', engenharia:'Engenharia', trainee:'Trainee e estágio', geral:'Outras'};
 const VAPI = '../api/vagas-enviadas.php';
@@ -130,10 +130,11 @@ function painel(){
       <button class="tab ${aba === 'curriculo' ? 'on' : ''}" data-aba="curriculo">Currículo</button>
       <button class="tab ${aba === 'pagamentos' ? 'on' : ''}" data-aba="pagamentos">Pagamentos</button>
       <button class="tab ${aba === 'divulgar' ? 'on' : ''}" data-aba="divulgar">Telegram e WhatsApp</button>
+      <button class="tab ${aba === 'comentarios' ? 'on' : ''}" data-aba="comentarios">Comentários</button>
     </div>
     <div id="conteudo"></div></div>`;
   document.querySelectorAll('.tab').forEach(t => t.onclick = () => { aba = t.dataset.aba; history.replaceState(null, '', aba === 'contatos' ? '#' : '#' + aba); painel(); });
-  aba === 'divulgar' ? painelDivulgar() : aba === 'pagamentos' ? painelPagamentos() : aba === 'curriculo' ? painelCurriculo() : aba === 'alertas' ? painelAlertas() : aba === 'mensagens' ? painelMensagens() : aba === 'diagnosticos' ? painelDiagnosticos() : aba === 'vagas' ? painelVagas() : aba === 'ranking' ? painelRanking() : aba === 'empresas' ? painelEmpresas() : painelContatos();
+  aba === 'comentarios' ? painelComentarios() : aba === 'divulgar' ? painelDivulgar() : aba === 'pagamentos' ? painelPagamentos() : aba === 'curriculo' ? painelCurriculo() : aba === 'alertas' ? painelAlertas() : aba === 'mensagens' ? painelMensagens() : aba === 'diagnosticos' ? painelDiagnosticos() : aba === 'vagas' ? painelVagas() : aba === 'ranking' ? painelRanking() : aba === 'empresas' ? painelEmpresas() : painelContatos();
 }
 
 function painelVagas(){
@@ -327,6 +328,27 @@ function painelDivulgar(){
       dpost({action:'config', senha, token:$('#tk').value.trim(), canal:$('#tc').value.trim()}).then(r => { if (r.error) { $('#tmsg').textContent = r.error; return; } painelDivulgar(); }); };
     if ($('#tt')) $('#tt').onclick = () => dpost({action:'testar', senha}).then(r => alert(r.ok ? 'Mensagem de teste enviada. Confira o canal.' : 'Não saiu: ' + r.erro));
   }).catch(() => { $('#conteudo').innerHTML = '<p class="note">Não foi possível carregar.</p>'; });
+}
+
+// Comentários e curtidas dos artigos: comentário só aparece no site depois de aprovado aqui
+function painelComentarios(){
+  $('#conteudo').innerHTML = '<p class="note">Carregando...</p>';
+  const apost = body => fetch('../api/artigos.php', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(body)}).then(r => r.json());
+  apost({action:'painel', senha}).then(d => {
+    const C = d.comentarios || [], K = d.curtidas || {}, pend = C.filter(c => c.situacao === 'pendente');
+    const linha = c => `<tr><td class="m">${new Date(c.data).toLocaleString('pt-BR', {dateStyle:'short', timeStyle:'short'})}</td>
+      <td><a href="/artigos/${esc(c.slug)}/#comentarios" target="_blank" style="color:var(--gold-l)">${esc(c.slug)}</a></td><td><b>${esc(c.nome)}</b><br>${esc(c.texto)}</td>
+      <td class="m">${c.situacao === 'pendente' ? 'esperando' : 'no ar'}</td>
+      <td>${c.situacao === 'pendente' ? `<button class="btn" data-ap="${esc(c.id)}" style="margin:0 0 6px">Aprovar</button><br>` : ''}<button class="del" data-del="${esc(c.id)}">apagar</button></td></tr>`;
+    $('#conteudo').innerHTML = `
+      <div class="kpis"><div class="kpi"><b>${pend.length}</b><span>Esperando aprovação</span></div><div class="kpi"><b>${C.length - pend.length}</b><span>Comentários no ar</span></div>
+      <div class="kpi"><b>${Object.values(K).reduce((a, b) => a + b, 0)}</b><span>Curtidas</span></div></div>
+      <p class="note">Cada comentário novo também chega no seu e-mail. Ele só aparece no artigo depois que você aprova.</p>
+      <div class="tbl">${C.length ? `<table><thead><tr><th>Data</th><th>Artigo</th><th>Comentário</th><th>Situação</th><th></th></tr></thead><tbody>${C.map(linha).join('')}</tbody></table>` : '<p style="padding:24px;color:var(--muted)">Nenhum comentário ainda.</p>'}</div>
+      ${Object.keys(K).length ? `<h2 class="sec">Curtidas por artigo</h2><div class="tbl"><table><tbody>${Object.entries(K).sort((a, b) => b[1] - a[1]).map(([s, n]) => `<tr><td>${esc(s)}</td><td class="m">${n}</td></tr>`).join('')}</tbody></table></div>` : ''}`;
+    $('#conteudo').querySelectorAll('[data-ap]').forEach(b => b.onclick = () => apost({action:'aprovar', senha, id:b.dataset.ap}).then(() => painelComentarios()));
+    $('#conteudo').querySelectorAll('[data-del]').forEach(b => b.onclick = () => { if (confirm('Apagar este comentário de vez?')) apost({action:'apagar', senha, id:b.dataset.del}).then(() => painelComentarios()); });
+  }).catch(() => { $('#conteudo').innerHTML = '<p class="note">Não foi possível carregar os comentários.</p>'; });
 }
 
 // Mensagens do formulário "Fale com a gente" (/contato/)

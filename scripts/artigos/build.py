@@ -19,6 +19,7 @@ Rascunho vai para /artigos/rascunho-<slug>/ com noindex e fica fora da lista e d
 Artigo pronto com data futura fica agendado: prévia no mesmo endereço até o dia, e publica sozinho na data.
 Também regenera o sitemap.xml do site. Uso: python3 scripts/artigos/build.py"""
 import html, json, re
+from urllib.parse import quote
 from datetime import date
 from pathlib import Path
 import capa
@@ -168,6 +169,47 @@ def cabeca(titulo, desc, url, imagem, extra='', noindex=False):
 
 RODAPE = """<footer>MR Group · Conhecimento que conecta. <a href="/sobre/">Sobre</a> · <a href="/vagas/">Vagas</a> · <a href="/artigos/">Artigos</a><p style="margin-top:10px;font-size:12px;line-height:2"><a href="https://www.instagram.com/matheus_rangel/" target="_blank" rel="noopener" style="color:inherit">Instagram</a> · <a href="https://www.linkedin.com/in/omatheusrangel/" target="_blank" rel="noopener" style="color:inherit">LinkedIn</a> · <a href="https://www.youtube.com/@carreiraoffshore" target="_blank" rel="noopener" style="color:inherit">YouTube</a> · <a href="/contato/" style="color:inherit">Fale com a gente</a> · <a href="/privacidade/" style="color:inherit">Privacidade</a> · <a href="/termos/" style="color:inherit">Termos de uso</a></p></footer>
 <script>
+// Curtir, compartilhar e comentar (só nas páginas de artigo)
+(() => {
+  const box = document.querySelector('.interagir'); if (!box) return;
+  const slug = box.dataset.slug, api = (d) => fetch('/api/artigos.php', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(Object.assign({slug}, d))}).then(r => r.json());
+  const esc = t => String(t).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  const btn = box.querySelector('.curtir'), n = box.querySelector('.n'), chave = 'mr-curtiu-' + slug;
+  let curtiu = false; try { curtiu = localStorage.getItem(chave) === '1'; } catch (e) {}
+  const marca = () => { btn.classList.toggle('on', curtiu); btn.setAttribute('aria-pressed', curtiu); btn.querySelector('span').textContent = curtiu ? 'Curtido' : 'Curtir'; };
+  const mostra = (c) => { n.textContent = c > 0 ? c : ''; };
+  marca();
+  api({action:'info'}).then(d => {
+    mostra(d.curtidas || 0);
+    const L = d.comentarios || [];
+    document.querySelector('.nc').textContent = L.length ? '(' + L.length + ')' : '';
+    document.querySelector('.lista-com').innerHTML = L.map(c => `<div class="com"><b>${esc(c.nome)}</b><time>${new Date(c.data).toLocaleDateString('pt-BR')}</time><p>${esc(c.texto).replace(/\\n/g, '<br>')}</p></div>`).join('') || '<p class="vazio-com">Seja o primeiro a comentar.</p>';
+  }).catch(() => {});
+  btn.onclick = () => {
+    if (curtiu) return;
+    curtiu = true; marca(); try { localStorage.setItem(chave, '1'); } catch (e) {}
+    api({action:'curtir'}).then(d => { if (d.curtidas) mostra(d.curtidas); }).catch(() => {});
+    if (window.gtag) gtag('event', 'artigo_curtir', {artigo: slug});
+  };
+  const url = location.origin + location.pathname;
+  box.querySelectorAll('.partilhar a').forEach(a => a.addEventListener('click', () => { if (window.gtag) gtag('event', 'artigo_compartilhar', {artigo: slug, rede: a.className}); }));
+  box.querySelector('.copiar').onclick = ev => navigator.clipboard.writeText(url).then(() => { ev.target.textContent = 'Link copiado'; setTimeout(() => ev.target.textContent = 'Copiar link', 1800); if (window.gtag) gtag('event', 'artigo_compartilhar', {artigo: slug, rede: 'copiar'}); });
+  const nat = box.querySelector('.nativo');
+  if (navigator.share) { nat.hidden = false; nat.onclick = () => navigator.share({title: box.dataset.titulo, url}).catch(() => {}); }
+  const f = document.querySelector('.form-com'), msg = f.querySelector('.msg-com');
+  f.onsubmit = ev => {
+    ev.preventDefault();
+    const d = {action:'comentar', nome:f.nome.value.trim(), texto:f.texto.value.trim(), site:f.site.value};
+    if (!d.nome || d.texto.length < 3) { msg.textContent = 'Escreva seu nome e o comentário.'; return; }
+    f.querySelector('button').disabled = true; msg.textContent = 'Enviando...';
+    api(d).then(r => {
+      f.querySelector('button').disabled = false;
+      if (r.error) { msg.textContent = r.error; return; }
+      f.reset(); msg.textContent = 'Recebido. Seu comentário aparece aqui assim que for aprovado.';
+      if (window.gtag) gtag('event', 'artigo_comentar', {artigo: slug});
+    }).catch(() => { f.querySelector('button').disabled = false; msg.textContent = 'Não foi possível enviar agora. Tente de novo.'; });
+  };
+})();
 document.addEventListener('click', ev => {
   const b = ev.target.closest('.video'); if (!b || b.classList.contains('on')) return;
   b.classList.add('on');
@@ -211,9 +253,22 @@ def pagina_artigo(a, publicados=()):
 <div class="autor"><img src="/guia/img/matheus-embarcado.jpg" alt="Matheus Rangel" width="48" height="48"><div><b>Matheus Rangel</b><span>14 anos offshore · {data_br(a['data'])}{atualizado} · {minutos} min de leitura</span></div></div>
 {sumario}
 <article>{corpo}</article>
+<div class="interagir" data-slug="{e(a['slug'])}" data-titulo="{e(a['titulo'])}">
+<button type="button" class="curtir" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 4.5 6.7 4.5c2 0 3.6 1.1 4.3 2.6.7-1.5 2.3-2.6 4.3-2.6 3.7 0 5.8 3.9 4.3 7.3C19.5 16.4 12 21 12 21z"/></svg><span>Curtir</span><b class="n"></b></button>
+<div class="partilhar"><span>Compartilhar</span>
+<a class="li" target="_blank" rel="noopener" href="https://www.linkedin.com/sharing/share-offsite/?url={e(url)}">LinkedIn</a>
+<a class="wa" target="_blank" rel="noopener" href="https://wa.me/?text={e(quote(a['titulo'] + ' ' + url))}">WhatsApp</a>
+<button type="button" class="copiar">Copiar link</button><button type="button" class="nativo" hidden>Mais opções</button></div>
+</div>
 <aside class="cta"><b>Quer o caminho completo, na ordem certa?</b><p>O Guia 7 Passos junta cursos, currículo, LinkedIn, inglês e entrevista num plano só, do zero ao primeiro embarque.</p>
 <a class="btn" href="/guia/?origem=artigo-{e(a['slug'])}">Conhecer o guia</a> <a class="btn ghost" href="/vagas/">Ver vagas abertas</a>
 <p class="canal">Vagas novas, artigos e eventos todo dia no seu celular. Siga o canal da MR Group no <a href="https://whatsapp.com/channel/0029VbEcI5T6hENgxY9hl10L" target="_blank" rel="noopener">WhatsApp</a> ou no <a class="tg" href="https://t.me/mrgroupvagas" target="_blank" rel="noopener">Telegram</a></p></aside>
+<section class="comentarios" id="comentarios"><h2>Comentários <span class="nc"></span></h2>
+<div class="lista-com"></div>
+<form class="form-com" novalidate><input name="nome" placeholder="Seu nome" maxlength="80" autocomplete="name" aria-label="Seu nome">
+<textarea name="texto" placeholder="Escreva o que achou, uma dúvida ou a sua experiência" maxlength="1500" aria-label="Comentário"></textarea>
+<input name="site" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
+<button class="btn" type="submit">Enviar comentário</button><p class="msg-com" role="status">Os comentários aparecem depois de aprovados.</p></form></section>
 {continuar}
 <div class="atalhos-fim" role="navigation" aria-label="Mais no site"><a href="/vagas/sem-experiencia/">Vagas sem experiência</a><a href="/vagas/embarcado/">Vagas embarcado</a><a href="/vagas/macae/">Vagas em Macaé</a><a href="/radar/">Radar Offshore</a><a href="/#calendar-main">Agenda de eventos</a></div>
 </main>
