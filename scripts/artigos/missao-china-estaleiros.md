@@ -6,13 +6,13 @@ data: 2026-11-17
 rascunho: sim
 tema: Mercado
 foto: /assets/artigos/missao-china-2026/capa.jpg
-palavras: missão china estaleiros, jiangnan shipyard, invest in brasil shipbuilding offshore, apexbrasil abeemar sinaval, estaleiros chineses, cimc soe, sws waigaoqiao, hudong-zhonghua, indústria naval brasil china, conteúdo local offshore, klp group
+palavras: missão china estaleiros, jiangnan shipyard, invest in brasil shipbuilding offshore, apexbrasil abeemar sinaval, estaleiros chineses, cimc soe, sws waigaoqiao, hudong-zhonghua, indústria naval brasil china, conteúdo local offshore, qlp group
 ---
 A minha ida para Xangai começou no fim da ADIPEC, em Abu Dhabi. Eu saía de dias de encontros com empresas do setor de energia e embarcava para conhecer, pela primeira vez, uma parte da indústria que participa diretamente da construção das embarcações e unidades que vemos operar pelo mundo.
 
 Por volta das 22h, saí do Aeroporto Internacional Zayed. Depois de aproximadamente oito horas de voo, cheguei a Xangai perto das 9h05, no horário local.
 
-Chamei um carro pelo DiDi, aplicativo de transporte que usei por lá, e segui para o apartamento que havíamos alugado. Felipe Barbosa, da KLP Group, dividiria a hospedagem comigo. Ele chegou por volta das quatro da tarde, e fomos procurar alguma coisa para comer.
+Chamei um carro pelo DiDi, aplicativo de transporte que usei por lá, e segui para o apartamento que havíamos alugado. Felipe Barbosa, da QLP Group, dividiria a hospedagem comigo. Ele chegou por volta das quatro da tarde, e fomos procurar alguma coisa para comer.
 
 Até aquele momento, eu ainda não tinha feito uma refeição naquele dia. A primeira necessidade na China foi bastante objetiva.
 
@@ -32,7 +32,7 @@ Visitamos uma região comercial bastante movimentada, passamos pela parte antiga
 
 À noite, depois do jantar, começava a preparação para a missão do projeto Invest in Brasil Shipbuilding & Offshore, edição China, uma parceria entre ApexBrasil, ABEEMAR e SINAVAL. A proposta era aproximar a indústria naval e offshore brasileira de empresas e potenciais parceiros chineses.
 
-Eu estava ali pela MR Solutions, responsável pela cobertura da missão, e também acompanhando a KLP Group, nosso cliente no Brasil. Duas frentes de trabalho que se encontrariam o tempo inteiro: entender o mercado e comunicar o que aquela aproximação poderia gerar.
+Eu estava ali pela MR Solutions, responsável pela cobertura da missão, e também acompanhando a QLP Group, nosso cliente no Brasil. Duas frentes de trabalho que se encontrariam o tempo inteiro: entender o mercado e comunicar o que aquela aproximação poderia gerar.
 
 ## Segunda-feira: CIMC ENRIC, UPRO e CIMC SOE
 
@@ -62,7 +62,7 @@ O guia de estaleiros da Lloyd's Register, atualizado em junho de 2026, ajuda a d
 
 O que me interessou foi entender como essas partes se conectam. A embarcação, os tanques, a tubulação e os sistemas precisam funcionar juntos. Cada interface exige engenharia e cria necessidades de fornecimento e de suporte.
 
-{{imagem:/assets/artigos/missao-china-2026/cimc-soe-felipe-matheus.jpg|Com Felipe Barbosa, da KLP Group, na área de tanques de GNL da CIMC SOE.|Foto: arquivo pessoal}}
+{{imagem:/assets/artigos/missao-china-2026/cimc-soe-felipe-matheus.jpg|Com Felipe Barbosa, da QLP Group, na área de tanques de GNL da CIMC SOE.|Foto: arquivo pessoal}}
 
 Na conversa com a delegação, também apareceu a importância da representação local. Para uma empresa que quer atender o mercado brasileiro, conhecer o cliente, acompanhar a contratação e conseguir responder aqui pode ter tanto peso quanto apresentar uma boa solução técnica.
 
@@ -110,11 +110,11 @@ Naquela visita, não tivemos autorização para fotografar as instalações indu
 
 Um dos momentos mais marcantes da missão aconteceu fora dos estaleiros.
 
-Na noite anterior ao Brazilian Day, sentei com Felipe Barbosa para rever a apresentação da KLP. O material tinha informações sobre a empresa, mas seguia uma estrutura parecida com tantas apresentações que vemos em eventos.
+Na noite anterior ao Brazilian Day, sentei com Felipe Barbosa para rever a apresentação da QLP. O material tinha informações sobre a empresa, mas seguia uma estrutura parecida com tantas apresentações que vemos em eventos.
 
 Eu disse a ele que tínhamos uma oportunidade de começar pelo que interessava àquelas pessoas. Estávamos diante de empresas chinesas que queriam entender como entrar ou ampliar sua presença no mercado brasileiro.
 
-Precisávamos deixar claro, logo no início, em que a KLP poderia ajudá-las.
+Precisávamos deixar claro, logo no início, em que a QLP poderia ajudá-las.
 
 Reorganizamos a mensagem, e a apresentação passou a abrir com uma frase:
 
@@ -122,21 +122,21 @@ Reorganizamos a mensagem, e a apresentação passou a abrir com uma frase:
 
 A frase colocou na primeira linha um conhecimento relevante para aquele público. Antes de percorrer a história da empresa e o portfólio, Felipe apresentou uma razão para as pessoas ouvirem.
 
-Para mim, aquela abertura marcou a apresentação. Ela conectava a experiência da KLP a uma dificuldade concreta de quem estava na sala: compreender o mercado, os requisitos e o processo de compra de um cliente importante no Brasil.
+Para mim, aquela abertura marcou a apresentação. Ela conectava a experiência da QLP a uma dificuldade concreta de quem estava na sala: compreender o mercado, os requisitos e o processo de compra de um cliente importante no Brasil.
 
 Conhecer esse processo, naturalmente, não garante contratação a ninguém. Ajuda a orientar melhor uma empresa sobre o caminho que ela precisa percorrer.
 
-Esse bastidor resume muito do que acredito sobre comunicação. O conhecimento já estava com o Felipe e com a KLP. Nosso trabalho foi organizar esse conhecimento de uma forma que fizesse sentido para quem iria ouvir.
+Esse bastidor resume muito do que acredito sobre comunicação. O conhecimento já estava com o Felipe e com a QLP. Nosso trabalho foi organizar esse conhecimento de uma forma que fizesse sentido para quem iria ouvir.
 
 Ver uma empresa conseguir explicar seu valor para o público certo é uma das partes mais gratificantes do que faço hoje. Naquela noite, dentro de um apartamento em Xangai, essa contribuição ficou muito concreta.
 
-{{imagem:/assets/artigos/missao-china-2026/matheus-felipe-klp.jpg|Com Felipe Barbosa, da KLP Group.|Foto: arquivo pessoal}}
+{{imagem:/assets/artigos/missao-china-2026/matheus-felipe-klp.jpg|Com Felipe Barbosa, da QLP Group.|Foto: arquivo pessoal}}
 
 ## Quarta-feira: Brazilian Day
 
 Na quarta-feira, 11 de novembro, aconteceu o Brazilian Day.
 
-Depois de dois dias conhecendo empresas e instalações, tivemos um encontro para apresentar o Brasil e ouvir os potenciais parceiros chineses. Do lado brasileiro estavam Petrobras, Transpetro, KLP Group, MRM Logistics, SR Group e FID, compartilhando demandas, projetos e soluções. Empresas chinesas também apresentaram suas capacidades e seu interesse em trabalhar com o nosso mercado.
+Depois de dois dias conhecendo empresas e instalações, tivemos um encontro para apresentar o Brasil e ouvir os potenciais parceiros chineses. Do lado brasileiro estavam Petrobras, Transpetro, QLP Group, MRM Logistics, SR Group e FID, compartilhando demandas, projetos e soluções. Empresas chinesas também apresentaram suas capacidades e seu interesse em trabalhar com o nosso mercado.
 
 A presença dos diferentes participantes ajudava a conectar as conversas. Um fabricante podia ouvir sobre uma demanda. Um estaleiro podia compreender melhor uma oportunidade. Uma empresa brasileira podia explicar como apoiaria a execução ou a operação local.
 
@@ -176,13 +176,13 @@ Uma embarcação reúne equipamentos de diferentes origens. Conhecer os fabrican
 
 É por isso que estar próximo dos construtores e dos armadores desde a concepção do projeto faz sentido. Algumas decisões que definirão a demanda futura são tomadas anos antes de o navio começar a operar.
 
-Essa leitura se conecta ao trabalho da KLP Group e ao movimento de abertura de sua base na região de Shenzhen durante esse período. Estar mais perto dos fabricantes permite aprofundar o conhecimento dos produtos, acompanhar conversas e construir relações com mais continuidade.
+Essa leitura se conecta ao trabalho da QLP Group e ao movimento de abertura de sua base na região de Shenzhen durante esse período. Estar mais perto dos fabricantes permite aprofundar o conhecimento dos produtos, acompanhar conversas e construir relações com mais continuidade.
 
 ## O que levo da viagem
 
 Para mim, a viagem também mostrou como as frentes da MR Solutions podem se encontrar na prática. A cobertura da missão nos colocou dentro das discussões. A experiência no setor ajudou a interpretar o que ouvíamos. E o trabalho de comunicação permitiu transformar parte desse aprendizado em conteúdo e em mensagens mais claras para os negócios.
 
-Minha ida à China foi possível pelo trabalho contratado para a cobertura da missão da ABEEMAR, no contexto da parceria com a ApexBrasil, e pela atuação junto à KLP Group. Faço questão de reconhecer essa confiança.
+Minha ida à China foi possível pelo trabalho contratado para a cobertura da missão da ABEEMAR, no contexto da parceria com a ApexBrasil, e pela atuação junto à QLP Group. Faço questão de reconhecer essa confiança.
 
 O compromisso era registrar aquela experiência com atenção às pessoas, às empresas e ao propósito do projeto. Ao mesmo tempo, eu voltava a aprender, agora olhando para o setor por um ângulo diferente daquele que conheci a bordo.
 
@@ -194,7 +194,7 @@ Conhecer um mercado pessoalmente dá outra dimensão às perguntas que fazemos d
 
 {{imagem:/assets/artigos/missao-china-2026/xangai-pudong-delegacao.jpg|Parte da comitiva em Pudong, com a Oriental Pearl Tower ao fundo.|Foto: arquivo pessoal}}
 
-Agradeço à ApexBrasil, à ABEEMAR e ao SINAVAL pela missão do projeto Invest in Brasil Shipbuilding & Offshore, aos anfitriões chineses pela recepção e à KLP Group pela confiança no nosso trabalho.
+Agradeço à ApexBrasil, à ABEEMAR e ao SINAVAL pela missão do projeto Invest in Brasil Shipbuilding & Offshore, aos anfitriões chineses pela recepção e à QLP Group pela confiança no nosso trabalho.
 
 Voltei com contatos que precisam de continuidade e com ideias que precisam ser colocadas em prática. A utilidade dessa viagem vai aparecer também no que conseguirmos construir a partir daqui.
 
