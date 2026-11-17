@@ -6,7 +6,7 @@ data: 2026-11-17
 rascunho: sim
 tema: Mercado
 foto: /assets/artigos/missao-china-2026/capa.jpg
-palavras: missão china estaleiros, invest in brasil shipbuilding offshore, apexbrasil abeemar sinaval, estaleiros chineses, cimc soe, sws waigaoqiao, hudong-zhonghua, indústria naval brasil china, conteúdo local offshore, klp group
+palavras: missão china estaleiros, jiangnan shipyard, invest in brasil shipbuilding offshore, apexbrasil abeemar sinaval, estaleiros chineses, cimc soe, sws waigaoqiao, hudong-zhonghua, indústria naval brasil china, conteúdo local offshore, klp group
 ---
 A minha ida para Xangai começou no fim da ADIPEC, em Abu Dhabi. Eu saía de dias de encontros com empresas do setor de energia e embarcava para conhecer, pela primeira vez, uma parte da indústria que participa diretamente da construção das embarcações e unidades que vemos operar pelo mundo.
 
@@ -144,9 +144,9 @@ Na cobertura, buscamos mostrar essa participação. Registramos as apresentaçõ
 
 É um trabalho que exige escutar antes de gravar. Se eu não entendo o que está sendo discutido, corro o risco de voltar com muitas imagens e pouca informação útil.
 
-## Quinta-feira: cooperação e descomissionamento
+## Quinta-feira: Jiangnan e descomissionamento
 
-Na quinta-feira, encerramos a sequência de visitas industriais e tivemos novas conversas sobre cooperação naval entre Brasil e China.
+Na quinta-feira, encerramos a sequência de visitas industriais no Jiangnan Shipyard, também do grupo CSSC, na ilha de Changxing, no rio Yangtzé, entre Xangai e Nantong. Ali tivemos novas conversas sobre cooperação naval entre Brasil e China.
 
 Nesse último dia, os registros trazem discussões sobre aproximação entre entidades, engenharia, projetos, conversão de embarcações, fornecimento de componentes e apoio às empresas chinesas interessadas em atuar no Brasil.
 
