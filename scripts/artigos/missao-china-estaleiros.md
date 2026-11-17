@@ -6,6 +6,7 @@ data: 2026-11-17
 rascunho: sim
 tema: Mercado
 foto: /assets/artigos/missao-china-2026/capa.jpg
+capa_pronta: /assets/artigos/missao-china-2026/capa-compartilhamento.jpg
 palavras: missão china estaleiros, jiangnan shipyard, invest in brasil shipbuilding offshore, apexbrasil abeemar sinaval, estaleiros chineses, cimc soe, sws waigaoqiao, hudong-zhonghua, indústria naval brasil china, conteúdo local offshore, qlp group
 ---
 A minha ida para Xangai começou no fim da ADIPEC, em Abu Dhabi. Eu saía de dias de encontros com empresas do setor de energia e embarcava para conhecer, pela primeira vez, uma parte da indústria que participa diretamente da construção das embarcações e unidades que vemos operar pelo mundo.
