@@ -7,6 +7,7 @@ O corpo usa uma marcação simples:
     ## Título de seção / ### Subtítulo
     - item de lista / 1. item numerado
     **negrito**, [texto](link), > citação
+    Cabeçalho opcional capa_pronta: /caminho.jpg, capa de compartilhamento feita à mão (1200x630), no lugar da gerada
     Cabeçalho opcional foto: /caminho/no/site.jpg ou link, para a imagem de compartilhamento (sem ela usa a capa do 1º vídeo)
     {{video:ID_DO_YOUTUBE|Título do vídeo}}  vídeo do canal que abre no clique
     {{imagem:/caminho.jpg|Legenda|Crédito}}  foto com legenda e crédito da fonte (sempre dê o crédito)
@@ -248,7 +249,8 @@ def main():
             raise SystemExit(f"{a['slug']}: ainda tem pergunta para o Matheus ([[...]]); continua como rascunho até ser respondida")
     publicados = sorted([a for a in artigos if not a['rascunho']], key=lambda a: a.get('atualizado') or a['data'], reverse=True)
     for a in artigos:
-        a['capa'] = capa.gerar(a)
+        # capa_pronta: imagem de compartilhamento feita à mão (1200x630); sem ela, o capa.py monta a padrão
+        a['capa'] = a.get('capa_pronta') or capa.gerar(a)
     for a in artigos:
         destino = RAIZ / 'artigos' / (('rascunho-' if a['rascunho'] else '') + a['slug']) / 'index.html'
         destino.parent.mkdir(parents=True, exist_ok=True)
