@@ -69,3 +69,20 @@ footer{text-align:center;font-size:13px;color:var(--muted);padding:30px 20px;bor
 .atalhos-fim{display:flex;flex-wrap:wrap;gap:8px;margin-top:30px;}
 .atalhos-fim a{font-size:13px;color:var(--muted2);text-decoration:none;border:1px solid var(--border2);padding:8px 12px;border-radius:2px;}
 .atalhos-fim a:hover{color:var(--white);border-color:var(--gold);}
+.interagir{display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px;margin:34px 0 0;padding:16px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+.interagir .curtir{display:inline-flex;align-items:center;gap:8px;font:inherit;font-weight:700;font-size:14px;color:var(--white);background:transparent;border:1px solid var(--border2);border-radius:999px;padding:9px 16px;cursor:pointer;}
+.interagir .curtir svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;}
+.interagir .curtir.on{color:#E5484D;border-color:#E5484D;}.interagir .curtir.on svg{fill:#E5484D;}
+.interagir .curtir .n{font-weight:800;}
+.partilhar{display:flex;flex-wrap:wrap;align-items:center;gap:8px;}
+.partilhar span{font-size:13px;color:var(--muted);margin-right:4px;}
+.partilhar a,.partilhar button{font:inherit;font-size:13px;font-weight:700;text-decoration:none;color:var(--white);background:var(--card);border:1px solid var(--border2);border-radius:999px;padding:8px 14px;cursor:pointer;}
+.partilhar a.li{border-color:#0A66C2;}.partilhar a.wa{border-color:#25D366;}
+.comentarios{margin-top:44px;}.comentarios h2{font-size:22px;margin-bottom:14px;}.comentarios h2 .nc{color:var(--muted);font-size:18px;}
+.com{padding:14px 0;border-bottom:1px solid var(--border);}.com b{font-size:15px;}.com time{font-size:12px;color:var(--muted);margin-left:10px;}.com p{margin:6px 0 0;color:var(--muted2);line-height:1.6;font-size:16px;}
+.vazio-com{color:var(--muted);font-size:15px;}
+.form-com{display:grid;gap:10px;margin-top:18px;}
+.form-com input,.form-com textarea{font:inherit;font-size:15px;color:var(--white);background:var(--card);border:1px solid var(--border2);border-radius:3px;padding:12px 14px;}
+.form-com textarea{min-height:110px;resize:vertical;}
+.form-com .btn{justify-self:start;border:none;cursor:pointer;}
+.msg-com{font-size:13px;color:var(--muted);margin:0;}

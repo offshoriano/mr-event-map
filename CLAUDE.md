@@ -28,8 +28,8 @@ Matheus não programa. Explique em português simples, sem jargão, e diga o que
 - `diagnostico/`: diagnóstico de eventos para empresas (`perfil.js` tem o perfil pesquisado de cada evento). Gratuito na fase de validação.
 - `curriculo/`: Currículo Sob Medida. Lista de espera; vira formulário de pedido quando o produto é liberado no painel. `curriculo/entrega/` é a página que o cliente recebe.
 - `scripts/curriculo/regras.md`: regras do gerador de currículo (método do Matheus + padrão de 315 currículos dele). É o prompt de sistema do gerador.
-- `leads/`: painel protegido por senha. Abas: Contatos, Vagas enviadas, Ranking, Empresas, Diagnósticos, Mensagens, Alertas de vagas, Currículo, Pagamentos, Telegram e WhatsApp.
-- `api/` (PHP): `_base.php` (dados, limite por IP, `avisar()`, `resendEnviar()`, `EMAIL_SITE`), `_stripe.php` + `pagamento.php` + `stripe-webhook.php`, `_claude.php` + `_docs.php` + `_pedidos.php` + `curriculo.php` (gerador), `alertas.php` (alerta semanal), `divulgar.php` (post do dia), `contato.php`, `leads.php`, `diagnosticos.php`, `events.php`, `vagas-enviadas.php`, `cliques.php`.
+- `leads/`: painel protegido por senha. Abas: Contatos, Vagas enviadas, Ranking, Empresas, Diagnósticos, Mensagens, Alertas de vagas, Currículo, Pagamentos, Telegram e WhatsApp, Comentários.
+- `api/` (PHP): `_base.php` (dados, limite por IP, `avisar()`, `resendEnviar()`, `EMAIL_SITE`), `_stripe.php` + `pagamento.php` + `stripe-webhook.php`, `_claude.php` + `_docs.php` + `_pedidos.php` + `curriculo.php` (gerador), `alertas.php` (alerta semanal), `divulgar.php` (post do dia), `artigos.php` (curtidas e comentários dos artigos; comentário só aparece depois de aprovado no painel), `contato.php`, `leads.php`, `diagnosticos.php`, `events.php`, `vagas-enviadas.php`, `cliques.php`.
 - Dados ficam fora da pasta pública (`../mr-dados`); `data/` é o reserva e é bloqueado. `.htaccess` bloqueia `.md`, `.py`, `.yml` e afins.
 
 ## Chaves e e-mails
