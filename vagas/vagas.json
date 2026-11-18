@@ -48,6 +48,111 @@
     ]
   },
   {
+    "id": "ventura-ndt-tecnico-mecanica-cabo-frio",
+    "titulo": "Técnico em Mecânica (offshore)",
+    "empresa": "Ventura NDT",
+    "logo": "",
+    "local": "Cabo Frio, RJ (offshore)",
+    "regime": "Embarcado",
+    "contrato": "A confirmar com a empresa",
+    "area": "Mecânica e manutenção",
+    "nivel": "Técnico com CFT ativo e experiência em carteira",
+    "publicada": "2026-11-18",
+    "inscricoesAte": "2026-12-04",
+    "link": "mailto:recrutamento@venturandt.com.br?subject=T%C3%A9cnico%20em%20Mec%C3%A2nica",
+    "resumo": "A Ventura NDT, empresa de ultrassom industrial e inspeção, procura técnico em mecânica para trabalho offshore com base em Cabo Frio. É vaga para quem já tem estrada: pede CFT ativo, experiência comprovada em carteira com equipamentos rotativos, selos mecânicos, rolamentos e sistemas pneumáticos e hidráulicos, além de CBSP e T-HUET em dia. A candidatura é por e-mail, com o título da vaga no assunto, e a empresa pede que só mande quem está dentro dos requisitos.",
+    "atividades": [
+      "Manutenção de equipamentos rotativos",
+      "Selos mecânicos e rolamentos",
+      "Sistemas pneumáticos e eletropneumáticos",
+      "Sistemas hidráulicos e eletro-hidráulicos"
+    ],
+    "requisitos": [
+      "Técnico em mecânica com CFT ativo",
+      "Experiência comprovada em carteira de trabalho (CTPS)",
+      "Experiência em equipamentos rotativos, selos mecânicos, rolamentos e sistemas pneumáticos, eletropneumáticos, eletro-hidráulicos e hidráulicos",
+      "CBSP e T-HUET válidos",
+      "Currículo para recrutamento@venturandt.com.br com o título da vaga no assunto"
+    ],
+    "beneficios": [],
+    "pcd": false,
+    "videos": [
+      {
+        "id": "3yOdA-HnSeg",
+        "titulo": "Se você é mecânico, precisa ver esse vídeo",
+        "porque": "O que não pode faltar no currículo de um mecânico para passar na triagem."
+      },
+      {
+        "id": "vN0tv-N_fSo",
+        "titulo": "Manutenção offshore, cursos que fazem diferença",
+        "porque": "Os cursos que separam quem embarca de quem fica na fila."
+      },
+      {
+        "id": "Vn2yBVRC-t0",
+        "titulo": "CBSP, o curso básico para trabalhar embarcado",
+        "porque": "A vaga exige CBSP e T-HUET em dia. Veja como tirar ou renovar."
+      }
+    ]
+  },
+  {
+    "id": "estaleiro-maua-eletricista-eto-niteroi",
+    "titulo": "Eletricista / ETO (Electro-Technical Officer)",
+    "empresa": "Estaleiro Mauá",
+    "logo": "",
+    "local": "Niterói, RJ",
+    "regime": "Estaleiro (em terra)",
+    "contrato": "Efetivo, CLT",
+    "area": "Elétrica e instrumentação",
+    "nivel": "Técnico, 1 ano de experiência",
+    "publicada": "2026-11-17",
+    "inscricoesAte": "2026-12-17",
+    "link": "https://www.marinu.com.br/empresa/estaleiro-maua/vagas/eletricista-eto-electro-technical-officer-niteroi-rj-124368b1",
+    "resumo": "O Estaleiro Mauá, em Niterói, o maior da Baía de Guanabara, contrata eletricista para instalação, manutenção e comissionamento de sistemas elétricos em embarcações, plataformas e módulos offshore. Pede técnico em eletrotécnica, eletrônica ou automação, NR-10 e pelo menos um ano de experiência em elétrica naval, offshore ou industrial. É CLT, com plano de saúde, e só aceita quem mora no Rio de Janeiro. Boa porta para quem quer entrar no mundo naval pelo estaleiro.",
+    "atividades": [
+      "Instalações elétricas de baixa e média tensão em embarcações e unidades marítimas",
+      "Manutenção preventiva, corretiva e preditiva de sistemas elétricos de bordo",
+      "Diagnóstico de falhas em painéis, motores, geradores e automação",
+      "Montagem e comissionamento de painéis, quadros de distribuição e CCM",
+      "Lançamento, conexão e testes de cabos elétricos e de instrumentação",
+      "Orientar eletricistas e ajudantes e inspecionar a qualidade dos serviços"
+    ],
+    "requisitos": [
+      "Ensino médio e curso técnico em eletrotécnica, eletrônica, automação ou área parecida",
+      "NR-10 em dia",
+      "1 ano de experiência em elétrica naval, offshore, industrial ou construção pesada",
+      "Leitura de diagramas elétricos e unifilares",
+      "Conhecimento de geração e distribuição, motores, inversores e testes elétricos",
+      "Morar no estado do Rio de Janeiro",
+      "Candidatura pelo portal, com currículo anexado no perfil"
+    ],
+    "beneficios": [
+      "Plano de saúde",
+      "Assistência odontológica",
+      "Vale-transporte",
+      "Vale-alimentação",
+      "Seguro de vida",
+      "TotalPass"
+    ],
+    "pcd": false,
+    "videos": [
+      {
+        "id": "-35oTYToV2A",
+        "titulo": "Eletricista marítimo, tudo que você precisa saber",
+        "porque": "Rotina, certificações e salário de quem trabalha com elétrica no setor naval."
+      },
+      {
+        "id": "TSUnVzxiBjU",
+        "titulo": "3 empresas para trabalhar na área de elétrica e mecânica",
+        "porque": "Quem mais contrata elétrica no setor hoje."
+      },
+      {
+        "id": "sMTU-gjxcLU",
+        "titulo": "Como alinhar meu currículo para uma vaga offshore",
+        "porque": "Ajuste o currículo para a vaga antes de se candidatar."
+      }
+    ]
+  },
+  {
     "id": "nsg-engenharia-18-vagas-subsea-offshore",
     "titulo": "18 vagas de engenharia subsea e offshore (júnior, pleno e sênior)",
     "empresa": "NSG Engenharia",
