@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-20T18:41:55+00:00",
+ "atualizado": "2026-11-21T17:41:57+00:00",
  "fontes": [
   {
    "empresa": "PRIO",
@@ -23,7 +23,7 @@
   },
   {
    "empresa": "MODEC",
-   "vagas": 9,
+   "vagas": 8,
    "ok": true
   },
   {
@@ -33,7 +33,7 @@
   },
   {
    "empresa": "Wilson Sons",
-   "vagas": 16,
+   "vagas": 14,
    "ok": true
   },
   {
@@ -43,7 +43,7 @@
   },
   {
    "empresa": "Altera&Ocyan",
-   "vagas": 1,
+   "vagas": 0,
    "ok": true
   },
   {
@@ -103,7 +103,7 @@
   },
   {
    "empresa": "TechnipFMC",
-   "vagas": 19,
+   "vagas": 16,
    "ok": true
   },
   {
@@ -118,7 +118,7 @@
   },
   {
    "empresa": "Baker Hughes",
-   "vagas": 9,
+   "vagas": 8,
    "ok": true
   },
   {
@@ -680,32 +680,6 @@
   "yTeMvIeKy14": "FPSO anita garibaldi parte para bacia de campos!"
  },
  "vagas": [
-  {
-   "id": "altera-ocyan-operador-de-produ-o-offshore-production-operator-31779",
-   "titulo": "Operador de produção Offshore (Production Operator)",
-   "empresa": "Altera&Ocyan",
-   "local": "Macaé, RJ",
-   "link": "https://alteraocyan.gupy.io/jobs/12826837",
-   "regime": "Offshore",
-   "area": "Operação e produção",
-   "tema": "operacao",
-   "banco": false,
-   "vistaEm": "2026-11-03",
-   "videos": [
-    [
-     "kJZqpRE1bvY",
-     "Fala de operador de produção, a função desta vaga."
-    ],
-    [
-     "1XXSSAG18CE",
-     "Fala de operador de produção, a função desta vaga."
-    ],
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ]
-   ]
-  },
   {
    "id": "atlas-nextwave-3rd-engineer-56080",
    "titulo": "3rd Engineer",
@@ -2241,32 +2215,6 @@
    ]
   },
   {
-   "id": "subsea7-coordenador-de-projetos-coordena-o-t-cnica-de-opera-es-rov-80742",
-   "titulo": "Coordenador de Projetos (Coordenação Técnica de Operações ROV)",
-   "empresa": "Subsea7",
-   "local": "Brasil",
-   "link": "https://careers.subsea7.com/job/Rio-Das-Ostras-Coordenador-de-Projetos-%28Coordena%C3%A7%C3%A3o-T%C3%A9cnica-de-Opera%C3%A7%C3%B5es-ROV%29/1376091755/",
-   "regime": "Offshore",
-   "area": "Marítimo",
-   "tema": "maritimo",
-   "banco": false,
-   "vistaEm": "2026-11-06",
-   "videos": [
-    [
-     "f3XoJANQNPk",
-     "Fala de piloto e técnico de ROV, a função desta vaga."
-    ],
-    [
-     "iNN7An0Uq_U",
-     "Fala de piloto e técnico de ROV, a função desta vaga."
-    ],
-    [
-     "kxMbpcGcYks",
-     "Vídeo do canal sobre a Subsea7. Ajuda a chegar preparado na entrevista."
-    ]
-   ]
-  },
-  {
    "id": "subsea7-deputy-vessel-superintendent-75298",
    "titulo": "Deputy Vessel Superintendent",
    "empresa": "Subsea7",
@@ -2293,28 +2241,28 @@
    ]
   },
   {
-   "id": "technipfmc-launch-systems-engineer-mid-level-offshore-571",
-   "titulo": "Launch Systems Engineer - Mid-Level Offshore",
-   "empresa": "TechnipFMC",
-   "local": "Macaé, RJ",
-   "link": "https://careers.technipfmc.com/job/Maca%C3%A9-Launch-Systems-Engineer-Mid-Level-Offshore-RJ-27970-020/1450663300/",
+   "id": "subsea7-pilota-o-de-rov-10069",
+   "titulo": "Pilota(o) de ROV",
+   "empresa": "Subsea7",
+   "local": "Brasil",
+   "link": "https://careers.subsea7.com/job/Offshore-Pilota%28o%29-de-ROV/1167712355/",
    "regime": "Offshore",
-   "area": "Engenharia",
-   "tema": "engenharia",
+   "area": "Marítimo",
+   "tema": "maritimo",
    "banco": false,
-   "vistaEm": "2026-11-14",
+   "vistaEm": "2026-11-21",
    "videos": [
     [
-     "9ZlICqIBUMg",
-     "Fala de engenharia, a função desta vaga."
+     "f3XoJANQNPk",
+     "Fala de piloto e técnico de ROV, a função desta vaga."
     ],
     [
-     "0uMWC3VBm8A",
-     "Fala de engenharia, a função desta vaga."
+     "iNN7An0Uq_U",
+     "Fala de piloto e técnico de ROV, a função desta vaga."
     ],
     [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+     "kxMbpcGcYks",
+     "Vídeo do canal sobre a Subsea7. Ajuda a chegar preparado na entrevista."
     ]
    ]
   },
@@ -4733,32 +4681,6 @@
     [
      "eHqY18dRP8Q",
      "As perguntas que mais aparecem na entrevista e como responder."
-    ]
-   ]
-  },
-  {
-   "id": "baker-hughes-engineer-1-chemistry-chemical-disciplinary-engineering-and-science-1364",
-   "titulo": "Engineer 1, Chemistry & Chemical, Disciplinary Engineering and Science",
-   "empresa": "Baker Hughes",
-   "local": "Rio de Janeiro, RJ",
-   "link": "https://bakerhughes.wd5.myworkdayjobs.com/BakerHughes/job/BR-RJ-RIO-DE-JANEIRO-RETIC-ILHA-DO-FUNDAO-R36-2757/Engineer-1--Chemistry---Chemical--Disciplinary-Engineering-and-Science_R170659",
-   "regime": "Onshore",
-   "area": "Engenharia",
-   "tema": "engenharia",
-   "banco": false,
-   "vistaEm": "2026-11-07",
-   "videos": [
-    [
-     "9ZlICqIBUMg",
-     "Fala de engenharia, a função desta vaga."
-    ],
-    [
-     "0uMWC3VBm8A",
-     "Fala de engenharia, a função desta vaga."
-    ],
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
     ]
    ]
   },
@@ -8819,11 +8741,11 @@
    ]
   },
   {
-   "id": "halliburton-operator-asst-ii-cementing-95009",
+   "id": "halliburton-operator-asst-ii-cementing-16508",
    "titulo": "Operator Asst II-Cementing",
    "empresa": "Halliburton",
    "local": "Catu, BA",
-   "link": "https://jobs.halliburton.com/job/Catu-Operator-Asst-II-Cementing-BA-48110-000/1452168700/",
+   "link": "https://jobs.halliburton.com/job/Catu-Operator-Asst-II-Cementing-BA-48110-000/1452170000/",
    "regime": "Onshore",
    "area": "Operação e produção",
    "tema": "operacao",
@@ -8845,11 +8767,11 @@
    ]
   },
   {
-   "id": "halliburton-operator-asst-ii-cementing-16508",
+   "id": "halliburton-operator-asst-ii-cementing-95009",
    "titulo": "Operator Asst II-Cementing",
    "empresa": "Halliburton",
    "local": "Catu, BA",
-   "link": "https://jobs.halliburton.com/job/Catu-Operator-Asst-II-Cementing-BA-48110-000/1452170000/",
+   "link": "https://jobs.halliburton.com/job/Catu-Operator-Asst-II-Cementing-BA-48110-000/1452168700/",
    "regime": "Onshore",
    "area": "Operação e produção",
    "tema": "operacao",
@@ -9907,32 +9829,6 @@
     [
      "sMTU-gjxcLU",
      "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ]
-   ]
-  },
-  {
-   "id": "modec-engenheiro-de-turbom-quinas-especialista-turbomachinery-engineer-specialis-84566",
-   "titulo": "ENGENHEIRO DE TURBOMÁQUINAS ESPECIALISTA / Turbomachinery Engineer Specialist",
-   "empresa": "MODEC",
-   "local": "Santos, SP",
-   "link": "https://modec-br.gupy.io/jobs/12695442",
-   "regime": "Onshore",
-   "area": "Engenharia",
-   "tema": "engenharia",
-   "banco": false,
-   "vistaEm": "2026-11-09",
-   "videos": [
-    [
-     "9ZlICqIBUMg",
-     "Fala de engenharia, a função desta vaga."
-    ],
-    [
-     "0uMWC3VBm8A",
-     "Fala de engenharia, a função desta vaga."
-    ],
-    [
-     "7u0m6SwMtzc",
-     "Vídeo do canal sobre a MODEC. Ajuda a chegar preparado na entrevista."
     ]
    ]
   },
@@ -14617,16 +14513,42 @@
    ]
   },
   {
-   "id": "subsea7-associate-crewing-planner-25436",
-   "titulo": "Associate Crewing Planner",
+   "id": "subsea7-assistente-de-crewing-e-log-stica-de-pessoal-exclusiva-pcd-54949",
+   "titulo": "Assistente de Crewing e Logística de Pessoal - Exclusiva PCD",
    "empresa": "Subsea7",
    "local": "Brasil",
-   "link": "https://careers.subsea7.com/job/Aberdeen-%28Westhill%29-Associate-Crewing-Planner/1377483555/",
+   "link": "https://careers.subsea7.com/job/Rio-de-Janeiro-Assistente-de-Crewing-e-Log%C3%ADstica-de-Pessoal-Exclusiva-PCD/1377833555/",
    "regime": "Onshore",
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-11-18",
+   "vistaEm": "2026-11-21",
+   "videos": [
+    [
+     "kxMbpcGcYks",
+     "Vídeo do canal sobre a Subsea7. Ajuda a chegar preparado na entrevista."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
+   "id": "subsea7-eng-02-p40-senior-professional-57103",
+   "titulo": "ENG.02.P40-Senior Professional",
+   "empresa": "Subsea7",
+   "local": "Brasil",
+   "link": "https://careers.subsea7.com/job/Houston-ENG_02_P40-Senior-Professional-TX-77001/1377827755/",
+   "regime": "Onshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-11-21",
    "videos": [
     [
      "kxMbpcGcYks",
@@ -14669,6 +14591,58 @@
    ]
   },
   {
+   "id": "subsea7-engineer-level-ii-mooring-63617",
+   "titulo": "Engineer Level II - Mooring",
+   "empresa": "Subsea7",
+   "local": "Brasil",
+   "link": "https://careers.subsea7.com/job/Houston-Engineer-Level-II-Mooring-TX-77001/1377823555/",
+   "regime": "Onshore",
+   "area": "Engenharia",
+   "tema": "engenharia",
+   "banco": false,
+   "vistaEm": "2026-11-21",
+   "videos": [
+    [
+     "9ZlICqIBUMg",
+     "Fala de engenharia, a função desta vaga."
+    ],
+    [
+     "0uMWC3VBm8A",
+     "Fala de engenharia, a função desta vaga."
+    ],
+    [
+     "kxMbpcGcYks",
+     "Vídeo do canal sobre a Subsea7. Ajuda a chegar preparado na entrevista."
+    ]
+   ]
+  },
+  {
+   "id": "subsea7-equipment-engineer-4118",
+   "titulo": "Equipment Engineer",
+   "empresa": "Subsea7",
+   "local": "Brasil",
+   "link": "https://careers.subsea7.com/Seaway7/job/Zoetermeer-Equipment-Engineer/1377821355/",
+   "regime": "Onshore",
+   "area": "Engenharia",
+   "tema": "engenharia",
+   "banco": false,
+   "vistaEm": "2026-11-21",
+   "videos": [
+    [
+     "9ZlICqIBUMg",
+     "Fala de engenharia, a função desta vaga."
+    ],
+    [
+     "0uMWC3VBm8A",
+     "Fala de engenharia, a função desta vaga."
+    ],
+    [
+     "kxMbpcGcYks",
+     "Vídeo do canal sobre a Subsea7. Ajuda a chegar preparado na entrevista."
+    ]
+   ]
+  },
+  {
    "id": "subsea7-especialista-financeiro-tesouraria-73925",
    "titulo": "Especialista Financeiro (Tesouraria)",
    "empresa": "Subsea7",
@@ -14695,16 +14669,16 @@
    ]
   },
   {
-   "id": "subsea7-hr-administrator-69290",
-   "titulo": "HR Administrator",
+   "id": "subsea7-hr-advisor-administra-o-de-pessoal-1042",
+   "titulo": "HR Advisor (Administração de Pessoal)",
    "empresa": "Subsea7",
    "local": "Brasil",
-   "link": "https://careers.subsea7.com/job/Paris-HR-Administrator/1373784355/",
+   "link": "https://careers.subsea7.com/job/Rio-de-Janeiro-HR-Advisor-%28Administra%C3%A7%C3%A3o-de-Pessoal%29/1377832655/",
    "regime": "Onshore",
    "area": "Outras",
    "tema": "geral",
    "banco": false,
-   "vistaEm": "2026-11-19",
+   "vistaEm": "2026-11-21",
    "videos": [
     [
      "kxMbpcGcYks",
@@ -14773,32 +14747,6 @@
    ]
   },
   {
-   "id": "subsea7-logistics-specialist-i-65838",
-   "titulo": "Logistics Specialist I",
-   "empresa": "Subsea7",
-   "local": "Brasil",
-   "link": "https://careers.subsea7.com/job/Kuala-Lumpur-Logistics-Specialist-I/1377505255/",
-   "regime": "Onshore",
-   "area": "Outras",
-   "tema": "geral",
-   "banco": false,
-   "vistaEm": "2026-11-18",
-   "videos": [
-    [
-     "kxMbpcGcYks",
-     "Vídeo do canal sobre a Subsea7. Ajuda a chegar preparado na entrevista."
-    ],
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ],
-    [
-     "eHqY18dRP8Q",
-     "As perguntas que mais aparecem na entrevista e como responder."
-    ]
-   ]
-  },
-  {
    "id": "subsea7-l-der-jur-dico-13824",
    "titulo": "Líder Jurídico",
    "empresa": "Subsea7",
@@ -14851,32 +14799,6 @@
    ]
   },
   {
-   "id": "subsea7-operations-engineer-ii-ubu-55581",
-   "titulo": "Operations Engineer II - UBU",
-   "empresa": "Subsea7",
-   "local": "Brasil",
-   "link": "https://careers.subsea7.com/job/Espirito-Santo-%28Ubu%29-Operations-Engineer-II-UBU/1370552755/",
-   "regime": "Onshore",
-   "area": "Engenharia",
-   "tema": "engenharia",
-   "banco": false,
-   "vistaEm": "2026-11-10",
-   "videos": [
-    [
-     "9ZlICqIBUMg",
-     "Fala de engenharia, a função desta vaga."
-    ],
-    [
-     "0uMWC3VBm8A",
-     "Fala de engenharia, a função desta vaga."
-    ],
-    [
-     "kxMbpcGcYks",
-     "Vídeo do canal sobre a Subsea7. Ajuda a chegar preparado na entrevista."
-    ]
-   ]
-  },
-  {
    "id": "subsea7-quality-lead-project-delivery-manager-11301",
    "titulo": "Quality Lead (Project Delivery Manager)",
    "empresa": "Subsea7",
@@ -14921,32 +14843,6 @@
     [
      "0uMWC3VBm8A",
      "Fala de engenharia, a função desta vaga."
-    ],
-    [
-     "kxMbpcGcYks",
-     "Vídeo do canal sobre a Subsea7. Ajuda a chegar preparado na entrevista."
-    ]
-   ]
-  },
-  {
-   "id": "subsea7-senior-hsse-advisor-41354",
-   "titulo": "Senior HSSE Advisor",
-   "empresa": "Subsea7",
-   "local": "Brasil",
-   "link": "https://careers.subsea7.com/job/Houston-Senior-HSSE-Advisor-TX-77001/1364793955/",
-   "regime": "Onshore",
-   "area": "Segurança",
-   "tema": "seguranca",
-   "banco": false,
-   "vistaEm": "2026-11-19",
-   "videos": [
-    [
-     "VzHXNdUlHVA",
-     "Fala de técnico de segurança, a função desta vaga."
-    ],
-    [
-     "0uMWC3VBm8A",
-     "Fala de técnico de segurança, a função desta vaga."
     ],
     [
      "kxMbpcGcYks",
@@ -15085,32 +14981,6 @@
    ]
   },
   {
-   "id": "technipfmc-geotechnical-engineering-team-lead-46038",
-   "titulo": "Geotechnical Engineering Team Lead",
-   "empresa": "TechnipFMC",
-   "local": "Rio de Janeiro, RJ",
-   "link": "https://careers.technipfmc.com/job/Rio-de-Janeiro-Geotechnical-Engineering-Team-Lead-RJ-21941-850/1448482600/",
-   "regime": "Onshore",
-   "area": "Engenharia",
-   "tema": "engenharia",
-   "banco": false,
-   "vistaEm": "2026-11-06",
-   "videos": [
-    [
-     "9ZlICqIBUMg",
-     "Fala de engenharia, a função desta vaga."
-    ],
-    [
-     "0uMWC3VBm8A",
-     "Fala de engenharia, a função desta vaga."
-    ],
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ]
-   ]
-  },
-  {
    "id": "technipfmc-non-metallic-materials-lead-engineer-81697",
    "titulo": "Non-Metallic Materials Lead Engineer",
    "empresa": "TechnipFMC",
@@ -15207,32 +15077,6 @@
     [
      "0uMWC3VBm8A",
      "Fala de engenharia, a função desta vaga."
-    ],
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ]
-   ]
-  },
-  {
-   "id": "technipfmc-project-engineering-lead-controls-and-automation-20706",
-   "titulo": "Project Engineering Lead - Controls and Automation",
-   "empresa": "TechnipFMC",
-   "local": "Rio de Janeiro, RJ",
-   "link": "https://careers.technipfmc.com/job/Rio-de-Janeiro-Project-Engineering-Lead-Controls-and-Automation-RJ-21535-900/1448878500/",
-   "regime": "Onshore",
-   "area": "Engenharia",
-   "tema": "engenharia",
-   "banco": false,
-   "vistaEm": "2026-11-09",
-   "videos": [
-    [
-     "-35oTYToV2A",
-     "Fala de eletricista, área vizinha desta vaga."
-    ],
-    [
-     "0uMWC3VBm8A",
-     "Vídeo do canal sobre a TechnipFMC. Ajuda a chegar preparado na entrevista."
     ],
     [
      "sMTU-gjxcLU",
@@ -16307,32 +16151,6 @@
    ]
   },
   {
-   "id": "wilson-sons-agente-mar-timo-jr-s-o-jo-o-da-barra-rj-316",
-   "titulo": "Agente Marítimo JR | São João da Barra - RJ",
-   "empresa": "Wilson Sons",
-   "local": "São João da Barra, RJ",
-   "link": "https://wilsonsons.gupy.io/jobs/12502427",
-   "regime": "Onshore",
-   "area": "Marítimo",
-   "tema": "maritimo",
-   "banco": false,
-   "vistaEm": "2026-10-15",
-   "videos": [
-    [
-     "lttRYy_P8T8",
-     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
-    ],
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ],
-    [
-     "eHqY18dRP8Q",
-     "As perguntas que mais aparecem na entrevista e como responder."
-    ]
-   ]
-  },
-  {
    "id": "wilson-sons-eletricista-sr-rebocadores-s-o-lu-s-ma-88269",
    "titulo": "Eletricista SR | Rebocadores - São Luís (MA)",
    "empresa": "Wilson Sons",
@@ -16355,32 +16173,6 @@
     [
      "sMTU-gjxcLU",
      "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ]
-   ]
-  },
-  {
-   "id": "wilson-sons-especialista-comercial-shore-base-subsea-53628",
-   "titulo": "Especialista Comercial | Shore Base & Subsea",
-   "empresa": "Wilson Sons",
-   "local": "Niterói, RJ",
-   "link": "https://wilsonsons.gupy.io/jobs/12439613",
-   "regime": "Onshore",
-   "area": "Outras",
-   "tema": "geral",
-   "banco": false,
-   "vistaEm": "2026-10-15",
-   "videos": [
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ],
-    [
-     "eHqY18dRP8Q",
-     "As perguntas que mais aparecem na entrevista e como responder."
-    ],
-    [
-     "lttRYy_P8T8",
-     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
     ]
    ]
   },
