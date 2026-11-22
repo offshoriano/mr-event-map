@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-21T17:41:57+00:00",
+ "atualizado": "2026-11-22T18:01:55+00:00",
  "fontes": [
   {
    "empresa": "PRIO",
@@ -178,7 +178,7 @@
   },
   {
    "empresa": "Halliburton",
-   "vagas": 34,
+   "vagas": 31,
    "ok": true
   },
   {
@@ -193,8 +193,8 @@
   },
   {
    "empresa": "BW Energy",
-   "vagas": 22,
-   "ok": true
+   "vagas": 0,
+   "ok": false
   },
   {
    "empresa": "Mota-Engil",
@@ -248,7 +248,7 @@
   },
   {
    "empresa": "CLAM ENGENHARIA",
-   "vagas": 20,
+   "vagas": 21,
    "ok": true
   },
   {
@@ -309,7 +309,7 @@
   {
    "empresa": "Rystad",
    "vagas": 0,
-   "ok": true
+   "ok": false
   },
   {
    "empresa": "Supergasbras Energia",
@@ -5855,6 +5855,32 @@
    ]
   },
   {
+   "id": "clam-engenharia-analista-ambiental-pleno-belo-horizonte-mg-90832",
+   "titulo": "Analista Ambiental Pleno - Belo Horizonte MG",
+   "empresa": "CLAM ENGENHARIA",
+   "local": "Brasil",
+   "link": "https://clam.inhire.com.br/vagas/3ce17ed9-c573-48d2-bc74-59306d17160b",
+   "regime": "Onshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-10-15",
+   "videos": [
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
    "id": "clam-engenharia-analista-ambiental-s-nior-socioeconomia-parauapebas-par-21210",
    "titulo": "Analista Ambiental Sênior - Socioeconomia - Parauapebas - Pará",
    "empresa": "CLAM ENGENHARIA",
@@ -8637,6 +8663,32 @@
    ]
   },
   {
+   "id": "halliburton-landmark-22899",
+   "titulo": "Landmark",
+   "empresa": "Halliburton",
+   "local": "Rio de Janeiro, RJ",
+   "link": "https://jobs.halliburton.com/job/Rio-de-Janeiro-Brazil-RJ-Geology-Consultant-Landmark-RJ-20011-000/1449783500/",
+   "regime": "Onshore",
+   "area": "Outras",
+   "tema": "geral",
+   "banco": false,
+   "vistaEm": "2026-11-11",
+   "videos": [
+    [
+     "lttRYy_P8T8",
+     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
+    ],
+    [
+     "sMTU-gjxcLU",
+     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
+    ],
+    [
+     "eHqY18dRP8Q",
+     "As perguntas que mais aparecem na entrevista e como responder."
+    ]
+   ]
+  },
+  {
    "id": "halliburton-landmark-34577",
    "titulo": "Landmark",
    "empresa": "Halliburton",
@@ -8668,32 +8720,6 @@
    "empresa": "Halliburton",
    "local": "Rio de Janeiro, RJ",
    "link": "https://jobs.halliburton.com/job/Rio-de-Janeiro-Brazil-RJ-Geology-Consultant-Landmark-RJ-20011-000/1449783200/",
-   "regime": "Onshore",
-   "area": "Outras",
-   "tema": "geral",
-   "banco": false,
-   "vistaEm": "2026-11-11",
-   "videos": [
-    [
-     "lttRYy_P8T8",
-     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
-    ],
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ],
-    [
-     "eHqY18dRP8Q",
-     "As perguntas que mais aparecem na entrevista e como responder."
-    ]
-   ]
-  },
-  {
-   "id": "halliburton-landmark-22899",
-   "titulo": "Landmark",
-   "empresa": "Halliburton",
-   "local": "Rio de Janeiro, RJ",
-   "link": "https://jobs.halliburton.com/job/Rio-de-Janeiro-Brazil-RJ-Geology-Consultant-Landmark-RJ-20011-000/1449783500/",
    "regime": "Onshore",
    "area": "Outras",
    "tema": "geral",
@@ -8815,32 +8841,6 @@
     [
      "eHqY18dRP8Q",
      "As perguntas que mais aparecem na entrevista e como responder."
-    ]
-   ]
-  },
-  {
-   "id": "halliburton-r-m-electrical-tech-i-89037",
-   "titulo": "R&M Electrical Tech I",
-   "empresa": "Halliburton",
-   "local": "Macaé, RJ",
-   "link": "https://jobs.halliburton.com/job/Macae-R&amp;M-Electrical-Tech-I-RJ-27930-070/1447627600/",
-   "regime": "Onshore",
-   "area": "Elétrica e instrumentação",
-   "tema": "eletrica",
-   "banco": false,
-   "vistaEm": "2026-11-04",
-   "videos": [
-    [
-     "-35oTYToV2A",
-     "Fala de eletricista, a função desta vaga."
-    ],
-    [
-     "TSUnVzxiBjU",
-     "Fala de eletricista, a função desta vaga."
-    ],
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
     ]
    ]
   },
@@ -8975,32 +8975,6 @@
    ]
   },
   {
-   "id": "halliburton-technical-planner-ii-baroid-88533",
-   "titulo": "Technical Planner II - Baroid",
-   "empresa": "Halliburton",
-   "local": "Macaé, RJ",
-   "link": "https://jobs.halliburton.com/job/Macae-Brazil-RJ-Macae-Technical-Planner-II-Baroid-RJ-27930-070/1442448700/",
-   "regime": "Onshore",
-   "area": "Outras",
-   "tema": "geral",
-   "banco": false,
-   "vistaEm": "2026-10-22",
-   "videos": [
-    [
-     "lttRYy_P8T8",
-     "Como deixar o LinkedIn pronto para o recrutador que vai olhar seu perfil."
-    ],
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
-    ],
-    [
-     "eHqY18dRP8Q",
-     "As perguntas que mais aparecem na entrevista e como responder."
-    ]
-   ]
-  },
-  {
    "id": "halliburton-technical-sales-advisor-pipeline-and-process-services-7066",
    "titulo": "Technical Sales Advisor (Pipeline and Process Services)",
    "empresa": "Halliburton",
@@ -9049,32 +9023,6 @@
     [
      "eHqY18dRP8Q",
      "As perguntas que mais aparecem na entrevista e como responder."
-    ]
-   ]
-  },
-  {
-   "id": "halliburton-t-cnico-de-manuten-o-t-cnico-de-mec-nica-de-sph-17519",
-   "titulo": "Técnico de Manutenção (Técnico de Mecânica de SPH)",
-   "empresa": "Halliburton",
-   "local": "Mossoró, RN",
-   "link": "https://jobs.halliburton.com/job/Alto-Sumare-Brazil-Maca%C3%A9-T%C3%A9cnico-de-Manuten%C3%A7%C3%A3o-%28T%C3%A9cnico-de-Mec%C3%A2nica-de-SPH%29-RJ-59633-730/1442098700/",
-   "regime": "Onshore",
-   "area": "Mecânica e manutenção",
-   "tema": "mecanica",
-   "banco": false,
-   "vistaEm": "2026-10-30",
-   "videos": [
-    [
-     "3yOdA-HnSeg",
-     "Fala de mecânico e manutenção, a função desta vaga."
-    ],
-    [
-     "AFQCQwo_5Kc",
-     "Fala de mecânico e manutenção, a função desta vaga."
-    ],
-    [
-     "sMTU-gjxcLU",
-     "Ajuste o currículo para esta vaga antes de clicar em candidatar."
     ]
    ]
   },
@@ -14825,24 +14773,24 @@
    ]
   },
   {
-   "id": "subsea7-senior-fabrication-engineer-56766",
-   "titulo": "Senior Fabrication Engineer",
+   "id": "subsea7-senior-hsse-advisor-41354",
+   "titulo": "Senior HSSE Advisor",
    "empresa": "Subsea7",
    "local": "Brasil",
-   "link": "https://careers.subsea7.com/job/Kuala-Lumpur-Senior-Fabrication-Engineer/1372781755/",
+   "link": "https://careers.subsea7.com/job/Houston-Senior-HSSE-Advisor-TX-77001/1364793955/",
    "regime": "Onshore",
-   "area": "Engenharia",
-   "tema": "engenharia",
+   "area": "Segurança",
+   "tema": "seguranca",
    "banco": false,
-   "vistaEm": "2026-11-19",
+   "vistaEm": "2026-11-22",
    "videos": [
     [
-     "9ZlICqIBUMg",
-     "Fala de engenharia, a função desta vaga."
+     "VzHXNdUlHVA",
+     "Fala de técnico de segurança, a função desta vaga."
     ],
     [
      "0uMWC3VBm8A",
-     "Fala de engenharia, a função desta vaga."
+     "Fala de técnico de segurança, a função desta vaga."
     ],
     [
      "kxMbpcGcYks",
