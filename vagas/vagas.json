@@ -48,6 +48,103 @@
     ]
   },
   {
+    "id": "slb-operador-de-equipamentos-macae",
+    "titulo": "Operador de Equipamentos (bombeio offshore)",
+    "empresa": "SLB",
+    "logo": "",
+    "local": "Macaé, RJ",
+    "regime": "Offshore",
+    "contrato": "A confirmar com a empresa",
+    "area": "Operação e produção",
+    "nivel": "Ensino médio, com experiência em bombeio",
+    "publicada": "2026-11-23",
+    "inscricoesAte": "2026-12-16",
+    "link": "https://www.linkedin.com/jobs/view/4469106064/",
+    "resumo": "A SLB contrata operador de equipamentos em Macaé para operações de bombeio offshore: preparar, montar e operar linhas de tratamento, misturar produtos químicos e cuidar dos equipamentos antes e depois de cada operação. Pede ensino médio e experiência em estimulação, acidificação, gravel pack ou cimentação, com bombas triplex e centrífugas, BatchMixer e Blender. Técnico conta como diferencial. A candidatura é pelo LinkedIn.",
+    "atividades": [
+      "Preparar, montar e operar linhas de tratamento e equipamentos de bombeio",
+      "Misturar produtos químicos para a operação",
+      "Inspecionar e preparar equipamentos e materiais antes e depois do uso",
+      "Coletar e registrar dados de campo e preparar relatórios",
+      "Mobilizar e retirar recursos no local da operação",
+      "Participar das reuniões pré-trabalho e cumprir as políticas de SMS"
+    ],
+    "requisitos": [
+      "Ensino médio completo (técnico é diferencial)",
+      "Experiência em operações de bombeio: estimulação, acidificação, gravel pack ou cimentação",
+      "Disponibilidade e experiência para trabalhar embarcado",
+      "Conhecimento de bombas triplex e centrífugas",
+      "Conhecimento de BatchMixer e Blender"
+    ],
+    "beneficios": [],
+    "pcd": false,
+    "videos": [
+      {
+        "id": "QK0V7T28G5Q",
+        "titulo": "Onde trabalhar embarcado, produção",
+        "porque": "As empresas que mais contratam para a operação."
+      },
+      {
+        "id": "sMTU-gjxcLU",
+        "titulo": "Como alinhar meu currículo para uma vaga offshore",
+        "porque": "Coloque no currículo cada tipo de bombeio que você já operou."
+      },
+      {
+        "id": "eHqY18dRP8Q",
+        "titulo": "Perguntas feitas em uma entrevista para vaga offshore",
+        "porque": "As perguntas que mais aparecem e como responder."
+      }
+    ]
+  },
+  {
+    "id": "weatherford-tecnico-operacoes-subsea-macae",
+    "titulo": "Técnico de Operações e Manutenção 2 (Subsea)",
+    "empresa": "Weatherford",
+    "logo": "",
+    "local": "Macaé, RJ",
+    "regime": "Offshore, turnos de 12 horas",
+    "contrato": "A confirmar com a empresa",
+    "area": "Mecânica e manutenção",
+    "nivel": "Técnico com CFT ativo",
+    "publicada": "2026-11-23",
+    "inscricoesAte": "2026-12-09",
+    "link": "https://www.linkedin.com/jobs/view/4487572520/",
+    "resumo": "A Weatherford procura técnico de operações e manutenção para a linha subsea, em Macaé, com escala offshore. O trabalho é preparar, montar, operar, testar e desmontar os equipamentos usados nas operações, com inspeção e manutenção básica em campo. Pede técnico com CFT ativo e leitura de desenhos elétricos, pneumáticos e hidráulicos. Experiência em óleo e gás conta ponto, mas não é obrigatória, e morar em Macaé ou Rio das Ostras é diferencial. A candidatura é pelo LinkedIn.",
+    "atividades": [
+      "Preparar, montar, operar, testar e desmontar equipamentos das operações offshore",
+      "Inspeções visuais e funcionais em equipamentos",
+      "Apoiar mobilização e manutenção básica em campo",
+      "Cumprir procedimentos operacionais e de QHSE",
+      "Trabalhar em escala offshore de 12 horas, junto com engenheiros e supervisores"
+    ],
+    "requisitos": [
+      "Curso técnico completo com CFT ativo",
+      "Leitura de desenhos técnicos elétricos, pneumáticos e hidráulicos",
+      "Pacote Office intermediário",
+      "Disponibilidade para trabalhar embarcado",
+      "Diferencial: experiência em óleo e gás ou industrial e morar em Macaé, Rio das Ostras ou região"
+    ],
+    "beneficios": [],
+    "pcd": false,
+    "videos": [
+      {
+        "id": "vN0tv-N_fSo",
+        "titulo": "Manutenção offshore, cursos que fazem diferença",
+        "porque": "Os cursos que separam quem embarca de quem fica na fila."
+      },
+      {
+        "id": "iKkxsnu9rZ8",
+        "titulo": "Como trabalhar embarcado mesmo sem experiência",
+        "porque": "A vaga não exige experiência em óleo e gás. Veja como se posicionar."
+      },
+      {
+        "id": "Vn2yBVRC-t0",
+        "titulo": "CBSP, o curso básico para trabalhar embarcado",
+        "porque": "Para embarcar você vai precisar do CBSP e do T-HUET."
+      }
+    ]
+  },
+  {
     "id": "ventura-ndt-tecnico-mecanica-cabo-frio",
     "titulo": "Técnico em Mecânica (offshore)",
     "empresa": "Ventura NDT",
